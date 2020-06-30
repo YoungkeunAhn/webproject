@@ -1,0 +1,202 @@
+/***************************************
+
+        layout
+
+****************************************/
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+body{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 15px;}
+
+header{
+    margin: 10px auto;
+    padding-top: 10px;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+header img{
+    width: 40px;
+    height: 40px;
+}
+
+header button{
+    width: 100px;
+    height: 40px;
+    border: none;
+    font-size: 15px;
+}
+header #myBtn{
+    margin-left: 70%;
+}
+
+nav{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    display: inline-block;
+    margin: 10px auto;
+}
+
+nav div{
+    background-color: black;
+    color: white;
+    border: 2px white solid;
+    height: 50px;
+    padding-top: 13px;
+}
+
+article{
+    padding: 20px;
+    width: 100%;
+    height: 700px;
+}
+
+footer{
+    width: 100%;
+    height: 50px;
+    padding-top: 10px;
+    color: black;
+    display: block;
+    text-align: center;
+    border: 2px black solid;
+    border-left: none;
+    border-right: none;
+    font-size: 12px;
+    background-color: #FFDCDC;
+}
+footer span {
+    margin: auto 10px;
+}
+
+
+/***************************************
+
+    login_modal
+
+****************************************/
+body .modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */}
+
+.modal-content {
+    background-color: #888888;
+    background-size: cover;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%; /* Could be more or less, depending on screen size */
+    height: 60%;
+}
+/* The Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+body .modal {text-align: center;}
+body .modal div{width: 50%; margin: 10px auto;}
+body .modal div ul{ list-style: none; margin: 50px 0 0 0;}
+body .modal div ul li{ display: block; height: 50px; margin: 20px auto;}
+body .modal div ul li i{font-size: 5rem; display: block; color: white;}
+body .modal div ul li .title{font-size: 3rem; margin: 10px 0 30px 0; color: white; font-weight: bold;}
+body .modal div ul li input{ width: 100%; height: 30px; }
+body .modal div button{ width: 100px; height: 40px; margin: 10px auto; background-color: #431BC5;}
+
+/***************************************
+
+    manamge_mission
+
+****************************************/
+
+
+.mission-search{
+    width: 100%;
+    display: inline-block;
+}
+
+.mission-table table{
+    text-align: center;
+    width: 100%;
+    height: 700px;
+}
+
+.mission-table tbody button{
+    border:none;
+    padding: 5px 10px;
+    font-size: 13px;
+}
+
+
+
+/***************************************
+
+    manamge_mission_insert
+
+****************************************/
+.mission-insert-update{
+    width: 50%;
+    margin: auto;
+}
+
+.mission-insert-update label{
+    width: 150px;
+}
+
+.mission-insert-update .input-label{
+    width: 500px;
+}
+
+.mission-insert-update .btn-line{
+    text-align: center;
+}
+.mission-insert-update button{
+    width: 150px;
+    height: 40px;
+    border: none;
+    margin: 40px 50px 0 0;
+}
+
+
+/***************************************
+
+    manamge_content_info
+
+****************************************/
+.content-part{
+    width: 50%;
+    height: 100%;
+    background: white;
+    display: inline;
+}
+
+.content-part{
+
+}
+
+.reply-part{
+    width: 50%;
+    height: 100%;
+    margin: 0;
+    display: inline;
+}
