@@ -14,7 +14,7 @@
 <div class="container">
     <header>
         <a href="../index.jsp">
-            <img class="logo" src="images/logo.jpg" alt="logo">
+            <img class="logo" src="../images/logo.jpg" alt="logo">
             <span class="logo">Mission or Dare</span>
         </a>
         <button id="myBtn" class="btb btn-primary" onclick='document.getElementById("myModal").style.display="block"'>Login</button>
