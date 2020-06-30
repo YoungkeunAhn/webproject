@@ -32,12 +32,16 @@
             <div>
                 <span>라이언이 부탁한 자화상</span>
             </div>
-            <div>
+            <div class="content-profile">
                 <img class="img-circle" src="../images/user.png" alt="user-profile">
                 <span>KIMONG</span>
             </div>
             <div>
-                <img src="../images/kimong_1_1.png" alt="content-image">
+                <div>
+                    <span><i class="fas fa-chevron-left"></i></span>
+                    <img class="content-image" src="../images/kimong_1_1.png" alt="content-image">
+                    <span><i class="fas fa-chevron-right"></i></span>
+                </div>
                 <span>졸귀탱라이언</span>
             </div>
         </section>
