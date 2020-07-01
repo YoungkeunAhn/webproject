@@ -34,3 +34,15 @@ function messagecheck() {
 		return false;
 	}
 }
+//category_insert
+function categoryinsertcheck() {
+	if( ! categoryinsertform.largeCategory.value ) {
+		alert( categorybigerror );
+		categoryinsertform.largeCategory.focus();
+	} else if( ! categoryinsertform.smallCategory.value ) {
+		alert( categorysmallerror );
+		categoryinsertform.smallCategory.focus();
+	}
+	
+	return false;	
+}
