@@ -1,6 +1,5 @@
 package handler.manager.member;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -9,18 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import handler.CommandHandler;
-import manager.member.MemberManagerDao;
 
 @Controller
-public class ManageLoginPro implements CommandHandler{
-	@Resource(name="memberManagerDao")
-	private MemberManagerDao memberManagerDao;
-	
-	@RequestMapping("/manage_loginPro")
+public class ManageCategoryDeletePro implements CommandHandler{
+	@RequestMapping("/manage_category_deletePro")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
-		
-		return new ModelAndView("manager/pages/manage_loginPro");
+		return new ModelAndView("manager/pages/manage_category_deletePro");
 	}
 }
