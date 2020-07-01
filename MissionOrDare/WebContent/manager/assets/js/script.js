@@ -7,12 +7,12 @@ var messageerror = "메시지좀 입력해봐바";
 function logincheck() {
     if(! loginform.manager_id.value ){
         alert(iderror);
-        loginform.id.focus();
+        loginform.manager_id.focus();
         return false;
 
     }else if(! loginform.manager_passwd.value ){
         alert(passwderror);
-        loginform.passwd.focus();
+        loginform.manager_passwd.focus();
         return false;
     }
 }

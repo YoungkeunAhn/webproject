@@ -5,9 +5,9 @@
   	
 <mapper namespace="Mission">
 	<select id="check" parameterType="String" resultType="int">
-		select count(*) from MOD_Manager where id=#{manager_id}
+		select count(*) from MOD_Manager where manager_id=#{manager_id}
 	</select>
 	<select id="getMember" parameterType="String" resultType="Dtos.ManagerDto">
-		select * from MOD_Manager where id=#{manager_id}
+		select * from MOD_Manager where manager_id=#{manager_id}
 	</select>
 </mapper>

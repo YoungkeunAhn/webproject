@@ -25,7 +25,7 @@ public class ManageLoginPro implements CommandHandler{
 		int result = memberManagerDao.check( manager_id, manager_passwd );
 		
 		request.setAttribute( "result", result ); 
-		request.setAttribute( "id", manager_id );
+		request.setAttribute( "manager_id", manager_id );
 		
 		
 		return new ModelAndView("manager/pages/manage_loginPro");
