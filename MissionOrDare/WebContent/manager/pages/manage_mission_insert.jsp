@@ -22,7 +22,8 @@
     <article>
         <section class="mission-insert-update">
             <h2>미션추가페이지</h2>
-            <form name="mission-insertForm" action="${pageContext.request.contextPath}/manage_mission_insertPro.do">
+            <form method="post" action="manage_mission_insertPro.do" name="missioninsertForm"
+            	onsubmit="return missioninsertcheck()">
                 <table class="table">
                     <tr>
                         <th><span>카테고리</span></th>
@@ -31,17 +32,20 @@
                     <tr>
                         <td>
                             <label>
-                                <select class="form-control" name="large-category">
-                                    <option selected>대분류</option>
-                                    <option>미술</option>
+                                <select class="form-control" name="largecategory">
+                                    <option value="">대분류</option>
+                                    <option value="1">미술</option>
+                                    <option value="2">운동</option>
                                 </select>
                             </label>
                         </td>
                         <td>
                             <label>
-                                <select class="form-control" name="small-category">
-                                    <option selected>소분류</option>
-                                    <option>그리기</option>
+                                <select class="form-control" name="smallcategory">
+                         	           <option value="">소분류</option>
+                                       <option value="1">그리기</option>
+                                       <option value="2">달리기</option>
+                                       
                                 </select>
                             </label>
                         </td>
@@ -50,7 +54,7 @@
                         <th>제목</th>
                         <td colspan="3">
                             <label class="input-label">
-                                <input class="form-control" type="text" name="mission-title">
+                                <input class="form-control" type="text" name="missiontitle">
                             </label>
                         </td>
                     </tr>
@@ -58,7 +62,7 @@
                         <th>내용</th>
                         <td colspan="3">
                             <label class="input-label">
-                                <input class="form-control" type="text" name="mission-content">
+                                <input class="form-control" type="text" name="missioncontent">
                             </label>
                         </td>
                     </tr>
@@ -71,7 +75,7 @@
                     <tr>
                         <td>
                             <label>
-                                <select class="form-control" name="mission-level">
+                                <select class="form-control" name="missionlevel">
                                     <option selected>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -80,12 +84,12 @@
                         </td>
                         <td>
                             <label>
-                                <input class="form-control" type="number" name="misson-score">
+                                <input class="form-control" type="number" name="missonscore">
                             </label>
                         </td>
                         <td>
                             <label>
-                                <select class="form-control" name="mission-challenge">
+                                <select class="form-control" name="missionchallenge">
                                     <option selected>일반</option>
                                     <option>챌린지</option>
                                 </select>
@@ -93,7 +97,7 @@
                         </td>
                         <td>
                             <label>
-                                <select class="form-control" name="mission-local">
+                                <select class="form-control" name="missionlocal">
                                     <option selected>실내</option>
                                     <option>야외</option>
                                 </select>

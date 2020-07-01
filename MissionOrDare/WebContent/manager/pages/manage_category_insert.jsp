@@ -15,7 +15,7 @@
 <div class="container">
     <article>
         <section class="mission-info">
-        <form method="post" action="manage_category_insertPro.do" name="categoryinsertform" onsubmit="return categoryinsertcheck()">
+        <form method="post" action="${pageContext.request.contextPath}/manage_category_insertPro.do" name="categoryinsertform" onsubmit="return categoryinsertcheck()">
         	<table class="table">
             <tr>
                 <tr>
