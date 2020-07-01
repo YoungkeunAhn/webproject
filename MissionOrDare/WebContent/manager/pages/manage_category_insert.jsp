@@ -15,7 +15,7 @@
 <div class="container">
     <article>
         <section class="mission-info">
-        <form>
+        <form method="post" action="manage_category_insertPro.do" name="categoryinsertform" onsubmit="return categoryinsertcheck()">
         	<table class="table">
             <tr>
                 <tr>
@@ -23,7 +23,7 @@
                 </tr>
                 <tr>
                     <th>대분류</th>
-                    <td><label><input type="text" name="largeCategoy"></label></td>
+                    <td><label><input type="text" name="largeCategory"></label></td>
                 </tr>
                 <tr>
                     <th>소분류</th>
@@ -31,7 +31,7 @@
                 </tr>
                 <tr>
                     <th class="btn-line" colspan="2">
-                        <button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/manage_category_insertPro.do'">추가하기</button>
+                        <button class="btn btn-primary">추가하기</button>
                         <button class="btn btn-danger" onclick="history.back()">취소</button>
                     </th>
                 </tr>

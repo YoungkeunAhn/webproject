@@ -24,24 +24,24 @@
             <label>
                 <select name="search-category" class="form-control">
                     <option selected>   </option>
-                    <option>제목</option>
-                    <option>내용</option>
+                    <option>${manage_title}</option>
+                    <option>${manage_mission_content}</option>
                 </select>
             </label>
             <label>
                 <input class="form-control" type="search" name="serch">
             </label>
-            <button class="btn btn-primary btn-search">검색</button>
-            <button class="btn btn-success" onclick="location.href='${pageContext.request.contextPath}/manage_category_insert.do'">카테고리추가</button>
+            <button class="btn btn-primary btn-search">${manage_search}</button>
+            <button class="btn btn-success" onclick="location.href='${pageContext.request.contextPath}/manage_category_insert.do'">${manage_category_categoryadd}</button>
         </section>
         <section class="mission-table">
             <table class="table">
                 <thead>
-                <th>카테고리 아이디</th>
-                <th>대분류</th>
-                <th>소분류</th>
-                <th>미션추가<th>
-                <th>삭제</th>
+                <th>${manage_category_categoryId}</th>
+                <th>${manage_category_bigsorting}</th>
+                <th>${manage_category_smallsorting}</th>
+                <th>${manage_category_missionadd}<th>
+                <th>${manage_delete}</th>
                 </thead>
                 <tbody>
                 <tr onclick="location.href='${pageContext.request.contextPath}/manage_category_info.do'">
@@ -49,9 +49,9 @@
 	                <th>대-분-류</th>
 	                <th>소-분-류</th>
 	                <th onclick="event.cancelBubble=true"><button class="btn btn-primary" name="category-insert"
-                			onclick="location.href='${pageContext.request.contextPath}/manage_mission_insert.do'">미션추가</button></th>
+                			onclick="location.href='${pageContext.request.contextPath}/manage_mission_insert.do'">${manage_category_missionadd}</button></th>
                		<th onclick="event.cancelBubble=true"><button class="btn btn-danger" name="category-delete" 
-                			onclick="location.href='${pageContext.request.contextPath}/manage_category_deletePro.do'">삭제</button></th>
+                			onclick="location.href='${pageContext.request.contextPath}/manage_category_deletePro.do'">${manage_delete}</button></th>
                 </tr>
                 </tbody>
             </table>
