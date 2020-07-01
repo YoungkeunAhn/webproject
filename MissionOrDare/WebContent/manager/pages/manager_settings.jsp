@@ -23,6 +23,7 @@
 <c:set var="manage_delete" value="삭제"/>
 <c:set var="manage_title" value="제목"/>
 
+
 <!-- 미션 -->
 <c:set var="manage_mission_category" value="카테고리"/>
 <c:set var="manage_mission_title" value="미션제목"/>
@@ -69,7 +70,12 @@
 <c:set var="manage_message_sendmessage" value="메시지보내기"/>
 <c:set var="manage_message_messagedelete" value="메시지삭제"/>
 
-
+<!-- 카테고리 관리 -->
+<c:set var="manage_category_categoryadd" value="카테고리추가"/>
+<c:set var="manage_category_categoryId" value="카테고리 아이디"/>
+<c:set var="manage_category_bigsorting" value="대분류"/>
+<c:set var="manage_category_smallsorting" value="소분류"/>
+<c:set var="manage_category_missionadd" value="미션추가"/>
 
 
 
