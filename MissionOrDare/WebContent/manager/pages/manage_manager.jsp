@@ -29,29 +29,25 @@
         </section>
         <section class="manager-insert">
         	<form>
-        		<table>
+        		<table class="table">
         			<tr>
         				<th>아이디</th>
         				<th>
         					<label><input class="form-control" type="text" name="insert-manager-id"></label>
         				</th>
-        			</tr>
-        			<tr>
         				<th>비밀번호</th>
         				<th>
         					<label><input class="form-control" type="password" name="insert-manager-passwd"></label>
         				</th>
-        			</tr>
-       				<tr>
        					<th colspan="2">
-       						<button type="submit" name="btn-insert-manger">가입</button>
-       						<button type="reset" name="btn-reset-manager">취소</button>
+       						<button class="btn btn-primary" type="submit" name="btn-insert-manger">등록</button>
+       						<button class="btn btn-danger" type="reset" name="btn-reset-manager">취소</button>
        					</th>
-					</tr>
-        			
+					</tr>        			
         		</table>
         	</form>
         </section>
+        <hr>
         <section class="manager-table">
             <table class="table">
                 <thead>
