@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html;charset=UTF-8"%>
+<%@ include file="pages/manager_settings.jsp" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -6,27 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <link rel="stylesheet" content="text/css" href="assets/css/manage.css">
-  <script src="assets/js/script.js"></script>
+  <link rel="stylesheet" content="text/css" href="${project}assets/css/manage.css">
+  <script src="${project}assets/js/script.js"></script>
   <title>관리자 메인 페이지</title>
 </head>
 
 <body>
 <div class="container">
   <header>
-        <a href="../index.jsp">
-            <img class="logo" src="images/logo.jpg" alt="logo">
+        <a href="../index.do">
+            <img class="logo" src="${project}images/logo.jpg" alt="logo">
             <span class="logo">Mission or Dare</span>
         </a>
         <button id="myBtn" class="btb btn-primary" onclick='document.getElementById("myModal").style.display="block"'>Login</button>
         <button class="btb btn-primary">Logout</button>
     </header>
   <nav>
-    <a href="pages/manage_mission.jsp"><div class="col-md-2"><span>미션관리</span></div></a>
-    <a href="pages/manage_content.jsp"><div class="col-md-2"><span>게시글관리</span></div></a>
-    <a href="pages/manage_user.jsp"><div class="col-md-2"><span>유저관리</span></div></a>
-    <a href="pages/manage_report.jsp"><div class="col-md-2"><span>신고관리</span></div></a>
-    <a href="pages/manage_message.jsp"><div class="col-md-2"><span>쪽지관리</span></div></a>
+    <a href="pages/manage_mission.do"><div class="col-md-2"><span>미션관리</span></div></a>
+    <a href="pages/manage_content.do"><div class="col-md-2"><span>게시글관리</span></div></a>
+    <a href="pages/manage_user.do"><div class="col-md-2"><span>유저관리</span></div></a>
+    <a href="pages/manage_report.do"><div class="col-md-2"><span>신고관리</span></div></a>
+    <a href="pages/manage_message.do"><div class="col-md-2"><span>쪽지관리</span></div></a>
   </nav>
   <article>
     <span>로그인 안했을 경우 로그인하라는 문구</span>
@@ -37,7 +38,7 @@
 <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick='document.getElementById("myModal").style.display="none"'>&times;</span>
-    <form name="loginform" action="pages/manage_loginPro.jsp" onsubmit="return logincheck()">
+    <form name="loginform" action="pages/manage_loginPro.do" onsubmit="return logincheck()">
       <ul>
         <li><i class="fas fa-user-circle"></i></li>
         <li><span class="title">관리자 로그인</span></li>
