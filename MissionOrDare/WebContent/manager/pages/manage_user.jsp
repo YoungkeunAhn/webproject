@@ -41,7 +41,7 @@
                 <th>다리도비빔면</th>
                 <th>운동,미술,음악,사진찍기</th>
                 <th>2020/06/25</th>
-                <th><button class="btn-danger" name="mission-delete"  
+                <th><button class="btn btn-danger" name="mission-delete"  
                 onclick="location.href='${pageContext.request.contextPath}/manage_user_info.do'">유저상세보기</button> </th>
                 </tbody>
             </table>

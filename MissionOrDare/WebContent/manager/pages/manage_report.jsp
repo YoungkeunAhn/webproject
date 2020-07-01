@@ -41,7 +41,7 @@
         <section class="mission-table">
             <table class="table">
                 <thead>
-                <th>번호</th>
+                <th> </th>
                 <th>닉네임</th>
                 <th>신고 카테고리</th>
                 <th>신고자 닉네임</th>
@@ -49,7 +49,7 @@
                 <th>처리</th>
                 </thead>
                 <tbody>
-                <th><input type="checkbox">1</th>
+                <th><input type="checkbox"></th>
                 <th>kkoddakzzi</th>
                 <th>KIMONG</th>
                 <th>기타: 형님한테 언니라고 함ㅋ</th>
