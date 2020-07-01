@@ -22,7 +22,7 @@
     <article>
         <section class="mission-insert-update">
             <h2>미션추가페이지</h2>
-            <form name="mission-insertForm">
+            <form name="mission-insertForm" action="${pageContext.request.contextPath}/manage_mission_insertPro.do">
                 <table class="table">
                     <tr>
                         <th><span>카테고리</span></th>
