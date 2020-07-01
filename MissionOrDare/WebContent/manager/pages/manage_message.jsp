@@ -25,7 +25,7 @@
             <label>
                 <input class="form-control" type="search" name="serch" placeholder="유저닉네임을 입력하살법!">
             </label>
-            <button class="btn-primary" name="user-findinmessage">${manage_search}</button>
+            <button class="btn btn-primary" name="user-findinmessage">${manage_search}</button>
            <button class="btn-primary" name="mission-delete"
                  onclick="location.href='${pageContext.request.contextPath}/manage_message_form.do'">${manage_message_sendmessage}</button>
                 

@@ -102,8 +102,8 @@
                     </tr>
                     <tr>
                         <th class="btn-line" colspan="4">
-                            <button class="btn-primary" type="submit">추가</button>
-                            <button class="btn-danger" onclick="location.href='${pageContext.request.contextPath}/manage_mission.do'">취소</button>
+                            <button class="btn btn-primary" type="submit">추가</button>
+                            <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/manage_mission.do'">취소</button>
                         </th>
                     </tr>
                 </table>

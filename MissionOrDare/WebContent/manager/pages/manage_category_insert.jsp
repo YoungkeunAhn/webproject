@@ -31,8 +31,8 @@
                 </tr>
                 <tr>
                     <th class="btn-line" colspan="2">
-                        <button class="btn-primary" onclick="location.href='${pageContext.request.contextPath}/manage_category_insertPro.do'">추가하기</button>
-                        <button class="btn-danger" onclick="history.back()">취소</button>
+                        <button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/manage_category_insertPro.do'">추가하기</button>
+                        <button class="btn btn-danger" onclick="history.back()">취소</button>
                     </th>
                 </tr>
             </table>

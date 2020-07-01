@@ -23,6 +23,7 @@
         <button class="btb btn-primary">Logout</button>
     </header>
   <nav>
+  	<a href="${pageContext.request.contextPath}/manage_category.do"><div class="col-md-2"><span>카테고리관리</span></div></a>
     <a href="${pageContext.request.contextPath}/manage_mission.do"><div class="col-md-2"><span>${manage_mission}</span></div></a>
     <a href="${pageContext.request.contextPath}/manage_content.do"><div class="col-md-2"><span>${manage_board}</span></div></a>
     <a href="${pageContext.request.contextPath}/manage_user.do"><div class="col-md-2"><span>${manage_user}</span></div></a>

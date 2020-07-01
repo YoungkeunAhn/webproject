@@ -62,8 +62,8 @@
                 </tr>
                 <tr>
                     <th class="btn-line" colspan="4">
-                        <button class="btn-primary" onclick="location.href='${pageContext.request.contextPath}/manage_mission_update.do'">수정하기</button>
-                        <button class="btn-danger" onclick="history.back()">취소</button>
+                        <button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/manage_mission_update.do'">수정하기</button>
+                        <button class="btn btn-danger" onclick="history.back()">취소</button>
                     </th>
                 </tr>
             </table>

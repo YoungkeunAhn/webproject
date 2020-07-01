@@ -48,7 +48,7 @@
                 <th>미술/그리기</th>
                 <th>라이언이 부탁한 자화상</th>
                 <th>3.5</th>
-                <th><button class="btn-danger" name="mission-delete">삭제</button> </th>
+                <th><button class="btn btn-danger" name="mission-delete">삭제</button> </th>
                 </tbody>
             </table>
         </section>

@@ -55,7 +55,7 @@
                 <th>기타: 형님한테 언니라고 함ㅋ</th>
                 <th>2020-06-04 16:09</th>
                 <th>
-                <button class="btn-danger" name="mission-delete"
+                <button class="btn btn-danger" name="mission-delete"
                  onclick="location.href='${pageContext.request.contextPath}/manage_message_form.do'">
                  ${manage_message_sendmessage}</button></th>
                 </tbody>

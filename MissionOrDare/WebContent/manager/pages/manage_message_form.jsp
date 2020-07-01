@@ -31,7 +31,7 @@
 	                <tr>
 	                    <th class="btn btn-line" colspan="4">
 	                        <button type="submit" class="btn-primary" onclick="location.href='${pageContext.request.contextPath}/manage_message_pro.do'">보내기</button>
-	                        <button class="btn-danger" onclick="history.back()">취소</button>
+	                        <button class="btn btn-danger" onclick="history.back()">취소</button>
 	                    </th>
 	                </tr>           
 	            </table>
