@@ -15,6 +15,7 @@
 <body>
 <div class="container">
     <nav>
+    	<a href="${pageContext.request.contextPath}/manage_category.do"><div class="col-md-2"><span>카테고리관리</span></div></a>
         <a href="${pageContext.request.contextPath}/manage_mission.do"><div class="col-md-2"><span>미션관리</span></div></a>
         <a href="${pageContext.request.contextPath}/manage_content.do"><div class="col-md-2"><span>게시글관리</span></div></a>
         <a href="${pageContext.request.contextPath}/manage_user.do"><div class="col-md-2"><span>유저관리</span></div></a>
