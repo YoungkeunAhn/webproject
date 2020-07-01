@@ -44,15 +44,15 @@
                 <th>삭제</th>
                 </thead>
                 <tbody>
-                <a href="${pageContext.request.contextPath}/manage_category_info.do">
-                <th>category-id</th>
-                <th>대-분-류</th>
-                <th>소-분-류</th>
-                </a>
-                <th><button class="btn btn-primary" name="category-insert"
+                <tr onclick="location.href='${pageContext.request.contextPath}/manage_category_info.do'">
+                	<th>category-id</th>
+	                <th>대-분-류</th>
+	                <th>소-분-류</th>
+	                <th onclick="event.cancelBubble=true"><button class="btn btn-primary" name="category-insert"
                 			onclick="location.href='${pageContext.request.contextPath}/manage_mission_insert.do'">미션추가</button></th>
-                <th><button class="btn btn-danger" name="category-delete" 
+               		<th onclick="event.cancelBubble=true"><button class="btn btn-danger" name="category-delete" 
                 			onclick="location.href='${pageContext.request.contextPath}/manage_category_deletePro.do'">삭제</button></th>
+                </tr>
                 </tbody>
             </table>
         </section>
