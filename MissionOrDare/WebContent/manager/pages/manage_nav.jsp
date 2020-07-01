@@ -17,7 +17,7 @@
         <a href="manage_content.jsp"><div class="col-md-2"><span>게시글관리</span></div></a>
         <a href="manage_user.jsp"><div class="col-md-2"><span>유저관리</span></div></a>
         <a href="manage_report.jsp"><div class="col-md-2"><span>신고관리</span></div></a>
-        <a href="manage_report.jsp"><div class="col-md-2"><span>쪽지관리</span></div></a>
+        <a href="manage_message.jsp"><div class="col-md-2"><span>쪽지관리</span></div></a>
     </nav>
 </div>
 </body>

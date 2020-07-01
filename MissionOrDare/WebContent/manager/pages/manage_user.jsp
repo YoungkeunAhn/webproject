@@ -21,32 +21,26 @@
     <article>
         <section class="mission-search">
             <label>
-                <select class="form-control">
-                    <option selected> 카테고리 </option>
-                    <option>제목</option>
-                    <option>내용</option>
-                </select>
+                <input class="form-control" type="search" name="serch" placeholder="유저 닉네임을 입력하셈">
             </label>
-            <label>
-                <input class="form-control" type="search" name="serch">
-            </label>
-            <button class="btn-primary" name="mission-add">미션추가하기</button>
+            <button class="btn-primary" name="user-findinuser">유저조회하기</button>
         </section>
         <section class="mission-table">
             <table class="table">
                 <thead>
-                <th>번호</th>
-                <th>카테고리</th>
-                <th>제목</th>
-                <th>미션평점</th>
-                <th>삭제</th>
+                <th>카카오톡 아이디</th>
+                <th>닉네임</th>
+                <th>관심사</th>
+                <th>가입날짜</th>
+                <th>유저정보조회</th>
                 </thead>
-                <tbody onclick="location.href='manage_mission_update.jsp'">
-                <th>1</th>
-                <th>미술/그리기</th>
-                <th>라이언이 부탁한 자화상</th>
-                <th>3.5</th>
-                <th><button class="btn-danger" name="mission-delete">삭제</button> </th>
+                <tbody>
+                <th>vkdnj4158@naver.com</th>
+                <th>다리도비빔면</th>
+                <th>운동,미술,음악,사진찍기</th>
+                <th>2020/06/25</th>
+                <th><button class="btn-danger" name="mission-delete"  
+                onclick="location.href='manage_user_info.jsp'">유저상세보기</button> </th>
                 </tbody>
             </table>
         </section>

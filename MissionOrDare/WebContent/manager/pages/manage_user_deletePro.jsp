@@ -1,0 +1,13 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>유저 회원탈퇴 처리페이지</title>
+</head>
+<body>
+유저 회원탈퇴 처리 페이지입니다.
+<button onclick="location.href='../index.jsp'">메인페이지로이동</button>
+<button onclick="location.href='manage_user.jsp'">유저 관리 페이지로 이동</button>
+</body>
+</html>
