@@ -8,8 +8,27 @@
     <title>로그인처리페이지</title>
 </head>
 <body>
-로그인 프로 페이지 입니다.
-<button onclick="location.href='../index.jsp'">메인페이지로이동</button>
-<button onclick="location.href='manage_mission.jsp'">미션 관리 페이지로 이동</button>
+
+	<c:if test="${result eq 0}">
+		<script type="text/javascript">
+			<!--
+			alert( "아디 없슴" );
+			//-->
+		</script>
+	</c:if>
+	<c:if test="${result ne 0}">
+		<c:if test="${result eq 1}">	
+			${sessionScope.memId = id}
+			<c:redirect url="${pageContext.request.contextPath}/index.do"/>	
+		</c:if>
+		<c:if test="${result eq -1}">		
+			<script type="text/javascript">
+				<!--
+				alert( "비번틀림" );
+				//-->
+			</script>			
+		</c:if>	
+</c:if>
+
 </body>
 </html>

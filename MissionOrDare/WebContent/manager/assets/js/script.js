@@ -5,12 +5,12 @@ var messageerror = "메시지좀 입력해봐바";
 
 //로그인
 function logincheck() {
-    if(! loginform.id.value ){
+    if(! loginform.manager_id.value ){
         alert(iderror);
         loginform.id.focus();
         return false;
 
-    }else if(! loginform.passwd.value ){
+    }else if(! loginform.manager_passwd.value ){
         alert(passwderror);
         loginform.passwd.focus();
         return false;

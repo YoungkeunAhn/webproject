@@ -20,6 +20,13 @@ public class ManageLoginPro implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
+		String manager_id = request.getParameter( "manager_id" );
+		String manager_passwd = request.getParameter( "manager_passwd" );
+		int result = memberManagerDao.check( manager_id, manager_passwd );
+		
+		request.setAttribute( "result", result ); 
+		request.setAttribute( "id", manager_id );
+		
 		
 		return new ModelAndView("manager/pages/manage_loginPro");
 	}

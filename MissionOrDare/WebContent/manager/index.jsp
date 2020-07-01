@@ -45,7 +45,7 @@
         <li><span class="title">${manage_managerlogin}</span></li>
         <li><label><input type="text" name="manager_id" placeholder="아이디" autofocus></label></li>
         <li><label><input type="password" name="manager_passwd" placeholder="비밀번호"></label></li>
-        <li><button class="btn btn-primary" type="submit" onclick="manageLogin()">${manage_header_login}</button></li>
+        <li><button class="btn btn-primary" type="submit">${manage_header_login}</button></li>
       </ul>
     </form>
   </div>
