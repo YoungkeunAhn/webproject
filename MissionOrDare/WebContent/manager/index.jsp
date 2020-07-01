@@ -20,7 +20,8 @@
             <span class="logo">Mission or Dare</span>
         </a>
         <button id="myBtn" class="btb btn-primary" onclick='document.getElementById("myModal").style.display="block"'>Login</button>
-        <button class="btb btn-primary">Logout</button>
+        <button class="btn btn-primary">Logout</button>
+        <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/manage_manager.do'">관리자 관리페이지</button>
     </header>
   <nav>
   	<a href="${pageContext.request.contextPath}/manage_category.do"><div class="col-md-2"><span>카테고리관리</span></div></a>
