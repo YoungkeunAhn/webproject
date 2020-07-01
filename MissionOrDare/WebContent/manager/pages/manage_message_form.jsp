@@ -1,12 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="manager_settings.jsp" %>
+
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" content="text/css" href="../assets/css/manage.css">
-    <script src="../assets/js/script.js"></script>
+    <link rel="stylesheet" content="text/css" href="${project}assets/css/manage.css">
+    <script src="${project}assets/js/script.js"></script>
     <title>유저정보페이지</title>
 </head>
 <body>
@@ -28,7 +30,7 @@
 	                
 	                <tr>
 	                    <th class="btn-line" colspan="4">
-	                        <button type="submit" class="btn-primary" onclick="location.href='manage_message_pro.jsp'">보내기</button>
+	                        <button type="submit" class="btn-primary" onclick="location.href='${pageContext.request.contextPath}/manage_message_pro.do'">보내기</button>
 	                        <button class="btn-danger" onclick="history.back()">취소</button>
 	                    </th>
 	                </tr>           

@@ -15,7 +15,7 @@
 <body>
 <div class="container">
     <header>
-        <a href="${project}/index.do">
+        <a href="${pageContext.request.contextPath}/index.do">
             <img class="logo" src="${project}images/logo.jpg" alt="logo">
             <span class="logo">Mission or Dare</span>
         </a>

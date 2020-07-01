@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="manager_settings.jsp" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>

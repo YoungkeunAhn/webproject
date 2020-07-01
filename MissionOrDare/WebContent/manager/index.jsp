@@ -15,7 +15,7 @@
 <body>
 <div class="container">
   <header>
-        <a href="../index.do">
+        <a href="${pageContext.request.contextPath}/index.do">
             <img class="logo" src="${project}images/logo.jpg" alt="logo">
             <span class="logo">Mission or Dare</span>
         </a>
@@ -23,11 +23,11 @@
         <button class="btb btn-primary">Logout</button>
     </header>
   <nav>
-    <a href="pages/manage_mission.do"><div class="col-md-2"><span>미션관리</span></div></a>
-    <a href="pages/manage_content.do"><div class="col-md-2"><span>게시글관리</span></div></a>
-    <a href="pages/manage_user.do"><div class="col-md-2"><span>유저관리</span></div></a>
-    <a href="pages/manage_report.do"><div class="col-md-2"><span>신고관리</span></div></a>
-    <a href="pages/manage_message.do"><div class="col-md-2"><span>쪽지관리</span></div></a>
+    <a href="${pageContext.request.contextPath}/manage_mission.do"><div class="col-md-2"><span>미션관리</span></div></a>
+    <a href="${pageContext.request.contextPath}/manage_content.do"><div class="col-md-2"><span>게시글관리</span></div></a>
+    <a href="${pageContext.request.contextPath}/manage_user.do"><div class="col-md-2"><span>유저관리</span></div></a>
+    <a href="${pageContext.request.contextPath}/manage_report.do"><div class="col-md-2"><span>신고관리</span></div></a>
+    <a href="${pageContext.request.contextPath}/manage_message.do"><div class="col-md-2"><span>쪽지관리</span></div></a>
   </nav>
   <article>
     <span>로그인 안했을 경우 로그인하라는 문구</span>
@@ -38,7 +38,7 @@
 <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close" onclick='document.getElementById("myModal").style.display="none"'>&times;</span>
-    <form name="loginform" action="pages/manage_loginPro.do" onsubmit="return logincheck()">
+    <form name="loginform" action="${pageContext.request.contextPath}/manage_loginPro.do" onsubmit="return logincheck()">
       <ul>
         <li><i class="fas fa-user-circle"></i></li>
         <li><span class="title">관리자 로그인</span></li>

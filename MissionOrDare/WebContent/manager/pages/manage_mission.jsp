@@ -32,7 +32,7 @@
                 <input class="form-control" type="search" name="serch">
             </label>
             <button class="btn btn-primary btn-search">검색</button>
-            <button class="btn btn-success" onclick="location.href='manage_mission_insert.jsp'">미션추가</button>
+            <button class="btn btn-success" onclick="location.href='${pageContext.request.contextPath}/manage_mission_insert.do'">미션추가</button>
         </section>
         <section class="mission-table">
             <table class="table">
@@ -43,7 +43,7 @@
                 <th>미션평점</th>
                 <th>삭제</th>
                 </thead>
-                <tbody onclick="location.href='manage_mission_info.jsp'">
+                <tbody onclick="location.href='${pageContext.request.contextPath}/manage_mission_info.do'">
                 <th>1</th>
                 <th>미술/그리기</th>
                 <th>라이언이 부탁한 자화상</th>
