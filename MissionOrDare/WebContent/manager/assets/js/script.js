@@ -30,7 +30,7 @@ function searchcheck() {
 function messagecheck() {
 	if( ! messageForm.message.value ) {
 		alert(messageerror);
-		messageform.message.focus();
+		messageForm.message.focus();
 		return false;
 	}
 }
