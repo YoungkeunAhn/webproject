@@ -19,8 +19,8 @@
             <img class="logo" src="${project}images/logo.jpg" alt="logo">
             <span class="logo">Mission or Dare</span>
         </a>
-        <button id="myBtn" class="btb btn-primary" onclick='document.getElementById("myModal").style.display="block"'>Login</button>
-        <button class="btb btn-primary">Logout</button>
+        <button id="myBtn" class="btb btn-primary" onclick='document.getElementById("myModal").style.display="block"'>${manage_header_login}</button>
+        <button class="btb btn-primary">${manage_header_logout}</button>
     </header>
 </div>
 </body>

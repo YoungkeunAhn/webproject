@@ -23,25 +23,25 @@
         <section class="mission-search">
             <label>
                 <select class="form-control">
-                    <option selected> 카테고리 </option>
-                    <option>제목</option>
-                    <option>내용</option>
+                    <option selected> ${manage_mission_category} </option>
+                    <option>${manage_title}</option>
+                    <option>${manage_mission_content}</option>
                 </select>
             </label>
             <label>
                 <input class="form-control" type="search" name="serch">
             </label>
-            <button class="btn btn-primary btn-search">검색</button>
+            <button class="btn btn-primary btn-search">${manage_search}</button>
             <button class="btn btn-success" onclick="location.href='${pageContext.request.contextPath}/manage_mission_insert.do'">미션추가</button>
         </section>
         <section class="mission-table">
             <table class="table">
                 <thead>
-                <th>번호</th>
-                <th>카테고리</th>
-                <th>제목</th>
-                <th>미션평점</th>
-                <th>삭제</th>
+                <th>${manage_number}</th>
+                <th>${manage_mission_category}</th>
+                <th>${manage_title}</th>
+                <th>${manage_mission_avg}</th>
+                <th>${manage_delete}</th>
                 </thead>
                 <tbody onclick="location.href='${pageContext.request.contextPath}/manage_mission_info.do'">
                 <th>1</th>

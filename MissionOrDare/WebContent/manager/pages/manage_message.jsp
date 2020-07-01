@@ -25,24 +25,31 @@
             <label>
                 <input class="form-control" type="search" name="serch" placeholder="유저닉네임을 입력하살법!">
             </label>
-            <button class="btn-primary" name="user-findinmessage">유저조회하기</button>
+            <button class="btn-primary" name="user-findinmessage">${manage_search}</button>
+           <button class="btn-primary" name="mission-delete"
+                 onclick="location.href='${pageContext.request.contextPath}/manage_message_form.do'">${manage_message_sendmessage}</button>
+                
+            <button class="btn-danger" name="mission-delete"
+                 onclick="location.href='${pageContext.request.contextPath}/manage_message_deletePro.do'">${manage_message_messagedelete}</button>
+                
         </section>
         <section class="mission-table">
             <table class="table">
                 <thead>
-                <th>카카오톡아이디</th>
-                <th>닉네임</th>
-                <th>관심사</th>
-                <th>가입날짜</th>
-                <th>메시지</th>
+                <th>${manage_message_checkbox}</th>
+                <th>${manage_message_sender}</th>
+                <th>${manage_message_content}</th>
+                <th>${manage_message_receiver}</th>
+                <th>${manage_message_senddate}</th>
+                
                 </thead>
                 <tbody>
-                <th>vkdnj4158@naver.com</th>
+                <th><input type="checkbox"></th>
                 <th>다리도비빔면</th>
-                <th>2020/06/25</th>
-                <th>메시지</th>
-                <th><button class="btn-danger" name="mission-delete"
-                 onclick="location.href='${pageContext.request.contextPath}/manage_message_form.do'">메시지보내기</button> </th>
+                <th>요새누가 팔을비비냐 다리비비지</th>
+                <th>팔도비빔면</th>
+                <th>2020/07/01</th>
+                
                 </tbody>
             </table>
         </section>

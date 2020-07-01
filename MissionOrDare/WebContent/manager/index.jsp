@@ -23,11 +23,11 @@
         <button class="btb btn-primary">Logout</button>
     </header>
   <nav>
-    <a href="${pageContext.request.contextPath}/manage_mission.do"><div class="col-md-2"><span>미션관리</span></div></a>
-    <a href="${pageContext.request.contextPath}/manage_content.do"><div class="col-md-2"><span>게시글관리</span></div></a>
-    <a href="${pageContext.request.contextPath}/manage_user.do"><div class="col-md-2"><span>유저관리</span></div></a>
-    <a href="${pageContext.request.contextPath}/manage_report.do"><div class="col-md-2"><span>신고관리</span></div></a>
-    <a href="${pageContext.request.contextPath}/manage_message.do"><div class="col-md-2"><span>쪽지관리</span></div></a>
+    <a href="${pageContext.request.contextPath}/manage_mission.do"><div class="col-md-2"><span>${manage_mission}</span></div></a>
+    <a href="${pageContext.request.contextPath}/manage_content.do"><div class="col-md-2"><span>${manage_board}</span></div></a>
+    <a href="${pageContext.request.contextPath}/manage_user.do"><div class="col-md-2"><span>${manage_user}</span></div></a>
+    <a href="${pageContext.request.contextPath}/manage_report.do"><div class="col-md-2"><span>${manage_report}</span></div></a>
+    <a href="${pageContext.request.contextPath}/manage_message.do"><div class="col-md-2"><span>${manage_message}</span></div></a>
   </nav>
   <article>
     <span>로그인 안했을 경우 로그인하라는 문구</span>
@@ -41,10 +41,10 @@
     <form name="loginform" action="${pageContext.request.contextPath}/manage_loginPro.do" onsubmit="return logincheck()">
       <ul>
         <li><i class="fas fa-user-circle"></i></li>
-        <li><span class="title">관리자 로그인</span></li>
-        <li><label><input type="text" name="id" placeholder="아이디" autofocus></label></li>
-        <li><label><input type="password" name="passwd" placeholder="비밀번호"></label></li>
-        <li><button class="btn btn-primary" type="submit" onclick="manageLogin()">로그인</button></li>
+        <li><span class="title">${manage_managerlogin}</span></li>
+        <li><label><input type="text" name="manager_id" placeholder="아이디" autofocus></label></li>
+        <li><label><input type="password" name="manager_passwd" placeholder="비밀번호"></label></li>
+        <li><button class="btn btn-primary" type="submit" onclick="manageLogin()">${manage_header_login}</button></li>
       </ul>
     </form>
   </div>

@@ -46,27 +46,30 @@
 <c:set var="manage_user_userdetail" value="유저상세보기"/>
 
 <!-- 신고관리 -->
-<c:set var="manage_report_type" value="신고 유형"/>
-<c:set var="manage_report_type1" value="욕설, 비방, 차별, 혐오"/>
-<c:set var="manage_report_type2" value="홍보, 영리목적"/>
-<c:set var="manage_report_type3" value="불법정보"/>
-<c:set var="manage_report_type4" value="음란, 청소년유해"/>
-<c:set var="manage_report_type5" value="도배, 스팸"/>
-<c:set var="manage_report_type6" value="기타"/>
+<c:set var="manage_report_selectoption" value="신고 유형"/>
+<c:set var="manage_report_selectoption1" value="욕설, 비방, 차별, 혐오"/>
+<c:set var="manage_report_selectoption2" value="홍보, 영리목적"/>
+<c:set var="manage_report_selectoption3" value="불법정보"/>
+<c:set var="manage_report_selectoption4" value="음란, 청소년유해"/>
+<c:set var="manage_report_selectoption5" value="도배, 스팸"/>
+<c:set var="manage_report_selectoption6" value="기타"/>
 <c:set var="manage_report_category" value="신고카테고리"/>
 <c:set var="manage_report_usernickname" value="신고자 닉네임"/>
 <c:set var="manage_report_reportdate" value="신고날짜"/>
 <c:set var="manage_report_processState" value="처리상태"/>
-<c:set var="manage_report_sendMesssage" value="메시지보내기"/>
 
 <!-- 쪽지관리 -->
 <c:set var="manage_message_search" value="유저조회하기"/>
+<c:set var="manage_message_sender" value="보낸이"/>
+<c:set var="manage_message_receiver" value="받는이"/>
 <c:set var="manage_message_checkbox" value="체크박스"/>
 <c:set var="manage_message_content" value="메시지내용"/>
 <c:set var="manage_message_senddate" value="보낸날짜"/>
 <c:set var="manage_message_message" value="메시지"/>
 <c:set var="manage_message_sendmessage" value="메시지보내기"/>
 <c:set var="manage_message_messagedelete" value="메시지삭제"/>
+
+
 
 
 

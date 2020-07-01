@@ -24,26 +24,26 @@
         <section class="mission-search">
             <label>
                 <select class="form-control">
-                    <option selected> 카테고리 </option>
-                    <option>작성자</option>
-                    <option>제목</option>
+                    <option selected> ${manage_mission_category} </option>
+                    <option>${manage_content_writer}</option>
+                    <option>${manage_title}</option>
                 </select>
             </label>
             <label>
                 <input class="form-control" type="search" name="serch">
             </label>
-            <button class="btn btn-primary">검색</button>
+            <button class="btn btn-primary">${manage_search}</button>
         </section>
         <section class="mission-table">
             <table class="table">
                 <thead>
-                <th>번호</th>
-                <th>카테고리</th>
-                <th>닉네임</th>
-                <th>미션제목</th>
-                <th>조회수</th>
-                <th>좋아요</th>
-                <th>작성일</th>
+                <th>${manage_number}</th>
+                <th>${manage_mission_category}</th>
+                <th>${manage_user_nickname}</th>
+                <th>${manage_mission_title}</th>
+                <th>${manage_content_views}</th>
+                <th>${manage_content_like}</th>
+                <th>${manage_content_writedate}</th>
                 </thead>
                 <tbody>
                 <tr onclick="location.href='${pageContext.request.contextPath}/manage_content_info.do'">
