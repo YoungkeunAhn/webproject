@@ -46,7 +46,7 @@
                 <th>작성일</th>
                 </thead>
                 <tbody>
-                <tr onclick="location.href='manage_content_info.jsp'">
+                <tr onclick="location.href='${pageContext.request.contextPath}/manage_content_info.do'">
                     <th>1</th>
                     <th>미술/그리기</th>
                     <th>KIMONG</th>
