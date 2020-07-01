@@ -22,31 +22,38 @@
         <section class="mission-search">
             <label>
                 <select class="form-control">
-                    <option selected> 카테고리 </option>
-                    <option>제목</option>
-                    <option>내용</option>
+                    <option selected>신고 유형</option>
+                    <option>욕설, 비방, 차별, 혐오</option>
+                    <option>홍보, 영리목적</option>
+                    <option>불법정보</option>
+                    <option>음란, 청소년유해</option>
+                    <option>도배, 스</option>
+                    <option>기타</option>
                 </select>
             </label>
             <label>
                 <input class="form-control" type="search" name="serch">
             </label>
-            <button class="btn-primary" name="mission-add" onclick="location.href='manage_mission_insert.jsp'">미션추가하기</button>
+            <button class="btn btn-primary">검색</button>
         </section>
         <section class="mission-table">
             <table class="table">
                 <thead>
                 <th>번호</th>
-                <th>카테고리</th>
-                <th>제목</th>
-                <th>미션평점</th>
-                <th>삭제</th>
+                <th>닉네임</th>
+                <th>신고 카테고리</th>
+                <th>신고자 닉네임</th>
+                <th>신고 날짜</th>
+                <th>처리</th>
                 </thead>
-                <tbody onclick="location.href='manage_mission_info.jsp'">
-                <th>1</th>
-                <th>미술/그리기</th>
-                <th>라이언이 부탁한 자화상</th>
-                <th>3.5</th>
-                <th><button class="btn-danger" name="mission-delete">삭제</button> </th>
+                <tbody>
+                <th><input type="checkbox">1</th>
+                <th>kkoddakzzi</th>
+                <th>KIMONG</th>
+                <th>기타: 형님한테 언니라고 함ㅋ</th>
+                <th>2020-06-04 16:09</th>
+                <th><button class="btn-danger" name="mission-delete"
+                 onclick="location.href='manage_message_form.jsp'">메시지보내기</button> </th>
                 </tbody>
             </table>
         </section>
