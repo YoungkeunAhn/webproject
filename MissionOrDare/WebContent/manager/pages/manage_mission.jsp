@@ -43,17 +43,38 @@
                 <th>${manage_mission_avg}</th>
                 <th>${manage_delete}</th>
                 </thead>
-                <tbody onclick="location.href='${pageContext.request.contextPath}/manage_mission_info.do'">
-                <th>1</th>
-                <th>미술/그리기</th>
-                <th>라이언이 부탁한 자화상</th>
-                <th>3.5</th>
-                <th><button class="btn btn-danger" name="mission-delete">삭제</button> </th>
+                <tbody>
+                <tr>
+	                <th>1</th>
+	                <th>미술/그리기</th>
+	                <th>라이언이 부탁한 자화상</th>
+	                <th>3.5</th>
+	                <th><button class="btn btn-danger" name="missionDelete">삭제</button> </th>
+                </tr>
                 </tbody>
             </table>
         </section>
     </article>
     <%@include file="manage_footer.jsp"%>
 </div>
+<div id="missionInfoModal">
+</div>
+<script type="text/javascript">
+//<!--
+	var url= 'manager/pages/manage_mission_info.jsp';
+	$('tr').click(
+		function(event){
+			$('#missionInfoModal').onload(url, function(){
+				      event.preventDefault();
+				 
+				      $(this).modal({
+				        fadeDuration: 250
+				      });
+				    });
+			});
+		}
+	);
+//-->
+</script>
 </body>
 </html>
