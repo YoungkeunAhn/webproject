@@ -12,10 +12,10 @@ public class UsersDto {
 	private Timestamp date_of_birth;
 	private String kakao_birthday;
 	private String location;
-	private String intresting1_llarge_category;
-	private String intresting1_2large_category;
-	private String intresting1_3large_category;
-	private String intresting1_4large_category;
+	private String interesting1_large_category;
+	private String interesting2_large_category;
+	private String interesting3_large_category;
+	private String interesting4_large_category;
 	private String job;
 	private String token;
 	private String sign_up_date;
@@ -70,29 +70,29 @@ public class UsersDto {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public String getIntresting1_llarge_category() {
-		return intresting1_llarge_category;
+	public String getInteresting1_large_category() {
+		return interesting1_large_category;
 	}
-	public void setIntresting1_llarge_category(String intresting1_llarge_category) {
-		this.intresting1_llarge_category = intresting1_llarge_category;
+	public void setInteresting1_large_category(String interesting1_large_category) {
+		this.interesting1_large_category = interesting1_large_category;
 	}
-	public String getIntresting1_2large_category() {
-		return intresting1_2large_category;
+	public String getInteresting2_large_category() {
+		return interesting2_large_category;
 	}
-	public void setIntresting1_2large_category(String intresting1_2large_category) {
-		this.intresting1_2large_category = intresting1_2large_category;
+	public void setInteresting2_large_category(String interesting2_large_category) {
+		this.interesting2_large_category = interesting2_large_category;
 	}
-	public String getIntresting1_3large_category() {
-		return intresting1_3large_category;
+	public String getInteresting3_large_category() {
+		return interesting3_large_category;
 	}
-	public void setIntresting1_3large_category(String intresting1_3large_category) {
-		this.intresting1_3large_category = intresting1_3large_category;
+	public void setInteresting3_large_category(String interesting3_large_category) {
+		this.interesting3_large_category = interesting3_large_category;
 	}
-	public String getIntresting1_4large_category() {
-		return intresting1_4large_category;
+	public String getInteresting4_large_category() {
+		return interesting4_large_category;
 	}
-	public void setIntresting1_4large_category(String intresting1_4large_category) {
-		this.intresting1_4large_category = intresting1_4large_category;
+	public void setInteresting4_large_category(String interesting4_large_category) {
+		this.interesting4_large_category = interesting4_large_category;
 	}
 	public String getJob() {
 		return job;
@@ -130,6 +130,7 @@ public class UsersDto {
 	public void setProfile_picture(String profile_picture) {
 		this.profile_picture = profile_picture;
 	}
+	
 	
 	
 	
