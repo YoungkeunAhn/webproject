@@ -18,7 +18,7 @@
 	</c:if>
 	<c:if test="${result ne 0}">
 		<c:if test="${result eq 1}">	
-			${sessionScope.memId = id}
+			${sessionScope.memId = manager_id}
 			<c:redirect url="${pageContext.request.contextPath}/index.do"/>	
 		</c:if>
 		<c:if test="${result eq -1}">		
