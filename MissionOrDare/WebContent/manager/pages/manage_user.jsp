@@ -29,7 +29,7 @@
             <button class="btn-primary" type="submit" name="user-findinuser">${str_search}</button>
         	</form>
         </section>
-        <section class="mission-table">
+        <section>
             <table class="table">
                 <thead>
                 <th>${str_user_kakaoId}</th>
@@ -38,15 +38,41 @@
                 <th>${str_user_joindate}</th>
                 <th>${str_user_findinfo}</th>
                 </thead>
+            	
                 <tbody>
-                <th>vkdnj4158@naver.com</th>
-                <th>다리도비빔면</th>
-                <th>운동,미술,음악,사진찍기</th>
-                <th>2020/06/25</th>
-                <th><button class="btn btn-danger" name="mission-delete"  
-                onclick="location.href='${pageContext.request.contextPath}/manage_user_info.do'">${str_user_userdetail}</button> </th>
-                </tbody>
+                <c:forEach var="usersDto" items="${usersDtos}">
+                <tr>
+                	<td> ${usersDto.user_email}</td>
+                	<td>${usersDto.user_nickname}</td>
+                	<td>${usersDto.interesting1_large_category} ${usersDto.interesting2_large_category} ${usersDto.interesting3_large_category} ${usersDto.interesting4_large_category}</td>
+                	<td>${usersDto.sign_up_date}</td>
+                	<td><button class="btn btn-danger" name="mission-delete"  
+                onclick="location.href='${pageContext.request.contextPath}/manage_user_info.do'">${str_user_userdetail}</button> </td>
+ 				</tr>
+ 				</c:forEach>
+ 				</tbody>
             </table>
+        </section>
+        <br>
+        <section>
+		<c:if test="${cnt gt 0}">
+			<c:if test="${startPage gt pageBlock}">
+				<a href="manage_user.do">[◀◀]</a>
+				<a href="manage_user.do?pageNum=${startPage-pageBlock}">[◀]</a>
+			</c:if>
+			<c:forEach var="i" begin="${startPage}" end="${endPage}">
+				<c:if test="${i eq currentPage}"> 
+					<b>[${i}]</b>				
+				</c:if>
+				<c:if test="${i ne currentPage}">
+					<a href="manage_user.do?pageNum=${i}">[${i}]</a>				
+				</c:if>
+			</c:forEach>	
+			<c:if test="${pageCount gt endPage}">
+				<a href="manage_user.do?pageNum=${startPage+pageBlock}">[▶]</a>
+				<a href="manage_user.do?pageNum=${pageCount}">[▶▶]</a>		
+			</c:if>
+		</c:if>        
         </section>
     </article>
     <div>
