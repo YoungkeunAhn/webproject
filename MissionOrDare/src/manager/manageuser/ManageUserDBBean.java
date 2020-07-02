@@ -7,12 +7,20 @@ import org.apache.ibatis.session.SqlSession;
 
 import Dtos.UsersDto;
 
-public class ManageUserDBBean {
+
+public class ManageUserDBBean implements ManageUserDao{
 	SqlSession session = SqlMapClient.getSession();
+	
+	public int getCount() {
+		return session.selectOne( "Mission.getCount" );
+	}
 	
 	public List<UsersDto> getArticles( Map<String, Integer> map ) {
 		return session.selectList( "Mission.getArticles", map );
 	}
-
+	public UsersDto getArticle() {		
+		return session.selectOne( "Board.getArticle");
+	}
+	
 	
 }

@@ -17,19 +17,19 @@
         <section class="mission-info">
             <table class="table">
                 <tr>
-                    <th>유저닉네임</th>
+                    <th>${str_user_nickname}</th>
                     <td><span>다리도비빔면</span></td>
                 </tr>
                 <tr>
-                    <th>유저이메일</th>
+                    <th>${str_user_kakaoId}</th>
                     <td>vkdnj4158@naver.com</td>
                 </tr>
                 <tr>
-                    <th>유저패스워드</th>
+                    <th>${str_user_passwd}</th>
                     <td>siginpingping2</td>
                 </tr>
                 <tr>
-                    <th>유저성별</th>
+                    <th>${str_user_gender}</th>
                     <td>남자</td>
                 </tr>
                 <tr>
