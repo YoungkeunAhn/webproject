@@ -24,7 +24,9 @@ public class ManageCategory implements CommandHandler{
 	@RequestMapping("/manage_category")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		int pageSize = 2;					// 한 페이지당 글 개수
+		String category = request.getParameter("category");
+		
+		int pageSize = 5;					// 한 페이지당 글 개수
 		int pageBlock = 3;					// 한 번에 출력할 페이지 개수
 		
 		int cnt = 0;
@@ -37,8 +39,13 @@ public class ManageCategory implements CommandHandler{
 		int startPage = 0;
 		int endPage = 0;
 		int pageCount = 0;
-
-		cnt = manageMissionDao.getCount();
+		
+		if(category == null || category.equals("")) {
+			cnt = manageMissionDao.getCount();
+		} else {
+			cnt = manageMissionDao.getSearchCount(category);
+		}
+		
 		
 		pageNum = request.getParameter( "pageNum" );
 		if( pageNum == null ) {
@@ -69,13 +76,25 @@ public class ManageCategory implements CommandHandler{
 		request.setAttribute( "startPage", startPage );
 		request.setAttribute( "endPage", endPage );
 		request.setAttribute( "pageCount", pageCount );
-		 
-		if( cnt > 0 ) {
-			Map<String, Integer> map = new Hashtable<String, Integer>();
-			map.put("start", start);
-			map.put("end", end);
-			List<MissionCategoryDto> missionCategoryDtos = manageMissionDao.getMissionCategorys(map);
-			request.setAttribute( "missionCategoryDtos", missionCategoryDtos );
+		
+		if(category == null || category.equals("")) {
+			if( cnt > 0 ) {
+				Map<String, Integer> map = new Hashtable<String, Integer>();
+				map.put("start", start);
+				map.put("end", end);
+				List<MissionCategoryDto> missionCategoryDtos = manageMissionDao.getMissionCategorys(map);
+				request.setAttribute( "missionCategoryDtos", missionCategoryDtos );
+			}
+		} else {
+			if( cnt > 0 ) {
+				Map<String, Object> map = new Hashtable<String, Object>();
+				map.put("start", start);
+				map.put("end", end);
+				map.put("category", category);
+				List<MissionCategoryDto> missionCategoryDtos = manageMissionDao.getSearchCategorys(map);
+				request.setAttribute( "missionCategoryDtos", missionCategoryDtos );
+				request.setAttribute("category", category);
+			}
 		}
 		
 		return new ModelAndView("manager/pages/manage_category");

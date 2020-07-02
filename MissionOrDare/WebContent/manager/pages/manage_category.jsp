@@ -23,7 +23,7 @@
         <section class="mission-search">
         <form method="post" action="manage_category.do" name="categoryho" onsubmit="return searchCheck()"> 
             <label>
-                <input class="form-control" type="search" name="src1">
+                <input class="form-control" type="search" name="category">
    	       </label>
    	            <button class="btn btn-primary btn-search" type="submit">${str_search}</button>
   			</form>      
@@ -47,13 +47,14 @@
 	                <th onclick="event.cancelBubble=true"><button class="btn btn-primary" name="category-insert"
                 			onclick="location.href='${pageContext.request.contextPath}/manage_mission_insert.do'">${str_category_missionadd}</button></th>
                		<th onclick="event.cancelBubble=true"><button class="btn btn-danger" name="category-delete" 
-                			onclick="location.href='${pageContext.request.contextPath}/manage_category_deletePro.do?id=${missionCategoryDtos[0].mission_category_id}'">${str_delete}</button></th>
+                			onclick="location.href='${pageContext.request.contextPath}/manage_category_deletePro.do?id=${missionCategoryDto.mission_category_id}'">${str_delete}</button></th>
                 </tr>
                 </c:forEach>
 	            
                 </tbody>
             </table>
             <br>
+            <c:if test="${category eq null}">
 	            <c:if test="${cnt gt 0}">
 					<c:if test="${startPage gt pageBlock}">
 						<a href="manage_category.do">[◀◀]</a>
@@ -72,6 +73,27 @@
 						<a href="manage_category.do?pageNum=${pageCount}">[▶▶]</a>		
 					</c:if>	
 				</c:if>
+			</c:if>
+			<c:if test="${category ne null}">
+	            <c:if test="${cnt gt 0}">
+					<c:if test="${startPage gt pageBlock}">
+						<a href="manage_category.do?category=${category}">[◀◀]</a>
+						<a href="manage_category.do?pageNum=${startPage-pageBlock}&category=${category}">[◀]</a>
+					</c:if>
+					<c:forEach var="i" begin="${startPage}" end="${endPage}">
+						<c:if test="${i eq currentPage}"> 
+							<b>[${i}]</b>				
+						</c:if>
+						<c:if test="${i ne currentPage}">
+							<a href="manage_category.do?pageNum=${i}&category=${category}">[${i}]</a>				
+						</c:if>
+					</c:forEach>	
+					<c:if test="${pageCount gt endPage}">
+						<a href="manage_category.do?pageNum=${startPage+pageBlock}&category=${category}">[▶]</a>
+						<a href="manage_category.do?pageNum=${pageCount}&category=${category}">[▶▶]</a>		
+					</c:if>	
+				</c:if>
+			</c:if>
         </section>
     </article>
     <%@include file="manage_footer.jsp"%>

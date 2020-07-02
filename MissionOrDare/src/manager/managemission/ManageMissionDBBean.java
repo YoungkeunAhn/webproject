@@ -20,7 +20,13 @@ public class ManageMissionDBBean implements ManageMissionDao {
 	public int getCount() {
 		return session.selectOne("Mission.getCount");
 	}
+	public int getSearchCount(String category) {
+		return session.selectOne("Mission.getSearchCount", category);
+	}
 	public List<MissionCategoryDto> getMissionCategorys( Map<String, Integer> map ) {
 		return session.selectList("Mission.getMissionCategorys", map);
+	}
+	public List<MissionCategoryDto> getSearchCategorys( Map<String, Object> map) {
+		return session.selectList("Mission.getSearchCategorys", map);
 	}
 }

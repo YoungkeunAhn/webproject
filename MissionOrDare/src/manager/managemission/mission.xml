@@ -11,11 +11,22 @@
 	<select id="getCount" resultType="int">
 		select count(*) from MOD_MissionCategory
 	</select>
+	<select id="getSearchCount" resultType="int">
+		select count(*) from MOD_MissionCategory where large_category like '%'||#{category}||'%'  or small_category like '%'||#{category}||'%'
+	</select>
 	<select id="getMissionCategorys" parameterType="java.util.Map" resultType="Dtos.MissionCategoryDto">
 		select mission_category_id, large_category, small_category, r
 		from (select mission_category_id, large_category, small_category, rownum r
 		from (select mission_category_id, large_category, small_category
 		from MOD_MissionCategory order by large_category, small_category) order by large_category, 	small_category)
+		where r &gt;= #{start} and r &lt;= #{end}
+	</select>
+	<select id="getSearchCategorys" parameterType="java.util.Map" resultType="Dtos.MissionCategoryDto">
+		select mission_category_id, large_category, small_category, r
+		from (select mission_category_id, large_category, small_category, rownum r
+		from (select mission_category_id, large_category, small_category
+		from MOD_MissionCategory where large_category like '%'||#{category}||'%'  or small_category like '%'||#{category}||'%' 
+		order by large_category, small_category) order by large_category, 	small_category)
 		where r &gt;= #{start} and r &lt;= #{end}
 	</select>
 	<delete id="deleteCategory" parameterType="String">
