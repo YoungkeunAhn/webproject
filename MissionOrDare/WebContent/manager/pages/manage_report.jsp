@@ -43,10 +43,11 @@
         <section class="mission-table">
             <table class="table">
                 <thead>
-                <th> </th>
+                <th>체크박스</th>
                 <th>${str_user_nickname}</th>
                 <th>${str_report_category}</th>
                 <th>${str_report_type}</th>
+                <th>신고내용</th>
                 <th>${str_report_reportdate}</th>
                 <th>메시지</th>
                 </thead>
@@ -54,7 +55,8 @@
                 <th><input type="checkbox"></th>
                 <th>kkoddakzzi</th>
                 <th>KIMONG</th>
-                <th>기타: 형님한테 언니라고 함ㅋ</th>
+                <th>기타</th>
+                <th>형님한테 언니라고 함ㅋ</th>
                 <th>2020-06-04 16:09</th>
                 <th>
                 <button class="btn btn-danger" name="mission-delete"
