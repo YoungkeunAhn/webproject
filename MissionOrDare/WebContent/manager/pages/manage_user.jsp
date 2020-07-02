@@ -22,7 +22,7 @@
     </div>
     <article>
         <section class="mission-search">
-        	<form method="post" action="amasdam.do" name="userho" onsubmit="return userCheck()">
+        	<form method="post" action="manage_user.do" name="userho" onsubmit="return userCheck()">
             <label>
                 <input class="form-control" type="search" name="search" placeholder="유저 닉네임을 입력하셈">
             </label>
