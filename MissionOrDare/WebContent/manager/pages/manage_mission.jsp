@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" content="text/css" href="${project}assets/css/manage.css">
     <script src="${project}assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>
     <title>미션관리페이지</title>
 
 </head>
@@ -57,24 +60,13 @@
     </article>
     <%@include file="manage_footer.jsp"%>
 </div>
-<div id="missionInfoModal">
+<div id="missionInfoModal" class="modal">
 </div>
-<script type="text/javascript">
-//<!--
-	var url= 'manager/pages/manage_mission_info.jsp';
-	$('tr').click(
-		function(event){
-			$('#missionInfoModal').onload(url, function(){
-				      event.preventDefault();
-				 
-				      $(this).modal({
-				        fadeDuration: 250
-				      });
-				    });
-			});
-		}
-	);
-//-->
+<script>
+    $(document).ready(function () {
+            $('#missionInfoModal').load('manage_mission_info.do');
+        }
+    );
 </script>
 </body>
 </html>

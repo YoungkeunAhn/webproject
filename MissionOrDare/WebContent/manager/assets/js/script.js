@@ -93,10 +93,13 @@ function searchCheck() {
 }
 
 
-
-
-
-
-
-
-
+//MissionInfomodal
+function OnInfoModal() {
+	var infoModal = document.getElementById("missionInfoModal");
+	infoModal.style.display="block"
+}
+function CloseInfoModal(){
+	var infoModal = document.getElementById("missionInfoModal");
+	infoModal.style.display="none";
+	document.getElementsByName()
+}
