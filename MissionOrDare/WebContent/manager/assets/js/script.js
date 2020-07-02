@@ -10,6 +10,7 @@ var missionlargecategoryerror = "대분류를 선택해주세요";
 var missionsmallcategoryerror = "소분류를 선택해주세요";
 var missionscoreerror = "점수를 입력해주세요";
 var inputTypeError = '올바른 값을 입력하시오!!!!!!!!!!!!!!!!!!!!!!!!!!';
+var manageriderror = "관리자님관리자아이디를 입력해주세요";
 //로그인
 function logincheck() {
     if(! loginform.manager_id.value ){
@@ -153,9 +154,19 @@ function searchCheck4() {
 		return false;
 	}
 }
+///////////////////////////////////////////////
+//manage_manager 페이지
 //managePage - 값 입력여부
 function searchCheck5() {
 	 if( ! managerho.src1.value ) {
+		alert( missionContentError );
+		managerho.src1.focus();
+		return false;
+	}
+}
+//managermanagePage Login
+function searchCheck6() {
+	 if( ! managerho.insertManagerId.value ) {
 		alert( missionContentError );
 		managerho.src1.focus();
 		return false;

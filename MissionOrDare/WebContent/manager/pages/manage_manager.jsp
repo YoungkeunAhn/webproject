@@ -22,24 +22,25 @@
     </div>
     <article>
         <section class="manager-search">
-        <form method="post" action="manage_manager.do" name="managerho" onclick="return searchCheck5()">
+        <form method="post" action="manage_manager.do" name="managerho" onsubmit="return searchCheck5()">
             <label>
-                <input class="form-control" type="search" name="serch" placeholder="관리자 닉네임을 입력하셈">
+                <input class="form-control" type="search" name="src1" placeholder="관리자 닉네임을 입력하셈">
             </label>
             <button class="btn btn-primary" name="search-findManager">검색</button>
         </form>
         </section>
         <section class="manager-insert">
-        	<form method="post" action="${pageContext.request.contextPath}/manage_manager_insertPro.do">
+        	<form method="post" name="managerLoginCheck" action="${pageContext.request.contextPath}/manage_manager_insertPro.do"
+        	onsubmit="">
         		<table class="table">
         			<tr>
         				<th>아이디</th>
         				<th>
-        					<label><input class="form-control" type="text" name="insert-manager-id"></label>
+        					<label><input class="form-control" type="text" name="insertManagerId"></label>
         				</th>
         				<th>비밀번호</th>
         				<th>
-        					<label><input class="form-control" type="password" name="insert-manager-passwd"></label>
+        					<label><input class="form-control" type="password" name="insertManagerPasswd"></label>
         				</th>
        					<th colspan="2">
        						<button class="btn btn-primary" type="submit" name="btn-insert-manger">등록</button>
@@ -59,7 +60,7 @@
                 <th>삭제</th>
                 </thead>
                 <tbody>
-                <th>GM영근</th>
+                <th>GM레전드광훈</th>
                 <th><label><input type="password" name="manger-passwd"></label></th>
                 <th><button class="btn btn-danger" name="btn-manager-delete"  
                 onclick="location.href='${pageContext.request.contextPath}/manage_manager_deletePro.do'">삭제</button></th>
