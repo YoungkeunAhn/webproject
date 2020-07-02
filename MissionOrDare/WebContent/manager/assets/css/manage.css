@@ -157,7 +157,7 @@ body .modal div button{ width: 100px; height: 40px; margin: 10px auto; backgroun
     mission_modal
 
 ****************************************/
-body #missionInfoModal{
+body .modal{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */

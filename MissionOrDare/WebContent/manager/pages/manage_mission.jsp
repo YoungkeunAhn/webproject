@@ -47,7 +47,7 @@
                 <th>${str_delete}</th>
                 </thead>
                 <tbody>
-                <tr>
+                 <tr onclick="OnInfoModal()">
 	                <th>1</th>
 	                <th>미술/그리기</th>
 	                <th>라이언이 부탁한 자화상</th>
