@@ -9,8 +9,8 @@ public class ManageManagerDBBean implements ManageManagerDao{
 	SqlSession session = SqlMapClient.getSession();
 	
 
-	public int insertManager( ManagerDto managerDto ) {		
-		return session.insert( "Supermanager.insertManager", managerDto );		
+	public int insertManager( ManagerDto managerDto ) {
+		return session.insert("Supermanager.insertManager", managerDto);
 	}
 	
 }

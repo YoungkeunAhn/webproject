@@ -36,15 +36,15 @@
         			<tr>
         				<th>아이디</th>
         				<th>
-        					<label><input class="form-control" type="text" name="insertManagerId"></label>
+        					<label><input class="form-control" type="text" name="manager_id"></label>
         				</th>
         				<th>비밀번호</th>
         				<th>
-        					<label><input class="form-control" type="password" name="insertManagerPasswd"></label>
+        					<label><input class="form-control" type="password" name="manager_passwd"></label>
         				</th>
        					<th colspan="2">
-       						<button class="btn btn-primary" type="submit" name="btn-insert-manger">등록</button>
-       						<button class="btn btn-danger" type="reset" name="btn-reset-manager">취소</button>
+       						<button class="btn btn-primary" type="submit">등록</button>
+       						<button class="btn btn-danger" type="reset">취소</button>
        					</th>
 					</tr>        			
         		</table>
@@ -61,7 +61,7 @@
                 </thead>
                 <tbody>
                 <th>GM레전드광훈</th>
-                <th><label><input type="password" name="managerPasswd"></label></th>
+                <th><label><input type="password" name="manager_passwd"></label></th>
                 <th><button class="btn btn-danger" name="btnmanagerdelete" type="submit">삭제</button></th>
                 </tbody>
             </table>
