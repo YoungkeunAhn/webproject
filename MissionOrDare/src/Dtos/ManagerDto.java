@@ -1,6 +1,6 @@
 package Dtos;
 
-public class ManagerDto {
+public class ManagerDto{
 
 	private String manager_id;
 	private String manager_passwd;
