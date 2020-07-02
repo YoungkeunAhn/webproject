@@ -1,4 +1,4 @@
-package handler.manager.member;
+package handler.manager.managemanager;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,10 +10,10 @@ import org.springframework.web.servlet.ModelAndView;
 import handler.CommandHandler;
 
 @Controller
-public class ManageMissionInfo implements CommandHandler{
-	@RequestMapping("/manage_mission_info")
+public class manageManagerDeletePro implements CommandHandler {
+	@RequestMapping("/manage_manager_deletePro")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		return new ModelAndView("manager/pages/manage_mission_info");
+		return new ModelAndView("manager/pages/manage_manager_deletePro");
 	}
 }

@@ -13,6 +13,7 @@
 		<script type="text/javascript">
 			<!--
 			alert( "아디 없슴" );
+			history.back()
 			//-->
 		</script>
 	</c:if>

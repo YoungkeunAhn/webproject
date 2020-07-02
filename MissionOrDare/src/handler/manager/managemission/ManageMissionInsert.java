@@ -1,4 +1,4 @@
-package handler.manager.member;
+package handler.manager.managemission;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,11 +9,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import handler.CommandHandler;
 
+
 @Controller
-public class ManageCategoryInsert implements CommandHandler{
-	@RequestMapping("/manage_category_insert")
+public class ManageMissionInsert implements CommandHandler{
+	@RequestMapping("/manage_mission_insert")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		return new ModelAndView("manager/pages/manage_category_insert");
+		return new ModelAndView("manager/pages/manage_mission_insert");
 	}
 }

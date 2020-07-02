@@ -9,11 +9,11 @@ public class MemberManagerDBbean implements MemberManagerDao {
 	SqlSession session = SqlMapClient.getSession();
 	
 	public ManagerDto getMember( String manager_id ) {
-		return session.selectOne("Mission.getMember", manager_id);
+		return session.selectOne("Member.getMember", manager_id);
 	}
 	
 	public int check( String manager_id ) {
-		return session.selectOne("Mission.check", manager_id);
+		return session.selectOne("Member.check", manager_id);
 	}
 	
 	public int check( String manager_id, String manager_passwd ) {

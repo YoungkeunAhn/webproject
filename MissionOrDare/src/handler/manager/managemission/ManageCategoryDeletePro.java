@@ -1,4 +1,4 @@
-package handler.manager.member;
+package handler.manager.managemission;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

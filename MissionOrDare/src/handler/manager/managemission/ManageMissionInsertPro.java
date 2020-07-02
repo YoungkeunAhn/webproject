@@ -1,4 +1,4 @@
-package handler.manager.member;
+package handler.manager.managemission;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -12,21 +12,15 @@ import handler.CommandHandler;
 import manager.member.MemberManagerDao;
 
 @Controller
-public class ManageLoginPro implements CommandHandler{
+public class ManageMissionInsertPro implements CommandHandler{
 	@Resource(name="memberManagerDao")
 	private MemberManagerDao memberManagerDao;
 	
-	@RequestMapping("/manage_loginPro")
+	@RequestMapping("/manage_mission_insertPro")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		String manager_id = request.getParameter( "manager_id" );
-		String manager_passwd = request.getParameter( "manager_passwd" );
-		int result = memberManagerDao.check( manager_id, manager_passwd );
-		
-		request.setAttribute( "result", result ); 
-		request.setAttribute( "manager_id", manager_id );
-		
-		return new ModelAndView("manager/pages/manage_loginPro");
+
+		return new ModelAndView("manager/pages/manage_mission_insertPro");
 	}
 }

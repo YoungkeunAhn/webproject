@@ -1,4 +1,4 @@
-package handler.manager.member;
+package handler.manager.managemission;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,10 +10,10 @@ import org.springframework.web.servlet.ModelAndView;
 import handler.CommandHandler;
 
 @Controller
-public class ManageMission implements CommandHandler{
-	@RequestMapping("/manage_mission")
+public class ManageMissionInfo implements CommandHandler{
+	@RequestMapping("/manage_mission_info")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		return new ModelAndView("manager/pages/manage_mission");
+		return new ModelAndView("manager/pages/manage_mission_info");
 	}
 }
