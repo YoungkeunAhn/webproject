@@ -45,7 +45,7 @@ function messagecheck() {
 }
 //category_insert
 function categoryinsertcheck() {
-	var checkKor = /^[0-9가-힣ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;
+	var checkKor = /^[0-9ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;
 	var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
 
 	if( ! categoryinsertform.largeCategory.value ) {
@@ -53,13 +53,16 @@ function categoryinsertcheck() {
 		categoryinsertform.largeCategory.focus();
 		return false;
 		
-	}else if(checkKor.test(categoryinsertform.largeCategory.value) || checkSpc.test(categoryinsertform.largeCategory.value)){
+	} else if(checkSpc.test(categoryinsertform.largeCategory.value) || checkKor.test(categoryinsertform.largeCategory.value)){
 		alert(inputTypeError);
 		categoryinsertform.largeCategory.focus();
-		return false;
-		
-	}else if( ! categoryinsertform.smallCategory.value ) {
+		return false;	
+	} else if( ! categoryinsertform.smallCategory.value ) {
 		alert( categorysmallerror );
+		categoryinsertform.smallCategory.focus();
+		return false;
+	} else if(checkSpc.test(categoryinsertform.smallCategory.value) || checkKor.test(categoryinsertform.smallCategory.value)){
+		alert(inputTypeError);
 		categoryinsertform.smallCategory.focus();
 		return false;
 	}
@@ -117,11 +120,19 @@ function CloseInfoModal(){
 
 //category - 값 입력여부
 function searchCheck() {
+	var checkKor = /^[0-9ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;
+	var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
+	var regExp = /\s/g;	//띄어쓰기
 	if( ! categoryho.src1.value ) {
 		alert( missionContentError );
 		categoryho.src1.focus();
 		return false;
+	} else if( checkKor.test(categoryho.src1.value) || checkSpc.test(categoryho.src1.value) || regExp.test(categoryho.src1.value) ) {
+		alert( inputTypeError );
+		categoryho.src1.focus();
+		return false;
 	}
+	
 }
 // content - 값 입력여부
 function searchCheck1() {
