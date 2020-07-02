@@ -92,19 +92,20 @@ function missioninsertcheck() {
 // manage_user
 
 function userCheck() {
+	var checkKor = /^[ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;	//숫자는 입력가능하다
+	var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
+	var regExp = /\s/g;	//띄어쓰기
 	if( ! userho.search.value ) {
 		alert( missionContentError );
+		userho.search.focus();
+		return false;
+	} else if( checkKor.test(userho.search.value) || checkSpc.test(userho.search.value) || regExp.test(userho.search.value) ) {
+		alert( inputTypeError );
+		userho.search.focus();
 		return false;
 	}
 }
 
-// category
-function searchCheck() {
-	var searchValue = document.getElementsByName('src1');
-	if(! searchValue.value ){
-		alert(missionContentError);
-	}
-}
 
 
 //MissionInfomodal
@@ -136,20 +137,29 @@ function searchCheck() {
 }
 // content - 값 입력여부
 function searchCheck1() {
-	 if( ! contentho.src1.value ) {
+	var checkKor = /^[0-9ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;
+	var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
+	var regExp = /\s/g;	//띄어쓰기
+	if( ! contentho.src1.value ) {
 		alert( missionContentError );
 		contentho.src1.focus();
 		return false;
+	} else if( checkKor.test(contentho.src1.value) || checkSpc.test(contentho.src1.value) || regExp.test(contentho.src1.value) ) {
+		alert( inputTypeError );
+		contentho.src1.focus();
+		return false
 	}
 }
 // mission - 값 입력여부
 function searchCheck2() {
-	 var check = /[가-힣]/;
+	var checkKor = /^[0-9ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;
+	var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
+	var regExp = /\s/g;	//띄어쓰기
 	 if( ! missionho.src1.value ) {
 		alert( missionContentError );
 		missionho.src1.focus();
 		return false;
-	} else if( ! check.test(missionho.src1.value) ) {
+	} else if(  checkKor.test(missionho.src1.value) || checkSpc.test(missionho.src1.value) || regExp.test(missionho.src1.value) ) {
 		alert( inputTypeError );
 		return false;
 	}
