@@ -181,5 +181,7 @@ function logincheck1() {
 function managepasswdcheck() {
 	if( ! supermanagerho.managerPasswd.value ) {
 		alert( managerpasswderror );
+		supermanagerho.managerPasswd.focus();
+		return false;
 	}
 }

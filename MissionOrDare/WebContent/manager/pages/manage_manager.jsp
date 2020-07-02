@@ -52,7 +52,7 @@
         </section>
         <hr>
         <section class="manager-table">
-        	<form method="post" action="manage_manager.do" name="supermanagerho" onsubmit="return managepasswdcheck()" >
+        	<form method="post" action="manage_manager_deletePro.do" name="supermanagerho" onsubmit="return managepasswdcheck()" >
             <table class="table">
                 <thead>
                 <th>관리자 닉네임</th>
@@ -61,9 +61,8 @@
                 </thead>
                 <tbody>
                 <th>GM레전드광훈</th>
-                <th><label><input type="password" name="mangerPasswd"></label></th>
-                <th><button class="btn btn-danger" name="btn-manager-delete" type="submit"  
-                onclick="location.href='${pageContext.request.contextPath}/manage_manager_deletePro.do'">삭제</button></th>
+                <th><label><input type="password" name="managerPasswd"></label></th>
+                <th><button class="btn btn-danger" name="btnmanagerdelete" type="submit">삭제</button></th>
                 </tbody>
             </table>
             </form>
