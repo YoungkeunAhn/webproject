@@ -8,6 +8,7 @@ var missiontitleerror = "제목을 입력해주라좀~~";
 var missionContentError = "내용을 입력하세요";
 var missionlargecategoryerror = "대분류를 선택해주세요";
 var missionsmallcategoryerror = "소분류를 선택해주세요";
+var missionscoreerror = "점수를 입력해주세요";
 //로그인
 function logincheck() {
     if(! loginform.manager_id.value ){
@@ -66,9 +67,12 @@ function missioninsertcheck() {
 	} else if( missioninsertForm.largecategory.value=="" ) {
 		alert( missionlargecategoryerror );
 		return false;
-	} else if( missioninsertForm.largecategory.value=="" ) {
+	} else if( missioninsertForm.smallcategory.value=="" ) {
 		alert( missionsmallcategoryerror );
 		return false;
+	} else if( ! missioninsertForm.missionscore.value ) {
+		alert( missionscoreerror );
+		missioninsertForm.missionscore.focus();
+		return false;
 	}
-	
 }

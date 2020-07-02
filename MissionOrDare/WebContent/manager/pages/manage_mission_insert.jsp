@@ -84,7 +84,7 @@
                         </td>
                         <td>
                             <label>
-                                <input class="form-control" type="number" name="missonscore">
+                                <input class="form-control" type="number" name="missionscore">
                             </label>
                         </td>
                         <td>
