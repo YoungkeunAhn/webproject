@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import handler.CommandHandler;
-import manager.member.MemberManagerDao;
+import manager.managemission.ManageMissionDao;
 
 @Controller
 public class ManageMissionInsertPro implements CommandHandler{
-	@Resource(name="memberManagerDao")
-	private MemberManagerDao memberManagerDao;
+	@Resource
+	private ManageMissionDao manageMissionDao;
 	
 	@RequestMapping("/manage_mission_insertPro")
 	@Override

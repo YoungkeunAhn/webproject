@@ -6,6 +6,8 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
+import manager.managemission.ManageMissionDBBean;
+import manager.managemission.ManageMissionDao;
 import manager.member.MemberManagerDBbean;
 import manager.member.MemberManagerDao;
 
@@ -16,6 +18,11 @@ public class CreateBean {
 		MemberManagerDBbean memberManagerDao = new MemberManagerDBbean();
 		return memberManagerDao;
 	}	
+	@Bean
+	public ManageMissionDao manageMissionDao() {
+		ManageMissionDBBean manageMissionDao = new ManageMissionDBBean();
+		return manageMissionDao;
+	}
 	
 	@Bean
 	public ViewResolver viewResolver() {

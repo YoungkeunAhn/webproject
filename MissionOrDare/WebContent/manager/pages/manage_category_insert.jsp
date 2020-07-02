@@ -27,7 +27,7 @@
                 </tr>
                 <tr>
                     <th>소분류</th>
-                    <td><label><input type="text" name=smallCategory></label></td>
+                    <td><label><input type="text" name="smallCategory"></label></td>
                 </tr>
                 <tr>
                     <th class="btn-line" colspan="2">

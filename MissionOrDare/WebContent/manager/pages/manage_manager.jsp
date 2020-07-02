@@ -28,7 +28,7 @@
             <button class="btn btn-primary" name="search-findManager">검색</button>
         </section>
         <section class="manager-insert">
-        	<form>
+        	<form method="post" action="${pageContext.request.contextPath}/manage_manager_insertPro.do">
         		<table class="table">
         			<tr>
         				<th>아이디</th>

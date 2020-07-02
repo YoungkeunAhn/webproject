@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  	
+<mapper namespace="Mission">
+	<insert id="insertCategory" parameterType="Dtos.MissionCategoryDto">
+		insert into MOD_MissionCategory values(
+		'category'||lpad(seq_mission_category.nextval,5,0) ,#{large_category}, #{small_category}, #{category_image, jdbcType=VARCHAR} )
+	</insert>
+</mapper>
