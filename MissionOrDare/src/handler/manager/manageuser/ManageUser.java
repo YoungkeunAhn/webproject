@@ -68,13 +68,27 @@ public class ManageUser implements CommandHandler{
 		request.setAttribute( "endPage", endPage );
 		request.setAttribute( "pageCount", pageCount );
 		
-		if( cnt > 0 ) {
-			Map<String, Integer> map = new Hashtable<String, Integer>();
-			map.put( "start", start );
-			map.put( "end", end );
-			List<UsersDto> usersDtos = manageUserDao.getArticles( map );
-			request.setAttribute( "usersDtos", usersDtos );
+
+		String searchUser = request.getParameter("search");
+		if(searchUser ==null || searchUser.equals("")) {
+			if( cnt > 0 ) {
+				Map<String, Integer> map = new Hashtable<String, Integer>();
+				map.put( "start", start );
+				map.put( "end", end );
+				List<UsersDto> usersDtos = manageUserDao.getArticles( map );
+				request.setAttribute( "usersDtos", usersDtos );
+			}
+		}else {
+			if( cnt > 0 ) {
+				Map<String, Object> mapp = new Hashtable<String, Object>();
+				mapp.put( "start", start );
+				mapp.put( "end", end );
+				mapp.put( "searchUser", searchUser );
+				List<UsersDto> usersDtos = manageUserDao.findArticles( mapp );
+				request.setAttribute( "usersDtos", usersDtos );
+			}
 		}
+		
 		return new ModelAndView("/manager/pages/manage_user");
 	}
 }

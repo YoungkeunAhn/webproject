@@ -18,63 +18,63 @@
             <table class="table">
                 <tr>
                     <th>${str_user_nickname}</th>
-                    <td><span>다리도비빔면</span></td>
+                    <td><span>${usersDto.user_nickname}</span></td>
                 </tr>
                 <tr>
                     <th>${str_user_kakaoId}</th>
-                    <td>vkdnj4158@naver.com</td>
+                    <td>${usersDto.user_email}</td>
                 </tr>
                 <tr>
                     <th>${str_user_passwd}</th>
-                    <td>siginpingping2</td>
+                    <td>${usersDto.user_passwd}</td>
                 </tr>
                 <tr>
                     <th>${str_user_gender}</th>
-                    <td>남자</td>
+                    <td>${usersDto.gender}</td>
                 </tr>
                 <tr>
-                    <th>유저생일</th>
-                    <td>1994.12.17</td>
+                    <th>${str_user_withdrawal_date}</th>
+                    <td>${usersDto.withdrawal_date}</td>
                 </tr>
                 <tr>
-                    <th>유저집</th>
-                    <td>서울</td>
+                    <th>${str_user_location}</th>
+                    <td>${usersDto.location}</td>
                 </tr>
                 <tr>
-                    <th>유저직업</th>
-                    <td>언더코리안탑클래스노블레스래퍼</td>
+                    <th>${str_user_job}</th>
+                    <td>${usersDto.job}</td>
                 </tr>
                 <tr>
-                    <th>유저점수</th>
-                    <td>350</td>
+                    <th>${str_user_score}</th>
+                    <td>${usersDto.score}</td>
                 </tr>
                 <tr>
-                    <th>유저탈퇴날짜</th>
-                    <td></td>
+                    <th>${str_user_withdrawal_date}</th>
+                    <td>${usersDto.withdrawal_date}</td>
                 </tr>
                 <tr>
-                    <th>유저 관심분야1</th>
-                    <td>운동</td>
+                    <th>${str_user_interesting1}</th>
+                    <td>${usersDto.interesting1_large_category}</td>
                 </tr>
                 <tr>
-                    <th>유저 관심분야2</th>
-                    <td>예술</td>
+                    <th>${str_user_interesting2}</th>
+                    <td>${usersDto.interesting2_large_category}</td>
                 </tr>
                 <tr>
-                    <th>유저 관심분야3</th>
-                    <td>음악</td>
+                    <th>${str_user_interesting3}</th>
+                    <td>${usersDto.interesting3_large_category}</td>
                 </tr>
                 <tr>
-                    <th>유저 관심분야4</th>
-                    <td>등산</td>
+                    <th>${str_user_interesting4}</th>
+                    <td>${usersDto.interesting4_large_category}</td>
                 </tr>
                 <tr>
-                    <th>유저 가입일</th>
-                    <td>2020/06/25</td>
+                    <th>${str_user_joindate}</th>
+                    <td>${usersDto.sign_up_date}</td>
                 </tr>
                 <tr>
                     <th class="btn-line" colspan="4">
-                        <button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/manage_user_deletePro.do'">탈퇴</button>
+                        <button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/manage_user_deletePro.do?user_nickname=${usersDto.user_nickname}'">탈퇴</button>
                         <button class="btn btn-danger" onclick="history.back()">취소</button>
                     </th>
                 </tr>

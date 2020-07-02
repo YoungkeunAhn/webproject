@@ -18,9 +18,13 @@ public class ManageUserDBBean implements ManageUserDao{
 	public List<UsersDto> getArticles( Map<String, Integer> map ) {
 		return session.selectList( "Mission.getArticles", map );
 	}
-	public UsersDto getArticle() {		
-		return session.selectOne( "Board.getArticle");
+	public UsersDto getArticle(String user_nickname) {		
+		return session.selectOne( "Mission.getArticle",user_nickname);
 	}
-	
-	
+	public int deleteArticle( String user_nickname) {
+		return session.delete("Mission.deleteArticle", user_nickname);
+	}
+	public List<UsersDto> findArticles( Map<String, Object> mapp ) {
+		return session.selectList( "Mission.findArticles", mapp );
+	} 
 }

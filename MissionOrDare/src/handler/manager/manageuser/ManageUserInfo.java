@@ -1,9 +1,5 @@
 package handler.manager.manageuser;
 
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Map;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,9 +21,10 @@ public class ManageUserInfo implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		Map<String, Integer> map = new Hashtable<String, Integer>();
-		List<UsersDto> usersDtos = manageUserDao.getArticles( map );
-		request.setAttribute( "usersDtos", usersDtos );
+		String user_nickname = request.getParameter( "user_nickname" );
+		UsersDto usersDto = manageUserDao.getArticle( user_nickname );
+		
+		request.setAttribute( "usersDto", usersDto );
 		
 		return new ModelAndView("manager/pages/manage_user_info");
 	}

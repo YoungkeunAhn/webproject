@@ -9,14 +9,30 @@
 		select count(*) from mod_users
 	</select>
 	<select id="getArticles" parameterType="java.util.Map" resultType="Dtos.UsersDto">
-		select user_nickname,user_email,user_passwd,gender,age_group,date_of_birth,location,interesting1_large_category
-		,interesting2_large_category,interesting3_large_category,interesting4_large_category,job,sign_up_date,withdrawal_date,score,r
-		from (select user_nickname,user_email,user_passwd,gender,age_group,date_of_birth,location,interesting1_large_category
-		,interesting2_large_category,interesting3_large_category,interesting4_large_category,job,sign_up_date,withdrawal_date,score,rownum r from 
-		(select user_nickname,user_email,user_passwd,gender,age_group,date_of_birth,location,interesting1_large_category
-		,interesting2_large_category,interesting3_large_category
-		,interesting4_large_category,job,sign_up_date,withdrawal_date,score from mod_users order by sign_up_date desc)
+		select user_nickname,user_email,interesting1_large_category,interesting2_large_category
+		,interesting3_large_category,interesting4_large_category,sign_up_date,r
+		from (select user_nickname,user_email,interesting1_large_category,interesting2_large_category
+		,interesting3_large_category,interesting4_large_category,sign_up_date,rownum r from 
+		(select user_nickname,user_email,interesting1_large_category
+		,interesting2_large_category,interesting3_large_category,interesting4_large_category,sign_up_date from mod_users order by sign_up_date desc)
 		order by sign_up_date desc) where r &gt;= #{start} and r &lt;= #{end}
 	</select>
+	<select id="getArticle" parameterType="String" resultType="Dtos.UsersDto">
+		select * from mod_users where user_nickname=#{user_nickname}
+	</select>
+	<delete id="deleteArticle" parameterType="String">
+		delete from mod_users where user_nickname=#{user_nickname}
+	</delete>
+	<select id="findArticles" parameterType="java.util.Map" resultType="Dtos.UsersDto">
+		select user_nickname,user_email,interesting1_large_category,interesting2_large_category
+		,interesting3_large_category,interesting4_large_category,sign_up_date,r
+		from (select user_nickname,user_email,interesting1_large_category,interesting2_large_category
+		,interesting3_large_category,interesting4_large_category,sign_up_date,rownum r from 
+		(select user_nickname,user_email,interesting1_large_category
+		,interesting2_large_category,interesting3_large_category,interesting4_large_category,sign_up_date from mod_users order by sign_up_date desc)
+		order by sign_up_date desc) where r &gt;= #{start} and r &lt;= #{end} and user_nickname like '%'||#{searchUser}||'%' order by sign_up_date desc
+	</select>
+	
+	
 	
 </mapper>

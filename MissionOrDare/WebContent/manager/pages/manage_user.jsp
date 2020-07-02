@@ -24,7 +24,7 @@
         <section class="mission-search">
         	<form method="post" action="manage_user.do" name="userho" onsubmit="return userCheck()">
             <label>
-                <input class="form-control" type="search" name="search" placeholder="유저 닉네임을 입력하셈">
+                <input class="form-control" type="search" name="search" placeholder="유저 닉네임을 입력하세요">
             </label>
             <button class="btn-primary" type="submit" name="user-findinuser">${str_search}</button>
         	</form>
@@ -46,8 +46,8 @@
                 	<td>${usersDto.user_nickname}</td>
                 	<td>${usersDto.interesting1_large_category} ${usersDto.interesting2_large_category} ${usersDto.interesting3_large_category} ${usersDto.interesting4_large_category}</td>
                 	<td>${usersDto.sign_up_date}</td>
-                	<td><button class="btn btn-danger" name="mission-delete"  
-                onclick="location.href='${pageContext.request.contextPath}/manage_user_info.do'">${str_user_userdetail}</button> </td>
+                	<td> <button type="button" class="btn btn-danger" name="mission-delete" 
+                onclick="location.href='${pageContext.request.contextPath}/manage_user_info.do?user_nickname=${usersDto.user_nickname}'">${str_user_userdetail}</button> </td>
  				</tr>
  				</c:forEach>
  				</tbody>
