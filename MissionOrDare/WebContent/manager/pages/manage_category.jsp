@@ -21,20 +21,13 @@
     </div>
     <article>
         <section class="mission-search">
-        <form method="post" action="manage_category.do" name="categoryho" onsubmit="return searchCheck()">
-            <label>
-                <select name="search-category" class="form-control">
-                    <option>${str_mission_category}</option>
-                    <option>${str_title}</option>
-                    <option>${str_mission_content}</option>
-                </select>
-            </label>
+        <form method="post" action="manage_category.do" name="categoryho" onsubmit="return searchCheck()"> 
             <label>
                 <input class="form-control" type="search" name="src1">
    	       </label>
    	            <button class="btn btn-primary btn-search" type="submit">${str_search}</button>
+  			</form>      
             	<button class="btn btn-success" onclick="location.href='${pageContext.request.contextPath}/manage_category_insert.do'">${str_category_categoryadd}</button>
-        </form>
         </section>
        <section>
             <table class="table">
