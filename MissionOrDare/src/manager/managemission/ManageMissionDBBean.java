@@ -13,6 +13,10 @@ public class ManageMissionDBBean implements ManageMissionDao {
 	public int insertCategory(MissionCategoryDto missionCategoryDto) {
 		return session.insert("Mission.insertCategory", missionCategoryDto);
 	}
+	public int deleteCategory(String missionCategoryId) {
+		return session.delete("Mission.deleteCategory", missionCategoryId );
+	}
+	
 	public int getCount() {
 		return session.selectOne("Mission.getCount");
 	}

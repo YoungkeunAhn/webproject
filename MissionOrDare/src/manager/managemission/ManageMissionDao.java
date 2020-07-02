@@ -9,4 +9,5 @@ public interface ManageMissionDao {
 	public int insertCategory(MissionCategoryDto missionCategoryDto);
 	public int getCount();
 	public List<MissionCategoryDto> getMissionCategorys( Map<String, Integer> map );
+	public int deleteCategory(String missionCategoryId);
 }

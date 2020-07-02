@@ -18,4 +18,7 @@
 		from MOD_MissionCategory order by large_category, small_category) order by large_category, 	small_category)
 		where r &gt;= #{start} and r &lt;= #{end}
 	</select>
+	<delete id="deleteCategory" parameterType="String">
+		delete from MOD_MissionCategory where mission_category_id=#{missionCategoryId}
+	</delete>
 </mapper>

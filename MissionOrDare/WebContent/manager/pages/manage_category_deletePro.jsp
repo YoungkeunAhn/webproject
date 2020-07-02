@@ -8,8 +8,16 @@
     <title>카테고리 삭제 페이지</title>
 </head>
 <body>
-카테고리 삭제 페이지입니다.
-<button onclick="location.href='../index.jsp'">메인페이지로이동</button>
-<button onclick="location.href='manage_category.jsp'">카테고리 관리 페이지로 이동</button>
+	<c:if test="${result eq 0}">
+		<script type="text/javascript">
+			<!--
+			alert("실패했다리");
+			history.back();
+			//-->
+		</script>
+	</c:if>
+	<c:if test="${result eq 1}">
+		<c:redirect url="manage_category.do"/>
+	</c:if>
 </body>
 </html>
