@@ -45,8 +45,16 @@
 <c:set var="str_user_gender" value="성별"/>
 <c:set var="str_user_sign_up_date" value="생년월일"/>
 <c:set var="str_user_nickname" value="닉네임"/>
+<c:set var="str_user_location" value="지역"/>
+<c:set var="str_user_job" value="직업"/>
+<c:set var="str_user_score" value="점수"/>
 <c:set var="str_user_interesting" value="관심사"/>
 <c:set var="str_user_joindate" value="가입날짜"/>
+<c:set var="str_user_withdrawal_date" value="탈퇴날짜"/>
+<c:set var="str_user_interesting1" value="관심분야 1"/>
+<c:set var="str_user_interesting2" value="관심분야 2"/>
+<c:set var="str_user_interesting3" value="관심분야 3"/>
+<c:set var="str_user_interesting4" value="관심분야 4"/>
 <c:set var="str_user_findinfo" value="유저정보조회"/>
 <c:set var="str_user_userdetail" value="유저상세보기"/>
 
