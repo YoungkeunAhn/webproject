@@ -5,6 +5,6 @@
   	
 <mapper namespace="Supermanager">
 	<insert id="insertManager" parameterType="Dtos.ManagerDto">
-		insert into MOD_Manager (manager_id,manager_passwd) values(#{manager_id},#{manager_passwd})
+		insert into mod_manager (manager_id,manager_passwd) values(#{manager_id},#{manager_passwd})
 	</insert>
 </mapper>

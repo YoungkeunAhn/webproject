@@ -26,6 +26,8 @@ public class ManageManagerInsertPro implements CommandHandler{
 		ManagerDto managerDto = new ManagerDto();
 		managerDto.setManager_id(request.getParameter("manager_id"));
 		managerDto.setManager_passwd(request.getParameter("manager_passwd"));
+		System.out.println(managerDto.getManager_id());
+		System.out.println(managerDto.getManager_passwd());
 		
 		int result = manageManagerDao.insertManager(managerDto);
 		request.setAttribute("result", result);
