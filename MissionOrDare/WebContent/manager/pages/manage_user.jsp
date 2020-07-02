@@ -24,7 +24,7 @@
         <section class="mission-search">
         	<form method="post" action="manage_user.do" name="userho" onsubmit="return userCheck()">
             <label>
-                <input class="form-control" type="search" name="search" placeholder="유저 닉네임을 입력하세요">
+                <input class="form-control" type="search" name="searchUser" placeholder="유저 닉네임을 입력하세요">
             </label>
             <button class="btn-primary" type="submit" name="user-findinuser">${str_search}</button>
         	</form>
@@ -55,24 +55,48 @@
         </section>
         <br>
         <section>
-		<c:if test="${cnt gt 0}">
-			<c:if test="${startPage gt pageBlock}">
-				<a href="manage_user.do">[◀◀]</a>
-				<a href="manage_user.do?pageNum=${startPage-pageBlock}">[◀]</a>
-			</c:if>
-			<c:forEach var="i" begin="${startPage}" end="${endPage}">
-				<c:if test="${i eq currentPage}"> 
-					<b>[${i}]</b>				
+        <c:if test="${searchUser eq null}">
+			<c:if test="${cnt gt 0}">
+				<c:if test="${startPage gt pageBlock}">
+					<a href="manage_user.do">[◀◀]</a>
+					<a href="manage_user.do?pageNum=${startPage-pageBlock}">[◀]</a>
 				</c:if>
-				<c:if test="${i ne currentPage}">
-					<a href="manage_user.do?pageNum=${i}">[${i}]</a>				
+				<c:forEach var="i" begin="${startPage}" end="${endPage}">
+					<c:if test="${i eq currentPage}"> 
+						<b>[${i}]</b>				
+					</c:if>
+					<c:if test="${i ne currentPage}">
+						<a href="manage_user.do?pageNum=${i}">[${i}]</a>				
+					</c:if>
+				</c:forEach>	
+				<c:if test="${pageCount gt endPage}">
+					<a href="manage_user.do?pageNum=${startPage+pageBlock}">[▶]</a>
+					<a href="manage_user.do?pageNum=${pageCount}">[▶▶]</a>		
 				</c:if>
-			</c:forEach>	
-			<c:if test="${pageCount gt endPage}">
-				<a href="manage_user.do?pageNum=${startPage+pageBlock}">[▶]</a>
-				<a href="manage_user.do?pageNum=${pageCount}">[▶▶]</a>		
-			</c:if>
-		</c:if>        
+			</c:if>        
+		</c:if>
+		
+		<c:if test="${searchUser ne null}">
+			<c:if test="${cnt gt 0}">
+				<c:if test="${startPage gt pageBlock}">
+					<a href="manage_user.do?searchUser=${searchUser}">[◀◀]</a>
+					<a href="manage_user.do?pageNum=${startPage-pageBlock}&searchUser=${searchUser}">[◀]</a>
+				</c:if>
+				<c:forEach var="i" begin="${startPage}" end="${endPage}">
+					<c:if test="${i eq currentPage}"> 
+						<b>[${i}]</b>				
+					</c:if>
+					<c:if test="${i ne currentPage}">
+						<a href="manage_user.do?pageNum=${i}&searchUser=${searchUser}">[${i}]</a>				
+					</c:if>
+				</c:forEach>	
+				<c:if test="${pageCount gt endPage}">
+					<a href="manage_user.do?pageNum=${startPage+pageBlock}&searchUser=${searchUser}">[▶]</a>
+					<a href="manage_user.do?pageNum=${pageCount}&searchUser=${searchUser}">[▶▶]</a>		
+				</c:if>
+			</c:if>        
+		</c:if>
+		
         </section>
     </article>
     <div>
