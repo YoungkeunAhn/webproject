@@ -8,4 +8,14 @@
 		insert into MOD_MissionCategory values(
 		'category'||lpad(seq_mission_category.nextval,5,0) ,#{large_category}, #{small_category}, #{category_image, jdbcType=VARCHAR} )
 	</insert>
+	<select id="getCount" resultType="int">
+		select count(*) from MOD_MissionCategory
+	</select>
+	<select id="getMissionCategorys" parameterType="java.util.Map" resultType="Dtos.MissionCategoryDto">
+		select mission_category_id, large_category, small_category, r
+		from (select mission_category_id, large_category, small_category, rownum r
+		from (select mission_category_id, large_category, small_category
+		from MOD_MissionCategory order by large_category, small_category) order by large_category, 	small_category)
+		where r &gt;= #{start} and r &lt;= #{end}
+	</select>
 </mapper>

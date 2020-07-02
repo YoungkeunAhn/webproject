@@ -35,7 +35,7 @@
             	<button class="btn btn-success" onclick="location.href='${pageContext.request.contextPath}/manage_category_insert.do'">${str_category_categoryadd}</button>
         
         </section>
-        <section class="mission-table">
+       <section>
             <table class="table">
                 <thead>
                 <th>${str_category_categoryId}</th>
@@ -45,17 +45,39 @@
                 <th>${str_delete}</th>
                 </thead>
                 <tbody>
+                <c:forEach var="missionCategoryDto" items="${missionCategoryDtos}">
                 <tr onclick="location.href='${pageContext.request.contextPath}/manage_category_info.do'">
-                   <th>category-id</th>
-                   <th>대-분-류</th>
-                   <th>소-분-류</th>
-                   <th onclick="event.cancelBubble=true"><button class="btn btn-primary" name="category-insert"
-                         onclick="location.href='${pageContext.request.contextPath}/manage_mission_insert.do'">${str_category_missionadd}</button></th>
-                     <th onclick="event.cancelBubble=true"><button class="btn btn-danger" name="category-delete" 
-                         onclick="location.href='${pageContext.request.contextPath}/manage_category_deletePro.do'">${str_delete}</button></th>
+                	<th>${missionCategoryDto.mission_category_id}</th>
+	                <th>${missionCategoryDto.large_category}</th>
+	                <th>${missionCategoryDto.small_category}</th>
+	                <th onclick="event.cancelBubble=true"><button class="btn btn-primary" name="category-insert"
+                			onclick="location.href='${pageContext.request.contextPath}/manage_mission_insert.do'">${str_category_missionadd}</button></th>
+               		<th onclick="event.cancelBubble=true"><button class="btn btn-danger" name="category-delete" 
+                			onclick="location.href='${pageContext.request.contextPath}/manage_category_deletePro.do'">${str_delete}</button></th>
                 </tr>
+                </c:forEach>
+	            
                 </tbody>
             </table>
+            <br>
+	            <c:if test="${cnt gt 0}">
+					<c:if test="${startPage gt pageBlock}">
+						<a href="manage_category.do">[◀◀]</a>
+						<a href="manage_category.do?pageNum=${startPage-pageBlock}">[◀]</a>
+					</c:if>
+					<c:forEach var="i" begin="${startPage}" end="${endPage}">
+						<c:if test="${i eq currentPage}"> 
+							<b>[${i}]</b>				
+						</c:if>
+						<c:if test="${i ne currentPage}">
+							<a href="manage_category.do?pageNum=${i}">[${i}]</a>				
+						</c:if>
+					</c:forEach>	
+					<c:if test="${pageCount gt endPage}">
+						<a href="manage_category.do?pageNum=${startPage+pageBlock}">[▶]</a>
+						<a href="manage_category.do?pageNum=${pageCount}">[▶▶]</a>		
+					</c:if>	
+				</c:if>
         </section>
     </article>
     <%@include file="manage_footer.jsp"%>
