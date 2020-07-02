@@ -40,12 +40,16 @@
 
 <!-- 유저관리 -->
 <c:set var="str_user_search" value="유저조회하기"/>
-<c:set var="str_user_kakaoId" value="카카오톡 아이디"/>
+<c:set var="str_user_kakaoId" value="카카오톡 이메일"/>
+<c:set var="str_user_passwd" value="비밀번호"/>
+<c:set var="str_user_gender" value="성별"/>
+<c:set var="str_user_sign_up_date" value="생년월일"/>
 <c:set var="str_user_nickname" value="닉네임"/>
 <c:set var="str_user_interesting" value="관심사"/>
 <c:set var="str_user_joindate" value="가입날짜"/>
 <c:set var="str_user_findinfo" value="유저정보조회"/>
 <c:set var="str_user_userdetail" value="유저상세보기"/>
+
 
 <!-- 신고관리 -->
 <c:set var="str_report_selectoption" value="신고 유형"/>
