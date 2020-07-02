@@ -103,3 +103,52 @@ function CloseInfoModal(){
 	infoModal.style.display="none";
 	document.getElementsByName()
 }
+
+//category - 값 입력여부
+function searchCheck() {
+	if( ! categoryho.src1.value ) {
+		alert( missionContentError );
+		categoryho.src1.focus();
+		return false;
+	}
+}
+// content - 값 입력여부
+function searchCheck1() {
+	 if( ! contentho.src1.value ) {
+		alert( missionContentError );
+		contentho.src1.focus();
+		return false;
+	}
+}
+// mission - 값 입력여부
+function searchCheck2() {
+	 if( ! missionho.src1.value ) {
+		alert( missionContentError );
+		missionho.src1.focus();
+		return false;
+	}
+}
+// report - 값 입력여부
+function searchCheck3() {
+	 if( ! reportho.src1.value ) {
+		alert( missionContentError );
+		reportho.src1.focus();
+		return false;
+	}
+}
+//message - 값 입력여부
+function searchCheck4() {
+	 if( ! messageho.src1.value ) {
+		alert( missionContentError );
+		messageho.src1.focus();
+		return false;
+	}
+}
+//managePage - 값 입력여부
+function searchCheck5() {
+	 if( ! managerho.src1.value ) {
+		alert( missionContentError );
+		managerho.src1.focus();
+		return false;
+	}
+}

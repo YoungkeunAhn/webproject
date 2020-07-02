@@ -22,6 +22,7 @@
     </div>
     <article>
         <section class="mission-search">
+        <form method="post" action="manage_report.do" name="reportho" onsubmit="return searchCheck3()">
             <label>
                 <select class="form-control">
                     <option selected>${str_report_selectoption}</option>
@@ -36,7 +37,8 @@
             <label>
                 <input class="form-control" type="search" name="src1">
             </label>
-            <button class="btn btn-primary" onclick="searchCheck()">${str_search}</button>
+            <button class="btn btn-primary" type="submit">${str_search}</button>
+        </form>
         </section>
         <section class="mission-table">
             <table class="table">

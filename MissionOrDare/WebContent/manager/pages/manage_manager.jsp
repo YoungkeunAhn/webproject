@@ -22,10 +22,12 @@
     </div>
     <article>
         <section class="manager-search">
+        <form method="post" action="manage_manager.do" name="managerho" onclick="return searchCheck5()">
             <label>
                 <input class="form-control" type="search" name="serch" placeholder="관리자 닉네임을 입력하셈">
             </label>
             <button class="btn btn-primary" name="search-findManager">검색</button>
+        </form>
         </section>
         <section class="manager-insert">
         	<form method="post" action="${pageContext.request.contextPath}/manage_manager_insertPro.do">
@@ -49,6 +51,7 @@
         </section>
         <hr>
         <section class="manager-table">
+        	<form>
             <table class="table">
                 <thead>
                 <th>관리자 닉네임</th>
@@ -62,6 +65,7 @@
                 onclick="location.href='${pageContext.request.contextPath}/manage_manager_deletePro.do'">삭제</button></th>
                 </tbody>
             </table>
+            </form>
         </section>
     </article>
     <div>

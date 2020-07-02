@@ -24,6 +24,7 @@
     </div>
     <article>
         <section class="mission-search">
+        <form method="post" action="manage_mission.do" name="missionho" onsubmit="return searchCheck2()">
             <label>
                 <select class="form-control">
                     <option selected> ${str_mission_category}</option>
@@ -36,6 +37,7 @@
             </label>
             <button class="btn btn-primary btn-search">${str_search}</button>
             <button class="btn btn-success" onclick="location.href='${pageContext.request.contextPath}/manage_mission_insert.do'">미션추가</button>
+        </form>
         </section>
         <section class="mission-table">
             <table class="table">
