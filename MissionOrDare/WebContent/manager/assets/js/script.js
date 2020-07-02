@@ -144,9 +144,13 @@ function searchCheck1() {
 }
 // mission - 값 입력여부
 function searchCheck2() {
+	 var check = /[가-힣]/;
 	 if( ! missionho.src1.value ) {
 		alert( missionContentError );
 		missionho.src1.focus();
+		return false;
+	} else if( ! check.test(missionho.src1.value) ) {
+		alert( inputTypeError );
 		return false;
 	}
 }

@@ -36,9 +36,9 @@
                 <input class="form-control" type="search" name="src1">
             </label>
             <button class="btn btn-primary btn-search" type="submit">${str_search}</button>
-           
+        </form>   
             <button class="btn btn-success" onclick="location.href='${pageContext.request.contextPath}/manage_mission_insert.do'">미션추가</button>
-        </form>
+        
         </section>
         <section class="mission-table">
             <table class="table">
