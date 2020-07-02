@@ -23,16 +23,17 @@
         <section class="mission-search">
             <label>
                 <select name="search-category" class="form-control">
-                    <option selected>   </option>
+                    <option>${str_mission_category}</option>
                     <option>${str_title}</option>
                     <option>${str_mission_content}</option>
                 </select>
             </label>
             <label>
-                <input class="form-control" type="search" name="serch">
-            </label>
-            <button class="btn btn-primary btn-search">${str_search}</button>
-            <button class="btn btn-success" onclick="location.href='${pageContext.request.contextPath}/manage_category_insert.do'">${str_category_categoryadd}</button>
+                <input class="form-control" type="search" name="src1">
+   	       </label>
+   	            <button class="btn btn-primary btn-search" onclick="searchCheck()">${str_search}</button>
+            	<button class="btn btn-success" onclick="location.href='${pageContext.request.contextPath}/manage_category_insert.do'">${str_category_categoryadd}</button>
+        
         </section>
         <section class="mission-table">
             <table class="table">
@@ -45,13 +46,13 @@
                 </thead>
                 <tbody>
                 <tr onclick="location.href='${pageContext.request.contextPath}/manage_category_info.do'">
-                	<th>category-id</th>
-	                <th>대-분-류</th>
-	                <th>소-분-류</th>
-	                <th onclick="event.cancelBubble=true"><button class="btn btn-primary" name="category-insert"
-                			onclick="location.href='${pageContext.request.contextPath}/manage_mission_insert.do'">${str_category_missionadd}</button></th>
-               		<th onclick="event.cancelBubble=true"><button class="btn btn-danger" name="category-delete" 
-                			onclick="location.href='${pageContext.request.contextPath}/manage_category_deletePro.do'">${str_delete}</button></th>
+                   <th>category-id</th>
+                   <th>대-분-류</th>
+                   <th>소-분-류</th>
+                   <th onclick="event.cancelBubble=true"><button class="btn btn-primary" name="category-insert"
+                         onclick="location.href='${pageContext.request.contextPath}/manage_mission_insert.do'">${str_category_missionadd}</button></th>
+                     <th onclick="event.cancelBubble=true"><button class="btn btn-danger" name="category-delete" 
+                         onclick="location.href='${pageContext.request.contextPath}/manage_category_deletePro.do'">${str_delete}</button></th>
                 </tr>
                 </tbody>
             </table>

@@ -30,9 +30,9 @@
                 </select>
             </label>
             <label>
-                <input class="form-control" type="search" name="serch">
+                <input class="form-control" type="search" name="src1">
             </label>
-            <button class="btn btn-primary">${str_search}</button>
+            <button class="btn btn-primary" onclick="searchCheck()">${str_search}</button>
         </section>
         <section class="mission-table">
             <table class="table">

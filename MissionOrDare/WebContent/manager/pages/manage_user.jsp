@@ -22,10 +22,12 @@
     </div>
     <article>
         <section class="mission-search">
+        	<form method="post" action="amasdam.do" name="userho" onsubmit="return userCheck()">
             <label>
-                <input class="form-control" type="search" name="serch" placeholder="유저 닉네임을 입력하셈">
+                <input class="form-control" type="search" name="search" placeholder="유저 닉네임을 입력하셈">
             </label>
-            <button class="btn-primary" name="user-findinuser">${str_search}</button>
+            <button class="btn-primary" type="submit" name="user-findinuser">${str_search}</button>
+        	</form>
         </section>
         <section class="mission-table">
             <table class="table">

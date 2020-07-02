@@ -23,7 +23,7 @@
         <section class="mission-search">
             <label>
                 <select class="form-control">
-                    <option selected> ${str_mission_category} </option>
+                    <option selected> ${str_mission_category}</option>
                     <option>${str_title}</option>
                     <option>${str_mission_content}</option>
                 </select>

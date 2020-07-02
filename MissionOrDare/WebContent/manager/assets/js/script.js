@@ -1,6 +1,6 @@
 var iderror = "아이디를 입력해주세요.";
 var passwderror = "비밀번호를 입력해주세요";
-var sercherror = "검색어를 입력해주세요";
+var searcherror = "검색어를 입력해주세요";
 var messageerror = "메시지좀 입력해봐바";
 var categorybigerror = "대분류를 입력해봐용^{}^";
 var categorysmallerror = "소분류를 입력해봐용^*^";
@@ -24,7 +24,7 @@ function logincheck() {
 }
 
 //미션검색
-function searchcheck() {
+function searchcheck1() {
     if(! searchform.search.value){
         alert(searcherror);
         serchform.search.focus();
@@ -55,8 +55,13 @@ function categoryinsertcheck() {
 }
 // mission_insert
 function missioninsertcheck() {
-	if( ! missioninsertForm.missiontitle.value ) {
-		console.log("aaa");
+	if( missioninsertForm.largecategory.value=="" ) {
+		alert( missionlargecategoryerror );
+		return false;
+	} else if( missioninsertForm.smallcategory.value=="" ) {
+		alert( missionsmallcategoryerror );
+		return false;
+	} else if( ! missioninsertForm.missiontitle.value ) {
 		alert( missiontitleerror );
 		missioninsertForm.missiontitle.focus();
 		return false;
@@ -64,15 +69,34 @@ function missioninsertcheck() {
 		alert( missionContentError );
 		missioninsertForm.missioncontent.focus();
 		return false;
-	} else if( missioninsertForm.largecategory.value=="" ) {
-		alert( missionlargecategoryerror );
-		return false;
-	} else if( missioninsertForm.smallcategory.value=="" ) {
-		alert( missionsmallcategoryerror );
-		return false;
 	} else if( ! missioninsertForm.missionscore.value ) {
 		alert( missionscoreerror );
 		missioninsertForm.missionscore.focus();
 		return false;
 	}
 }
+// manage_user
+
+function userCheck() {
+	if( ! userho.search.value ) {
+		alert( missionContentError );
+		return false;
+	}
+}
+
+// category
+function searchCheck() {
+	var searchValue = document.getElementsByName('src1');
+	if(! searchValue.value ){
+		alert(missionContentError);
+	}
+}
+
+
+
+
+
+
+
+
+

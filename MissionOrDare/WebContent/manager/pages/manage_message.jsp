@@ -23,9 +23,9 @@
     <article>
         <section class="mission-search">
             <label>
-                <input class="form-control" type="search" name="serch" placeholder="유저닉네임을 입력하살법!">
+                <input class="form-control" type="search" name="src1" placeholder="유저닉네임을 입력하살법!">
             </label>
-            <button class="btn btn-primary" name="user-findinmessage">${str_search}</button>
+            <button class="btn btn-primary" onclick="searchCheck()" name="user-findinmessage">${str_search}</button>
            <button class="btn-primary" name="mission-delete"
                  onclick="location.href='${pageContext.request.contextPath}/manage_message_form.do'">${str_message_sendmessage}</button>
                 
