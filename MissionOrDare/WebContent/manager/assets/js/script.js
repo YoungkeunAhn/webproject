@@ -47,13 +47,13 @@ function messagecheck() {
 function categoryinsertcheck() {
 	var checkKor = /^[0-9ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;
 	var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
-
+	var regExp = /\s/g;
 	if( ! categoryinsertform.largeCategory.value ) {
 		alert( categorybigerror );
 		categoryinsertform.largeCategory.focus();
 		return false;
 		
-	} else if(checkSpc.test(categoryinsertform.largeCategory.value) || checkKor.test(categoryinsertform.largeCategory.value)){
+	} else if(checkSpc.test(categoryinsertform.largeCategory.value) || checkKor.test(categoryinsertform.largeCategory.value) || regExp.test(categoryinsertform.largeCategory.value)){
 		alert(inputTypeError);
 		categoryinsertform.largeCategory.focus();
 		return false;	
@@ -61,7 +61,7 @@ function categoryinsertcheck() {
 		alert( categorysmallerror );
 		categoryinsertform.smallCategory.focus();
 		return false;
-	} else if(checkSpc.test(categoryinsertform.smallCategory.value) || checkKor.test(categoryinsertform.smallCategory.value)){
+	} else if(checkSpc.test(categoryinsertform.smallCategory.value) || checkKor.test(categoryinsertform.smallCategory.value) || regExp.test( categoryinsertform.smallCategory.value )){
 		alert(inputTypeError);
 		categoryinsertform.smallCategory.focus();
 		return false;
