@@ -9,6 +9,7 @@ var missionContentError = "내용을 입력하세요";
 var missionlargecategoryerror = "대분류를 선택해주세요";
 var missionsmallcategoryerror = "소분류를 선택해주세요";
 var missionscoreerror = "점수를 입력해주세요";
+var inputTypeError = '올바른 값을 입력하시오!!!!!!!!!!!!!!!!!!!!!!!!!!';
 //로그인
 function logincheck() {
     if(! loginform.manager_id.value ){
@@ -42,12 +43,20 @@ function messagecheck() {
 }
 //category_insert
 function categoryinsertcheck() {
+	var checkKor = /^[0-9가-힣ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;
+	var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
+
 	if( ! categoryinsertform.largeCategory.value ) {
 		alert( categorybigerror );
 		categoryinsertform.largeCategory.focus();
-		
 		return false;
-	} else if( ! categoryinsertform.smallCategory.value ) {
+		
+	}else if(checkKor.test(categoryinsertform.largeCategory.value) || checkSpc.test(categoryinsertform.largeCategory.value)){
+		alert(inputTypeError);
+		categoryinsertform.largeCategory.focus();
+		return false;
+		
+	}else if( ! categoryinsertform.smallCategory.value ) {
 		alert( categorysmallerror );
 		categoryinsertform.smallCategory.focus();
 		return false;
