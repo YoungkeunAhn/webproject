@@ -17,10 +17,10 @@
     <header>
         <a href="${pageContext.request.contextPath}/index.do">
             <img class="logo" src="${project}images/logo.jpg" alt="logo">
-            <span class="logo">Mission or Dare</span>
+            <span class="logo">${str_header_mod}</span>
         </a>
-        <button id="myBtn" class="btb btn-primary" onclick='document.getElementById("myModal").style.display="block"'>${manage_header_login}</button>
-        <button class="btb btn-primary">${manage_header_logout}</button>
+        <button id="myBtn" class="btb btn-primary" onclick='document.getElementById("myModal").style.display="block"'>${str_header_login}</button>
+        <button class="btb btn-primary">${str_header_logout}</button>
     </header>
 </div>
 </body>

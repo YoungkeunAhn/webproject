@@ -17,19 +17,19 @@
   <header>
         <a href="${pageContext.request.contextPath}/index.do">
             <img class="logo" src="${project}images/logo.jpg" alt="logo">
-            <span class="logo">Mission or Dare</span>
+            <span class="logo">${str_header_mod}</span>
         </a>
-        <button id="myBtn" class="btb btn-primary" onclick='document.getElementById("myModal").style.display="block"'>Login</button>
-        <button class="btn btn-primary">Logout</button>
+        <button id="myBtn" class="btb btn-primary" onclick='document.getElementById("myModal").style.display="block"'>${str_header_login}</button>
+        <button class="btn btn-primary">${str_header_logout}</button>
         <button class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/manage_manager.do'">관리자 관리페이지</button>
     </header>
   <nav>
-  	<a href="${pageContext.request.contextPath}/manage_category.do"><div class="col-md-2"><span>카테고리관리</span></div></a>
-    <a href="${pageContext.request.contextPath}/manage_mission.do"><div class="col-md-2"><span>${manage_mission}</span></div></a>
-    <a href="${pageContext.request.contextPath}/manage_content.do"><div class="col-md-2"><span>${manage_board}</span></div></a>
-    <a href="${pageContext.request.contextPath}/manage_user.do"><div class="col-md-2"><span>${manage_user}</span></div></a>
-    <a href="${pageContext.request.contextPath}/manage_report.do"><div class="col-md-2"><span>${manage_report}</span></div></a>
-    <a href="${pageContext.request.contextPath}/manage_message.do"><div class="col-md-2"><span>${manage_message}</span></div></a>
+  	<a href="${pageContext.request.contextPath}/manage_category.do"><div class="col-md-2"><span>${str_category}</span></div></a>
+    <a href="${pageContext.request.contextPath}/manage_mission.do"><div class="col-md-2"><span>${str_mission}</span></div></a>
+    <a href="${pageContext.request.contextPath}/manage_content.do"><div class="col-md-2"><span>${str_board}</span></div></a>
+    <a href="${pageContext.request.contextPath}/manage_user.do"><div class="col-md-2"><span>${str_user}</span></div></a>
+    <a href="${pageContext.request.contextPath}/manage_report.do"><div class="col-md-2"><span>${str_report}</span></div></a>
+    <a href="${pageContext.request.contextPath}/manage_message.do"><div class="col-md-2"><span>${str_message}</span></div></a>
   </nav>
   <article>
     <span>로그인 안했을 경우 로그인하라는 문구</span>
@@ -43,10 +43,10 @@
     <form name="loginform" action="${pageContext.request.contextPath}/manage_loginPro.do" onsubmit="return logincheck()">
       <ul>
         <li><i class="fas fa-user-circle"></i></li>
-        <li><span class="title">${manage_managerlogin}</span></li>
+        <li><span class="title">${str_managerlogin}</span></li>
         <li><label><input type="text" name="manager_id" placeholder="아이디" autofocus></label></li>
         <li><label><input type="password" name="manager_passwd" placeholder="비밀번호"></label></li>
-        <li><button class="btn btn-primary" type="submit">${manage_header_login}</button></li>
+        <li><button class="btn btn-primary" type="submit">${str_header_login}</button></li>
       </ul>
     </form>
   </div>

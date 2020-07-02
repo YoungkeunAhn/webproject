@@ -25,22 +25,22 @@
             <label>
                 <input class="form-control" type="search" name="serch" placeholder="유저닉네임을 입력하살법!">
             </label>
-            <button class="btn btn-primary" name="user-findinmessage">${manage_search}</button>
+            <button class="btn btn-primary" name="user-findinmessage">${str_search}</button>
            <button class="btn-primary" name="mission-delete"
-                 onclick="location.href='${pageContext.request.contextPath}/manage_message_form.do'">${manage_message_sendmessage}</button>
+                 onclick="location.href='${pageContext.request.contextPath}/manage_message_form.do'">${str_message_sendmessage}</button>
                 
             <button class="btn-danger" name="mission-delete"
-                 onclick="location.href='${pageContext.request.contextPath}/manage_message_deletePro.do'">${manage_message_messagedelete}</button>
+                 onclick="location.href='${pageContext.request.contextPath}/manage_message_deletePro.do'">${str_message_messagedelete}</button>
                 
         </section>
         <section class="mission-table">
             <table class="table">
                 <thead>
-                <th>${manage_message_checkbox}</th>
-                <th>${manage_message_sender}</th>
-                <th>${manage_message_content}</th>
-                <th>${manage_message_receiver}</th>
-                <th>${manage_message_senddate}</th>
+                <th>${str_message_checkbox}</th>
+                <th>${str_message_sender}</th>
+                <th>${str_message_content}</th>
+                <th>${str_message_receiver}</th>
+                <th>${str_message_senddate}</th>
                 
                 </thead>
                 <tbody>

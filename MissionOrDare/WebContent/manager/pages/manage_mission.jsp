@@ -23,25 +23,25 @@
         <section class="mission-search">
             <label>
                 <select class="form-control">
-                    <option selected> ${manage_mission_category} </option>
-                    <option>${manage_title}</option>
-                    <option>${manage_mission_content}</option>
+                    <option selected> ${str_mission_category} </option>
+                    <option>${str_title}</option>
+                    <option>${str_mission_content}</option>
                 </select>
             </label>
             <label>
                 <input class="form-control" type="search" name="serch">
             </label>
-            <button class="btn btn-primary btn-search">${manage_search}</button>
+            <button class="btn btn-primary btn-search">${str_search}</button>
             <button class="btn btn-success" onclick="location.href='${pageContext.request.contextPath}/manage_mission_insert.do'">미션추가</button>
         </section>
         <section class="mission-table">
             <table class="table">
                 <thead>
-                <th>${manage_number}</th>
-                <th>${manage_mission_category}</th>
-                <th>${manage_title}</th>
-                <th>${manage_mission_avg}</th>
-                <th>${manage_delete}</th>
+                <th>${str_number}</th>
+                <th>${str_mission_category}</th>
+                <th>${str_title}</th>
+                <th>${str_mission_avg}</th>
+                <th>${str_delete}</th>
                 </thead>
                 <tbody>
                 <tr>
@@ -49,7 +49,7 @@
 	                <th>미술/그리기</th>
 	                <th>라이언이 부탁한 자화상</th>
 	                <th>3.5</th>
-	                <th><button class="btn btn-danger" name="missionDelete">삭제</button> </th>
+	                <th><button class="btn btn-danger" name="missionDelete">${str_delete}</button> </th>
                 </tr>
                 </tbody>
             </table>

@@ -25,16 +25,16 @@
             <label>
                 <input class="form-control" type="search" name="serch" placeholder="유저 닉네임을 입력하셈">
             </label>
-            <button class="btn-primary" name="user-findinuser">${manage_search}</button>
+            <button class="btn-primary" name="user-findinuser">${str_search}</button>
         </section>
         <section class="mission-table">
             <table class="table">
                 <thead>
-                <th>${manage_user_kakaoId}</th>
-                <th>${manage_user_nickname}</th>
-                <th>${manage_user_interesting}</th>
-                <th>${manage_user_joindate}</th>
-                <th>${manage_user_findinfo}</th>
+                <th>${str_user_kakaoId}</th>
+                <th>${str_user_nickname}</th>
+                <th>${str_user_interesting}</th>
+                <th>${str_user_joindate}</th>
+                <th>${str_user_findinfo}</th>
                 </thead>
                 <tbody>
                 <th>vkdnj4158@naver.com</th>
@@ -42,7 +42,7 @@
                 <th>운동,미술,음악,사진찍기</th>
                 <th>2020/06/25</th>
                 <th><button class="btn btn-danger" name="mission-delete"  
-                onclick="location.href='${pageContext.request.contextPath}/manage_user_info.do'">${manage_user_userdetail}</button> </th>
+                onclick="location.href='${pageContext.request.contextPath}/manage_user_info.do'">${str_user_userdetail}</button> </th>
                 </tbody>
             </table>
         </section>

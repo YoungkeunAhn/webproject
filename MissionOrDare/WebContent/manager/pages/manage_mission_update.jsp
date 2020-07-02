@@ -32,14 +32,14 @@
             <form name="mission-updateForm">
                 <table class="table">
                     <tr>
-                        <th><span>카테고리</span></th>
+                        <th><span>${str_mission_category}</span></th>
                         <td colspan="3"></td>
                     </tr>
                     <tr>
                         <td>
                             <label>
                                 <select class="form-control" name="large-category">
-                                    <option selected>대분류</option>
+                                    <option selected>${str_category_bigsorting}</option>
                                     <option>운동</option>
                                 </select>
                             </label>
@@ -47,14 +47,14 @@
                         <td>
                             <label>
                                 <select class="form-control" name="small-category">
-                                    <option selected>소분류</option>
+                                    <option selected>${str_category_smallsorting}</option>
                                     <option>달리기</option>
                                 </select>
                             </label>
                         </td>
                     </tr>
                     <tr>
-                        <th>제목</th>
+                        <th>${str_title}</th>
                         <td colspan="3">
                             <label class="input-label">
                                 <input class="form-control" type="text" name="mission-title">

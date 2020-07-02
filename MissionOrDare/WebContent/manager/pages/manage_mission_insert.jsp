@@ -33,7 +33,7 @@
                         <td>
                             <label>
                                 <select class="form-control" name="largecategory">
-                                    <option value="">대분류</option>
+                                    <option value="">${str_category_bigsorting}</option>
                                     <option value="1">미술</option>
                                     <option value="2">운동</option>
                                 </select>
@@ -42,7 +42,7 @@
                         <td>
                             <label>
                                 <select class="form-control" name="smallcategory">
-                         	           <option value="">소분류</option>
+                         	           <option value="">${str_category_smallsorting}</option>
                                        <option value="1">그리기</option>
                                        <option value="2">달리기</option>
                                        
@@ -51,7 +51,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>제목</th>
+                        <th>${str_title}</th>
                         <td colspan="3">
                             <label class="input-label">
                                 <input class="form-control" type="text" name="missiontitle">
@@ -59,7 +59,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>내용</th>
+                        <th>${str_mission_content}</th>
                         <td colspan="3">
                             <label class="input-label">
                                 <input class="form-control" type="text" name="missioncontent">
