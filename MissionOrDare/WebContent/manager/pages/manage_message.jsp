@@ -36,7 +36,7 @@
                  onclick="location.href='${pageContext.request.contextPath}/manage_message_deletePro.do'">${str_message_messagedelete}</button>
                
         </section>
-        <section class="mission-table">
+        <section>
             <table class="table">
                 <thead>
                 <th>${str_message_checkbox}</th>
