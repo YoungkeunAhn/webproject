@@ -118,6 +118,16 @@ function CloseInfoModal(){
 	infoModal.style.display="none";
 	document.getElementsByName()
 }
+//MissionInsertModal
+function OnMissionInsertModal() {
+	var infoModal = document.getElementById("missionInsertModal");
+	infoModal.style.display="block"
+}
+function CloseMissionInsertModal(){
+	var infoModal = document.getElementById("missionInsertModal");
+	infoModal.style.display="none";
+	document.getElementsByName()
+}
 //CategoryAddModal
 function OncategoryModal() {
 	var infoModal = document.getElementById("categoryInfoModal");
@@ -128,6 +138,7 @@ function CloseCategoryModal(){
 	infoModal.style.display="none";
 	document.getElementsByName()
 }
+
 
 //category - 값 입력여부
 function searchCheck() {
