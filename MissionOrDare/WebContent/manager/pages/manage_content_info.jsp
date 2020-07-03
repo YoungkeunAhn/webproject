@@ -29,7 +29,8 @@
             </div>
             <div class="content-profile">
                 <img class="img-circle" src="${project}images/user.png" alt="user-profile">
-                <span>KIMONG</span>
+                <span>KIMONG</span><br>
+                <i>i는 기울어지는구나</i>
             </div>
             <div>
                 <div>
