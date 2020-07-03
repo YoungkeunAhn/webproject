@@ -33,7 +33,7 @@
 	                <tr>
 	                    <th class="btn-line" colspan="2">
 	                        <input class="btn btn-primary" type="submit" value="추가하기">   
-	           		     	<input class="btn btn-danger" value="닫기" onclick="CloseInfoModal()">
+	           		     	<input class="btn btn-danger" value="닫기" onclick="CloseCategoryModal()">
 	               		</th>
 	                </tr>
 	            </table>
