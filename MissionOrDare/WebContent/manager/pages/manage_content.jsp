@@ -31,7 +31,7 @@
                 </select>
             </label>
             <label>
-                <input class="form-control" type="search" name="src1">
+                <input class="form-control" type="search" name="content">
             </label>
             <button class="btn btn-primary" type="submit">${str_search}</button>
         </form>

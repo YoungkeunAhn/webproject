@@ -141,13 +141,13 @@ function searchCheck1() {
 	var checkKor = /^[0-9ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;
 	var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
 	var regExp = /\s/g;	//띄어쓰기
-	if( ! contentho.src1.value ) {
+	if( ! contentho.content.value ) {
 		alert( missionContentError );
-		contentho.src1.focus();
+		contentho.content.focus();
 		return false;
-	} else if( checkKor.test(contentho.src1.value) || checkSpc.test(contentho.src1.value) || regExp.test(contentho.src1.value) ) {
+	} else if( checkKor.test(contentho.content.value) || checkSpc.test(contentho.content.value) || regExp.test(contentho.src1.value) ) {
 		alert( inputTypeError );
-		contentho.src1.focus();
+		contentho.content.focus();
 		return false;
 	}
 }
@@ -156,12 +156,13 @@ function searchCheck2() {
 	var checkKor = /^[0-9ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;
 	var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
 	var regExp = /\s/g;	//띄어쓰기
-	 if( ! missionho.src1.value ) {
+	 if( ! missionho.mission.value ) {
 		alert( missionContentError );
-		missionho.src1.focus();
+		missionho.mission.focus();
 		return false;
-	} else if(  checkKor.test(missionho.src1.value) || checkSpc.test(missionho.src1.value) || regExp.test(missionho.src1.value) ) {
+	} else if(  checkKor.test(missionho.src1.value) || checkSpc.test(missionho.mission.value) || regExp.test(missionho.mission.value) ) {
 		alert( inputTypeError );
+		missionho.mission.focus();
 		return false;
 	}
 }
