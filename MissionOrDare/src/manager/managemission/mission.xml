@@ -4,16 +4,23 @@
   	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   	
 <mapper namespace="Mission">
+	<!-- 미션 카테고리 추가 -->
 	<insert id="insertCategory" parameterType="Dtos.MissionCategoryDto">
 		insert into MOD_MissionCategory values(
 		'category'||lpad(seq_mission_category.nextval,5,0) ,#{large_category}, #{small_category}, #{category_image, jdbcType=VARCHAR} )
 	</insert>
+	
+	<!-- 미션 카테고리 개수 -->
 	<select id="getCount" resultType="int">
 		select count(*) from MOD_MissionCategory
 	</select>
+	
+	<!-- 미션 카테고리 검색 개수 -->
 	<select id="getSearchCount" resultType="int">
 		select count(*) from MOD_MissionCategory where large_category like '%'||#{category}||'%'  or small_category like '%'||#{category}||'%'
 	</select>
+	
+	<!-- 미션 카테고리 리스트 -->
 	<select id="getMissionCategorys" parameterType="java.util.Map" resultType="Dtos.MissionCategoryDto">
 		select mission_category_id, large_category, small_category, r
 		from (select mission_category_id, large_category, small_category, rownum r
@@ -21,6 +28,8 @@
 		from MOD_MissionCategory order by large_category, small_category) order by large_category, 	small_category)
 		where r &gt;= #{start} and r &lt;= #{end}
 	</select>
+	
+	<!-- 미션 카테고리 검색 리스트 -->
 	<select id="getSearchCategorys" parameterType="java.util.Map" resultType="Dtos.MissionCategoryDto">
 		select mission_category_id, large_category, small_category, r
 		from (select mission_category_id, large_category, small_category, rownum r
@@ -29,7 +38,49 @@
 		order by large_category, small_category) order by large_category, 	small_category)
 		where r &gt;= #{start} and r &lt;= #{end}
 	</select>
+	
+	<!-- 미션 카테고리 삭제 -->
 	<delete id="deleteCategory" parameterType="String">
 		delete from MOD_MissionCategory where mission_category_id=#{missionCategoryId}
 	</delete>
+	
+	<!-- 미션  개수 -->
+	<select id="getMissionCount" resultType="int">
+		select count(*) from MOD_MissionInfo
+	</select>
+	
+	<!-- 미션  검색 개수 -->
+	<select id="getSearchMissionCount" resultType="int">
+		select count(*) from MOD_MissionInfo where mission_title like '%'||#{mission}||'%'
+	</select>
+	
+	<!-- 미션 리스트 -->
+	<select id="getMissions" parameterType="java.util.Map" resultType="Dtos.TestDto">
+		select aa.* 
+		from (select a.*, rownum r 
+		from (select m.*, c.large_category, c.small_category 
+		from MOD_MissionCategory c, MOD_MissionInfo m where c.mission_category_id=m.mission_category_id) a 
+		order by large_category, small_category) aa 
+		where r &gt;= #{start} and r &lt;= #{end}
+	</select>
+	
+	<!-- 미션 리스트 검색 -->
+	<select id="getSearchMissions" parameterType="java.util.Map" resultType="Dtos.TestDto">
+		select aa.* 
+		from (select a.*, rownum r 
+		from (select m.*, c.large_category, c.small_category 
+		from MOD_MissionCategory c, MOD_MissionInfo m where c.mission_category_id=m.mission_category_id
+		and m.mission_title like '%'||#{mission}||'%') a 
+		order by large_category, small_category) aa 
+		where r &gt;= #{start} and r &lt;= #{end}
+	</select>
+	
+	<!-- 미션  추가 
+	<insert id="insertMission" parameterType="Dtos.MissionInfoDto">
+		insert into MOD_MissionInfo (mission_info_id, mission_title, 
+		mission_level, mission_category_id, mission_location, mission_contents) values(
+		'mission'||lpad(seq_mission_info.nextval,5,0) ,#{mission_title}, #{mission_level}, 
+		(select ), #{mission_location, jdbcType=VARCHAR}, #{mission_contents, jdbcType=VARCHAR})
+	</insert>
+	-->
 </mapper>

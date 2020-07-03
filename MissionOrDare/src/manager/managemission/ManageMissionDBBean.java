@@ -6,6 +6,8 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 
 import Dtos.MissionCategoryDto;
+import Dtos.MissionInfoDto;
+import Dtos.TestDto;
 
 public class ManageMissionDBBean implements ManageMissionDao {
 	SqlSession session = SqlMapClient.getSession();
@@ -29,4 +31,18 @@ public class ManageMissionDBBean implements ManageMissionDao {
 	public List<MissionCategoryDto> getSearchCategorys( Map<String, Object> map) {
 		return session.selectList("Mission.getSearchCategorys", map);
 	}
+	public int getMissionCount() {
+		return session.selectOne("Mission.getMissionCount");
+	}
+	public int getSearchMissionCount(String mission) {
+		return session.selectOne("Mission.getMissionCount", mission);
+	}
+	
+	public List<TestDto> getMissions( Map<String, Integer> map ) {
+		return session.selectList("Mission.getMissions", map);
+	}
+	public List<TestDto> getSearchMissions( Map<String, Object> map ) {
+		return session.selectList("Mission.getSearchMissions", map);
+	}
+	
 }

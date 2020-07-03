@@ -47,18 +47,60 @@
                 <th>${str_mission_category}</th>
                 <th>${str_title}</th>
                 <th>${str_mission_avg}</th>
-                <th>${str_modify}</th>
+                <th>${str_delete}</th>
                 </thead>
                 <tbody>
-                 <tr onclick="OnInfoModal()">
-	                <th>1</th>
-	                <th>미술/그리기</th>
-	                <th>라이언이 부탁한 자화상</th>
-	                <th>3.5</th>
-	                <th><button class="btn btn-danger" name="missionDelete">${str_modify}</button> </th>
-                </tr>
+              	  <c:forEach var="testDto" items="${testDtos}">
+	                 <tr onclick="OnInfoModal()">
+		                <th>${testDto.mission_info_id}</th>
+		                <th>${testDto.large_category}/${testDto.small_category}</th>
+		                <th>${testDto.mission_title}</th>
+		                <th>${testDto.mission_avg_score}</th>
+		                <th><button class="btn btn-danger" name="missionDelete">${str_delete}</button> </th>
+	                </tr>
+	              </c:forEach>
                 </tbody>
             </table>
+            <c:if test="${mission eq null}">
+	            <c:if test="${cnt gt 0}">
+					<c:if test="${startPage gt pageBlock}">
+						<a href="manage_mission.do">[◀◀]</a>
+						<a href="manage_mission.do?pageNum=${startPage-pageBlock}">[◀]</a>
+					</c:if>
+					<c:forEach var="i" begin="${startPage}" end="${endPage}">
+						<c:if test="${i eq currentPage}"> 
+							<b>[${i}]</b>				
+						</c:if>
+						<c:if test="${i ne currentPage}">
+							<a href="manage_mission.do?pageNum=${i}">[${i}]</a>				
+						</c:if>
+					</c:forEach>	
+					<c:if test="${pageCount gt endPage}">
+						<a href="manage_mission.do?pageNum=${startPage+pageBlock}">[▶]</a>
+						<a href="manage_mission.do?pageNum=${pageCount}">[▶▶]</a>		
+					</c:if>	
+				</c:if>
+			</c:if>
+			<c:if test="${mission ne null}">
+	            <c:if test="${cnt gt 0}">
+					<c:if test="${startPage gt pageBlock}">
+						<a href="manage_mission.do?mission=${mission}">[◀◀]</a>
+						<a href="manage_mission.do?pageNum=${startPage-pageBlock}&mission=${mission}">[◀]</a>
+					</c:if>
+					<c:forEach var="i" begin="${startPage}" end="${endPage}">
+						<c:if test="${i eq currentPage}"> 
+							<b>[${i}]</b>				
+						</c:if>
+						<c:if test="${i ne currentPage}">
+							<a href="manage_mission.do?pageNum=${i}&mission=${mission}">[${i}]</a>				
+						</c:if>
+					</c:forEach>	
+					<c:if test="${pageCount gt endPage}">
+						<a href="manage_mission.do?pageNum=${startPage+pageBlock}&mission=${mission}">[▶]</a>
+						<a href="manage_mission.do?pageNum=${pageCount}&mission=${mission}">[▶▶]</a>		
+					</c:if>	
+				</c:if>
+			</c:if>
         </section>
     </article>
     <%@include file="manage_footer.jsp"%>
