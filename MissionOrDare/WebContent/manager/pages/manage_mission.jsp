@@ -50,12 +50,12 @@
                 <th>${str_delete}</th>
                 </thead>
                 <tbody>
-              	  <c:forEach var="testDto" items="${testDtos}">
+              	  <c:forEach var="missionCategoryAndInfoDto" items="${missionCategoryAndInfoDtos}">
 	                 <tr onclick="OnInfoModal()">
-		                <th>${testDto.mission_info_id}</th>
-		                <th>${testDto.large_category}/${testDto.small_category}</th>
-		                <th>${testDto.mission_title}</th>
-		                <th>${testDto.mission_avg_score}</th>
+		                <th>${missionCategoryAndInfoDto.mission_info_id}</th>
+		                <th>${missionCategoryAndInfoDto.large_category}/${missionCategoryAndInfoDto.small_category}</th>
+		                <th>${missionCategoryAndInfoDto.mission_title}</th>
+		                <th>${missionCategoryAndInfoDto.mission_avg_score}</th>
 		                <th><button class="btn btn-danger" name="missionDelete">${str_delete}</button> </th>
 	                </tr>
 	              </c:forEach>

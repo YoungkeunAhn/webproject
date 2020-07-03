@@ -55,7 +55,7 @@
 	</select>
 	
 	<!-- 미션 리스트 -->
-	<select id="getMissions" parameterType="java.util.Map" resultType="Dtos.TestDto">
+	<select id="getMissions" parameterType="java.util.Map" resultType="Dtos.MissionCategoryAndInfoDto">
 		select aa.* 
 		from (select a.*, rownum r 
 		from (select m.*, c.large_category, c.small_category 
@@ -65,7 +65,7 @@
 	</select>
 	
 	<!-- 미션 리스트 검색 -->
-	<select id="getSearchMissions" parameterType="java.util.Map" resultType="Dtos.TestDto">
+	<select id="getSearchMissions" parameterType="java.util.Map" resultType="Dtos.MissionCategoryAndInfoDto">
 		select aa.* 
 		from (select a.*, rownum r 
 		from (select m.*, c.large_category, c.small_category 

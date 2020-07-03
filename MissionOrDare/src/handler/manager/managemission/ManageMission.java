@@ -12,9 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import Dtos.MissionCategoryDto;
-import Dtos.MissionInfoDto;
-import Dtos.TestDto;
+import Dtos.MissionCategoryAndInfoDto;
 import handler.CommandHandler;
 import manager.managemission.ManageMissionDao;
 
@@ -84,8 +82,8 @@ public class ManageMission implements CommandHandler{
 				Map<String, Integer> map = new Hashtable<String, Integer>();
 				map.put("start", start);
 				map.put("end", end);
-				List<TestDto> testDtos = manageMissionDao.getMissions(map);
-				request.setAttribute( "testDtos", testDtos );
+				List<MissionCategoryAndInfoDto> missionCategoryAndInfoDtos = manageMissionDao.getMissions(map);
+				request.setAttribute( "missionCategoryAndInfoDtos", missionCategoryAndInfoDtos );
 			}
 		} else {
 			System.out.println(mission);
@@ -94,8 +92,8 @@ public class ManageMission implements CommandHandler{
 				map.put("start", start);
 				map.put("end", end);
 				map.put("mission", mission);
-				List<TestDto> testDtos = manageMissionDao.getSearchMissions(map);
-				request.setAttribute( "testDtos", testDtos );
+				List<MissionCategoryAndInfoDto> missionCategoryAndInfoDtos = manageMissionDao.getSearchMissions(map);
+				request.setAttribute( "missionCategoryAndInfoDtos", missionCategoryAndInfoDtos );
 				request.setAttribute("mission", mission);
 			}
 		}
