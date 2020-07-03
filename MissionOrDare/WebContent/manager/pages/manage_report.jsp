@@ -25,7 +25,7 @@
         <form method="post" action="manage_report.do" name="reportho" onsubmit="return searchCheck3()">
             <label>
                 <select class="form-control">
-                    <option selected>${str_report_selectoption}</option>
+                    <option>${str_report_selectoption}</option>
                     <option>${str_report_selectoption1}</option>
                     <option>${str_report_selectoption2}</option>
                     <option>${str_report_selectoption3}</option>
@@ -35,7 +35,7 @@
                 </select>
             </label>
             <label>
-                <input class="form-control" type="search" name="src1">
+                <input class="form-control" type="search" name="report" placeholder="신고 내용을 입력하세요">
             </label>
             <button class="btn btn-primary" type="submit">${str_search}</button>
         </form>

@@ -24,15 +24,17 @@
         <section class="mission-search">
         <form method="post" action="manage_message.do" name="messageho" onsubmit="return searchCheck4()">
             <label>
-                <input class="form-control" type="search" name="src1" placeholder="유저닉네임을 입력하살법!">
+                <input class="form-control" type="search" name="message" placeholder="유저닉네임을 입력하살법!">
             </label>
             <button class="btn btn-primary" type="submit" name="user-findinmessage">${str_search}</button>
+        
+        </form> 
            <button class="btn-primary" name="mission-delete"
                  onclick="location.href='${pageContext.request.contextPath}/manage_message_form.do'">${str_message_sendmessage}</button>
                 
             <button class="btn-danger" name="mission-delete"
                  onclick="location.href='${pageContext.request.contextPath}/manage_message_deletePro.do'">${str_message_messagedelete}</button>
-        </form>        
+               
         </section>
         <section class="mission-table">
             <table class="table">

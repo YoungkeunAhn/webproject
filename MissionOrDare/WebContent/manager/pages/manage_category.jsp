@@ -22,12 +22,10 @@
     <article>
         <section class="mission-search">
         <form method="post" action="manage_category.do" name="categoryho" onsubmit="return searchCheck()"> 
-            <label>
-                <input class="form-control" type="search" name="category">
-   	       </label>
-   	            <button class="btn btn-primary btn-search" type="submit">${str_search}</button>
-  			</form>      
-            	<button class="btn btn-success" onclick="location.href='${pageContext.request.contextPath}/manage_category_insert.do'">${str_category_categoryadd}</button>
+            <label><input class="form-control" type="search" name="category"></label>
+           	<button class="btn btn-primary btn-search" type="submit">${str_search}</button>
+		</form>      
+           	<button class="btn btn-success" onclick="location.href='${pageContext.request.contextPath}/manage_category_insert.do'">${str_category_categoryadd}</button>
         </section>
        <section>
             <table class="table">

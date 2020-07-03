@@ -47,7 +47,7 @@
                 <th>${str_mission_category}</th>
                 <th>${str_title}</th>
                 <th>${str_mission_avg}</th>
-                <th>${str_delete}</th>
+                <th>${str_modify}</th>
                 </thead>
                 <tbody>
                  <tr onclick="OnInfoModal()">
@@ -55,7 +55,7 @@
 	                <th>미술/그리기</th>
 	                <th>라이언이 부탁한 자화상</th>
 	                <th>3.5</th>
-	                <th><button class="btn btn-danger" name="missionDelete">${str_delete}</button> </th>
+	                <th><button class="btn btn-danger" name="missionDelete">${str_modify}</button> </th>
                 </tr>
                 </tbody>
             </table>

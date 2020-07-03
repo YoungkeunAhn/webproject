@@ -95,13 +95,13 @@ function userCheck() {
 	var checkKor = /^[ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;	//숫자는 입력가능하다
 	var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
 	var regExp = /\s/g;	//띄어쓰기
-	if( ! userho.search.value ) {
+	if( ! userho.searchUser.value ) {
 		alert( missionContentError );
-		userho.search.focus();
+		userho.searchUser.focus();
 		return false;
-	} else if( checkKor.test(userho.search.value) || checkSpc.test(userho.search.value) || regExp.test(userho.search.value) ) {
+	} else if( checkKor.test(userho.searchUser.value) || checkSpc.test(userho.searchUser.value) || regExp.test(userho.searchUser.value) ) {
 		alert( inputTypeError );
-		userho.search.focus();
+		userho.searchUser.focus();
 		return false;
 	}
 }
@@ -124,13 +124,14 @@ function searchCheck() {
 	var checkKor = /^[0-9ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;
 	var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
 	var regExp = /\s/g;	//띄어쓰기
-	if( ! categoryho.src1.value ) {
+	if( ! categoryho.category.value ) {
 		alert( missionContentError );
-		categoryho.src1.focus();
+		categoryho.category.focus();
 		return false;
-	} else if( checkKor.test(categoryho.src1.value) || checkSpc.test(categoryho.src1.value) || regExp.test(categoryho.src1.value) ) {
+	} else if( checkKor.test(categoryho.category.value) || checkSpc.test(categoryho.category.value) || regExp.test(categoryho.category.value) ) {
+		console.log("a");
 		alert( inputTypeError );
-		categoryho.src1.focus();
+		categoryho.category.focus();
 		return false;
 	}
 	
@@ -147,7 +148,7 @@ function searchCheck1() {
 	} else if( checkKor.test(contentho.src1.value) || checkSpc.test(contentho.src1.value) || regExp.test(contentho.src1.value) ) {
 		alert( inputTypeError );
 		contentho.src1.focus();
-		return false
+		return false;
 	}
 }
 // mission - 값 입력여부
@@ -166,17 +167,31 @@ function searchCheck2() {
 }
 // report - 값 입력여부
 function searchCheck3() {
-	 if( ! reportho.src1.value ) {
+	var checkKor = /^[0-9ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;
+	var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
+	var regExp = /\s/g;	//띄어쓰기 
+	if( ! reportho.report.value ) {
 		alert( missionContentError );
-		reportho.src1.focus();
+		reportho.report.focus();
+		return false;
+	} else if( checkKor.test(reportho.report.value) || checkSpc.test(reportho.report.value) || regExp.test(reportho.report.value) ) {
+		alert( inputTypeError );
+		reportho.report.focus();
 		return false;
 	}
 }
 //message - 값 입력여부
 function searchCheck4() {
-	 if( ! messageho.src1.value ) {
+	 var checkKor = /^[0-9ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;
+	 var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
+	 var regExp = /\s/g;	//띄어쓰기
+	 if( ! messageho.message.value ) {
 		alert( missionContentError );
-		messageho.src1.focus();
+		messageho.message.focus();
+		return false;
+	} else if( checkKor.test(messageho.message.value) || checkSpc.test(messageho.message.value) || regExp.test(messageho.message.value) ) {
+		alert( inputTypeError );
+		messageho.message.focus();
 		return false;
 	}
 }
@@ -184,29 +199,36 @@ function searchCheck4() {
 //manage_manager 페이지
 //managePage - 값 입력여부
 function searchCheck5() {
-	 if( ! managerho.src1.value ) {
+	 var checkKor = /^[ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;	//숫자는 입력가능하다
+	 var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
+	 var regExp = /\s/g;	//띄어쓰기
+	 if( ! managerho.managerNickname.value ) {
 		alert( missionContentError );
-		managerho.src1.focus();
+		managerho.managerNickname.focus();
+		return false;
+	} else if( checkKor.test(managerho.managerNickname.value) || checkSpc.test(managerho.managerNickname.value) || regExp.test(managerho.managerNickname.value) ) {
+		alert( inputTypeError );
+		managerho.managerNickname.focus();
 		return false;
 	}
 }
 //매니저로그인 
 function logincheck1() {
-    if(! managerLoginCheck.insertManagerId.value ){
+    if(! managerLoginCheck.manager_id.value ){
         alert( manageriderror );
         managerLoginCheck.manager_id.focus();
         return false;
-    }else if(! managerLoginCheck.insertManagerPasswd.value ){
+    }else if(! managerLoginCheck.manager_passwd.value ){
         alert( managerpasswderror );
-        managerLoginCheck.insertManagerPasswd.focus();
+        managerLoginCheck.manager_passwd.focus();
         return false;
     }
 }
 //관리자 비밀번호
 function managepasswdcheck() {
-	if( ! supermanagerho.managerPasswd.value ) {
+	if( ! supermanagerho.manager_passwd.value ) {
 		alert( managerpasswderror );
-		supermanagerho.managerPasswd.focus();
+		supermanagerho.manager_passwd.focus();
 		return false;
 	}
 }

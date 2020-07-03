@@ -23,6 +23,7 @@
 <c:set var="str_number" value="번호"/>
 <c:set var="str_delete" value="삭제"/>
 <c:set var="str_title" value="제목"/>
+<c:set var="str_modify" value="수정"/>
 
 
 <!-- 미션 -->
