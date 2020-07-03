@@ -8,6 +8,8 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 import manager.managemanager.ManageManagerDBBean;
 import manager.managemanager.ManageManagerDao;
+import manager.managemessage.ManageMessageDBBean;
+import manager.managemessage.ManageMessageDao;
 import manager.managemission.ManageMissionDBBean;
 import manager.managemission.ManageMissionDao;
 import manager.manageuser.ManageUserDBBean;
@@ -35,6 +37,11 @@ public class CreateBean {
 		return manageMissionDao;
 	}
 	
+	@Bean
+	public ManageMessageDao manageMessageDao() {
+		ManageMessageDBBean manageMessageDao = new ManageMessageDBBean();
+		return manageMessageDao;
+	}
 	@Bean
 	public ManageUserDao manageUserDao() {
 		ManageUserDBBean manageUserDao = new ManageUserDBBean();

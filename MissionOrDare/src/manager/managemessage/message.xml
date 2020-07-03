@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  	
+<mapper namespace="Mission">
+	<select id="getCountt" resultType="int">
+		select count(*) from mod_notes a inner join mod_manager b on b.manager_id=a.sent_nickname order by a.send_date desc
+	</select>
+	<select id="getSearchCountt" resultType="int">
+		select count(*) from mod_notes a inner join mod_manager b on b.manager_id=a.sent_nickname
+		where a.received_nickname like '%'||#{searchUser}||'%'
+	</select>
+	<select id="getArticless" parameterType="java.util.Map" resultType="Dtos.JoinNotesManagerDto">
+		select a.*,r 
+		from (select aa.*,rownum r from 
+		(select n.* from mod_notes n inner join mod_manager m on m.manager_id=n.sent_nickname order by n.send_date desc) aa
+		order by send_date desc) a where r &gt;= #{start} and r &lt;= #{end}
+	</select>
+	<select id="findArticless" parameterType="java.util.Map" resultType="Dtos.JoinNotesManagerDto">
+		select a.*,r 
+		from (select aa.*,rownum r from 
+		(select n.* from mod_notes n inner join mod_manager m on m.manager_id=n.sent_nickname 
+		where n.received_nickname like '%'||#{searchUser}||'%' order by n.send_date desc) aa
+		order by send_date desc) a where r &gt;= #{start} and r &lt;= #{end}
+	</select>
+</mapper>
