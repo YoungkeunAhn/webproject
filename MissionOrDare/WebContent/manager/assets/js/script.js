@@ -12,6 +12,7 @@ var missionscoreerror = "점수를 입력해주세요";
 var inputTypeError = '올바른 값을 입력하시오!!!!!!!!!!!!!!!!!!!!!!!!!!';
 var manageriderror = "관리자님 관리자아이디를 입력해주세요";
 var managerpasswderror = "관리자님 관리자 비밀번호를 입력해주세요";
+
 //로그인
 function logincheck() {
     if(! loginform.manager_id.value ){
@@ -138,6 +139,16 @@ function CloseCategoryModal(){
 	infoModal.style.display="none";
 	document.getElementsByName()
 }
+//Report modal
+function OnSendMessage() {
+	var infoModal = document.getElementById("reportMessageModal");
+	infoModal.style.display="block"
+}
+function CloseSendMessage(){
+	var infoModal = document.getElementById("reportMessageModal");
+	infoModal.style.display="none";
+	document.getElementsByName()
+}
 
 
 //category - 값 입력여부
@@ -216,6 +227,14 @@ function searchCheck4() {
 		messageho.message.focus();
 		return false;
 	}
+}
+// messageform 메시지체크
+function messageCheck() {
+	 if( ! messageForm.message.value ) {
+		alert( messageerror );
+		messageForm.message.focus();
+		return false;
+	 }
 }
 ///////////////////////////////////////////////
 //manage_manager 페이지

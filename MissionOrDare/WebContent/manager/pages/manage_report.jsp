@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" content="text/css" href="${project}assets/css/manage.css">
     <script src="${project}assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>
     <title>신고관리페이지</title>
 
 </head>
@@ -60,7 +63,7 @@
                 <th>2020-06-04 16:09</th>
                 <th>
                 <button class="btn btn-danger" name="mission-delete"
-                 onclick="location.href='${pageContext.request.contextPath}/manage_message_form.do'">
+                 onclick="OnSendMessage()">
                  ${str_message_sendmessage}</button></th>
                 </tbody>
             </table>
@@ -68,5 +71,13 @@
     </article>
     <%@include file="manage_footer.jsp"%>
 </div>
+<div id="reportMessageModal" class="modal">
+</div>
+<script>
+    $(document).ready(function () {
+            $('#reportMessageModal').load('manage_message_form.do');
+        }
+    );
+</script>
 </body>
 </html>

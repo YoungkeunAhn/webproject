@@ -12,10 +12,11 @@
     <title>유저정보페이지</title>
 </head>
 <body>
-<div class="container">	
-	    <article>
+    <article>
+    	<div class="modal-content">
+    		<span class="close" onclick="CloseSendMessage()">&times;</span>
 	        <section class="mission-info">
-	        <form name="messageForm" onsubmit="return messagecheck()">
+	        <form method="post" action="manage_message_pro.do" name="messageForm" onsubmit="return messageCheck()">
 	            <table class="table">
 	                <tr>
 	                    <th>받는사람</th>
@@ -30,13 +31,14 @@
 	                
 	                <tr>
 	                    <th class="btn btn-line" colspan="4">
-	                        <button type="submit" class="btn-primary" onclick="location.href='${pageContext.request.contextPath}/manage_message_pro.do'">보내기</button>
-	                        <button class="btn btn-danger" onclick="history.back()">취소</button>
+	                        <button type="submit" class="btn-primary">보내기</button>
+	                        <input class="btn btn-danger" value="취소" onclick="CloseSendMessage()">
 	                    </th>
 	                </tr>           
 	            </table>
 	         </form>
 	        </section>
+	       </div>
 	    </article>
 </div>
 </body>

@@ -15,7 +15,7 @@
 <body>
 	<article>
    		<div class="modal-content">
-			<span class="close" onclick='CloseInfoModal()'>&times;</span>
+			<span class="close" onclick="CloseInfoModal()">&times;</span>
 	        <section class="mission-info">
 	            <table class="table">
 	                <tr>
