@@ -30,7 +30,6 @@
             <div class="content-profile">
                 <img class="img-circle" src="${project}images/user.png" alt="user-profile">
                 <span>KIMONG</span><br>
-                <i>i는 기울어지는구나</i>
             </div>
             <div>
                 <div>
@@ -49,11 +48,20 @@
             <div class="reply-box">
                 <i class="fas fa-ellipsis-v"></i>
                 <div class="reply-level1">
-                    <div class="user-profile"><span>user1</span></div>
+                	<span>아옹</span>
+                    <div class="user-profile">
+                    <span>user1</span>
+                    <span>
+                    <button onclick="location.href='${pageContext.request.contextPath}/manage_message_deletePro.do'">댓글삭제하고파</button>
+                    </span>
+                    </div>
+                    
                     <div class="content-reply"><span>댓글</span></div>
                 </div>
                 <div class="reply-level2">
-                    <div class="user-profile"><span>user1</span></div>
+                    <div class="user-profile"><span>user1</span>
+                     <button onclick="location.href='${pageContext.request.contextPath}/manage_message_deletePro.do'">댓글삭제하고파</button>
+                    </div>
                     <div class="content-reply"><span>댓글</span></div>
                    <button class="btn btn-primary btn-search" onClick="history.go(-1)">다시돌아가~ 내일이 없는것처럼 돌아가</button>
                 </div>
