@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" content="text/css" href="${project}assets/css/manage.css">
     <script src="${project}assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>
     <title>카테고리관리페이지</title>
 
 </head>
@@ -25,7 +28,7 @@
             <label><input class="form-control" type="search" name="category"></label>
            	<button class="btn btn-primary btn-search" type="submit">${str_search}</button>
 		</form>      
-           	<button class="btn btn-success" onclick="location.href='${pageContext.request.contextPath}/manage_category_insert.do'">${str_category_categoryadd}</button>
+   		<button class="btn btn-success" onclick="OncategoryModal()">${str_category_categoryadd}</button>
         </section>
        <section>
             <table class="table">
@@ -99,8 +102,7 @@
 <div id="categoryInfoModal" class="modal">
 </div>
 <script>
-	$(document).ready(
-		function() {
+	$(document).ready( function() {
 			$('#categoryInfoModal').load('manage_category_insert.do');
 		}		
 	);

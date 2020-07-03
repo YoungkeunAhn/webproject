@@ -118,6 +118,16 @@ function CloseInfoModal(){
 	infoModal.style.display="none";
 	document.getElementsByName()
 }
+//CategoryAddModal
+function OncategoryModal() {
+	var infoModal = document.getElementById("categoryInfoModal");
+	infoModal.style.display="block"
+}
+function CloseCategoryModal(){
+	var infoModal = document.getElementById("categoryInfoModal");
+	infoModal.style.display="none";
+	document.getElementsByName()
+}
 
 //category - 값 입력여부
 function searchCheck() {

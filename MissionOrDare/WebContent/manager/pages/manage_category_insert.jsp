@@ -14,7 +14,7 @@
 <body>
     <article>
 	    <div class="modal-content">
-	    	<span class="close"	onclick='CloseInfoModal()'>&times;</span>
+	    	<span class="close"	onclick='CloseCategoryModal()'>&times;</span>
 	        <section class="mission-info">
 	        <form method="post" name="categoryinsertform" action="${pageContext.request.contextPath}/manage_category_insertPro.do" onsubmit="return categoryinsertcheck()">
 	        	<table class="table">
