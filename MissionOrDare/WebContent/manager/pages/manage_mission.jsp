@@ -38,7 +38,7 @@
             <button class="btn btn-primary btn-search" type="submit">${str_search}</button>
         </form>   
             <button class="btn btn-success" onclick="OnMissionInsertModal()">미션추가</button>
-        
+        </section>
         <section class="mission-table">
             <table class="table">
                 <thead>
@@ -50,12 +50,13 @@
                 </thead>
                 <tbody>
               	  <c:forEach var="missionCategoryAndInfoDto" items="${missionCategoryAndInfoDtos}">
-	                 <tr onclick="OnInfoModal()">
-		                <th>${missionCategoryAndInfoDto.mission_info_id}</th>
-		                <th>${missionCategoryAndInfoDto.large_category}/${missionCategoryAndInfoDto.small_category}</th>
-		                <th>${missionCategoryAndInfoDto.mission_title}</th>
-		                <th>${missionCategoryAndInfoDto.mission_avg_score}</th>
-		                <th><button class="btn btn-danger" name="missionDelete">${str_delete}</button> </th>
+	                 <tr>
+		                <th onclick="OnInfoModal()">${missionCategoryAndInfoDto.mission_info_id}</th>
+		                <th onclick="OnInfoModal()">${missionCategoryAndInfoDto.large_category}/${missionCategoryAndInfoDto.small_category}</th>
+		                <th onclick="OnInfoModal()">${missionCategoryAndInfoDto.mission_title}</th>
+		                <th onclick="OnInfoModal()">${missionCategoryAndInfoDto.mission_avg_score}</th>
+		                <th onclick="event.cancelBubble=true"><button class="btn btn-danger" name="missionDelete" 
+                			onclick="location.href='${pageContext.request.contextPath}/manage_mission_deletePro.do?id=${missionCategoryDto.mission_category_id}'">${str_delete}</button></th>
 	                </tr>
 	              </c:forEach>
                 </tbody>

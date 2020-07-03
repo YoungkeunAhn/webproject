@@ -192,7 +192,7 @@ function searchCheck2() {
 		alert( missionContentError );
 		missionho.mission.focus();
 		return false;
-	} else if(  checkKor.test(missionho.src1.value) || checkSpc.test(missionho.mission.value) || regExp.test(missionho.mission.value) ) {
+	} else if(  checkKor.test(missionho.mission.value) || checkSpc.test(missionho.mission.value) || regExp.test(missionho.mission.value) ) {
 		alert( inputTypeError );
 		missionho.mission.focus();
 		return false;
