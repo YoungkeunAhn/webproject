@@ -54,6 +54,7 @@
                 <div class="reply-level2">
                     <div class="user-profile"><span>user1</span></div>
                     <div class="content-reply"><span>댓글</span></div>
+                   <button class="btn btn-primary btn-search" onClick="history.go(-1)">다시돌아가~ 내일이 없는것처럼 돌아가</button>
                 </div>
             </div>
         </section>
