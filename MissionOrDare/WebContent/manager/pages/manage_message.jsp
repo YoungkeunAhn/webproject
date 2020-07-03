@@ -8,9 +8,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" content="text/css" href="${project}assets/css/manage.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-            crossorigin="anonymous"></script>
     <script src="${project}assets/js/script.js"></script>
     <title>쪽지관리페이지</title>
 
@@ -27,13 +24,13 @@
         <section class="mission-search">
         <form method="post" action="manage_message.do" name="messageho" onsubmit="return searchCheck4()">
             <label>
-                <input class="form-control" type="search" name="message" placeholder="유저닉네임을 입력하살법!">
+                <input class="form-control" type="search" name="searchUser" placeholder="유저닉네임을 입력하살법!">
             </label>
             <button class="btn btn-primary" type="submit" name="user-findinmessage">${str_search}</button>
         
         </form> 
            <button class="btn-primary" name="mission-delete"
-                 onclick="OnSendMessage()">${str_message_sendmessage}</button>
+                 onclick="location.href='${pageContext.request.contextPath}/manage_message_form.do'">${str_message_sendmessage}</button>
                 
             <button class="btn-danger" name="mission-delete"
                  onclick="location.href='${pageContext.request.contextPath}/manage_message_deletePro.do'">${str_message_messagedelete}</button>
@@ -50,25 +47,65 @@
                 
                 </thead>
                 <tbody>
+                <c:forEach var="joinNotesManagerDto" items="${joinNotesManagerDtos}">
+                <tr>
                 <th><input type="checkbox"></th>
-                <th>다리도비빔면</th>
-                <th>요새누가 팔을비비냐 다리비비지</th>
-                <th>팔도비빔면</th>
-                <th>2020/07/01</th>
-                
+                <th>${joinNotesManagerDto.sent_nickname}</th>
+                <th>${joinNotesManagerDto.notes_contents}</th>
+                <th>${joinNotesManagerDto.received_nickname}</th>
+                <th>${joinNotesManagerDto.send_date}</th>
+                <tr>
+                </c:forEach>
                 </tbody>
             </table>
+        </section>
+        <br>
+        <section>
+        <c:if test="${searchUser eq null}">
+			<c:if test="${cnt gt 0}">
+				<c:if test="${startPage gt pageBlock}">
+					<a href="manage_message.do">[◀◀]</a>
+					<a href="manage_message.do?pageNum=${startPage-pageBlock}">[◀]</a>
+				</c:if>
+				<c:forEach var="i" begin="${startPage}" end="${endPage}">
+					<c:if test="${i eq currentPage}"> 
+						<b>[${i}]</b>				
+					</c:if>
+					<c:if test="${i ne currentPage}">
+						<a href="manage_message.do?pageNum=${i}">[${i}]</a>				
+					</c:if>
+				</c:forEach>	
+				<c:if test="${pageCount gt endPage}">
+					<a href="manage_message.do?pageNum=${startPage+pageBlock}">[▶]</a>
+					<a href="manage_message.do?pageNum=${pageCount}">[▶▶]</a>		
+				</c:if>
+			</c:if>        
+		</c:if>
+		
+		<c:if test="${searchUser ne null}">
+			<c:if test="${cnt gt 0}">
+				<c:if test="${startPage gt pageBlock}">
+					<a href="manage_message.do?searchUser=${searchUser}">[◀◀]</a>
+					<a href="manage_message.do?pageNum=${startPage-pageBlock}&searchUser=${searchUser}">[◀]</a>
+				</c:if>
+				<c:forEach var="i" begin="${startPage}" end="${endPage}">
+					<c:if test="${i eq currentPage}"> 
+						<b>[${i}]</b>				
+					</c:if>
+					<c:if test="${i ne currentPage}">
+						<a href="manage_message.do?pageNum=${i}&searchUser=${searchUser}">[${i}]</a>				
+					</c:if>
+				</c:forEach>	
+				<c:if test="${pageCount gt endPage}">
+					<a href="manage_message.do?pageNum=${startPage+pageBlock}&searchUser=${searchUser}">[▶]</a>
+					<a href="manage_message.do?pageNum=${pageCount}&searchUser=${searchUser}">[▶▶]</a>		
+				</c:if>
+			</c:if>        
+		</c:if>
+		
         </section>
     </article>
     <%@include file="manage_footer.jsp"%>
 </div>
-<div id="reportMessageModal" class="modal">
-</div>
-<script>
-    $(document).ready(function () {
-            $('#reportMessageModal').load('manage_message_form.do');
-        }
-    );
-</script>
 </body>
 </html>
