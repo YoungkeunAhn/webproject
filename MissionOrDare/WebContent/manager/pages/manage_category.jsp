@@ -96,5 +96,14 @@
     </article>
     <%@include file="manage_footer.jsp"%>
 </div>
+<div id="categoryInfoModal" class="modal">
+</div>
+<script>
+	$(document).ready(
+		function() {
+			$('#categoryInfoModal').load('manage_category_insert.do');
+		}		
+	);
+</script>
 </body>
 </html>

@@ -12,33 +12,34 @@
     <title>미션정보페이지</title>
 </head>
 <body>
-<div class="container">
     <article>
-        <section class="mission-info">
-        <form method="post" action="${pageContext.request.contextPath}/manage_category_insertPro.do" name="categoryinsertform" onsubmit="return categoryinsertcheck()">
-        	<table class="table">
-            <tr>
-                <tr>
-                    <th colspan="2"><span>카테고리</span></th>
-                </tr>
-                <tr>
-                    <th>대분류</th>
-                    <td><label><input type="text" name="largeCategory"></label></td>
-                </tr>
-                <tr>
-                    <th>소분류</th>
-                    <td><label><input type="text" name="smallCategory"></label></td>
-                </tr>
-                <tr>
-                    <th class="btn-line" colspan="2">
-                        <button class="btn btn-primary">추가하기</button>
-                        <button class="btn btn-danger" onclick="history.back()">취소</button>
-                    </th>
-                </tr>
-            </table>
-        </form>
-        </section>
+	    <div class="modal-content">
+	    	<span class="close"	onclick='CloseInfoModal()'>&times;</span>
+	        <section class="mission-info">
+	        <form method="post" name="categoryinsertform" action="${pageContext.request.contextPath}/manage_category_insertPro.do" onsubmit="return categoryinsertcheck()">
+	        	<table class="table">
+	            <tr>
+	                <tr>
+	                    <th colspan="2"><span>카테고리</span></th>
+	                </tr>
+	                <tr>
+	                    <th>대분류</th>
+	                    <td><label><input type="text" name="largeCategory"></label></td>
+	                </tr>
+	                <tr>
+	                    <th>소분류</th>
+	                    <td><label><input type="text" name="smallCategory"></label></td>
+	                </tr>
+	                <tr>
+	                    <th class="btn-line" colspan="2">
+	                        <input class="btn btn-primary" type="submit" value="추가하기">   
+	           		     	<input class="btn btn-danger" value="닫기" onclick="CloseInfoModal()">
+	               		</th>
+	                </tr>
+	            </table>
+	        	</form>
+	        </section>
+	     </div>
     </article>
-</div>
 </body>
 </html>
