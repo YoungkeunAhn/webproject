@@ -7,7 +7,6 @@ import org.apache.ibatis.session.SqlSession;
 
 import Dtos.MissionCategoryAndInfoDto;
 import Dtos.MissionCategoryDto;
-import Dtos.MissionInfoDto;
 
 public class ManageMissionDBBean implements ManageMissionDao {
 	SqlSession session = SqlMapClient.getSession();
@@ -44,5 +43,10 @@ public class ManageMissionDBBean implements ManageMissionDao {
 	public List<MissionCategoryAndInfoDto> getSearchMissions( Map<String, Object> map ) {
 		return session.selectList("Mission.getSearchMissions", map);
 	}
-	
+	public List<MissionCategoryDto> getMissionLargeCategorys() {
+		return session.selectList("Mission.getMissionLargeCategorys");
+	}
+	public List<MissionCategoryDto> getMissionSmallCategorys() {
+		return session.selectList("Mission.getMissionSmallCategorys");
+	}
 }

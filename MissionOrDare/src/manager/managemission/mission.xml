@@ -75,6 +75,14 @@
 		where r &gt;= #{start} and r &lt;= #{end}
 	</select>
 	
+	<!-- 카테고리 목록 -->
+	<select id="getMissionLargeCategorys" resultType="Dtos.MissionCategoryDto">
+		select distinct large_category from MOD_MissionCategory
+	</select>
+	<select id="getMissionSmallCategorys" resultType="Dtos.MissionCategoryDto">
+		select distinct small_category from MOD_MissionCategory
+	</select>
+	
 	<!-- 미션  추가 
 	<insert id="insertMission" parameterType="Dtos.MissionInfoDto">
 		insert into MOD_MissionInfo (mission_info_id, mission_title, 

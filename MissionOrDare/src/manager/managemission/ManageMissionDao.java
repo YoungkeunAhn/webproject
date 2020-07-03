@@ -17,4 +17,6 @@ public interface ManageMissionDao {
 	public List<MissionCategoryAndInfoDto> getSearchMissions( Map<String, Object> map );
 	public int getMissionCount();
 	public int getSearchMissionCount(String mission);
+	public List<MissionCategoryDto> getMissionLargeCategorys();
+	public List<MissionCategoryDto> getMissionSmallCategorys();
 }
