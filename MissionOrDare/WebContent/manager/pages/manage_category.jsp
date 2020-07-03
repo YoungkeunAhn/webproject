@@ -47,6 +47,7 @@
 	                <th>${missionCategoryDto.small_category}</th>
 	                <th onclick="event.cancelBubble=true"><button class="btn btn-primary" name="category-insert"
                 			onclick="location.href='${pageContext.request.contextPath}/manage_mission_insert.do'">${str_category_missionadd}</button></th>
+               		<th> </th>
                		<th onclick="event.cancelBubble=true"><button class="btn btn-danger" name="category-delete" 
                 			onclick="location.href='${pageContext.request.contextPath}/manage_category_deletePro.do?id=${missionCategoryDto.mission_category_id}'">${str_delete}</button></th>
                 </tr>

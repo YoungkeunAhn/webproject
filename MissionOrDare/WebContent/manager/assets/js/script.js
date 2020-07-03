@@ -218,13 +218,13 @@ function searchCheck4() {
 	 var checkKor = /^[0-9ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;
 	 var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
 	 var regExp = /\s/g;	//띄어쓰기
-	 if( ! messageho.message.value ) {
+	 if( ! messageho.searchUser.value ) {
 		alert( missionContentError );
-		messageho.message.focus();
+		messageho.searchUser.focus();
 		return false;
-	} else if( checkKor.test(messageho.message.value) || checkSpc.test(messageho.message.value) || regExp.test(messageho.message.value) ) {
+	} else if( checkKor.test(messageho.searchUser.value) || checkSpc.test(messageho.searchUser.value) || regExp.test(messageho.searchUser.value) ) {
 		alert( inputTypeError );
-		messageho.message.focus();
+		messageho.searchUser.focus();
 		return false;
 	}
 }
