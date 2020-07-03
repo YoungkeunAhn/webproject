@@ -37,9 +37,8 @@
             </label>
             <button class="btn btn-primary btn-search" type="submit">${str_search}</button>
         </form>   
-            <button class="btn btn-success" onclick="location.href='${pageContext.request.contextPath}/manage_mission_insert.do'">미션추가</button>
+            <button class="btn btn-success" onclick="OnMissionInsertModal()">미션추가</button>
         
-        </section>
         <section class="mission-table">
             <table class="table">
                 <thead>
@@ -110,6 +109,14 @@
 <script>
     $(document).ready(function () {
             $('#missionInfoModal').load('manage_mission_info.do');
+        }
+    );
+</script>
+<div id="missionInsertModal" class="modal">
+</div>
+<script>
+    $(document).ready(function () {
+            $('#missionInsertModal').load('manage_mission_insert.do');
         }
     );
 </script>
