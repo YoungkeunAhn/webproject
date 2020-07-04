@@ -22,6 +22,7 @@
     <article>
     	<div>
         <section class="content-part">
+        <div class="white-box">
             <div>
                 <span>미술/그리기</span>
             </div>
@@ -41,14 +42,17 @@
                 </div>
                 <span>졸귀탱라이언</span>
             </div>
-        </section>
+       	</div>
+       	</section>
         <section class="reply-part">
             <div class="like-box">
                 <span><i class="far fa-thumbs-up"></i></span>
                 <span>23개</span>
             </div>
             <div class="reply-box">
+            
                 <i class="fas fa-ellipsis-v"></i>
+                	
                 <div class="reply-level1">
                 	<span>아옹</span>
                     <div class="user-profile">
