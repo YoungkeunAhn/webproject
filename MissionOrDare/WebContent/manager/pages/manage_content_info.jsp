@@ -20,6 +20,7 @@
         <%@include file="manage_nav.jsp"%>
     </div>
     <article>
+    	<div>
         <section class="content-part">
             <div>
                 <span>미술/그리기</span>
@@ -27,6 +28,7 @@
             <div>
                 <span>라이언이 부탁한 자화상</span>
             </div>
+            
             <div class="content-profile">
                 <img class="img-circle" src="${project}images/user.png" alt="user-profile">
                 <span>KIMONG</span><br>
@@ -51,7 +53,7 @@
                 	<span>아옹</span>
                     <div class="user-profile">
                     <span>user1</span>
-                    <span>
+                    <span style="background-color:red">
                     <button onclick="location.href='${pageContext.request.contextPath}/manage_message_deletePro.do'">댓글삭제하고파</button>
                     </span>
                     </div>
@@ -66,7 +68,9 @@
                    <button class="btn btn-primary btn-search" onClick="history.go(-1)">다시돌아가~ 내일이 없는것처럼 돌아가</button>
                 </div>
             </div>
+            
         </section>
+        </div>
     </article>
     <div>
         <%@include file="manage_footer.jsp"%>
