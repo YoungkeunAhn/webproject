@@ -20,7 +20,7 @@
         <%@include file="manage_nav.jsp"%>
     </div>
     <article>
-    	<div>
+    	<div style="display: block; width:900px; height:704px; margin:0 auto; background:#ddd;position:relative;">
         <section class="content-part">
         <div class="white-box">
             <div>
@@ -42,10 +42,7 @@
                 </div>
                 <span>졸귀탱라이언</span>
             </div>
-       	</div>
-       	</section>
-        <section class="reply-part">
-            <div class="like-box">
+              <div class="like-box">
                 <span><i class="far fa-thumbs-up"></i></span>
                 <span>23개</span>
             </div>
@@ -73,7 +70,11 @@
                 </div>
             </div>
             
-        </section>
+       	</div>
+       	</section>
+       
+          
+       
         </div>
     </article>
     <div>
