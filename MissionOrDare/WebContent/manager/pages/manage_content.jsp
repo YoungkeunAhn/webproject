@@ -14,6 +14,7 @@
 </head>
 <body>
 <div class="container">
+	
     <div>
         <%@include file="manage_header.jsp"%>
     </div>
@@ -62,6 +63,7 @@
         </section>
     </article>
     <%@include file="manage_footer.jsp"%>
+    
 </div>
 </body>
 </html>
