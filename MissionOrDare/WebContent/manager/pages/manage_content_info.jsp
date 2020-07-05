@@ -22,7 +22,7 @@
     <article>
     	<div style="display: block; width:900px; height:704px; margin:0 auto; background:#ddd;position:relative;">
         <section class="content-part">
-        <div class="white-box">
+        <div class="white-box" style="background:#c5e8ea;">
             <div>
                 <span>미술/그리기</span>
             </div>
@@ -54,7 +54,7 @@
                 	<span>아옹</span>
                     <div class="user-profile">
                     <span>user1</span>
-                    <span style="background-color:red">
+                    <span>
                     <button onclick="location.href='${pageContext.request.contextPath}/manage_message_deletePro.do'">댓글삭제하고파</button>
                     </span>
                     </div>
@@ -66,7 +66,7 @@
                      <button onclick="location.href='${pageContext.request.contextPath}/manage_message_deletePro.do'">댓글삭제하고파</button>
                     </div>
                     <div class="content-reply"><span>댓글</span></div>
-                   <button class="btn btn-primary btn-search" onClick="history.go(-1)">다시돌아가~ 내일이 없는것처럼 돌아가</button>
+                   <button style="background:#d4f3ea; border:1px; color:black;" class="btn btn-primary btn-search" onClick="history.go(-1)">다시돌아가~ 내일이 없는것처럼 돌아가</button>
                 </div>
             </div>
             
