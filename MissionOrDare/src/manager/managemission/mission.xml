@@ -96,4 +96,9 @@
 		#{mission_category_id}, #{mission_location, jdbcType=VARCHAR}, #{mission_contents, jdbcType=VARCHAR})
 	</insert>
 	
+	<!-- 미션 삭제 -->
+	<delete id="deleteMission" parameterType="String">
+		delete from MOD_MissionInfo where mission_info_id=#{mission_info_id}
+	</delete>
+	
 </mapper>

@@ -65,4 +65,7 @@ public class ManageMissionDBBean implements ManageMissionDao {
 	public int insertMission(MissionInfoDto missionInfoDto) {
 		return session.insert("Mission.insertMission", missionInfoDto);
 	}
+	public int deleteMission(String mission_info_id) {
+		return session.delete("Mission.deleteMission", mission_info_id);
+	}
 }

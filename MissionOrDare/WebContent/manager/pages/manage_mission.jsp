@@ -56,7 +56,7 @@
 		                <th onclick="OnInfoModal()">${missionCategoryAndInfoDto.mission_title}</th>
 		                <th onclick="OnInfoModal()">${missionCategoryAndInfoDto.mission_avg_score}</th>
 		                <th onclick="event.cancelBubble=true"><button class="btn btn-danger" name="missionDelete" 
-                			onclick="location.href='${pageContext.request.contextPath}/manage_mission_deletePro.do?id=${missionCategoryDto.mission_category_id}'">${str_delete}</button></th>
+                			onclick="location.href='${pageContext.request.contextPath}/manage_mission_deletePro.do?id=${missionCategoryAndInfoDto.mission_info_id}'">${str_delete}</button></th>
 	                </tr>
 	              </c:forEach>
                 </tbody>

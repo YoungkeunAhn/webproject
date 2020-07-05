@@ -22,4 +22,5 @@ public interface ManageMissionDao {
 	public List<MissionCategoryDto> getMissionSmallCategorys(String largecategory);
 	public String getCategoryId(MissionCategoryDto missionCategoryDto);
 	public int insertMission(MissionInfoDto missionInfoDto);
+	public int deleteMission(String mission_info_id);
 }
