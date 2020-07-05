@@ -26,8 +26,8 @@
         <section class="mission-search">
         <form method="post" action="manage_mission.do" name="missionho" onsubmit="return searchCheck2()">
             <label>
-                <select class="form-control">
-                    <option value="1" selected> ${str_mission_category}</option>
+                <select class="form-control" name="option">
+                    <option value="1"> ${str_mission_category}</option>
                     <option value="2">${str_title}</option>
                     <option value="3">${str_mission_content}</option>
                 </select>
@@ -110,16 +110,11 @@
 <script>
     $(document).ready(function () {
             $('#missionInfoModal').load('manage_mission_info.do');
+            $('#missionInsertModal').load('manage_mission_insert.do');
         }
     );
 </script>
 <div id="missionInsertModal" class="modal">
 </div>
-<script>
-    $(document).ready(function () {
-            $('#missionInsertModal').load('manage_mission_insert.do');
-        }
-    );
-</script>
 </body>
 </html>

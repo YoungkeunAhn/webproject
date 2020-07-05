@@ -50,9 +50,17 @@ public class ManageMissionDBBean implements ManageMissionDao {
 	public List<MissionCategoryAndInfoDto> getMissions( Map<String, Integer> map ) {
 		return session.selectList("Mission.getMissions", map);
 	}
-	public List<MissionCategoryAndInfoDto> getSearchMissions( Map<String, Object> map ) {
-		return session.selectList("Mission.getSearchMissions", map);
+	
+	public List<MissionCategoryAndInfoDto> getSearchMissionsCategory( Map<String, Object> map ) {
+		return session.selectList("Mission.getSearchMissionsCategory", map);
 	}
+	public List<MissionCategoryAndInfoDto> getSearchMissionsTitle( Map<String, Object> map ) {
+		return session.selectList("Mission.getSearchMissionsTitle", map);
+	}
+	public List<MissionCategoryAndInfoDto> getSearchMissionsContent( Map<String, Object> map ) {
+		return session.selectList("Mission.getSearchMissionsContent", map);
+	}
+	
 	public List<MissionCategoryDto> getMissionLargeCategorys() {
 		return session.selectList("Mission.getMissionLargeCategorys");
 	}

@@ -27,6 +27,7 @@ public class ManageMission implements CommandHandler{
 		request.setCharacterEncoding("utf-8");
 		
 		String mission = request.getParameter("mission");
+		String option = request.getParameter("option");
 		
 		int pageSize = 5;					// 한 페이지당 글 개수
 		int pageBlock = 3;					// 한 번에 출력할 페이지 개수
@@ -93,9 +94,15 @@ public class ManageMission implements CommandHandler{
 				map.put("start", start);
 				map.put("end", end);
 				map.put("mission", mission);
-				List<MissionCategoryAndInfoDto> missionCategoryAndInfoDtos = manageMissionDao.getSearchMissions(map);
+				List<MissionCategoryAndInfoDto> missionCategoryAndInfoDtos;
+				switch(option) {
+				case "1" : missionCategoryAndInfoDtos = manageMissionDao.getSearchMissionsCategory(map); break;
+				case "2" : missionCategoryAndInfoDtos = manageMissionDao.getSearchMissionsTitle(map); break;
+				default : missionCategoryAndInfoDtos = manageMissionDao.getSearchMissionsContent(map);
+				}
 				request.setAttribute( "missionCategoryAndInfoDtos", missionCategoryAndInfoDtos );
 				request.setAttribute("mission", mission);
+				request.setAttribute("option", option);
 			}
 		}
 		return new ModelAndView("manager/pages/manage_mission");
