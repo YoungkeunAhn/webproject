@@ -1,3 +1,4 @@
+/*
 package handler.manager.supermanager;
 
 import java.util.Hashtable;
@@ -85,4 +86,4 @@ public class ManagerList implements CommandHandler {
 		return new ModelAndView( "manager/pages/manage_manager" );
 	}
 }
-
+*/

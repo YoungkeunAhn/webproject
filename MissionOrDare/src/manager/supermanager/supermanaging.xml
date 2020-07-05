@@ -20,4 +20,11 @@
 		where r &gt;= #{start} and r &lt;= #{end}
 	</select>
 	 -->
+	
+<!-- 글목록 수  -->
+	<!--  
+	<select id="getCount" resultType="int">
+		select count(*) from mod_manager	 
+	</select>
+	-->
 </mapper>
