@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="manager_settings.jsp" %>
 <!DOCTYPE html>
 
@@ -16,3 +15,5 @@
 <c:if test="${result eq 1}">
 	<c:redirect url="manage_manager.do"/>
 </c:if>
+
+

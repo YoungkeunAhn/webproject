@@ -1,4 +1,4 @@
-package handler.manage.managemanager;
+package handler.manager.supermanager;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -10,12 +10,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import Dtos.ManagerDto;
 import handler.CommandHandler;
-import manager.managemanager.ManageManagerDao;
+import manager.supermanager.SupermanagerDao;
+
 
 @Controller
-public class ManageManagerInsertPro implements CommandHandler{
+public class SupermanagerInsertPro implements CommandHandler{
 	@Resource
-	private ManageManagerDao manageManagerDao;
+	private SupermanagerDao supermanagerDao;
 	
 	@RequestMapping("/manage_manager_insertPro")
 	@Override
@@ -29,12 +30,9 @@ public class ManageManagerInsertPro implements CommandHandler{
 		System.out.println(managerDto.getManager_id());
 		System.out.println(managerDto.getManager_passwd());
 		
-		int result = manageManagerDao.insertManager(managerDto);
+		int result = supermanagerDao.insertManager(managerDto);
 		request.setAttribute("result", result);
 		
 		return new ModelAndView("manager/pages/manage_manager_insertPro");
 	}
-	
-	
-
 }

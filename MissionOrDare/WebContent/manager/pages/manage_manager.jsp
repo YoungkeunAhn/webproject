@@ -65,6 +65,26 @@
                 <th><button class="btn btn-danger" name="btnmanagerdelete" type="submit">삭제</button></th>
                 </tbody>
             </table>
+            <br>
+				<c:if test="${cnt gt 0}">
+					<c:if test="${startPage gt pageBlock}">
+						<a href="manage_manager.do">[◀◀]</a>
+						<a href="manage_manager.do?pageNum=${startPage-pageBlock}">[◀]</a>
+					</c:if>
+					<c:forEach var="i" begin="${startPage}" end="${endPage}">
+						<c:if test="${i eq currentPage}"> 
+							<b>[${i}]</b>				
+						</c:if>
+						<c:if test="${i ne currentPage}">
+							<a href="manage_manager.do?pageNum=${i}">[${i}]</a>				
+						</c:if>
+					</c:forEach>	
+					<c:if test="${pageCount gt endPage}">
+						<a href="manage_manager.do?pageNum=${startPage+pageBlock}">[▶]</a>
+						<a href="manage_manager.do?pageNum=${pageCount}">[▶▶]</a>		
+					</c:if>
+				</c:if>
+
             </form>
         </section>
     </article>

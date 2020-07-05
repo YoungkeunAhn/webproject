@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  	
+<mapper namespace="Supermanaging">
+
+<!-- 관리자 생성 -->
+	<insert id="insertManager" parameterType="Dtos.ManagerDto">
+		insert into mod_manager (manager_id,manager_passwd) values(#{manager_id},#{manager_passwd})
+	</insert>
+	
+<!-- 관리자 목록 -->
+	<!-- 
+	<select id="getManagers" resultType="Dtos.ManagerDto">
+		select manager_id, manager_passwd, r
+		from (select manager_id, manager_passwd, rownum r
+		from (select manager_id, manager_passwd,
+		from mod_manager order by manager_id, manager_passwd) order by manager_id, manager_passwd)
+		where r &gt;= #{start} and r &lt;= #{end}
+	</select>
+	 -->
+</mapper>

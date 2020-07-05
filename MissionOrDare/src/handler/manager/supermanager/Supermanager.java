@@ -1,4 +1,4 @@
-package handler.manage.managemanager;
+package handler.manager.supermanager;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import handler.CommandHandler;
 
 @Controller
-public class ManageManager implements CommandHandler{
+public class Supermanager implements CommandHandler{
 	
 	@RequestMapping("/manage_manager")
 	@Override
@@ -18,4 +18,3 @@ public class ManageManager implements CommandHandler{
 		return new ModelAndView("manager/pages/manage_manager");
 	}
 }
-

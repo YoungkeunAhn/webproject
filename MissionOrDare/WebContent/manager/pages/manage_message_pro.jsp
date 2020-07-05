@@ -1,14 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="manager_settings.jsp" %>
-    
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<h3>메시지처리페이지입니다</h3>
-</head>
-<body>
+<script src="assets/js/script.js"></script>
 
-</body>
-</html>
+<h2> 관리자 처리 페이지입니다. </h2>
+<c:if test="${result eq 0}">
+	<script type="text/javascript">
+		<!--
+		alert( "다시 입력해주십시오." );
+		//-->
+	</script>
+</c:if>
+<c:if test="${result eq 1}">
+	<c:redirect url="loginForm.do"/>
+</c:if>

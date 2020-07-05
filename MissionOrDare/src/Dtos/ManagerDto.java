@@ -5,6 +5,7 @@ public class ManagerDto{
 	private String manager_id;
 	private String manager_passwd;
 	private String authority;
+	
 	public String getManager_id() {
 		return manager_id;
 	}

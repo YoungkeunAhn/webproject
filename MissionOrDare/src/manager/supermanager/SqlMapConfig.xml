@@ -4,7 +4,7 @@
   	"http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-	<properties resource="manager/managemanager/connect.properties"/>
+	<properties resource="manager/supermanager/connect.properties"/>
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC"/>
@@ -18,12 +18,8 @@
 		</environment>		
 	</environments>
 	<mappers>
-		<mapper resource="manager/managemanager/supermanager.xml" />
+		<mapper resource="manager/supermanager/supermanaging.xml" />
 	</mappers>	
 </configuration>  	
-
-
-
-
 
 

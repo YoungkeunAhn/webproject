@@ -1,4 +1,4 @@
-package manager.managemanager;
+package manager.supermanager;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -12,7 +12,7 @@ public class SqlMapClient {
 	private static SqlSession session = null;
 	static {
 		try {
-			Reader reader = Resources.getResourceAsReader( "manager/managemanager/sqlMapConfig.xml" );
+			Reader reader = Resources.getResourceAsReader( "manager/supermanager/SqlMapConfig.xml" );
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build( reader );
 			session = factory.openSession( true );
 		} catch (IOException e) {
