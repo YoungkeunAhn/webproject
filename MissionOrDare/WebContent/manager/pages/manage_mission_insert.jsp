@@ -9,13 +9,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" content="text/css" href="${project}assets/css/manage.css">
     <script src="${project}assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>
     <title>미션입력페이지</title>
 </head>
 <body>
     <article>
-	    <div class="modal-content">
+	    <div class="modal-content" style="background:#c6eced; width:65%; height:69%;">
 	    	<span class="close" onclick='CloseMissionInsertModal()'>&times;</span>
-	        <section class="mission-insert-update">
+	        <section class="mission-insert-update" style="margin:unset;">
 	            <h2>미션추가페이지</h2>
 	            <form method="post" action="manage_mission_insertPro.do" name="missioninsertForm"
 	            	onsubmit="return missioninsertcheck()">
