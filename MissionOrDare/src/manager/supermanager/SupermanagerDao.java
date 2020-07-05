@@ -9,7 +9,7 @@ public interface SupermanagerDao {
 
 	public int insertManager( ManagerDto managerDto );
 	
-//	public List<ManagerDto> managerDtos( Map<String, Integer> map );
+	public List<ManagerDto> managerDtos( Map<String, Integer> map );
 	
-//	public int getCount();
+	public int getCount();
 }
