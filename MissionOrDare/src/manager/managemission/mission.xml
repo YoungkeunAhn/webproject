@@ -60,7 +60,7 @@
 		from (select a.*, rownum r 
 		from (select m.*, c.large_category, c.small_category 
 		from MOD_MissionCategory c, MOD_MissionInfo m where c.mission_category_id=m.mission_category_id) a 
-		order by large_category, small_category) aa 
+		order by mission_info_id) aa 
 		where r &gt;= #{start} and r &lt;= #{end}
 	</select>
 	
@@ -79,16 +79,21 @@
 	<select id="getMissionLargeCategorys" resultType="Dtos.MissionCategoryDto">
 		select distinct large_category from MOD_MissionCategory
 	</select>
-	<select id="getMissionSmallCategorys" resultType="Dtos.MissionCategoryDto">
-		select distinct small_category from MOD_MissionCategory
+	<select id="getMissionSmallCategorys" parameterType="String" resultType="Dtos.MissionCategoryDto">
+		select small_category from MOD_MissionCategory where large_category=#{largecategory} order by small_category
 	</select>
 	
-	<!-- 미션  추가 
+	<!-- 카테고리 아이디 검색 -->
+	<select id="getCategoryId" parameterType="Dtos.MissionCategoryDto" resultType="String">
+		select mission_category_id from MOD_MissionCategory where large_category=#{large_category} and small_category=#{small_category}
+	</select>
+	
+	<!-- 미션  추가 -->
 	<insert id="insertMission" parameterType="Dtos.MissionInfoDto">
 		insert into MOD_MissionInfo (mission_info_id, mission_title, 
 		mission_level, mission_category_id, mission_location, mission_contents) values(
 		'mission'||lpad(seq_mission_info.nextval,5,0) ,#{mission_title}, #{mission_level}, 
-		(select ), #{mission_location, jdbcType=VARCHAR}, #{mission_contents, jdbcType=VARCHAR})
+		#{mission_category_id}, #{mission_location, jdbcType=VARCHAR}, #{mission_contents, jdbcType=VARCHAR})
 	</insert>
-	-->
+	
 </mapper>

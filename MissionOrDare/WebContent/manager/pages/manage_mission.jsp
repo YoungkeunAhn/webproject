@@ -27,9 +27,9 @@
         <form method="post" action="manage_mission.do" name="missionho" onsubmit="return searchCheck2()">
             <label>
                 <select class="form-control">
-                    <option selected> ${str_mission_category}</option>
-                    <option>${str_title}</option>
-                    <option>${str_mission_content}</option>
+                    <option value="1" selected> ${str_mission_category}</option>
+                    <option value="2">${str_title}</option>
+                    <option value="3">${str_mission_content}</option>
                 </select>
             </label>
             <label>
@@ -39,7 +39,7 @@
         </form>   
             <button class="btn btn-success" onclick="OnMissionInsertModal()">미션추가</button>
         </section>
-        <section class="mission-table">
+        <section>
             <table class="table">
                 <thead>
                 <th>${str_number}</th>

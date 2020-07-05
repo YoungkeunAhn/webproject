@@ -65,7 +65,4 @@ public class MissionInfoDto {
 	public void setMission_contents(String mission_contents) {
 		this.mission_contents = mission_contents;
 	}
-	
-	
-	
 }

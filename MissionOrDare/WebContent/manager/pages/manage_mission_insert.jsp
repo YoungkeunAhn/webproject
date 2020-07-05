@@ -29,8 +29,9 @@
 	                            <label>
 	                                <select class="form-control" name="largecategory">
 	                                    <option value="">${str_category_bigsorting}</option>
-	                                    <option value="1">미술</option>
-	                                    <option value="2">운동</option>
+	                                    <c:forEach var="missionLargeCategory" items="${missionLargeCategorys}">
+	                                  	  <option value="${missionLargeCategory.large_category}">${missionLargeCategory.large_category}</option>
+	                                    </c:forEach>
 	                                </select>
 	                            </label>
 	                        </td>
@@ -38,9 +39,6 @@
 	                            <label>
 	                                <select class="form-control" name="smallcategory">
 	                         	           <option value="">${str_category_smallsorting}</option>
-	                                       <option value="1">그리기</option>
-	                                       <option value="2">달리기</option>
-	                                       
 	                                </select>
 	                            </label>
 	                        </td>
@@ -71,9 +69,9 @@
 	                        <td>
 	                            <label>
 	                                <select class="form-control" name="missionlevel">
-	                                    <option selected>1</option>
-	                                    <option>2</option>
-	                                    <option>3</option>
+	                                    <option value="1"selected >1</option>
+	                                    <option value="2">2</option>
+	                                    <option value="3">3</option>
 	                                </select>
 	                            </label>
 	                        </td>
@@ -85,16 +83,16 @@
 	                        <td>
 	                            <label>
 	                                <select class="form-control" name="missionchallenge">
-	                                    <option selected>일반</option>
-	                                    <option>챌린지</option>
+	                                    <option value="1" selected>일반</option>
+	                                    <option value="2">챌린지</option>
 	                                </select>
 	                            </label>
 	                        </td>
 	                        <td>
 	                            <label>
 	                                <select class="form-control" name="missionlocal">
-	                                    <option selected>실내</option>
-	                                    <option>야외</option>
+	                                    <option value="실내"selected>실내</option>
+	                                    <option value="야외">야외</option>
 	                                </select>
 	                            </label>
 	                        </td>
@@ -110,5 +108,33 @@
 	        </section>
 	    </div>    
     </article>
+    <script type="text/javascript">
+		//<!--
+			$(document).ready(function() {
+				$('select[name=largecategory]').on('change', function(event) {
+					$.ajax(
+						{
+							type :'post',
+							url : 'categorycheck.do',
+							data : {
+								largecategory : $('select[name=largecategory]').val()
+							},
+							dataType : 'text',
+							success : function(data) {
+								$("select[name=smallcategory]").find("option").remove().end().append("<option value=''>${str_category_smallsorting}</option>");
+								data = eval('(' + data +')');
+								for(var i=0; i<data.smallCategorys.length; i++){
+								    $('select[name=smallcategory]').append("<option value='"+data.smallCategorys[i].smallCategory+"'>"+data.smallCategorys[i].smallCategory+"</option>");
+								}
+							},
+							error : function (request,status,error) {
+								alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+							}
+						}		
+					);
+				});
+			});
+		//-->
+	</script>
 </body>
 </html>

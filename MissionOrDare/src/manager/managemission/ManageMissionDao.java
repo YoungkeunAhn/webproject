@@ -5,6 +5,7 @@ import java.util.Map;
 
 import Dtos.MissionCategoryAndInfoDto;
 import Dtos.MissionCategoryDto;
+import Dtos.MissionInfoDto;
 
 public interface ManageMissionDao {
 	public int insertCategory(MissionCategoryDto missionCategoryDto);
@@ -18,5 +19,7 @@ public interface ManageMissionDao {
 	public int getMissionCount();
 	public int getSearchMissionCount(String mission);
 	public List<MissionCategoryDto> getMissionLargeCategorys();
-	public List<MissionCategoryDto> getMissionSmallCategorys();
+	public List<MissionCategoryDto> getMissionSmallCategorys(String largecategory);
+	public String getCategoryId(MissionCategoryDto missionCategoryDto);
+	public int insertMission(MissionInfoDto missionInfoDto);
 }

@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.dao.DataIntegrityViolationException;
 
 import Dtos.MissionCategoryAndInfoDto;
 import Dtos.MissionCategoryDto;
+import Dtos.MissionInfoDto;
 
 public class ManageMissionDBBean implements ManageMissionDao {
 	SqlSession session = SqlMapClient.getSession();
@@ -15,6 +17,14 @@ public class ManageMissionDBBean implements ManageMissionDao {
 		return session.insert("Mission.insertCategory", missionCategoryDto);
 	}
 	public int deleteCategory(String missionCategoryId) {
+		try {
+			System.out.println("아오..");
+			session.delete("Mission.deleteCategory", missionCategoryId );
+			
+		} catch (DataIntegrityViolationException e) {
+			System.out.println("d흐으ㅡ음");
+			return 0;
+		}
 		return session.delete("Mission.deleteCategory", missionCategoryId );
 	}
 	
@@ -46,7 +56,13 @@ public class ManageMissionDBBean implements ManageMissionDao {
 	public List<MissionCategoryDto> getMissionLargeCategorys() {
 		return session.selectList("Mission.getMissionLargeCategorys");
 	}
-	public List<MissionCategoryDto> getMissionSmallCategorys() {
-		return session.selectList("Mission.getMissionSmallCategorys");
+	public List<MissionCategoryDto> getMissionSmallCategorys(String largecategory) {
+		return session.selectList("Mission.getMissionSmallCategorys", largecategory);
+	}
+	public String getCategoryId(MissionCategoryDto missionCategoryDto) {
+		return session.selectOne("Mission.getCategoryId", missionCategoryDto);
+	}
+	public int insertMission(MissionInfoDto missionInfoDto) {
+		return session.insert("Mission.insertMission", missionInfoDto);
 	}
 }

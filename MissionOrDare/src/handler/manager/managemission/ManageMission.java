@@ -24,6 +24,8 @@ public class ManageMission implements CommandHandler{
 	@RequestMapping("/manage_mission")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("utf-8");
+		
 		String mission = request.getParameter("mission");
 		
 		int pageSize = 5;					// 한 페이지당 글 개수
@@ -86,7 +88,6 @@ public class ManageMission implements CommandHandler{
 				request.setAttribute( "missionCategoryAndInfoDtos", missionCategoryAndInfoDtos );
 			}
 		} else {
-			System.out.println(mission);
 			if( cnt > 0 ) {
 				Map<String, Object> map = new Hashtable<String, Object>();
 				map.put("start", start);
