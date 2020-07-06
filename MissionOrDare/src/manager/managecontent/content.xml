@@ -8,6 +8,21 @@
 	<select id="getBoardCount" resultType="int">
 		select count(*) from mod_successboard	
 	</select>
+	<select id="getSearchWriterCount" resultType="int">
+		select count(*) from mod_successboard where user_nickname like '%'||#{searchContent}||'%'
+	</select>
+	<select id="getSearchCategoryCount" resultType="int">
+		select count(*) from mod_successboard s left outer join mod_missioninfo m 
+		on s.mission_info_id = m.mission_info_id
+		left outer join mod_missioncategory c
+		on m.mission_category_id = c.mission_category_id where large_category like '%'||#{searchContent}||'%'
+		or small_category like '%'||#{searchContent}||'%'
+	</select>
+	<select id="getSearchTitleCount" resultType="int">
+		select count(*) from mod_successboard s left outer join mod_missioninfo m 
+		on s.mission_info_id = m.mission_info_id where mission_title like '%'||#{searchContent}||'%'
+	</select>
+	
 	<select id="getBoardArticles" parameterType="java.util.Map" resultType="Dtos.JoinMissionInfoSuccessBoardDto">
 		select a.*,r 
 		from (select aa.*,rownum r from 
@@ -27,5 +42,40 @@
 		on i.mission_category_id= c.mission_category_id
 		where s.success_board_id=#{joinMissionInfoSuccessBoardDto.success_board_id}
 		order by s.board_register_date desc
+	</select>
+	
+	<select id="getSearchWriterArticles" parameterType="java.util.Map" resultType="Dtos.JoinMissionInfoSuccessBoardDto">
+		select a.*,r 
+		from (select aa.*,rownum r from 
+		(select * from mod_successboard s 
+		left outer join mod_missioninfo m 
+		on s.mission_info_id = m.mission_info_id
+		left outer join mod_missioncategory c
+		on m.mission_category_id = c.mission_category_id where user_nickname like '%'||#{searchContent}||'%'
+		order by board_register_date desc) aa
+		order by board_register_date desc) a where r &gt;= #{start} and r &lt;= #{end}
+	</select>
+	<select id="getSearchCategoryArticles" parameterType="java.util.Map" resultType="Dtos.JoinMissionInfoSuccessBoardDto">
+		select a.*,r 
+		from (select aa.*,rownum r from 
+		(select * from mod_successboard s 
+		left outer join mod_missioninfo m 
+		on s.mission_info_id = m.mission_info_id
+		left outer join mod_missioncategory c
+		on m.mission_category_id = c.mission_category_id where large_category like '%'||#{searchContent}||'%'
+		or small_category like '%'||#{searchContent}||'%' 
+		order by s.board_register_date desc) aa
+		order by board_register_date desc) a where r &gt;= #{start} and r &lt;= #{end}
+	</select>
+	<select id="getSearchTitleArticles" parameterType="java.util.Map" resultType="Dtos.JoinMissionInfoSuccessBoardDto">
+		select a.*,r 
+		from (select aa.*,rownum r from 
+		(select * from mod_successboard s 
+		left outer join mod_missioninfo m 
+		on s.mission_info_id = m.mission_info_id
+		left outer join mod_missioncategory c
+		on m.mission_category_id = c.mission_category_id where mission_title like '%'||#{searchContent}||'%'
+		order by s.board_register_date desc) aa
+		order by board_register_date desc) a where r &gt;= #{start} and r &lt;= #{end}
 	</select>
 </mapper>

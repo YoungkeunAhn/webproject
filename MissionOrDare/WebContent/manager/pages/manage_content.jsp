@@ -25,19 +25,19 @@
         <section class="mission-search">
         <form method="post" action="manage_content.do" name="contentho" onsubmit="return searchCheck1()">
             <label>
-                <select class="form-control">
-                    <option selected> ${str_mission_category} </option>
-                    <option>${str_content_writer}</option>
-                    <option>${str_title}</option>
+                <select class="form-control" name="option">
+                    <option value="1" selected> ${str_mission_category} </option>
+                    <option value="2">${str_content_writer}</option>
+                    <option value="3">${str_title}</option>
                 </select>
             </label>
             <label>
-                <input class="form-control" type="search" name="content">
+                <input class="form-control" type="search" name="searchContent">
             </label>
             <button class="btn btn-primary" type="submit">${str_search}</button>
         </form>
         </section>
-        <section class="mission-table">
+        <section>
             <table class="table">
                 <thead>
                 <th>${str_number}</th>
@@ -51,13 +51,13 @@
                 <tbody>
                 <c:forEach var="joinMissionInfoSuccessBoardDto" items="${joinMissionInfoSuccessBoardDtos}">
                 <tr onclick="location.href='${pageContext.request.contextPath}/manage_content_info.do?id=${joinMissionInfoSuccessBoardDto.success_board_id}'">
-                	<td>${joinMissionInfoSuccessBoardDto.success_board_id}</td>
-                	<td> ${joinMissionInfoSuccessBoardDto.large_category} / ${joinMissionInfoSuccessBoardDto.small_category}</td>
-                	<td>${joinMissionInfoSuccessBoardDto.user_nickname}</td>
-                	<td> ${joinMissionInfoSuccessBoardDto.mission_title}</td>
-                	<td> ${joinMissionInfoSuccessBoardDto.views}</td>
-                	<td> ${joinMissionInfoSuccessBoardDto.likecount}</td>
-                	<td> ${joinMissionInfoSuccessBoardDto.board_register_date}</td>
+                	<th>${joinMissionInfoSuccessBoardDto.success_board_id}</th>
+                	<th> ${joinMissionInfoSuccessBoardDto.large_category} / ${joinMissionInfoSuccessBoardDto.small_category}</th>
+                	<th>${joinMissionInfoSuccessBoardDto.user_nickname}</th>
+                	<th> ${joinMissionInfoSuccessBoardDto.mission_title}</th>
+                	<th> ${joinMissionInfoSuccessBoardDto.views}</th>
+                	<th> ${joinMissionInfoSuccessBoardDto.likecount}</th>
+                	<th> ${joinMissionInfoSuccessBoardDto.board_register_date}</th>
  				</tr>
  				</c:forEach>
                 </tbody>

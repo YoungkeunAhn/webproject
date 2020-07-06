@@ -25,7 +25,7 @@ public class ManageContent implements CommandHandler{
 	@RequestMapping("/manage_content")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
+		request.setCharacterEncoding("utf-8");
 		
 		int pageSize = 3;					// 한 페이지당 글 개수
 		int pageBlock = 3;					// 한 번에 출력할 페이지 개수
@@ -38,9 +38,21 @@ public class ManageContent implements CommandHandler{
 		int startPage = 0;
 		int endPage = 0;
 		int pageCount = 0;
+		String searchContent = request.getParameter("searchContent");
+		String option = request.getParameter("option");
 		
+		if(searchContent ==null || searchContent.equals("")){
+			cnt = manageContentDao.getBoardCount();
+		}else{
+			System.out.println("CNT");
+			switch(option) {
+			case "1": cnt = manageContentDao.getSearchCategoryCount(searchContent); break;
+			case "2": cnt = manageContentDao.getSearchWriterCount(searchContent); break;
+			default :  cnt = manageContentDao.getSearchTitleCount(searchContent);
+			}
+			System.out.println(cnt);
+		}
 		
-		cnt = manageContentDao.getBoardCount();
 		
 		
 		pageNum = request.getParameter( "pageNum" );
@@ -73,16 +85,35 @@ public class ManageContent implements CommandHandler{
 		
 
 		
-		
-		if( cnt > 0 ) {
-			Map<String, Integer> map = new Hashtable<String, Integer>();
-			map.put( "start", start );
-			map.put( "end", end );
-			List<JoinMissionInfoSuccessBoardDto> joinMissionInfoSuccessBoardDtos = manageContentDao.getBoardArticles( map );
-			request.setAttribute( "joinMissionInfoSuccessBoardDtos", joinMissionInfoSuccessBoardDtos );
+		if(searchContent ==null || searchContent.equals("")){
+			if( cnt > 0 ) {
+				Map<String, Integer> map = new Hashtable<String, Integer>();
+				map.put( "start", start );
+				map.put( "end", end );
+				List<JoinMissionInfoSuccessBoardDto> joinMissionInfoSuccessBoardDtos = manageContentDao.getBoardArticles( map );
+				request.setAttribute( "joinMissionInfoSuccessBoardDtos", joinMissionInfoSuccessBoardDtos );
+			}
+		}else {
+			if( cnt > 0 ) {
+				System.out.println("map");
+				Map<String,Object> map = new Hashtable<String, Object>();
+				map.put( "start", start );
+				map.put( "end", end );
+				map.put( "searchContent", searchContent );
+				List<JoinMissionInfoSuccessBoardDto> joinMissionInfoSuccessBoardDtos;
+				switch(option) {
+				case "2": joinMissionInfoSuccessBoardDtos = manageContentDao.getSearchWriterArticles(map);  break;
+				case "1": joinMissionInfoSuccessBoardDtos = manageContentDao.getSearchCategoryArticles(map);  break;
+				default : joinMissionInfoSuccessBoardDtos = manageContentDao.getSearchTitleArticles(map);
+				}
+				request.setAttribute( "joinMissionInfoSuccessBoardDtos", joinMissionInfoSuccessBoardDtos );
+				request.setAttribute("searchContent", searchContent);
+				request.setAttribute("option", option);
+				
+			}
+			
 		}
-		
-
+		System.out.println("start:"+start+"end:" +end);
 		
 		return new ModelAndView("manager/pages/manage_content");
 	}
