@@ -1,17 +1,17 @@
 package Dtos;
 
 public class NotesDto {
-	private String note_id;
+	private String notes_id;
 	private String received_nickname;
 	private String sent_nickname;
 	private String notes_contents;
 	private String send_date;
 	private String read_check;
 	public String getNote_id() {
-		return note_id;
+		return notes_id;
 	}
 	public void setNote_id(String note_id) {
-		this.note_id = note_id;
+		this.notes_id = note_id;
 	}
 	public String getReceived_nickname() {
 		return received_nickname;

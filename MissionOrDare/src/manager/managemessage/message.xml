@@ -24,4 +24,5 @@
 		where n.received_nickname like '%'||#{searchUser}||'%' order by n.send_date desc) aa
 		order by send_date desc) a where r &gt;= #{start} and r &lt;= #{end}
 	</select>
+	
 </mapper>

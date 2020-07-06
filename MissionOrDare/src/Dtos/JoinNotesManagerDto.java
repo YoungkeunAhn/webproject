@@ -2,7 +2,7 @@ package Dtos;
 
 public class JoinNotesManagerDto {
 
-	private String note_id;
+	private String notes_id;
 	private String received_nickname;
 	private String sent_nickname;
 	private String notes_contents;
@@ -12,10 +12,10 @@ public class JoinNotesManagerDto {
 	private String manager_passwd;
 	private String authority;
 	public String getNote_id() {
-		return note_id;
+		return notes_id;
 	}
 	public void setNote_id(String note_id) {
-		this.note_id = note_id;
+		this.notes_id = note_id;
 	}
 	public String getReceived_nickname() {
 		return received_nickname;

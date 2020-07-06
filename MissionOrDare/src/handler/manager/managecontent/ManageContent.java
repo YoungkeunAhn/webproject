@@ -1,4 +1,4 @@
-package handler.manager.managemassage;
+package handler.manager.managecontent;
 
 import java.util.Hashtable;
 import java.util.List;
@@ -10,25 +10,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import Dtos.JoinNotesManagerDto;
-
+import Dtos.JoinMissionInfoSuccessBoardDto;
 import handler.CommandHandler;
-import manager.managemessage.ManageMessageDao;
+import manager.managecontent.ManageContentDao;
 
 @Controller
-public class ManageMessage implements CommandHandler{
-	@Resource
-	private ManageMessageDao manageMessageDao;
+public class ManageContent implements CommandHandler{
 	
-	@RequestMapping("/manage_message")
+	@Resource
+	private ManageContentDao manageContentDao;
+	
+	@RequestMapping("/manage_content")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		
-		//List<String> delete_notes_id = request.getParameter("delete_notes_id");
 		
 		int pageSize = 3;					// 한 페이지당 글 개수
 		int pageBlock = 3;					// 한 번에 출력할 페이지 개수
@@ -41,13 +38,9 @@ public class ManageMessage implements CommandHandler{
 		int startPage = 0;
 		int endPage = 0;
 		int pageCount = 0;
-		String searchUser = request.getParameter("searchUser");
 		
-		if(searchUser ==null || searchUser.equals("")) {
-			cnt = manageMessageDao.getCountt();
-		}else {
-			cnt = manageMessageDao.getSearchCountt(searchUser);
-		}
+		
+		cnt = manageContentDao.getBoardCount();
 		
 		
 		pageNum = request.getParameter( "pageNum" );
@@ -80,27 +73,17 @@ public class ManageMessage implements CommandHandler{
 		
 
 		
-		if(searchUser ==null || searchUser.equals("")) {
-			if( cnt > 0 ) {
-				Map<String, Integer> map = new Hashtable<String, Integer>();
-				map.put( "start", start );
-				map.put( "end", end );
-				List<JoinNotesManagerDto> joinNotesManagerDtos = manageMessageDao.getArticless( map );
-				request.setAttribute( "joinNotesManagerDtos", joinNotesManagerDtos );
-			}
-		}else {
-			if( cnt > 0 ) {
-				Map<String, Object> map = new Hashtable<String, Object>();
-				map.put( "start", start );
-				map.put( "end", end );
-				map.put( "searchUser", searchUser );
-				List<JoinNotesManagerDto> joinNotesManagerDtos = manageMessageDao.findArticless( map );
-				request.setAttribute( "joinNotesManagerDtos", joinNotesManagerDtos );
-				request.setAttribute("searchUser",searchUser);
-			}
+		
+		if( cnt > 0 ) {
+			Map<String, Integer> map = new Hashtable<String, Integer>();
+			map.put( "start", start );
+			map.put( "end", end );
+			List<JoinMissionInfoSuccessBoardDto> joinMissionInfoSuccessBoardDtos = manageContentDao.getBoardArticles( map );
+			request.setAttribute( "joinMissionInfoSuccessBoardDtos", joinMissionInfoSuccessBoardDtos );
 		}
 		
+
 		
-		return new ModelAndView("manager/pages/manage_message");
+		return new ModelAndView("manager/pages/manage_content");
 	}
 }

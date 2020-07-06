@@ -43,30 +43,55 @@
             <button class="btn btn-primary" type="submit">${str_search}</button>
         </form>
         </section>
-        <section class="mission-table">
+        <section>
             <table class="table">
                 <thead>
-                <th>체크박스</th>
-                <th>${str_user_nickname}</th>
-                <th>${str_report_category}</th>
-                <th>${str_report_type}</th>
-                <th>신고내용</th>
-                <th>${str_report_reportdate}</th>
-                <th>메시지</th>
+	                <th>체크박스</th>
+	                <th>${str_user_nickname}</th>
+	                <th>신고된 댓글이나 게시판 id</th>
+	                <th>${str_report_type}</th>
+	                <th>신고내용</th>
+	                <th>${str_report_reportdate}</th>
+	                <th>메시지</th>
                 </thead>
                 <tbody>
-                <th><input type="checkbox"></th>
-                <th>kkoddakzzi</th>
-                <th>KIMONG</th>
-                <th>기타</th>
-                <th>형님한테 언니라고 함ㅋ</th>
-                <th>2020-06-04 16:09</th>
-                <th>
-                <button class="btn btn-danger" name="mission-delete"
-                 onclick="OnSendMessage()">
-                 ${str_message_sendmessage}</button></th>
+	                <c:forEach var="reportBoardDto" items="${reportBoardDtos}">
+	                <tr>
+	                <th><input type="checkbox"></th>
+	                <th>${reportBoardDto.user_nickname}</th>
+	                <th>${reportBoardDto.reported_board_id} ${reportBoardDto.reported_reply_id}</th>
+	                <th>${reportBoardDto.report_type}</th>
+	                <th>${reportBoardDto.report_reason}</th>
+	                <th>${reportBoardDto.report_date}</th>
+	                <th>
+	                <button class="btn btn-danger" name="mission-delete"
+	                 onclick="OnSendMessage()">
+	                 ${str_message_sendmessage}</button></th>
+	                 </tr>
+	                </c:forEach>
                 </tbody>
             </table>
+        </section>
+        <br><br>
+        <section>
+			<c:if test="${cnt gt 0}">
+				<c:if test="${startPage gt pageBlock}">
+					<a href="manage_report.do">[◀◀]</a>
+					<a href="manage_report.do?pageNum=${startPage-pageBlock}">[◀]</a>
+				</c:if>
+				<c:forEach var="i" begin="${startPage}" end="${endPage}">
+					<c:if test="${i eq currentPage}"> 
+						<b>[${i}]</b>				
+					</c:if>
+					<c:if test="${i ne currentPage}">
+						<a href="manage_report.do?pageNum=${i}">[${i}]</a>				
+					</c:if>
+				</c:forEach>	
+				<c:if test="${pageCount gt endPage}">
+					<a href="manage_report.do?pageNum=${startPage+pageBlock}">[▶]</a>
+					<a href="manage_report.do?pageNum=${pageCount}">[▶▶]</a>		
+				</c:if>
+			</c:if>        
         </section>
     </article>
     <%@include file="manage_footer.jsp"%>

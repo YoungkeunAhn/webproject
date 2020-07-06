@@ -5,6 +5,7 @@ public class ReportBoardDto {
 	private String report_board_id;
 	private String user_nickname;
 	private String reported_nickname;
+	private String report_type;
 	private String report_reason;
 	private String reported_board_id;
 	private String reported_reply_id;
@@ -23,6 +24,12 @@ public class ReportBoardDto {
 	}
 	public String getReported_nickname() {
 		return reported_nickname;
+	}
+	public String getReport_type() {
+		return report_type;
+	}
+	public void setReport_type(String report_type) {
+		this.report_type = report_type;
 	}
 	public void setReported_nickname(String reported_nickname) {
 		this.reported_nickname = reported_nickname;

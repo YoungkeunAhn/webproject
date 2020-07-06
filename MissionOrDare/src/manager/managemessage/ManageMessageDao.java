@@ -10,4 +10,5 @@ public interface ManageMessageDao {
 	public List<JoinNotesManagerDto> getArticless( Map<String, Integer> map );
 	public List<JoinNotesManagerDto> findArticless( Map<String, Object> map );
 	public int getSearchCountt(String searchUser);
+	
 }

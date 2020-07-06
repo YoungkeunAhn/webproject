@@ -2,7 +2,7 @@ package Dtos;
 
 public class SuccessBoardDto {
 	private String success_board_id;
-	private String mission_stete_id;
+	private String mission_state_id;
 	private String user_nickname;
 	private String success_board_contents;
 	private String mission_info_id;
@@ -16,10 +16,10 @@ public class SuccessBoardDto {
 		this.success_board_id = success_board_id;
 	}
 	public String getMission_stete_id() {
-		return mission_stete_id;
+		return mission_state_id;
 	}
 	public void setMission_stete_id(String mission_stete_id) {
-		this.mission_stete_id = mission_stete_id;
+		this.mission_state_id = mission_stete_id;
 	}
 	public String getUser_nickname() {
 		return user_nickname;

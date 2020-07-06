@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  	
+<mapper namespace="Mission">
+	<select id="getReportCount" resultType="int">
+		select count(*) from mod_reportboard	
+	</select>
+	<select id="getReportArticles" parameterType="java.util.Map" resultType="Dtos.ReportBoardDto">
+		select a.*,r 
+		from (select aa.*,rownum r from 
+		(select * from mod_reportboard
+		order by report_date desc) aa
+		order by report_date desc) a where r &gt;= #{start} and r &lt;= #{end}
+	</select>
+	
+	
+</mapper>
