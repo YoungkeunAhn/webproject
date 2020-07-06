@@ -50,11 +50,11 @@
                 </thead>
                 <tbody>
               	  <c:forEach var="missionCategoryAndInfoDto" items="${missionCategoryAndInfoDtos}">
-	                 <tr>
-		                <th onclick="OnInfoModal()">${missionCategoryAndInfoDto.mission_info_id}</th>
-		                <th onclick="OnInfoModal()">${missionCategoryAndInfoDto.large_category}/${missionCategoryAndInfoDto.small_category}</th>
-		                <th onclick="OnInfoModal()">${missionCategoryAndInfoDto.mission_title}</th>
-		                <th onclick="OnInfoModal()">${missionCategoryAndInfoDto.mission_avg_score}</th>
+	                 <tr id="missioninfo" onclick="location.href='manage_mission_info.do?id=${missionCategoryAndInfoDto.mission_info_id}'">
+		                <th id="mission_info_id">${missionCategoryAndInfoDto.mission_info_id}</th>
+		                <th>${missionCategoryAndInfoDto.large_category}/${missionCategoryAndInfoDto.small_category}</th>
+		                <th>${missionCategoryAndInfoDto.mission_title}</th>
+		                <th>${missionCategoryAndInfoDto.mission_avg_score}</th>
 		                <th onclick="event.cancelBubble=true"><button class="btn btn-danger" name="missionDelete" 
                 			onclick="location.href='${pageContext.request.contextPath}/manage_mission_deletePro.do?id=${missionCategoryAndInfoDto.mission_info_id}'">${str_delete}</button></th>
 	                </tr>
@@ -107,14 +107,17 @@
 </div>
 <div id="missionInfoModal" class="modal">
 </div>
+<div id="missionInsertModal" class="modal">
+</div>
+
+<div id="missionInsertModal" class="modal">
+</div>
 <script>
     $(document).ready(function () {
-            $('#missionInfoModal').load('manage_mission_info.do');
             $('#missionInsertModal').load('manage_mission_insert.do');
         }
     );
 </script>
-<div id="missionInsertModal" class="modal">
-</div>
+
 </body>
 </html>

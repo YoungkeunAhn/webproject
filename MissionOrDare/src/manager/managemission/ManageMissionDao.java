@@ -27,4 +27,5 @@ public interface ManageMissionDao {
 	public String getCategoryId(MissionCategoryDto missionCategoryDto);
 	public int insertMission(MissionInfoDto missionInfoDto);
 	public int deleteMission(String mission_info_id);
+	public MissionCategoryAndInfoDto getMission(String mission_info_id);
 }

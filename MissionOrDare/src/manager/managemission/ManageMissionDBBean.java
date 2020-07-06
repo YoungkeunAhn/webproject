@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
-import org.springframework.dao.DataIntegrityViolationException;
 
 import Dtos.MissionCategoryAndInfoDto;
 import Dtos.MissionCategoryDto;
@@ -18,12 +17,10 @@ public class ManageMissionDBBean implements ManageMissionDao {
 	}
 	public int deleteCategory(String missionCategoryId) {
 		try {
-			System.out.println("아오..");
 			session.delete("Mission.deleteCategory", missionCategoryId );
 			
-		} catch (DataIntegrityViolationException e) {
-			System.out.println("d흐으ㅡ음");
-			return 0;
+		} catch (Exception e) {
+			return -1;
 		}
 		return session.delete("Mission.deleteCategory", missionCategoryId );
 	}
@@ -75,5 +72,8 @@ public class ManageMissionDBBean implements ManageMissionDao {
 	}
 	public int deleteMission(String mission_info_id) {
 		return session.delete("Mission.deleteMission", mission_info_id);
+	}
+	public MissionCategoryAndInfoDto getMission(String mission_info_id) {
+		return session.selectOne("Mission.getMission", mission_info_id);
 	}
 }

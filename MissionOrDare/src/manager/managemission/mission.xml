@@ -119,4 +119,11 @@
 		delete from MOD_MissionInfo where mission_info_id=#{mission_info_id}
 	</delete>
 	
+	<!-- 미션 상세정보 -->
+	<select id="getMission" parameterType="String" resultType="Dtos.MissionCategoryAndInfoDto">
+		select m.*, c.large_category, c.small_category 
+		from MOD_MissionCategory c, MOD_MissionInfo m where c.mission_category_id=m.mission_category_id
+		and m.mission_info_id=#{mission_info_id}
+	</select>
+	
 </mapper>

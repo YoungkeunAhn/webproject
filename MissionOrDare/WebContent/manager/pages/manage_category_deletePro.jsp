@@ -19,5 +19,13 @@
 	<c:if test="${result eq 1}">
 		<c:redirect url="manage_category.do"/>
 	</c:if>
+	<c:if test="${result eq -1}">
+		<script type="text/javascript">
+			<!--
+			alert("카테고리를 사용 중인 미션이 있습니다!");
+			history.back();
+			//-->
+		</script>
+	</c:if>
 </body>
 </html>
