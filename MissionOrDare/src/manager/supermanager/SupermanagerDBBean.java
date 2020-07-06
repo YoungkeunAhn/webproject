@@ -14,13 +14,13 @@ public class SupermanagerDBBean implements SupermanagerDao{
 	public int insertManager( ManagerDto managerDto ) {
 		return session.insert("Supermanaging.insertManager", managerDto);
 	}
-/*	
+
 	public List<ManagerDto> managerDtos( Map<String, Integer> map ) {
 		return session.selectList("Supermanaging.getManagers", map);
 	}
 	
 	public int getCount() {
-		return session.selectOne("Supermanaging.getManagers");
+		return session.selectOne("Supermanaging.getCount");
 	}
-*/
+
 }

@@ -6,25 +6,25 @@
 <mapper namespace="Supermanaging">
 
 <!-- 관리자 생성 -->
+
 	<insert id="insertManager" parameterType="Dtos.ManagerDto">
 		insert into mod_manager (manager_id,manager_passwd) values(#{manager_id},#{manager_passwd})
 	</insert>
 	
-<!-- 관리자 목록 -->
-	<!-- 
-	<select id="getManagers" resultType="Dtos.ManagerDto">
-		select manager_id, manager_passwd, r
-		from (select manager_id, manager_passwd, rownum r
-		from (select manager_id, manager_passwd,
-		from mod_manager order by manager_id, manager_passwd) order by manager_id, manager_passwd)
-		where r &gt;= #{start} and r &lt;= #{end}
-	</select>
-	 -->
-	
+<!-- 관리자 목록 -->	
+
+	<select id="getManagers" parameterType="java.util.Map" resultType="Dtos.ManagerDto">
+		select manager_id, manager_passwd, r 
+		from (select manager_id, manager_passwd, rownum r 
+		from (select manager_id, manager_passwd
+      from mod_manager order by manager_id) order by manager_id, manager_passwd)
+      where r &gt;= #{start} and r &lt;= #{end}
+	</select>	
+
 <!-- 글목록 수  -->
-	<!--  
+	 
 	<select id="getCount" resultType="int">
 		select count(*) from mod_manager	 
 	</select>
-	-->
+	
 </mapper>
