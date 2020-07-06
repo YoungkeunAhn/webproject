@@ -23,16 +23,16 @@
     	<div style="display: block; width:900px; height:704px; margin:0 auto; background:#ddd;position:relative;">
         <section class="content-part">
         <div class="white-box" style="background:#c5e8ea;">
-            <div>
-                <span>미술/그리기</span>
+             <div>
+                <span>${joinMissionInfoSuccessBoardDto.large_category} / ${joinMissionInfoSuccessBoardDto.small_category}</span>
             </div>
             <div>
-                <span>라이언이 부탁한 자화상</span>
+                <span>${joinMissionInfoSuccessBoardDto.mission_title}</span>
             </div>
             
             <div class="content-profile">
                 <img class="img-circle" src="${project}images/user.png" alt="user-profile">
-                <span>KIMONG</span><br>
+                <span>${joinMissionInfoSuccessBoardDto.user_nickname}</span><br>
             </div>
             <div>
                 <div>
@@ -40,11 +40,11 @@
                     <img class="content-image" src="${project}images/kimong_1_1.png" alt="content-image">
                     <span><i class="fas fa-chevron-right"></i></span>
                 </div>
-                <span>졸귀탱라이언</span>
+                <span>${joinMissionInfoSuccessBoardDto.mission_contents}</span>
             </div>
               <div class="like-box">
                 <span><i class="far fa-thumbs-up"></i></span>
-                <span>23개</span>
+                <span>${joinMissionInfoSuccessBoardDto.likecount}</span>
             </div>
             <div class="reply-box">
             

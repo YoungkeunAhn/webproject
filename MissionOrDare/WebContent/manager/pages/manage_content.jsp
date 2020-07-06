@@ -49,21 +49,46 @@
                 <th>${str_content_writedate}</th>
                 </thead>
                 <tbody>
-                <tr onclick="location.href='${pageContext.request.contextPath}/manage_content_info.do'">
-                    <th>1</th>
-                    <th>미술/그리기</th>
-                    <th>KIMONG</th>
-                    <th>라이언이 부탁한 자화상</th>
-                    <th>14142</th>
-                    <th>111</th>
-                    <th>2020-06-29</th>
-                </tr>
+                <c:forEach var="joinMissionInfoSuccessBoardDto" items="${joinMissionInfoSuccessBoardDtos}">
+                <tr onclick="location.href='${pageContext.request.contextPath}/manage_content_info.do?id=${joinMissionInfoSuccessBoardDto.success_board_id}'">
+                	<td>${joinMissionInfoSuccessBoardDto.success_board_id}</td>
+                	<td> ${joinMissionInfoSuccessBoardDto.large_category} / ${joinMissionInfoSuccessBoardDto.small_category}</td>
+                	<td>${joinMissionInfoSuccessBoardDto.user_nickname}</td>
+                	<td> ${joinMissionInfoSuccessBoardDto.mission_title}</td>
+                	<td> ${joinMissionInfoSuccessBoardDto.views}</td>
+                	<td> ${joinMissionInfoSuccessBoardDto.likecount}</td>
+                	<td> ${joinMissionInfoSuccessBoardDto.board_register_date}</td>
+ 				</tr>
+ 				</c:forEach>
                 </tbody>
             </table>
         </section>
+        <br><br>
+        <section>
+       
+			<c:if test="${cnt gt 0}">
+				<c:if test="${startPage gt pageBlock}">
+					<a href="manage_content.do">[◀◀]</a>
+					<a href="manage_content.do?pageNum=${startPage-pageBlock}">[◀]</a>
+				</c:if>
+				<c:forEach var="i" begin="${startPage}" end="${endPage}">
+					<c:if test="${i eq currentPage}"> 
+						<b>[${i}]</b>				
+					</c:if>
+					<c:if test="${i ne currentPage}">
+						<a href="manage_content.do?pageNum=${i}">[${i}]</a>				
+					</c:if>
+				</c:forEach>	
+				<c:if test="${pageCount gt endPage}">
+					<a href="manage_content.do?pageNum=${startPage+pageBlock}">[▶]</a>
+					<a href="manage_content.do?pageNum=${pageCount}">[▶▶]</a>		
+				</c:if>
+			</c:if>        
+		
+        </section>
+        
     </article>
     <%@include file="manage_footer.jsp"%>
-    
 </div>
 </body>
 </html>

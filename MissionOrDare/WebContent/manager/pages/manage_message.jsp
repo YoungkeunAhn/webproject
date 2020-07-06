@@ -49,10 +49,10 @@
                 <th>${str_message_senddate}</th>
                 
                 </thead>
-                <tbody>
+               <tbody>
                 <c:forEach var="joinNotesManagerDto" items="${joinNotesManagerDtos}">
                 <tr>
-                <th><input type="checkbox"></th>
+                <th><input type="checkbox" name="index" value="${joinNotesManagerDto.note_id}"></th>
                 <th>${joinNotesManagerDto.sent_nickname}</th>
                 <th>${joinNotesManagerDto.notes_contents}</th>
                 <th>${joinNotesManagerDto.received_nickname}</th>
@@ -65,47 +65,47 @@
         <br>
         <section>
         <c:if test="${searchUser eq null}">
-			<c:if test="${cnt gt 0}">
-				<c:if test="${startPage gt pageBlock}">
-					<a href="manage_message.do">[◀◀]</a>
-					<a href="manage_message.do?pageNum=${startPage-pageBlock}">[◀]</a>
-				</c:if>
-				<c:forEach var="i" begin="${startPage}" end="${endPage}">
-					<c:if test="${i eq currentPage}"> 
-						<b>[${i}]</b>				
-					</c:if>
-					<c:if test="${i ne currentPage}">
-						<a href="manage_message.do?pageNum=${i}">[${i}]</a>				
-					</c:if>
-				</c:forEach>	
-				<c:if test="${pageCount gt endPage}">
-					<a href="manage_message.do?pageNum=${startPage+pageBlock}">[▶]</a>
-					<a href="manage_message.do?pageNum=${pageCount}">[▶▶]</a>		
-				</c:if>
-			</c:if>        
-		</c:if>
-		
-		<c:if test="${searchUser ne null}">
-			<c:if test="${cnt gt 0}">
-				<c:if test="${startPage gt pageBlock}">
-					<a href="manage_message.do?searchUser=${searchUser}">[◀◀]</a>
-					<a href="manage_message.do?pageNum=${startPage-pageBlock}&searchUser=${searchUser}">[◀]</a>
-				</c:if>
-				<c:forEach var="i" begin="${startPage}" end="${endPage}">
-					<c:if test="${i eq currentPage}"> 
-						<b>[${i}]</b>				
-					</c:if>
-					<c:if test="${i ne currentPage}">
-						<a href="manage_message.do?pageNum=${i}&searchUser=${searchUser}">[${i}]</a>				
-					</c:if>
-				</c:forEach>	
-				<c:if test="${pageCount gt endPage}">
-					<a href="manage_message.do?pageNum=${startPage+pageBlock}&searchUser=${searchUser}">[▶]</a>
-					<a href="manage_message.do?pageNum=${pageCount}&searchUser=${searchUser}">[▶▶]</a>		
-				</c:if>
-			</c:if>        
-		</c:if>
-		
+         <c:if test="${cnt gt 0}">
+            <c:if test="${startPage gt pageBlock}">
+               <a href="manage_message.do">[◀◀]</a>
+               <a href="manage_message.do?pageNum=${startPage-pageBlock}">[◀]</a>
+            </c:if>
+            <c:forEach var="i" begin="${startPage}" end="${endPage}">
+               <c:if test="${i eq currentPage}"> 
+                  <b>[${i}]</b>            
+               </c:if>
+               <c:if test="${i ne currentPage}">
+                  <a href="manage_message.do?pageNum=${i}">[${i}]</a>            
+               </c:if>
+            </c:forEach>   
+            <c:if test="${pageCount gt endPage}">
+               <a href="manage_message.do?pageNum=${startPage+pageBlock}">[▶]</a>
+               <a href="manage_message.do?pageNum=${pageCount}">[▶▶]</a>      
+            </c:if>
+         </c:if>        
+      </c:if>
+      
+      <c:if test="${searchUser ne null}">
+         <c:if test="${cnt gt 0}">
+            <c:if test="${startPage gt pageBlock}">
+               <a href="manage_message.do?searchUser=${searchUser}">[◀◀]</a>
+               <a href="manage_message.do?pageNum=${startPage-pageBlock}&searchUser=${searchUser}">[◀]</a>
+            </c:if>
+            <c:forEach var="i" begin="${startPage}" end="${endPage}">
+               <c:if test="${i eq currentPage}"> 
+                  <b>[${i}]</b>            
+               </c:if>
+               <c:if test="${i ne currentPage}">
+                  <a href="manage_message.do?pageNum=${i}&searchUser=${searchUser}">[${i}]</a>            
+               </c:if>
+            </c:forEach>   
+            <c:if test="${pageCount gt endPage}">
+               <a href="manage_message.do?pageNum=${startPage+pageBlock}&searchUser=${searchUser}">[▶]</a>
+               <a href="manage_message.do?pageNum=${pageCount}&searchUser=${searchUser}">[▶▶]</a>      
+            </c:if>
+         </c:if>        
+      </c:if>
+      
         </section>
     </article>
     <%@include file="manage_footer.jsp"%>
