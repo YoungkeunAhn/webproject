@@ -33,8 +33,6 @@ public class CreateBean {
 		ManageContentDBBean manageContentDao = new ManageContentDBBean();
 		return manageContentDao;
 	}
-	
-	
 	@Bean
 	public SupermanagerDao supermanagerDao() {
 		SupermanagerDBBean supermanagerDao = new SupermanagerDBBean();
