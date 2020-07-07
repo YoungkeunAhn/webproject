@@ -8,10 +8,10 @@
 		select count(*) from mod_reportboard	
 	</select>
 	
-	<select id="getSearchReportCount" resultType="int">
+	<select id="getSearchReportCount" parameterType="String" resultType="int">
 		select count(*) from mod_reportboard where report_type=	#{searchReport} order by report_date desc
 	</select>
-	<select id="getSearchNicknameCount" resultType="int">
+	<select id="getSearchNicknameCount" parameterType="String" resultType="int">
 		select count(*) from mod_reportboard where report_type like '%'||#{searchNickname}||'%' order by report_date desc
 	</select>
 	<select id="getReportArticles" parameterType="java.util.Map" resultType="Dtos.ReportBoardDto">

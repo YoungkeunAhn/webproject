@@ -14,10 +14,10 @@ public class ManageReportDBBean implements ManageReportDao{
 		return session.selectOne( "Mission.getReportCount" );
 	}
 	public int getSearchReportCount(String searchReport) {
-		return session.selectOne("Mission.getSearchReportCount");
+		return session.selectOne("Mission.getSearchReportCount", searchReport);
 	}
 	public int getSearchNicknameCount(String searchNickname) {
-		return session.selectOne("Mission.getSearchNicknameCount");
+		return session.selectOne("Mission.getSearchNicknameCount", searchNickname);
 	}
 	
 	public List<ReportBoardDto> getReportArticles(Map<String, Integer> map) {

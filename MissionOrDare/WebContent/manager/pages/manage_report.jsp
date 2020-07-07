@@ -106,6 +106,7 @@
             $('#reportMessageModal').load('manage_message_form.do');
         }
     );
+    
 </script>
 </body>
 </html>

@@ -38,24 +38,26 @@ public class ManageReport implements CommandHandler{
 		int pageCount = 0;
 
 		String option = request.getParameter("option");
+		if(option == null ) option = "1";
 		String searchNickname = request.getParameter("searchNickname");
 		String searchReport ="";
+		System.out.println(option);
 		
-		if(searchNickname ==null || searchNickname.equals("")){
+		if(searchNickname == null || searchNickname.equals("")){
 			switch(option) {
-			case "1": cnt = manageReportDao.getReportCount();   break;
-			case "2": cnt=manageReportDao.getSearchReportCount("욕설, 비방, 차별, 혐오"); 
-						searchReport="욕설, 비방, 차별, 혐오"; break;
-			case "3": cnt=manageReportDao.getSearchReportCount("홍보, 영리목적"); 
-						searchReport="홍보, 영리목적"; break;
-			case "4": cnt=manageReportDao.getSearchReportCount("불법정보"); 
-						searchReport="불법정보"; break;
-			case "5": cnt=manageReportDao.getSearchReportCount("음란, 청소년유해"); 
-						searchReport="음란, 청소년유해";	break;
-			case "6": cnt=manageReportDao.getSearchReportCount("도배, 스팸"); 
-						searchReport="도배, 스팸";	break;
-			default : cnt=manageReportDao.getSearchReportCount("기타"); 
-						searchReport="기타"; 
+			case "1": cnt=manageReportDao.getReportCount();   break;
+			case "2": searchReport="욕설, 비방, 차별, 혐오";
+					cnt=manageReportDao.getSearchReportCount(searchReport); break;
+			case "3": searchReport="홍보, 영리목적";
+					cnt=manageReportDao.getSearchReportCount(searchReport); break;
+			case "4": searchReport="불법정보";
+					cnt=manageReportDao.getSearchReportCount(searchReport); break;
+			case "5": searchReport="음란, 청소년유해";
+					cnt=manageReportDao.getSearchReportCount(searchReport); break;
+			case "6": searchReport="도배, 스팸";
+					cnt=manageReportDao.getSearchReportCount(searchReport); break;
+			default : searchReport="기타"; 
+					cnt=manageReportDao.getSearchReportCount(searchReport); 
 			}
 		}else {
 			cnt = manageReportDao.getSearchNicknameCount(searchNickname);
