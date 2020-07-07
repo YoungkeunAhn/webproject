@@ -71,7 +71,7 @@
 <c:set var="str_report_selectoption6" value="기타"/>
 <c:set var="str_report_category" value="신고카테고리"/>
 <c:set var="str_report_type" value="신고유형"/>
-<c:set var="str_report_usernickname" value="신고자 닉네임"/>
+<c:set var="str_report_usernickname" value="신고자 "/>
 <c:set var="str_report_reportdate" value="신고날짜"/>
 <c:set var="str_report_processState" value="처리상태"/>
 

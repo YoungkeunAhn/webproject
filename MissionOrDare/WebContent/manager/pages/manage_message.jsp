@@ -34,6 +34,8 @@
         </form> 
          
         <form action="manage_message_deletePro.do" method="post">
+        	<button class="btn-primary" type="button" name="message-send" onclick="OnSendMessage()">${str_message_sendmessage}</button>
+           	<button class="btn-danger" type="submit" >${str_message_messagedelete}</button>
             <table class="table">
                 <thead>
                 <th>${str_message_checkbox}</th>
@@ -55,8 +57,7 @@
                 </c:forEach>
                 </tbody>
             </table>
-            <button class="btn-primary" name="message-send" onclick="OnSendMessage()">${str_message_sendmessage}</button>
-           	<button class="btn-danger" type="submit" >${str_message_messagedelete}</button>
+            
            </form>
        </section>
         

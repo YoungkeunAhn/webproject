@@ -24,13 +24,13 @@ public class ManageMessageDeletePro implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
-		//String notes_id = request.getParameter("notes_id");
+
 		String[] message_check = request.getParameterValues("message_check");
-		System.out.println("삭제전");
+
 		request.setAttribute("message_check", message_check);
-		//request.setAttribute("notes_id", notes_id);
+
 		for(String i : message_check) {
-			System.out.println("사용자 삭제");
+
 			int result = manageMessageDao.deleteMessage(i);
 			request.setAttribute("result", result);
 		}

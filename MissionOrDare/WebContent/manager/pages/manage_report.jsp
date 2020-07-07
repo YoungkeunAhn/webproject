@@ -47,8 +47,7 @@
         <section>
             <table class="table">
                 <thead>
-	                <th></th>
-	                <th>${str_user_nickname}</th>
+	                <th>${str_report_usernickname}</th>
 	                <th>신고된 댓글id or 게시판id</th>
 	                <th>신고받은 닉네임</th>
 	                <th>${str_report_type}</th>
@@ -59,7 +58,6 @@
                 <tbody>
 	                <c:forEach var="reportBoardDto" items="${reportBoardDtos}">
 	                <tr>
-	                <th><input type="checkbox"></th>
 	                <th>${reportBoardDto.user_nickname}</th>
 	                <th>${reportBoardDto.reported_board_id} ${reportBoardDto.reported_reply_id}</th>
 	                <th>${reportBoardDto.reported_nickname}</th>
