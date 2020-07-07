@@ -33,7 +33,7 @@
         
         </form> 
          
-        <form action="ManageMessageDeletePro.do" method="post">
+        <form action="manage_message_deletePro.do" method="post">
             <table class="table">
                 <thead>
                 <th>${str_message_checkbox}</th>
@@ -46,7 +46,7 @@
                <tbody>
                 <c:forEach var="joinNotesManagerDto" items="${joinNotesManagerDtos}" varStatus="loop">
                 <tr>
-                <th><input type="checkbox" name="message_check" value="${joinNotesManagerDto.note_id}"></th>
+                <th><input type="checkbox" name="message_check" value="${joinNotesManagerDto.notes_id}"></th>
                 <th>${joinNotesManagerDto.sent_nickname}</th>
                 <th>${joinNotesManagerDto.notes_contents}</th>
                 <th>${joinNotesManagerDto.received_nickname}</th>
@@ -56,7 +56,7 @@
                 </tbody>
             </table>
             <button class="btn-primary" name="message-send" onclick="OnSendMessage()">${str_message_sendmessage}</button>
-           	<input class="btn-danger" name=${str_message_messagedelete}>
+           	<button class="btn-danger" type="submit" >${str_message_messagedelete}</button>
            </form>
        </section>
         

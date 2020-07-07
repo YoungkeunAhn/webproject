@@ -11,9 +11,9 @@ import handler.CommandHandler;
 
 @Controller
 public class ManageMessagePro implements CommandHandler {
-	@RequestMapping("/manage_message_pro")
-	@Override
-	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		return new ModelAndView("manager/pages/manage_message_pro");
-	}
+   @RequestMapping("/manage_message_pro")
+   @Override
+   public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+      return new ModelAndView("manager/pages/manage_message_pro");
+   }
 }

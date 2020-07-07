@@ -11,11 +11,11 @@ public class JoinNotesManagerDto {
 	private String manager_id;
 	private String manager_passwd;
 	private String authority;
-	public String getNote_id() {
+	public String getNotes_id() {
 		return notes_id;
 	}
-	public void setNote_id(String note_id) {
-		this.notes_id = note_id;
+	public void setNotes_id(String notes_id) {
+		this.notes_id = notes_id;
 	}
 	public String getReceived_nickname() {
 		return received_nickname;
@@ -64,7 +64,7 @@ public class JoinNotesManagerDto {
 	}
 	public void setAuthority(String authority) {
 		this.authority = authority;
-	}	
+	}
 	
 	
 }

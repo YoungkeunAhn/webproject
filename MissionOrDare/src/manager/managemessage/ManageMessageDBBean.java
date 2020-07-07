@@ -21,5 +21,10 @@ public class ManageMessageDBBean implements ManageMessageDao{
 	public int getSearchCountt(String searchUser) {
 		return session.selectOne( "Mission.getSearchCountt" ,searchUser);
 	}
+	public int deleteMessage(String notes_id) {
+		int result = session.delete("Mission.deleteMessage",notes_id);
+		return result ;
+		
+	}
 	
 }

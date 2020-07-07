@@ -11,13 +11,18 @@
 	<c:if test="${result eq 0}">
 		<script type="text/javascript">
 			<!--
-			alert("실패했다리");
+			alert("실패했습니다.");
 			history.back();
 			//-->
 		</script>
 	</c:if>
 	<c:if test="${result eq 1}">
-		<c:redirect url="manage_message.do"/>
+		<script type="text/javascript">
+			<!--
+			alert("삭제되었습니다.");
+			//-->
+		</script>
+		<meta http-equiv="refresh" content="0;url=manage_message.do">
 	</c:if>
 </body>
 </html>

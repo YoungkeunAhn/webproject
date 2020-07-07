@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <%@ include file="manager_settings.jsp" %>
 <script src="assets/js/script.js"></script>
 
@@ -12,5 +12,5 @@
 	</script>
 </c:if>
 <c:if test="${result eq 1}">
-	<c:redirect url="loginForm.do"/>
+	<c:redirect url="manage_message.do"/>
 </c:if>
