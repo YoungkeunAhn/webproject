@@ -11,20 +11,39 @@
 		insert into mod_manager (manager_id,manager_passwd) values(#{manager_id},#{manager_passwd})
 	</insert>
 	
-<!-- 관리자 목록 -->	
+<!-- 매니저 목록 -->	
 
 	<select id="getManagers" parameterType="java.util.Map" resultType="Dtos.ManagerDto">
 		select manager_id, manager_passwd, r 
 		from (select manager_id, manager_passwd, rownum r 
 		from (select manager_id, manager_passwd
-      from mod_manager order by manager_id) order by manager_id, manager_passwd)
-      where r &gt;= #{start} and r &lt;= #{end}
+      from mod_manager order by manager_id) order by manager_id)
+      where r &gt;= #{start} and r &lt;= #{end} order by manager_id 
 	</select>	
 
-<!-- 글목록 수  -->
+<!-- 매니저 목록 row수 -->
 	 
 	<select id="getCount" resultType="int">
 		select count(*) from mod_manager	 
+	</select>
+	<!--  -->
+<!-- 글삭제 -->
+	<delete id="deleteArticle" parameterType="String">
+		delete from mod_manager where manager_id=#{manager_id}
+	</delete>
+	
+<!-- 매니저 목록찾기 -->	
+	<select id="findManager" parameterType="java.util.Map" resultType="Dtos.ManagerDto">
+		select manager_id,manager_passwd,r
+		from (select manager_id,manager_passwd, rownum r 
+		from (select manager_id,manager_passwd 
+        from mod_manager where manager_id like '%'||#{searchManager}||'%' order by manager_id) order by manager_id)
+       where r &gt;= #{start} and r &lt;= #{end} order by manager_id 
+	</select>
+	
+<!-- 찾은 매니저 목록 row수 -->
+	<select id="getsearchManagerCount" resultType="int">
+		select count(*) from mod_manager where manager_id like '%'||#{searchManager}||'%' 
 	</select>
 	
 </mapper>

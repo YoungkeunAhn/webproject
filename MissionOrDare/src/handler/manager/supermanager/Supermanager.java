@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import Dtos.ManagerDto;
+import Dtos.UsersDto;
 import handler.CommandHandler;
 import manager.supermanager.SupermanagerDao;
 
@@ -39,9 +40,13 @@ public class Supermanager implements CommandHandler{
 		int startPage = 0;
 		int endPage = 0;
 		int pageCount = 0;
-			
+		String searchSupermanager = request.getParameter("searchSupermanager");
 		
-		cnt = supermanagerDao.getCount();
+		if(searchSupermanager ==null || searchSupermanager.equals("")) {
+			cnt = supermanagerDao.getCount();
+		}else {
+			cnt = supermanagerDao.getsearchManagerCount(searchSupermanager);
+		}
 		
 		pageNum = request.getParameter( "pageNum" );
 		if( pageNum == null ) {
@@ -52,7 +57,6 @@ public class Supermanager implements CommandHandler{
 		if( end > cnt ) end = cnt;
 		end = start + pageSize - 1;						// 41 + 10 - 1			50 
 		
-		number = cnt - ( currentPage -1 ) * pageSize;	// 50 - ( 2-1 ) * 10
 		
 		pageCount = cnt / pageSize + ( cnt % pageSize > 0 ? 1 : 0 );
 		startPage = ( currentPage / pageBlock ) * pageBlock + 1;
@@ -68,18 +72,28 @@ public class Supermanager implements CommandHandler{
 		request.setAttribute( "cnt", cnt );
 		request.setAttribute( "pageNum", pageNum );
 		request.setAttribute( "currentPage", currentPage );
-		request.setAttribute( "number", number );
 		request.setAttribute( "startPage", startPage );
 		request.setAttribute( "endPage", endPage );
 		request.setAttribute( "pageCount", pageCount );
 		
-		 
-		if( cnt > 0 ) {
-			Map<String, Integer> map = new Hashtable<String, Integer>();
-			map.put( "start", start );
-			map.put( "end", end );
-			List<ManagerDto> managerDto = supermanagerDao.managerDtos( map );
-			request.setAttribute( "managerDto", managerDto );
+		if(searchSupermanager ==null || searchSupermanager.equals("")) {
+			if( cnt > 0 ) {
+				Map<String, Integer> map = new Hashtable<String, Integer>();
+				map.put( "start", start );
+				map.put( "end", end );
+				List<ManagerDto> managerDto = supermanagerDao.managerDtos( map );
+				request.setAttribute( "managerDto", managerDto );
+			}
+		}else {
+			if( cnt > 0 ) {
+				Map<String, Object> mapp = new Hashtable<String, Object>();
+				mapp.put( "start", start );
+				mapp.put( "end", end );
+				mapp.put( "searchUser", searchSupermanager );
+				List<ManagerDto> managerDto = supermanagerDao.findManager( mapp );
+				request.setAttribute( "managerDto", managerDto );
+				request.setAttribute("searchSupermanager",searchSupermanager);
+			}
 		}
 		
 		return new ModelAndView("manager/pages/manage_manager");

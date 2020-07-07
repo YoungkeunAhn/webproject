@@ -23,4 +23,17 @@ public class SupermanagerDBBean implements SupermanagerDao{
 		return session.selectOne("Supermanaging.getCount");
 	}
 
+	public List<ManagerDto> findManager( Map<String, Object> mapp ){
+		return session.selectList("Supermanaging.findManager", mapp);
+	}
+	
+	public int getsearchManagerCount(String searchManager) {
+		return session.selectOne("Supermanaging.getsearchManagerCount", searchManager);
+	}
+	
+	public int deleteArticle(String manager_id) {
+		return session.delete("Supermanaging.deleteArticle", manager_id);
+	}
+	
+	
 }
