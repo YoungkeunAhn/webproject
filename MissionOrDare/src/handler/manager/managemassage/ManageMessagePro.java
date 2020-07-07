@@ -14,6 +14,8 @@ public class ManageMessagePro implements CommandHandler {
    @RequestMapping("/manage_message_pro")
    @Override
    public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-      return new ModelAndView("manager/pages/manage_message_pro");
+       
+	   
+	   return new ModelAndView("manager/pages/manage_message_pro");
    }
 }

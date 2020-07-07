@@ -66,7 +66,7 @@
 	                <th>${reportBoardDto.report_date}</th>
 	                <th>
 	                <button class="btn btn-danger" name="mission-delete"
-	                 onclick="OnSendMessage()">
+	                 onclick="OnSendMessage();sendMessage('${reportBoardDto.reported_nickname}')">
 	                 ${str_message_sendmessage}</button></th>
 	                 </tr>
 	                </c:forEach>
@@ -100,10 +100,10 @@
 <div id="reportMessageModal" class="modal">
 </div>
 <script>
-    $(document).ready(function () {
-            $('#reportMessageModal').load('manage_message_form.do');
+    function sendMessage(id) {
+            $('#reportMessageModal').load('manage_message_form.do',{nickname:id},"");
         }
-    );
+  
     
 </script>
 </body>

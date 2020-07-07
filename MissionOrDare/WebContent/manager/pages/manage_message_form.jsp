@@ -17,15 +17,16 @@
     		<span class="close" onclick="CloseSendMessage()">&times;</span>
 	        <section class="mission-info">
 	        <form method="post" action="manage_message_pro.do" name="messageForm" onsubmit="return messageCheck()">
+	            <input type="hidden" value="${joinNotesManagerDto.sent_nickname}">
 	            <table class="table">
 	                <tr>
 	                    <th>받는사람</th>
-	                    <td><span>다리도비빔면</span></td>
+	                    <td><span>${nickname}</span></td>
 	                </tr>
 	                <tr>
 	                    <th>메시지내용</th>
 	                    <td>
-	               			<textarea name="message" rows="10" cols="39" placeholder="유저에게  줴줴내역을 입력하세요"></textarea>
+	               			<textarea name="message" rows="10" cols="39" placeholder="내용을 입력하세요"></textarea>
 	                    <td>
 	                </tr>
 	                
