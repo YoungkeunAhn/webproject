@@ -9,38 +9,41 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" content="text/css" href="${project}assets/css/manage.css">
     <script src="${project}assets/js/script.js"></script>
-    <script src="${project}assets/js/modal.js"></script>
     <title>미션정보페이지</title>
 </head>
 <body>
 	<article>
    		<div class="modal-content">
-			<span class="close" onclick="CloseInfoModal()">&times;</span>
 	        <section class="mission-info">
+	        <form method="post" action="${pageContext.request.contextPath}/manage_mission_update.do">
 	            <table class="table">
 	                <tr>
 	                    <th>미션번호</th>
-	                    <td><span>${missionCategoryAndInfoDto.mission_info_id}</span></td>
+	                    <td><input readonly name="mission_info_id" value="${missionCategoryAndInfoDto.mission_info_id}"></td>
 	                </tr>
 	                <tr>
-	                    <th><span>카테고리</span></th>
-	                    <td colspan="3">${missionCategoryAndInfoDto.large_category}/${missionCategoryAndInfoDto.small_category}</td>
+	                    <th><span>대분류</span></th>
+	                    <td><input readonly name="large_category" value="${missionCategoryAndInfoDto.large_category}"></td>
+	                </tr>
+	                <tr>
+	                    <th><span>소분류</span></th>
+	                    <td><input readonly name="small_category" value="${missionCategoryAndInfoDto.small_category}"></td>
 	                </tr>
 	                <tr>
 	                    <th>제목</th>
-	                    <td>${missionCategoryAndInfoDto.mission_title}</td>
+	                    <td><input readonly name="mission_title" value="${missionCategoryAndInfoDto.mission_title}"></td>
 	                </tr>
 	                <tr>
 	                    <th>내용</th>
-	                    <td>${missionCategoryAndInfoDto.mission_contents}</td>
+	                    <td><input readonly name="mission_contents" value="${missionCategoryAndInfoDto.mission_contents}"></td>
 	                </tr>
 	                <tr>
 	                    <th>난이도</th>
-	                    <td>${missionCategoryAndInfoDto.mission_level}</td>
+	                    <td><input readonly name="mission_level" value="${missionCategoryAndInfoDto.mission_level}"></td>
 	                </tr>
 	                <tr>
 	                    <th>점수</th>
-	                    <td>10</td>
+	                    <td><input readonly name="mission_success_score" value="10"></td>
 	                </tr>
 	                <tr>
 	                    <th>종류</th>
@@ -48,27 +51,28 @@
 	                </tr>
 	                <tr>
 	                    <th>장소</th>
-	                    <td>${missionCategoryAndInfoDto.mission_location}</td>
+	                    <td><input readonly name="mission_location" value="${missionCategoryAndInfoDto.mission_location}"></td>
 	                </tr>
 	                <tr>
 	                    <th>미션평점</th>
-	                    <td>${missionCategoryAndInfoDto.mission_avg_score}</td>
+	                    <td><input readonly name="mission_avg_score" value="${missionCategoryAndInfoDto.mission_avg_score}"></td>
 	                </tr>
 	                <tr>
 	                    <th>미션 승락 횟수</th>
-	                    <td>${missionCategoryAndInfoDto.mission_accept_count}</td>
+	                    <td><input readonly name="mission_accept_count" value="${missionCategoryAndInfoDto.mission_accept_count}"></td>
 	                </tr>
 	                <tr>
 	                    <th>미션 거절 횟수</th>
-	                    <td>${missionCategoryAndInfoDto.mission_reject_count}</td>
+	                    <td><input readonly name="mission_reject_count" value="${missionCategoryAndInfoDto.mission_reject_count}"></td>
 	                </tr>
 	                <tr>
 	                    <th class="btn-line" colspan="4">
-	                        <button class="btn btn-primary" onclick="location.href='${pageContext.request.contextPath}/manage_mission_update.do?missionCategoryAndInfoDto=${missionCategoryAndInfoDto}'">수정하기</button>
-	                        <button class="btn btn-danger" onclick="location.href='manage_mission.do'">닫기</button>
+	                        <button type="submit" class="btn btn-primary">수정하기</button>
+	                        <button type="button" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/manage_mission.do'">닫기</button>
 	                    </th>
 	                </tr>
 	            </table>
+	            </form>
 	        </section>
 		</div>
 	</article>

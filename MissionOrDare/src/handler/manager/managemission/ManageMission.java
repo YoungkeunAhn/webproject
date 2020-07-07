@@ -46,7 +46,12 @@ public class ManageMission implements CommandHandler{
 		if(mission == null || mission.equals("")) {
 			cnt = manageMissionDao.getMissionCount();
 		} else {
-			cnt = manageMissionDao.getSearchMissionCount(mission);
+			switch(option) {
+			case "1" : cnt = manageMissionDao.getSearchMissionCountCategory(mission); break;
+			case "2" : cnt = manageMissionDao.getSearchMissionCountTitle(mission); break;
+			default : cnt = manageMissionDao.getSearchMissionCountContent(mission);
+			}
+			
 		}
 		
 		

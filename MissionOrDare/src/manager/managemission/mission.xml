@@ -50,8 +50,14 @@
 	</select>
 	
 	<!-- 미션  검색 개수 -->
-	<select id="getSearchMissionCount" resultType="int">
+	<select id="getSearchMissionCountCategory" resultType="int">
+		select count(*) from MOD_MissionCategory where large_category like '%'||#{mission}||'%'  or small_category like '%'||#{mission}||'%'
+	</select>
+	<select id="getSearchMissionCountTitle" resultType="int">
 		select count(*) from MOD_MissionInfo where mission_title like '%'||#{mission}||'%'
+	</select>
+	<select id="getSearchMissionCountContent" resultType="int">
+		select count(*) from MOD_MissionInfo where mission_contents like '%'||#{mission}||'%'
 	</select>
 	
 	<!-- 미션 리스트 -->
@@ -125,5 +131,12 @@
 		from MOD_MissionCategory c, MOD_MissionInfo m where c.mission_category_id=m.mission_category_id
 		and m.mission_info_id=#{mission_info_id}
 	</select>
+	
+	<!-- 미션 수정 -->
+	<update id="updateMission" parameterType="Dtos.MissionInfoDto">
+		update MOD_MissionInfo set mission_title=#{mission_title}, mission_level=#{mission_level},
+		mission_category_id=#{mission_category_id}, mission_location=#{mission_location}, mission_contents=#{mission_contents}
+		where mission_info_id=#{mission_info_id}
+	</update>
 	
 </mapper>

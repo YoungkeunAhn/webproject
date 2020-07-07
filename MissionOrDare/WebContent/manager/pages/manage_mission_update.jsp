@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" content="text/css" href="${project}assets/css/manage.css">
     <script src="${project}assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"></script>
     <title>미션수정페이지</title>
 </head>
 <body>
@@ -29,35 +32,29 @@
     <article>
         <section class="mission-insert-update">
             <h2>미션수정페이지</h2>
-            <form name="mission-updateForm">
+            <form name="mission-updateForm" action="manage_mission_updatePro.do">
+            
                 <table class="table">
                     <tr>
-                        <th><span>${str_mission_category}</span></th>
-                        <td colspan="3"></td>
+                    	<th><span>${str_mission_info_id}</span></th>
+                        <td>
+                        	<input readonly class="form-control" type="text" name="mission_info_id" value="${missionCategoryAndInfoDto.mission_info_id}">
+                        </td>
                     </tr>
                     <tr>
+                    	<th><span>${str_mission_category}</span></th>
                         <td>
-                            <label>
-                                <select class="form-control" name="large-category">
-                                    <option selected>${str_category_bigsorting}</option>
-                                    <option>운동</option>
-                                </select>
-                            </label>
+                            <input readonly class="form-control" type="text" name="large_category" value="${missionCategoryAndInfoDto.large_category}">
                         </td>
                         <td>
-                            <label>
-                                <select class="form-control" name="small-category">
-                                    <option selected>${str_category_smallsorting}</option>
-                                    <option>달리기</option>
-                                </select>
-                            </label>
+                        	<input readonly class="form-control" type="text" name="small_category" value="${missionCategoryAndInfoDto.small_category}">
                         </td>
                     </tr>
                     <tr>
                         <th>${str_title}</th>
                         <td colspan="3">
                             <label class="input-label">
-                                <input class="form-control" type="text" name="mission-title">
+                                <input class="form-control" type="text" name="mission_title" value="${missionCategoryAndInfoDto.mission_title}">
                             </label>
                         </td>
                     </tr>
@@ -65,7 +62,7 @@
                         <th>내용</th>
                         <td colspan="3">
                             <label class="input-label">
-                                <input class="form-control" type="text" name="mission-content">
+                                <input class="form-control" type="text" name="mission_contents" value="${missionCategoryAndInfoDto.mission_contents}">
                             </label>
                         </td>
                     </tr>
@@ -78,31 +75,31 @@
                     <tr>
                         <td>
                             <label>
-                                <select class="form-control" name="mission-level">
-                                    <option selected>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
+                                <select class="form-control" name="mission_level">
+                                    <option value="1" selected>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
                                 </select>
                             </label>
                         </td>
                         <td>
                             <label>
-                                <input class="form-control" type="number" name="misson-score">
+                                <input class="form-control" type="number" name="mission_success_score" value="10">
                             </label>
                         </td>
                         <td>
                             <label>
-                                <select class="form-control" name="mission-challenge">
-                                    <option selected>일반</option>
-                                    <option>챌린지</option>
+                                <select class="form-control" name="mission_challenge">
+                                    <option value="1" selected>일반</option>
+                                    <option value="2">챌린지</option>
                                 </select>
                             </label>
                         </td>
                         <td>
                             <label>
-                                <select class="form-control" name="mission-local">
-                                    <option selected>실내</option>
-                                    <option>야외</option>
+                                <select class="form-control" name="mission_local">
+                                    <option value="실내" selected>실내</option>
+                                    <option value="야외">야외</option>
                                 </select>
                             </label>
                         </td>

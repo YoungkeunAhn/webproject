@@ -40,8 +40,14 @@ public class ManageMissionDBBean implements ManageMissionDao {
 	public int getMissionCount() {
 		return session.selectOne("Mission.getMissionCount");
 	}
-	public int getSearchMissionCount(String mission) {
-		return session.selectOne("Mission.getMissionCount", mission);
+	public int getSearchMissionCountCategory(String mission) {
+		return session.selectOne("Mission.getSearchMissionCountCategory", mission);
+	}
+	public int getSearchMissionCountTitle(String mission) {
+		return session.selectOne("Mission.getSearchMissionCountTitle", mission);
+	}
+	public int getSearchMissionCountContent(String mission) {
+		return session.selectOne("Mission.getSearchMissionCountContent", mission);
 	}
 	
 	public List<MissionCategoryAndInfoDto> getMissions( Map<String, Integer> map ) {
@@ -75,5 +81,8 @@ public class ManageMissionDBBean implements ManageMissionDao {
 	}
 	public MissionCategoryAndInfoDto getMission(String mission_info_id) {
 		return session.selectOne("Mission.getMission", mission_info_id);
+	}
+	public int updateMission(MissionInfoDto missionInfoDto) {
+		return session.update("Mission.updateMission", missionInfoDto);
 	}
 }

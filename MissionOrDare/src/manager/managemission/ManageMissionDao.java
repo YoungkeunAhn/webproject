@@ -21,11 +21,17 @@ public interface ManageMissionDao {
 	public List<MissionCategoryAndInfoDto> getSearchMissionsContent( Map<String, Object> map );
 	
 	public int getMissionCount();
-	public int getSearchMissionCount(String mission);
+	
+	public int getSearchMissionCountCategory(String mission);
+	public int getSearchMissionCountTitle(String mission);
+	public int getSearchMissionCountContent(String mission);
+	
 	public List<MissionCategoryDto> getMissionLargeCategorys();
 	public List<MissionCategoryDto> getMissionSmallCategorys(String largecategory);
 	public String getCategoryId(MissionCategoryDto missionCategoryDto);
 	public int insertMission(MissionInfoDto missionInfoDto);
 	public int deleteMission(String mission_info_id);
 	public MissionCategoryAndInfoDto getMission(String mission_info_id);
+	public int updateMission(MissionInfoDto missionInfoDto);
+	
 }

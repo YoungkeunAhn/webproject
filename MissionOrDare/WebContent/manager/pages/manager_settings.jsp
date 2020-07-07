@@ -27,6 +27,7 @@
 
 
 <!-- 미션 -->
+<c:set var="str_mission_info_id" value="미션 ID"/>
 <c:set var="str_mission_category" value="카테고리"/>
 <c:set var="str_mission_title" value="미션제목"/>
 <c:set var="str_mission_content" value="내용"/>
@@ -92,10 +93,6 @@
 <c:set var="str_category_smallsorting" value="소분류"/>
 <c:set var="str_category_missionadd" value="미션추가"/>
 
-<!-- 관리 페이지 -->
-<c:set var="str_supermanager_name" value="관리자 닉네임"/>
-<c:set var="str_supermanager_passwd" value="비밀번호"/>
-<c:set var="str_supermanager_delete" value="삭제"/>
 
 
 

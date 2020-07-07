@@ -23,6 +23,7 @@ public class categoryCheck implements CommandHandler {
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String largecategory = request.getParameter("largecategory");
+		System.out.println(largecategory);
 		List<MissionCategoryDto> missionSmallCategorys = manageMissionDao.getMissionSmallCategorys(largecategory);
 		request.setAttribute("missionSmallCategorys", missionSmallCategorys);
 		request.setAttribute("largecategory", largecategory);
