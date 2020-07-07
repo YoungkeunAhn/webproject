@@ -27,18 +27,19 @@
         <section class="mission-search">
         <form method="post" action="manage_report.do" name="reportho" onsubmit="return searchCheck3()">
             <label>
-                <select class="form-control">
-                    <option>${str_report_selectoption}</option>
-                    <option>${str_report_selectoption1}</option>
-                    <option>${str_report_selectoption2}</option>
-                    <option>${str_report_selectoption3}</option>
-                    <option>${str_report_selectoption4}</option>
-                    <option>${str_report_selectoption5}</option>
-                    <option>${str_report_selectoption6}</option>
+                <select class="form-control" name="option" >
+                    <option value="1" selected>${str_report_selectoption}</option>
+                    <option value="2">${str_report_selectoption1}</option>
+                    <option value="3">${str_report_selectoption2}</option>
+                    <option value="4">${str_report_selectoption3}</option>
+                    <option value="5">${str_report_selectoption4}</option>
+                    <option value="6">${str_report_selectoption5}</option>
+                    <option value="7">${str_report_selectoption6}</option>
                 </select>
             </label>
+            <button class="btn btn-primary" type="submit" name="searchReport">${str_search}</button>
             <label>
-                <input class="form-control" type="search" name="report" placeholder="신고 내용을 입력하세요">
+                <input class="form-control" type="search" name="searchNickname" placeholder="닉네임을 입력하세요">
             </label>
             <button class="btn btn-primary" type="submit">${str_search}</button>
         </form>
@@ -46,9 +47,10 @@
         <section>
             <table class="table">
                 <thead>
-	                <th>체크박스</th>
+	                <th></th>
 	                <th>${str_user_nickname}</th>
-	                <th>신고된 댓글이나 게시판 id</th>
+	                <th>신고된 댓글id or 게시판id</th>
+	                <th>신고받은 닉네임</th>
 	                <th>${str_report_type}</th>
 	                <th>신고내용</th>
 	                <th>${str_report_reportdate}</th>
@@ -60,6 +62,7 @@
 	                <th><input type="checkbox"></th>
 	                <th>${reportBoardDto.user_nickname}</th>
 	                <th>${reportBoardDto.reported_board_id} ${reportBoardDto.reported_reply_id}</th>
+	                <th>${reportBoardDto.reported_nickname}</th>
 	                <th>${reportBoardDto.report_type}</th>
 	                <th>${reportBoardDto.report_reason}</th>
 	                <th>${reportBoardDto.report_date}</th>

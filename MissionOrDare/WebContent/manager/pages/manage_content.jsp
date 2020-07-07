@@ -50,7 +50,7 @@
                 </thead>
                 <tbody>
                 <c:forEach var="joinMissionInfoSuccessBoardDto" items="${joinMissionInfoSuccessBoardDtos}">
-                <tr onclick="location.href='${pageContext.request.contextPath}/manage_content_info.do?id=${joinMissionInfoSuccessBoardDto.success_board_id}'">
+                <tr onclick="location.href='${pageContext.request.contextPath}/manage_content_info.do?success_board_id=${joinMissionInfoSuccessBoardDto.success_board_id}'">
                 	<th>${joinMissionInfoSuccessBoardDto.success_board_id}</th>
                 	<th> ${joinMissionInfoSuccessBoardDto.large_category} / ${joinMissionInfoSuccessBoardDto.small_category}</th>
                 	<th>${joinMissionInfoSuccessBoardDto.user_nickname}</th>

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 
 import Dtos.JoinMissionInfoSuccessBoardDto;
+import Dtos.JoinSuccessBoardReplyDto;
 
 public class ManageContentDBBean implements ManageContentDao{
 	SqlSession session = SqlMapClient.getSession();
@@ -39,5 +40,10 @@ public class ManageContentDBBean implements ManageContentDao{
 	public List<JoinMissionInfoSuccessBoardDto> getSearchTitleArticles(Map<String, Object> map) {
 		return session.selectList("Mission.getSearchTitleArticles",map);
 	}
-	
+	public JoinMissionInfoSuccessBoardDto getBoardInfo(String success_board_id) {
+		return session.selectOne("Mission.getBoardInfo",success_board_id);
+	}
+	public List<JoinSuccessBoardReplyDto> getReplyArticles(String success_board_id) {
+		return session.selectList("Mission.getReplyArticles",success_board_id);
+	}
 }

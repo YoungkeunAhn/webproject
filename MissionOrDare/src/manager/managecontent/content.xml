@@ -78,4 +78,17 @@
 		order by s.board_register_date desc) aa
 		order by board_register_date desc) a where r &gt;= #{start} and r &lt;= #{end}
 	</select>
+	<select id="getBoardInfo" parameterType="String" resultType="Dtos.JoinMissionInfoSuccessBoardDto">
+		select * from mod_successboard s 
+		left outer join mod_missioninfo m 
+		on s.mission_info_id = m.mission_info_id
+		left outer join mod_missioncategory c
+		on m.mission_category_id = c.mission_category_id where s.success_board_id = #{success_board_id}
+		order by s.board_register_date desc
+	</select>
+	<select id="getReplyArticles" parameterType="String" resultType="Dtos.JoinSuccessBoardReplyDto">
+		select * from mod_reply r left outer join mod_successboard s
+		on r.success_board_id = s.success_board_id where r.success_board_id= #{success_board_id}
+		order by r.reply_date desc
+	</select>
 </mapper>

@@ -44,13 +44,11 @@ public class ManageContent implements CommandHandler{
 		if(searchContent ==null || searchContent.equals("")){
 			cnt = manageContentDao.getBoardCount();
 		}else{
-			System.out.println("CNT");
 			switch(option) {
 			case "1": cnt = manageContentDao.getSearchCategoryCount(searchContent); break;
 			case "2": cnt = manageContentDao.getSearchWriterCount(searchContent); break;
 			default :  cnt = manageContentDao.getSearchTitleCount(searchContent);
 			}
-			System.out.println(cnt);
 		}
 		
 		
@@ -95,7 +93,6 @@ public class ManageContent implements CommandHandler{
 			}
 		}else {
 			if( cnt > 0 ) {
-				System.out.println("map");
 				Map<String,Object> map = new Hashtable<String, Object>();
 				map.put( "start", start );
 				map.put( "end", end );
@@ -113,7 +110,6 @@ public class ManageContent implements CommandHandler{
 			}
 			
 		}
-		System.out.println("start:"+start+"end:" +end);
 		
 		return new ModelAndView("manager/pages/manage_content");
 	}

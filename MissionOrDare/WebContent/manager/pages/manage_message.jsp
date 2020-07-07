@@ -32,14 +32,8 @@
             <button class="btn btn-primary" type="submit" name="user-findinmessage">${str_search}</button>
         
         </form> 
-           <button class="btn-primary" name="mission-delete"
-                 onclick="OnSendMessage()">${str_message_sendmessage}</button>
-                
-            <button class="btn-danger" name="mission-delete"
-                 onclick="location.href='${pageContext.request.contextPath}/manage_message_deletePro.do'">${str_message_messagedelete}</button>
-               
-        </section>
-        <section>
+         
+        <form action="ManageMessageDeletePro.do" method="post">
             <table class="table">
                 <thead>
                 <th>${str_message_checkbox}</th>
@@ -50,9 +44,9 @@
                 
                 </thead>
                <tbody>
-                <c:forEach var="joinNotesManagerDto" items="${joinNotesManagerDtos}">
+                <c:forEach var="joinNotesManagerDto" items="${joinNotesManagerDtos}" varStatus="loop">
                 <tr>
-                <th><input type="checkbox" name="index" value="${joinNotesManagerDto.note_id}"></th>
+                <th><input type="checkbox" name="message_check" value="${joinNotesManagerDto.note_id}"></th>
                 <th>${joinNotesManagerDto.sent_nickname}</th>
                 <th>${joinNotesManagerDto.notes_contents}</th>
                 <th>${joinNotesManagerDto.received_nickname}</th>
@@ -61,7 +55,11 @@
                 </c:forEach>
                 </tbody>
             </table>
-        </section>
+            <button class="btn-primary" name="message-send" onclick="OnSendMessage()">${str_message_sendmessage}</button>
+           	<input class="btn-danger" name=${str_message_messagedelete}>
+           </form>
+       </section>
+        
         <br>
         <section>
         <c:if test="${searchUser eq null}">

@@ -7,6 +7,13 @@
 	<select id="getReportCount" resultType="int">
 		select count(*) from mod_reportboard	
 	</select>
+	
+	<select id="getSearchReportCount" resultType="int">
+		select count(*) from mod_reportboard where report_type=	#{searchReport} order by report_date desc
+	</select>
+	<select id="getSearchNicknameCount" resultType="int">
+		select count(*) from mod_reportboard where report_type like '%'||#{searchNickname}||'%' order by report_date desc
+	</select>
 	<select id="getReportArticles" parameterType="java.util.Map" resultType="Dtos.ReportBoardDto">
 		select a.*,r 
 		from (select aa.*,rownum r from 
@@ -14,6 +21,18 @@
 		order by report_date desc) aa
 		order by report_date desc) a where r &gt;= #{start} and r &lt;= #{end}
 	</select>
-	
-	
+	<select id="getSearchReportArticles" parameterType="java.util.Map" resultType="Dtos.ReportBoardDto">
+		select a.*,r 
+		from (select aa.*,rownum r from 
+		(select * from mod_reportboard where report_type=#{searchReport}
+		order by report_date desc) aa
+		order by report_date desc) a where r &gt;= #{start} and r &lt;= #{end}
+	</select>
+	<select id="getSearchNicknameArticles" parameterType="java.util.Map" resultType="Dtos.ReportBoardDto">
+		select a.*,r 
+		from (select aa.*,rownum r from 
+		(select * from mod_reportboard where report_type like '%'||#{searchNickname}||'%'
+		order by report_date desc) aa
+		order by report_date desc) a where r &gt;= #{start} and r &lt;= #{end}
+	</select>
 </mapper>
