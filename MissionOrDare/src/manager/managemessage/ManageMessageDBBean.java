@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 
 import Dtos.JoinNotesManagerDto;
+import Dtos.NotesDto;
 public class ManageMessageDBBean implements ManageMessageDao{
 	SqlSession session = SqlMapClient.getSession();
 	
@@ -23,8 +24,10 @@ public class ManageMessageDBBean implements ManageMessageDao{
 	}
 	public int deleteMessage(String notes_id) {
 		int result = session.delete("Mission.deleteMessage",notes_id);
-		return result ;
-		
+		return result ;	
+	}
+	public int insertMessage(NotesDto notesDto) {
+		return session.insert("Mission.insertMessage",notesDto);
 	}
 	
 }

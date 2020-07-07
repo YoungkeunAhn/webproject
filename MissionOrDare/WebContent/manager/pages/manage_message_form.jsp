@@ -17,7 +17,7 @@
     		<span class="close" onclick="CloseSendMessage()">&times;</span>
 	        <section class="mission-info">
 	        <form method="post" action="manage_message_pro.do" name="messageForm" onsubmit="return messageCheck()">
-	            <input type="hidden" value="${joinNotesManagerDto.sent_nickname}">
+	            <input type="hidden" name= "received_nickname" value="${nickname}">
 	            <table class="table">
 	                <tr>
 	                    <th>받는사람</th>
