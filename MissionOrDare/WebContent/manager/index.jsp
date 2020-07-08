@@ -20,7 +20,7 @@
             <span class="logo">${str_header_mod}</span>
         </a>
         <button style="background-color:#d9edf7;" id="myBtn" class="btb btn-primary" onclick='document.getElementById("myModal").style.display="block"'>${str_header_login}</button>
-        <button style="background-color:#d9edf7; border:0px" class="btn btn-primary">${str_header_logout}</button>
+        <button style="background-color:#d9edf7; border:0px" class="btn btn-primary" onclick="location.href='logout.do'">${str_header_logout}</button>
         <button style="background-color:#d9edf7; border:0px" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/manage_manager.do'"><span>관리페이지</span></button>
     </header>
   <nav>

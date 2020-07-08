@@ -12,7 +12,7 @@
 	<c:if test="${result eq 0}">
 		<script type="text/javascript">
 			<!--
-			alert( "아디 없슴" );
+			alert( "아이디가 없습니다." );
 			history.back()
 			//-->
 		</script>
@@ -25,7 +25,7 @@
 		<c:if test="${result eq -1}">		
 			<script type="text/javascript">
 				<!--
-				alert( "비번틀림" );
+				alert( "비밀번호가 다릅니다." );
 				//-->
 			</script>			
 		</c:if>	
