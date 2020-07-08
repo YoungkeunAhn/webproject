@@ -42,12 +42,13 @@ public class Supermanager implements CommandHandler{
 		int startPage = 0;
 		int endPage = 0;
 		int pageCount = 0;
-		String searchSupermanager = request.getParameter("searchSupermanager");
+		String searchManager = request.getParameter("searchManager");
 		
-		if(searchSupermanager ==null || searchSupermanager.equals("")) {
+		
+		if(searchManager ==null || searchManager.equals("")) {
 			cnt = supermanagerDao.getCount();
 		}else {
-			cnt = supermanagerDao.getsearchManagerCount(searchSupermanager);
+			cnt = supermanagerDao.getsearchManagerCount(searchManager);
 		}
 		
 		pageNum = request.getParameter( "pageNum" );
@@ -78,23 +79,23 @@ public class Supermanager implements CommandHandler{
 		request.setAttribute( "endPage", endPage );
 		request.setAttribute( "pageCount", pageCount );
 		
-		if(searchSupermanager ==null || searchSupermanager.equals("")) {
+		if(searchManager ==null || searchManager.equals("")) {
 			if( cnt > 0 ) {
 				Map<String, Integer> map = new Hashtable<String, Integer>();
 				map.put( "start", start );
 				map.put( "end", end );
-				List<ManagerDto> managerDto = supermanagerDao.managerDtos( map );
-				request.setAttribute( "managerDto", managerDto );
+				List<ManagerDto> managerDtos = supermanagerDao.getManagers( map );
+				request.setAttribute( "managerDtos", managerDtos );
 			}
 		}else {
 			if( cnt > 0 ) {
 				Map<String, Object> mapp = new Hashtable<String, Object>();
 				mapp.put( "start", start );
 				mapp.put( "end", end );
-				mapp.put( "searchUser", searchSupermanager );
-				List<ManagerDto> managerDto = supermanagerDao.findManager( mapp );
-				request.setAttribute( "managerDto", managerDto );
-				request.setAttribute("searchSupermanager",searchSupermanager);
+				mapp.put( "searchManager", searchManager );
+				List<ManagerDto> managerDtos = supermanagerDao.getSearchManagers( mapp );
+				request.setAttribute( "managerDtos", managerDtos );
+				request.setAttribute("searchManager",searchManager);
 			}
 		}
 		

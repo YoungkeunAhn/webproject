@@ -15,7 +15,7 @@ public class SupermanagerDBBean implements SupermanagerDao{
 		return session.insert("Supermanaging.insertManager", managerDto);
 	}
 
-	public List<ManagerDto> managerDtos( Map<String, Integer> map ) {
+	public List<ManagerDto> getManagers( Map<String, Integer> map ) {
 		return session.selectList("Supermanaging.getManagers", map);
 	}
 	
@@ -23,8 +23,8 @@ public class SupermanagerDBBean implements SupermanagerDao{
 		return session.selectOne("Supermanaging.getCount");
 	}
 
-	public List<ManagerDto> findManager( Map<String, Object> mapp ){
-		return session.selectList("Supermanaging.findManager", mapp);
+	public List<ManagerDto> getSearchManagers( Map<String, Object> map ){
+		return session.selectList("Supermanaging.getSearchManagers", map);
 	}
 	
 	public int getsearchManagerCount(String searchManager) {

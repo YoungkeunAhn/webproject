@@ -11,6 +11,12 @@
 <c:set var="str_header_mod" value="Mission or Dare"/>
 <c:set var="str_header_login" value="로그인"/>
 <c:set var="str_header_logout" value="로그아웃"/>
+
+<!-- 매니저 관리 -->
+<c:set var="str_manager_id" value="관리자 ID"/>
+<c:set var="str_manager_passwd" value="관리자 비밀번호"/>
+<c:set var="str_manager_delete" value="관리자 삭제"/>
+
 <!-- 인덱스 -->
 <c:set var="str_managerlogin" value="관리자로그인"/>
 <c:set var="str_mission" value="미션관리"/>

@@ -26,7 +26,7 @@
             <label>
                 <input class="form-control" type="search" name="searchManager" placeholder="관리자 닉네임을 입력하세요">
             </label>
-            <button class="btn btn-primary btn-search" type="submit" name="search-findManager">검색</button>
+            <button class="btn btn-primary btn-search" type="submit" name="search_findManager">검색</button>
         </form>
         </section>
         <section class="manager-insert">
@@ -54,17 +54,19 @@
         <section class="manager-table">
             <table class="table">
                 <thead>
-                <th>${str_supermanager_name}</th>
-                <th>${str_supermanager_passwd}</th>
-                <th>${str_supermanager_delete}</th>
+                <tr>
+	                <th>${str_manager_id}</th>
+	                <th>${str_manager_passwd}</th>
+	                <th>${str_manager_delete}</th>
+                </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="ManagerDto" items="${managerDto}">
+                <c:forEach var="managerDtos" items="${managerDtos}">
                 <tr>
-	                <td>${ManagerDto.manager_id}</td>
-	                <td>${ManagerDto.manager_passwd}</td>
+	                <td>${managerDtos.manager_id}</td>
+	                <td>${managerDtos.manager_passwd}</td>
 	                <td><button type="button" class="btn btn-danger" name="managerdelete"  
-	                onclick="location.href='${pageContext.request.contextPath}/manage_manager_deletePro.do?manager_id=${ManagerDto.manager_id}'">삭제</button></td>
+	                onclick="location.href='${pageContext.request.contextPath}/manage_manager_deletePro.do?manager_id=${managerDtos.manager_id}'">삭제</button></td>
                 </tr>
                 </c:forEach>
                 </tbody>  

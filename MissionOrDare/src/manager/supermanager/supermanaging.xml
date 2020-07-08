@@ -33,7 +33,7 @@
 	</delete>
 	
 <!-- 매니저 목록찾기 -->	
-	<select id="findManager" parameterType="java.util.Map" resultType="Dtos.ManagerDto">
+	<select id="getSearchManagers" parameterType="java.util.Map" resultType="Dtos.ManagerDto">
 		select manager_id,manager_passwd,r
 		from (select manager_id,manager_passwd, rownum r 
 		from (select manager_id,manager_passwd 
