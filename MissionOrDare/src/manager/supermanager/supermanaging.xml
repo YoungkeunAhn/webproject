@@ -43,7 +43,7 @@
 	
 <!-- 찾은 매니저 목록 row수 -->
 	<select id="getsearchManagerCount" resultType="int">
-		select count(*) from mod_manager where manager_id like '%'||#{searchManager}||'%' 
+		select count(*) from mod_manager where manager_id like '%'||#{searchManager}||'%'
 	</select>
 	
 </mapper>
