@@ -48,5 +48,13 @@ public class ManageContentDBBean implements ManageContentDao{
 	public List<ReplyDto> getReply(String success_board_id) {
 		return session.selectList("Mission.getReply",success_board_id);
 	}
+
+	public int deleteReply(String reply_id) {
+		return session.delete("Mission.deleteReply",reply_id);
+	}
+	
+	public int deleteReplies(Map<String, Object> map) {
+		return session.delete("Mission.deleteReplies",map);
+	}
 	
 }

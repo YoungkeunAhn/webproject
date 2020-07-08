@@ -59,11 +59,20 @@
 							<div class="reply-level1">
 								<c:forEach var="replyDto" items="${replyDtos}">
 									<div class="user-profile">
+										<c:if test="${replyDto.reply_step == 1}">
+										<span>&nbsp;&nbsp;ㄴ${replyDto.user_nickname} : ${replyDto.reply_contents}</span> 
+										<span>
+											<button
+												onclick="location.href='manage_reply_deletePro.do?id=${replyDto.reply_id}&ref=${replyDto.reference}&step=${replyDto.reply_step}&bid=${success_board_id}'">삭제</button>
+										</span>
+										</c:if>
+										<c:if test="${replyDto.reply_step == 0}">
 										<span>${replyDto.user_nickname} : ${replyDto.reply_contents}</span> 
 										<span>
 											<button
-												onclick="location.href='${pageContext.request.contextPath}/manage_message_deletePro.do'">삭제</button>
+												onclick="location.href='manage_reply_deletePro.do?id=${replyDto.reply_id}&ref=${replyDto.reference}&step=${replyDto.reply_step}&bid=${success_board_id}'">삭제</button>
 										</span>
+										</c:if>
 									</div>
 								</c:forEach>
 							</div>

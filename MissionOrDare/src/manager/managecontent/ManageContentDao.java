@@ -18,4 +18,6 @@ public interface ManageContentDao {
 	public List<JoinMissionInfoSuccessBoardDto> getSearchTitleArticles(Map<String,Object> map);
 	public JoinMissionInfoSuccessBoardDto getBoardInfo(String success_board_id);
 	public List<ReplyDto> getReply(String success_board_id);
+	public int deleteReply(String reply_id);
+	public int deleteReplies(Map<String,Object>map);
 }

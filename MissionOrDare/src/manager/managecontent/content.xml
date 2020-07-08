@@ -90,4 +90,11 @@
 	<select id="getReply" parameterType="String" resultType="Dtos.ReplyDto">
 		select * from mod_reply where success_board_id = #{success_board_id} order by reference ,reply_step, reply_date desc 
 	</select>
+	
+	<delete id="deleteReply" parameterType="String">
+		delete from mod_reply where reply_id=#{reply_id}
+	</delete>
+	<delete id="deleteReplies" parameterType="java.util.Map">
+		delete from mod_reply where reference=#{reference} and success_board_id=#{success_board_id}
+	</delete>
 </mapper>
