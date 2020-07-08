@@ -29,11 +29,11 @@
 				<section class="content-part">
 					<div class="white-box" style="background: #c5e8ea;">
 						<div>
-							<span>${joinMissionInfoSuccessBoardDto.large_category} /
-								${joinMissionInfoSuccessBoardDto.small_category}</span>
+							<span>(뭐 넣을지 수정해야함)대분류:${joinMissionInfoSuccessBoardDto.large_category} /
+								소분류:${joinMissionInfoSuccessBoardDto.small_category}</span>
 						</div>
 						<div>
-							<span>${joinMissionInfoSuccessBoardDto.mission_title}</span>
+							<span>미션제목:${joinMissionInfoSuccessBoardDto.mission_title}/미션내용:${joinMissionInfoSuccessBoardDto.mission_contents}</span>
 						</div>
 
 						<div class="content-profile">
@@ -47,7 +47,7 @@
 									alt="content-image"> <span><i
 									class="fas fa-chevron-right"></i></span>
 							</div>
-							<span>${joinMissionInfoSuccessBoardDto.mission_contents}</span>
+							<span>유저들이 적은 게시판 내용(이거 들어갔었나?):${joinMissionInfoSuccessBoardDto.success_board_contents}</span>
 						</div>
 						<div class="like-box">
 							<span><i class="far fa-thumbs-up"></i></span> <span>${joinMissionInfoSuccessBoardDto.likecount}</span>
