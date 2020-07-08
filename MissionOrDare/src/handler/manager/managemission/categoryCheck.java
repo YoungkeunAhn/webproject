@@ -22,6 +22,10 @@ public class categoryCheck implements CommandHandler {
 	@RequestMapping("/categorycheck")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("memId") == null) {
+			return new ModelAndView("manager/login");
+		}
+		
 		String largecategory = request.getParameter("largecategory");
 		System.out.println(largecategory);
 		List<MissionCategoryDto> missionSmallCategorys = manageMissionDao.getMissionSmallCategorys(largecategory);

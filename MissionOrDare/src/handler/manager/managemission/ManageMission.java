@@ -24,6 +24,10 @@ public class ManageMission implements CommandHandler{
 	@RequestMapping("/manage_mission")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("memId") == null) {
+			return new ModelAndView("manager/login");
+		}
+		
 		request.setCharacterEncoding("utf-8");
 		
 		String mission = request.getParameter("mission");

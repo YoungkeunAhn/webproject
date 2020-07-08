@@ -24,6 +24,9 @@ public class ManageUser implements CommandHandler{
 	@RequestMapping("/manage_user")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("memId") == null) {
+			return new ModelAndView("manager/login");
+		}
 		 
 		int pageSize = 3;					// 한 페이지당 글 개수
 		int pageBlock = 3;					// 한 번에 출력할 페이지 개수

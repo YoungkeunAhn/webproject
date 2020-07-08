@@ -20,6 +20,9 @@ public class ManageCategoryInsertPro implements CommandHandler{
 	@RequestMapping("/manage_category_insertPro")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("memId") == null) {
+			return new ModelAndView("manager/login");
+		}
 		
 		request.setCharacterEncoding("utf-8");
 		

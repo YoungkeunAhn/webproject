@@ -26,6 +26,7 @@
 			<script type="text/javascript">
 				<!--
 				alert( "비밀번호가 다릅니다." );
+				history.back();
 				//-->
 			</script>			
 		</c:if>	

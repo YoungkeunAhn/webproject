@@ -20,6 +20,10 @@ public class ManageMissionUpdate implements CommandHandler {
 	@RequestMapping("/manage_mission_update")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("memId") == null) {
+			return new ModelAndView("manager/login");
+		}
+		
 		request.setCharacterEncoding("utf-8");
 		
 		MissionCategoryAndInfoDto missionCategoryAndInfoDto = new MissionCategoryAndInfoDto();

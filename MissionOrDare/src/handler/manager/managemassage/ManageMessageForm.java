@@ -14,6 +14,10 @@ public class ManageMessageForm implements CommandHandler{
 	@RequestMapping("/manage_message_form")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("memId") == null) {
+			return new ModelAndView("manager/login");
+		}
+		
 		String nickname = request.getParameter("nickname");
 		request.setAttribute("nickname", nickname);
 		return new ModelAndView("manager/pages/manage_message_form");

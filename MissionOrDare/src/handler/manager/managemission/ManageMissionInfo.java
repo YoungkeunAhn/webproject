@@ -20,6 +20,10 @@ public class ManageMissionInfo implements CommandHandler{
 	@RequestMapping("/manage_mission_info")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("memId") == null) {
+			return new ModelAndView("manager/login");
+		}
+		
 		String mission_info_id = request.getParameter("id");
 		if(mission_info_id == null || mission_info_id.equals("")) {
 			return new ModelAndView("manager/pages/manage_mission_info");

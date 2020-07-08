@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import Dtos.UsersDto;
 import handler.CommandHandler;
 import manager.manageuser.ManageUserDao;
 
@@ -21,7 +20,9 @@ public class ManageUserDeletePro implements CommandHandler{
 	@RequestMapping("/manage_user_deletePro")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
+		if(request.getSession().getAttribute("memId") == null) {
+			return new ModelAndView("manager/login");
+		}
 		
 		String user_nickname = request.getParameter("user_nickname");
 		

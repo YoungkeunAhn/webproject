@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import Dtos.ManagerDto;
-import Dtos.UsersDto;
 import handler.CommandHandler;
 import manager.supermanager.SupermanagerDao;
 
@@ -26,6 +25,9 @@ public class Supermanager implements CommandHandler{
 	@RequestMapping("/manage_manager")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("memId") == null) {
+			return new ModelAndView("manager/login");
+		}
 		
 		int pageSize = 5;					// 한 페이지당 글 개수
 		int pageBlock = 3;					// 한 번에 출력할 페이지 개수

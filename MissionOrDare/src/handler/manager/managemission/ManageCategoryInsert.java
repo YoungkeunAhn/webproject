@@ -14,6 +14,10 @@ public class ManageCategoryInsert implements CommandHandler{
 	@RequestMapping("/manage_category_insert")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("memId") == null) {
+			return new ModelAndView("manager/login");
+		}
+		
 		return new ModelAndView("manager/pages/manage_category_insert");
 	}
 }

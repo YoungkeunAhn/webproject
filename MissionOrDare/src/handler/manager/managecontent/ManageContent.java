@@ -25,6 +25,9 @@ public class ManageContent implements CommandHandler{
 	@RequestMapping("/manage_content")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("memId") == null) {
+			return new ModelAndView("manager/login");
+		}
 		request.setCharacterEncoding("utf-8");
 		
 		int pageSize = 3;					// 한 페이지당 글 개수

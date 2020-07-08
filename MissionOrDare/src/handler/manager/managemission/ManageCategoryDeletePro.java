@@ -20,6 +20,10 @@ public class ManageCategoryDeletePro implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
+		if(request.getSession().getAttribute("memId") == null) {
+			return new ModelAndView("manager/login");
+		}
+		
 		String missionCategoryId = request.getParameter("id");
 		int result = manageMissionDao.deleteCategory(missionCategoryId);
 		

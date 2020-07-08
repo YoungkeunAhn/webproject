@@ -1,7 +1,5 @@
 package handler.manager.managemassage;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,6 +21,9 @@ public class ManageMessageDeletePro implements CommandHandler{
 	@RequestMapping("/manage_message_deletePro")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("memId") == null) {
+			return new ModelAndView("manager/login");
+		}
 		request.setCharacterEncoding("utf-8");
 
 		String[] message_check = request.getParameterValues("message_check");

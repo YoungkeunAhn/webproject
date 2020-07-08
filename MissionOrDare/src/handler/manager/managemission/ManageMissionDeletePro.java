@@ -19,6 +19,10 @@ public class ManageMissionDeletePro implements CommandHandler {
 	@RequestMapping("/manage_mission_deletePro")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("memId") == null) {
+			return new ModelAndView("manager/login");
+		}
+		
 		
 		String mission_info_id = request.getParameter("id");
 		int result = manageMissionDao.deleteMission(mission_info_id);

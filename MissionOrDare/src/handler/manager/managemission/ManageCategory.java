@@ -24,6 +24,10 @@ public class ManageCategory implements CommandHandler{
 	@RequestMapping("/manage_category")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("memId") == null) {
+			return new ModelAndView("manager/login");
+		}
+		
 		String category = request.getParameter("category");
 		
 		int pageSize = 5;					// 한 페이지당 글 개수

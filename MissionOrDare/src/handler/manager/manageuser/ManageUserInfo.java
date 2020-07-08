@@ -20,6 +20,9 @@ public class ManageUserInfo implements CommandHandler{
 	@RequestMapping("/manage_user_info")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("memId") == null) {
+			return new ModelAndView("manager/login");
+		}
 		
 		String user_nickname = request.getParameter( "user_nickname" );
 		UsersDto usersDto = manageUserDao.getArticle( user_nickname );

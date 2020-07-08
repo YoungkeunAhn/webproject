@@ -23,6 +23,9 @@ public class ManageMissionInsert implements CommandHandler{
 	@RequestMapping("/manage_mission_insert")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("memId") == null) {
+			return new ModelAndView("manager/login");
+		}
 		
 		List<MissionCategoryDto> missionLargeCategorys = manageMissionDao.getMissionLargeCategorys();
 		request.setAttribute("missionLargeCategorys", missionLargeCategorys);
