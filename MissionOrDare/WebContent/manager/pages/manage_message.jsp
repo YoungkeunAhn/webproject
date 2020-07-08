@@ -27,14 +27,15 @@
         <section class="mission-search">
         <form method="post" action="manage_message.do" name="messageho" onsubmit="return searchCheck4()">
             <label>
-                <input class="form-control" type="search" name="searchUser" placeholder="유저닉네임을 입력하살법!">
+                <input class="form-control" type="search" name="searchUser" placeholder="유저닉네임을 입력하세요">
             </label>
             <button class="btn btn-primary" type="submit" name="user-findinmessage">${str_search}</button>
         
         </form> 
          
         <form action="manage_message_deletePro.do" method="post">
-        	<button class="btn-primary" type="button" name="message-send" onclick="OnSendMessage()">${str_message_sendmessage}</button>
+        
+        	<button class="btn-primary" type="submit" name="message-send" onclick="OnSendMessage();sendMessage('${joinNotesManagerDto.received_nickname}')">${str_message_sendmessage}</button>
            	<button class="btn-danger" type="submit" >${str_message_messagedelete}</button>
             <table class="table">
                 <thead>
@@ -47,6 +48,7 @@
                 </thead>
                <tbody>
                 <c:forEach var="joinNotesManagerDto" items="${joinNotesManagerDtos}" varStatus="loop">
+                <input type="hidden" name="notesContents" value="${joinNotesManagerDto.notes_contents}">
                 <tr>
                 <th><input type="checkbox" name="message_check" value="${joinNotesManagerDto.notes_id}"></th>
                 <th>${joinNotesManagerDto.sent_nickname}</th>
@@ -112,10 +114,9 @@
 <div id="reportMessageModal" class="modal">
 </div>
 <script>
-    $(document).ready(function () {
-            $('#reportMessageModal').load('manage_message_form.do');
-        }
-    );
+function sendMessage(id) {
+    $('#reportMessageModal').load('manage_message_form.do',{nickname:id},"");
+}
 </script>
 </body>
 </html>

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import Dtos.JoinMissionInfoSuccessBoardDto;
-import Dtos.JoinSuccessBoardReplyDto;
+import Dtos.ReplyDto;
 
 public interface ManageContentDao {
 	public int getBoardCount();
@@ -17,5 +17,5 @@ public interface ManageContentDao {
 	public List<JoinMissionInfoSuccessBoardDto> getSearchCategoryArticles(Map<String,Object> map);
 	public List<JoinMissionInfoSuccessBoardDto> getSearchTitleArticles(Map<String,Object> map);
 	public JoinMissionInfoSuccessBoardDto getBoardInfo(String success_board_id);
-	public List<JoinSuccessBoardReplyDto> getReplyArticles(String success_board_id);
+	public List<ReplyDto> getReply(String success_board_id);
 }

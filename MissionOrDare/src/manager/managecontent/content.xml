@@ -86,9 +86,8 @@
 		on m.mission_category_id = c.mission_category_id where s.success_board_id = #{success_board_id}
 		order by s.board_register_date desc
 	</select>
-	<select id="getReplyArticles" parameterType="String" resultType="Dtos.JoinSuccessBoardReplyDto">
-		select * from mod_reply r left outer join mod_successboard s
-		on r.success_board_id = s.success_board_id where r.success_board_id= #{success_board_id}
-		order by r.reply_date desc
+	
+	<select id="getReply" parameterType="String" resultType="Dtos.ReplyDto">
+		select * from mod_reply where success_board_id = #{success_board_id} order by reference ,reply_step, reply_date desc 
 	</select>
 </mapper>
