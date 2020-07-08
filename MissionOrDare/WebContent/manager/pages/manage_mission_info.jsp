@@ -43,11 +43,18 @@
 	                </tr>
 	                <tr>
 	                    <th>점수</th>
-	                    <td><input readonly name="mission_success_score" value="10"></td>
+	                    <td><input readonly name="mission_success_score" value="${missionCategoryAndInfoDto.mission_success_score}"></td>
 	                </tr>
 	                <tr>
 	                    <th>종류</th>
-	                    <td>일반</td>
+	                    <c:if test="${missionCategoryAndInfoDto.mission_level eq 4}">
+	                    	<c:set var="level" value="${'챌린지'}"/>
+                    	</c:if>
+                    	<c:if test="${missionCategoryAndInfoDto.mission_level ne 4}">
+	                    	<c:set var="level" value="${'일반'}"/>
+                    	</c:if>
+	                    <td><input readonly name="mission_success_score" value="${level}"></td>
+	                    
 	                </tr>
 	                <tr>
 	                    <th>장소</th>

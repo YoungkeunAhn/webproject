@@ -84,7 +84,7 @@
                         </td>
                         <td>
                             <label>
-                                <input class="form-control" type="number" name="mission_success_score" value="10">
+                                <input class="form-control" type="number" name="mission_success_score" value="${missionCategoryAndInfoDto.mission_success_score}">
                             </label>
                         </td>
                         <td>

@@ -30,6 +30,7 @@ public class ManageMissionUpdate implements CommandHandler {
 		missionCategoryAndInfoDto.setMission_info_id(request.getParameter("mission_info_id"));
 		missionCategoryAndInfoDto.setLarge_category(request.getParameter("large_category"));
 		missionCategoryAndInfoDto.setSmall_category(request.getParameter("small_category"));
+		missionCategoryAndInfoDto.setMission_success_score(Integer.parseInt(request.getParameter("mission_success_score")));
 		missionCategoryAndInfoDto.setMission_title(request.getParameter("mission_title"));
 		missionCategoryAndInfoDto.setMission_contents(request.getParameter("mission_contents"));
 		missionCategoryAndInfoDto.setMission_level(Integer.parseInt(request.getParameter("mission_level")));

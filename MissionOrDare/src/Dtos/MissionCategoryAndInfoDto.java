@@ -5,6 +5,7 @@ public class MissionCategoryAndInfoDto {
 	private String mission_title;
 	private int mission_level;
 	private String mission_category_id;
+	private int mission_success_score;
 	private int mission_accept_count;
 	private int mission_reject_count;
 	private String mission_location;
@@ -13,7 +14,6 @@ public class MissionCategoryAndInfoDto {
 	private String large_category;
 	private String small_category;
 	private String category_image;
-	
 	public String getMission_info_id() {
 		return mission_info_id;
 	}
@@ -37,6 +37,12 @@ public class MissionCategoryAndInfoDto {
 	}
 	public void setMission_category_id(String mission_category_id) {
 		this.mission_category_id = mission_category_id;
+	}
+	public int getMission_success_score() {
+		return mission_success_score;
+	}
+	public void setMission_success_score(int mission_success_score) {
+		this.mission_success_score = mission_success_score;
 	}
 	public int getMission_accept_count() {
 		return mission_accept_count;
@@ -86,5 +92,6 @@ public class MissionCategoryAndInfoDto {
 	public void setCategory_image(String category_image) {
 		this.category_image = category_image;
 	}
+	
 	
 }

@@ -40,6 +40,7 @@ public class ManageMissionInsertPro implements CommandHandler{
 			missionInfoDto.setMission_level(4);
 		}
 		missionInfoDto.setMission_category_id(mission_category_id);
+		missionInfoDto.setMission_success_score(Integer.parseInt(request.getParameter("missionscore")));
 		missionInfoDto.setMission_location(request.getParameter("missionlocal"));
 		missionInfoDto.setMission_contents(request.getParameter("missioncontent"));
 		
