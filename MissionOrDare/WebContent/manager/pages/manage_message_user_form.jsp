@@ -12,29 +12,28 @@
     <title>유저정보페이지</title>
 </head>
 <body>
-    <article>
-    	<div class="modal-content" onclick="event.cancelBubble=true">
-    		<span class="close" onclick="CloseSendMessageUser()">&times;</span>
-	        <section class="mission-info">
-	        <form method="post" action="manage_message_user_form.do" name="messageho" onsubmit="return searchCheck4()">
-	            <label>
-	                <input class="form-control" type="search" id="searchUser" placeholder="유저닉네임을 입력하세요">
-	            </label>
-	        </form> 
-	        <form method="post" action="manage_send_message.do" name="messageForm" onsubmit="return messageCheck()">
-	            <input type="hidden" name= "received_nickname" value="${nickname}">
-	            <table id="mytable" class="table">
-	                <tr>
-	                	<th><input type="checkbox" name="message_check"></th>
-	                	<th>유저 ID</th>
-	                </tr>
-	            </table>
-	            <button type="submit" class="btn-primary">보내기</button>
-	            <input class="btn btn-danger" value="취소" onclick="CloseSendMessageUser()">
-	         </form>
-	        </section>
-	       </div>
-	    </article>
+<article>
+	<div class="modal-content" onclick="event.cancelBubble=true">
+		<span class="close" onclick="CloseSendMessageUser()">&times;</span>
+     	<section class="message-user-form">
+      	<form method="post" action="manage_message_user_form.do" name="messageho" onsubmit="return searchCheck4()">
+          <label>
+              <input class="form-control" type="search" id="searchUser" placeholder="유저닉네임을 입력하세요">
+          </label>
+      	</form> 
+      	<form method="post" action="manage_send_message.do" name="messageForm" onsubmit="return messageCheck()">
+          <input type="hidden" name= "received_nickname" value="${nickname}">
+          <table id="mytable" class="table">
+              <tr>
+              	<th>유저 ID를 검색하세요.</th>
+              </tr>
+          </table>
+          <button type="submit" class="btn-primary">보내기</button>
+          <input class="btn btn-danger" value="취소" onclick="CloseSendMessageUser()">
+       </form>
+     </section>
+   	</div>
+</article>
 	    
 <script type="text/javascript">
 	//<!--
@@ -54,7 +53,7 @@ $(document).ready(
 							dataType : 'text',
 							success : function(data) {
 								$('#mytable').empty();
-								$('#mytable').append('<tr><th><input type="checkbox" id="select_all" name="message_check"></th><th>유저 ID</th></tr>');
+								$('#mytable').append('<tr><th colspan="2">유저 ID</th></tr>');
 								data = eval('(' + data +')');
 								for(var i=0; i<data.usersDtos.length; i++){
 									$('#mytable').append('<tr><th><input type="checkbox" name="message_check" value="'+data.usersDtos[i].user_nickname+'"></th><th>'+data.usersDtos[i].user_nickname+'</th></tr>');
