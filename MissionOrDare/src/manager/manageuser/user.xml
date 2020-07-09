@@ -23,8 +23,11 @@
 	<select id="getArticle" parameterType="String" resultType="Dtos.UsersDto">
 		select * from mod_users where user_nickname=#{user_nickname}
 	</select>
-	<delete id="deleteArticle" parameterType="String">
-		delete from mod_users where user_nickname=#{user_nickname}
+	<update id="deleteArticle" parameterType="String">
+		update mod_users set withdrawal_date=to_char(sysdate,'yyyy/mm/dd hh24:mi') where user_nickname=#{user_nickname}
+	</update>
+	<delete id="deleteArticle2" parameterType="String">
+		delete from mod_missionstate where user_nickname=#{user_nickname}
 	</delete>
 	<select id="findArticles" parameterType="java.util.Map" resultType="Dtos.UsersDto">
 		select user_nickname,user_email,interesting1_large_category,interesting2_large_category

@@ -13,16 +13,23 @@ public class ManageMissionDBBean implements ManageMissionDao {
 	SqlSession session = SqlMapClient.getSession();
 	
 	public int insertCategory(MissionCategoryDto missionCategoryDto) {
-		return session.insert("Mission.insertCategory", missionCategoryDto);
+		int result;
+		try {
+			result = session.insert("Mission.insertCategory", missionCategoryDto);
+		} catch (Exception e) {
+			return -1;
+		}
+		return result;
 	}
 	public int deleteCategory(String missionCategoryId) {
+		int result;
 		try {
-			session.delete("Mission.deleteCategory", missionCategoryId );
+			result = session.delete("Mission.deleteCategory", missionCategoryId );
 			
 		} catch (Exception e) {
 			return -1;
 		}
-		return session.delete("Mission.deleteCategory", missionCategoryId );
+		return result;
 	}
 	
 	public int getCount() {

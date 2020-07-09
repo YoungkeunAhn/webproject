@@ -9,7 +9,8 @@ public interface ManageUserDao {
 	public int getCount();
 	public List<UsersDto> getArticles( Map<String, Integer> map );
 	public UsersDto getArticle(String user_nickname);
-	public int deleteArticle(String user_nickname);
 	public List<UsersDto> findArticles( Map<String, Object> mapp );
 	public int getSearchCount(String searchUser);
+	public int deleteArticle(String user_nickname);
+	public int deleteArticle2(String user_nickname);
 }

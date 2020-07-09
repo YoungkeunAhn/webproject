@@ -19,5 +19,6 @@
 <c:if test="${result eq 1}">
 	<c:redirect url="manage_mission.do"/>
 </c:if>
+
 </body>
 </html>

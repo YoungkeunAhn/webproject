@@ -27,8 +27,9 @@ public class ManageUserDeletePro implements CommandHandler{
 		String user_nickname = request.getParameter("user_nickname");
 		
 		int result=manageUserDao.deleteArticle(user_nickname);
+		int result2=manageUserDao.deleteArticle2(user_nickname);
 		request.setAttribute("result", result);
-		
+		request.setAttribute("result2", result2);
 		return new ModelAndView("manager/pages/manage_user_deletePro");
 	}
 }

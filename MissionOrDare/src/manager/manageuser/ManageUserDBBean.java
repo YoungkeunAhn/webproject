@@ -22,7 +22,10 @@ public class ManageUserDBBean implements ManageUserDao{
 		return session.selectOne( "Mission.getArticle",user_nickname);
 	}
 	public int deleteArticle( String user_nickname) {
-		return session.delete("Mission.deleteArticle", user_nickname);
+		return session.update("Mission.deleteArticle", user_nickname);
+	}
+	public int deleteArticle2(String user_nickname) {
+		return session.delete("Mission.deleteArticle2", user_nickname);
 	}
 	public List<UsersDto> findArticles( Map<String, Object> mapp ) {
 		return session.selectList( "Mission.findArticles", mapp );
