@@ -13,10 +13,9 @@
 </head>
 <body>
     <article>
-    	<div class="modal-content">
-    		<span class="close" onclick="CloseSendMessage()">&times;</span>
-	        <section class="mission-info">
-	        <form method="post" action="manage_message_pro.do" name="messageForm" onsubmit="return messageCheck()">
+    	<div class="modal-content" onclick="event.cancelBubble=true">
+	    	<span class="close"	onclick='CloseCategoryModal()'>&times;</span>
+	        <form class="message-form" method="post" action="manage_message_pro.do" name="messageForm" onsubmit="return messageCheck()">
 	            <input type="hidden" name= "received_nickname" value="${nickname}">
 	            <table class="table">
 	                <tr>
@@ -38,9 +37,7 @@
 	                </tr>           
 	            </table>
 	         </form>
-	        </section>
-	       </div>
-	    </article>
-
+	    </div>
+	 </article>
 </body>
 </html>

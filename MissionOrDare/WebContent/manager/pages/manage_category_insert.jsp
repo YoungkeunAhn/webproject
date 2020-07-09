@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" content="text/css" href="${project}assets/css/manage.css">
     <script src="${project}assets/js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#upload').change(function (e) {
+                $('#auth_image').attr('src', URL.createObjectURL(e.target.files[0]));
+            })
+        });
+    </script>
     <title>카테고리 추가 모달</title>
 </head>
 <body>
@@ -29,6 +36,15 @@
 	        			<span>소분류</span>
 		        	<input type="text" name="smallCategory">
 	        		</li>
+	        		<li>
+                        <img id="auth_image" src="../images/logo.jpg" alt="auth_image" onclick="document.getElementById('upload').click(); document.getElementById('abc').value=document.getElementById('upload').value">
+                    </li>
+                    <li>
+                        <input id="abc" type="text" name="abc" style="display:none;">
+                    </li>
+                    <li>
+                        <input id="upload" class="file_upload" name="" type="file" accept="image/*, video/*" capture="camera" multiple style="display: none">
+                    </li>
 	        		<li>
 	        			<button class="btn btn-success" type="submit">카테고리 추가</button>
 	        		</li>
