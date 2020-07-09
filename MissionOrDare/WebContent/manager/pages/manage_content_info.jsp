@@ -47,7 +47,7 @@
 									alt="content-image"> <span><i
 									class="fas fa-chevron-right"></i></span>
 							</div>
-							<span>유저들이 적은 게시판 내용(이거 들어갔었나?):${joinMissionInfoSuccessBoardDto.success_board_contents}</span>
+							<span>유저들이 적은 게시판 내용:${joinMissionInfoSuccessBoardDto.success_board_contents}</span>
 						</div>
 						<div class="like-box">
 							<span><i class="far fa-thumbs-up"></i></span> <span>${joinMissionInfoSuccessBoardDto.likecount}</span>
