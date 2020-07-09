@@ -114,11 +114,10 @@ footer span {
 
 .modal .modal-content {	
     background-color: white;
-    margin: 10% auto;
-    padding: 20px;
+    margin: 5% auto;
+    padding: 10px;
     border: 1px solid #888;
     width: 50%;
-    height: 60%;
 }
 /* The Close Button */
 .close {
@@ -239,14 +238,14 @@ footer span {
 }
 .category-insert ul{
 	width: 100%;
-	height: 100%;
+	height: 50%;
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	text-align: center;
 }
 .category-insert ul li i{
-	font-size: 7rem;
+	font-size: 4rem;
 	margin: 0 auto 10px auto;
 }
 .category-insert ul li .title{
@@ -271,7 +270,7 @@ footer span {
 
 /***********************************************
 
-    MissionInfoPage Modal
+    MissionInfoPage
     
 ************************************************/
 .mission-info{
@@ -290,41 +289,69 @@ footer span {
 
 /***************************************
 
-    mission_modal
+    mission_insert Modal
 
 ****************************************/
-body .modal{
-    display: none;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    
+.mission-insert{
+	width: 100%;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0 10px;
+	margin: 0;
+}
+.mission-insert ul{
+	width: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.mission-insert ul li{
+	margin: 10px;
+}
+.mission-insert ul li i{
+	font-size: 4rem;
+	margin: 0 auto 10px auto;
+}
+.mission-insert ul li .title{
+	font-size: 3rem;
+	margin: 0 auto 30px auto;
+}
+.mission-insert .category-line{
+	display: flex;
+	justify-content: center;
+}
+.mission-insert .category-line select{
+	width: 35%;
+	margin: auto 10px;
+}
+.mission-insert .left-align{
+	text-align: left;
+	padding-left: 10px;
+}
+.mission-insert label{
+	width:20%;
+}
+.mission-insert ul li select{
+	width: 50%;
+	display: inline;
+	margin-left: 10px;	
+}
+.mission-insert ul li input{
+	width: 50%;
+	display: inline;
+	margin-left: 10px;
 }
 
-.modal-content {
-    background-color: white;
-    width: 100%;
-    height: 60%;
-}
-/* The Close Button */
-.close {
-    color: black;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
+.mission-insert ul li button{
+	margin: 25px auto 0 auto;
+	width: 	30%;
+	font-size: 1.7rem;
+	text-align: center;
+} 
 
 /***************************************
 
@@ -348,39 +375,6 @@ body .modal{
     border:none;
     padding: 5px 10px;
     font-size: 13px;
-}
-
-
-
-/***************************************
-
-    manamge_mission_insert
-
-****************************************/
-.mission-insert{
-    width: 50%;
-    margin: auto;
-    background: #c6eced;
-    width: 65%;
-    height: 80%;
-}
-
-.mission-insert label{
-    width: 150px;
-}
-
-.mission-insert .input-label{
-    width: 500px;
-}
-
-.mission-insert .btn-line{
-    text-align: center;
-}
-.mission-insert button{
-    width: 150px;
-    height: 40px;
-    border: none;
-    margin: 40px 50px 0 0;
 }
 
 

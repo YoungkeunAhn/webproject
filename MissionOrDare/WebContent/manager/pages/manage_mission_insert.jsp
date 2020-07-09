@@ -15,129 +15,95 @@
     <title>미션입력페이지</title>
 </head>
 <body>
-    <article>
-	    <div class="modal-content" onclick="event.cancelBubble=true">
-	    	<span class="close" onclick='CloseMissionInsertModal()'>&times;</span>
-	        <section class="mission-insert" style="margin:unset;">
-	            <h2>미션추가페이지</h2>
-	            <form method="post" action="manage_mission_insertPro.do" name="missioninsertForm"
-	            	onsubmit="return missioninsertcheck()">
-	                <table class="table">
-	                    <tr>
-	                        <th><span>카테고리</span></th>
-	                        <td colspan="3"></td>
-	                    </tr>
-	                    <tr>
-	                        <td>
-	                            <label>
-	                                <select class="form-control" name="largecategory">
-	                                    <option value="">${str_category_bigsorting}</option>
-	                                    <c:forEach var="missionLargeCategory" items="${missionLargeCategorys}">
-	                                  	  <option value="${missionLargeCategory.large_category}">${missionLargeCategory.large_category}</option>
-	                                    </c:forEach>
-	                                </select>
-	                            </label>
-	                        </td>
-	                        <td>
-	                            <label>
-	                                <select class="form-control" name="smallcategory">
-	                         	           <option value="">${str_category_smallsorting}</option>
-	                                </select>
-	                            </label>
-	                        </td>
-	                    </tr>
-	                    <tr>
-	                        <th>${str_title}</th>
-	                        <td colspan="3">
-	                            <label class="input-label">
-	                                <input class="form-control" type="text" name="missiontitle">
-	                            </label>
-	                        </td>
-	                    </tr>
-	                    <tr>
-	                        <th>${str_mission_content}</th>
-	                        <td colspan="3">
-	                            <label class="input-label">
-	                                <input class="form-control" type="text" name="missioncontent">
-	                            </label>
-	                        </td>
-	                    </tr>
-	                    <tr>
-	                        <th>난이도</th>
-	                        <th>점수</th>
-	                        <th>종류</th>
-	                        <th>장소</th>
-	                    </tr>
-	                    <tr>
-	                        <td>
-	                            <label>
-	                                <select class="form-control" name="missionlevel">
-	                                    <option value="1"selected >1</option>
-	                                    <option value="2">2</option>
-	                                    <option value="3">3</option>
-	                                </select>
-	                            </label>
-	                        </td>
-	                        <td>
-	                            <label>
-	                                <input class="form-control" type="number" name="missionscore">
-	                            </label>
-	                        </td>
-	                        <td>
-	                            <label>
-	                                <select class="form-control" name="missionchallenge">
-	                                    <option value="1" selected>일반</option>
-	                                    <option value="2">챌린지</option>
-	                                </select>
-	                            </label>
-	                        </td>
-	                        <td>
-	                            <label>
-	                                <select class="form-control" name="missionlocal">
-	                                    <option value="실내"selected>실내</option>
-	                                    <option value="야외">야외</option>
-	                                </select>
-	                            </label>
-	                        </td>
-	                    </tr>
-	                    <tr>
-	                        <th class="btn-line" colspan="4">
-	                            <input class="btn btn-primary" type="submit" value="추가">
-	                            <input class="btn btn-danger" value="닫기" onclick="CloseMissionInsertModal()">
-	                        </th>
-	                    </tr>
-	                </table>
-	            </form>
-	        </section>
-	    </div>    
-    </article>
-    <script type="text/javascript">
-		//<!--
-			$(document).ready(function() {
-				$('select[name=largecategory]').on('change', function(event) {
-					$.ajax(
-						{
-							type :'post',
-							url : 'categorycheck.do',
-							data : {
-								largecategory : $('select[name=largecategory]').val()
-							},
-							dataType : 'text',
-							success : function(data) {
-								$("select[name=smallcategory]").find("option").remove().end().append("<option value=''>${str_category_smallsorting}</option>");
-								data = eval('(' + data +')');
-								for(var i=0; i<data.smallCategorys.length; i++){
-								    $('select[name=smallcategory]').append("<option value='"+data.smallCategorys[i].smallCategory+"'>"+data.smallCategorys[i].smallCategory+"</option>");
-								}
-							},
-							error : function (request,status,error) {
-								alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-							}
-						}		
-					);
-				});
-			});
-		//-->
-	</script>
+<article>
+ <div class="modal-content" onclick="event.cancelBubble=true">
+ 	<span class="close" onclick='CloseMissionInsertModal()'>&times;</span>
+      <form class="mission-insert" method="post" action="manage_mission_insertPro.do" name="missioninsertForm"
+      	onsubmit="return missioninsertcheck()">
+      	<ul>
+			<li>
+	      		<i class="far fa-plus-square"></i>
+	      	</li>
+      		<li><span class="title">미션추가</span></li>
+      		<li class="category-line">
+      			<select class="form-control" name="largecategory">
+				    <option value="">${str_category_bigsorting}</option>
+				    <c:forEach var="missionLargeCategory" items="${missionLargeCategorys}">
+			  	  		<option value="${missionLargeCategory.large_category}">${missionLargeCategory.large_category}</option>
+				    </c:forEach>
+				</select>
+      			<select class="form-control" name="smallcategory">
+       	           	<option value="">${str_category_smallsorting}</option>
+                </select>
+      		</li>
+      		<li>
+      			<label>${str_title}</label>
+      			<input class="form-control" type="text" name="missiontitle">
+      		</li>
+      		<li>
+      			<label>${str_mission_content}</label>
+      			<input class="form-control" type="text" name="missioncontent">
+      		</li>
+      		<li>
+      			<label>난이도</label>
+      			<select class="form-control" name="missionlevel">
+					<option value="1"selected >1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+				</select>
+      		</li>
+      		<li>
+      			<label>점수</label>
+      			<input class="form-control" type="number" name="missionscore">
+      		</li>
+      		<li>
+      			<label>종류</label>
+      			<select class="form-control" name="missionchallenge">
+              		<option value="1" selected>일반</option>
+	               	<option value="2">챌린지</option>
+           		</select>
+      		</li>
+      		<li>
+      			<label>장소</label>
+      			<select class="form-control" name="missionlocal">
+              		<option value="실내"selected>실내</option>
+              		<option value="야외">야외</option>
+          		</select>
+      		</li>
+      		<li>
+      			<button class="btn btn-primary" type="submit">미션추가</button>
+      		</li>
+      	</ul>
+      </form>
+ </div>    
+</article>
+<script type="text/javascript">
+//<!--
+	$(document).ready(function() {
+		$('select[name=largecategory]').on('change', function(event) {
+			$.ajax(
+				{
+					type :'post',
+					url : 'categorycheck.do',
+					data : {
+						largecategory : $('select[name=largecategory]').val()
+					},
+					dataType : 'text',
+					success : function(data) {
+						$("select[name=smallcategory]").find("option").remove().end().append("<option value=''>${str_category_smallsorting}</option>");
+						data = eval('(' + data +')');
+						for(var i=0; i<data.smallCategorys.length; i++){
+						    $('select[name=smallcategory]').append("<option value='"+data.smallCategorys[i].smallCategory+"'>"+data.smallCategorys[i].smallCategory+"</option>");
+						}
+					},
+					error : function (request,status,error) {
+						alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+					}
+				}		
+			);
+		});
+	});
+//-->
+</script>
 </body>
 </html>
