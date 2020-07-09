@@ -7,6 +7,9 @@
 body{
     font-family: 'Nanum Gothic', sans-serif;
     font-size: 15px;
+    background: #c5e8ea;
+    width: 100%;
+    height: 100%;
 }
 
 header{
@@ -20,10 +23,6 @@ header{
     font-weight: bold;
 
 }
-
-
-
-
 
 a:link {
     color: black;
@@ -136,7 +135,9 @@ body .modal{
     cursor: pointer;
 }
 /***********************************************
+
     LoginPage Modal
+    
 ************************************************/
 body .modal {text-align: center;}
 body .modal div{width: 50%; margin: 10px auto;}
@@ -146,6 +147,67 @@ body .modal div ul li i{font-size: 5rem; display: block; color: white;}
 body .modal div ul li .title{font-size: 3rem; margin: 10px 0 30px 0; color: white; font-weight: bold;}
 body .modal div ul li input{ width: 100%; height: 30px; }
 body .modal div button{ width: 100px; height: 40px; margin: 10px auto; background-color: #431BC5;}
+
+/***********************************************
+
+    LoginPage
+    
+************************************************/
+.loginFormPage{
+	margin: 15% auto; 
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #c5e8ea;
+}
+.loginFormPage form{
+	width: 60%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid black;
+	padding:0;
+	margin:0;
+	background-color: #ffffff;
+}
+
+.loginFormPage form label{
+	font-size: 2.5rem;
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+	display: block;
+	margin: 30px auto;
+}
+.loginFormPage .input .input-line{
+	width: 100%;
+}
+.loginFormPage form span{
+	width:100%;
+}
+.loginFormPage form input{
+	width: 100%;
+}
+
+.loginFormPage form .btn-line{
+	width: 70%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 30px auto;
+}
+
+.loginFormPage form .btn-line button{
+	width: 25%;
+	margin: 0px 10px 0px 10px;
+}
+
+
+
 /***********************************************
     MissionInfoPage Modal
 ************************************************/

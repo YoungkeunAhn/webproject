@@ -12,7 +12,7 @@
   <title>관리자 메인 페이지</title>
 </head>
 
-<body style="background: #c5e8ea;">
+<body>
 <div class="container">
   <header>
         <a href="${pageContext.request.contextPath}/index.do">
