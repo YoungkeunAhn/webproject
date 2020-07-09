@@ -26,6 +26,7 @@
         <button style="background-color:#d9edf7; border:0px" class="btn btn-primary" onclick="location.href='logout.do'">${str_header_logout}</button>
         <button style="background-color:#d9edf7; border:0px" class="btn btn-danger" onclick="location.href='${pageContext.request.contextPath}/manage_manager.do'"><span>관리페이지</span></button>
     </header>
+    <input type="hidden" id='id' value="${sessionScope.memId}">
   <nav>
   	<a href="${pageContext.request.contextPath}/manage_category.do"><div class="col-md-2"><span>${str_category}</span></div></a>
     <a href="${pageContext.request.contextPath}/manage_mission.do"><div class="col-md-2"><span>${str_mission}</span></div></a>
