@@ -12,5 +12,5 @@
 	</script>
 </c:if>
 <c:if test="${result eq 1}">
-	<c:redirect url="manage_message.do"/>
+	<c:redirect url="manage_report.do"/>
 </c:if>

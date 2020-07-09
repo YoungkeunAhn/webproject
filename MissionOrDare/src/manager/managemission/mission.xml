@@ -115,9 +115,9 @@
 	<!-- 미션  추가 -->
 	<insert id="insertMission" parameterType="Dtos.MissionInfoDto">
 		insert into MOD_MissionInfo (mission_info_id, mission_title, 
-		mission_level, mission_category_id, mission_location, mission_contents) values(
+		mission_level, mission_category_id, mission_location, mission_success_score, mission_contents) values(
 		'mission'||lpad(seq_mission_info.nextval,5,0) ,#{mission_title}, #{mission_level}, 
-		#{mission_category_id}, #{mission_location, jdbcType=VARCHAR}, #{mission_contents, jdbcType=VARCHAR})
+		#{mission_category_id}, #{mission_location, jdbcType=VARCHAR},#{mission_success_score}, #{mission_contents, jdbcType=VARCHAR})
 	</insert>
 	
 	<!-- 미션 삭제 -->
@@ -135,7 +135,7 @@
 	<!-- 미션 수정 -->
 	<update id="updateMission" parameterType="Dtos.MissionInfoDto">
 		update MOD_MissionInfo set mission_title=#{mission_title}, mission_level=#{mission_level},
-		mission_category_id=#{mission_category_id}, mission_location=#{mission_location}, mission_contents=#{mission_contents}
+		mission_category_id=#{mission_category_id}, mission_success_score=#{mission_success_score}, mission_location=#{mission_location}, mission_contents=#{mission_contents}
 		where mission_info_id=#{mission_info_id}
 	</update>
 	

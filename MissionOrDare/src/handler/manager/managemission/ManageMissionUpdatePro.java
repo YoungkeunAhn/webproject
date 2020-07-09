@@ -37,6 +37,7 @@ public class ManageMissionUpdatePro implements CommandHandler {
 		MissionInfoDto missionInfoDto = new MissionInfoDto();
 		missionInfoDto.setMission_info_id(request.getParameter("mission_info_id"));
 		missionInfoDto.setMission_title(request.getParameter("mission_title"));
+		missionInfoDto.setMission_success_score(Integer.parseInt(request.getParameter("mission_success_score")));
 		if(request.getParameter("mission_challenge").equals("1")) {
 			missionInfoDto.setMission_level(Integer.parseInt(request.getParameter("mission_level")));
 		} else {
