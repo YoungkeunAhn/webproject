@@ -5,6 +5,7 @@ import java.util.Map;
 
 import Dtos.JoinNotesManagerDto;
 import Dtos.NotesDto;
+import Dtos.UsersDto;
 
 public interface ManageMessageDao {
 	public int getCountt();
@@ -13,4 +14,5 @@ public interface ManageMessageDao {
 	public int getSearchCountt(String searchUser);
 	public int deleteMessage(String notes_id);
 	public int insertMessage(NotesDto notesDto);
+	public List<UsersDto> findUsers(Map<String, Object> mapp);
 }

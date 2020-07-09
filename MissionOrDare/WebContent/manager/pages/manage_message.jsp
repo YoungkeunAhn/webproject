@@ -32,10 +32,9 @@
             <button class="btn btn-primary" type="submit" name="user-findinmessage">${str_search}</button>
         
         </form> 
-         
         <form action="manage_message_deletePro.do" method="post">
         
-        	<button class="btn-primary" type="submit" name="message-send" onclick="OnSendMessage();sendMessage('${joinNotesManagerDto.received_nickname}')">${str_message_sendmessage}</button>
+        	<button class="btn-primary" type="button" name="message-send" onclick="OnSendMessageUser();sendMessageUser('${joinNotesManagerDto.received_nickname}')">${str_message_sendmessage}</button>
            	<button class="btn-danger" type="submit" >${str_message_messagedelete}</button>
             <table class="table">
                 <thead>
@@ -111,11 +110,13 @@
     </article>
     <%@include file="manage_footer.jsp"%>
 </div>
-<div id="reportMessageModal" class="modal">
+<div id="userMessageModal" class="modal">
 </div>
+
+
 <script>
-function sendMessage(id) {
-    $('#reportMessageModal').load('manage_message_form.do',{nickname:id},"");
+function sendMessageUser(id) {
+    $('#userMessageModal').load('manage_message_user_form.do',{nickname:id},"");
 }
 </script>
 </body>
