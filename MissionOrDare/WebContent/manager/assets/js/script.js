@@ -149,6 +149,16 @@ function CloseSendMessage(){
 	infoModal.style.display="none";
 	document.getElementsByName()
 }
+//Message Modal
+function OnSendMessageUser() {
+	var infoModal = document.getElementById("userMessageModal");
+	infoModal.style.display="block"
+}
+function CloseSendMessageUser(){
+	var infoModal = document.getElementById("userMessageModal");
+	infoModal.style.display="none";
+	document.getElementsByName()
+}
 
 
 //category - 값 입력여부

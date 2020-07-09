@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import Dtos.JoinNotesManagerDto;
 import Dtos.NotesDto;
+import Dtos.UsersDto;
 public class ManageMessageDBBean implements ManageMessageDao{
 	SqlSession session = SqlMapClient.getSession();
 	
@@ -28,6 +29,10 @@ public class ManageMessageDBBean implements ManageMessageDao{
 	}
 	public int insertMessage(NotesDto notesDto) {
 		return session.insert("Mission.insertMessage",notesDto);
+	}
+	public List<UsersDto> findUsers(Map<String, Object> mapp){
+		System.out.println(mapp.get("searchUser"));
+		return session.selectList("Mission.findUsers", mapp);
 	}
 	
 }

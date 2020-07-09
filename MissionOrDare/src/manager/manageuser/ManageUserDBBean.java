@@ -30,5 +30,8 @@ public class ManageUserDBBean implements ManageUserDao{
 	public int getSearchCount(String searchUser) {
 		return session.selectOne( "Mission.getSearchCount" ,searchUser);
 	}
+	public List<UsersDto> findUsers(Map<String, Object> mapp){
+		return session.selectList("Mission.findUsers", mapp);
+	}
 
 }

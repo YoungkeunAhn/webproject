@@ -35,4 +35,7 @@
 		insert into mod_notes(notes_id,received_nickname,sent_nickname,notes_contents) 
 		values('notes'||lpad(seq_notes.nextval,5,0),#{received_nickname},#{sent_nickname},#{notes_contents}) 
 	</insert>
+	<select id="findUsers" parameterType="java.util.Map" resultType="Dtos.UsersDto">
+		select user_nickname from MOD_Users where user_nickname like '%'||#{searchUser}||'%'
+	</select>
 </mapper>
