@@ -101,25 +101,24 @@ footer span {
     modal
 
 ****************************************/
-body .modal{
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */}
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
 
-.modal-content {
-    background-color: blue;
-    margin: 40% auto; /* 15% from the top and centered */
+.modal .modal-content {	
+    background-color: white;
+    margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 100%; /* Could be more or less, depending on screen size */
-    height: 1000px;
+    width: 50%;
+    height: 60%;
 }
 /* The Close Button */
 .close {
@@ -139,14 +138,33 @@ body .modal{
     LoginPage Modal
     
 ************************************************/
-body .modal {text-align: center;}
-body .modal div{width: 50%; margin: 10px auto;}
-body .modal div ul{ list-style: none; margin: 50px 0 0 0;}
-body .modal div ul li{ display: block; height: 50px; margin: 20px auto;}
-body .modal div ul li i{font-size: 5rem; display: block; color: white;}
-body .modal div ul li .title{font-size: 3rem; margin: 10px 0 30px 0; color: white; font-weight: bold;}
-body .modal div ul li input{ width: 100%; height: 30px; }
-body .modal div button{ width: 100px; height: 40px; margin: 10px auto; background-color: #431BC5;}
+.loginModal{
+	width: 100%;
+	height: 100%;
+}
+.loginModal ul{
+	list-style: none;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+.loginModal ul li i{
+	font-size: 7rem;
+	margin: 20px auto 20px auto;
+}
+.loginModal ul li .title{
+	font-size: 3rem;
+	margin: 0 auto 30px auto;
+}
+.loginModal ul li input{
+	margin: 10px auto;
+}
+.loginModal ul li button{
+	margin: 25px auto 0 auto;
+	width: 	20%;
+	font-size: 1.7rem;
+	text-align: center;
+}
 
 /***********************************************
 
@@ -206,18 +224,69 @@ body .modal div button{ width: 100px; height: 40px; margin: 10px auto; backgroun
 	margin: 0px 10px 0px 10px;
 }
 
+/***********************************************
+
+    Category_insert Modal
+    
+************************************************/
+.category-insert{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.category-insert ul{
+	width: 100%;
+	height: 100%;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.category-insert ul li i{
+	font-size: 7rem;
+	margin: 0 auto 10px auto;
+}
+.category-insert ul li .title{
+	font-size: 3rem;
+	margin: 0 auto 30px auto;
+}
+.category-insert ul li span{
+	font-size: 1.7rem;
+	font-weight: bold;
+}
+.category-insert ul li input{
+	margin: 10px;
+	width: 50%;
+}
+.category-insert ul li button{
+	margin: 25px auto 0 auto;
+	width: 	20%;
+	font-size: 1.7rem;
+	text-align: center;
+} 
 
 
 /***********************************************
+
     MissionInfoPage Modal
+    
 ************************************************/
 .mission-info{
-    padding: 20px;
-}
-.mission-info table{
-    background-color: white;
     width: 100%;
+    height: 100%;
 }
+.mission-info form{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	align-items: center;
+}
+
 
 /***************************************
 
@@ -225,24 +294,22 @@ body .modal div button{ width: 100px; height: 40px; margin: 10px auto; backgroun
 
 ****************************************/
 body .modal{
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */}
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    
+}
 
 .modal-content {
-    background-color: #c6eced;
-    background-size: cover;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 20%; /* Could be more or less, depending on screen size */
+    background-color: white;
+    width: 100%;
     height: 60%;
 }
 /* The Close Button */
@@ -290,23 +357,26 @@ body .modal{
     manamge_mission_insert
 
 ****************************************/
-.mission-insert-update{
+.mission-insert{
     width: 50%;
     margin: auto;
+    background: #c6eced;
+    width: 65%;
+    height: 80%;
 }
 
-.mission-insert-update label{
+.mission-insert label{
     width: 150px;
 }
 
-.mission-insert-update .input-label{
+.mission-insert .input-label{
     width: 500px;
 }
 
-.mission-insert-update .btn-line{
+.mission-insert .btn-line{
     text-align: center;
 }
-.mission-insert-update button{
+.mission-insert button{
     width: 150px;
     height: 40px;
     border: none;

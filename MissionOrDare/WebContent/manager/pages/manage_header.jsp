@@ -10,9 +10,15 @@
     <link rel="stylesheet" content="text/css" href="${project}assets/css/manage.css">
     <script src="${project}assets/js/script.js"></script>
     <title>header</title>
-
+	<script>
+		$(document).ready(function(){
+			$('.modal').click(function(){
+            	$('.modal').css('display','none');
+            });
+		});
+	</script>
 </head>
-<body style="background: #c5e8ea;">
+<body>
 <div class="container">
     <header>
         <a href="${pageContext.request.contextPath}/index.do">

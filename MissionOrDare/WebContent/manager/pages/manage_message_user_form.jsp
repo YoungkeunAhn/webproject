@@ -13,7 +13,7 @@
 </head>
 <body>
     <article>
-    	<div class="modal-content">
+    	<div class="modal-content" onclick="event.cancelBubble=true">
     		<span class="close" onclick="CloseSendMessageUser()">&times;</span>
 	        <section class="mission-info">
 	        <form method="post" action="manage_message_user_form.do" name="messageho" onsubmit="return searchCheck4()">

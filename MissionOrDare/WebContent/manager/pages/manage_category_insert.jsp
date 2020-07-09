@@ -9,36 +9,31 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" content="text/css" href="${project}assets/css/manage.css">
     <script src="${project}assets/js/script.js"></script>
-    <title>미션정보페이지</title>
+    <title>카테고리 추가 모달</title>
 </head>
 <body>
     <article>
-	    <div class="modal-content">
+	    <div class="modal-content" onclick="event.cancelBubble=true">
 	    	<span class="close"	onclick='CloseCategoryModal()'>&times;</span>
-	        <section class="mission-info">
-	        <form method="post" name="categoryinsertform" action="${pageContext.request.contextPath}/manage_category_insertPro.do" onsubmit="return categoryinsertcheck()">
-	        	<table class="table">
-	            <tr>
-	                <tr>
-	                    <th colspan="2"><span>카테고리</span></th>
-	                </tr>
-	                <tr>
-	                    <th>대분류</th>
-	                    <td><label><input type="text" name="largeCategory"></label></td>
-	                </tr>
-	                <tr>
-	                    <th>소분류</th>
-	                    <td><label><input type="text" name="smallCategory"></label></td>
-	                </tr>
-	                <tr>
-	                    <th class="btn-line" colspan="2">
-	                        <input class="btn btn-primary" type="submit" value="추가하기">   
-	           		     	<input class="btn btn-danger" value="닫기" onclick="CloseCategoryModal()">
-	               		</th>
-	                </tr>
-	            </table>
-	        	</form>
-	        </section>
+	        <form class="category-insert" method="post" name="categoryinsertform" action="manage_category_insertPro.do" onsubmit="return categoryinsertcheck()">
+	        	<ul>
+		        	<li>
+		        		<i class="far fa-plus-square"></i>
+		        	</li>
+	        		<li><label class="title">카테고리 추가</label></li>
+	        		<li>
+		        		<span>대분류</span>
+			        	<input type="text" name="largeCategory">
+			        </li>
+	        		<li>
+	        			<span>소분류</span>
+		        	<input type="text" name="smallCategory">
+	        		</li>
+	        		<li>
+	        			<button class="btn btn-success" type="submit">카테고리 추가</button>
+	        		</li>
+	        	</ul>
+        	</form>
 	     </div>
     </article>
 </body>

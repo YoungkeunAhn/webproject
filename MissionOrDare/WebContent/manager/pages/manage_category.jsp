@@ -41,7 +41,7 @@
                 </thead>
                 <tbody>
                 <c:forEach var="missionCategoryDto" items="${missionCategoryDtos}">
-                <tr onclick="location.href='${pageContext.request.contextPath}/manage_category_info.do'">
+                <tr>
                 	<th>${missionCategoryDto.mission_category_id}</th>
 	                <th>${missionCategoryDto.large_category}</th>
 	                <th>${missionCategoryDto.small_category}</th>

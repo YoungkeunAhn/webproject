@@ -26,7 +26,7 @@
             <label>
                 <input class="form-control" type="search" name="searchUser" placeholder="유저 닉네임을 입력하세요">
             </label>
-            <button class="btn-primary" type="submit" name="user-findinuser">${str_search}</button>
+            <button class="btn btn-primary" type="submit" name="user-findinuser">${str_search}</button>
         	</form>
         </section>
         <section>
