@@ -33,12 +33,11 @@
         
         </form> 
         <form action="manage_message_deletePro.do" method="post">
-        
         	<button class="btn btn-primary" type="button" name="message-send" onclick="OnSendMessageUser();sendMessageUser('${joinNotesManagerDto.received_nickname}')">${str_message_sendmessage}</button>
            	<button class="btn btn-danger" type="submit" >${str_message_messagedelete}</button>
             <table class="table">
                 <thead>
-                <th>${str_message_checkbox}</th>
+                <th><input type="checkbox" id="select_all"></th>
                 <th>${str_message_sender}</th>
                 <th>${str_message_content}</th>
                 <th>${str_message_receiver}</th>
@@ -118,6 +117,16 @@
 function sendMessageUser(id) {
     $('#userMessageModal').load('manage_message_user_form.do',{nickname:id},"");
 }
+$(document).ready(function(){
+	$("#select_all").click(function(){
+		//클릭이 되었을 때
+		if($("#select_all").prop("checked")){
+			$("input[name=message_check]").prop("checked",true);
+		}else{
+			$("input[name=message_check]").prop("checked",false);
+		}
+	})
+});
 </script>
 </body>
 </html>

@@ -21,7 +21,7 @@
 	                <input class="form-control" type="search" id="searchUser" placeholder="유저닉네임을 입력하세요">
 	            </label>
 	        </form> 
-	        <form method="post" action="manage_message_pro.do" name="messageForm" onsubmit="return messageCheck()">
+	        <form method="post" action="manage_send_message.do" name="messageForm" onsubmit="return messageCheck()">
 	            <input type="hidden" name= "received_nickname" value="${nickname}">
 	            <table id="mytable" class="table">
 	                <tr>
@@ -53,12 +53,11 @@
 							},
 							dataType : 'text',
 							success : function(data) {
-								console.log($('#searchUser').val());
 								$('#mytable').empty();
 								$('#mytable').append('<tr><th><input type="checkbox" name="message_check"></th><th>유저 ID</th></tr>');
 								data = eval('(' + data +')');
 								for(var i=0; i<data.usersDtos.length; i++){
-									$('#mytable').append('<tr><th><input type="checkbox" name="message_check"></th><th>'+data.usersDtos[i].user_nickname+'</th></tr>');
+									$('#mytable').append('<tr><th><input type="checkbox" name="message_check" value="'+data.usersDtos[i].user_nickname+'"></th><th>'+data.usersDtos[i].user_nickname+'</th></tr>');
 								}
 							},
 							error : function(e){
