@@ -17,7 +17,7 @@
 		select manager_id, manager_passwd, r 
 		from (select manager_id, manager_passwd, rownum r 
 		from (select manager_id, manager_passwd
-      from mod_manager order by manager_id) order by manager_id)
+      from mod_manager where authority=1 order by manager_id) order by manager_id )
       where r &gt;= #{start} and r &lt;= #{end} order by manager_id 
 	</select>	
 
@@ -37,7 +37,7 @@
 		select manager_id,manager_passwd,r
 		from (select manager_id,manager_passwd, rownum r 
 		from (select manager_id,manager_passwd 
-        from mod_manager where manager_id like '%'||#{searchManager}||'%' order by manager_id) order by manager_id)
+        from mod_manager where authority=1 and manager_id like '%'||#{searchManager}||'%' order by manager_id) order by manager_id)
        where r &gt;= #{start} and r &lt;= #{end} order by manager_id 
 	</select>
 	
