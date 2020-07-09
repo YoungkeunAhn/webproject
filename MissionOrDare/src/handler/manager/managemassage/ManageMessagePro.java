@@ -33,19 +33,19 @@ public class ManageMessagePro implements CommandHandler {
 	   // report 
 	   String received_nickname = request.getParameter("received_nickname");
 	   String notes_contents = request.getParameter("message"); 
-	   
+
 	   // message
 	   String[] received_nicknames = request.getParameterValues("message_check");
 	   String[] notesContents = request.getParameterValues("notesContents"); 
 	   request.setAttribute("received_nicknames", received_nicknames);
-	   System.out.println(received_nicknames[0]);
+
 	   if(received_nickname==null || received_nickname.equals("")) {
 		   
 		   for(int i=0; i<notesContents.length;i++) {
 			   notesDto.setSent_nickname(sent_nickname);
 			   notesDto.setReceived_nickname(received_nicknames[i]);
 			   notesDto.setNotes_contents(notesContents[i]);
-			   System.out.println(received_nicknames[i]);
+
 			   int result = manageMessageDao.insertMessage(notesDto);
 			   request.setAttribute("result", result);
 			}
