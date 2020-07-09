@@ -17,7 +17,7 @@ public class ManageMessageForm implements CommandHandler{
 		if(request.getSession().getAttribute("memId") == null) {
 			return new ModelAndView("manager/login");
 		}
-		
+		request.setCharacterEncoding("utf-8");
 		String nickname = request.getParameter("nickname");
 		request.setAttribute("nickname", nickname);
 		return new ModelAndView("manager/pages/manage_message_form");

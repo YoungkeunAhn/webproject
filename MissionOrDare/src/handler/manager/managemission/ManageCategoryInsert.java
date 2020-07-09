@@ -17,7 +17,7 @@ public class ManageCategoryInsert implements CommandHandler{
 		if(request.getSession().getAttribute("memId") == null) {
 			return new ModelAndView("manager/login");
 		}
-		
+		request.setCharacterEncoding("utf-8");
 		return new ModelAndView("manager/pages/manage_category_insert");
 	}
 }

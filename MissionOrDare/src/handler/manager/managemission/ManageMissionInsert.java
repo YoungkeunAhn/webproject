@@ -26,6 +26,7 @@ public class ManageMissionInsert implements CommandHandler{
 		if(request.getSession().getAttribute("memId") == null) {
 			return new ModelAndView("manager/login");
 		}
+		request.setCharacterEncoding("utf-8");
 		
 		List<MissionCategoryDto> missionLargeCategorys = manageMissionDao.getMissionLargeCategorys();
 		request.setAttribute("missionLargeCategorys", missionLargeCategorys);

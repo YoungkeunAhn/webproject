@@ -27,7 +27,7 @@ public class ManageMessageUserForm implements CommandHandler {
 		if(request.getSession().getAttribute("memId") == null) {
 			return new ModelAndView("manager/login");
 		}
-		 
+		request.setCharacterEncoding("utf-8");
 		int pageSize = 3;					// 한 페이지당 글 개수
 		int pageBlock = 3;					// 한 번에 출력할 페이지 개수
 		

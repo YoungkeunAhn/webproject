@@ -22,7 +22,7 @@ public class ManageMissionDeletePro implements CommandHandler {
 		if(request.getSession().getAttribute("memId") == null) {
 			return new ModelAndView("manager/login");
 		}
-		
+		request.setCharacterEncoding("utf-8");
 		
 		String mission_info_id = request.getParameter("id");
 		int result = manageMissionDao.deleteMission(mission_info_id);

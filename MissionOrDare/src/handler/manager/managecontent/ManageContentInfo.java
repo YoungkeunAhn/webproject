@@ -29,7 +29,7 @@ public class ManageContentInfo implements CommandHandler{
 		if(request.getSession().getAttribute("memId") == null) {
 			return new ModelAndView("manager/login");
 		}
-request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("utf-8");
 		
 		String success_board_id =request.getParameter("success_board_id");
 		

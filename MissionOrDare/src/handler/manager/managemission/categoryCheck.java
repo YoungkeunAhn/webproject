@@ -25,6 +25,7 @@ public class categoryCheck implements CommandHandler {
 		if(request.getSession().getAttribute("memId") == null) {
 			return new ModelAndView("manager/login");
 		}
+		request.setCharacterEncoding("utf-8");
 		
 		String largecategory = request.getParameter("largecategory");
 		System.out.println(largecategory);

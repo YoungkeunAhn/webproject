@@ -23,6 +23,7 @@ public class ManageMissionInfo implements CommandHandler{
 		if(request.getSession().getAttribute("memId") == null) {
 			return new ModelAndView("manager/login");
 		}
+		request.setCharacterEncoding("utf-8");
 		
 		String mission_info_id = request.getParameter("id");
 		if(mission_info_id == null || mission_info_id.equals("")) {

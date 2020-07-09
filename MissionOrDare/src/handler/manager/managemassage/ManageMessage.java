@@ -28,7 +28,7 @@ public class ManageMessage implements CommandHandler{
 		if(request.getSession().getAttribute("memId") == null) {
 			return new ModelAndView("manager/login");
 		}
-		
+		request.setCharacterEncoding("utf-8");
 		//List<String> delete_notes_id = request.getParameter("delete_notes_id");
 		
 		int pageSize = 3;					// 한 페이지당 글 개수

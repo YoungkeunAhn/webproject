@@ -23,6 +23,7 @@ public class ManageUserInfo implements CommandHandler{
 		if(request.getSession().getAttribute("memId") == null) {
 			return new ModelAndView("manager/login");
 		}
+		request.setCharacterEncoding("utf-8");
 		
 		String user_nickname = request.getParameter( "user_nickname" );
 		UsersDto usersDto = manageUserDao.getArticle( user_nickname );

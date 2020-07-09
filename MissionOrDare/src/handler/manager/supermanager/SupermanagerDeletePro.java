@@ -20,6 +20,7 @@ public class SupermanagerDeletePro implements CommandHandler {
 	@RequestMapping("/manage_manager_deletePro")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("utf-8");
 		if(request.getSession().getAttribute("memId") == null) {
 			return new ModelAndView("manager/login");
 		}

@@ -27,7 +27,7 @@ public class ManageCategory implements CommandHandler{
 		if(request.getSession().getAttribute("memId") == null) {
 			return new ModelAndView("manager/login");
 		}
-		
+		request.setCharacterEncoding("utf-8");
 		String category = request.getParameter("category");
 		
 		int pageSize = 5;					// 한 페이지당 글 개수

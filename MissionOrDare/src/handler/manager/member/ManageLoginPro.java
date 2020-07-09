@@ -19,6 +19,7 @@ public class ManageLoginPro implements CommandHandler{
 	@RequestMapping("/manage_loginPro")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("utf-8");
 		
 		String manager_id = request.getParameter( "manager_id" );
 		String manager_passwd = request.getParameter( "manager_passwd" );

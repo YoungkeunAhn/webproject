@@ -23,7 +23,7 @@ public class ManageCategoryDeletePro implements CommandHandler{
 		if(request.getSession().getAttribute("memId") == null) {
 			return new ModelAndView("manager/login");
 		}
-		
+		request.setCharacterEncoding("utf-8");
 		String missionCategoryId = request.getParameter("id");
 		int result = manageMissionDao.deleteCategory(missionCategoryId);
 		
