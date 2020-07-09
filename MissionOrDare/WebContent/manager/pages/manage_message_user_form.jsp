@@ -38,7 +38,7 @@
 	    
 <script type="text/javascript">
 	//<!--
-	$(document).ready(
+$(document).ready(
 		function() {
 			// 아이디 중복확인
 			$('#searchUser').on(
@@ -54,7 +54,7 @@
 							dataType : 'text',
 							success : function(data) {
 								$('#mytable').empty();
-								$('#mytable').append('<tr><th><input type="checkbox" name="message_check"></th><th>유저 ID</th></tr>');
+								$('#mytable').append('<tr><th><input type="checkbox" id="select_all" name="message_check"></th><th>유저 ID</th></tr>');
 								data = eval('(' + data +')');
 								for(var i=0; i<data.usersDtos.length; i++){
 									$('#mytable').append('<tr><th><input type="checkbox" name="message_check" value="'+data.usersDtos[i].user_nickname+'"></th><th>'+data.usersDtos[i].user_nickname+'</th></tr>');
@@ -67,7 +67,19 @@
 					);
 				}
 			);
-		}		
+		}
+		/*
+		//전체 선택
+		function(){
+			$("#select_all").click(function() {
+			//클릭이 되었을 때
+			if($("#select_all").prop("checked")){
+				$("input[name=message_check]").prop("checked",true);
+			}else{
+				$("input[name=message_check]").prop("checked",false);
+			}
+		}
+		*/
 	);
 	//-->
 </script>
