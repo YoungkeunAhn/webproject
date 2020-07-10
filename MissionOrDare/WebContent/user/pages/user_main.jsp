@@ -1,12 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="user_settings.jsp" %>
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="../asset/user.css">
+    <link type="text/css" rel="stylesheet" href="${project}asset/user.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <script src="../asset/script.js"></script>
+    <script src="${project}asset/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
@@ -22,7 +23,7 @@
                         top: '-50px',
                         duration: '5s',
                     });
-                    $('#flip > img').attr('src','../images/minus.png');
+                    $('#flip > img').attr('src','${project}images/minus.png');
                     $('#panel').css({
                         position: 'relative',
                         top: '-50px',
@@ -34,7 +35,7 @@
                         top: '0',
                         duration: '5s',
                     });
-                    $('#flip > img').attr('src','../images/plus.png');
+                    $('#flip > img').attr('src','${project}images/plus.png');
                     $('#panel').css({
                         position: 'relative',
                         top: '50px',
@@ -49,12 +50,12 @@
 <body>
     <div class="container">
         <header class="mainHeader">
-            <img id="menu" class="menu-img" src="../images/menu.png" alt="logo">
+            <img id="menu" class="menu-img" src="${project}images/menu.png" alt="logo">
 	            <div id="menu_list">
 	            	<span onclick="GoMainPage()">로그아웃</span>
 	            	<span>회원탈퇴</span>
 	            </div>
-            <img onclick="GoMainPage()" class="header-img" src="../images/mod_logo.png" alt="logo">
+            <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
         </header>
         <article class="mainArticle">
             <section class="mission-list">
@@ -68,7 +69,7 @@
                         <li class="text-date"><input type="text" value="2020.07.06 13:43 시작" disabled> </li>
                         <li class="text-category"><input type="text" value="운동/헬스" disabled></li>
                         <li class="text-mission"><input type="text" value="라이언이 부탁한 자화상" disabled></li>
-                        <li><img src="../images/mission_img1.png" alt="mission-image"></li>
+                        <li><img src="${project}images/mission_img1.png" alt="mission-image"></li>
                         <li class="text-summary"><input type="text" value="라이언 이모티콘를 따라 그려봅시다" disabled></li>
                         <li class="text-status"><input type="text" value="진행중" disabled></li>
                         <li><button class="btn-missionAuth">인증하기</button></li>
@@ -76,7 +77,7 @@
                 </ol>
                 <i class="fas fa-angle-right"></i>
             </section>
-            <div id="flip" class="slider"><img src="../images/plus.png" alt="slide"></div>
+            <div id="flip" class="slider"><img src="${project}images/plus.png" alt="slide"></div>
             <section id="panel" class="mission-select">
                     <input id="mission_level" type="hidden" value="nomal">
                     <input id="mission_categoryArea" type="hidden" value="my">
@@ -95,19 +96,19 @@
         <nav>
             <ul>
                 <li onclick="GoMainPage()">
-                    <img class="nav-home" src="../images/mod_logo.png" alt="logo">
+                    <img class="nav-home" src="${project}images/mod_logo.png" alt="logo">
                     <span>홈</span>
                 </li>
                 <li onclick="GoEvalPage()">
-                    <img src="../images/task.png" alt="eval-icon">
+                    <img src="${project}images/task.png" alt="eval-icon">
                     <span>평가</span>
                 </li>
                 <li onclick="GoPidPage()">
-                    <img src="../images/pid.png" alt="pid-icon">
+                    <img src="${project}images/pid.png" alt="pid-icon">
                     <span>피드</span>
                 </li>
                 <li onclick="GoMyPage()">
-                    <img src="../images/my.png" alt="my-icon">
+                    <img src="${project}images/my.png" alt="my-icon">
                     <span>마이</span>
                 </li>
             </ul>
