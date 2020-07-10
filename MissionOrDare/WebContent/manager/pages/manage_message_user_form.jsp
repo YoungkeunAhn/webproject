@@ -37,47 +37,42 @@
 	    
 <script type="text/javascript">
 	//<!--
-$(document).ready(
-		function() {
-			// 아이디 중복확인
-			$('#searchUser').on(
-				'keyup',
-				function(event) {
-					$.ajax(
-						{
-							type : 'POST',
-							url : 'idcheck.do',
-							data : {
-								searchUser : $('#searchUser').val()
-							},
-							dataType : 'text',
-							async : false,
-							success : function(data) {
-								$('#mytable').empty();
-								$('#mytable').append('<tr><th><input type="checkbox" class="select_all"><th><th colspan="2">유저 ID</th></tr>');
-								data = eval('(' + data +')');
-								for(var i=0; i<data.usersDtos.length; i++){
-									$('#mytable').append('<tr><th><input type="checkbox" class="check" name="message_check" value="'+data.usersDtos[i].user_nickname+'"></th><th>'+data.usersDtos[i].user_nickname+'</th></tr>');
-								}
-								//전체 선택
-								$(".select_all").on('click', function(event) {
-									//클릭이 되었을 때
-									if($(".select_all").prop("checked")){
-										$(".check").prop("checked",true);
-									}else{
-										$(".check").prop("checked",false);
-									}
-								});
-							},
-							error : function(e){
-								
-							}
-						}		
-					);
+$(document).ready( function() {
+	// 아이디 중복확인
+	$('#searchUser').on('keyup',function(event) {
+		$.ajax(
+			{
+				type : 'POST',
+				url : 'idcheck.do',
+				data : {
+					searchUser : $('#searchUser').val()
+				},
+				dataType : 'text',
+				async : false,
+				success : function(data) {
+					$('#mytable').empty();
+					$('#mytable').append('<tr><th><input type="checkbox" class="select_all"><th><th colspan="2">유저 ID</th></tr>');
+					data = eval('(' + data +')');
+					for(var i=0; i<data.usersDtos.length; i++){
+						$('#mytable').append('<tr><th><input type="checkbox" class="check" name="message_check" value="'+data.usersDtos[i].user_nickname+'"></th><th>'+data.usersDtos[i].user_nickname+'</th></tr>');
+					}
+					//전체 선택
+					$(".select_all").on('click', function(event) {
+						//클릭이 되었을 때
+						if($(".select_all").prop("checked")){
+							$(".check").prop("checked",true);
+						}else{
+							$(".check").prop("checked",false);
+						}
+					});
+				},
+				error : function(e){
+					
 				}
-			);
-		}
-	);
+			}
+		);
+	});
+});
 	
 	//-->
 </script>
