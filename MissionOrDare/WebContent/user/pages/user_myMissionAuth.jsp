@@ -1,12 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="user_settings.jsp" %>
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="../asset/user.css">
+    <link type="text/css" rel="stylesheet" href="${project}asset/user.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <script src="../asset/script.js"></script>
+    <script src="${project}asset/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
@@ -22,7 +23,7 @@
 <body>
 <div class="container">
     <article class="myMission-auth">
-    	<form class="myMission-authForm" name="myMissionAuth" action="user_myMissionPro.jsp">
+    	<form class="myMission-authForm" name="myMissionAuth" action="user_myMissionPro.do">
 	        <section class="auth_main">
 	                <ol>
 	                    <li><input type="text" value="운동 / 달리기"></li>
@@ -30,7 +31,7 @@
 	                    <li class="text-date"><input class="form-control" type="text" value="2020년 7월8일 오후2시56분 시작"></li>
 	                    <li>
 	                        <i class="fas fa-angle-left"></i>
-	                        <img id="auth_image" src="../images/auth_defalut.png" alt="auth_image" onclick="document.getElementById('upload').click(); document.getElementById('abc').value=document.getElementById('upload').value">
+	                        <img id="auth_image" src="${project}images/auth_defalut.png" alt="auth_image" onclick="document.getElementById('upload').click(); document.getElementById('abc').value=document.getElementById('upload').value">
 	                        <i class="fas fa-angle-right"></i>
 	                    </li>
 	                    <li>
@@ -52,7 +53,7 @@
 	        </section>
 	        <section class="btn-line">
 	            <button class="btn btn-auth" type="button" onclick="AuthPopupOn()">인증하기</button>
-	            <button class="btn btn-danger" type="button" onclick="location.href='user_main.jsp'">취소하기</button>
+	            <button class="btn btn-danger" type="button" onclick="location.href='user_main.do'">취소하기</button>
 	        </section>
 	        <section id="authPopup" class="popup-bg">
 	            <div class="popup">

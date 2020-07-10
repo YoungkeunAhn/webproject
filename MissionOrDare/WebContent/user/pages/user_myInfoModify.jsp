@@ -1,12 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="user_settings.jsp" %>
 <html>
 <head>
      <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="../asset/user.css">
+    <link type="text/css" rel="stylesheet" href="${project}asset/user.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <script src="../asset/script.js"></script>
+    <script src="${project}asset/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
@@ -15,7 +16,7 @@
 <body>
     <div class="container">
         <span class="join-title">정 보 수 정</span>
-        <form class="join-form" name="userModifyForm" action="user_myInfoModifyPro.jsp">
+        <form class="join-form" name="userModifyForm" action="user_myInfoModifyPro.do">
             <ul class="join-list">
                 <li>
                     <label class="th">*닉네임 </label>

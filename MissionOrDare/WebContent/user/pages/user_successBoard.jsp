@@ -1,12 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="user_settings.jsp" %>
 <html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="../asset/user.css">
+    <link type="text/css" rel="stylesheet" href="${project}asset/user.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <script src="../asset/script.js"></script>
+    <script src="${project}asset/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
@@ -34,53 +35,53 @@
             </section>
             <section class="board">
                 <div class="list">
-                    <img src="../images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test2.png" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test3.jpg" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/test5.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test2.png" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test3.jpg" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test2.png" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/test4.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test2.png" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test3.jpg" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/test4.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test2.png" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test3.jpg" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/test5.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test2.png" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test3.jpg" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/test4.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test3.jpg" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/test5.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test3.jpg" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
-                    <img src="../images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test2.png" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test3.jpg" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/test5.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test2.png" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test3.jpg" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test2.png" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/test4.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test2.png" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test3.jpg" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/test4.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test2.png" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test3.jpg" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/test5.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test2.png" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test3.jpg" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/test4.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test3.jpg" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/test5.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test3.jpg" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
                 </div>
             </section>
         </article>
         <nav>
             <ul>
                 <li onclick="GoMainPage()">
-                    <img class="nav-home" src="../images/mod_logo.png" alt="logo">
+                    <img class="nav-home" src="${project}images/mod_logo.png" alt="logo">
                     <span>홈</span>
                 </li>
                 <li onclick="GoEvalPage()">
-                    <img src="../images/task.png" alt="eval-icon">
+                    <img src="${project}images/task.png" alt="eval-icon">
                     <span>평가</span>
                 </li>
                 <li onclick="GoPidPage()">
-                    <img src="../images/pid.png" alt="pid-icon">
+                    <img src="${project}images/pid.png" alt="pid-icon">
                     <span>피드</span>
                 </li>
                 <li onclick="GoMyPage()">
-                    <img src="../images/my.png" alt="my-icon">
+                    <img src="${project}images/my.png" alt="my-icon">
                     <span>마이</span>
                 </li>
             </ul>
