@@ -33,7 +33,7 @@
         
         </form> 
         <form action="manage_message_deletePro.do" method="post">
-        	<button class="btn btn-primary" type="button" name="message-send" onclick="OnSendMessageUser();sendMessageUser('${joinNotesManagerDto.received_nickname}')">${str_message_sendmessage}</button>
+        	<button class="btn btn-primary" type="button" name="message-send" onclick="location.href='manage_message_sendForm.do'">${str_message_sendmessage}</button>
            	<button class="btn btn-danger" type="submit" >${str_message_messagedelete}</button>
             <table class="table">
                 <thead>
