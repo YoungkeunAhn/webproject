@@ -18,4 +18,5 @@
 		//-->
 	</script>
 	<meta http-equiv="refresh" content="0;url=manage_report.do">
+	
 </c:if>
