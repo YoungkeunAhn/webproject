@@ -27,7 +27,10 @@ public class ManageMessageDeletePro implements CommandHandler{
 		request.setCharacterEncoding("utf-8");
 
 		String[] message_check = request.getParameterValues("message_check");
-
+		if(message_check == null) {
+			return new ModelAndView("manager/pages/messagecheck");
+		}
+		
 		request.setAttribute("message_check", message_check);
 
 		for(String i : message_check) {

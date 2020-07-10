@@ -51,13 +51,23 @@ $(document).ready(
 								searchUser : $('#searchUser').val()
 							},
 							dataType : 'text',
+							async : false,
 							success : function(data) {
 								$('#mytable').empty();
-								$('#mytable').append('<tr><th colspan="2">유저 ID</th></tr>');
+								$('#mytable').append('<tr><th><input type="checkbox" class="select_all"><th><th colspan="2">유저 ID</th></tr>');
 								data = eval('(' + data +')');
 								for(var i=0; i<data.usersDtos.length; i++){
-									$('#mytable').append('<tr><th><input type="checkbox" name="message_check" value="'+data.usersDtos[i].user_nickname+'"></th><th>'+data.usersDtos[i].user_nickname+'</th></tr>');
+									$('#mytable').append('<tr><th><input type="checkbox" class="check" name="message_check" value="'+data.usersDtos[i].user_nickname+'"></th><th>'+data.usersDtos[i].user_nickname+'</th></tr>');
 								}
+								//전체 선택
+								$(".select_all").on('click', function(event) {
+									//클릭이 되었을 때
+									if($(".select_all").prop("checked")){
+										$(".check").prop("checked",true);
+									}else{
+										$(".check").prop("checked",false);
+									}
+								});
 							},
 							error : function(e){
 								
@@ -67,19 +77,8 @@ $(document).ready(
 				}
 			);
 		}
-		/*
-		//전체 선택
-		function(){
-			$("#select_all").click(function() {
-			//클릭이 되었을 때
-			if($("#select_all").prop("checked")){
-				$("input[name=message_check]").prop("checked",true);
-			}else{
-				$("input[name=message_check]").prop("checked",false);
-			}
-		}
-		*/
 	);
+	
 	//-->
 </script>
 
