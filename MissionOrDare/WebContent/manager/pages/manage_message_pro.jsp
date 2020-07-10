@@ -7,10 +7,15 @@
 <c:if test="${result eq 0}">
 	<script type="text/javascript">
 		<!--
-		alert( "다시 입력해주십시오." );
+		alert( "전송이 실패되었습니다." );
 		//-->
 	</script>
 </c:if>
 <c:if test="${result eq 1}">
-	<c:redirect url="manage_report.do"/>
+	<script type="text/javascript">
+		<!--
+		alert( "전송 되었습니다." );
+		//-->
+	</script>
+	<meta http-equiv="refresh" content="0;url=manage_report.do">
 </c:if>
