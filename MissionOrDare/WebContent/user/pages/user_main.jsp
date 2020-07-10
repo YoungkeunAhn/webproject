@@ -65,7 +65,7 @@
                     <li>미션을 받아보세요!</li>
                 </ol>
                 <ol class="date-exist">
-                    <form name="myMissionAuthForm" action="user_myMissionAuth.jsp">
+                    <form name="myMissionAuthForm" action="user_myMissionAuth.do">
                         <li class="text-date"><input type="text" value="2020.07.06 13:43 시작" disabled> </li>
                         <li class="text-category"><input type="text" value="운동/헬스" disabled></li>
                         <li class="text-mission"><input type="text" value="라이언이 부탁한 자화상" disabled></li>

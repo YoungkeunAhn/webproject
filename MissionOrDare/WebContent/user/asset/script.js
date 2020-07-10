@@ -71,29 +71,29 @@ function AuthPopupClose() {
 *
 */
 function GoMainPage() {
-    location.href='user_main.jsp';
+    location.href='user_main.do';
 }
 
 function GoEvalPage() {
-    location.href='user_eval.jsp';
+    location.href='user_eval.do';
 }
 
 function GoPidPage() {
-    location.href='user_successBoard.jsp';
+    location.href='user_successBoard.do';
 }
 
 function GoMyPage() {
-    location.href='user_my.jsp';
+    location.href='user_my.do';
 }
 function GoMessageForm() {
-	location.href='user_messageForm.jsp';
+	location.href='user_messageForm.do';
 }
 function GoSuccessProPage() {
-	location.href='user_missionSuccessCountPro.jsp';
+	location.href='user_missionSuccessCountPro.do';
 }
 function GoFailureProPage() {
-	location.href='user_missionFailureCountPro.jsp';
+	location.href='user_missionFailureCountPro.do';
 }
 function MyProfileModify() {
-	location.href='user_profileModify.jsp';
+	location.href='user_profileModify.do';
 }

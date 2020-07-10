@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="user_settings.jsp" %>
 <html>
 <head>
     <title>유저로그인 처리 페이지</title>
