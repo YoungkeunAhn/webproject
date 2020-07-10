@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -24,7 +25,7 @@
       container: '#create-kakao-login-btn',
       success: function(authObj) {
         alert(JSON.stringify(authObj))
-        location.href="../pages/user_loginPro.jsp";
+        location.href="user_loginPro.do";
       },
       fail: function(err) {
         alert(JSON.stringify(err))

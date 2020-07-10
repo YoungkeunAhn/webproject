@@ -10,10 +10,10 @@ import org.springframework.web.servlet.ModelAndView;
 import handler.CommandHandler;
 
 @Controller
-public class UserMissionSuccessBoard implements CommandHandler {
-	@RequestMapping("/user_missionSuccessBoard")
+public class UserSuccessBoard implements CommandHandler {
+	@RequestMapping("/user_successBoard")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		return new ModelAndView("user/pages/user_missionSuccessBoard");
+		return new ModelAndView("user/pages/user_successBoard");
 	}
 }
