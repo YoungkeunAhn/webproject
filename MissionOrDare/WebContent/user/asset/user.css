@@ -1,0 +1,1095 @@
+/*Anton*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+/*
+font-family: 'Anton', sans-serif;			광훈
+*/
+/*넥슨 Lv.1 고딕 Bold*/
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF Bold.woff')
+    format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
+    background-size: cover;
+    padding: 10px;
+    /*overflow-y: hidden;
+    overflow-x: hidden;*/
+}
+
+/**********************************************
+
+        header, article, nav
+
+***********************************************/
+header{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2rem;
+
+}
+header .menu-img{
+    width: 4%;
+    height: 2%;
+    margin-left: 4%;
+    top:4.2rem;
+}
+
+header .header-img{
+    width: 40px;
+    height: 40px;
+    margin: 7.3% 0 5.84% 33.85%;
+}
+
+article{
+    font-size: 2rem;
+    width: 100%;
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+.container{
+    font-family: 'NEXON Lv1 Gothic OTF Bold',sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+
+
+nav{
+    background-color: white;
+    padding: 0 20px;
+    border-radius: 10px;
+    margin: 5% 0 0 0;
+    z-index: 1;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+nav ul li{
+    padding: 10px 10px 5px 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+nav ul img {
+    display: flex;
+    width: 20px;
+    height: 20px;
+}
+
+
+.nav-home{
+    width: 30px;
+    height: 30px;
+}
+
+
+
+/**********************************************
+
+        user_index
+
+***********************************************/
+
+.index-logo{
+    width: 45%;
+    height: 15.24%;
+    margin: 0 auto 10px auto;
+}
+.index-title{
+    font-size: 1.5rem;
+    font-family: 'Anton', sans-serif;
+    color: black;
+    font-style: italic;
+    margin: 0 auto;
+
+}
+
+.kakaologin-btn{
+    margin: 24.35% auto;
+}
+
+
+
+/**********************************************
+
+        user_join
+
+***********************************************/
+
+.join-title{
+    font-family: 'Anton', sans-serif;
+    font-size: 2.786rem;
+    margin: 20px auto;
+    margin-bottom: 15px;
+    color: #718e8b78;
+    font-style: italic;
+}
+
+.join-form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.join-list{
+    width: 100%;
+    list-style: none;
+    margin: 0 0 7.75% 0;
+    display: block;
+    padding: 0;
+}
+.join-list li{
+    margin: 20px auto;
+}
+
+.join-list .th{
+    width: 29%;
+}
+
+.join-list label{
+    width: 69%;
+}
+.text{
+    font-size: x-small;
+    margin-left: 30%;
+}
+.text-danger, .text-primary{
+    display: none;
+}
+
+.btn-default{
+    height: 8%;
+    border: 1px black solid;
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+}
+.modal-body input{
+    width: 23%;
+    text-align: center;
+    font-size: 1.85rem;
+    border-radius: 30px;
+    border: 2px black solid;
+}
+/**********************************************
+
+       user_menu bar
+
+***********************************************/
+#menu_list, #menu {
+	  padding: 0px;
+	  text-align: center;
+	  background-color: #d3fbfa;
+	  border: solid 0px #0c0c0c;
+	  z-index:4;
+	  position: fixed;
+	  width:7%;
+	  height:3%;
+}
+		
+#menu_list {
+  padding: 1%;
+  display: none;
+  position: fixed;
+  top: 61px;
+  left:38px;
+  width:22%;
+  height:10%;
+  font-size: large;
+  justify-content: center;
+  text-align: left;
+}
+#menu_list span{
+	border-bottom: 1px solid black;
+}
+
+
+/**********************************************
+
+        user_main 난다고래&   MainHeader 6rem으로 수정해라
+
+***********************************************/
+.mainHeader{
+   position: relative;
+   bottom: 6rem;
+   margin: 7.3% 0 5.84% 8.85%
+}
+.mainArticle{
+   position: relative;
+   bottom: 6rem;
+}
+
+.mission-list{
+    text-align: center;
+    padding: 15px 10px 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.mission-list ol{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.date-exist {
+    font-size: 1.7rem;
+}
+
+.date-exist .text-category{
+    margin: 5px 0 0 0;
+}
+.date-exist .text-mission{
+    font-size: larger;
+    margin: 3px 0 0 0;
+}
+.date-exist .text-summary{
+    margin: 5% 0 0 0;
+    font-size: 1.5rem;
+}
+.date-exist .text-status{
+    color: chartreuse;
+    margin: 20px 0 0 0;
+}
+
+.date-exist .text-date{
+    font-size: x-small;
+}
+
+.date-exist li img{
+    width: 180px;
+    height: 150px;
+}
+
+.date-exist li input{
+    width: 100%;
+    text-align: center;
+    border: none;
+ 
+}
+.date-exist li .form-control{
+
+    border: none;
+    padding: 0px;
+}
+
+.date-exist li .btn-missionAuth{
+    border: none;
+    background-color: coral;
+    border-radius: 4px;
+    padding: 5% 35%;
+    color: white;
+}
+.slider{
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    height: 5rem;
+
+}
+
+.slider img{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 40px;
+    position: relative; 
+    bottom: 5.5rem;
+}
+
+@media screen and (max-width: 635px) {
+     .slider img{
+        margin-top: 20%;
+    }
+}
+
+.mission-select{
+    padding-bottom: 45px;
+    display: none;
+    background-color: white;
+    position: relative; 
+    bottom: 5.5rem;
+    height: 0rem;
+}
+
+.col{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
+}
+
+.col button{
+    margin: 3px auto;
+    width: 48%;
+    height: 40px;
+    font-size: 1.7rem;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-nomal{
+    background-color: yellow;
+}
+
+.btn-challenge{
+    background-color: cyan;
+
+}
+
+.modal-bg{
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modal-body{
+    background-color: white;
+    width: 70%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modal-body button{
+    margin: 20px auto;
+    width: 70%;
+    height: 20%;
+}
+
+.modal-body .myCategory{
+    background-color: yellow;
+}
+
+.modal-body .allCategory{
+    background-color: coral;
+}
+/**********************************************
+
+        user_missionInfoView
+
+***********************************************/
+.mission-info-view{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.mission-info-view label{
+    width: 100%;
+    text-align: center;
+    font-size: larger;
+}
+.mission-info-view ul{
+    background-color: rgba(255,255,255,0.4);
+    padding: 3% 3% 3% 8%;
+    list-style-image: url('../images/list_img.png');
+}
+
+.mission-info-view img{
+    width: 40%;
+    height: 30.78%;
+    margin: 10px auto;
+}
+
+.btn-line{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.btn-line button{
+    padding-top: 3%;
+    width: 42.58%;
+    height: 100%;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
+}
+
+/**********************************************
+
+        user_myMissionAuth
+
+***********************************************/
+.myMission-auth{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.myMission-auth .myMission-authForm{
+	width:100%;
+	height:100%;
+}
+
+.auth_main{
+    width: 100%;
+    height: 88%;
+    padding: 10% 5px 5% 5px;
+}
+.auth_main ol{
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.auth_main li{
+    margin: 3px 0;
+}
+.auth_main ol li input{
+	border: 0px;
+	text-align: center;
+}
+
+.auth_main .text-date{
+    font-size: 1.5rem;
+}
+.auth_main .public-select{
+    width: 40%;
+}
+
+.auth_main img{
+    width: 83%;
+    height: 50%;
+    margin: 3px auto;
+}
+
+.auth_main .board_content{
+    font-size: 1.4rem;
+    margin: 10% auto 0 auto;
+}
+.auth_main .file_upload{
+    width: 80%;
+    margin: 10px auto 0 auto;
+}
+.auth_main select{
+    font-size: 1.3rem;
+    border: none;
+    height: 30px;
+}
+
+
+.myMission-auth .btn-line{
+    width: 100%;
+    margin: 1px auto;
+}
+.myMission-auth .btn-line button{
+    width: 45%;
+}
+.btn-auth{
+    background-color: coral;
+    color: white;
+}
+
+
+
+.popup-bg{
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.popup-bg:hover{
+    cursor: not-allowed;
+}
+.popup{
+    width: 80%;
+    height: 30%;
+    background-color: white;
+    border: 1px black solid;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup div label{
+    display: block;
+}
+.popup div button{
+    margin-top: 20px;
+    width: 45%;
+    height: 20%;
+}
+
+
+/**********************************************
+
+        user_sucessBoard
+
+***********************************************/
+.successBoard-header{
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    margin: 0 auto;
+    padding: 10px 0 10px 0;
+    width: 87%;
+}
+.pid_search{
+    width: 100%;
+    height: 30%;
+    padding: 10px 20px;
+    margin: 0;
+}
+.search-bar{
+    width: 100%;
+    border: 1px black solid;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 5px;
+    flex-wrap: wrap;
+}
+
+.search-bar input{
+    width: 80%;
+    border: none;
+    background-color:transparent;
+    margin-top: 3px;
+    font-size: 1.42rem;
+}
+
+.search-bar input:focus{
+    border: none;
+}
+.search-result{
+    font-size: 1.42rem;
+    width: 84%;
+    height: 40%;
+    overflow: scroll;
+    z-index: 1;
+    position: fixed;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    border: 1px #4D4D4D solid;
+    border-radius: 4px;
+    margin-left: 1%;
+}
+
+.search-result::-webkit-scrollbar {
+    display: none;
+}
+
+.search-result span{
+    padding: 7px;
+    display: block;
+    border-top: 1px solid #4D4D4D;
+    border-bottom: 1px solid #4D4D4D;
+}
+
+.line-up{
+    width: 100%;
+    height: 5%;
+    margin: 3px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 7px;
+}
+.line-up span{
+    width: 50%;
+    margin: 1px auto;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 200%;
+    border: 1px black solid;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.list{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1% 1% 60px 1%;
+    overflow: scroll;
+    margin-bottom: 20%;
+}
+
+list ::-webkit-scrollbar {
+    display: none;
+}
+.list img{
+    width: 33%;
+    height: 17%;
+    margin: 0;
+}
+
+/**********************************************
+
+        user_eval 난다고래&
+
+***********************************************/
+.eval{
+   width: 100%;
+   height: 100%;
+}
+
+.eval .gilpung{
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   font-size: 1.7rem;
+       margin: 10px auto;
+    background-color: rgba(255,255,255,0.5);
+    position: relative;
+       bottom: 5rem;
+}
+.eval .gilpung .btn-line{
+   width: 200;
+   margin-top: 25px;
+}
+
+.eval div{
+   margin: 10px auto;
+}
+
+.eval .content-profile img{
+   width: 30px;   
+   height: 30px;
+}
+.eval .content-profile span{
+   width: 100%;
+   height: 100%;
+   line-height: 2.5;
+   background-color: #eef327;
+    border-radius: 20px;
+    border: 1px #ffffff solid;
+    width: 183px;
+    margin: 12px auto;
+}
+
+.successbtn{
+	border:0px;
+	background-color: #e1ef25;
+	width:50%;
+	border-radius: 10%;
+}
+.deletebtn{
+	border:0px;
+	background-color: #678e67;
+	width:50%;
+	border-radius: 10%;
+}
+
+.item{
+   dlsplay: flex;
+   justify-content: space-around;
+   margin: 0px auto;
+   font-size: 2rem;
+   position: relative;
+   top: 4rem
+}
+
+.item img{
+   width: 200px;
+   height: 170px;
+   position: relative;
+   bottom: 4rem;
+   border-radius: 100%;
+}
+
+.item1 {
+   position: relative;
+      top: 0rem;
+      font-size: 1.5rem;
+}
+
+.item2 {
+   position: relative;
+      top: -2.5rem;
+}
+/**********************************************
+
+        user_my 난다고래&
+
+***********************************************/
+.usermyHeader{
+   position: relative;
+   top: -5rem;
+   margin: 8px 10px 12px 30px;
+}
+.usermyHeader .menu-img{
+    width: 6%;
+    margin-left: 4%;
+    top:4.2rem;
+    height:auto;
+}
+.usermyArticle{
+   position: relative;
+   top: -6rem;
+}
+.imymemine{
+    height:50%;
+    width:100%;
+    margin: 0px auto;
+    text-align: center;
+}
+.imymemine .content-profile{
+    background-color: #eef327;
+    border-radius: 20px;
+    width: 183px;
+    margin: 12px auto;
+    display: inline;
+}
+.imymemine .content-profile .img-circle{
+    width: 10%;
+    height: 43%;
+}
+.gaein{
+    background-color: #eaeff8;
+    border-radius: 20px;
+    border: 1px black solid;
+}
+.gaein span{
+    color: #77775a;
+    font-size: 72%;
+    font-style: italic;
+
+}
+
+.imymemine .good{
+    text-align: left;
+    height: 24%;
+    display: block;
+}
+.imymemine .good .missionimage{
+    height: 85%;
+    width: 18%;
+}
+div hr{
+    margin-top: 7%;
+    margin-bottom: 2%;
+    border-top: 1px solid black;
+    display: block;
+}
+.gay span{
+    font-size: 2;
+}
+.good span{
+    color: black;
+    font-size: 15%;
+    display: block;
+}
+.good span a{
+    display: block;
+    font-size: 20%;
+}
+.good span b{
+    display: block;
+    font-size: 20%;
+    color: red;
+}
+
+.myMissionpackage{
+    overflow: scroll;
+    width: 100%;
+    height: 88%;
+    padding: 10px auto;
+}
+.container .white-box{
+    width: 83%;
+    height: 33%;
+    margin: 10px auto;
+    background-color: rgba(255,255,255,0.5);
+    padding: 20px 0;
+}
+.container .imymemine .white-box1{
+    width: 83%;
+    height: 137%;
+    margin: 10px auto;
+    background-color: rgba(255,255,255,0.5);
+    padding: 20px 0;
+}
+div .write-control{
+    width: 100%;
+    height:25%;
+    font-size: 72%;
+}
+.aho{
+    height: 100%;
+    margin: 5%;
+}
+.missionNav{
+    width: 100%;
+}
+/**********************************************
+
+        user_myInfoModify 데헷~^^
+
+***********************************************/
+.modify{
+	width:49%;
+}
+.modifyProfile{
+	width:100%;
+	height:40%;
+}
+.modifyProfile .img-circle{
+	width:16%;
+	height:90%;
+}
+/**********************************************
+
+   user_messageForm 난다고래&
+
+***********************************************/
+.messageForm{
+   display: flex;
+   flex-wrap: wrap;
+   height:100%;
+   justify-content: space-between;
+   text-align: center;
+ 
+}
+.messageNavi{
+   width:100%;
+   height:13%;
+   flex-wrap: wrap;
+   display: flex;   /*한쌍*/
+   font-size: 1.5rem;
+   padding-top: 10%;
+   margin-left: 10%;
+   display: flex;
+   justify-content: space-around;
+}
+
+.messageInfo{
+   width:100%;
+   height:90%;
+}
+
+.messagetitle{
+   width:28%;
+   height:100%;
+   border-bottom: 1px solid #c2c2c2;
+   flex-wrap: wrap;
+   display: flex;   /*한쌍*/
+   position: relative;
+   left: 1.6rem
+   
+}
+.sendIcon{
+   width: auto; height: auto;
+    max-width: 30px;
+    max-height: 30px;
+    position: relative;
+    right: 1rem;
+}
+/**********************************************
+
+        user_getMessage 난다고래&
+
+***********************************************/
+.getM .container{
+   height: 25rem
+}
+.getMessageContent img{
+   width: 30px;
+   height: 30px;
+}
+.getMessageContent .Nick{
+    height: 20%;
+    line-height: 2.5;
+    background-color: #eef327;
+    border-radius: 20px;
+    border: 1px #ffffff solid;
+    width: 183px;
+    margin: 0;
+    position: absolute;
+    top: 70px;
+    align-content: center;
+    left: 0rem;
+}
+.getMessageList{
+   background-color: #f7f9f9;
+    border-radius: 10px;
+    border: 1px #f7f9f9 solid;
+    font-size: 1.5rem;
+    width:100%;
+    height:20%;
+    position: absolute;
+    left:0rem;
+}
+.getMessageDate{
+   position: absolute;
+    left: 27rem;
+}
+
+/**********************************************
+
+        user_sentMessage 난다고래&
+
+***********************************************/
+.sentMessageContent img{
+   width: 30px;
+   height: 30px;
+}
+.sentMessageContent .Nick{
+    height: 6%;
+    line-height: 2.5;
+    background-color: #eef327;
+    border-radius: 20px;
+    border: 1px #ffffff solid;
+    width: 183px;
+    margin: 12px auto;
+    position: absolute;
+    top: 26.5rem;
+    align-content: center;
+    left: 4rem;
+}
+.sentMessageDate{
+    position: absolute;
+    left: 27rem;
+}
+
+/**********************************************
+
+        user_profileModify 데헷~^^
+
+***********************************************/
+.center-align{
+	text-align: center;
+}
+.profile-modify .content-profile{
+	background-color: #d2f4f8;
+    border-radius: 20px;
+    width: 183px;
+    margin: 12px auto;
+}
+.profile-modify .content-profile span{
+	color: #eef327;
+}
+.profile-modify .content-profile .img-circle{
+	width: 20%;
+    height: 10%;
+    margin: 9%
+}
+.content-image{
+	width: 100%;
+	height: 75%;
+	
+	text-align: center;
+}
+.content-backcolor{
+	background-color: rgba(255,255,255,0.5);
+	border-radius: 10%;
+}
+.content-defaultimage{
+	width: 80%;
+	height: 78%;
+	border-radius: 100%;
+	padding: 15px;
+}
+.profile-modifybtn{
+	width:100%;
+	text-align: center;
+}
+.profile-modifybtn .profilemodifybtn{
+	border: 6px solid #b48181;
+	background-color: #b48181;
+}
+/**********************************************
+
+        user_sendMessage 데헷~^^
+
+***********************************************/
+.sendTop{
+	width:100%;
+	height:10%;
+	flex-wrap: wrap;
+	display: flex;	/*한쌍*/
+	justify-content: space-between;
+	text-align: center;
+	margin: 0px;
+	padding: 0px 0px 9px 0px;
+}
+.sendTop span{
+	margin: auto 5px;
+	font-size: 1.3rem;
+}
+.sendContent{
+	width:100%;
+	height:90%;
+	flex-wrap: wrap;
+	display: flex;
+}
+.sendContent .messagetextarea{
+	width:100%;
+	height:100%;
+	background-color: rgba(255,255,255,0.5);
+	flex-wrap: wrap;
+	display: flex;
+}
+.sendTop .userNickname{
+	font-size: 95%;
+	font-style: oblique;
+	padding: 0px;
+	margin: 0px;
+	flex-wrap: wrap;
+	display: flex;
+}
+.sendTop .userNickname1{
+	font-size: 100%;
+	font-style: italic;
+	background-color: rgba(255,255,255,0.5);
+	flex-wrap: wrap;
+	display: flex;
+}
+.sendbottom{
+	width:100%;
+	height:30%;
+	padding-top: 10px;
+}
+
+
