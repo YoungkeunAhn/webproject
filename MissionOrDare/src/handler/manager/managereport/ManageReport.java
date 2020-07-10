@@ -1,4 +1,4 @@
-package handler.manage.managereport;
+package handler.manager.managereport;
 
 import java.util.Hashtable;
 import java.util.List;
