@@ -71,7 +71,7 @@
 <script type="text/javascript">
 	//<!--
 var users = document.getElementById('sendUsers');
-var fff = '';
+var delText = '';
 $(document).ready( function() {
 	// 아이디 중복확인
 	$('#searchUser').on('keyup',function(event) {
@@ -94,16 +94,16 @@ $(document).ready( function() {
 					}
 					//전체 선택
 					$("#mytable > tr").on('click', function(event){
-						var ggg = $(this).find('.check').val() + ',';
+						var addText = $(this).find('.check').val() + ',';
 						
-						if(! users.value.includes(ggg)){
-							users.value = users.value + ggg;
+						if(! users.value.includes(addText)){
+							users.value = users.value + addText;
 							$('#sendtable').append("<tr class='delUser'><th class='del'>" + $(this).find('.check').val() + "</th></tr>");
 						} //if end
 					});
 					$(document).on('click','.delUser', function(){
-						fff = $(this).find('.del').text() + ',';
-						users.value = users.value.replace(fff,'');
+						delText = $(this).find('.del').text() + ',';
+						users.value = users.value.replace(delText,'');
 						$(this).remove();
 					});
 					$(".select_all").on('click', function(event) {
