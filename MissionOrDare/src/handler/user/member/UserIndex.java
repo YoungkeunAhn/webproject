@@ -1,4 +1,4 @@
-package handler.user.userpage;
+package handler.user.member;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,11 +10,11 @@ import org.springframework.web.servlet.ModelAndView;
 import handler.CommandHandler;
 
 @Controller
-public class UserSendMessagePro implements CommandHandler{
-	
-	@RequestMapping("/user_sendMessagePro")
+public class UserIndex implements CommandHandler{
+	@RequestMapping("/user_index")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		return new ModelAndView("user/pages/user_sendMessagePro");
+
+		return new ModelAndView("user/user_index");
 	}
 }

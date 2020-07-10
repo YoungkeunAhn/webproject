@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="asset/user.css">
+    <link type="text/css" rel="stylesheet" href="user/asset/user.css">
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <title>UserIndex</title>
   </head>
   <body>
     <div class="container">
-      <img class="index-logo" src="images/mod_logo.png" alt="logo">
+      <img class="index-logo" src="user/images/mod_logo.png" alt="logo">
       <span class="index-title">Mission Or Dare</span>
       <a class="kakaologin-btn" id="create-kakao-login-btn"></a>
     </div>
