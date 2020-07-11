@@ -21,8 +21,8 @@ public class ManageSendMessagePro implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
-		String[] user_nicknames = request.getParameterValues("message_check");
-		String notes_contents = request.getParameter("message");
+		String[] user_nicknames = request.getParameter("message_users").split(",");
+		String notes_contents = request.getParameter("message_text");
 		String sent_nickname = (String) request.getSession().getAttribute("memId");
 		
 		NotesDto notesDto = new NotesDto() ;

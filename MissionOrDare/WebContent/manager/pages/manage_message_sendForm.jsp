@@ -33,7 +33,6 @@
 			      </table>
 			   
 			</section>
-		  <button type="submit" class="btn-primary">추가</button>
 		</form>
 			<section class="send_user">
 			
@@ -47,7 +46,7 @@
 			
 		     
 		<section class="message_table">
-			<form>
+			<form method="post" action="manage_send_messagePro.do">
 				<ul>
 					<li>
 						<span>보낼 유저</span>
@@ -59,7 +58,10 @@
 						<span>메세지</span>
 					</li>
 					<li>
-						<textarea class="form-control"></textarea>
+						<textarea name="message_text" class="form-control"></textarea>
+					</li>
+					<li>
+						<button type="submit">보내기</button>
 					</li>
 				</ul>
 			</form>

@@ -31,8 +31,8 @@ public class ManageMessage implements CommandHandler{
 		request.setCharacterEncoding("utf-8");
 		//List<String> delete_notes_id = request.getParameter("delete_notes_id");
 		
-		int pageSize = 3;					// 한 페이지당 글 개수
-		int pageBlock = 3;					// 한 번에 출력할 페이지 개수
+		int pageSize = 10;					// 한 페이지당 글 개수
+		int pageBlock = 5;					// 한 번에 출력할 페이지 개수
 		
 		int cnt = 0;
 		String pageNum = null;				// 현재 페이지

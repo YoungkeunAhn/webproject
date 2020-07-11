@@ -7,7 +7,7 @@
 <c:if test="${result eq 0}">
 	<script type="text/javascript">
 		<!--
-		alert( "전송이 실패되었습니다." );
+		alert( "전송을 실패했습니다." );
 		//-->
 	</script>
 </c:if>
