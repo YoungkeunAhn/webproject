@@ -288,10 +288,10 @@ nav ul img {
 }
 
 .date-exist li img{
-    width: 180px;
-    height: 150px;
+    width: 268px;
+    height: 212px;
+    border-radius: 20%;
 }
-
 .date-exist li input{
     width: 100%;
     text-align: center;
@@ -573,9 +573,11 @@ nav ul img {
     width: 87%;
 }
 .boardArticle{
-	position: relative;
-    bottom: 45px;
-    height: 76%;
+	position: absolute;
+    top: 8.4%;
+    height: 100%;
+    right: 1%;
+    left: 1%;
 }
 .pid_search{
     width: 100%;
@@ -1169,7 +1171,7 @@ div .write-control{
 }
 .usercontent{
 	width: 100%;
-    height: 50%;
+    height: 63%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1191,14 +1193,12 @@ div .write-control{
 }
 .replycontent{
     width: 100%;
-    height: 60%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     text-align: left;
     margin-top: 50px;
     overflow: scroll;
-    padding-left: 10%;
-    padding-right: 10%;
 }
 
 .ddaedrogba{
@@ -1230,7 +1230,7 @@ div .write-control{
 	font-style: italic;
 }
 .userreply{
-    font-size: 10px;
+    font-size: 20px;
     position: relative;
     left: 10%;
 }
@@ -1239,17 +1239,19 @@ div .write-control{
     height: 39px;
     border: 0;
     position: absolute;
-    top: 277px;
+    bottom: 28%;
     display: none;
+    font-size: 100%;
 }
 .replyho{
 	width:100%;
 	height:100%;
 	border:0;
-	font-size: 10%;
+	font-size: 70%;
 	font-style: italic;
 	background-color: #d0c3c3;
 	text-align: left;
+	border-radius: 39%;
 }
 .buttonlegend{
 	text-align: right;
@@ -1257,14 +1259,14 @@ div .write-control{
 	bottom: 10;
 }
 .replybtn{
-	font-size: 1px;
+	font-size: 100%;
 	font-style: oblique;
-	background-color: red;
+	background-color: #8d8080;
 	padding:0;
 	margin:0;
 }
 .userreplyho{
-	width: 57%;
+	width: 87.9%;
     height: 5%;
     position: fixed;
     z-index: 2;
@@ -1285,8 +1287,8 @@ div .write-control{
 	position: absolute;
 	left:100%;
 	bottom: 0px;
+	font-size: x-small;
 }
-
 
 
 
