@@ -224,7 +224,7 @@ nav ul img {
     top: 15%;
     left: 7%;
     width: 18%;
-    height: 8%;
+    height: 10%;
     font-size: x-small;
     justify-content: center;
     text-align: left;
@@ -793,7 +793,7 @@ list ::-webkit-scrollbar {
     top: 58%;
     left: 0%;
     width: 24%;
-    height: 57%;
+    height: 80%;
 }
 .usermyArticle{
    position: relative;
