@@ -15,8 +15,13 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <img class="menu-img" src="${project}images/menu.png" alt="logo">
+        <header class="usermyHeader">
+            <img id="menu" class="menu-img" src="${project}images/menu.png" alt="logo">
+	            <div id="menu_list" class="menu_list">
+		            	<span onclick="GoMainPage()">로그아웃</span>
+		            	<br>
+		            	<span>회원탈퇴</span>
+		        </div>
             <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
         </header>
         <article>
@@ -74,6 +79,11 @@
                   $('#usermessage').load('user_sendMessage.do');      
                }      
             );
+       	$(document).ready(function(){
+ 		  $("#menu").click(function(){
+ 		    $("#menu_list").slideToggle("slow");
+ 		  });
+ 		});
       //-->
    </script>
 </body>

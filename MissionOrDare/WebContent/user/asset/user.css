@@ -206,27 +206,28 @@ nav ul img {
 
 ***********************************************/
 #menu_list, #menu {
-	  padding: 0px;
-	  text-align: center;
-	  background-color: #d3fbfa;
-	  border: solid 0px #0c0c0c;
-	  z-index:4;
-	  position: relative;
-	  width:10px;
-	  height:10px;
+    padding: 0px;
+    text-align: center;
+    border: solid 0px #0c0c0c;
+    z-index: 4;
+    position: relative;
+    top: 0rem;
+    left: -1rem;
+    width: 10px;
+    height: 10px;
 }
 		
 #menu_list {
-  padding: 1%;
-  display: none;
-  position: fixed;
-  top: 61px;
-  left:38px;
-  width:22%;
-  height:10%;
-  font-size: large;
-  justify-content: center;
-  text-align: left;
+    padding: 1%;
+    display: none;
+    position: absolute;
+    top: 54%;
+    left: 0%;
+    width: 40%;
+    height: 10%;
+    font-size: small;
+    justify-content: center;
+    text-align: left;
 }
 #menu_list span{
 	border-bottom: 1px solid black;
@@ -909,6 +910,9 @@ div .write-control{
    margin-left: 10%;
    display: flex;
    justify-content: space-around;
+   position: relative;
+   top: -14%;
+   left: 4%;
 }
 
 .messageInfo{
@@ -917,7 +921,7 @@ div .write-control{
 }
 
 .messagetitle{
-   width:28%;
+   width:33%;
    height:100%;
    border-bottom: 1px solid #c2c2c2;
    flex-wrap: wrap;
@@ -931,7 +935,7 @@ div .write-control{
     max-width: 30px;
     max-height: 30px;
     position: relative;
-    right: 1rem;
+    right: 0rem;
 }
 /**********************************************
 
@@ -949,7 +953,7 @@ div .write-control{
 }
 .getMessageContent{
    position: absolute;
-    top: 30%;
+    top: 23%;
     height: 60%;
     width: 88%;
     overflow: scroll;
