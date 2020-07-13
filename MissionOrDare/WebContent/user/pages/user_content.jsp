@@ -13,20 +13,10 @@
     <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
 </head>
 <body class="ddaedrogba">
-    <div class="container" style="margin-top:0px; margin-bottom:0px">
-        <header class="contentHeader">
-            <img id="menu" class="menu-img" src="${project}images/menu.png" alt="logo">
-	            <div id="menu_list">
-	            	<span onclick="GoMainPage()">로그아웃</span>
-	            	<span>회원탈퇴</span>
-	            </div>
-            <img onclick="GoMainPage()" class="header-img1" src="${project}images/mod_logo.png" alt="logo">
-            <img onclick="history.go(-1)" class="backimage" src="${project}images/xdraw1.png" alt="x표시">
-        </header>
+    <div class="container" style="margin-top:0px; margin-bottom:0px; padding:0px">
         <article class="contentArticle">
         	<div id="replyspace">
-        		<textarea placeholder="댓글을 입력해주세요" autofocus="autofocus" class="replyho">
-        		</textarea>
+        		<input placeholder="댓글을 입력해주세요" autofocus="autofocus" class="replyho"/>
         		<div class="buttonlegend">
         		<button type="submit" class="replybtn">확인</button>
         		<button type="reset" class="replybtn">취소</button>
@@ -121,12 +111,7 @@
     </div>
          <script type="text/javascript">
 		//<!--
-		/* menu modal */
-      	$(document).ready(function(){
-		  $("#menu").click(function(){
-		    $("#menu_list").slideToggle("slow");
-		  });
-		});
+		
 		/* 댓글달기  */
       	//$(document).ready(function(){
   		  $("#replywrite").click(function(){
