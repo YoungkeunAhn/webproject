@@ -13,24 +13,43 @@
     <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="container">
-   <article>
-      <section>
-         <div class="sentMessageContent">
-            <span>받은 쪽지 내역</span><br><br>
-            <div class="sentMessageList">
-               <span class="Nick"><img class=img-circle src="${project}images/madong.PNG" alt="user-profile">발로도비빔면</span>
-               <span class="sentMessageDate">07.09</span><br>
-               <span>그런 헛소리 할거면</span>
-            </div>
-            
-            <div>
-            
-            </div>
-         </div>   
-      </section>
-   </article>
-</div>
-   
+   <div class="container">
+      <article>
+         <section>
+            <div class="sentMessageContent">
+               <div class="sentMessageList">
+                  <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">PigBig</span>
+     	          <span class="sentMessageDate">07.09</span><br>
+                  <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
+               </div>
+               <br>
+               <div class="sentMessageList">
+                  <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">PigBig</span>
+     	          <span class="sentMessageDate">07.09</span><br>
+                  <span>쪽지하지마라ㅎ.</span>
+               </div>
+               <br>
+               <div class="sentMessageList">
+                  <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">PigBig</span>
+     	          <span class="sentMessageDate">07.09</span><br>
+                  < <span>쪽지하지마라ㅎ.</span>
+               </div>
+               <br>
+               <div class="sentMessageList">
+                  <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">PigBig</span>
+     	          <span class="sentMessageDate">07.09</span><br>
+                  <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
+               </div>
+               <br>
+               <div class="sentMessageList">
+                  <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">PigBig</span>
+     	          <span class="sentMessageDate">07.09</span><br>
+                  <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
+               </div>
+               <br>
+            </div>   
+         </section>
+      </article>
+   </div>
 </body>
 </html>

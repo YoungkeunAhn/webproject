@@ -23,10 +23,10 @@
             <section class="messageForm">
                <div class="messageNavi">
                   <div id="usermessage1" class="messagetitle">
-                  	받은 메시지
+                     받은 메시지
                   </div>
                   <div id="usermessage2" class="messagetitle">
-                  	보낸 메시지
+                     보낸 메시지
                   </div>
                   <div>
                   <img id="sendmessage" class="sendIcon" alt="sendIcon" src="${project}images/paperAp.png">
@@ -65,10 +65,10 @@
             }      
          );
          $('#usermessage2').click(
-               function(event) {
-                  $('#usermessage').load('user_getMessage.do');      
-               }      
-            );
+                 function(event) {
+                    $('#usermessage').load('user_getMessage.do');      
+                 }      
+              );
          $('#sendmessage').click(
                function(event) {
                   $('#usermessage').load('user_sendMessage.do');      
@@ -78,4 +78,3 @@
    </script>
 </body>
 </html>
-

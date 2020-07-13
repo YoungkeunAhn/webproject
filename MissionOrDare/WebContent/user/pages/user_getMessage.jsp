@@ -12,19 +12,41 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
 </head>
-<body class="getM">
+<body>
    <div class="container">
       <article>
          <section>
             <div class="getMessageContent">
-               <span>받은 쪽지 내역</span><br><br>
                <div class="getMessageList">
-                  <div class="Nick"><img class=img-circle src="${project}images/madong.PNG" alt="user-profile">KIMONG</div>
-                  <span class="getMessageDate">07.09</span><br>
-                  <span>내용이 솰라솰라 앗살라 말라이꿈 짝짝쿵 비비디바비디부 내가 너에게 쪽지를 보냈send 롯데샌드 맛있어 퀘킷.</span>
-               </div> 
-               <div>
+                  <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
+     	          <span class="getMessageDate">07.09</span><br>
+                  <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
                </div>
+               <br>
+               <div class="getMessageList">
+                  <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
+     	          <span class="getMessageDate">07.09</span><br>
+                  <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
+               </div>
+               <br>
+               <div class="getMessageList">
+                  <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
+     	          <span class="getMessageDate">07.09</span><br>
+                  <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
+               </div>
+               <br>
+               <div class="getMessageList">
+                  <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
+     	          <span class="getMessageDate">07.09</span><br>
+                  <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
+               </div>
+               <br>
+               <div class="getMessageList">
+                  <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
+     	          <span class="getMessageDate">07.09</span><br>
+                  <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
+               </div>
+               <br>
             </div>   
          </section>
       </article>
