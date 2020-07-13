@@ -28,14 +28,14 @@
                 <span>ajax처리해야됨 갸꿀</span>
             </div>
         </header>
-        <article>
+        <article class="boardArticle">
             <section class="line-up">
                 <span onclick="alert('인기순으로 정렬')">인기순</span>
                 <span onclick="alert('최신순으로 정렬')">최신순</span>
             </section>
             <section class="board">
                 <div class="list">
-                    <img src="${project}images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                    <img src="${project}images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="location.href='user_content.do'"/>
                     <img src="${project}images/pid_test2.png" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
                     <img src="${project}images/pid_test3.jpg" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
                     <img src="${project}images/test5.gif" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>

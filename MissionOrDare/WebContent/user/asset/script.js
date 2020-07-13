@@ -97,3 +97,6 @@ function GoFailureProPage() {
 function MyProfileModify() {
 	location.href='user_profileModify.do';
 }
+function MyInfoModify() {
+	location.href='user_myInfoModify.do';
+}
