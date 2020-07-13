@@ -16,7 +16,12 @@
    		<div class="modal-content">
 	        <section class="mission-info">
 	        <form method="post" action="${pageContext.request.contextPath}/manage_mission_update.do">
+	        <img src="/category/${missionCategoryAndInfoDto.category_image}">
 	            <table class="table">
+	            	 <tr>
+	                    <th>이미지</th>
+	                    <td><input readonly name="mission_info_id" value="${missionCategoryAndInfoDto.category_image}"></td>
+	                </tr>
 	                <tr>
 	                    <th>미션번호</th>
 	                    <td><input readonly name="mission_info_id" value="${missionCategoryAndInfoDto.mission_info_id}"></td>

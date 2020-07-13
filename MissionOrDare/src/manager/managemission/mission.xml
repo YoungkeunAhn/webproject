@@ -64,7 +64,7 @@
 	<select id="getMissions" parameterType="java.util.Map" resultType="Dtos.MissionCategoryAndInfoDto">
 		select aa.* 
 		from (select a.*, rownum r 
-		from (select m.*, c.large_category, c.small_category 
+		from (select m.*, c.large_category, c.small_category , c.category_image
 		from MOD_MissionCategory c, MOD_MissionInfo m where c.mission_category_id=m.mission_category_id) a 
 		order by mission_info_id) aa 
 		where r &gt;= #{start} and r &lt;= #{end}
@@ -74,7 +74,7 @@
 	<select id="getSearchMissionsCategory" parameterType="java.util.Map" resultType="Dtos.MissionCategoryAndInfoDto">
 		select aa.* 
 		from (select a.*, rownum r 
-		from (select m.*, c.large_category, c.small_category 
+		from (select m.*, c.large_category, c.small_category , c.category_image
 		from MOD_MissionCategory c, MOD_MissionInfo m where c.mission_category_id=m.mission_category_id
 		and c.large_category like '%'||#{mission}||'%' or c.small_category like '%'||#{mission}||'%') a 
 		order by large_category, small_category) aa 
@@ -83,7 +83,7 @@
 	<select id="getSearchMissionsTitle" parameterType="java.util.Map" resultType="Dtos.MissionCategoryAndInfoDto">
 		select aa.* 
 		from (select a.*, rownum r 
-		from (select m.*, c.large_category, c.small_category 
+		from (select m.*, c.large_category, c.small_category , c.category_image
 		from MOD_MissionCategory c, MOD_MissionInfo m where c.mission_category_id=m.mission_category_id
 		and m.mission_title like '%'||#{mission}||'%') a 
 		order by large_category, small_category) aa 
@@ -92,7 +92,7 @@
 	<select id="getSearchMissionsContent" parameterType="java.util.Map" resultType="Dtos.MissionCategoryAndInfoDto">
 		select aa.* 
 		from (select a.*, rownum r 
-		from (select m.*, c.large_category, c.small_category 
+		from (select m.*, c.large_category, c.small_category , c.category_image
 		from MOD_MissionCategory c, MOD_MissionInfo m where c.mission_category_id=m.mission_category_id
 		and m.mission_contents like '%'||#{mission}||'%') a 
 		order by large_category, small_category) aa 
@@ -108,8 +108,8 @@
 	</select>
 	
 	<!-- 카테고리 아이디 검색 -->
-	<select id="getCategoryId" parameterType="Dtos.MissionCategoryDto" resultType="String">
-		select mission_category_id from MOD_MissionCategory where large_category=#{large_category} and small_category=#{small_category}
+	<select id="getCategory" parameterType="Dtos.MissionCategoryDto" resultType="Dtos.MissionCategoryDto">
+		select * from MOD_MissionCategory where large_category=#{large_category} and small_category=#{small_category}
 	</select>
 	
 	<!-- 미션  추가 -->
@@ -127,7 +127,7 @@
 	
 	<!-- 미션 상세정보 -->
 	<select id="getMission" parameterType="String" resultType="Dtos.MissionCategoryAndInfoDto">
-		select m.*, c.large_category, c.small_category 
+		select m.*, c.large_category, c.small_category, c.category_image 
 		from MOD_MissionCategory c, MOD_MissionInfo m where c.mission_category_id=m.mission_category_id
 		and m.mission_info_id=#{mission_info_id}
 	</select>

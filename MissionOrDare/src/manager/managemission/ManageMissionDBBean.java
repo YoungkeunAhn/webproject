@@ -77,8 +77,8 @@ public class ManageMissionDBBean implements ManageMissionDao {
 	public List<MissionCategoryDto> getMissionSmallCategorys(String largecategory) {
 		return session.selectList("Mission.getMissionSmallCategorys", largecategory);
 	}
-	public String getCategoryId(MissionCategoryDto missionCategoryDto) {
-		return session.selectOne("Mission.getCategoryId", missionCategoryDto);
+	public MissionCategoryDto getCategory(MissionCategoryDto missionCategoryDto) {
+		return session.selectOne("Mission.getCategory", missionCategoryDto);
 	}
 	public int insertMission(MissionInfoDto missionInfoDto) {
 		return session.insert("Mission.insertMission", missionInfoDto);

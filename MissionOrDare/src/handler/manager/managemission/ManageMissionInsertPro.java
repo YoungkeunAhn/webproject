@@ -30,7 +30,8 @@ public class ManageMissionInsertPro implements CommandHandler{
 		MissionCategoryDto missionCategoryDto = new MissionCategoryDto();
 		missionCategoryDto.setLarge_category(request.getParameter("largecategory"));
 		missionCategoryDto.setSmall_category(request.getParameter("smallcategory"));
-		String mission_category_id = manageMissionDao.getCategoryId(missionCategoryDto);
+		MissionCategoryDto missionCategory = manageMissionDao.getCategory(missionCategoryDto);
+		
 
 		MissionInfoDto missionInfoDto = new MissionInfoDto();
 		missionInfoDto.setMission_title(request.getParameter("missiontitle"));
@@ -39,13 +40,14 @@ public class ManageMissionInsertPro implements CommandHandler{
 		} else {
 			missionInfoDto.setMission_level(4);
 		}
-		missionInfoDto.setMission_category_id(mission_category_id);
+		missionInfoDto.setMission_category_id(missionCategory.getMission_category_id());
 		missionInfoDto.setMission_success_score(Integer.parseInt(request.getParameter("missionscore")));
 		missionInfoDto.setMission_location(request.getParameter("missionlocal"));
 		missionInfoDto.setMission_contents(request.getParameter("missioncontent"));
 		
 		int result = manageMissionDao.insertMission(missionInfoDto);
 		request.setAttribute( "result", result );
+		request.setAttribute("category_image", missionCategory.getCategory_image());
 		
 
 		return new ModelAndView("manager/pages/manage_mission_insertPro");

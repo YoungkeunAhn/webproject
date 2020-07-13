@@ -30,6 +30,7 @@ public class ManageMissionInfo implements CommandHandler{
 			return new ModelAndView("manager/pages/manage_mission_info");
 		}
 		MissionCategoryAndInfoDto missionCategoryAndInfoDto = manageMissionDao.getMission(mission_info_id);
+		missionCategoryAndInfoDto.getCategory_image();
 		request.setAttribute("missionCategoryAndInfoDto", missionCategoryAndInfoDto);
 		
 		return new ModelAndView("manager/pages/manage_mission_info");

@@ -32,7 +32,7 @@ public class ManageMissionUpdatePro implements CommandHandler {
 		MissionCategoryDto missionCategoryDto = new MissionCategoryDto();
 		missionCategoryDto.setLarge_category(request.getParameter("large_category"));
 		missionCategoryDto.setSmall_category(request.getParameter("small_category"));
-		String mission_category_id = manageMissionDao.getCategoryId(missionCategoryDto);
+		MissionCategoryDto missionCategory = manageMissionDao.getCategory(missionCategoryDto);
 
 		MissionInfoDto missionInfoDto = new MissionInfoDto();
 		missionInfoDto.setMission_info_id(request.getParameter("mission_info_id"));
@@ -43,7 +43,7 @@ public class ManageMissionUpdatePro implements CommandHandler {
 		} else {
 			missionInfoDto.setMission_level(4);
 		}
-		missionInfoDto.setMission_category_id(mission_category_id);
+		missionInfoDto.setMission_category_id(missionCategory.getMission_category_id());
 		missionInfoDto.setMission_location(request.getParameter("mission_local"));
 		missionInfoDto.setMission_contents(request.getParameter("mission_contents"));
 		
