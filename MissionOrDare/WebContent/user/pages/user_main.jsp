@@ -23,9 +23,9 @@
     <header class="mainHeader">
         <img id="menu" class="menu-img" src="${project}images/menu.png" alt="logo">
          <div id="menu_list" class="menu_list">
-          	<span onclick="GoMainPage()">로그아웃</span>
-          	<br>
-          	<span>회원탈퇴</span>
+          	<span onclick="GoMainPage()">Logout</span>
+          	<br><br>
+          	<span>Withdrawal</span>
       </div>
         <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
     </header>

@@ -221,16 +221,20 @@ nav ul img {
     padding: 1%;
     display: none;
     position: absolute;
-    top: 54%;
-    left: 0%;
-    width: 40%;
-    height: 10%;
-    font-size: small;
+    top: 15%;
+    left: 7%;
+    width: 18%;
+    height: 8%;
+    font-size: x-small;
     justify-content: center;
     text-align: left;
+    background-color: #33333363;
+    color: white;
+    border-radius: 10%;
 }
 #menu_list span{
-	border-bottom: 1px solid black;
+	position: absolute;
+    left: 4%;
 }
 
 
@@ -783,6 +787,13 @@ list ::-webkit-scrollbar {
     margin-left: 4%;
     top:4.2rem;
     height:auto;
+}
+.usermyHeader #menu_list{
+    position: absolute;
+    top: 58%;
+    left: 0%;
+    width: 24%;
+    height: 57%;
 }
 .usermyArticle{
    position: relative;
