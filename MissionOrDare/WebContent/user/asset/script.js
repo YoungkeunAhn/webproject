@@ -23,7 +23,7 @@ function InterestBtnClick() {
     var mission_categoryArea = document.getElementById('mission_categoryArea');
     mission_categoryArea.value='my';
 
-    location.href = 'user_missionGetPro.jsp?mission_level='+mission_level+'&mission_categoryArea='+mission_categoryArea.value;
+    location.href = 'user_missionGetPro.do?mission_level='+mission_level+'&mission_categoryArea='+mission_categoryArea.value;
 }
 
 //전체분야버튼 클릭시 input 값 변경
@@ -32,14 +32,14 @@ function AllCategoryBtnClick() {
     var mission_categoryArea = document.getElementById('mission_categoryArea');
     mission_categoryArea.value='all';
 
-    location.href='user_missionGetPro.jsp?mission_level='+mission_level+'&mission_categoryArea='+mission_categoryArea.value;
+    location.href='user_missionGetPro.do?mission_level='+mission_level+'&mission_categoryArea='+mission_categoryArea.value;
 }
 
 
 //미션받기 수락
 function MyMissionGet() {
     var mission_id = document.getElementById('mission_id').value;
-    location.href='user_myMissionPro.jsp?mission_id=' + mission_id;
+    location.href='user_myMissionPro.do?mission_id=' + mission_id;
 }
 
 //검색창 포커스시 실시간 검색기능창

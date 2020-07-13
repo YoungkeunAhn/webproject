@@ -2,6 +2,8 @@ package bean;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
@@ -20,9 +22,17 @@ import manager.member.MemberManagerDBbean;
 import manager.member.MemberManagerDao;
 import manager.supermanager.SupermanagerDBBean;
 import manager.supermanager.SupermanagerDao;
+import user.missionauth.MissionAuthDBBean;
+import user.missionauth.MissionAuthDao;
 
 @Configuration
 public class CreateBean {
+	@Bean
+	public MissionAuthDao missionAuthDao() {
+		MissionAuthDBBean missionAuthDao = new MissionAuthDBBean();
+		return missionAuthDao;
+	}
+	
 	@Bean
 	public ManageReportDao manageReportDao() {
 		ManageReportDBBean manageReportDao = new ManageReportDBBean();
@@ -64,10 +74,17 @@ public class CreateBean {
 	@Bean
 	public ViewResolver viewResolver() {
 		UrlBasedViewResolver viewResolver = new UrlBasedViewResolver();
+		viewResolver.setContentType("utf-8");
 		viewResolver.setViewClass( JstlView.class );
 		viewResolver.setPrefix( "/" );
 		viewResolver.setSuffix( ".jsp" );
 		return viewResolver;
+	}
+	
+	@Bean
+	public MultipartResolver multipartResolver() throws Exception {
+		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+		return multipartResolver;
 	}
 }
 

@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
     <link type="text/css" rel="stylesheet" href="${project}asset/user.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <script src="${project}asset/script.js"></script>
@@ -15,7 +18,32 @@
     <script>
         $(document).ready(function () {
             $('#upload').change(function (e) {
-                $('#auth_image').attr('src', URL.createObjectURL(e.target.files[0]));
+            	var cnt = 0;
+            	var maxSize = 209715200;
+            	var files = e.target.files;
+            	var filesArr = Array.prototype.slice.call(files);
+            	filesArr.forEach(function(f) {
+            		if(f.size >= maxSize) {
+            			alert("파일 사이즈 초과");
+            			location.reload(true);
+            		}
+            		if(!(f.type.match("image.*") || f.type.match("video.*")) ) {
+            			alert("사진과 동영상만 업로드 가능합니다!");
+            			location.reload(true);
+            			return;
+            		}
+            	});
+            	$('#auth_image').attr('src', URL.createObjectURL(e.target.files[0]));
+            	$('.fa-angle-left').on('click', function(){
+            		if(cnt > 0) {
+            			$('#auth_image').attr('src', URL.createObjectURL(e.target.files[--cnt]));
+            		}
+            	});
+            	$('.fa-angle-right').on('click', function(){
+            		if(cnt < files.length-1) {
+            			$('#auth_image').attr('src', URL.createObjectURL(e.target.files[++cnt]));
+            		}
+            	});
             })
         });
     </script>
@@ -23,7 +51,7 @@
 <body>
 <div class="container">
     <article class="myMission-auth">
-    	<form class="myMission-authForm" name="myMissionAuth" action="user_myMissionPro.do">
+    	<form method="post" class="myMission-authForm" name="myMissionAuth" action="user_myMissionPro.do" enctype="multipart/form-data" accept-charset="UTF-8">
 	        <section class="auth_main">
 	                <ol>
 	                    <li><input type="text" value="운동 / 달리기"></li>
@@ -38,15 +66,15 @@
 	                        <input id="abc" type="text" name="abc" style="display:none;">
 	                    </li>
 	                    <li>
-	                        <input id="upload" class="file_upload" name="" type="file" accept="image/*, video/*" capture="camera" multiple style="display: none">
+	                        <input id="upload" class="file_upload" name="files" type="file" accept="image/*, video/*" capture="camera" multiple style="display: none">
 	                    </li>
 	                    <li>
 	                        <input class="board_content form-control" type="text" name="board_content" placeholder="미션에 대한 내용을 간단히 적어주세요">
 	                    </li>
 	                    <li>
 	                        <select class="public-select form-control" name="public_availability">
-	                            <option selected>공개</option>
-	                            <option>비공개</option>
+	                            <option value="1" selected>공개</option>
+	                            <option value="0">비공개</option>
 	                        </select>
 	                    </li>
 	                </ol>
