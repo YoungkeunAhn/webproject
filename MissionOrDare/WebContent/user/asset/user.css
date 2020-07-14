@@ -102,6 +102,7 @@ nav ul img {
     display: flex;
     width: 20px;
     height: 20px;
+    cursor:pointer;
 }
 
 
@@ -724,10 +725,10 @@ list ::-webkit-scrollbar {
    height: 30px;
 }
 .eval .content-profile span{
-   width: 100%;
-   height: 100%;
-   line-height: 2.5;
-   background-color: #eef327;
+   	width: 100%;
+   	height: 100%;
+   	line-height: 2.5;
+   	background-color: #eef327;
     border-radius: 20px;
     border: 1px #ffffff solid;
     width: 183px;
@@ -897,78 +898,60 @@ div .write-control{
 }
 /**********************************************
 
-   user_messageForm 난다고래&
+   user_messageForm
 
 ***********************************************/
-.messageForm{
-   display: flex;
-   flex-wrap: wrap;
-   height:100%;
-   justify-content: space-between;
-   text-align: center;
- 
-}
-.messageNavi{
-   width:100%;
-   height:13%;
-   flex-wrap: wrap;
-   display: flex;   /*한쌍*/
-   font-size: 1.5rem;
-   padding-top: 10%;
-   margin-left: 10%;
-   display: flex;
-   justify-content: space-around;
-   position: relative;
-   top: -14%;
-   left: 4%;
+.messageNav{
+	margin: 5% auto;
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.7rem;
 }
 
+.messageNav span{
+	padding: 0 5px;
+}
+.messageNav img{
+	width: 35px;
+	height: 20px;
+}
 .messageInfo{
-   width:100%;
-   height:90%;
+	padding: 10px 0;
 }
 
-.messagetitle{
-   width:33%;
-   height:100%;
-   border-bottom: 1px solid #c2c2c2;
-   flex-wrap: wrap;
-   display: flex;   /*한쌍*/
-   position: relative;
-   left: 1.6rem
-   
-}
-.sendIcon{
-   width: auto; height: auto;
-    max-width: 30px;
-    max-height: 30px;
-    position: relative;
-    right: 0rem;
-}
+
+
 /**********************************************
 
         user_getMessage 난다고래&
 
 ***********************************************/
-.getM .container{
-   height: 25rem
+.getMessageContent{
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+
 }
-.getMessageContent img{
-     width: 2rem;
+
+.getMessageList{    
+    background-color: #f7f9f9;
+    border-radius: 10px;
+    border: 1px #f7f9f9 solid;
+    font-size: 1.5rem;
+    top: 0.17%;
+    left: 0rem;
+    position: relative;
+    margin: 20px auto;
+}
+
+.getMessageList img{
+	width: 2rem;
     height: 1.5rem;
     position: absolute;
     left: 0rem;
 }
-.getMessageContent{
-   position: absolute;
-    top: 23%;
-    height: 60%;
-    width: 88%;
-    overflow: scroll;
-    
-}
-.getMessageContent .Nick{
-   height: 1.8rem;
+.getMessageList .Nick{
+	height: 1.8rem;
     line-height: 2.5;
     background-color: #eef327;
     border-radius: 20px;
@@ -981,18 +964,7 @@ div .write-control{
     font-size: 1rem;
     text-align: center;
 }
-.getMessageList{    
-    background-color: #f7f9f9;
-    border-radius: 10px;
-    border: 1px #f7f9f9 solid;
-    font-size: 1.5rem;
-    left: 0rem;
-    width: 31rem;
-    position: relative;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+
 .getMessageDate{
     position: absolute;
     left: 24rem;
@@ -1005,16 +977,16 @@ div .write-control{
 
 ***********************************************/
 .sentM .container{
-   height: 25rem
+	height: 25rem
 }
 .sentMessageContent img{
-     width: 2rem;
+	width: 2rem;
     height: 1.5rem;
     position: absolute;
     left: 0rem;
 }
 .sentMessageContent{
-   position: absolute;
+	position: absolute;
     top: 30%;
     height: 60%;
     width: 88%;
@@ -1022,7 +994,7 @@ div .write-control{
     
 }
 .sentMessageContent .Nick{
-   height: 1.8rem;
+	height: 1.8rem;
     line-height: 2.5;
     background-color: #eef327;
     border-radius: 20px;

@@ -15,35 +15,29 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <img id="menu" class="menu-img" src="${project}images/menu.png" alt="logo">
-	            <div id="menu_list" class="menu_list">
-		            	<span onclick="GoMainPage()">logout</span>
-		            	<br><br>
-		            	<span>Withdrawal</span>
-		        </div>
-            <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
-        </header>
+    	<header>
+	        <img id="menu" class="menu-img" src="${project}images/menu.png" alt="logo">
+	         <div id="menu_list" class="menu_list">
+	          	<span onclick="GoMainPage()">Logout</span>
+	          	<br><br>
+	          	<span>Withdrawal</span>
+	      </div>
+	        <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
+	    </header>
         <article>
-            <section class="messageForm">
-               <div class="messageNavi">
-                  <div id="usermessage1" class="messagetitle">
-                     받은 메시지
-                  </div>
-                  <div id="usermessage2" class="messagetitle">
-                     보낸 메시지
-                  </div>
-                  <div>
-                  <img id="sendmessage" class="sendIcon" alt="sendIcon" src="${project}images/paperAp.png">
-                  </div>     
-               </div>
-               <div id="usermessage" class="messageInfo">
-               </div>
-            </section>
-        </article>
+	       	<section class="messageNav">
+	            <span class="getdMessage">받은 메시지</span>
+	            <span class="sendmessage">보낸 메시지</span>
+	            <img class="sendIcon" src="${project}images/paperAp.png">
+			</section>
+			
+			<section id="usermessage" class="messageInfo">
+        	</section>	
+        </article>		
+		<!-- 메뉴 -->
         <nav>
             <ul>
-                <li style="cursor:pointer;" onclick="GoMainPage()">
+                <li onclick="GoMainPage()">
                     <img class="nav-home" src="${project}images/mod_logo.png" alt="logo">
                     <span>홈</span>
                 </li>
@@ -64,25 +58,34 @@
     </div>
     <script type="text/javascript">
       //<!--
-         $('#usermessage1').click(
-            function(event) {
-               $('#usermessage').load('user_getMessage.do');      
-            }      
-         );
-         $('#usermessage2').click(
-                 function(event) {
-                    $('#usermessage').load('user_getMessage.do');      
-                 }      
-              );
-         $('#sendmessage').click(
-               function(event) {
-                  $('#usermessage').load('user_sendMessage.do');      
-               }      
-            );
        	$(document).ready(function(){
- 		  $("#menu").click(function(){
- 		    $("#menu_list").slideToggle("slow");
- 		  });
+       		//메세지 페이지 왔을 때 defalut로 받은 메세지 화면 띄우기
+       		$('#usermessage').load('user_getMessage.do');
+       		
+       		//menu list toggle
+			$("#menu").click(function(){
+				$("#menu_list").slideToggle("slow");
+			});
+ 		  
+ 		 	//받은 메세지
+			$('.getdMessage').click(
+ 	            function(event) {
+ 	               $('#usermessage').load('user_getMessage.do');      
+ 	            }      
+			);
+			//보낸 메세지
+			$('.sendmessage').click(
+				function(event) {
+					$('#usermessage').load('user_postedMessage.do');
+				}      
+			);
+			//메세지 보내기
+			$('.sendIcon').click(
+				function(event) {
+					$('#usermessage').load('user_sendMessage.do');      
+				}      
+			);
+			
  		});
       //-->
    </script>

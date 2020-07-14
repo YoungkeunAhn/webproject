@@ -15,37 +15,36 @@
 <body>
 	<section>
 	   <div class="getMessageContent">
-	   
 	      <div class="getMessageList">
 	         <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
 	       <span class="getMessageDate">07.09</span><br>
-	         <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
+	         <span>보낸편지</span>
 	      </div>
-	      
+	      <br>
 	      <div class="getMessageList">
 	         <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
 	       <span class="getMessageDate">07.09</span><br>
-	         <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
+	         <span>내보낸편지쏜다.</span>
 	      </div>
-	      
+	      <br>
 	      <div class="getMessageList">
 	         <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
 	       <span class="getMessageDate">07.09</span><br>
-	         <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
+	         <span>내용이보낸편지쏜다.</span>
 	      </div>
-	      
+	      <br>
 	      <div class="getMessageList">
 	         <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
 	       <span class="getMessageDate">07.09</span><br>
-	         <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
+	         <span>내용이 솰라솰보낸편지가 너에게 쪽지를 쏜다.</span>
 	      </div>
-	      
+	      <br>
 	      <div class="getMessageList">
 	         <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
 	       <span class="getMessageDate">07.09</span><br>
-	         <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
+	         <span>내용이 솰라솰라 앗보낸편지다.</span>
 	      </div>
-	      
+	      <br>
 	   </div>   
 	</section>
 </body>
