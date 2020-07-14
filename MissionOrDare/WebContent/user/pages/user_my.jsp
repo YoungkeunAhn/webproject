@@ -28,11 +28,11 @@
 	    		<section class="imymemine">
 	    		<div class="content-profile">
 		    			<img onclick="MyProfileModify()" class="img-circle" src="${project}images/madong.PNG" alt="user-profile">
-		               <span>KIMONG</span>
+		               <span>${userDto.user_nickname}</span>
 		   		</div>
 		   		<img onclick="GoMessageForm()" src="${project}images/message12.png" alt="user-message">
-		   		<div class="write-control"><span>관심분야: 운동 헬스 자기개발 축구</span></div>
-		   		<div class="write-control">가입일: 2020년 6월 1일</div>
+		   		<div class="write-control"><span>관심분야: ${userDto.interesting1_large_category} ${userDto.interesting2_large_category} ${userDto.interesting3_large_category} ${userDto.interesting4_large_category}</span></div>
+		   		<div class="write-control">가입일: ${userDto.sign_up_date}</div>
 		   		<div class="aho">
 		   		<button class="gaein" type="submit" onclick="MyInfoModify()"><span>개인정보수정</span></button>
 	    		</div>

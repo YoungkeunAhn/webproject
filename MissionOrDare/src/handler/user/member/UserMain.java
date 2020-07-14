@@ -1,7 +1,5 @@
 package handler.user.member;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,25 +8,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import Dtos.UserMissionsDto;
 import handler.CommandHandler;
-import user.missionget.MissionGetDao;
+import user.member.UserMemberDao;
 
 @Controller
 public class UserMain implements CommandHandler{
 	@Resource
-	MissionGetDao missionGetDao;
-	
+	private UserMemberDao userMemberDao;
 	@RequestMapping("/user_main")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		request.getSession().setAttribute("user_nickname", "user1");
-		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
-		List<UserMissionsDto> userMissionsDtos = missionGetDao.getUserMissions(user_nickname);
-		int result = userMissionsDtos.size();
-		request.setAttribute("userMissionsDtos", userMissionsDtos);
-		request.setAttribute("result", result);
+		int kakao_id = Integer.parseInt(request.getParameter("kakao_id"));
+		
+		String user_nickname = userMemberDao.findNickname(kakao_id);
+		System.out.println("zkzkdh아이디"+kakao_id);
+		System.out.println("kakao_id"+kakao_id + "nickname:"+user_nickname);
+		request.getSession().setAttribute("user_nickname", user_nickname);
+		
 		return new ModelAndView("user/pages/user_main");
 	}
 }
