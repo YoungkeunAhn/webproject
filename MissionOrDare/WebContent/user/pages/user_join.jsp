@@ -22,8 +22,8 @@
             <ul class="join-list">
                 <li>
                     <label class="th">* 닉네임</label>
-                    <label><input class="form-control" type="text" name="user_nickname" placeholder="insert into your nickname"></label>
-                    <label class="text text-mute">닉네임을 입력해주세요</label><label class="text text-danger">닉네임이 중복되었습니다.</label><label class="text text-primary">사용할 수 있는 닉네임입니다.</label>
+                    <label><input class="form-control" type="text" name="user_nickname" id="user_nickname" placeholder="insert into your nickname"></label>
+                    <div class="checkResult" id="nicknameCheck"></div>
                 </li>
                 <li>
                     <label class="th">* 비밀번호</label>
@@ -121,7 +121,46 @@
                }//else end
            });//click() end
         });//ready() end
-    </script>
+
+        $(document).ready(function(){ //닉네임 중복확인
+            $('#user_nickname').on('keyup',function(event){
+                $.ajax(
+                    {
+                        type : 'POST',
+                        url : 'nicknameCheck.do',
+                        data :{
+                            user_nickname : $('#user_nickname').val()
+                        },
+                        dataType : 'text',
+                        async : false,
+                        success : function(data){
+                            console.log(data);
+                        	data=eval('(' + data + ')');
+                      
+                            if($("#user_nickname").val()==null ||$("#user_nickname").val()==""){
+                                $("#nicknameCheck").text("닉네임을 입력해주세요.");
+                                $("#nicknameCheck").css("color","red");
+                                $("reg_submit").attr("disabled",true);
+                            }else if(data.result==1){
+                                //1: 아이디가 중복되는 문구
+                                $("#nicknameCheck").text("사용중인 닉네임입니다.");
+                                $("#nicknameCheck").css("color","red");
+                                $("reg_submit").attr("disabled",true);
+                            }else if(data.result==0){
+                                $("#nicknameCheck").text("사용 가능한 닉네임입니다.");
+                                $("#nicknameCheck").css("color","red");
+                                $("reg_submit").attr("disabled",true);
+                            }
+                        },
+                        error : function(e){
+                        }
+                    }
+                );
+            });
+        });
+
+        	//-->
+        </script>
 </body>
 </html>
 
