@@ -35,7 +35,7 @@ public class UserLoginPro implements CommandHandler{
 		if(result == 1) { //메인페이지로 이동
 			request.setAttribute("kakao_id", kakao_id);
 			request.setAttribute("kakao_access_token", kakao_access_token);
-			return new ModelAndView("user/pages/user_main");
+			return new ModelAndView("user/pages/user_loginPro");
 		}else { //회원가입 페이지로 이동 
 			request.setAttribute("user_email", user_email);
 			request.setAttribute("profile_picture", profile_picture);

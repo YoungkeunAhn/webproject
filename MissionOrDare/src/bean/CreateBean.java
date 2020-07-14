@@ -28,6 +28,8 @@ import user.missionauth.MissionAuthDBBean;
 import user.missionauth.MissionAuthDao;
 import user.missionget.MissionGetDBBean;
 import user.missionget.MissionGetDao;
+import user.userpage.UserUserPageDBBean;
+import user.userpage.UserUserPageDao;
 
 @Configuration
 public class CreateBean {
@@ -84,6 +86,11 @@ public class CreateBean {
 	public UserMemberDao userMemberDao() {
 		UserMemberDBBean userMemberDao = new UserMemberDBBean();
 		return userMemberDao;
+	}
+	@Bean
+	public UserUserPageDao userUserPageDao() {
+		UserUserPageDBBean UserUserPageDao = new UserUserPageDBBean();
+		return UserUserPageDao;
 	}
 	@Bean
 	public ViewResolver viewResolver() {

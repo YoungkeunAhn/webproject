@@ -29,6 +29,7 @@ public class UserJoinPro implements CommandHandler{
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
 		
+		
 		//회원가입 한 내용 insert 
 		
 		//kakao
@@ -56,6 +57,7 @@ public class UserJoinPro implements CommandHandler{
 		String[] category = categorys.split("/");
 		String location = request.getParameter("user_location");
 		
+		request.getSession().setAttribute("user_nickname", user_nickname);
 		
 		UsersDto usersDto = new UsersDto();
 		usersDto.setUser_nickname(user_nickname);

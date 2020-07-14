@@ -10,6 +10,9 @@
 	<select id="loginCheck" parameterType="int" resultType="int">
 		select count(*) from mod_users where kakao_id=#{kakao_id} and withdrawal_date is null
 	</select>
+	<select id="findNickname" parameterType="int" resultType="String">
+		select user_nickname from mod_users where kakao_id=#{kakao_id}
+	</select>
 	<insert id="insertUser" parameterType="Dtos.UsersDto">
 		insert into mod_users(user_nickname, user_email, user_passwd, gender, age_group, date_of_birth, kakao_birthday,
 		location, interesting1_large_category, interesting2_large_category, interesting3_large_category, interesting4_large_category,
