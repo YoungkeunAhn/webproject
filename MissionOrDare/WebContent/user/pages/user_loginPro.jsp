@@ -6,7 +6,10 @@
 </head>
 <body>
     <h2>유저 로그인 처리 페이지입니다.</h2>
-<button onclick="location.href='user_main.do'">메인페이지로 이동</button>
-<button onclick="location.href='user_join.do'">회원가입 페이지로 이동</button>
+<script type="text/javascript">
+//<!--
+location.href ="user_join.do" ;
+//-->
+</script>
 </body>
 </html>

@@ -22,6 +22,8 @@ import manager.member.MemberManagerDBbean;
 import manager.member.MemberManagerDao;
 import manager.supermanager.SupermanagerDBBean;
 import manager.supermanager.SupermanagerDao;
+import user.member.UserMemberDBBean;
+import user.member.UserMemberDao;
 import user.missionauth.MissionAuthDBBean;
 import user.missionauth.MissionAuthDao;
 
@@ -70,7 +72,11 @@ public class CreateBean {
 		ManageUserDBBean manageUserDao = new ManageUserDBBean();
 		return manageUserDao;
 	}
-	
+	@Bean
+	public UserMemberDao userMemberDao() {
+		UserMemberDBBean userMemberDao = new UserMemberDBBean();
+		return userMemberDao;
+	}
 	@Bean
 	public ViewResolver viewResolver() {
 		UrlBasedViewResolver viewResolver = new UrlBasedViewResolver();

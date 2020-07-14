@@ -7,4 +7,7 @@
 	<select id="nicknameCheck" parameterType="String" resultType="int">
 		select count(*) from mod_users where user_nickname=#{user_nickname}
 	</select>
+	<select id="loginCheck" parameterType="String" resultType="int">
+		select count(*) from mod_users where kakao_id=#{kakao_id} and withdrawal_date is null
+	</select>
 </mapper>
