@@ -44,10 +44,12 @@ public class UserMyMissionView implements CommandHandler{
 				missionCategoryAndInfoDto = missionGetDao.getChallengeMyMission(userDto);
 			}
 		}
-		
-		int random_number = (int) ( Math.random() * missionCategoryAndInfoDto.size());
-		
-		request.setAttribute("randomMission", missionCategoryAndInfoDto.get(random_number));
+		int random_number = 0;
+		if(missionCategoryAndInfoDto.size() != 0) {
+			random_number = (int) ( Math.random() * missionCategoryAndInfoDto.size());
+			request.setAttribute("randomMission", missionCategoryAndInfoDto.get(random_number));
+		}
+		request.setAttribute("random_number", random_number);
 		request.setAttribute("mission_level", mission_level);
 		request.setAttribute("mission_categoryArea", mission_categoryArea);
 		
