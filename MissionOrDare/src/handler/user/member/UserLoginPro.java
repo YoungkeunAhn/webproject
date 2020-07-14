@@ -23,7 +23,8 @@ public class UserLoginPro implements CommandHandler{
 		
 		String user_email = request.getParameter("user_email");
 		String profile_picture = request.getParameter("profile_picture");
-		String kakao_id = request.getParameter("kakao_id");
+		int kakao_id = Integer.parseInt(request.getParameter("kakao_id"));
+		System.out.println("kakao_id:loginpro:"+kakao_id);
 		String age_group = request.getParameter("age_group");
 		String kakao_birthday = request.getParameter("kakao_birthday");
 		String gender = request.getParameter("gender");

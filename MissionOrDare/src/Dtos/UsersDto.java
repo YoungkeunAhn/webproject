@@ -1,6 +1,5 @@
 package Dtos;
 
-import java.sql.Timestamp;
 
 public class UsersDto {
 
@@ -9,7 +8,7 @@ public class UsersDto {
 	private String user_passwd;
 	private String gender;
 	private String age_group;
-	private Timestamp date_of_birth;
+	private String date_of_birth;
 	private String kakao_birthday;
 	private String location;
 	private String interesting1_large_category;
@@ -17,7 +16,8 @@ public class UsersDto {
 	private String interesting3_large_category;
 	private String interesting4_large_category;
 	private String job;
-	private String token;
+	private int kakao_id;
+	private String kakao_access_token;
 	private String sign_up_date;
 	private String withdrawal_date;
 	private int score;
@@ -52,10 +52,10 @@ public class UsersDto {
 	public void setAge_group(String age_group) {
 		this.age_group = age_group;
 	}
-	public Timestamp getDate_of_birth() {
+	public String getDate_of_birth() {
 		return date_of_birth;
 	}
-	public void setDate_of_birth(Timestamp date_of_birth) {
+	public void setDate_of_birth(String date_of_birth) {
 		this.date_of_birth = date_of_birth;
 	}
 	public String getKakao_birthday() {
@@ -100,11 +100,17 @@ public class UsersDto {
 	public void setJob(String job) {
 		this.job = job;
 	}
-	public String getToken() {
-		return token;
+	public int getKakao_id() {
+		return kakao_id;
 	}
-	public void setToken(String token) {
-		this.token = token;
+	public void setKakao_id(int kakao_id) {
+		this.kakao_id = kakao_id;
+	}
+	public String getKakao_access_token() {
+		return kakao_access_token;
+	}
+	public void setKakao_access_token(String kakao_access_token) {
+		this.kakao_access_token = kakao_access_token;
 	}
 	public String getSign_up_date() {
 		return sign_up_date;

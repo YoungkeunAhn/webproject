@@ -24,7 +24,7 @@ public class NicknameCheck implements CommandHandler{
 		String user_nickname = request.getParameter("user_nickname");
 		
 		int result =userMemberDao.nicknameCheck(user_nickname);
-		System.out.println("핸들러 user_nickname:"+user_nickname);
+		
 		request.setAttribute("user_nickname",user_nickname);
 		request.setAttribute("result",result);
 		

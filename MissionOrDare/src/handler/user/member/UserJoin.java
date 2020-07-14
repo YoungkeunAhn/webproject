@@ -14,6 +14,9 @@ public class UserJoin implements CommandHandler {
 	@RequestMapping("/user_join")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		
+		
 		return new ModelAndView("user/pages/user_join");
 	}
 }
