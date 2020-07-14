@@ -19,6 +19,14 @@
     <div class="container">
         <span class="join-title">회원가입</span>
         <form class="join-form" name="userJoinForm" action="user_joinPro.do">
+        <input type="hidden" value="${user_email}">
+        <input type="hidden" value="${profile_picture}">
+        <input type="hidden" value="${kakao_id}">
+        <input type="hidden" value="${age_group}">
+        <input type="hidden" value="${kakao_birthday}">
+        <input type="hidden" value="${gender}">
+        <input type="hidden" value="${kakao_access_token}">
+        
             <ul class="join-list">
                 <li>
                     <label class="th">* 닉네임</label>
