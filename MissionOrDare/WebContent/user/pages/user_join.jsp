@@ -20,13 +20,13 @@
     <div class="container">
         <span class="join-title">회원가입</span>
         <form method="post" class="join-form" name="userJoinForm" action="user_joinPro.do" onsubmit="return SignUpCheck()">
-        <input type="hidden" value="${user_email}">
-        <input type="hidden" value="${profile_picture}">
-        <input type="hidden" value="${kakao_id}">
-        <input type="hidden" value="${age_group}">
-        <input type="hidden" value="${kakao_birthday}">
-        <input type="hidden" value="${gender}">
-        <input type="hidden" value="${kakao_access_token}">
+        <input type="hidden" name="user_email" value="${user_email}">
+        <input type="hidden" name="profile_picture" value="${profile_picture}">
+        <input type="hidden" name="kakao_id" value="${kakao_id}">
+        <input type="hidden" name="age_group" value="${age_group}">
+        <input type="hidden" name="kakao_birthday" value="${kakao_birthday}">
+        <input type="hidden" name="gender" value="${gender}">
+        <input type="hidden" name="kakao_access_token" value="${kakao_access_token}">
         
             <ul class="join-list">
                 <li>
@@ -53,10 +53,10 @@
                     <label class="th">직업</label>
                     <label>
                         <select class="form-control" name="user_job">
-                            <option value="1">학생</option>
-                            <option value="2">직장인</option>
-                            <option value="3">자영업</option>
-                            <option value="4">무직</option>
+                            <option value="학생">학생</option>
+                            <option value="직장인">직장인</option>
+                            <option value="자영업">자영업</option>
+                            <option value="무직">무직</option>
                         </select>
                     </label>
                 </li>
@@ -64,15 +64,15 @@
                     <label class="th">거주지</label>
                     <label>
                         <select class="form-control" name="user_location">
-                            <option value="1">서울</option>
-                            <option value="2">경기</option>
-                            <option value="3">인천</option>
-                            <option value="4">대전</option>
-                            <option value="5">강원</option>
-                            <option value="6">충청</option>
-                            <option value="7">경상</option>
-                            <option value="8">전라</option>
-                            <option value="9">제주</option>
+                            <option value="서울">서울</option>
+                            <option value="경기">경기</option>
+                            <option value="인천">인천</option>
+                            <option value="대전">대전</option>
+                            <option value="강원">강원</option>
+                            <option value="충청">충청</option>
+                            <option value="경상">경상</option>
+                            <option value="전라">전라</option>
+                            <option value="제주">제주</option>
                         </select>
                     </label>
                 </li>
@@ -91,7 +91,7 @@
                             <h4 class="modal-title" id="myModalLabel">관심사 카테고리 선택해주세요</h4>
                         </div>
                         <div class="modal-body">
-                            <input id="interesting_categorys" class="form-control" type="hidden">
+                            <input id="interesting_categorys" class="form-control" type="hidden" name="interesting_categorys">
                             <input class="lagerCategory" type="button" value="운동">
                             <input class="lagerCategory" type="button" value="미술">
                             <input class="lagerCategory" type="button" value="요리">
@@ -107,7 +107,7 @@
         </form>
     </div>
     <script>
-        var items = '/';
+        var items = '';
         var interesting_categorys = document.getElementById('interesting_categorys');
         $(document).ready(function () {
            $('.modal-body > input').click(function () {
