@@ -20,7 +20,7 @@
 </head>
 <body>
 <div class="container">
-	    <header class="mainHeader">
+	    <header>
 	        <img id="menu" class="menu-img" src="${project}images/menu.png" alt="logo">
 	         <div id="menu_list" class="menu_list">
 	          	<span onclick="GoMainPage()">Logout</span>

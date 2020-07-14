@@ -34,14 +34,16 @@ header{
 header .menu-img{
    width: 10px;
     height: 10px;
-    margin-left: 4%;
+    margin-left: 0%;
 
 }
 
 header .header-img{
-    width: 40px;
-    height: 40px;
-    margin: 7.3% 0 5.84% 33.85%;
+    width: 55px;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 article{
@@ -210,11 +212,11 @@ nav ul img {
     text-align: center;
     border: solid 0px #0c0c0c;
     z-index: 4;
-    position: relative;
-    top: 0rem;
-    left: -1rem;
-    width: 10px;
-    height: 10px;
+    position: absolute;
+    top: 7rem;
+    left: 25px;
+    width: 15px;
+    height: 13px;
 }
 		
 #menu_list {
@@ -777,24 +779,6 @@ list ::-webkit-scrollbar {
         user_my 데헷~
 
 ***********************************************/
-.usermyHeader{
-   position: relative;
-   top: -5rem;
-   margin: 8px 10px 12px 30px;
-}
-.usermyHeader .menu-img{
-    width: 6%;
-    margin-left: 4%;
-    top:4.2rem;
-    height:auto;
-}
-.usermyHeader #menu_list{
-    position: absolute;
-    top: 58%;
-    left: 0%;
-    width: 24%;
-    height: 80%;
-}
 .usermyArticle{
    position: relative;
    top: -6rem;
