@@ -9,6 +9,7 @@ public class MissionStateDto {
 	private String upload_image;
 	private String upload_video;
 	private int upload_public_availability;
+	private String mission_upload_contents;
 	private int mission_state;
 	private String mission_giveup_reason;
 	private int mission_evaluation_count;
@@ -55,6 +56,12 @@ public class MissionStateDto {
 	public void setUpload_public_availability(int upload_public_availability) {
 		this.upload_public_availability = upload_public_availability;
 	}
+	public String getMission_upload_contents() {
+		return mission_upload_contents;
+	}
+	public void setMission_upload_contents(String mission_upload_contents) {
+		this.mission_upload_contents = mission_upload_contents;
+	}
 	public int getMission_state() {
 		return mission_state;
 	}
@@ -79,6 +86,5 @@ public class MissionStateDto {
 	public void setSuccessed_count(int successed_count) {
 		this.successed_count = successed_count;
 	}
-	
 	
 }

@@ -89,7 +89,7 @@ function AllCategoryBtnClick() {
 //미션받기 수락
 function MyMissionGet() {
     var mission_info_id = document.getElementById('mission_info_id').value;
-    location.href='user_myMissionAuthPro.do?mission_info_id=' + mission_info_id;
+    location.href='user_myMissionPro.do?mission_info_id=' + mission_info_id;
 }
 
 //검색창 포커스시 실시간 검색기능창

@@ -20,176 +20,163 @@
 </head>
 <body>
 <div class="container">
-    <header class="mainHeader">
-        <img id="menu" class="menu-img" src="${project}images/menu.png" alt="logo">
-         <div id="menu_list" class="menu_list">
-          	<span onclick="GoMainPage()">Logout</span>
-          	<br><br>
-          	<span>Withdrawal</span>
-      </div>
-        <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
-    </header>
-    <!-- 본문 -->
-    <article>
-        <!-- 받은 미션이 없을 때-->
-        <ol class="date-none" style="display: none">
-            <li>미션이 없습니다!</li>
-            <li>미션을 받아보세요!</li>
-        </ol>
-
-        <div class="swiper-container">
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <ol class="data-exist">
-                        <form name="myMissionAuthForm" action="user_myMissionAuth.do">
-                            <input type="hidden" value="2020.07.06 13:43 시작">
-                            <input type="hidden" value="운동/헬스">
-                            <input type="hidden" value="라이언이 부탁한 자화상">
-                            <input type="hidden" value="라이언 이모티콘를 따라 그려봅시다">
-                            <input type="hidden" value="진행중">
-                            <li class="text-date">2020.07.06 13:43 시작</li>
-                            <li class="text-category">운동/헬스</li>
-                            <li class="text-mission">라이언이 부탁한 자화상</li>
-                            <li>
-                                <img src="${project}images/pid_test1.gif" alt="kk">
-                            </li>
-                            <li class="text-summary">라이언 이모티콘를 따라 그려봅시다</li>
-                            <li class="text-status">진행중</li>
-                            <li><button class="btn-missionAuth">인증하기</button></li>
-                        </form>
-                    </ol>
-                </div>
-                <div class="swiper-slide">
-                    <ol class="data-exist">
-                        <form name="myMissionAuthForm" action="user_myMissionAuth.do">
-                            <input type="hidden" value="2020.07.06 13:43 시작">
-                            <input type="hidden" value="운동/헬스">
-                            <input type="hidden" value="라이언이 부탁한 자화상">
-                            <input type="hidden" value="라이언 이모티콘를 따라 그려봅시다">
-                            <input type="hidden" value="진행중">
-                            <li class="text-date">2020.07.06 13:43 시작</li>
-                            <li class="text-category">운동/헬스</li>
-                            <li class="text-mission">라이언이 부탁한 자화상</li>
-                            <li>
-                                <img src="${project}images/pid_test2.png" alt="kk">
-                            </li>
-                            <li class="text-summary">라이언 이모티콘를 따라 그려봅시다</li>
-                            <li class="text-status">진행중</li>
-                            <li><button class="btn-missionAuth">인증하기</button></li>
-                        </form>
-                    </ol>
-                </div>
-                <div class="swiper-slide">
-                    <ol class="data-exist">
-                        <form name="myMissionAuthForm" action="user_myMissionAuth.do">
-                            <input type="hidden" value="2020.07.06 13:43 시작">
-                            <input type="hidden" value="운동/헬스">
-                            <input type="hidden" value="라이언이 부탁한 자화상">
-                            <input type="hidden" value="라이언 이모티콘를 따라 그려봅시다">
-                            <input type="hidden" value="진행중">
-                            <li class="text-date">2020.07.06 13:43 시작</li>
-                            <li class="text-category">운동/헬스</li>
-                            <li class="text-mission">라이언이 부탁한 자화상</li>
-                            <li>
-                                <img src="${project}images/pid_test3.jpg">
-                            </li>
-                            <li class="text-summary">라이언 이모티콘를 따라 그려봅시다</li>
-                            <li class="text-status">진행중</li>
-                            <li><button class="btn-missionAuth">인증하기</button></li>
-                        </form>
-                    </ol>
-                </div>
-            </div>
-            <div class="swiper-button-next"></div>
-        </div>
-        <!-- 미션받기 버튼 -->
-        <div id="flip" class="slider"><img src="${project}images/plus.png" alt="slide"></div>
-        <section id="panel" class="mission-select">
-            <input id="mission_level" type="hidden" value="normal">
-            <input id="mission_categoryArea" type="hidden" value="my">
-            <div class="col">
-                <button class="btn-normal" type="button" onclick="NormalBtnClick()">일반 미션</button>
-                <button class="btn-challenge" type="button"  onclick="ChallengeBtnClick()">챌린지 미션</button>
-            </div>
-            <div id="modal-bg" class="modal-bg" onclick="CloseModal()">
-                <div class="modal-body">
-                    <button class="myCategory" type="button" onclick="InterestBtnClick()">관심분야</button>
-                    <button class="allCategory" type="button" onclick="AllCategoryBtnClick()">전체분야</button>
-                </div>
-            </div>
-        </section>
-    </article>
-    <!--메뉴바-->
-    <nav>
-        <ul>
-            <li onclick="GoMainPage()">
-                <img class="nav-home" src="${project}images/mod_logo.png" alt="logo">
-                <span>홈</span>
-            </li>
-            <li onclick="GoEvalPage()">
-                <img src="${project}images/task.png" alt="eval-icon">
-                <span>평가</span>
-            </li>
-            <li onclick="GoPidPage()">
-                <img src="${project}images/pid.png" alt="pid-icon">
-                <span>피드</span>
-            </li>
-            <li onclick="GoMyPage()">
-                <img src="${project}images/my.png" alt="my-icon">
-                <span>마이</span>
-            </li>
-        </ul>
-    </nav>
-    </div>
-     <script type="text/javascript">
-		//<!--
-      	$(document).ready(function(){
-		  $("#menu").click(function(){
-		    $("#menu_list").slideToggle("slow");
-		  });
-		});
-   		//-->
-	</script>
-	<script>
-    var cnt = 1;
-    $(document).ready(function () {
-        $('#flip').click(function () {
-            if(cnt%2 === 1){
-                $('#flip').css({
-                    position: 'relative',
-                    top: '-80px',
-                    duration: '5s',
-                });
-                $('#flip > img').attr('src','${project}images/minus.png');
-                $('#panel').css({
-                    position: 'relative',
-                    top: '-80px',
-                });
-                $('#panel').fadeIn('5000');
-            }else {
-                $('#flip').css({
-                    position: 'relative',
-                    top: '0',
-                    duration: '5s',
-                });
-                $('#flip > img').attr('src','${project}images/plus.png');
-                $('#panel').css({
-                    position: 'relative',
-                    top: '80px',
-                });
-                $('#panel').fadeOut('1000');
-            }
-            cnt++
-        });
-    });
-
-    var swiper = new Swiper('.swiper-container', {
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
+	    <header class="mainHeader">
+	        <img id="menu" class="menu-img" src="${project}images/menu.png" alt="logo">
+	         <div id="menu_list" class="menu_list">
+	          	<span onclick="GoMainPage()">Logout</span>
+	          	<br><br>
+	          	<span>Withdrawal</span>
+	      </div>
+	        <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
+	    </header>
+	    <!-- 본문 -->
+	    <article>
+	     <!-- 받은 미션이 없을 때-->
+	     <c:if test="${result eq 0}">
+			<ol class="date-none">
+			    <li>미션이 없습니다!</li>
+			    <li>미션을 받아보세요!</li>
+			</ol>
+			</c:if>
+	        <div class="swiper-container">
+	            <div class="swiper-button-prev"></div>
+	            <div class="swiper-wrapper">
+	            	
+            		<c:if test="${result ne 0}">
+		            	<c:forEach var="userMissionsDto" items="${userMissionsDtos}">
+		            		<c:if test="${userMissionsDto.mission_state eq 1}">
+				                <div class="swiper-slide">
+				                    <ol class="data-exist">
+				                        <form name="myMissionAuthForm" action="user_myMissionAuth.do">
+				                            <input type="hidden" value="${userMissionsDto.mission_start_date}">
+				                            <input type="hidden" value="${userMissionsDto.large_category}/${userMissionDto.small_category}">
+				                            <input type="hidden" value="${userMissionsDto.mission_title}">
+				                            <input type="hidden" value="${userMissionsDto.mission_contents}">
+				                            <input type="hidden" value="${userMissionsDto.mission_state}">
+				                            <li class="text-date">${userMissionsDto.mission_start_date} 시작</li>
+				                            <li class="text-category">${userMissionsDto.large_category}/${userMissionDto.small_category}</li>
+				                            <li class="text-mission">${userMissionsDto.mission_title}</li>
+				                            <li>
+				                                <img src="/category/${userMissionsDto.category_image}" alt="kk">
+				                            </li>
+				                            <li class="text-summary">${userMissionsDto.mission_contents}</li>
+				                            <li class="text-status">진행중</li>
+				                            <li><button class="btn-missionAuth">인증하기</button></li>
+				                        </form>
+				                    </ol>
+				                </div>
+			                </c:if>
+			                <c:if test="${userMissionsDto.mission_state eq 4}">
+			                	<div class="swiper-slide">
+				                    <ol class="data-exist">
+			                            <input type="hidden" value="${userMissionsDto.mission_start_date}">
+			                            <input type="hidden" value="${userMissionsDto.large_category}/${userMissionDto.small_category}">
+			                            <input type="hidden" value="${userMissionsDto.mission_title}">
+			                            <input type="hidden" value="${userMissionsDto.mission_contents}">
+			                            <input type="hidden" value="${userMissionsDto.mission_state}">
+			                            <li class="text-date">${userMissionsDto.mission_start_date} 시작</li>
+			                            <li class="text-category">${userMissionsDto.large_category}/${userMissionDto.small_category}</li>
+			                            <li class="text-mission">${userMissionsDto.mission_title}</li>
+			                            <li>
+			                                <img src="/upload/${upload_image}" alt="kk">
+			                            </li>
+			                            <li class="text-summary">${userMissionsDto.mission_contents}</li>
+			                            <li class="text-status">인증중</li>
+				                    </ol>
+				                </div>
+			                </c:if>
+		                </c:forEach>
+	                </c:if>
+	            </div>
+	            <div class="swiper-button-next"></div>
+	        </div>
+	        <!-- 미션받기 버튼 -->
+	        <div id="flip" class="slider"><img src="${project}images/plus.png" alt="slide"></div>
+	        <section id="panel" class="mission-select">
+	            <input id="mission_level" type="hidden" value="normal">
+	            <input id="mission_categoryArea" type="hidden" value="my">
+	            <div class="col">
+	                <button class="btn-normal" type="button" onclick="NormalBtnClick()">일반 미션</button>
+	                <button class="btn-challenge" type="button"  onclick="ChallengeBtnClick()">챌린지 미션</button>
+	            </div>
+	            <div id="modal-bg" class="modal-bg" onclick="CloseModal()">
+	                <div class="modal-body">
+	                    <button class="myCategory" type="button" onclick="InterestBtnClick()">관심분야</button>
+	                    <button class="allCategory" type="button" onclick="AllCategoryBtnClick()">전체분야</button>
+	                </div>
+	            </div>
+	        </section>
+	    </article>
+	    <!--메뉴바-->
+	    <nav>
+	        <ul>
+	            <li onclick="GoMainPage()">
+	                <img class="nav-home" src="${project}images/mod_logo.png" alt="logo">
+	                <span>홈</span>
+	            </li>
+	            <li onclick="GoEvalPage()">
+	                <img src="${project}images/task.png" alt="eval-icon">
+	                <span>평가</span>
+	            </li>
+	            <li onclick="GoPidPage()">
+	                <img src="${project}images/pid.png" alt="pid-icon">
+	                <span>피드</span>
+	            </li>
+	            <li onclick="GoMyPage()">
+	                <img src="${project}images/my.png" alt="my-icon">
+	                <span>마이</span>
+	            </li>
+	        </ul>
+	    </nav>
+	    </div>
+	     <script type="text/javascript">
+			//<!--
+	      	$(document).ready(function(){
+			  $("#menu").click(function(){
+			    $("#menu_list").slideToggle("slow");
+			  });
+			});
+	   		//-->
+		</script>
+		<script>
+	    var cnt = 1;
+	    $(document).ready(function () {
+	        $('#flip').click(function () {
+	            if(cnt%2 === 1){
+	                $('#flip').css({
+	                    position: 'relative',
+	                    top: '-80px',
+	                    duration: '5s',
+	                });
+	                $('#flip > img').attr('src','${project}images/minus.png');
+	                $('#panel').css({
+	                    position: 'relative',
+	                    top: '-80px',
+	                });
+	                $('#panel').fadeIn('5000');
+	            }else {
+	                $('#flip').css({
+	                    position: 'relative',
+	                    top: '0',
+	                    duration: '5s',
+	                });
+	                $('#flip > img').attr('src','${project}images/plus.png');
+	                $('#panel').css({
+	                    position: 'relative',
+	                    top: '80px',
+	                });
+	                $('#panel').fadeOut('1000');
+	            }
+	            cnt++
+	        });
+	    });
+	
+	    var swiper = new Swiper('.swiper-container', {
+	        navigation: {
+	            nextEl: '.swiper-button-next',
+	            prevEl: '.swiper-button-prev',
+	        },
+	    });
 </script>
 </body>
 </html>
