@@ -14,6 +14,7 @@ public class MissionCategoryAndInfoDto {
 	private String large_category;
 	private String small_category;
 	private String category_image;
+	private int num;
 	public String getMission_info_id() {
 		return mission_info_id;
 	}
@@ -92,6 +93,11 @@ public class MissionCategoryAndInfoDto {
 	public void setCategory_image(String category_image) {
 		this.category_image = category_image;
 	}
-	
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
 	
 }

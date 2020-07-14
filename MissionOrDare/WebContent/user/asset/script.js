@@ -6,8 +6,8 @@ function CloseModal() {
     document.getElementById('modal-bg').style.display='none';
 }
 //일반버튼 클릭시 모달 띄우기
-function NomalBtnClick() {
-    document.getElementById('mission_level').value='nomal';
+function NormalBtnClick() {
+    document.getElementById('mission_level').value='normal';
     document.getElementById('modal-bg').style.display='flex';
 
 }
@@ -18,11 +18,10 @@ function ChallengeBtnClick() {
 }
 //관심분야버튼 클릭시 input 값 변경
 function InterestBtnClick() {
-    document.getElementById('mission_challenge').style.display='flex';
     var mission_level = document.getElementById('mission_level').value;
     var mission_categoryArea = document.getElementById('mission_categoryArea');
     mission_categoryArea.value='my';
-
+    
     location.href = 'user_missionGetPro.do?mission_level='+mission_level+'&mission_categoryArea='+mission_categoryArea.value;
 }
 
@@ -38,8 +37,8 @@ function AllCategoryBtnClick() {
 
 //미션받기 수락
 function MyMissionGet() {
-    var mission_id = document.getElementById('mission_id').value;
-    location.href='user_myMissionPro.do?mission_id=' + mission_id;
+    var mission_info_id = document.getElementById('mission_info_id').value;
+    location.href='user_myMissionAuthPro.do?mission_info_id=' + mission_info_id;
 }
 
 //검색창 포커스시 실시간 검색기능창

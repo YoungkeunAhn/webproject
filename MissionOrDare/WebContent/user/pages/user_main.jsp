@@ -106,10 +106,10 @@
         <!-- 미션받기 버튼 -->
         <div id="flip" class="slider"><img src="${project}images/plus.png" alt="slide"></div>
         <section id="panel" class="mission-select">
-            <input id="mission_level" type="hidden" value="nomal">
+            <input id="mission_level" type="hidden" value="normal">
             <input id="mission_categoryArea" type="hidden" value="my">
             <div class="col">
-                <button class="btn-nomal" type="button" onclick="NomalBtnClick()">일반 미션</button>
+                <button class="btn-normal" type="button" onclick="NormalBtnClick()">일반 미션</button>
                 <button class="btn-challenge" type="button"  onclick="ChallengeBtnClick()">챌린지 미션</button>
             </div>
             <div id="modal-bg" class="modal-bg" onclick="CloseModal()">

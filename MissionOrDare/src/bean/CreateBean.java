@@ -26,9 +26,17 @@ import user.member.UserMemberDBBean;
 import user.member.UserMemberDao;
 import user.missionauth.MissionAuthDBBean;
 import user.missionauth.MissionAuthDao;
+import user.missionget.MissionGetDBBean;
+import user.missionget.MissionGetDao;
 
 @Configuration
 public class CreateBean {
+	
+	@Bean
+	public MissionGetDao missionGetDao() {
+		MissionGetDBBean missionGetDao = new MissionGetDBBean();
+		return missionGetDao;
+	}
 	@Bean
 	public MissionAuthDao missionAuthDao() {
 		MissionAuthDBBean missionAuthDao = new MissionAuthDBBean();

@@ -51,7 +51,7 @@
 <body>
 <div class="container">
     <article class="myMission-auth">
-    	<form method="post" class="myMission-authForm" name="myMissionAuth" action="user_myMissionPro.do" enctype="multipart/form-data" accept-charset="UTF-8">
+    	<form method="post" class="myMission-authForm" name="myMissionAuth" action="user_myMissionAuthPro.do" enctype="multipart/form-data" accept-charset="UTF-8">
 	        <section class="auth_main">
 	                <ol>
 	                    <li><input type="text" value="운동 / 달리기"></li>

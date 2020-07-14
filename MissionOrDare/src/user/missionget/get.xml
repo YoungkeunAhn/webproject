@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  	
+<mapper namespace="get">
+	<!-- 미션 가져오기 -->
+	<select id="getChallengeAllMission" resultType="Dtos.MissionCategoryAndInfoDto">
+		select a.*, rownum num 
+		from (select m.*, c.large_category, c.small_category , c.category_image
+		from MOD_MissionCategory c, MOD_MissionInfo m where c.mission_category_id=m.mission_category_id
+		and m.mission_level=4) a 
+		order by mission_info_id
+	</select>
+	<select id="getNormalAllMission" resultType="Dtos.MissionCategoryAndInfoDto">
+		select a.*, rownum num 
+		from (select m.*, c.large_category, c.small_category , c.category_image
+		from MOD_MissionCategory c, MOD_MissionInfo m where c.mission_category_id=m.mission_category_id
+		and m.mission_level != 4) a 
+		order by mission_info_id
+	</select>
+	<select id="getNormalMyMission" resultType="Dtos.MissionCategoryAndInfoDto">
+		select a.*, rownum num 
+		from (select m.*, c.large_category, c.small_category , c.category_image
+		from MOD_MissionCategory c, MOD_MissionInfo m where c.mission_category_id=m.mission_category_id
+		and m.mission_level != 4 
+		and c.large_category in(#{interesting1_large_category},#{interesting2_large_category, jdbcType=VARCHAR},
+		#{interesting3_large_category, jdbcType=VARCHAR},#{interesting4_large_category, jdbcType=VARCHAR})) a 
+		order by mission_info_id
+	</select>
+	<select id="getChallengeMyMission" resultType="Dtos.MissionCategoryAndInfoDto">
+		select a.*, rownum num 
+		from (select m.*, c.large_category, c.small_category , c.category_image
+		from MOD_MissionCategory c, MOD_MissionInfo m where c.mission_category_id=m.mission_category_id
+		and m.mission_level = 4 
+		and c.large_category in(#{interesting1_large_category},#{interesting2_large_category, jdbcType=VARCHAR},
+		#{interesting3_large_category, jdbcType=VARCHAR},#{interesting4_large_category, jdbcType=VARCHAR})) a
+		order by mission_info_id
+	</select>
+	
+	<!-- 선호 카테고리 가져오기 -->
+	<select id="getUserCategory" parameterType="String" resultType="Dtos.UsersDto">
+		select interesting1_large_category, interesting2_large_category, 
+		interesting3_large_category, interesting4_large_category
+		from mod_users where user_nickname=#{id}
+	</select>
+</mapper>

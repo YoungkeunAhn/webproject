@@ -1,4 +1,4 @@
-package handler.user.missionauth;
+package handler.user.missionget;
 
 import java.io.File;
 import java.util.List;
