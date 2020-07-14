@@ -265,11 +265,11 @@ footer span {
 }
 .category-insert ul li img{
 	width: 30%;
-	height: 30%;
+	height: 46%;
 }
 .category-insert ul li button{
 	margin: 25px auto 0 auto;
-	width: 	20%;
+	width: 	26%;
 	font-size: 1.7rem;
 	text-align: center;
 } 
@@ -390,17 +390,27 @@ footer span {
     manamge_content_info
 
 ****************************************/
+.content-infodiv{
+	display:flex;
+	flex-wrap:wrap;
+	width:100%;
+	height:100%;
+	margin:0 auto;
+	background: #ddd;
+	justify-content: center;
+	
+}
 .white-box{
-    background-color: white;
+    background-color: #c5e8ea;
     padding: 46px 33px 43px 305px;
-    width: 258%;
-    height: 714.4px;
+    width: 100%;
+    height: 100%;
     overflow: auto;
 }
 
 .content-part{
-    width: 40%;
-    height: 10%;
+    width: 100%;
+    height: 100%;
     padding: 0px;
     font-size: 20px;
     float: left;
@@ -529,12 +539,12 @@ footer span {
 .message_sendPage{
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
-	width: 100%;
+	/* justify-content: center; */
+	width: 77%;
 }
 
 .message_sendPage .search_user{
-	width: 30%;
+	width: 100%;
 	height: 100%;
 	margin-right: 5%;
 	border: 1px solid #888;
@@ -550,7 +560,7 @@ footer span {
 	height: 100%;
 }
 .message_sendPage .message_table{
-	width: 50%;
+	width: 100%;
 }
 .message_sendPage .message_table ul{
 	list-style: none;
@@ -564,4 +574,20 @@ footer span {
 	width: 100%;
 	height: 100%;
 	margin: 10px auto 0 auto;
+}
+.messageForm{
+	width:100%;
+}
+.leftformblah{
+	width:25%;
+	height: 100%;
+}
+.blahblah{
+	width:75%;
+}
+.hahahaho{
+	justify-content: center;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }

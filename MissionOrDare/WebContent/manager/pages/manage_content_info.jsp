@@ -24,10 +24,9 @@
 			<%@include file="manage_nav.jsp"%>
 		</div>
 		<article>
-			<div
-				style="display: block; width: 900px; height: 704px; margin: 0 auto; background: #ddd; position: relative;">
+			<div class="content-infodiv">
 				<section class="content-part">
-					<div class="white-box" style="background: #c5e8ea;">
+					<div class="white-box">
 						<div>
 							<span>(뭐 넣을지 수정해야함)대분류:${joinMissionInfoSuccessBoardDto.large_category} /
 								소분류:${joinMissionInfoSuccessBoardDto.small_category}</span>

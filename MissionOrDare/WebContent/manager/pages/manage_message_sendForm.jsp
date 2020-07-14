@@ -21,52 +21,52 @@
     <div>
         <%@include file="manage_nav.jsp"%>
     </div>
+    <section class="hahahaho">
 	<article class="message_sendPage">
-		<form style="width:100%">
+	<section class="leftformblah">
+		<form class="messageForm">
 			<section class="search_user">
-			
-	              <input class="form-control" type="search" id="searchUser" placeholder="유저닉네임을 입력하세요" autofocus>
+				<input class="form-control" type="search" id="searchUser" placeholder="유저닉네임을 입력하세요" autofocus>
 			      <table id="mytable" class="table">
 			      	<tr>
 			      		<th>유저를 검색하세요!</th>
 			      	</tr>
 			      </table>
-			   
 			</section>
 		</form>
-			<section class="send_user">
-			
+	</section>
+		<div class="blahblah">
+			<section class="send_user">			
 			      <table id="sendtable" class="table">
 			      	<tr>
 			      		<th>유저를 추가하세요!</th>
 			      	</tr>
 			      </table>
-			   
+			</section>	
+			<section class="message_table">
+				<form method="post" action="manage_send_messagePro.do">
+					<ul>
+						<li>
+							<span>보낼 유저</span>
+						</li>
+						<li>
+							<input id="sendUsers"class="form-control" type="text" name="message_users">
+						</li>
+						<li>
+							<span>메세지</span>
+						</li>
+						<li>
+							<textarea name="message_text" class="form-control"></textarea>
+						</li>
+						<li>
+							<button type="submit">보내기</button>
+						</li>
+					</ul>
+				</form>
 			</section>
-			
-		     
-		<section class="message_table">
-			<form method="post" action="manage_send_messagePro.do">
-				<ul>
-					<li>
-						<span>보낼 유저</span>
-					</li>
-					<li>
-						<input id="sendUsers"class="form-control" type="text" name="message_users">
-					</li>
-					<li>
-						<span>메세지</span>
-					</li>
-					<li>
-						<textarea name="message_text" class="form-control"></textarea>
-					</li>
-					<li>
-						<button type="submit">보내기</button>
-					</li>
-				</ul>
-			</form>
-		</section>
+		</div>
 	</article>
+	</section>
 	<div>
         <%@include file="manage_footer.jsp"%>
     </div>
