@@ -120,8 +120,8 @@ function AuthPopupClose() {
 * 페이지 이동 버튼클릭 이벤트
 *
 */
-function GoMainPage() {
-    location.href='user_main.do';
+function GoMainPage(data) {
+    location.href='user_main.do?user_nickname=' + data;
 }
 
 function GoEvalPage() {

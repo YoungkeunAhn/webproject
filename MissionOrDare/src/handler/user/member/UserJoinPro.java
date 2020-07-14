@@ -58,6 +58,7 @@ public class UserJoinPro implements CommandHandler{
 		String location = request.getParameter("user_location");
 		
 		request.getSession().setAttribute("user_nickname", user_nickname);
+		request.getSession().setAttribute("kakao_id", kakao_id);
 		
 		UsersDto usersDto = new UsersDto();
 		usersDto.setUser_nickname(user_nickname);

@@ -110,7 +110,7 @@
 	    <!--메뉴바-->
 	    <nav>
 	        <ul>
-	            <li onclick="GoMainPage()">
+	            <li onclick="GoMainPage(${sessionScope.user_nickname})">
 	                <img class="nav-home" src="${project}images/mod_logo.png" alt="logo">
 	                <span>홈</span>
 	            </li>

@@ -28,12 +28,20 @@ public class UserLoginPro implements CommandHandler{
 		String kakao_birthday = request.getParameter("kakao_birthday");
 		String gender = request.getParameter("gender");
 		String kakao_access_token = request.getParameter("kakao_access_token");
-		
+		request.getSession().setAttribute("kakao_id", kakao_id);
 		int result = userMemberDao.loginCheck(kakao_id);
+		
+		
 		
 		if(result == 1) { //메인페이지로 이동
 			request.setAttribute("kakao_id", kakao_id);
 			request.setAttribute("kakao_access_token", kakao_access_token);
+			String user_nickname = userMemberDao.findNickname(kakao_id);
+			
+			System.out.println("loginpro 카카오 아이디 "+kakao_id);
+			System.out.println("loginpro kakao_id"+kakao_id + "nickname:"+user_nickname);
+			request.getSession().setAttribute("user_nickname", user_nickname);
+			request.getSession().setAttribute("kakao_id", kakao_id);
 			return new ModelAndView("user/pages/user_loginPro");
 		}else { //회원가입 페이지로 이동 
 			request.setAttribute("user_email", user_email);
