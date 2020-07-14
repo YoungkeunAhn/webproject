@@ -8,6 +8,7 @@
     <link type="text/css" rel="stylesheet" href="${project}asset/user.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="${project}asset/script.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js">
         $('#myModal').on('show.bs.modal', function (e) {
             if (!data) return e.preventDefault() // stops modal from being shown
@@ -18,7 +19,7 @@
 <body>
     <div class="container">
         <span class="join-title">회원가입</span>
-        <form class="join-form" name="userJoinForm" action="user_joinPro.do">
+        <form method="post" class="join-form" name="userJoinForm" action="user_joinPro.do" onsubmit="return SignUpCheck()">
         <input type="hidden" value="${user_email}">
         <input type="hidden" value="${profile_picture}">
         <input type="hidden" value="${kakao_id}">

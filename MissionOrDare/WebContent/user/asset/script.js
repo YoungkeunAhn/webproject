@@ -1,3 +1,54 @@
+var nicknameNullError = "닉네임을 입력해주세요";
+var passwdNullError = "비밀번호를 입력해주세요";
+var passwdDifError = "비밀번호가 다릅니다";
+var repasswdNullError = "비밀번호 확인도 입력해주세요";
+var dateNullError = "생년월일을 입력해주세요";
+var nicknameSpecialError = "닉네임을 확인해주세요.\n들어갈수 없는 문자가 있습니다.";
+
+/*
+ * 
+ * 유효성 처리
+ * 
+ */
+
+/*
+ * user_join.jsp
+*/
+function SignUpCheck() {
+	var checkKor = /^[ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;	//숫자는 입력가능하다
+	var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
+	var regExp = /\s/g;	//띄어쓰기
+	if( ! userJoinForm.user_nickname.value ) {
+		 alert( nicknameNullError );
+		 userJoinForm.user_nickname.focus();
+		 return false;
+	 } else if( checkKor.test(userJoinForm.user_nickname.value) ||
+			 	checkSpc.test(userJoinForm.user_nickname.value) ||
+			 	regExp.test(userJoinForm.user_nickname.value)) {
+		 alert(nicknameSpecialError);
+		 userJoinForm.user_nickname.focus();
+		 return false;
+	 }
+	 if( ! userJoinForm.user_passwd.value ) {
+		 alert( passwdNullError );
+		 userJoinForm.user_passwd.focus();
+		 return false;
+	 } else if( userJoinForm.user_passwd.value != userJoinForm.user_repasswd.value ) {
+		 alert( passwdDifError );
+		 userJoinForm.user_repasswd.focus();
+		 return false;
+	 }
+	 if( ! userJoinForm.user_repasswd.value ) {
+		 alert( repasswdNullError );
+		 userJoinForm.user_repasswd.focus();
+		 return false;
+	 }
+	 if( ! userJoinForm.user_birth.value ) {
+		 alert( dateNullError );
+		 userJoinForm.user_birth.focus();
+		 return false;
+	 }
+}
 /*
 *user_main.jsp
 */

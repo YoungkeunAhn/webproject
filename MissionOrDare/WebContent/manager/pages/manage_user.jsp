@@ -42,7 +42,7 @@
                 <tbody>
                 <c:forEach var="usersDto" items="${usersDtos}">
                 <tr>
-                	<td> ${usersDto.user_email}</td>
+                	<td>${usersDto.user_email}</td>
                 	<td>${usersDto.user_nickname}</td>
                 	<td>${usersDto.interesting1_large_category} ${usersDto.interesting2_large_category} ${usersDto.interesting3_large_category} ${usersDto.interesting4_large_category}</td>
                 	<td>${usersDto.sign_up_date}</td>
