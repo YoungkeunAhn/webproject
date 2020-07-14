@@ -57,7 +57,7 @@
 				                            <li class="text-category">${userMissionsDto.large_category}/${userMissionDto.small_category}</li>
 				                            <li class="text-mission">${userMissionsDto.mission_title}</li>
 				                            <li>
-				                                <img src="/category/${userMissionsDto.category_image}" alt="kk">
+				                                <img src="/category/${userMissionsDto.category_image}" alt="kk" onerror="this.src='${project}images/mod_logo.png'">
 				                            </li>
 				                            <li class="text-summary">${userMissionsDto.mission_contents}</li>
 				                            <li class="text-status">진행중</li>
@@ -78,7 +78,7 @@
 			                            <li class="text-category">${userMissionsDto.large_category}/${userMissionDto.small_category}</li>
 			                            <li class="text-mission">${userMissionsDto.mission_title}</li>
 			                            <li>
-			                                <img src="/upload/${upload_image}" alt="kk">
+			                                <img src="/upload/${upload_image}" alt="kk" onerror="this.src='${project}images/mod_logo.png'">
 			                            </li>
 			                            <li class="text-summary">${userMissionsDto.mission_contents}</li>
 			                            <li class="text-status">인증중</li>
