@@ -65,7 +65,7 @@ public class UserJoinPro implements CommandHandler{
 		usersDto.setProfile_picture(profile_picture);
 		usersDto.setKakao_id(kakao_id);
 		usersDto.setAge_group(age_group);
-		//usersDto.setDate_of_birth(date_of_birth);
+		usersDto.setDate_of_birth(date_of_birth);
 		usersDto.setKakao_birthday(kakao_birthday);
 		usersDto.setGender(gender);
 		usersDto.setKakao_access_token(kakao_access_token);
@@ -101,6 +101,7 @@ public class UserJoinPro implements CommandHandler{
 		}
 		
 		
+		request.setAttribute("kakao_id", kakao_id);
 		int result = userMemberDao.insertUser(usersDto);
 		request.setAttribute("result", result);
 		return new ModelAndView("user/pages/user_joinPro");

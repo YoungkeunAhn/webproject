@@ -1,5 +1,7 @@
 package handler.user.member;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,11 +10,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import Dtos.UserMissionsDto;
 import handler.CommandHandler;
 import user.member.UserMemberDao;
+import user.missionget.MissionGetDao;
 
 @Controller
 public class UserMain implements CommandHandler{
+	@Resource
+	MissionGetDao missionGetDao;
 	@Resource
 	private UserMemberDao userMemberDao;
 	@RequestMapping("/user_main")
@@ -26,6 +32,11 @@ public class UserMain implements CommandHandler{
 		System.out.println("kakao_id"+kakao_id + "nickname:"+user_nickname);
 		request.getSession().setAttribute("user_nickname", user_nickname);
 		
+		List<UserMissionsDto> userMissionsDtos = missionGetDao.getUserMissions(user_nickname);
+		int result = userMissionsDtos.size();
+		request.setAttribute("userMissionsDtos", userMissionsDtos);
+		request.setAttribute("result", result);
 		return new ModelAndView("user/pages/user_main");
+		
 	}
 }

@@ -27,7 +27,6 @@ public class UserMyMissionView implements CommandHandler{
 		String mission_level= request.getParameter("mission_level");
 		String mission_categoryArea = request.getParameter("mission_categoryArea");
 		
-		request.getSession().setAttribute("user_nickname", "user1");
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		UsersDto userDto = missionGetDao.getUserCategory(user_nickname);
 		

@@ -14,7 +14,7 @@
 	alert("회원가입이 완료되었습니다.");
 //-->
 </script>
-	<meta http-equiv="refresh" content="0;url=user_main.do">
+	<meta http-equiv="refresh" content="0;url=user_main.do?kakao_id=${kakao_id}">
 </c:if>
 <c:if test="${result eq 0}">
 <script type="text/javascript">

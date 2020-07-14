@@ -24,7 +24,6 @@ public class UserLoginPro implements CommandHandler{
 		String user_email = request.getParameter("user_email");
 		String profile_picture = request.getParameter("profile_picture");
 		int kakao_id = Integer.parseInt(request.getParameter("kakao_id"));
-		System.out.println("kakao_id:loginpro:"+kakao_id);
 		String age_group = request.getParameter("age_group");
 		String kakao_birthday = request.getParameter("kakao_birthday");
 		String gender = request.getParameter("gender");
@@ -40,6 +39,7 @@ public class UserLoginPro implements CommandHandler{
 			request.setAttribute("user_email", user_email);
 			request.setAttribute("profile_picture", profile_picture);
 			request.setAttribute("kakao_id", kakao_id);
+			System.out.println("loginPro : "+kakao_id);
 			request.setAttribute("age_group", age_group);
 			request.setAttribute("kakao_birthday", kakao_birthday);
 			request.setAttribute("gender", gender);
