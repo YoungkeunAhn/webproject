@@ -29,4 +29,7 @@ public class UserUserPageDBBean implements UserUserPageDao{
 	public int sendMessage(NotesDto notesDto) {
 		return session.insert("UserPage.sendMessage",notesDto);
 	}
+	public int userModify(UsersDto usersDto) {
+		return session.update("UserPage.userModify",usersDto);
+	}
 }

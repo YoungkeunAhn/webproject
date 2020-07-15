@@ -27,4 +27,9 @@
 		insert into mod_notes(notes_id, received_nickname, sent_nickname, notes_contents)
 		values('notes'||lpad(seq_notes.nextval,5,0), #{received_nickname}, #{sent_nickname}, #{notes_contents})
 	</insert>
+	
+	<update id="userModify" parameterType="Dtos.UsersDto">
+		update mod_users set user_nickname=#{user_nickname},user_passwd=#{user_passwd, jdbcType=VARCHAR}, job=#{job, jdbcType=VARCHAR}, location=#{location, jdbcType=VARCHAR}, date_of_birth= #{date_of_birth}
+		where kakao_id=#{kakao_id}
+	</update>
 </mapper>
