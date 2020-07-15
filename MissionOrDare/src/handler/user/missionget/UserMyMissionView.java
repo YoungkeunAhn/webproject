@@ -28,6 +28,7 @@ public class UserMyMissionView implements CommandHandler{
 		String mission_categoryArea = request.getParameter("mission_categoryArea");
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		UsersDto userDto = missionGetDao.getUserCategory(user_nickname);
+		System.out.println(mission_level + mission_categoryArea);
 		
 		List<MissionCategoryAndInfoDto> missionCategoryAndInfoDto;
 		if(mission_level.equals("normal")) {
@@ -43,7 +44,7 @@ public class UserMyMissionView implements CommandHandler{
 				missionCategoryAndInfoDto = missionGetDao.getChallengeMyMission(userDto);
 			}
 		}
-		int random_number = 0;
+		int random_number = -1;
 		if(missionCategoryAndInfoDto.size() != 0) {
 			random_number = (int) ( Math.random() * missionCategoryAndInfoDto.size());
 			request.setAttribute("randomMission", missionCategoryAndInfoDto.get(random_number));

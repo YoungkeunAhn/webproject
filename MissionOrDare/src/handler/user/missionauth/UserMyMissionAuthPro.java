@@ -44,25 +44,23 @@ public class UserMyMissionAuthPro implements CommandHandler {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
 		Date nowdate = new Date();
 		String dateString = formatter.format(nowdate);
-		System.out.println(dateString);
 		
-		String upload_video="";
-		String upload_image="";
+		String upload_video= "";
+		String upload_image= "";
 		int cnt = 0;
 		for(MultipartFile file : files) {
 			
 			String originName = file.getOriginalFilename();
 			String extension = "."+FilenameUtils.getExtension(originName);
-			String newFile = path + mission_state_id + user_nickname + (cnt++) + extension;
+			String newFile = path + dateString + mission_state_id + user_nickname + cnt + extension;
 			file.transferTo(new File(newFile));
 			if(extension.equals(".mp4") || extension.equals(".avi")) {
 				upload_video = upload_video + dateString + mission_state_id + user_nickname + cnt + extension + "/";
 			} else {
 				upload_image = upload_image + dateString + mission_state_id + user_nickname + cnt + extension + "/";
 			}
+			cnt++;
 		}
-		System.out.println("비디오" + upload_video);
-		System.out.println("이미지"+upload_image);
 		
 		MissionStateDto missionStateDto = new MissionStateDto();
 		missionStateDto.setMission_state_id(mission_state_id);

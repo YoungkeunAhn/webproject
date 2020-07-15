@@ -28,11 +28,18 @@ import user.missionauth.MissionAuthDBBean;
 import user.missionauth.MissionAuthDao;
 import user.missionget.MissionGetDBBean;
 import user.missionget.MissionGetDao;
+import user.successboard.UserSuccessBoardDBBean;
+import user.successboard.UserSuccessBoardDao;
 import user.userpage.UserUserPageDBBean;
 import user.userpage.UserUserPageDao;
 
 @Configuration
 public class CreateBean {
+	@Bean
+	public UserSuccessBoardDao userSuccessBoardDao() {
+		UserSuccessBoardDBBean userSuccessBoardDao = new UserSuccessBoardDBBean();
+		return userSuccessBoardDao;
+	}
 	
 	@Bean
 	public MissionGetDao missionGetDao() {

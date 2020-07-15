@@ -22,7 +22,7 @@
 	//-->
 	</script>
 </c:if>
-<c:if test="${random_number eq 0}">
+<c:if test="${random_number eq -1}">
 	<script type="text/javascript">
 	//<!--
 		alert("미션이 없습니다.");
