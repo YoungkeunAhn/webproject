@@ -14,94 +14,158 @@
 
 </head>
 <body>
-    <div class="container">
-        <span class="join-title">정 보 수 정</span>
-        <form class="join-form" name="userModifyForm" action="user_myInfoModifyPro.do" onsubmit="return myInfoModifyCheck()">
-            <ul class="join-list">
-                <li>
-                    <label class="th">*닉네임 </label>
-                    <label><input class="form-control" type="text" name="user_nickname" placeholder="Please enter a nickname to modify" readonly="readonly"></label>
-                    <label class="text text-mute">(특수문자 제외)40byte 이내로 입력해주세요</label>
-                    <label class="text text-danger">닉네임이 중복되었습니다.</label>
-                    <label class="text text-primary">사용할 수 있는 닉네임입니다.</label>
-                </li>
-                <li>
-                    <label class="th">*수정 할 비밀번호</label>
-                    <label><input class="form-control" type="password" name="user_passwd" placeholder="insert into your password"></label>
-                    <label class="text text-danger">비밀번호를 입력해주세요</label>
-                </li>
-                <li>
-                    <label class="th">*수정 할 비밀번호 확인</label>
-                    <label><input class="form-control" type="password" name="user_repasswd" placeholder="replay enter your password"></label>
-                    <label class="text text-danger">비밀번호가 다릅니다.</label><label class="text text-primary">비밀번호가 일치합니다.</label>
-                </li>
-                <li>
-                    <label class="th">* 생년월일</label>
-                    <label><input class="form-control" type="text" name="user_birth" readonly="readonly"placeholder="1994년12월17일" ></label>
-                    <label class="text text-danger">생년월일을 입력해주세요</label>
-                </li>
-                <li>
-                    <label class="th">직업</label>
-                    <label>
-                        <select class="form-control" name="user_job">
-                            <option value="1">학생</option>
-                            <option value="2">직장인</option>
-                            <option value="3">자영업</option>
-                            <option value="4">무직</option>
-                        </select>
-                    </label>
-                </li>
-                <li>
-                    <label class="th">거주지</label>
-                    <label>
-                        <select class="form-control" name="user_location">
-                            <option value="1">서울</option>
-                            <option value="2">경기</option>
-                            <option value="3">인천</option>
-                            <option value="4">대전</option>
-                            <option value="5">강원</option>
-                            <option value="6">충청</option>
-                            <option value="7">경상도</option>
-                            <option value="8">전라도</option>
-                            <option value="9">제주도</option>
-                        </select>
-                    </label>
-                </li>
-            </ul>
-
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal">
-                카테고리 선택
-            </button>
-            <label class="text text-danger">카테고리 1개이상 선택하셔야합니다.</label>
-
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">관심사 카테고리 선택해주세요</h4>
-                        </div>
-                        <div class="modal-body">
-                            <label><input class="lagerCategory" type="checkbox" value="운동"></label>
-                            <label><input class="lagerCategory" type="button" value="미술"></label>
-                            <label><input class="lagerCategory" type="button" value="요리"></label>
-                            <label><input class="lagerCategory" type="button" value="여행"></label>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-            <button class="btn btn-default modify" type="submit">수정</button>
-        	<button class="btn btn-primary modify black" type="button" onclick="GoMyPage()">취소</button>
-        	</div>
-        </form>
-    </div>
+<div class="containerBack">
+	        <div class="title-back"><span class="join-title">MyInfoModify</span></div>
+	<div class="container">
+	        <form class="join-form" name="userModifyForm" action="user_myInfoModifyPro.do" onsubmit="return myInfoModifyCheck()">
+	            <ul class="join-list">
+	                <li>
+	                    <label class="th">*닉네임 </label>
+	                    <label><input class="form-control" type="text" name="user_nickname" placeholder="닉네임은 수정할 수 없습니다." readonly="readonly"></label>
+	                </li>
+	                <li>
+	                    <label class="th">*수정 할 비밀번호</label>
+	                    <label><input class="form-control" type="password" name="user_passwd" placeholder="insert into your password"></label>
+	                    <label class="text text-danger">비밀번호를 입력해주세요</label>
+	                </li>
+	                <li>
+	                    <label class="th">*수정 할 비밀번호 확인</label>
+	                    <label><input class="form-control" type="password" name="user_repasswd" placeholder="replay enter your password"></label>
+	                    <label class="text text-danger">비밀번호가 다릅니다.</label><label class="text text-primary">비밀번호가 일치합니다.</label>
+	                </li>
+	                <li>
+	                    <label class="th">* 생년월일</label>
+	                    <label><input class="form-control" type="text" name="user_birth" readonly="readonly"placeholder="1994년12월17일" ></label>
+	                    <label class="text text-danger">생년월일을 입력해주세요</label>
+	                </li>
+	                <li>
+	                    <label class="th">직업</label>
+	                    <label>
+	                        <select class="form-control" name="user_job">
+	                            <option value="1">학생</option>
+	                            <option value="2">직장인</option>
+	                            <option value="3">자영업</option>
+	                            <option value="4">무직</option>
+	                        </select>
+	                    </label>
+	                </li>
+	                <li>
+	                    <label class="th">거주지</label>
+	                    <label>
+	                        <select class="form-control" name="user_location">
+	                            <option value="1">서울</option>
+	                            <option value="2">경기</option>
+	                            <option value="3">인천</option>
+	                            <option value="4">대전</option>
+	                            <option value="5">강원</option>
+	                            <option value="6">충청</option>
+	                            <option value="7">경상도</option>
+	                            <option value="8">전라도</option>
+	                            <option value="9">제주도</option>
+	                        </select>
+	                    </label>
+	                </li>
+	            </ul>
+	
+	            <!-- Button trigger modal -->
+	            <button type="button" class="btn-category" data-toggle="modal" data-target="#myModal">
+	                카테고리 선택
+	            </button>
+	            <label class="text text-danger">카테고리 1개이상 선택하셔야합니다.</label>
+	
+	            <!-- Modal -->
+	            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	                <div class="modal-dialog">
+	                    <div class="modal-content">
+	                        <div class="modal-header">
+	                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	                            <h4 class="modal-title" id="myModalLabel">관심사 카테고리 선택해주세요</h4>
+	                        </div>
+	                        <div class="modal-body">
+	                            <div class="modal-bodyLeft">
+	                        	    <input id="interesting_categorys" class="form-control" type="hidden" name="interesting_categorys">
+		                            <input class="lagerCategory" type="button" value="운동">
+		                            <input class="lagerCategory" type="button" value="여행">
+		                            <input class="lagerCategory" type="button" value="교육">
+		                            <input class="lagerCategory" type="button" value="댄스">
+		                            <input class="lagerCategory" type="button" value="음악">
+		                            <input class="lagerCategory" type="button" value="다이어트">
+		                            <input class="lagerCategory" type="button" value="기타">	                            
+								</div>
+								<div class="modal-bodyRight">
+	                        	    <input id="interesting_categorys" class="form-control" type="hidden" name="interesting_categorys">
+		                            <input class="lagerCategory" type="button" value="게임">
+		                            <input class="lagerCategory" type="button" value="먹방">
+		                            <input class="lagerCategory" type="button" value="개그">
+		                            <input class="lagerCategory" type="button" value="영화">
+		                            <input class="lagerCategory" type="button" value="뷰티">
+		                            <input class="lagerCategory" type="button" value="브이로그">
+		                            <input class="lagerCategory" type="button" value="asmr">
+	                        	</div>
+	                        </div>
+	                        <div class="modal-footer">
+	                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	                            <button type="button" class="btn btn-primary">Save changes</button>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div>
+	            <button class="btn-modify" type="submit">수정</button>
+	        	<button class="btn-cancle" type="button" onclick="GoMyPage()">취소</button>
+	        	</div>
+	        </form>
+	</div>
+</div>
+	<script>
+	var items = '';
+    var interesting_categorys = document.getElementById('interesting_categorys');
+    $(document).ready(function () {
+       $('.modal-bodyLeft > input').click(function () {
+           if(items.search($(this).val()+'/') === -1){
+               items += $(this).val() + '/';
+               interesting_categorys.value = items;
+               $(this).css({
+                   background: 'yellow',
+                   color: 'white',
+               });
+           }//if end
+           else {
+               var includeValue = $(this).val() + '/';
+               items = items.replace(includeValue,'');
+               $(this).css({
+                   background: 'white',
+                   color: 'black',
+               });
+               interesting_categorys.value = items;
+           }//else end
+       });//click() end
+    });//ready() end
+   
+    var items = '';
+    var interesting_categorys = document.getElementById('interesting_categorys');
+    $(document).ready(function () {
+       $('.modal-bodyRight > input').click(function () {
+           if(items.search($(this).val()+'/') === -1){
+               items += $(this).val() + '/';
+               interesting_categorys.value = items;
+               $(this).css({
+                   background: 'yellow',
+                   color: 'white',
+               });
+           }//if end
+           else {
+               var includeValue = $(this).val() + '/';
+               items = items.replace(includeValue,'');
+               $(this).css({
+                   background: 'white',
+                   color: 'black',
+               });
+               interesting_categorys.value = items;
+           }//else end
+       });//click() end
+    });//ready() end
+	</script>
 </body>
 </html>
 
