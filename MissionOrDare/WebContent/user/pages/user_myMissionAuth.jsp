@@ -51,12 +51,12 @@
 <body>
 <div class="container">
     <article class="myMission-auth">
-    	<form method="post" class="myMission-authForm" name="myMissionAuth" action="user_myMissionAuthPro.do" enctype="multipart/form-data" accept-charset="UTF-8">
+    	<form method="post" class="myMission-authForm" name="myMissionAuth" action="user_myMissionAuthPro.do?mission_state_id=${mission_state_id}" enctype="multipart/form-data" accept-charset="UTF-8">
 	        <section class="auth_main">
 	                <ol>
-	                    <li><input type="text" value="운동 / 달리기"></li>
-	                    <li><input type="text" value="날씨도 좋은데 달려볼까?"></li>
-	                    <li class="text-date"><input class="form-control" type="text" value="2020년 7월8일 오후2시56분 시작"></li>
+	                    <li><input type="text" value="${mission_category}"></li>
+	                    <li><input type="text" value="${mission_title}"></li>
+	                    <li class="text-date"><input class="form-control" type="text" value="${mission_start_date} 시작"></li>
 	                    <li>
 	                        <i class="fas fa-angle-left"></i>
 	                        <img id="auth_image" src="${project}images/auth_defalut.png" alt="auth_image" onclick="document.getElementById('upload').click(); document.getElementById('abc').value=document.getElementById('upload').value">

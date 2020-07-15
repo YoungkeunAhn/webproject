@@ -14,6 +14,14 @@
     <title>마이미션뷰 페이지</title>
 </head>
 <body>
+<c:if test="${result eq 1}">
+	<script type="text/javascript">
+	//<!--
+		alert("진행중인 미션이 있습니다.");
+		location.href="user_main.do";
+	//-->
+	</script>
+</c:if>
 <c:if test="${random_number eq 0}">
 	<script type="text/javascript">
 	//<!--

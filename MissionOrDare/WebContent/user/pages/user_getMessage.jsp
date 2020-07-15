@@ -1,3 +1,4 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="user_settings.jsp" %>
 <html>
@@ -16,36 +17,13 @@
 	<section>
 	   <div class="getMessageContent">
 	   
+	   	  <c:forEach var="notesDto" items="${notesDtos}"> 
 	      <div class="getMessageList">
-	         <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
-	       <span class="getMessageDate">07.09</span><br>
-	         <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
+	         <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">${notesDto.sent_nickname}</span>
+	       <span class="getMessageDate">${notesDto.send_date}</span><br>
+	         <span>${notesDto.notes_contents}</span>
 	      </div>
-	      
-	      <div class="getMessageList">
-	         <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
-	       <span class="getMessageDate">07.09</span><br>
-	         <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
-	      </div>
-	      
-	      <div class="getMessageList">
-	         <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
-	       <span class="getMessageDate">07.09</span><br>
-	         <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
-	      </div>
-	      
-	      <div class="getMessageList">
-	         <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
-	       <span class="getMessageDate">07.09</span><br>
-	         <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
-	      </div>
-	      
-	      <div class="getMessageList">
-	         <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
-	       <span class="getMessageDate">07.09</span><br>
-	         <span>내용이 솰라솰라 앗살라 말라이꿈 퀘킷. 비비디바비디부 내가 너에게 쪽지를 쏜다.</span>
-	      </div>
-	      
+	      </c:forEach>
 	   </div>   
 	</section>
 </body>

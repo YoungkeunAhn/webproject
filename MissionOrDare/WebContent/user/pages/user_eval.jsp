@@ -29,9 +29,9 @@
                    <span>KIMONG</span><br>
              </div>
              <div class="item">
-               <i class="fas fa-chevron-left"></i>
+               <i style="font-size: 150%;" class="fas fa-chevron-left"></i>
                <img class="content-image" src="${project}images/madong.PNG" alt="content-image">
-               <i class="fas fa-chevron-right"></i>
+               <i style="font-size: 150%;" class="fas fa-chevron-right"></i>
              </div>
              <div>
                <span>졸귀탱라이언</span>

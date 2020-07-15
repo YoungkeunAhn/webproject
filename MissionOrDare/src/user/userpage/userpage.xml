@@ -7,4 +7,24 @@
 	<select id="getUserInfo" parameterType="String" resultType="Dtos.UsersDto">
 		select * from mod_users where user_nickname=#{user_nickname}
 	</select>
+	<select id="userMissionInfo" parameterType="String" resultType="Dtos.UserMissionsDto">
+		select * from mod_missionstate s left outer join mod_missioninfo i 
+		on s.mission_info_id = i.mission_info_id
+		left outer join mod_missioncategory c
+		on c.mission_category_id = i.mission_category_id
+		where s.user_nickname = #{nickname}
+	</select>
+	<select id="receivedMessageInfo" parameterType="String" resultType="Dtos.NotesDto">
+		select * from mod_notes where received_nickname = #{user_nickname}
+	</select>
+	<select id="sentMessageInfo" parameterType="String" resultType="Dtos.NotesDto">
+		select * from mod_notes where sent_nickname = #{user_nickname}
+	</select>
+	<select id="getProfile" parameterType="String" resultType="String">
+		select profile_picture from mod_users where user_nickname = #{user_nickname} 
+	</select>
+	<insert id="sendMessage" parameterType="Dtos.NotesDto">
+		insert into mod_notes(notes_id, received_nickname, sent_nickname, notes_contents)
+		values('notes'||lpad(seq_notes.nextval,5,0), #{received_nickname}, #{sent_nickname}, #{notes_contents})
+	</insert>
 </mapper>

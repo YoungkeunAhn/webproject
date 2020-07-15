@@ -26,11 +26,15 @@
     	<article class="usermyArticle">
 	    	<div class="white-box">	
 	    		<section class="imymemine">
-	    		<div class="content-profile">
-		    			<img onclick="MyProfileModify()" class="img-circle" src="${userDto.profile_picture}" alt="user-profile">
+	    		<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+	    			<img class="writeMessage" onclick="GoMessageForm()" src="${project}images/message12.png" alt="user-message">
+	    			<div class="content-profile">
+	    		
+		    		   <img onclick="MyProfileModify()" class="img-circle" src="${userDto.profile_picture}" alt="user-profile">
 		               <span>${userDto.user_nickname}</span>
-		   		</div>
-		   		<img onclick="GoMessageForm()" src="${project}images/message12.png" alt="user-message">
+					   
+		   			</div>
+	    		</div>	   		
 		   		<div class="write-control"><span>관심분야: ${userDto.interesting1_large_category} ${userDto.interesting2_large_category} ${userDto.interesting3_large_category} ${userDto.interesting4_large_category}</span></div>
 		   		<div class="write-control">가입일: ${userDto.sign_up_date}</div>
 		   		<div class="aho">
@@ -42,24 +46,32 @@
 	    		<div class="white-box1">
 	    			<span>미션내역</span>
 	    			<div class="myMissionpackage">
-			    		<div><hr></div>
-			    		<div class="gay"><span>2020년 6월17일 오후 7시19분 시작</span></div>
-			    		<div class="good"><img class="missionimage" src="${project}images/gamong.png" alt="mission-image1">
-			    		<span>버그행을 해볼까?</span>
-			    		<span>미 션 중</span>
-			    		</div>
-			    		<div><hr></div>
-			    		<div class="gay"><span>2020년 6월16일 오후 7시19분 시작</span></div>
-			    		<div class="good"><img class="missionimage" src="${project}images/message12.png" alt="user-message">
-			    		<span>친구한테 쪽지를 보내볼까??</span>
-			    		<span><a>미션성공</a></span>
-			    		</div>
-			    		<div><hr></div>
-			    		<div class="gay"><span>2020년 6월17일 오후 7시19분 시작</span></div>
-			    		<div class="good"><img class="missionimage" src="${project}images/madong.PNG" alt="user-message">
-			    		<span>해당 몬스터를 잡아볼까?</span>
-			    		<span><b>미션실패</b></span>
-			    		</div>
+		    			<c:forEach var="userMissionDto" items="${userMissionDtos}">
+				    		<div class="gay"><span>${userMissionDto.mission_start_date}</span></div>
+				    		<div class="good"><img class="missionimage" src="/upload/${userMissionDto.upload_image}" alt="mission-image1">
+						    	<div class="sisisi">	
+						    		<span>${userMissionDto.mission_title}</span>
+						    		<span><a>
+						    		<c:if test="${userMissionDto.mission_state eq 1}">
+									미션 중
+									</c:if>
+									<c:if test="${userMissionDto.mission_state eq 2}">
+									미션 성공
+									</c:if>
+									<c:if test="${userMissionDto.mission_state eq 3}">
+									미션 실패
+									</c:if>
+									<c:if test="${userMissionDto.mission_state eq 4}">
+									미션 인증 중
+									</c:if>
+									<c:if test="${userMissionDto.mission_state eq 5}">
+									중도 포기
+									</c:if>
+						    		
+						    		</a></span>
+						    	</div>    	
+				    		</div>
+				    	</c:forEach>
 	    			</div>
 	    		</div>
     		</section>

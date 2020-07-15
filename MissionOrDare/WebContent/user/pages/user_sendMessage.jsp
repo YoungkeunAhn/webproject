@@ -18,10 +18,10 @@
 		 <form method="post" action="user_sendMessagePro.do" name="sendMessage">
 			<section class="sendTop">
 			<span>받는사람 :</span> 
-			<span>vkdnj4158@naver.com</span>
+			<span><input type="text" name="receivedNickname"> </span>
 			</section>
 			<section class="sendContent">
-				<textarea class="messagetextarea" placeholder="메시지 내용을 입력해주세요."></textarea>
+				<textarea class="messagetextarea" placeholder="메시지 내용을 입력해주세요." name="textContent"></textarea>
 			</section>
 			<section class="sendbottom">
 				<button type="submit" class="btn btn-primary">보내기</button>
