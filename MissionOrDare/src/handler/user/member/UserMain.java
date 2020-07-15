@@ -25,18 +25,11 @@ public class UserMain implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-//		int kakao_id = Integer.parseInt(request.getParameter("kakao_id"));
-		
-//		String user_nickname = userMemberDao.findNickname(kakao_id);
-//			
-//		System.out.println("zkzkdh아이디"+kakao_id);
-//		System.out.println("kakao_id"+kakao_id + "nickname:"+user_nickname);
-//		request.getSession().setAttribute("user_nickname", user_nickname);
-//		request.getSession().setAttribute("kakao_id", kakao_id);
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		
 		List<UserMissionsDto> userMissionsDtos = missionGetDao.getUserMissions(user_nickname);
 		int result = userMissionsDtos.size();
+		
 		request.setAttribute("userMissionsDtos", userMissionsDtos);
 		request.setAttribute("result", result);
 		return new ModelAndView("user/pages/user_main");

@@ -6,7 +6,10 @@
   	
 <mapper namespace="auth">
 	<update id="authMission" parameterType="Dtos.MissionStateDto">
-		update mod_missionstate set upload_image=#{upload_image}, upload_video=#{upload_video},
-		upload_public_availabilty=#{upload_public_availabilty} where mission_state_id=#{mission_state_id}
+		update mod_missionstate 
+		set 
+		upload_image=#{upload_image, jdbcType=VARCHAR}, upload_video=#{upload_video, jdbcType=VARCHAR}, mission_state=#{mission_state},
+		upload_public_availability=#{upload_public_availability}, mission_upload_contents=#{mission_upload_contents, jdbcType=VARCHAR} 
+		where mission_state_id=#{mission_state_id}
 	</update>
 </mapper>

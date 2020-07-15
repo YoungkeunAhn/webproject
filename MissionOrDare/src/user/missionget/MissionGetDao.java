@@ -15,5 +15,6 @@ public interface MissionGetDao {
 	public UsersDto getUserCategory(String user_nickname);
 	public int insertUserMission(MissionStateDto missionStateDto);
 	public List<UserMissionsDto> getUserMissions(String user_nickname);
+	public int getUserMission(String user_nickname);
 
 }

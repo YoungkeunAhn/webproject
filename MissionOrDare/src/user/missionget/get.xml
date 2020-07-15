@@ -62,4 +62,7 @@
 		where user_nickname=#{user_nickname} and mission_state in (1, 4) 
 		order by mission_state
 	</select>
+	<select id="getUserMission" parameterType="String" resultType="int">
+		select count(*) from mod_missionstate where user_nickname=#{user_nickname} and mission_state=1
+	</select>
 </mapper>
