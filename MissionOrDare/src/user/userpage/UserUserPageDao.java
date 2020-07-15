@@ -12,4 +12,5 @@ public interface UserUserPageDao {
 	public List<NotesDto> receivedMessageInfo(String user_nickname);
 	public List<NotesDto> sentMessageInfo(String user_nickname);
 	public String getProfile(String user_nickname);
+	public int sendMessage(NotesDto notesDto);
 }

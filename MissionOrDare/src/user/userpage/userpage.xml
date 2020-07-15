@@ -23,4 +23,8 @@
 	<select id="getProfile" parameterType="String" resultType="String">
 		select profile_picture from mod_users where user_nickname = #{user_nickname} 
 	</select>
+	<insert id="sendMessage" parameterType="Dtos.NotesDto">
+		insert into mod_notes(notes_id, received_nickname, sent_nickname, notes_contents)
+		values('notes'||lpad(seq_notes.nextval,5,0), #{received_nickname}, #{sent_nickname}, #{notes_contents})
+	</insert>
 </mapper>
