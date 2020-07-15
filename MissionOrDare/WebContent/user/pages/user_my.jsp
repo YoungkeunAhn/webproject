@@ -48,7 +48,7 @@
 	    			<div class="myMissionpackage">
 		    			<c:forEach var="userMissionDto" items="${userMissionDtos}">
 				    		<div class="gay"><span>${userMissionDto.mission_start_date}</span></div>
-				    		<div class="good"><img class="missionimage" src="/upload/${userMissionDto.upload_image}" alt="mission-image1">
+				    		<div class="good"><img onclick="location.href='user_myMissionCheck.jsp';" class="missionimage" src="/upload/${userMissionDto.upload_image}" alt="mission-image1">
 						    	<div class="sisisi">	
 						    		<span>${userMissionDto.mission_title}</span>
 						    		<span><a>
@@ -67,8 +67,8 @@
 									<c:if test="${userMissionDto.mission_state eq 5}">
 									중도 포기
 									</c:if>
-						    		
-						    		</a></span>
+						    		</a>
+						    		</span>
 						    	</div>    	
 				    		</div>
 				    	</c:forEach>
