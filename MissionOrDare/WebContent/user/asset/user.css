@@ -1330,9 +1330,55 @@ div .write-control{
 	bottom: 0px;
 	font-size: x-small;
 }
+/**********************************************
 
+        user_report 데헷~&^_^
 
+***********************************************/
+.reportArticle{
+	width:100%;
+	height:100%;
+	margin-top: 100px;
+}
+.reportSection{
+	width: 100%;
+    height: 100%;
+    padding: 0px 10px 30px 10px;
+    text-align: center;
+}
+.reportProfile{
+	width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.img-circle{
+	width:40px;
+	height:40px;
+}
+.imageProfile{
+	width:40px;
+	height: 40px;
+}
+.contentProfile{
+	background-color: #eef327;
+    border-radius: 20px;
+    width: 260px;
+    text-align: left;
+    display:inline-table;
+    
+}
+ul li{
+	list-style-type: none;
+}
 
+.reportWrite{
+	margin: 0px;
+	width:301px;
+	height:145px;
+	border: 8px solid #c3c3c3;
+	border-radius: 10%;
+}
 
 
 
