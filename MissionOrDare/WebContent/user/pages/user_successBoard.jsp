@@ -36,8 +36,16 @@
             <section class="board">
                 <div class="list">
                 	<c:forEach var="content" items="${contents}">
-                		<img src="/upload/${content}" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                		<c:if test="${fn:contains(content, '.mp4') or fn:contains(content, '.avi')}">
+                			<video mute autoplay="autoplay" class="img-rounded">
+								<source src="/upload/${content}">
+							</video>
+                		</c:if>
+                		<c:if test="${!fn:contains(content, '.mp4') and !fn:contains(content, '.avi')}">
+                			<img src="/upload/${content}" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                		</c:if>
                 	</c:forEach>
+                	
                     <img src="${project}images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="location.href='user_content.do'"/>
                     <img src="${project}images/pid_test2.png" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
                     <img src="${project}images/pid_test3.jpg" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
