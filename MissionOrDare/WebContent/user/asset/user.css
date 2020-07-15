@@ -726,7 +726,7 @@ list ::-webkit-scrollbar {
    bottom: 5rem;
 }
 .eval .gilpung .btn-line{
-   width: 200;
+   width: 300px;
    margin-top: 25px;
 }
 
@@ -754,6 +754,7 @@ list ::-webkit-scrollbar {
 	background-color: #e1ef25;
 	width:50%;
 	border-radius: 10%;
+	height: 44.3px;
 }
 .deletebtn{
 	border:0px;
@@ -777,6 +778,7 @@ list ::-webkit-scrollbar {
    position: relative;
    bottom: 4rem;
    border-radius: 100%;
+   margin: auto 20px;
 }
 
 .item1 {
