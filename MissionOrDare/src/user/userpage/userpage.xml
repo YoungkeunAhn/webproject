@@ -17,4 +17,10 @@
 	<select id="receivedMessageInfo" parameterType="String" resultType="Dtos.NotesDto">
 		select * from mod_notes where received_nickname = #{user_nickname}
 	</select>
+	<select id="sentMessageInfo" parameterType="String" resultType="Dtos.NotesDto">
+		select * from mod_notes where sent_nickname = #{user_nickname}
+	</select>
+	<select id="getProfile" parameterType="String" resultType="String">
+		select profile_picture from mod_users where user_nickname = #{user_nickname} 
+	</select>
 </mapper>

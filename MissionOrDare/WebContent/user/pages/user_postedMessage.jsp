@@ -14,37 +14,17 @@
 </head>
 <body>
 	<section>
+	
 	   <div class="getMessageContent">
+	   	  <c:forEach var="sent" items="${notesDtoss}">
 	      <div class="getMessageList">
-	         <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
-	       <span class="getMessageDate">07.09</span><br>
-	         <span>보낸편지</span>
+	         <span class="Nick"><img class=img-circle src="${profile}" alt="user-profile">${sent.received_nickname}</span>
+	       <span class="getMessageDate">${sent.send_date}</span><br>
+	         <span>${sent.notes_contents}</span>
 	      </div>
-	      <br>
-	      <div class="getMessageList">
-	         <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
-	       <span class="getMessageDate">07.09</span><br>
-	         <span>내보낸편지쏜다.</span>
-	      </div>
-	      <br>
-	      <div class="getMessageList">
-	         <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
-	       <span class="getMessageDate">07.09</span><br>
-	         <span>내용이보낸편지쏜다.</span>
-	      </div>
-	      <br>
-	      <div class="getMessageList">
-	         <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
-	       <span class="getMessageDate">07.09</span><br>
-	         <span>내용이 솰라솰보낸편지가 너에게 쪽지를 쏜다.</span>
-	      </div>
-	      <br>
-	      <div class="getMessageList">
-	         <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">KIMONG</span>
-	       <span class="getMessageDate">07.09</span><br>
-	         <span>내용이 솰라솰라 앗보낸편지다.</span>
-	      </div>
-	      <br>
+	      </c:forEach>
+	      
+	      
 	   </div>   
 	</section>
 </body>

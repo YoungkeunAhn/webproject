@@ -20,4 +20,11 @@ public class UserUserPageDBBean implements UserUserPageDao{
 	public List<NotesDto> receivedMessageInfo(String user_nickname) {
 		return session.selectList("UserPage.receivedMessageInfo",user_nickname);
 	}
+	public List<NotesDto> sentMessageInfo(String user_nickname) {
+		return session.selectList("UserPage.sentMessageInfo",user_nickname);
+	}
+	@Override
+	public String getProfile(String user_nickname) {
+		return session.selectOne("UserPage.getProfile",user_nickname);
+	}
 }

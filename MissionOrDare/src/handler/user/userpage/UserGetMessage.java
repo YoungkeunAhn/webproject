@@ -21,11 +21,11 @@ public class UserGetMessage implements CommandHandler{
 	@RequestMapping("/user_getMessage")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
+		request.setCharacterEncoding("utf-8");
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
-		System.out.println("핸들러러러럴ㄹ2222222:"+ user_nickname);
+		
 		List<NotesDto> notesDtos = userUserPageDao.receivedMessageInfo(user_nickname);
-		System.out.println("핸들러러러럴ㄹ33333333:"+ user_nickname);
+		
 		request.setAttribute("notesDtos", notesDtos);
 		return new ModelAndView("user/pages/user_getMessage");
 	}
