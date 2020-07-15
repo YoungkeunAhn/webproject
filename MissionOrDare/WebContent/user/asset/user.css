@@ -1162,101 +1162,127 @@ div .write-control{
 
 /**********************************************
 
-        user_content 데헷~&^_^
+        user_content
 
 ***********************************************/
-.contentHeader{
-	display: block;
-	position: relative;
-	bottom: 1rem;
-}
-.header-img1{
-	width: 40px;
-    height: 40px;
-}
-.backimage{
-	width:40px;
-	height:40px;
-}
-.contentArticle{
-	width:100%;
-	height:537px;
-	position: relative;
+.likecount{
+	margin: 0 0 10px 0;
 }
 .usercontent{
 	width: 100%;
-    height: 63%;
+	height: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    margin: 0 auto;
 }
 .usercontent ol{
 	list-style: none;
-	padding-left: 0px;
+	padding: 0px;
+	margin: 10px 0 0 0;
 }
-.date-exist .BoysandGirls{
+.usercontent .mission-category div{
+	position: absolute;
+	top: 8px;
+	right: 15px;
+	display: inline;
+	font-size: 1.3rem;
+}
+.mission-category div img{
+	width: 20px;
+	height: 20px;
+	margin-bottom: 5px;
+	padding:0;
+}
+.mission-category div button{
+	color: red;
+	padding: 0;
+}
+.usercontent .BoysandGirls{
 	width:30px;
 	height:30px;
 	border-radius: 100%;
 }
-.contentArticle .replycontent ol li span{
-	font-size: 18px;
-    background-color: #cabebe;
-    border-radius: 30%;
+.usercontent li{
+	margin: 3px auto;
+	width: 100%;
 }
-.replycontent{
-    width: 100%;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-top: 50px;
-    overflow: scroll;
+.usercontent li .content-img{
+	width: 200px;
+	height: 230px;
 }
 
-.ddaedrogba{
-	display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-.likecontent{
-	/*
-	position: relative;
-	right: 10rem;
-	margin-bottom: 10px;
-	*/
-}
-.likecontent1{
-	height: 100%;
-}
-.likecontent1 span{
-	font-size: 15px;
-	background-color: #b9a0a0;
-	border-radius: 27%;
-}
-.likecontent1 b{
-	font-size: 90%;
-	font-style: italic;
-}
-.likecontent a{
-	font-style: italic;
-}
-.userreply{
-    font-size: 20px;
-    position: relative;
-    left: 10%;
-}
-#replyspace{
+.reply-part{
 	width: 100%;
-    height: 39px;
-    border: 0;
-    position: absolute;
-    bottom: 28%;
-    display: none;
-    font-size: 100%;
+	height: 22%;
+	margin: 0 auto 120px auto;
 }
+.reply-part .likecount img{
+	width: 30px;
+	height: 20px;
+}
+.reply-part .reply-contents{
+	background: rgba(255,255,255,0.5);
+	padding: 3px 6px;
+	width: 100%;
+	height:100%;
+	overflow: auto;
+}
+.reply-part .reply-contents .reply{
+	padding: 10px 0 10px 5px;
+	
+}
+.reply-part .reply-text{
+	font-family: 'Anton', sans-serif;
+	font-size: 1.3rem
+}
+.reply-part  .re-replyUser{
+	font-size: 1.2rem;
+	color: #888;
+}
+.reply-part .reply .modal-bg{
+	z-index: 10;
+	background-color: rgba(0,0,0,0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	left:0;
+	top:0;
+	display: none;
+}
+.reply-part .modal-bg ul{
+	list-style: none;
+	text-align: center;
+	background-color: white;
+	margin: 0;
+	padding: 0;
+	width: 60%;
+	height: 45%;
+	display: flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items: center;
+}
+.reply-part .modal-bg ul li{
+	margin: 10px auto;
+	font-size: 2rem;
+	width: 80%;
+	padding: 10px;
+}
+.modal-bg ul .user-nick{
+	border-bottom: 1px solid #888;
+	font-size: smaller;
+	color: #A4B6E0;
+	padding: 15px;
+	
+	
+}
+.reply-part .modal-bg ul .text-danger{
+	display: block;
+}
+
 .replyho{
 	width:100%;
 	height:100%;
@@ -1280,11 +1306,12 @@ div .write-control{
 	margin:0;
 }
 .userreplyho{
-	width: 87.9%;
+	width: 91%;
     height: 5%;
     position: fixed;
     z-index: 2;
-    bottom: 58px;
+    bottom: 60px;
+    left: 0;
     background-color: #f8f8f8;
     text-align: left;
 }
@@ -1303,8 +1330,6 @@ div .write-control{
 	bottom: 0px;
 	font-size: x-small;
 }
-
-
 
 
 
