@@ -40,4 +40,10 @@ public class MissionGetDBBean implements MissionGetDao {
 	public int getUserMission(String user_nickname) {
 		return session.selectOne("get.getUserMission", user_nickname);
 	}
+	public int refresh() {
+		return session.insert("get.refresh");
+	}
+	public int delrefresh() {
+		return session.delete("get.delrefresh");
+	}
 }

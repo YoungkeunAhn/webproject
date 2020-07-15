@@ -53,14 +53,15 @@
 								<div class="swiper-slide">
 									<ol class="data-exist">
 										<form name="myMissionAuthForm" action="user_myMissionAuth.do">
-											<input type="hidden"
-												value="${userMissionsDto.mission_start_date}"> <input
-												type="hidden"
+											<input type="hidden" name="mission_start_date"
+												value="${userMissionsDto.mission_start_date}"> 
+											<input type="hidden" name="mission_category"
 												value="${userMissionsDto.large_category}/${userMissionsDto.small_category}">
-											<input type="hidden" value="${userMissionsDto.mission_title}">
-											<input type="hidden"
-												value="${userMissionsDto.mission_contents}"> <input
-												type="hidden" value="${userMissionsDto.mission_state}">
+											<input type="hidden" name="mission_title" value="${userMissionsDto.mission_title}">
+											<input type="hidden" name="mission_start_date"
+												value="${userMissionsDto.mission_contents}"> 
+											<input type="hidden" name="mission_state"value="${userMissionsDto.mission_state}">
+											<input type="hidden" name="mission_state_id"value="${userMissionsDto.mission_state_id}">
 											<li class="text-date">${userMissionsDto.mission_start_date}
 												시작</li>
 											<li class="text-category">${userMissionsDto.large_category}/${userMissionsDto.small_category}</li>
@@ -79,14 +80,15 @@
 								test="${userMissionsDto.mission_state eq 4 and userMissionsDto.upload_public_availability eq 1}">
 								<div class="swiper-slide">
 									<ol class="data-exist">
-										<input type="hidden"
-											value="${userMissionsDto.mission_start_date}">
-										<input type="hidden"
-											value="${userMissionsDto.large_category}/${userMissionsDto.small_category}">
-										<input type="hidden" value="${userMissionsDto.mission_title}">
-										<input type="hidden"
-											value="${userMissionsDto.mission_contents}">
-										<input type="hidden" value="${userMissionsDto.mission_state}">
+										<input type="hidden" name="mission_start_date"
+												value="${userMissionsDto.mission_start_date}"> 
+											<input type="hidden" name="mission_category"
+												value="${userMissionsDto.large_category}/${userMissionsDto.small_category}">
+											<input type="hidden" name="mission_title" value="${userMissionsDto.mission_title}">
+											<input type="hidden" name="mission_start_date"
+												value="${userMissionsDto.mission_contents}"> 
+											<input type="hidden" name="mission_state"value="${userMissionsDto.mission_state}">
+											<input type="hidden" name="mission_state_id"value="${userMissionsDto.mission_state_id}">
 										<li class="text-date">${userMissionsDto.mission_start_date}
 											시작</li>
 										<li class="text-category">${userMissionsDto.large_category}/${userMissionsDto.small_category}</li>

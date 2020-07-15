@@ -16,5 +16,7 @@ public interface MissionGetDao {
 	public int insertUserMission(MissionStateDto missionStateDto);
 	public List<UserMissionsDto> getUserMissions(String user_nickname);
 	public int getUserMission(String user_nickname);
+	public int refresh();
+	public int delrefresh();
 
 }

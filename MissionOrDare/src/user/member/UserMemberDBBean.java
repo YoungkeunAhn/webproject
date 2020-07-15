@@ -1,10 +1,8 @@
 package user.member;
 
-import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import Dtos.UserMissionsDto;
 import Dtos.UsersDto;
 
 public class UserMemberDBBean implements UserMemberDao{
@@ -22,5 +20,6 @@ public class UserMemberDBBean implements UserMemberDao{
 	public String findNickname(int kakao_id) {
 		return session.selectOne("Member.findNickname",kakao_id);
 	}
+	
 	
 }

@@ -65,4 +65,16 @@
 	<select id="getUserMission" parameterType="String" resultType="int">
 		select count(*) from mod_missionstate where user_nickname=#{user_nickname} and mission_state=1
 	</select>
+	
+	
+	 
+	
+	
+	<!-- refresh -->
+	<insert id="refresh">
+		insert into mod_test values('refresh')
+	</insert>
+	<delete id="delrefresh">
+		delete from mod_test where test='refresh'
+	</delete>
 </mapper>

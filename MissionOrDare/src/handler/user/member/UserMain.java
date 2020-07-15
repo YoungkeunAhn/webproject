@@ -25,6 +25,9 @@ public class UserMain implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
+		missionGetDao.refresh();
+		missionGetDao.delrefresh();
+		
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		
 		List<UserMissionsDto> userMissionsDtos = missionGetDao.getUserMissions(user_nickname);
