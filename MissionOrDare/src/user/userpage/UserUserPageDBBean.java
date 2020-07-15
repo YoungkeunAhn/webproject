@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import Dtos.NotesDto;
 import Dtos.UserMissionsDto;
 import Dtos.UsersDto;
 
@@ -15,5 +16,8 @@ public class UserUserPageDBBean implements UserUserPageDao{
 	}
 	public List<UserMissionsDto> userMissionInfo(String user_nickname) {
 		return session.selectList("UserPage.userMissionInfo", user_nickname);
+	}
+	public List<NotesDto> receivedMessageInfo(String user_nickname) {
+		return session.selectList("UserPage.receivedMessageInfo",user_nickname);
 	}
 }
