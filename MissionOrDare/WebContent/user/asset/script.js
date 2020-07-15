@@ -50,6 +50,44 @@ function SignUpCheck() {
 	 }
 }
 /*
+ * user_myInfoModify.jsp
+*/
+function myInfoModifyCheck() {
+	var checkKor = /^[ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;	//숫자는 입력가능하다
+	var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/; //특수문자 사용불가
+	var regExp = /\s/g;	//띄어쓰기
+	if( ! userModifyForm.user_nickname.value ) {
+		 alert( nicknameNullError );
+		 userModifyForm.user_nickname.focus();
+		 return false;
+	 } else if( checkKor.test(userModifyForm.user_nickname.value) ||
+			 	checkSpc.test(userModifyForm.user_nickname.value) ||
+			 	regExp.test(userModifyForm.user_nickname.value)) {
+		 alert(nicknameSpecialError);
+		 userModifyForm.user_nickname.focus();
+		 return false;
+	 }
+	 if( ! userModifyForm.user_passwd.value ) {
+		 alert( passwdNullError );
+		 userModifyForm.user_passwd.focus();
+		 return false;
+	 } else if( userModifyForm.user_passwd.value != userModifyForm.user_repasswd.value ) {
+		 alert( passwdDifError );
+		 userModifyForm.user_repasswd.focus();
+		 return false;
+	 }
+	 if( ! userModifyForm.user_repasswd.value ) {
+		 alert( repasswdNullError );
+		 userModifyForm.user_repasswd.focus();
+		 return false;
+	 }
+	 if( ! userModifyForm.user_birth.value ) {
+		 alert( dateNullError );
+		 userModifyForm.user_birth.focus();
+		 return false;
+	 }
+}
+/*
 *user_main.jsp
 */
 //모달 끄기

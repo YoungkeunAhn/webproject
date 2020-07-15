@@ -16,12 +16,14 @@
 <body>
     <div class="container">
         <span class="join-title">정 보 수 정</span>
-        <form class="join-form" name="userModifyForm" action="user_myInfoModifyPro.do">
+        <form class="join-form" name="userModifyForm" action="user_myInfoModifyPro.do" onsubmit="return myInfoModifyCheck()">
             <ul class="join-list">
                 <li>
                     <label class="th">*닉네임 </label>
-                    <label><input class="form-control" type="text" name="user_nickname" placeholder="철인 3종 공기" readonly="readonly"></label>
-                    <label class="text text-mute">닉네임 수정을 불허한다</label><label class="text text-danger">닉네임이 중복되었습니다.</label><label class="text text-primary">사용할 수 있는 닉네임입니다.</label>
+                    <label><input class="form-control" type="text" name="user_nickname" placeholder="Please enter a nickname to modify" readonly="readonly"></label>
+                    <label class="text text-mute">(특수문자 제외)40byte 이내로 입력해주세요</label>
+                    <label class="text text-danger">닉네임이 중복되었습니다.</label>
+                    <label class="text text-primary">사용할 수 있는 닉네임입니다.</label>
                 </li>
                 <li>
                     <label class="th">*수정 할 비밀번호</label>
@@ -35,7 +37,7 @@
                 </li>
                 <li>
                     <label class="th">* 생년월일</label>
-                    <label><input class="form-control" type="text" name="user_birth" readonly="readonly" placeholder="1994년12월17일"></label>
+                    <label><input class="form-control" type="text" name="user_birth" readonly="readonly"placeholder="1994년12월17일" ></label>
                     <label class="text text-danger">생년월일을 입력해주세요</label>
                 </li>
                 <li>

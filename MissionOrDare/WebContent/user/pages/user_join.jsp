@@ -19,7 +19,7 @@
 <body>
     <div class="container">
         <span class="join-title">회원가입</span>
-        <form method="post" class="join-form" name="userJoinForm" action="user_joinPro.do" onsubmit="return SignUpCheck()">
+       <form method="post" class="join-form" name="userJoinForm" action="user_joinPro.do" onsubmit="return SignUpCheck()">
         <input type="hidden" name="user_email" value="${user_email}">
         <input type="hidden" name="profile_picture" value="${profile_picture}">
         <input type="hidden" name="kakao_id" value="${kakao_id}">
@@ -96,6 +96,13 @@
                             <input class="lagerCategory" type="button" value="미술">
                             <input class="lagerCategory" type="button" value="요리">
                             <input class="lagerCategory" type="button" value="여행">
+                            <input class="lagerCategory" type="button" value="여행">
+                            <input class="lagerCategory" type="button" value="운동">
+                            <input class="lagerCategory" type="button" value="미술">
+                            <input class="lagerCategory" type="button" value="요리">
+                            <input class="lagerCategory" type="button" value="여행">
+                            <input class="lagerCategory" type="button" value="여행">
+                            
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">수정완료</button>

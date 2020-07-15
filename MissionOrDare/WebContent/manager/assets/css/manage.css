@@ -232,47 +232,12 @@ footer span {
     Category_insert Modal
     
 ************************************************/
-.category-insert{
-	width: 100%;
-	height: 55%;
-	display: flex;
-	justify-content: center;
-	padding: 0;
+.category-insert .lagerCategory{
+	width: 80%;
+	height: 10%;
+	border: 1px solid #888;
+	background-color: #FFB1B1
 }
-.category-insert ul{
-	width: 100%;
-	height: 50%;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	text-align: center;
-}
-.category-insert ul li i{
-	font-size: 4rem;
-	margin: 0 auto 10px auto;
-}
-.category-insert ul li .title{
-	font-size: 3rem;
-	margin: 0 auto 30px auto;
-}
-.category-insert ul li span{
-	font-size: 1.7rem;
-	font-weight: bold;
-}
-.category-insert ul li input{
-	margin: 10px;
-	width: 50%;
-}
-.category-insert ul li img{
-	width: 30%;
-	height: 46%;
-}
-.category-insert ul li button{
-	margin: 25px auto 0 auto;
-	width: 	26%;
-	font-size: 1.7rem;
-	text-align: center;
-} 
 
 
 /***********************************************
