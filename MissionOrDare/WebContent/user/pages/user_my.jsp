@@ -27,7 +27,7 @@
 	    	<div class="white-box">	
 	    		<section class="imymemine">
 	    		<div class="content-profile">
-		    			<img onclick="MyProfileModify()" class="img-circle" src="${project}images/madong.PNG" alt="user-profile">
+		    			<img onclick="MyProfileModify()" class="img-circle" src="${userDto.profile_picture}" alt="user-profile">
 		               <span>${userDto.user_nickname}</span>
 		   		</div>
 		   		<img onclick="GoMessageForm()" src="${project}images/message12.png" alt="user-message">
