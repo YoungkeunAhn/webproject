@@ -15,7 +15,7 @@
 	function replyModal(reply_id,user_nick){
 		$('.user-nick').text(user_nick);
 		$('#user_nickname').val(user_nick);
-		$('#replyId').val(reply_id);
+		$('#reply_id').val(reply_id);
 		document.getElementById('replyMenuModal').style.display='flex';
 	}
 	function toReply(user_nick){
@@ -26,7 +26,15 @@
 	function Close(){
 		document.getElementById('replyMenuModal').style.display='none';
 	}
-
+	function doPostMessage(user_nick){
+		alert(user_nick);
+	}
+	function goOtherUserPage(user_nick){
+		alert(user_nick);
+	}
+	function doReport(reply_id){
+		alert(reply_id);
+	}
 	</script>
 </head>
 <body>
@@ -69,6 +77,7 @@
 				 <div class="reply">
 				 	<input type="hidden" value="댓글아이디">
 				 	<i class="fas fa-ellipsis-v" onclick="replyModal('rp1','유차니귀요미')"></i>
+				 	<span class="re-replyUser"></span>
 			 		<label onclick="toReply('유차니귀요미')">유차니귀요미</label>
 			 		<span class="reply-text">프로필 본인이셈?</span>
 				 </div>
@@ -77,20 +86,20 @@
 		 			<input type="hidden" value="댓글아이디">
 		 			<i class="fas fa-ellipsis-v" onclick="replyModal('rp2','영근육몬')"></i>
 			 		<label onclick="toReply('영근육몬')">영근육몬</label>
-			 		<span class="re-replyUser">@유차니귀요미</span></li>
+			 		<span class="re-replyUser">@유차니귀요미</span>
 			 		<span class="reply-text">재대대대대대대대대대대댓글ㅓㄹㅇ마ㅣㅓㄹ얼낭멀나이ㅓㄴ라어라ㅣㅓㅁ</span>
 			 		
 				 </div>
 
 				 
 				 <div id="replyMenuModal" class="modal-bg" onclick="Close()">
-				 	<input id="replyId" type="hidden">
+				 	<input id="reply_id" type="hidden">
 				 	<input id="user_nickname" type="hidden">
 	 				<ul onclick="event.cancelBubble=true">
 	 					<li><span class="user-nick"></span></li>
-		 				<li><span>쪽지 보내기</span></li>
-		 				<li><span>프로필 방문</span></li>
-		 				<li><span class="text-danger">신고하기</span></li>
+		 				<li><span onclick="doPostMessage($('#user_nickname').val())">쪽지 보내기</span></li>
+		 				<li><span onclick="goOtherUserPage($('#user_nickname').val())">프로필 방문</span></li>
+		 				<li><span class="text-danger" onclick="doReport($('#reply_id').val())">신고하기</span></li>
 	 				</ul>
 	 			</div>
 			</div>
