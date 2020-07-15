@@ -251,6 +251,20 @@ ol{
     margin: 0;
     padding: 0;
 }
+.data-none{
+	background: #eef327;
+	width: 100%;
+	height: 75%;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 15px auto;
+	background-color: rgba(255,255,255,0.5);
+	margin-top: 10%;
+}
+
 
 .swiper-container {
     width: 100%;

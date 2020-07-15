@@ -33,63 +33,66 @@
 	    <article>
 	     <!-- 받은 미션이 없을 때-->
 	     <c:if test="${result eq 0}">
-			<ol class="date-none">
+			<ol class="data-none">
 			    <li>미션이 없습니다!</li>
 			    <li>미션을 받아보세요!</li>
+			    <li><img src="${project}images/mission_none.png"></li>
 			</ol>
-			</c:if>
-	        <div class="swiper-container">
-	            <div class="swiper-button-prev"></div>
-	            <div class="swiper-wrapper">
-	            	
-            		<c:if test="${result ne 0}">
-		            	<c:forEach var="userMissionsDto" items="${userMissionsDtos}">
-		            		<c:if test="${userMissionsDto.mission_state eq 1}">
-				                <div class="swiper-slide">
-				                    <ol class="data-exist">
-				                        <form name="myMissionAuthForm" action="user_myMissionAuth.do">
-				                            <input type="hidden" value="${userMissionsDto.mission_start_date}">
-				                            <input type="hidden" value="${userMissionsDto.large_category}/${userMissionDto.small_category}">
-				                            <input type="hidden" value="${userMissionsDto.mission_title}">
-				                            <input type="hidden" value="${userMissionsDto.mission_contents}">
-				                            <input type="hidden" value="${userMissionsDto.mission_state}">
-				                            <li class="text-date">${userMissionsDto.mission_start_date} 시작</li>
-				                            <li class="text-category">${userMissionsDto.large_category}/${userMissionDto.small_category}</li>
-				                            <li class="text-mission">${userMissionsDto.mission_title}</li>
-				                            <li>
-				                                <img src="/category/${userMissionsDto.category_image}" alt="kk" onerror="this.src='${project}images/mod_logo.png'">
-				                            </li>
-				                            <li class="text-summary">${userMissionsDto.mission_contents}</li>
-				                            <li class="text-status">진행중</li>
-				                            <li><button class="btn-missionAuth">인증하기</button></li>
-				                        </form>
-				                    </ol>
-				                </div>
-			                </c:if>
-			                <c:if test="${userMissionsDto.mission_state eq 4}">
-			                	<div class="swiper-slide">
-				                    <ol class="data-exist">
-			                            <input type="hidden" value="${userMissionsDto.mission_start_date}">
-			                            <input type="hidden" value="${userMissionsDto.large_category}/${userMissionDto.small_category}">
-			                            <input type="hidden" value="${userMissionsDto.mission_title}">
-			                            <input type="hidden" value="${userMissionsDto.mission_contents}">
-			                            <input type="hidden" value="${userMissionsDto.mission_state}">
-			                            <li class="text-date">${userMissionsDto.mission_start_date} 시작</li>
-			                            <li class="text-category">${userMissionsDto.large_category}/${userMissionDto.small_category}</li>
-			                            <li class="text-mission">${userMissionsDto.mission_title}</li>
-			                            <li>
-			                                <img src="/upload/${upload_image}" alt="kk" onerror="this.src='${project}images/mod_logo.png'">
-			                            </li>
-			                            <li class="text-summary">${userMissionsDto.mission_contents}</li>
-			                            <li class="text-status">인증중</li>
-				                    </ol>
-				                </div>
-			                </c:if>
-		                </c:forEach>
-	                </c:if>
-	            </div>
-	            <div class="swiper-button-next"></div>
-	        </div>
+		</c:if>
+	        
+       		<c:if test="${result ne 0}">
+       			<div class="swiper-container">
+		          <div class="swiper-button-prev"></div>
+		          <div class="swiper-wrapper">
+         			<c:forEach var="userMissionsDto" items="${userMissionsDtos}">
+         			<c:if test="${userMissionsDto.mission_state eq 1}">
+               		<div class="swiper-slide">
+                   	<ol class="data-exist">
+                       <form name="myMissionAuthForm" action="user_myMissionAuth.do">
+                           <input type="hidden" value="${userMissionsDto.mission_start_date}">
+                           <input type="hidden" value="${userMissionsDto.large_category}/${userMissionDto.small_category}">
+                           <input type="hidden" value="${userMissionsDto.mission_title}">
+                           <input type="hidden" value="${userMissionsDto.mission_contents}">
+                           <input type="hidden" value="${userMissionsDto.mission_state}">
+                           <li class="text-date">${userMissionsDto.mission_start_date} 시작</li>
+                           <li class="text-category">${userMissionsDto.large_category}/${userMissionDto.small_category}</li>
+                           <li class="text-mission">${userMissionsDto.mission_title}</li>
+                           <li>
+                               <img src="/category/${userMissionsDto.category_image}" alt="kk" onerror="this.src='${project}images/mod_logo.png'">
+                           </li>
+                           <li class="text-summary">${userMissionsDto.mission_contents}</li>
+                           <li class="text-status">진행중</li>
+                           <li><button class="btn-missionAuth">인증하기</button></li>
+                       </form>
+                   	</ol>
+					</div>
+              		</c:if>
+              		<c:if test="${userMissionsDto.mission_state eq 4}">
+           			<div class="swiper-slide">
+                   	<ol class="data-exist">
+                          <input type="hidden" value="${userMissionsDto.mission_start_date}">
+                          <input type="hidden" value="${userMissionsDto.large_category}/${userMissionDto.small_category}">
+                          <input type="hidden" value="${userMissionsDto.mission_title}">
+                          <input type="hidden" value="${userMissionsDto.mission_contents}">
+                          <input type="hidden" value="${userMissionsDto.mission_state}">
+                          <li class="text-date">${userMissionsDto.mission_start_date} 시작</li>
+                          <li class="text-category">${userMissionsDto.large_category}/${userMissionDto.small_category}</li>
+                          <li class="text-mission">${userMissionsDto.mission_title}</li>
+                          <li>
+                              <img src="/upload/${upload_image}" alt="kk" onerror="this.src='${project}images/mod_logo.png'">
+                          </li>
+                          <li class="text-summary">${userMissionsDto.mission_contents}</li>
+                          <li class="text-status">인증중</li>
+                   	</ol>
+               		</div>
+              		</c:if>
+             		</c:forEach>
+             	</div>
+         		<div class="swiper-button-next"></div>
+     		</div>
+          </c:if>
+	            
+	        
 	        <!-- 미션받기 버튼 -->
 	        <div id="flip" class="slider"><img src="${project}images/plus.png" alt="slide"></div>
 	        <section id="panel" class="mission-select">
@@ -107,6 +110,7 @@
 	            </div>
 	        </section>
 	    </article>
+	    
 	    <!--메뉴바-->
 	    <nav>
 	        <ul>
