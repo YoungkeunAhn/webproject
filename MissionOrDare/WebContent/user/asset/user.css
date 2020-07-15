@@ -796,24 +796,30 @@ list ::-webkit-scrollbar {
 ***********************************************/
 .usermyArticle{
    position: relative;
-   top: -6rem;
+   top: 0rem;
 }
 .imymemine{
-    height:50%;
-    width:100%;
-    margin: 0px auto;
+    height: 67%;
+    width: 100%;
+    margin: 30px auto;
     text-align: center;
 }
 .imymemine .content-profile{
     background-color: #eef327;
     border-radius: 20px;
-    width: 183px;
-    margin: 12px auto;
-    display: inline;
+    width: 260px;
+    margin: 12px 40px 12px 0px;
+    text-align: left;
 }
 .imymemine .content-profile .img-circle{
-    width: 10%;
-    height: 43%;
+    width: 40px;
+    height: 40px;
+}
+.writeMessage{
+	position: relative;
+    width: 35px;
+    height: 35px;
+    z-index: 4;
 }
 .gaein{
     background-color: #eaeff8;
@@ -828,15 +834,18 @@ list ::-webkit-scrollbar {
 }
 
 .imymemine .good{
-    text-align: center;
-    height: 40%;
-    display: block;
+    text-align: left;
+    height: 140px;
+    display: flex;
+    flex-flow: row;
 }
 .imymemine .good .missionimage{
-    height: 85%;
-    width: 53%;
-    border: 1px solid steelblue ;
-    border-radius: 100%;
+    height: 90px;
+    width: 95px;
+    border-radius: 20%;
+    margin-right: 30px;
+    margin-top: 25px;
+    margin-left: 10px;
 }
 div hr{
     margin-top: 7%;
@@ -844,21 +853,25 @@ div hr{
     border-top: 1px solid black;
     display: block;
 }
+.gay{
+	border-top: 1px solid black;
+}
 .gay span{
     font-size: 60%;
 }
 .good span{
     color: black;
-    font-size: 60%;
+    font-size: 1rem;
     display: block;
+    align-self: center;
 }
 .good span a{
     display: block;
-    font-size: 100%;
+    font-size: 2rem;
 }
 .good span b{
     display: block;
-    font-size: 100%;
+    font-size: 2rem;
     color: red;
 }
 
@@ -867,20 +880,21 @@ div hr{
     width: 100%;
     height: 88%;
     padding: 10px auto;
+    text-align: left;
 }
 .container .white-box{
     width: 83%;
-    height: 33%;
+    height: 48%;
     margin: 10px auto;
     background-color: rgba(255,255,255,0.5);
     padding: 20px 0;
 }
 .container .imymemine .white-box1{
     width: 83%;
-    height: 137%;
+    height: 91%;
     margin: 10px auto;
     background-color: rgba(255,255,255,0.5);
-    padding: 20px 0;
+    padding: 0;
 }
 div .write-control{
     width: 100%;
@@ -893,6 +907,12 @@ div .write-control{
 }
 .missionNav{
     width: 100%;
+}
+.sisisi{
+	display: flex;
+	flex-wrap: wrap;
+	width:90px;
+	align-items: center;
 }
 /**********************************************
 
