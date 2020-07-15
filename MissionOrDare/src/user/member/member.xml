@@ -17,7 +17,7 @@
 		insert into mod_users(user_nickname, user_email, user_passwd, gender, age_group, date_of_birth, kakao_birthday,
 		location, interesting1_large_category, interesting2_large_category, interesting3_large_category, interesting4_large_category,
 		job, kakao_id, kakao_access_token, profile_picture) values(#{user_nickname}, #{user_email,jdbcType=VARCHAR},
-		#{user_passwd}, #{gender,jdbcType=VARCHAR}, #{age_group,jdbcType=VARCHAR}, to_date(#{date_of_birth},'YYYY-DD-MM'), #{kakao_birthday,jdbcType=VARCHAR}, 
+		#{user_passwd}, #{gender,jdbcType=VARCHAR}, #{age_group,jdbcType=VARCHAR}, #{date_of_birth}, #{kakao_birthday,jdbcType=VARCHAR}, 
 		#{location}, #{interesting1_large_category}, #{interesting2_large_category,jdbcType=VARCHAR}, 
 		#{interesting3_large_category,jdbcType=VARCHAR}, #{interesting4_large_category,jdbcType=VARCHAR}, 
 		#{job,jdbcType=VARCHAR}, #{kakao_id}, #{kakao_access_token,jdbcType=VARCHAR}, #{profile_picture,jdbcType=VARCHAR})
