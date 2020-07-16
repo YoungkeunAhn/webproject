@@ -19,22 +19,27 @@
           <section class="eval">
              <div class="gilpung">
              <div class="item">
-                <span class="item1">미술/그리기</span><br>
+                <span class="item1">${userMissionDto.large_category}/${userMissionDto.small_category}</span><br>
              </div>
              <div class="item">
-                <span class="item2">라이언이 부탁한 자화상</span><br>
+                <span class="item2">${userMissionDto.mission_title}</span><br>
              </div>
 	           	<div id="profile" class="content-profile" onclick="location.href='user_anotherUser.jsp'">
-	                <img class="img-circle" src="${project}images/madong.PNG" alt="user-profile">
-	                <span>KIMONG</span><br>
+	                <img class="img-circle" src="${profile_picture}" alt="user-profile">
+	                <span>${userMissionDto.user_nickname}</span><br>
              	</div>
              <div class="item">
                <i style="font-size: 150%;" class="fas fa-chevron-left"></i>
-               <img class="content-image" src="${project}images/madong.PNG" alt="content-image">
+               <c:if test="${userMissionDto.upload_image ne null}">
+               <img class="content-image" src="/upload/${upload_image}" alt="content-image">
+               </c:if>
+               <c:if test="${userMissionDto.upload_video ne null}">
+               <img class="content-image" src="/upload/${upload_video}" alt="content-image">
+               </c:if>
                <i style="font-size: 150%;" class="fas fa-chevron-right"></i>
              </div>
              <div>
-               <span>졸귀탱라이언</span>
+               <span>${userMissionDto.mission_upload_contents}</span>
             
             </div>
 				

@@ -26,6 +26,8 @@ import user.member.UserMemberDBBean;
 import user.member.UserMemberDao;
 import user.missionauth.MissionAuthDBBean;
 import user.missionauth.MissionAuthDao;
+import user.missioneval.UserMissionEvalDBBean;
+import user.missioneval.UserMissionEvalDao;
 import user.missionget.MissionGetDBBean;
 import user.missionget.MissionGetDao;
 import user.successboard.UserSuccessBoardDBBean;
@@ -94,6 +96,11 @@ public class CreateBean {
 		UserMemberDBBean userMemberDao = new UserMemberDBBean();
 		return userMemberDao;
 	}
+	@Bean
+	public UserMissionEvalDao userMissionEvalDao() {
+		UserMissionEvalDBBean userMissionEvalDao = new UserMissionEvalDBBean();
+		return userMissionEvalDao;
+	}	
 	@Bean
 	public UserUserPageDao userUserPageDao() {
 		UserUserPageDBBean UserUserPageDao = new UserUserPageDBBean();
