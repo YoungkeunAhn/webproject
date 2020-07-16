@@ -15,4 +15,7 @@ public class UserMissionEvalDBBean implements UserMissionEvalDao{
 	public String getUserProfile(String user_nickname) {
 		return session.selectOne("Eval.getUserProfile",user_nickname);
 	}
+	public int passContent(String mission_state_id) {
+		return session.update("Eval.passContent", mission_state_id);
+	}
 }

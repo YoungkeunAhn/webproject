@@ -39,13 +39,13 @@
                <i style="font-size: 150%;" class="fas fa-chevron-right"></i>
              </div>
              <div>
-               <span>${userMissionDto.mission_upload_contents}</span>
+               <span>${userMissionDto.mission_upload_contents} / ${userMissionDto.mission_state_id}</span>
             
             </div>
 				
 				<div class="btn-line">
-				<input class="successbtn" type="button" value="성공" onclick="GoSuccessProPage()"/>
-				<input type="button" class="deletebtn" value="실패" onclick="GoFailureProPage()"/>
+				<input class="successbtn" type="button" value="성공" name="pass" onclick="GoSuccessProPage('${userMissionDto.mission_state_id}')"/>
+				<input type="button" class="deletebtn" value="실패" name="fail" onclick="GoFailureProPage()"/>
 				</div>
 				</div>
 	    	</section>

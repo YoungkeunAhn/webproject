@@ -18,4 +18,8 @@
 	<select id="getUserProfile" parameterType="String" resultType="String">
 		select profile_picture from mod_users where user_nickname = #{user_nickname}
 	</select>
+	<update id="passContent" parameterType="String">
+		update mod_missionstate set successed_count = 1+successed_count, mission_evaluation_count=1+mission_evaluation_count
+		where mission_state_id=#{mission_state_id}
+	</update>
 </mapper>
