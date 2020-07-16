@@ -45,7 +45,7 @@
 				
 				<div class="btn-line">
 				<input class="successbtn" type="button" value="성공" name="pass" onclick="GoSuccessProPage('${userMissionDto.mission_state_id}')"/>
-				<input type="button" class="deletebtn" value="실패" name="fail" onclick="GoFailureProPage()"/>
+				<input type="button" class="deletebtn" value="실패" name="fail" onclick="GoFailureProPage('${userMissionDto.mission_state_id}')"/>
 				</div>
 				</div>
 	    	</section>

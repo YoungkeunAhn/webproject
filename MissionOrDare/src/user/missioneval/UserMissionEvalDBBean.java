@@ -18,4 +18,7 @@ public class UserMissionEvalDBBean implements UserMissionEvalDao{
 	public int passContent(String mission_state_id) {
 		return session.update("Eval.passContent", mission_state_id);
 	}
+	public int failContent(String mission_state_id) {
+		return session.update("Eval.failContent", mission_state_id);
+	}
 }

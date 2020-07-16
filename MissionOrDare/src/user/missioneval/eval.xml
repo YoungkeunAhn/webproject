@@ -22,4 +22,8 @@
 		update mod_missionstate set successed_count = 1+successed_count, mission_evaluation_count=1+mission_evaluation_count
 		where mission_state_id=#{mission_state_id}
 	</update>
+	<update id="failContent" parameterType="String">
+		update mod_missionstate set mission_evaluation_count=1 + mission_evaluation_count
+		where mission_state_id=#{mission_state_id}
+	</update>
 </mapper>

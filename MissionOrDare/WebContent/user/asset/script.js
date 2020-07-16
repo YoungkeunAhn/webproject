@@ -176,11 +176,11 @@ function GoMyPage() {
 function GoMessageForm() {
 	location.href='user_messageForm.do';
 }
-function GoSuccessProPage() {
-	location.href='user_missionSuccessCountPro.do';
+function GoSuccessProPage(mission_state_id) {
+location.href="user_missionSuccessCountPro.do?mission_state_id="+mission_state_id;
 }
-function GoFailureProPage() {
-	location.href='user_missionFailureCountPro.do';
+function GoFailureProPage(mission_state_id) {
+location.href="user_missionFailureCountPro.do?mission_state_id="+mission_state_id;
 }
 function MyProfileModify() {
 	location.href='user_profileModify.do';

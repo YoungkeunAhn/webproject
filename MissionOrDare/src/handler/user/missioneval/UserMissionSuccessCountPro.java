@@ -22,7 +22,7 @@ public class UserMissionSuccessCountPro implements CommandHandler{
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		String mission_state_id = request.getParameter("mission_state_id");
-		System.out.println("mission_state_id"+mission_state_id);
+		System.out.println("dddmission_state_id"+mission_state_id);
 		
 		int result = userMissionEvalDao.passContent(mission_state_id);
 		request.setAttribute("result", result);
