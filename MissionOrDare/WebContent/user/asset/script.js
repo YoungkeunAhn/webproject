@@ -141,7 +141,7 @@ function OnSearch(){
 */	 
 
 function AuthPopupOn() {
-	if( ! myMissionAuth.auth_image.value ) {
+	if( ! myMissionAuth.abc.value ) {
 		 alert( insertFileError );
 		 return false;
 	}else{
