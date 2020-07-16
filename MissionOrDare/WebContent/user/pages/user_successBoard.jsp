@@ -19,13 +19,11 @@
             <div class="search-bar">
                 <i class="fas fa-search"></i>
                 <input id="search_input" type="search" name="pidSearch" placeholder="검색" onkeydown="OnSearch()">
+                <input id="opt" type="hidden" value="user">
             </div>
-            <div id="search_result" class="search-result" style="display: none" onclick="alert('ajax처리^_^')">
-                <span>ajax처리해야됨 갸꿀</span>
-                <span>ajax처리해야됨 갸꿀</span>
-                <span>ajax처리해야됨 갸꿀</span>
-                <span>ajax처리해야됨 갸꿀</span>
-                <span>ajax처리해야됨 갸꿀</span>
+         
+            <div id="search_result" class="search-result" style="display: none">
+                
             </div>
         </header>
         <article class="boardArticle">
@@ -37,12 +35,12 @@
                 <div class="list">
                 	<c:forEach var="content" items="${contents}">
                 		<c:if test="${fn:contains(content, '.mp4') or fn:contains(content, '.avi')}">
-                			<video muted autoplay="autoplay" class="img-rounded" width="180">
+                			<video muted autoplay="autoplay" class="img-rounded" width="180" onclick="location.href='user_content.do'">
 								<source src="/upload/${content}">
 							</video>
                 		</c:if>
                 		<c:if test="${!fn:contains(content, '.mp4') and !fn:contains(content, '.avi')}">
-                			<img src="/upload/${content}" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                			<img src="/upload/${content}" class="img-rounded" alt="thumbnail" onclick="location.href='user_content.do'"/>
                 		</c:if>
                 	</c:forEach>
                 	
@@ -98,5 +96,79 @@
             </ul>
         </nav>
     </div>
+    
+<script type="text/javascript">
+	//<!--
+	var users = document.getElementById('sendUsers');
+	var delText = '';
+	$(document).ready( function() {
+		$('#search_input').on('keyup',function(event) {
+			var tete = $('#search_input').val();
+			if(tete==null || tete==''){
+				$('#search_result').css('display','none');
+			}
+			
+			$.ajax(
+				{
+					type : 'POST',
+					url : 'search_successBoard.do',
+					data : {
+						search_input : $('#search_input').val(),
+						option : $('#opt').val()
+					},
+					dataType : 'text',
+					async : false,
+					success : function(data) {
+						$('#search_result').empty();
+						$('#search_result').append('<span class="user">계정</span><span class="content">게시글</span><br>');
+						data = eval('(' + data +')');
+						// 검색결과 출력
+						if($('#opt').val() == 'user') {
+							for(var i=0; i<data.usersDtos.length; i++){
+								$('#search_result').append('<span class="searchUser">'+data.usersDtos[i].user_nickname+'</span>');
+							}
+						} else if($('#opt').val() == 'content'){
+							for(var i=0; i<data.largeCategoryDtos.length; i++){
+								$('#search_result').append('<span class="searchCategory">'+data.largeCategoryDtos[i].large_category+'</span>');
+							}
+							for(var i=0; i<data.smallCategoryDtos.length; i++){
+								$('#search_result').append('<span class="searchCategory">'+ data.smallCategoryDtos[i].large_category + ' / ' + data.smallCategoryDtos[i].small_category+'</span>');
+							}
+						} 
+						$(document).on('click', '.searchUser', function(event){
+							location.href='user_successBoard.do?searchUser=' + $(this).text();
+						});
+						$(document).on('click', '.searchCategory', function(event){
+							location.href='user_successBoard.do?searchCategory=' + $(this).text();
+						});
+						// 게시글 검색
+						$(document).on('click', '.content', function(event) {
+							$('#search_input').val('');
+							$('#opt').val('content');
+							$('#search_result').empty();
+							$('#search_result').append('<span class="user">계정</span><span class="content">게시글</span><br>');
+							$('#search_input').focus();
+						});
+						// 유저 검색
+						$(document).on('click', '.user', function(event) {
+							$('#search_input').val('');
+							$('#opt').val('user');
+							$('#search_result').empty();
+							$('#search_result').append('<span class="user">계정</span><span class="content">게시글</span><br>');
+							$('#search_input').focus();
+						});
+					},
+					error : function(e){
+						
+					}
+				}
+			);
+		});
+	});
+	
+	//-->
+</script>
 </body>
 </html>
+
+

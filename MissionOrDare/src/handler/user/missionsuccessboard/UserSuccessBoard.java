@@ -23,15 +23,26 @@ public class UserSuccessBoard implements CommandHandler {
 	@RequestMapping("/user_successBoard")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("utf-8");
+		
 		ArrayList<String> contents = new ArrayList<String>();
 		List<MissionStateSuccessBoardDto> missionStateDtos;
 		String option = request.getParameter("option");
-		if( option == null) {
-			missionStateDtos = userSuccessBoardDao.getSuccessMissions();
-		} else {
-			missionStateDtos = userSuccessBoardDao.getSuccessPopularityMissions();
-		}
+		String searchUser = request.getParameter("searchUser");
+		String searchCategory = request.getParameter("searchCategory");
 		
+		if(searchUser == null && searchCategory == null) {
+			if( option == null) {
+				missionStateDtos = userSuccessBoardDao.getSuccessMissions();
+			} else {
+				missionStateDtos = userSuccessBoardDao.getSuccessPopularityMissions();
+			}
+		} else if(searchCategory == null){
+			missionStateDtos = userSuccessBoardDao.getUserMissions(searchUser);
+		} else {
+			missionStateDtos = userSuccessBoardDao.getCategoryMissions(searchCategory);
+		}
+			
 		for(MissionStateSuccessBoardDto m : missionStateDtos ) {
 			if(m.getUpload_video() != null) {
 				String[] video = m.getUpload_video().split("/");

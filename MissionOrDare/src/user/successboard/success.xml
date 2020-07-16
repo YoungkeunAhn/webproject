@@ -14,4 +14,35 @@
 		from mod_missionstate m, mod_successboard s where m.mission_state_id=s.mission_state_id
 		order by s.likecount desc
 	</select>
+	
+	<select id="findLargeCategorys" parameterType="java.util.Map" resultType="Dtos.MissionCategoryDto">
+		select distinct c.large_category
+		from mod_missioncategory c, mod_successboard s, mod_missioninfo m
+		where m.mission_info_id=s.mission_info_id and c.mission_category_id=m.mission_category_id
+		and c.large_category like '%'||#{searchCategory}||'%'
+	</select>
+	
+	<select id="findSmallCategorys" parameterType="java.util.Map" resultType="Dtos.MissionCategoryDto">
+		select distinct c.* 
+		from mod_missioncategory c, mod_successboard s, mod_missioninfo m
+		where m.mission_info_id=s.mission_info_id and c.mission_category_id=m.mission_category_id
+		and c.small_category like '%'||#{searchCategory}||'%'
+	</select>
+	
+	<select id="getUserMissions" parameterType="String" resultType="Dtos.MissionStateSuccessBoardDto">
+		select m.*, s.success_board_id, s.success_board_contents, s.likecount, s.views, s.board_register_date
+		from mod_missionstate m, mod_successboard s where m.mission_state_id=s.mission_state_id
+		and m.user_nickname=#{searchUser}
+		order by s.board_register_date desc
+	</select>
+	
+	<select id="getCategoryMissions" parameterType="String" resultType="Dtos.MissionStateSuccessBoardDto">
+		select * from mod_successboard s left outer join mod_missionstate m 
+        on s.mission_state_id = m.mission_state_id
+        left outer join mod_missioninfo i 
+        on i.mission_info_id = s.mission_info_id
+        left outer join mod_missioncategory c
+        on c.mission_category_id= i.mission_category_id 
+        where c.large_category like '%'||#{searchCategory}||'%' or c.small_category like '%'||#{searchCategory}||'%'
+	</select>
 </mapper>

@@ -31,7 +31,6 @@ public class IdCheck implements CommandHandler {
 		
 		String searchUser = request.getParameter("searchUser");
 		
-		System.out.println(searchUser);
 		Map<String, Object> mapp = new Hashtable<String, Object>();
 		mapp.put( "searchUser", searchUser );
 		List<UsersDto> usersDtos = manageMessageDao.findUsers( mapp );
