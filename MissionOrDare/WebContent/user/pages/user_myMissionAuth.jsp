@@ -59,7 +59,7 @@
 	                    <li class="text-date"><input class="form-control" type="text" value="${mission_start_date} 시작"></li>
 	                    <li>
 	                        <i class="fas fa-angle-left"></i>
-	                        <img id="auth_image" src="${project}images/auth_defalut.png" alt="auth_image" onclick="document.getElementById('upload').click(); document.getElementById('abc').value=document.getElementById('upload').value">
+	                        <img name="auth_image" id="auth_image" src="${project}images/auth_defalut.png" alt="auth_image" onclick="document.getElementById('upload').click(); document.getElementById('abc').value=document.getElementById('upload').value">
 	                        <i class="fas fa-angle-right"></i>
 	                    </li>
 	                    <li>
@@ -69,7 +69,7 @@
 	                        <input id="upload" class="file_upload" name="files" type="file" accept="image/*, video/*" capture="camera" multiple style="display: none">
 	                    </li>
 	                    <li>
-	                        <input class="board_content form-control" type="text" name="board_content" placeholder="미션에 대한 내용을 간단히 적어주세요">
+	                        <input class="board_content form-control" type="text" maxlength="50" name="board_content" placeholder="미션에 대한 내용을 간단히 적어주세요">
 	                    </li>
 	                    <li>
 	                        <select class="public-select form-control" name="public_availability">
