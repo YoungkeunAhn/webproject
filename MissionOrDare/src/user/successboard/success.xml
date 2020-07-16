@@ -4,8 +4,14 @@
   	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   	
 <mapper namespace="success">
-	<select id="getSuccessMissions" resultType="Dtos.MissionStateDto">
-		select * from mod_missionstate where mission_state=2
+	<select id="getSuccessMissions" resultType="Dtos.MissionStateSuccessBoardDto">
+		select m.*, s.success_board_id, s.success_board_contents, s.likecount, s.views, s.board_register_date
+		from mod_missionstate m, mod_successboard s where m.mission_state_id=s.mission_state_id
+		order by s.board_register_date desc
 	</select>
-
+	<select id="getSuccessPopularityMissions" resultType="Dtos.MissionStateSuccessBoardDto">
+		select m.*, s.success_board_id, s.success_board_contents, s.likecount, s.views, s.board_register_date
+		from mod_missionstate m, mod_successboard s where m.mission_state_id=s.mission_state_id
+		order by s.likecount desc
+	</select>
 </mapper>

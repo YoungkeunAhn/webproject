@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import Dtos.MissionStateDto;
+import Dtos.MissionStateSuccessBoardDto;
 import handler.CommandHandler;
 import user.successboard.UserSuccessBoardDao;
 
@@ -23,20 +23,26 @@ public class UserSuccessBoard implements CommandHandler {
 	@RequestMapping("/user_successBoard")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		ArrayList<String> contents = new ArrayList<String>();;
-		List<MissionStateDto> missionStateDtos = userSuccessBoardDao.getSuccessMissions();
-		for(MissionStateDto m : missionStateDtos ) {
+		ArrayList<String> contents = new ArrayList<String>();
+		List<MissionStateSuccessBoardDto> missionStateDtos;
+		String option = request.getParameter("option");
+		if( option == null) {
+			missionStateDtos = userSuccessBoardDao.getSuccessMissions();
+		} else {
+			missionStateDtos = userSuccessBoardDao.getSuccessPopularityMissions();
+		}
+		
+		for(MissionStateSuccessBoardDto m : missionStateDtos ) {
 			if(m.getUpload_video() != null) {
 				String[] video = m.getUpload_video().split("/");
-				System.out.println(video[0]);
 				contents.add(video[0]);
-			} else {
+			} else if(m.getUpload_image() != null){
 				String[] image = m.getUpload_image().split("/");
-				System.out.println(image[0]);
 				contents.add(image[0]);
 			}
 		}
 		
+		request.setAttribute("option", option);
 		request.setAttribute("contents", contents);
 		request.setAttribute("missionStateDtos", missionStateDtos);
 				

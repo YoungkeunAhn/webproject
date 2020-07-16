@@ -2,10 +2,11 @@ package user.successboard;
 
 import java.util.List;
 
-import Dtos.MissionStateDto;
+import Dtos.MissionStateSuccessBoardDto;
 
 public interface UserSuccessBoardDao {
 
-	public List<MissionStateDto> getSuccessMissions();
+	public List<MissionStateSuccessBoardDto> getSuccessMissions();
+	public List<MissionStateSuccessBoardDto> getSuccessPopularityMissions();
 
 }
