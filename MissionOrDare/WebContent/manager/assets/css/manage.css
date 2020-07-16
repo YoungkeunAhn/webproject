@@ -10,6 +10,8 @@ body{
     background: #c5e8ea;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 header{
@@ -54,22 +56,6 @@ header button{
 header #myBtn{
     margin-left: 70%;
     background-color: #d9edf7;
-}
-
-nav{
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    display: inline-block;
-    margin: 10px auto;
-}
-
-nav div{
-    background-color: black;
-    color: white;
-    border: 2px #c5e8ea solid;
-    height: 50px;
-    padding-top: 13px;
 }
 
 article{
@@ -536,16 +522,24 @@ footer span {
 .message_sendPage{
 	display: flex;
 	flex-wrap: wrap;
-	/* justify-content: center; */
-	width: 77%;
+	justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
 }
-
-.message_sendPage .search_user{
-	width: 100%;
+.message_sendPage section{
+	margin: 10px 10px;
 	height: 100%;
-	margin-right: 5%;
+} 
+
+.message_sendPage .send_user{
+	width: 33%;
+	height: 100%;
 	border: 1px solid #888;
 	border-radius: 4px;
+}
+.message_sendPage .search_user{
+	
 }
 .message_sendPage .search_user form{
 	margin: 0;
@@ -553,11 +547,10 @@ footer span {
 }
 .message_sendPage .search_user form table{
 	text-align: center;
-	width: 100%;
 	height: 100%;
 }
 .message_sendPage .message_table{
-	width: 100%;
+	width: 33%;
 }
 .message_sendPage .message_table ul{
 	list-style: none;
@@ -569,22 +562,15 @@ footer span {
 }
 .message_sendPage .message_table ul li textarea {
 	width: 100%;
-	height: 100%;
+	height: 200px;
 	margin: 10px auto 0 auto;
+}
+.message_sendPage .message_table ul li button{
+	margin: 15px auto;
+	width: 150px;
+	height: 40px;
+	text-align: center;
 }
 .messageForm{
 	width:100%;
-}
-.leftformblah{
-	width:25%;
-	height: 100%;
-}
-.blahblah{
-	width:75%;
-}
-.hahahaho{
-	justify-content: center;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
 }

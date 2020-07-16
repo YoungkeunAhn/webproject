@@ -17,7 +17,7 @@
     <footer>
         <span>@copyright</span>
         <span>SimpleFun</span>
-        <span>Wep Project</span>
+        <span>Web Project</span>
     </footer>
 </div>
 </body>
