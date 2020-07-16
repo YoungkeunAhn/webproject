@@ -24,7 +24,7 @@
              <div class="item">
                 <span class="item2">라이언이 부탁한 자화상</span><br>
              </div>
-             <div class="content-profile">
+             <div class="content-profile" onclick="location.href='user_anotherUser.jsp'">
                 <img class="img-circle" src="${project}images/madong.PNG" alt="user-profile">
                    <span>KIMONG</span><br>
              </div>

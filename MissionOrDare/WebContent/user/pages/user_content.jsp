@@ -58,7 +58,7 @@
 				</div>	
 	           </li>
 	           <li class="text-mission"><span>너의역량을 보여줘</span></li>
-	           <li><img class="BoysandGirls" src="${project}images/madong.PNG">
+	           <li onclick="location.href='user_anotherUser.jsp'" ><img class="BoysandGirls" src="${project}images/madong.PNG">
 	        		<span>KIMONG</span>
 		 	   </li>
 	           <li><img class="content-img" src="${project}images/profileinjung.PNG" alt="content-image"></li>
@@ -98,7 +98,7 @@
 	 				<ul onclick="event.cancelBubble=true">
 	 					<li><span class="user-nick"></span></li>
 		 				<li><span onclick="doPostMessage($('#user_nickname').val())">쪽지 보내기</span></li>
-		 				<li><span onclick="goOtherUserPage($('#user_nickname').val())">프로필 방문</span></li>
+		 				<li><span onclick="location.href='user_anotherUser.jsp'">프로필 방문</span></li>
 		 				<li><span class="text-danger" onclick="doReport($('#reply_id').val())">신고하기</span></li>
 	 				</ul>
 	 			</div>
