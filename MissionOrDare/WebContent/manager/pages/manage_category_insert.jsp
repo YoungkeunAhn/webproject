@@ -30,7 +30,7 @@
 	        		<li><label class="title">카테고리 추가</label></li>
 	        		<li>
 		        		<span>대분류</span>
-			        	<input type="text" name="largeCategory">
+			        	<input type="text" name="largeCategory" autofocus>
 			        </li>
 	        		<li>
 	        			<span>소분류</span>
@@ -38,12 +38,10 @@
 	        		</li>
 	        		<li>
                         <img id="auth_image" src="${project}images/logo.jpg" alt="auth_image" onclick="document.getElementById('upload').click(); document.getElementById('abc').value=document.getElementById('upload').value">
+                        <input id="upload" class="file_upload" name="category_image" type="file" accept="image/*, video/*" capture="camera" style="display: none">
                     </li>
                     <li>
                         <input id="abc" type="text" name="abc" style="display:none;">
-                    </li>
-                    <li>
-                        <input id="upload" class="file_upload" name="category_image" type="file" accept="image/*, video/*" capture="camera" style="display: none">
                     </li>
 	        		<li>
 	        			<button class="btn btn-success" type="submit">카테고리 추가</button>

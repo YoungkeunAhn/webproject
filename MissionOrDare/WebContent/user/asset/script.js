@@ -74,6 +74,13 @@ function myInfoModifyCheck() {
 	 
 }
 /*
+ * 
+ * user_report.jsp 텍스트에어리어 유혀상
+ * 
+ * 
+ */
+
+/*
 *user_main.jsp
 */
 //모달 끄기
@@ -173,4 +180,7 @@ function MyProfileModify() {
 }
 function MyInfoModify() {
 	location.href='user_myInfoModify.do';
+}
+function GoReportPage() {
+	location.href='user_report.jsp';
 }

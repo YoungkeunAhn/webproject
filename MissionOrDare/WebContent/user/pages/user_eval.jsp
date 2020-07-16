@@ -24,10 +24,10 @@
              <div class="item">
                 <span class="item2">라이언이 부탁한 자화상</span><br>
              </div>
-             <div class="content-profile">
-                <img class="img-circle" src="${project}images/madong.PNG" alt="user-profile">
-                   <span>KIMONG</span><br>
-             </div>
+	           	<div id="profile" class="content-profile" onclick="location.href='user_anotherUser.jsp'">
+	                <img class="img-circle" src="${project}images/madong.PNG" alt="user-profile">
+	                <span>KIMONG</span><br>
+             	</div>
              <div class="item">
                <i style="font-size: 150%;" class="fas fa-chevron-left"></i>
                <img class="content-image" src="${project}images/madong.PNG" alt="content-image">

@@ -12,7 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
 </head>
-<body style="overflow:hidden;">
+<body>
 	<div class="container">
         <header>
             <img id="menu" class="menu-img" src="${project}images/menu.png" alt="logo">
@@ -27,8 +27,8 @@
 	    	<div class="white-box">	
 	    		<section class="imymemine">
 	    		<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-	    			<img class="writeMessage" onclick="GoMessageForm()" src="${project}images/message12.png" alt="user-message">
-	    			<div id="profile" class="content-profile">
+	    			<div class="content-profile">
+	    		
 		    		   <img onclick="MyProfileModify()" class="img-circle" src="${userDto.profile_picture}" alt="user-profile">
 		               <span>${userDto.user_nickname}</span>
 					   
@@ -36,9 +36,6 @@
 	    		</div>	   		
 		   		<div class="write-control"><span>관심분야: ${userDto.interesting1_large_category} ${userDto.interesting2_large_category} ${userDto.interesting3_large_category} ${userDto.interesting4_large_category}</span></div>
 		   		<div class="write-control">가입일: ${userDto.sign_up_date}</div>
-		   		<div class="aho">
-		   		<button class="gaein" type="submit" onclick="MyInfoModify()"><span>개인정보수정</span></button>
-	    		</div>
 	    		</section>
 	    	</div>
     		<section class="imymemine">

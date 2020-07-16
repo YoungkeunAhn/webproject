@@ -27,7 +27,7 @@
             			alert("파일 사이즈 초과");
             			location.reload(true);
             		}
-            		if(!(f.type.match("image.*") || f.type.match("video.*")) ) {
+            		if(!(f.type.match("image.*") || f.type.match("video.mp4") || f.type.match("video.avi") )) {
             			alert("사진과 동영상만 업로드 가능합니다!");
             			location.reload(true);
             			return;

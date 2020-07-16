@@ -22,7 +22,7 @@
 	//-->
 	</script>
 </c:if>
-<c:if test="${random_number eq -1}">
+<c:if test="${random_number eq 0}">
 	<script type="text/javascript">
 	//<!--
 		alert("미션이 없습니다.");
@@ -40,9 +40,8 @@
             <ul>
                 <li>${randomMission.mission_contents}</li>
             </ul>
-            <div class="btn-line">
-                <button type="button" class="btn btn-primary" onclick="MyMissionGet()">미션수락</button>
-                <button type="button" class="btn btn-danger" onclick="location.href='user_missionGetPro.do?mission_level=${mission_level}&mission_categoryArea=${mission_categoryArea}'">다시받기</button>
+            <div class="btn-line" style="justify-content: center">
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)">돌아가기</button>
             </div>
         </section>
     </article>

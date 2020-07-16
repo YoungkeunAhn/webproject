@@ -13,49 +13,49 @@
     <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
 
 </head>
-<body>
+<body style="overflow: hidden;">
 <div class="containerBack">
-	        <div class="title-back"><span class="join-title">MyInfoModify</span></div>
-	<div class="container">
-	        <form class="join-form" name="userModifyForm" action="user_myInfoModifyPro.do" onsubmit="return myInfoModifyCheck()">
-	            <ul class="join-list">
-	                <li>
-	                    <label class="th">*닉네임 </label>
-	                    <label><input class="form-control" type="text" name="user_nickname" id="user_nickname" placeholder="insert into your nickname" value="${user_nickname}"></label>
-                   		<div class="checkResult" id="nicknameCheck"></div>
-                    	<label class="text text-mute">(특수문자 제외)40byte 이내로 입력해주세요</label>
-	                </li>
-	                <li>
-	                    <label class="th">*수정 할 비밀번호</label>
-	                    <label><input class="form-control" type="password" name="user_passwd" placeholder="insert into your password"></label>
-	                    <label class="text text-danger">비밀번호를 입력해주세요</label>
-	                </li>
-	                <li>
-	                    <label class="th">*수정 할 비밀번호 확인</label>
-	                    <label><input class="form-control" type="password" name="user_repasswd" placeholder="replay enter your password"></label>
-	                    <label class="text text-danger">비밀번호가 다릅니다.</label><label class="text text-primary">비밀번호가 일치합니다.</label>
-	                </li>
-	                <li>
-	                    <label class="th">* 생년월일</label>
-	                    <label><input class="form-control" type="text" name="user_birth" value="${usersDto.date_of_birth}" ></label>
-	                    <label class="text text-danger">생년월일을 입력해주세요</label>
-	                </li>
-	                <li>
-	                    <label class="th">직업</label>
-	                    <label>
-	                        <select class="form-control" name="user_job">
+           <div class="title-back"><span class="join-title">MyInfoModify</span></div>
+   <div class="container">
+           <form class="join-form" name="userModifyForm" action="user_myInfoModifyPro.do" onsubmit="return myInfoModifyCheck()">
+               <ul class="join-list">
+                   <li>
+                       <label class="th">*닉네임 </label>
+                       <label><input class="form-control" type="text" maxlength="8" name="user_nickname" id="user_nickname" placeholder="insert into your nickname" value="${user_nickname}"></label>
+                         <div class="checkResult" id="nicknameCheck"></div>
+                       <label class="text text-mute">(특수문자 제외)8자 이내로 입력해주세요</label>
+                   </li>
+                   <li>
+                       <label class="th">*수정 할 비밀번호</label>
+                       <label><input class="form-control" type="password" name="user_passwd" placeholder="insert into your password"></label>
+                       <label class="text text-danger">비밀번호를 입력해주세요</label>
+                   </li>
+                   <li>
+                       <label class="th">*수정 할 비밀번호 확인</label>
+                       <label><input class="form-control" type="password" name="user_repasswd" placeholder="replay enter your password"></label>
+                       <label class="text text-danger">비밀번호가 다릅니다.</label><label class="text text-primary">비밀번호가 일치합니다.</label>
+                   </li>
+                   <li>
+                       <label class="th">* 생년월일</label>
+                       <label><input class="form-control" type="text" name="user_birth" value="${usersDto.date_of_birth}" ></label>
+                       <label class="text text-danger">생년월일을 입력해주세요</label>
+                   </li>
+                   <li>
+                       <label class="th">직업</label>
+                       <label>
+                           <select class="form-control" name="user_job">
                             <option value="${usersDto.job}">직업</option>
                             <option value="학생">학생</option>
                             <option value="직장인">직장인</option>
                             <option value="자영업">자영업</option>
                             <option value="무직">무직</option>
                         </select>
-	                    </label>
-	                </li>
-	                <li>
-	                    <label class="th">거주지</label>
-	                    <label>
-	                        <select class="form-control" name="user_location">
+                       </label>
+                   </li>
+                   <li>
+                       <label class="th">거주지</label>
+                       <label>
+                           <select class="form-control" name="user_location">
                             <option value="${usersDto.location}">거주지</option>
                             <option value="서울">서울</option>
                             <option value="경기">경기</option>
@@ -67,62 +67,62 @@
                             <option value="전라도">전라도</option>
                             <option value="제주도">제주도</option>
                         </select>
-	                    </label>
-	                </li>
-	            </ul>
-	
-	            <!-- Button trigger modal -->
-	            <button type="button" class="btn-category" data-toggle="modal" data-target="#myModal">
-	                카테고리 선택
-	            </button>
-	            <label class="text text-danger">카테고리 1개이상 선택하셔야합니다.</label>
-	
-	            <!-- Modal -->
-	            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	                <div class="modal-dialog">
-	                    <div class="modal-content">
-	                        <div class="modal-header">
-	                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	                            <h4 class="modal-title" id="myModalLabel">관심사 카테고리 선택해주세요</h4>
-	                        </div>
-	                        <div class="modal-body">
-	                            <div class="modal-bodyLeft">
-	                        	    <input id="interesting_categorys" class="form-control" type="hidden" name="interesting_categorys">
-		                            <input class="lagerCategory" type="button" value="운동">
-		                            <input class="lagerCategory" type="button" value="여행">
-		                            <input class="lagerCategory" type="button" value="교육">
-		                            <input class="lagerCategory" type="button" value="댄스">
-		                            <input class="lagerCategory" type="button" value="음악">
-		                            <input class="lagerCategory" type="button" value="다이어트">
-		                            <input class="lagerCategory" type="button" value="기타">	                            
-								</div>
-								<div class="modal-bodyRight">
-	                        	    <input id="interesting_categorys" class="form-control" type="hidden" name="interesting_categorys">
-		                            <input class="lagerCategory" type="button" value="게임">
-		                            <input class="lagerCategory" type="button" value="먹방">
-		                            <input class="lagerCategory" type="button" value="개그">
-		                            <input class="lagerCategory" type="button" value="영화">
-		                            <input class="lagerCategory" type="button" value="뷰티">
-		                            <input class="lagerCategory" type="button" value="브이로그">
-		                            <input class="lagerCategory" type="button" value="asmr">
-	                        	</div>
-	                        </div>
-	                        <div class="modal-footer">
-	                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	                            <button type="button" class="btn btn-primary">Save changes</button>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	            <div>
-	            <button class="btn-modify" type="submit">수정</button>
-	        	<button class="btn-cancle" type="button" onclick="GoMyPage()">취소</button>
-	        	</div>
-	        </form>
-	</div>
+                       </label>
+                   </li>
+               </ul>
+   
+               <!-- Button trigger modal -->
+               <button type="button" class="btn-category" data-toggle="modal" data-target="#myModal">
+                   카테고리 선택
+               </button>
+               <label class="text text-danger">카테고리 1개이상 선택하셔야합니다.</label>
+   
+               <!-- Modal -->
+               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                   <div class="modal-dialog">
+                       <div class="modal-content">
+                           <div class="modal-header">
+                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                               <h4 class="modal-title" id="myModalLabel">관심사 카테고리 선택해주세요</h4>
+                           </div>
+                           <div class="modal-body">
+                               <div class="modal-bodyLeft">
+                                  <input id="interesting_categorys" class="form-control" type="hidden" name="interesting_categorys">
+                                  <input class="lagerCategory" type="button" value="운동">
+                                  <input class="lagerCategory" type="button" value="여행">
+                                  <input class="lagerCategory" type="button" value="교육">
+                                  <input class="lagerCategory" type="button" value="댄스">
+                                  <input class="lagerCategory" type="button" value="음악">
+                                  <input class="lagerCategory" type="button" value="다이어트">
+                                  <input class="lagerCategory" type="button" value="기타">                               
+                        </div>
+                        <div class="modal-bodyRight">
+                                  <input id="interesting_categorys" class="form-control" type="hidden" name="interesting_categorys">
+                                  <input class="lagerCategory" type="button" value="게임">
+                                  <input class="lagerCategory" type="button" value="먹방">
+                                  <input class="lagerCategory" type="button" value="개그">
+                                  <input class="lagerCategory" type="button" value="영화">
+                                  <input class="lagerCategory" type="button" value="뷰티">
+                                  <input class="lagerCategory" type="button" value="브이로그">
+                                  <input class="lagerCategory" type="button" value="asmr">
+                              </div>
+                           </div>
+                           <div class="modal-footer">
+                               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                               <button type="button" class="btn btn-primary">Save changes</button>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div>
+               <button class="btn-modify" type="submit">수정</button>
+              <button class="btn-cancle" type="button" onclick="GoMyPage()">취소</button>
+              </div>
+           </form>
+   </div>
 </div>
-	<script>
-	var items = '';
+   <script>
+   var items = '';
     var interesting_categorys = document.getElementById('interesting_categorys');
     $(document).ready(function () {
        $('.modal-bodyLeft > input').click(function () {
@@ -183,7 +183,7 @@
                     async : false,
                     success : function(data){
                         console.log(data);
-                    	data=eval('(' + data + ')');
+                       data=eval('(' + data + ')');
                   
                         if($("#user_nickname").val()==null ||$("#user_nickname").val()==""){
                             $("#nicknameCheck").text("닉네임을 입력해주세요.");
@@ -208,8 +208,7 @@
     });
     
 
-	</script>
+   </script>
 </body>
 </html>
-
 

@@ -13,7 +13,7 @@
     <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
     <title>유저 성공 게시판</title>
 </head>
-<body>
+<body style="overflow:hidden;">
     <div class="container">
         <header class="successBoard-header">
             <div class="search-bar">
@@ -30,11 +30,22 @@
         </header>
         <article class="boardArticle">
             <section class="line-up">
-                <span onclick="alert('인기순으로 정렬')">인기순</span>
-                <span onclick="alert('최신순으로 정렬')">최신순</span>
+                <span onclick="location.href='user_successBoard.do?option=popularity'">인기순</span>
+                <span onclick="location.href='user_successBoard.do'">최신순</span>
             </section>
             <section class="board">
                 <div class="list">
+                	<c:forEach var="content" items="${contents}">
+                		<c:if test="${fn:contains(content, '.mp4') or fn:contains(content, '.avi')}">
+                			<video muted autoplay="autoplay" class="img-rounded" width="180">
+								<source src="/upload/${content}">
+							</video>
+                		</c:if>
+                		<c:if test="${!fn:contains(content, '.mp4') and !fn:contains(content, '.avi')}">
+                			<img src="/upload/${content}" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
+                		</c:if>
+                	</c:forEach>
+                	
                     <img src="${project}images/pid_test1.gif" class="img-rounded" alt="thumbnail" onclick="location.href='user_content.do'"/>
                     <img src="${project}images/pid_test2.png" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
                     <img src="${project}images/pid_test3.jpg" class="img-rounded" alt="thumbnail" onclick="alert('게시글페이지로이동쌉가능')"/>
