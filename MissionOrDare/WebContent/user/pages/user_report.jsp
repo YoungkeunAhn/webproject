@@ -27,7 +27,7 @@
 	   <form method="post" name="user_reportForm" action="user_report.jsp">
 	       <input type="hidden" name="ReplyOrContentReport" value="댯글/게시글 고무신 신고">
 	       <input type="hidden" name="reportUser" value="신고하려는사람">
-	       <input type="hidden" name="ReplyOrContentReport" value="댯글/게시글선택">
+	       <input type="hidden" name="reportReason" value="욕설">
 	        
 	        <article class="reportArticle">
 	        	<section class="reportSection">
@@ -53,10 +53,7 @@
 		       				</select>
 		       			</div>
 		       			<div style="margin-top: 15px">
-		       				<textarea class="reportWrite">
-		       				
-		       				</textarea>
-		       				
+		       				<textarea class="reportWrite"></textarea>
 		       			</div>
 		       			<div style="margin-top: 30px">
 		       				<button type="submit" class="profilemodifybtn">확인</button>

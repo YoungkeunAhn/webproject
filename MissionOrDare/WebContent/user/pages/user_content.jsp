@@ -52,7 +52,7 @@
 	           
 	           <li class="mission-category">
 	           	<span>운동/헬스</span>
-	           	<div>
+	           	<div onclick="GoReportPage()">
 	           		<img src="${project}images/siren.png">
 					<button class="btn btn-link" type="submit">신고</button>
 				</div>	
