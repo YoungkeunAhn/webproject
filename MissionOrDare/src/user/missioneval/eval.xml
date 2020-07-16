@@ -26,4 +26,15 @@
 		update mod_missionstate set mission_evaluation_count=1 + mission_evaluation_count
 		where mission_state_id=#{mission_state_id}
 	</update>
+	<update id="statePass" parameterType="String">
+		update mod_missionstate set mission_state = 2 where mission_evaluation_count &gt; 9 and successed_count &gt; 5
+		and mission_state_id=#{mission_state_id}
+	</update>
+	<update id="stateFail" parameterType="String">
+		update mod_missionstate set mission_state = 3 where mission_evaluation_count &gt; 9 and successed_count &lt; 5
+		and mission_state_id=#{mission_state_id}
+	</update>
+	<select id="missionCount" resultType="int">
+		select count(*) from mod_missionstate where mission_state=4
+	</select>
 </mapper>

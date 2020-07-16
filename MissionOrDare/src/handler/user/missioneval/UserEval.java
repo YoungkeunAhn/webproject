@@ -23,21 +23,27 @@ public class UserEval implements CommandHandler {
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
+		int result = userMissionEvalDao.missionCount();
 		
-		String profile_picture = userMissionEvalDao.getUserProfile(user_nickname);
-		UserMissionsDto userMissionDto = userMissionEvalDao.getMissionEval();
-		
-		if(userMissionDto.getUpload_image() != null) {
-			String[] upload_image = userMissionDto.getUpload_image().split("/");
-			System.out.println(upload_image);
-			request.setAttribute("upload_image", upload_image);
-		}else if(userMissionDto.getUpload_video() != null){
-			String[] upload_video = userMissionDto.getUpload_video().split("/");
-			request.setAttribute("upload_video", upload_video);
+		if(result ==0) {
+			request.setAttribute("result", result);
+		}else {
+			String profile_picture = userMissionEvalDao.getUserProfile(user_nickname);
+			UserMissionsDto userMissionDto = userMissionEvalDao.getMissionEval();
+			
+			if(userMissionDto.getUpload_image() != null) {
+				String[] upload_image = userMissionDto.getUpload_image().split("/");
+				System.out.println(upload_image);
+				request.setAttribute("upload_image", upload_image);
+			}else if(userMissionDto.getUpload_video() != null){
+				String[] upload_video = userMissionDto.getUpload_video().split("/");
+				request.setAttribute("upload_video", upload_video);
+			}
+			
+			request.setAttribute("userMissionDto", userMissionDto);
+			request.setAttribute("profile_picture", profile_picture);
+			request.setAttribute("result", result);
 		}
-	
-		request.setAttribute("userMissionDto", userMissionDto);
-		request.setAttribute("profile_picture", profile_picture);
 		
 		return new ModelAndView("user/pages/user_eval");
 	}

@@ -22,10 +22,12 @@ public class UserMissionFailureCountPro implements CommandHandler{
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		String mission_state_id = request.getParameter("mission_state_id");
-		System.out.println("sssmission_state_id"+mission_state_id);
 		
 		int result = userMissionEvalDao.failContent(mission_state_id);
 		request.setAttribute("result", result);
+		
+		userMissionEvalDao.stateFail(mission_state_id);
+		
 		return new ModelAndView("user/pages/user_missionFailureCountPro");
 	}
 }

@@ -15,6 +15,15 @@
 <body>
    <div class="container">      
        <article>
+       <c:if test="${result eq 0}">
+            <ol class="data-none">
+               <li>미션이 평가할게 없습니다!</li>
+               <li>본인이 직접 미션을 인증해보시지!</li>
+               <li><img src="${project}images/mission_none.png"></li>
+            </ol>
+         </c:if>
+       
+       <c:if test="${result ne 0}">
        <input id="mission_status_id" name="mission_status_id" type="hidden" value="test">
           <section class="eval">
              <div class="gilpung">
@@ -49,6 +58,7 @@
 				</div>
 				</div>
 	    	</section>
+	    	</c:if>
     </article>
     <nav>
             <ul>
