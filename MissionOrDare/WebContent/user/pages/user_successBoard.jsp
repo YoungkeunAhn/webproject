@@ -13,7 +13,7 @@
     <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
     <title>유저 성공 게시판</title>
 </head>
-<body>
+<body style="overflow:hidden;">
     <div class="container">
         <header class="successBoard-header">
             <div class="search-bar">

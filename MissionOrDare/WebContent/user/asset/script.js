@@ -182,5 +182,5 @@ function MyInfoModify() {
 	location.href='user_myInfoModify.do';
 }
 function GoReportPage() {
-	location.href='user_report.do';
+	location.href='user_report.jsp';
 }

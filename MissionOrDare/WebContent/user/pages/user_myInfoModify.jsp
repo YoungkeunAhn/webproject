@@ -13,7 +13,7 @@
     <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
 
 </head>
-<body>
+<body style="overflow: hidden;">
 <div class="containerBack">
            <div class="title-back"><span class="join-title">MyInfoModify</span></div>
    <div class="container">

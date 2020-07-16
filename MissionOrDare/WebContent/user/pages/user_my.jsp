@@ -12,7 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body style="overflow:hidden;">
 	<div class="container">
         <header>
             <img id="menu" class="menu-img" src="${project}images/menu.png" alt="logo">

@@ -35,6 +35,20 @@
 	function doReport(reply_id){
 		alert(reply_id);
 	}
+	var cnt = 1;
+	function changeImg() {
+		var img1 = document.getElementById("img1");
+		var img2 = document.getElementById("img2");
+		
+		if(cnt%2==1){
+			img1.src="${project}images/pngwing.png";
+			img2.src="${project}images/pngegg.png";
+		}else{
+			img1.src="${project}images/pngegg.png";
+			img2.src="${project}images/pngwing.png";
+		}
+		cnt++;
+	}
 	</script>
 </head>
 <body>
@@ -55,7 +69,12 @@
 	           	<div onclick="GoReportPage()">
 	           		<img src="${project}images/siren.png">
 					<button class="btn btn-link" type="submit">신고</button>
-				</div>	
+				</div>
+				<div style="position: absolute; top:30px;" onclick="changeImg()">
+	           				<img id="img1" src="${project}images/pngegg.png">
+	           				<img style="display: none" id="img2" src="${project}images/pngwing.png">
+					<button class="btn btn-link" type="submit">공개여부</button>
+				</div>		
 	           </li>
 	           <li class="text-mission"><span>너의역량을 보여줘</span></li>
 	           <li onclick="location.href='user_anotherUser.jsp'" ><img class="BoysandGirls" src="${project}images/madong.PNG">
