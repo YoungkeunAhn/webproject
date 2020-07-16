@@ -1,5 +1,6 @@
 package handler.user.userpage;
 
+
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -28,10 +29,11 @@ public class UserMy implements CommandHandler{
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		System.out.println(user_nickname);
 		UsersDto userDto = userUserPageDao.getUserInfo(user_nickname);
-			
+
+		
 		List<UserMissionsDto> userMissionDtos = userUserPageDao.userMissionInfo(user_nickname);
-		
-		
+
+
 		request.setAttribute("userDto", userDto);
 		request.setAttribute("userMissionDtos", userMissionDtos);
 		return new ModelAndView("user/pages/user_my");

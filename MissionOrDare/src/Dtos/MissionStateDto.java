@@ -13,6 +13,7 @@ public class MissionStateDto {
 	private int mission_state;
 	private String mission_giveup_reason;
 	private int mission_evaluation_count;
+	private String mission_evaluation_nickname;
 	private int successed_count;
 	public String getMission_state_id() {
 		return mission_state_id;
@@ -79,6 +80,12 @@ public class MissionStateDto {
 	}
 	public void setMission_evaluation_count(int mission_evaluation_count) {
 		this.mission_evaluation_count = mission_evaluation_count;
+	}
+	public String getMission_evaluation_nickname() {
+		return mission_evaluation_nickname;
+	}
+	public void setMission_evaluation_nickname(String mission_evaluation_nickname) {
+		this.mission_evaluation_nickname = mission_evaluation_nickname;
 	}
 	public int getSuccessed_count() {
 		return successed_count;

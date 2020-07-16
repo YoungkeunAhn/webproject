@@ -1,4 +1,4 @@
-package handler.user.missionsuccessboard;
+package handler.user.missioneval;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +11,8 @@ import handler.CommandHandler;
 
 @Controller
 public class UserMissionSuccessCountPro implements CommandHandler{
+	
+	
 	@RequestMapping("/user_missionSuccessCountPro")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
