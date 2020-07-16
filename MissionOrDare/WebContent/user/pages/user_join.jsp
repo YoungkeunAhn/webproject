@@ -32,8 +32,9 @@
                <ul class="join-list">
                    <li>
                        <label class="th">* 닉네임</label>
-                       <label><input class="form-control" type="text" name="user_nickname" id="user_nickname" placeholder="insert into your nickname"></label>
+                       <label><input class="form-control" type="text" maxlength="8" name="user_nickname" id="user_nickname" placeholder="insert into your nickname"></label>
                        <div class="checkResult" id="nicknameCheck"></div>
+                       <label class="text text-mute">(특수문자 제외)8자 이내로 입력해주세요</label>
                    </li>
                    <li>
                        <label class="th">* 비밀번호</label>
