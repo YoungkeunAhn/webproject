@@ -21,6 +21,34 @@ body{
 
 /**********************************************
 
+      	profile
+
+***********************************************/
+#profile{
+	border: 0px;
+	border-radius: 30px;
+	background-color: #0000001c;
+	width: 125px;
+	height: 42px;
+	position: relative;
+	top: 1.5rem;
+    left: 63px;
+    transform: translate(-50%, -50%);
+}
+#profile span{
+	position: absolute;
+    left: 43px;
+    top: 9px;
+}
+#profile .img-circle{
+	position: absolute;
+	left: 0px;
+}
+.usercontent #profile{
+	margin-left: 35px;
+}
+/**********************************************
+
         header, article, nav
 
 ***********************************************/
@@ -216,7 +244,7 @@ nav ul img {
     justify-content: center;
 }
 .modal-body input{
-    width: 85%;
+    width: 23%;
     text-align: center;
     font-size: 1.85rem;
     border-radius: 30px;
@@ -259,11 +287,11 @@ nav ul img {
     padding: 1%;
     display: none;
     position: absolute;
-    top: 15%;
-    left: 7%;
-    width: 18%;
-    height: 10%;
-    font-size: x-small;
+    top: 14%;
+    left: 5%;
+    width: 127px;
+    height: 19%;
+    font-size: large;
     justify-content: center;
     text-align: left;
     background-color: #33333363;
@@ -446,7 +474,7 @@ ol{
 }
 .modal-body{
     background-color: white;
-    width: 100%;
+    width: 70%;
     height: 50%;
     display: flex;
     flex-direction: row;
@@ -457,6 +485,8 @@ ol{
    flex-direction: column;
     display: flex;
     width: 100%;
+    position: relative;
+    left: 30%;
 }
 .modal-body .modal-bodyRight{
    flex-direction: column;

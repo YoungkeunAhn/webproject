@@ -77,9 +77,10 @@
 				</div>		
 	           </li>
 	           <li class="text-mission"><span>너의역량을 보여줘</span></li>
-	           <li onclick="location.href='user_anotherUser.jsp'" ><img class="BoysandGirls" src="${project}images/madong.PNG">
-	        		<span>KIMONG</span>
-		 	   </li>
+		           	<div id="profile" class="content-profile" onclick="location.href='user_anotherUser.jsp'">
+		                <img class="img-circle" src="${project}images/madong.PNG" alt="user-profile">
+		                <span>KIMONG</span><br>
+	             	</div>
 	           <li><img class="content-img" src="${project}images/profileinjung.PNG" alt="content-image"></li>
 	           <li class="text-summary"><span>이 정도는 기본아님?</span></li>
 	       </ol>

@@ -28,8 +28,7 @@
 	    		<section class="imymemine">
 	    		<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
 	    			<img class="writeMessage" onclick="GoMessageForm()" src="${project}images/message12.png" alt="user-message">
-	    			<div class="content-profile">
-	    		
+	    			<div id="profile" class="content-profile">
 		    		   <img onclick="MyProfileModify()" class="img-circle" src="${userDto.profile_picture}" alt="user-profile">
 		               <span>${userDto.user_nickname}</span>
 					   
