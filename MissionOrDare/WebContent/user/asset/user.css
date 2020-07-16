@@ -65,8 +65,20 @@ article{
     align-content: center;
     flex-wrap: nowrap;
 }
-
-
+.containerBack{
+   background-color: #0000001c;
+    border-radius: 69px;
+    height: 600px;
+}
+.containerBack .join-title{
+   display: flex;
+}
+.containerBack .title-back{    
+    background-color: #0000001c;
+    border-radius: 100px 100px 0px 0px;
+    display: flex;
+    position: relative;
+}
 nav{
     background-color: white;
     padding: 0 20px;
@@ -111,7 +123,13 @@ nav ul img {
     height: 30px;
 }
 
-
+/************************
+   joinModifyButton
+*************************/
+.joinModifyButton{
+   background-color: #0000001c;
+    border-radius: 47px;
+}
 
 /**********************************************
 
@@ -146,12 +164,11 @@ nav ul img {
 ***********************************************/
 
 .join-title{
-    font-family: 'Anton', sans-serif;
-    font-size: 2.786rem;
+    font-size: 2.5rem;
     margin: 20px auto;
     margin-bottom: 15px;
-    color: #718e8b78;
-    font-style: italic;
+    color: white;
+    align-content: center;
 }
 
 .join-form{
@@ -159,6 +176,8 @@ nav ul img {
     height: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
+    left: 1%;
 }
 
 .join-list{
@@ -202,6 +221,22 @@ nav ul img {
     font-size: 1.85rem;
     border-radius: 30px;
     border: 2px black solid;
+}
+.btn-category{
+   color: #fff;
+    background-color: #d9534f8a;
+    border-radius: 15px 15px 0px 0px;
+    height: 4rem;
+    border: 0px;
+    width: 99%;
+}
+.btn-memberJoin{
+   color: #fff;
+    background-color: #4fd1d954;
+    border-radius: 0px 0px 15px 15px;
+    height: 4rem;
+    border: 0px;
+    width: 99%;
 }
 /**********************************************
 
@@ -414,14 +449,23 @@ ol{
     width: 70%;
     height: 50%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-.modal-body button{
-    margin: 20px auto;
-    width: 70%;
-    height: 20%;
+.modal-body .modal-bodyLeft{
+   flex-direction: column;
+    display: flex;
+    width: 100%;
+    position: relative;
+    left: 30%;
+}
+.modal-body .modal-bodyRight{
+   flex-direction: column;
+    display: flex;
+    width: 100%;
+    position: relative;
+    right: 0%;
 }
 
 .modal-body .myCategory{
@@ -932,6 +976,22 @@ div .write-control{
 	width:16%;
 	height:90%;
 }
+.btn-modify{
+   color: #fff;
+    background-color: #4fd9714a;
+    border-radius: 0px 0px 0px 15px;
+    height: 4rem;
+    border: 0px;
+    width: 49%;
+}
+.btn-cancle{
+   color: #fff;
+    background-color: #4fd1d954;
+    border-radius: 0px 0px 15px 0px;
+    height: 4rem;
+    border: 0px;
+    width: 49%;
+}
 /**********************************************
 
    user_messageForm
@@ -1351,6 +1411,7 @@ div .write-control{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 10px;
 }
 .img-circle{
 	width:40px;
@@ -1366,20 +1427,21 @@ div .write-control{
     width: 260px;
     text-align: left;
     display:inline-table;
+    margin-bottom: 15px;
     
 }
-ul li{
-	list-style-type: none;
-}
-
 .reportWrite{
-	margin: 0px;
+	margin-top: 20px;
 	width:301px;
 	height:145px;
 	border: 8px solid #c3c3c3;
 	border-radius: 10%;
+	background-color: azure;
 }
 
+textarea:focus{
+	outline: none;
+}
 
 
 
