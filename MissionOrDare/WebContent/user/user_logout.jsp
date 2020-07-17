@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8"%>
-<%@ include file="pages/manager_settings.jsp" %>
+<%@ include file="pages/user_settings.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title> manager Logout</title>
+<title> user Logout</title>
 </head>
 <body>
 
