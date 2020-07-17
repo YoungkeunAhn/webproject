@@ -50,7 +50,7 @@
 					<div class="swiper-wrapper">
 						<c:forEach var="userMissionsDto" items="${userMissionsDtos}">
 							<c:if test="${userMissionsDto.mission_state eq 1}">
-								<div class="swiper-slide">
+								<div class="swiper-slide" style="height:109%;">
 									<ol class="data-exist">
 										<form name="myMissionAuthForm" action="user_myMissionAuth.do">
 											<input type="hidden" name="mission_start_date"

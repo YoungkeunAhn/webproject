@@ -36,11 +36,12 @@
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  background-image: repeating-linear-gradient(45deg, #93e0de, transparent 100px);
 }
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+  color: #000000;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -56,25 +57,26 @@
 </head>
 <body>
 		 <section class="withdrawal">
-		 	<div class="withdrawaltitle">
-		 		<span>회원탈퇴</span>
-		 	</div>		 	
-		 	<div class="withdrawalpasswd">
-		 	<input type="text" name="passwd" value="비밀번호를 입력하세요">
-		 	<button id="myBtn" class="myCategory" type="button">확인</button>
-		 	</div>
-		 			 	
-			<!-- Trigger/Open The Modal -->
-			<!-- The Modal -->
-			<div id="myModal" class="modal">
-			
-			  <!-- Modal content -->
-			  <div class="modal-content">
-			    <span class="close">&times;</span>
-			    <p>회원탈퇴를 진짜 할고야..?</p>
-			    <button type="button" onclick="location.href='user_main.do';">응 당연하지 너네게임 재미없어 ㄴㅇㄱ</button>
-			  </div>
-			
+			 <div class="withdrawalWhiteBox1">	
+			 	<div class="withdrawaltitle">
+			 		<span>회원탈퇴</span>
+			 	</div>		 	
+			 	<div class="withdrawalpasswd">
+			 	<input style="border:0px; border-radius: 10px;" type="text" name="passwd" value="비밀번호를 입력하세요">
+			 	<button style="border:0px; border-radius: 10px; background-color: white;" id="myBtn" class="myCategory" type="button">확인</button>
+			 	</div>
+			 			 	
+				<!-- Trigger/Open The Modal -->
+				<!-- The Modal -->
+				<div id="myModal" class="modal">
+				
+				  <!-- Modal content -->
+				  <div class="modal-content">
+				    <span class="close">&times;</span>
+				    <p>회원탈퇴를 진짜 할고야..?</p>
+				    <button style="border:0px; text-align: left; " type="button" onclick="location.href='user_main.do';">아니요 안할래요 이게임 진짜 너무재미있어요</button>
+				  </div>
+				</div>
 			</div>
 		 </section>
 	<script>

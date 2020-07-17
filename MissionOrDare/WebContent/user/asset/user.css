@@ -338,7 +338,7 @@ ol{
     padding: 10px;
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    background: #fff0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -350,7 +350,7 @@ ol{
     -webkit-box-align: center;
     -ms-flex-align: center;
     -webkit-align-items: center;
-    align-items: center
+    align-items: center;
 }
 
 .data-exist {
@@ -1183,7 +1183,7 @@ div .write-control{
 }
 .sendContent .messagetextarea{
 	width:100%;
-	height:100%;
+	height:79%;
 	background-color: rgba(255,255,255,0.5);
 	flex-wrap: wrap;
 	display: flex;
@@ -1204,9 +1204,11 @@ div .write-control{
 	display: flex;
 }
 .sendbottom{
-	width:100%;
-	height:30%;
-	padding-top: 10px;
+	width: 100%;
+    height: 10%;
+    padding-top: 10px;
+    position: relative;
+    bottom: 76px;
 }
 
 /**********************************************
@@ -1494,6 +1496,12 @@ textarea:focus{
 }
 .withdrawalpasswd{
 	text-align: center;
+}
+.withdrawalWhiteBox1{
+    height: 40%;
+    margin: auto 40px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 30%;
 }
 
 

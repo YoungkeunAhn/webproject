@@ -24,7 +24,7 @@
 	      </div>
 	        <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
 	    </header>
-        <article>
+        <article style="height:75%;">
 	       	<section class="messageNav">
 	            <span class="getdMessage">받은 메시지</span>
 	            <span class="sendmessage">보낸 메시지</span>
