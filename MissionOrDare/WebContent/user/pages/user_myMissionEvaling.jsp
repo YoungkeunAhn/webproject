@@ -33,7 +33,14 @@
 					<span>상위</span>
 					<span>50%</span>
 				</div>
+			</div>
+			<div class="bestarae">
+				<span>현재 7명이 평가했습니다.</span>
+				<span>평가진행률 70%입니당</span>
 			</div>		
+			<div class="araebutton">
+				<input type="submit" class="deletebtn" value="돌아가기" name="back" style="width:100%; height:30%; background-color: #e0da9c;"/>
+			</div>
 		</section>
 	</article>
 </body>
