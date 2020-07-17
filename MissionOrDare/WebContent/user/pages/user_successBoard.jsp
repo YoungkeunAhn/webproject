@@ -99,8 +99,6 @@
     
 <script type="text/javascript">
 	//<!--
-	var users = document.getElementById('sendUsers');
-	var delText = '';
 	$(document).ready( function() {
 		$('#search_input').on('keyup',function(event) {
 			var tete = $('#search_input').val();
@@ -120,7 +118,7 @@
 					async : false,
 					success : function(data) {
 						$('#search_result').empty();
-						$('#search_result').append('<span class="user">계정</span><span class="content">게시글</span><br>');
+						$('#search_result').append('<span class="user">계정</span><span class="content">카테고리</span><br>');
 						data = eval('(' + data +')');
 						// 검색결과 출력
 						if($('#opt').val() == 'user') {
@@ -132,7 +130,7 @@
 								$('#search_result').append('<span class="searchCategory">'+data.largeCategoryDtos[i].large_category+'</span>');
 							}
 							for(var i=0; i<data.smallCategoryDtos.length; i++){
-								$('#search_result').append('<span class="searchCategory">'+ data.smallCategoryDtos[i].large_category + ' / ' + data.smallCategoryDtos[i].small_category+'</span>');
+								$('#search_result').append('<span class="searchCategory">'+ data.smallCategoryDtos[i].large_category + '/' + data.smallCategoryDtos[i].small_category+'</span>');
 							}
 						} 
 						$(document).on('click', '.searchUser', function(event){
@@ -146,7 +144,7 @@
 							$('#search_input').val('');
 							$('#opt').val('content');
 							$('#search_result').empty();
-							$('#search_result').append('<span class="user">계정</span><span class="content">게시글</span><br>');
+							$('#search_result').append('<span class="user">계정</span><span class="content">카테고리</span><br>');
 							$('#search_input').focus();
 						});
 						// 유저 검색
@@ -154,7 +152,7 @@
 							$('#search_input').val('');
 							$('#opt').val('user');
 							$('#search_result').empty();
-							$('#search_result').append('<span class="user">계정</span><span class="content">게시글</span><br>');
+							$('#search_result').append('<span class="user">계정</span><span class="content">카테고리</span><br>');
 							$('#search_input').focus();
 						});
 					},

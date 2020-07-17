@@ -30,6 +30,8 @@ public class UserSuccessBoard implements CommandHandler {
 		String option = request.getParameter("option");
 		String searchUser = request.getParameter("searchUser");
 		String searchCategory = request.getParameter("searchCategory");
+		System.out.println(searchCategory);
+		
 		
 		if(searchUser == null && searchCategory == null) {
 			if( option == null) {
@@ -40,7 +42,8 @@ public class UserSuccessBoard implements CommandHandler {
 		} else if(searchCategory == null){
 			missionStateDtos = userSuccessBoardDao.getUserMissions(searchUser);
 		} else {
-			missionStateDtos = userSuccessBoardDao.getCategoryMissions(searchCategory);
+			String[] searchCategoryArr = searchCategory.split("/");
+			missionStateDtos = userSuccessBoardDao.getCategoryMissions(searchCategoryArr[searchCategoryArr.length -1]);
 		}
 			
 		for(MissionStateSuccessBoardDto m : missionStateDtos ) {
