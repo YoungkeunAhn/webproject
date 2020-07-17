@@ -17,7 +17,7 @@
 	<article>
 		<section class="missionAuthingImage">
 			<div>
-				<img class="missionImage" src="${project}images/munheauelenaeyo.gif" alt="다른유저 미션인증">	
+				<img class="missionImage" src="${project}images/mod_logo.png" alt="다른유저 미션인증">	
 			</div>
 		</section>
 		<section class="arae">

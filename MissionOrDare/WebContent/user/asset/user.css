@@ -932,14 +932,14 @@ div hr{
 }
 .container .white-box{
     width: 83%;
-    height: 48%;
+    height: 38%;
     margin: 10px auto;
     background-color: rgba(255,255,255,0.5);
-    padding: 20px 0;
+    padding: 46px 0;
 }
 .container .imymemine .white-box1{
     width: 83%;
-    height: 91%;
+    height: 71%;
     margin: 10px auto;
     background-color: rgba(255,255,255,0.5);
     padding: 0;
@@ -1445,7 +1445,9 @@ textarea:focus{
 }
 .missionImage{
 	width:100%;
-	height: 100%;	
+	height: 100%;
+	background-image: linear-gradient(129deg, black, transparent);
+    border-radius: 100%;
 }
 .arae{
 	height: 36.6%;
