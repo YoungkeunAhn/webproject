@@ -11,19 +11,98 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
+	
+	
 	<title>회원탈퇴를 위한 비밀번호 입력하는 페이gggg baby~</title>
+<style>
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>	
 </head>
 <body>
-	<article>
 		 <section class="withdrawal">
 		 	<div class="withdrawaltitle">
 		 		<span>회원탈퇴</span>
-		 	</div>
+		 	</div>		 	
 		 	<div class="withdrawalpasswd">
 		 	<input type="text" name="passwd" value="비밀번호를 입력하세요">
-		 	<button class="myCategory" type="button" onclick="deleteLegendModal">탈퇴</button>
+		 	<button id="myBtn" class="myCategory" type="button">확인</button>
 		 	</div>
+		 			 	
+			<!-- Trigger/Open The Modal -->
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+			
+			  <!-- Modal content -->
+			  <div class="modal-content">
+			    <span class="close">&times;</span>
+			    <p>회원탈퇴를 진짜 할고야..?</p>
+			    <button type="button" onclick="location.href='user_main.do';">응 당연하지 너네게임 재미없어 ㄴㅇㄱ</button>
+			  </div>
+			
+			</div>
 		 </section>
-	</article>
+	<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
 </body>
 </html>

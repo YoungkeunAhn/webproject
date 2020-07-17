@@ -154,9 +154,7 @@
 			    $("#menu_list").slideToggle("slow");
 			  });
 			});
-	   		//-->
-		</script>
-	<script>
+	   		
 	    var cnt = 1;
 	    $(document).ready(function () {
 	        $('#flip').click(function () {
@@ -195,6 +193,7 @@
 	            prevEl: '.swiper-button-prev',
 	        },
 	    });
+	  //-->
 </script>
 </body>
 </html>
