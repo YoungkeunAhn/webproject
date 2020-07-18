@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import Dtos.MissionStateSuccessBoardDto;
+import Dtos.SuccessBoardContentDto;
 import handler.CommandHandler;
 import user.successboard.UserSuccessBoardDao;
 
@@ -25,7 +26,9 @@ public class UserSuccessBoard implements CommandHandler {
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
 		
-		ArrayList<String> contents = new ArrayList<String>();
+		//ArrayList<String> contents = new ArrayList<String>();
+		ArrayList<SuccessBoardContentDto> contents = new ArrayList<SuccessBoardContentDto>();
+		
 		List<MissionStateSuccessBoardDto> missionStateDtos;
 		String option = request.getParameter("option");
 		String searchUser = request.getParameter("searchUser");
@@ -45,17 +48,20 @@ public class UserSuccessBoard implements CommandHandler {
 			String[] searchCategoryArr = searchCategory.split("/");
 			missionStateDtos = userSuccessBoardDao.getCategoryMissions(searchCategoryArr[searchCategoryArr.length -1]);
 		}
-			
 		for(MissionStateSuccessBoardDto m : missionStateDtos ) {
+			SuccessBoardContentDto content = new SuccessBoardContentDto();
 			if(m.getUpload_video() != null) {
 				String[] video = m.getUpload_video().split("/");
-				contents.add(video[0]);
+				content.setContents(video[0]);
+				content.setSuccess_board_id(m.getSuccess_board_id());
+				contents.add(content);
 			} else if(m.getUpload_image() != null){
 				String[] image = m.getUpload_image().split("/");
-				contents.add(image[0]);
+				content.setContents(image[0]);
+				content.setSuccess_board_id(m.getSuccess_board_id());
+				contents.add(content);
 			}
 		}
-		
 		request.setAttribute("option", option);
 		request.setAttribute("contents", contents);
 		request.setAttribute("missionStateDtos", missionStateDtos);
