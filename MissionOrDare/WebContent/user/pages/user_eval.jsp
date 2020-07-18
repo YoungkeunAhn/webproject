@@ -28,33 +28,33 @@
           <section class="eval">
              <div class="gilpung">
              <div class="item">
-                <span class="item1">${userMissionDto.large_category}/${userMissionDto.small_category}</span><br>
+                <span class="item1">${userMissionsDto.large_category}/${userMissionsDto.small_category}</span><br>
              </div>
              <div class="item">
-                <span class="item2">${userMissionDto.mission_title}</span><br>
+                <span class="item2">${userMissionsDto.mission_title}</span><br>
              </div>
 	           	<div id="profile" class="content-profile" onclick="location.href='user_anotherUser.jsp'">
 	                <img class="img-circle" src="${profile_picture}" alt="user-profile">
-	                <span>${userMissionDto.user_nickname}</span><br>
+	                <span>${userMissionsDto.user_nickname}</span><br>
              	</div>
              <div class="item">
                <i style="font-size: 150%;" class="fas fa-chevron-left"></i>
-               <c:if test="${userMissionDto.upload_image ne null}">
+               <c:if test="${userMissionsDto.upload_image ne null}">
                <img class="content-image" src="/upload/${upload_image}" alt="content-image">
                </c:if>
-               <c:if test="${userMissionDto.upload_video ne null}">
+               <c:if test="${userMissionsDto.upload_video ne null}">
                <img class="content-image" src="/upload/${upload_video}" alt="content-image">
                </c:if>
                <i style="font-size: 150%;" class="fas fa-chevron-right"></i>
              </div>
              <div>
-               <span>${userMissionDto.mission_upload_contents} / ${userMissionDto.mission_state_id}</span>
+               <span>${userMissionsDto.mission_upload_contents}</span>
             
             </div>
 				
 				<div class="btn-line">
-				<input class="successbtn" type="button" value="성공" name="pass" onclick="GoSuccessProPage('${userMissionDto.mission_state_id}')"/>
-				<input type="button" class="deletebtn" value="실패" name="fail" onclick="GoFailureProPage('${userMissionDto.mission_state_id}')"/>
+				<input class="successbtn" type="button" value="성공" name="pass" onclick="GoSuccessProPage('${userMissionsDto.mission_state_id}')"/>
+				<input type="button" class="deletebtn" value="실패" name="fail" onclick="GoFailureProPage('${userMissionsDto.mission_state_id}')"/>
 				</div>
 				</div>
 	    	</section>
