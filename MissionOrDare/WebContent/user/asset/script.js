@@ -189,7 +189,7 @@ function MyProfileModify() {
 function MyInfoModify() {
 	location.href='user_myInfoModify.do';
 }
-function GoReportPage() {
+function GoReportPage(success_board_id) {
 	location.href='user_report.jsp';
 }
 function GoLogoutPage() {

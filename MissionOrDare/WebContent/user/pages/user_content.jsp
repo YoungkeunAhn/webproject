@@ -6,11 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="${project}asset/user.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    
+	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="${project}asset/script.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
+    
 	<script>
 	function replyModal(reply_id,user_nick){
 		$('.user-nick').text(user_nick);
@@ -49,6 +54,7 @@
 		}
 		cnt++;
 	}
+	
 	</script>
 </head>
 <body>
@@ -65,24 +71,49 @@
 	           <input type="hidden" name="boardOwner" value="KIMONG">
 	           
 	           <li class="mission-category">
-	           	<span>운동/헬스</span>
-	           	<div onclick="GoReportPage()">
+	           	<span>${mission_info.large_category}/${mission_info.small_category}</span>
+	           	<div onclick="GoReportPage(${success_board_id})">
 	           		<img src="${project}images/siren.png">
 					<button class="btn btn-link" type="submit">신고</button>
 				</div>
-				<div style="position: absolute; top:30px;" onclick="changeImg()">
-	           				<img id="img1" src="${project}images/pngegg.png">
-	           				<img style="display: none" id="img2" src="${project}images/pngwing.png">
-					<button class="btn btn-link" type="submit">공개여부</button>
-				</div>		
+				<c:if test="${sessionScope.user_nickname eq user_info.user_nickname}">
+					<div style="position: absolute; top:30px;" onclick="changeImg()">
+		           				<img id="img1" src="${project}images/pngegg.png">
+		           				<img style="display: none" id="img2" src="${project}images/pngwing.png">
+						공개여부
+					</div>		
+				</c:if>
 	           </li>
-	           <li class="text-mission"><span>너의역량을 보여줘</span></li>
+	           <li class="text-mission"><span>${mission_info.mission_title}</span></li>
 		           	<div id="profile" class="content-profile" onclick="location.href='user_anotherUser.jsp'">
-		                <img class="img-circle" src="${project}images/madong.PNG" alt="user-profile">
-		                <span>KIMONG</span><br>
+		                <img class="img-circle" src="${user_info.profile_picture}" alt="user-profile">
+		                <span>${user_info.user_nickname}</span><br>
 	             	</div>
-	           <li><img class="content-img" src="${project}images/profileinjung.PNG" alt="content-image"></li>
-	           <li class="text-summary"><span>이 정도는 기본아님?</span></li>
+	           <li>
+					<div class="swiper-container">
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-wrapper">
+						<c:forEach var="content" items="${contents}">
+								<div class="swiper-slide" style="height:109%;">
+									<ol class="data-exist">
+									<li>
+										<c:if test="${fn:contains(content, '.mp4') or fn:contains(content, '.avi')}">
+				                			<video muted autoplay="autoplay" class="img-rounded" width="180">
+												<source src="/upload/${content}">
+											</video>
+				                		</c:if>
+				                		<c:if test="${!fn:contains(content, '.mp4') and !fn:contains(content, '.avi')}">
+				                			<img src="/upload/${content}" width="180" class="img-rounded" alt="thumbnail"/>
+				                		</c:if>
+			                		</li>
+			                		</ol>
+								</div>
+						</c:forEach>
+					</div>
+					<div class="swiper-button-next"></div>
+				</div>
+			   </li>
+	           <li class="text-summary"><span>${auth_mission_info.mission_upload_contents}</span></li>
 	       </ol>
 		</section>
 		</form>
@@ -170,6 +201,12 @@
 		/* 좋아요 */
 		
    		//-->
+	var swiper = new Swiper('.swiper-container', {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
 	</script>
 </body>
 </html>

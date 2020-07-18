@@ -3,8 +3,11 @@ package user.successboard;
 import java.util.List;
 import java.util.Map;
 
+import Dtos.MissionCategoryAndInfoDto;
 import Dtos.MissionCategoryDto;
+import Dtos.MissionStateDto;
 import Dtos.MissionStateSuccessBoardDto;
+import Dtos.UsersDto;
 
 public interface UserSuccessBoardDao {
 
@@ -15,5 +18,8 @@ public interface UserSuccessBoardDao {
 	public List<MissionStateSuccessBoardDto> getUserMissions(String searchUser);
 	public List<MissionStateSuccessBoardDto> getCategoryMissions(String searchCategory);
 	public List<MissionCategoryDto> findCategorys(Map<String, Object> map);
+	public MissionCategoryAndInfoDto getMissionInfo(String success_board_id);
+	public UsersDto getUserInfo(String success_board_id);
+	public MissionStateDto getAuthMissionInfo(String success_board_id);
 
 }

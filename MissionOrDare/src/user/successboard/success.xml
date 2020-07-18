@@ -52,4 +52,25 @@
         on c.mission_category_id= i.mission_category_id 
         where c.large_category like '%'||#{searchCategory}||'%' or c.small_category like '%'||#{searchCategory}||'%'
 	</select>
+	
+	<!-- 미션 상세정보 -->
+	<select id="getMissionInfo" parameterType="String" resultType="Dtos.MissionCategoryAndInfoDto">
+		select mission_title, large_category, small_category from mod_successboard s 
+		left outer join mod_missioninfo i
+		on s.mission_info_id = i.mission_info_id
+		left outer join mod_missioncategory c
+		on i.mission_category_id = c.mission_category_id
+		where s.success_board_id=#{success_board_id}
+	</select>
+	<select id="getUserInfo" parameterType="String" resultType="Dtos.UsersDto">
+		select profile_picture, u.user_nickname from mod_users u, mod_successboard s
+		where u.user_nickname = s.user_nickname and s.success_board_id=#{success_board_id}
+	</select>
+	<select id="getAuthMissionInfo" parameterType="String" resultType="Dtos.MissionStateDto">
+		select upload_video, upload_image, mission_upload_contents 
+		from mod_missionstate m, mod_successboard s
+		where m.mission_state_id = s.mission_state_id
+		and s.success_board_id=#{success_board_id}
+	</select>
+	
 </mapper>

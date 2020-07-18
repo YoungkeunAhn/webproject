@@ -5,8 +5,11 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
+import Dtos.MissionCategoryAndInfoDto;
 import Dtos.MissionCategoryDto;
+import Dtos.MissionStateDto;
 import Dtos.MissionStateSuccessBoardDto;
+import Dtos.UsersDto;
 
 public class UserSuccessBoardDBBean implements UserSuccessBoardDao {
 	SqlSession session = SqlMapClient.getSession();
@@ -31,5 +34,14 @@ public class UserSuccessBoardDBBean implements UserSuccessBoardDao {
 	}
 	public List<MissionCategoryDto> findCategorys(Map<String, Object> map){
 		return session.selectList("success.findCategorys", map);
+	}
+	public MissionCategoryAndInfoDto getMissionInfo(String success_board_id) {
+		return session.selectOne("success.getMissionInfo", success_board_id);
+	}
+	public UsersDto getUserInfo(String success_board_id) {
+		return session.selectOne("success.getUserInfo", success_board_id);
+	}
+	public MissionStateDto getAuthMissionInfo(String success_board_id) {
+		return session.selectOne("success.getAuthMissionInfo", success_board_id);
 	}
 }
