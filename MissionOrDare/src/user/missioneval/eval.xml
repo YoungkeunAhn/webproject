@@ -6,14 +6,11 @@
   	
 <mapper namespace="Eval">
 	<select id="getMissionEval" resultType="Dtos.UserMissionsDto">
-		select a.*,r 
-		from(select aa.* ,rownum r from
-		(select * from mod_missionstate s left outer join mod_missioninfo i 
+		select * from mod_missionstate s left outer join mod_missioninfo i 
 		on s.mission_info_id = i.mission_info_id
 		left outer join mod_missioncategory c
 		on c.mission_category_id = i.mission_category_id
-		where mission_state = 4 order by DBMS_RANDOM.RANDOM) aa 
-		order by DBMS_RANDOM.RANDOM)a where r &lt; 2 
+		where mission_state = 4 
 	</select>
 	<select id="getUserProfile" parameterType="String" resultType="String">
 		select profile_picture from mod_users where user_nickname = #{user_nickname}
@@ -37,4 +34,8 @@
 	<select id="missionCount" resultType="int">
 		select count(*) from mod_missionstate where mission_state=4
 	</select>
+	<update id="evalNickname" parameterType="Dtos.UserMissionsDto">
+		update mod_missionstate set mission_evaluation_nickname = mission_evaluation_nickname||#{user_nickname}||'/' 
+		where mission_state_id=#{mission_state_id}
+	</update>
 </mapper>

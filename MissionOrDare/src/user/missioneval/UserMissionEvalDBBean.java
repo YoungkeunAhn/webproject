@@ -1,6 +1,8 @@
 package user.missioneval;
 
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import Dtos.UserMissionsDto;
@@ -9,8 +11,8 @@ import Dtos.UserMissionsDto;
 public class UserMissionEvalDBBean implements UserMissionEvalDao{
 	SqlSession session = SqlMapClient.getSession();
 	
-	public UserMissionsDto getMissionEval() {
-		return session.selectOne("Eval.getMissionEval");
+	public List<UserMissionsDto> getMissionEval() {
+		return session.selectList("Eval.getMissionEval");
 	}
 	public String getUserProfile(String user_nickname) {
 		return session.selectOne("Eval.getUserProfile",user_nickname);
@@ -29,5 +31,8 @@ public class UserMissionEvalDBBean implements UserMissionEvalDao{
 	}
 	public int missionCount() {
 		return session.selectOne("Eval.missionCount");
+	}
+	public int evalNickname(UserMissionsDto userMissionsDtos) {
+		return session.update("Eval.evalNickname",userMissionsDtos);
 	}
 }

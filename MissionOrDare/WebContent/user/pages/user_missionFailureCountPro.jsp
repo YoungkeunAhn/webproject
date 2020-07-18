@@ -9,7 +9,6 @@
 <c:if test="${result eq 1}">
 <meta http-equiv="refresh" content="0;url=user_eval.do">
 </c:if>
-
 <c:if test="${result eq 0}">
 <script>
 	//<!--
