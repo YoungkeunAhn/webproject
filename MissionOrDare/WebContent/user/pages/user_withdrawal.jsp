@@ -62,7 +62,7 @@
 			 		<span>회원탈퇴</span>
 			 	</div>		 	
 			 	<div class="withdrawalpasswd">
-			 	<input style="border:0px; border-radius: 10px;" type="text" name="passwd" value="비밀번호를 입력하세요">
+			 	<input style="border:0px; border-radius: 10px;" type="password" name="passwd" value="">
 			 	<button style="border:0px; border-radius: 10px; background-color: white;" id="myBtn" class="myCategory" type="button">확인</button>
 			 	</div>
 			 			 	
@@ -74,7 +74,7 @@
 				  <div class="modal-content">
 				    <span class="close">&times;</span>
 				    <p>회원탈퇴를 진짜 할고야..?</p>
-				    <button style="border:0px; text-align: left; " type="button" onclick="location.href='user_main.do';">아니요 안할래요 이게임 진짜 너무재미있어요</button>
+				    <button style="border:0px; text-align: left; " type="button" onclick="location.href='user_main.do';">Yes 옥희 푸키요!</button>
 				  </div>
 				</div>
 			</div>

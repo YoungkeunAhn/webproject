@@ -86,15 +86,30 @@
 	        <section id="authPopup" class="popup-bg">
 	            <div class="popup">
 	                <div>
-	                    <label>인증 요청 하시겠습니까?</label>
-	                    <button class="btn btn-auth" type="submit">ㄱㄱ</button>
-	                    <button class="btn btn-default" type="button" onclick="AuthPopupClose()">ㄴㄴ</button>
+	                    <label>미션에 대한 평점을 주세용</label>
+	                    <div class="starRev">
+							  <span class="starR on">별1</span>
+							  <span class="starR">별2</span>
+							  <span class="starR">별3</span>
+							  <span class="starR">별4</span>
+							  <span class="starR">별5</span>
+						</div>
+	                    <button class="btn btn-auth" type="submit">인증</button>
+	                    <button class="btn btn-default" type="button" onclick="AuthPopupClose()">취소</button>
 	                </div>
 	            </div>
 	        </section>
         </form>
     </article>
 </div>
+<script>
+		$('.starRev span').click(function(){
+		  $(this).parent().children('span').removeClass('on');
+		  $(this).addClass('on').prevAll('span').addClass('on');
+		  return false;
+		});
+</script>
+
 
 </body>
 </html>
