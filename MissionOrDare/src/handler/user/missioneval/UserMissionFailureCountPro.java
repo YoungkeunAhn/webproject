@@ -20,6 +20,8 @@ public class UserMissionFailureCountPro implements CommandHandler{
 	@RequestMapping("/user_missionFailureCountPro")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("utf-8");
+		
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		String mission_state_id = request.getParameter("mission_state_id");
 		System.out.println("실패: "+mission_state_id);

@@ -1,5 +1,6 @@
 package handler.user.missioneval;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -27,6 +28,7 @@ public class UserEval implements CommandHandler {
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		int result = userMissionEvalDao.missionCount();
 		String profile_picture = userMissionEvalDao.getUserProfile(user_nickname);
+		ArrayList<String> contents = new ArrayList<String>();
 
 		if (result == 0) { // 미션상태테이블의 컬럼 수가 0
 			request.setAttribute("result", result);
@@ -71,12 +73,16 @@ public class UserEval implements CommandHandler {
 					// 사진과 동영상 경로
 					if (userMissionsDto.getUpload_image() != null) {
 						String[] upload_image = userMissionsDto.getUpload_image().split("/");
-						System.out.println(upload_image);
-						request.setAttribute("upload_image", upload_image);
+						for(String image : upload_image) {
+							contents.add(image);
+						}
 					} else if (userMissionsDto.getUpload_video() != null) {
 						String[] upload_video = userMissionsDto.getUpload_video().split("/");
-						request.setAttribute("upload_video", upload_video);
+						for(String video : upload_video) {
+							contents.add(video);
+						}
 					}
+					request.setAttribute("contents", contents);
 					request.setAttribute("userMissionsDto", userMissionsDto);
 					request.setAttribute("profile_picture", profile_picture);
 					request.setAttribute("result", result);

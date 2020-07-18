@@ -32,8 +32,8 @@ public class UserMy implements CommandHandler{
 
 		
 		List<UserMissionsDto> userMissionDtos = userUserPageDao.userMissionInfo(user_nickname);
-
-
+		
+		
 		request.setAttribute("userDto", userDto);
 		request.setAttribute("userMissionDtos", userMissionDtos);
 		return new ModelAndView("user/pages/user_my");

@@ -39,12 +39,16 @@
              	</div>
              <div class="item">
                <i style="font-size: 150%;" class="fas fa-chevron-left"></i>
-               <c:if test="${userMissionsDto.upload_image ne null}">
-               <img class="content-image" src="/upload/${upload_image}" alt="content-image">
-               </c:if>
-               <c:if test="${userMissionsDto.upload_video ne null}">
-               <img class="content-image" src="/upload/${upload_video}" alt="content-image">
-               </c:if>
+               <c:forEach var="content" items="${contents}">
+                		<c:if test="${fn:contains(content, '.mp4') or fn:contains(content, '.avi')}">
+                			<video muted autoplay="autoplay" class="img-rounded" width="180">
+								<source src="/upload/${content}">
+							</video>
+                		</c:if>
+                		<c:if test="${!fn:contains(content, '.mp4') and !fn:contains(content, '.avi')}">
+                			<img src="/upload/${content}" class="img-rounded" alt="thumbnail"/>
+                		</c:if>
+                	</c:forEach>
                <i style="font-size: 150%;" class="fas fa-chevron-right"></i>
              </div>
              <div>
