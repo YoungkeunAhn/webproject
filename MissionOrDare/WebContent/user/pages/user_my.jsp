@@ -17,9 +17,9 @@
         <header>
             <img id="menu" class="menu-img" src="${project}images/menu.png" alt="logo">
 	            <div id="menu_list" class="menu_list">
-		            	<span onclick="GoMainPage()">Logout</span>
+		            	<span onclick="GoLogoutPage()">Logout</span>
 		            	<br><br>
-		            	<span>Withdrawal</span>
+		            	<span onclick="GoWithdrawalPage()">Withdrawal</span>
 		        </div>
             <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
         </header>

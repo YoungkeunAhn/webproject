@@ -149,6 +149,7 @@ function AuthPopupOn() {
 	}
 }
 
+
 function AuthPopupClose() {
     document.getElementById('authPopup').style.display='none';
 }
@@ -190,4 +191,10 @@ function MyInfoModify() {
 }
 function GoReportPage() {
 	location.href='user_report.jsp';
+}
+function GoLogoutPage() {
+	location.href='user_logout.jsp';
+}
+function GoWithdrawalPage() {
+	location.href='user_withdrawal.jsp';
 }

@@ -603,6 +603,7 @@ ol{
 .auth_main .board_content{
     font-size: 1.4rem;
     margin: 10% auto 0 auto;
+    text-align: left;
 }
 .auth_main .file_upload{
     width: 80%;

@@ -54,16 +54,16 @@
     	<form method="post" class="myMission-authForm" name="myMissionAuth" action="user_myMissionAuthPro.do?mission_state_id=${mission_state_id}" enctype="multipart/form-data" accept-charset="UTF-8">
 	        <section class="auth_main">
 	                <ol>
-	                    <li><input type="text" value="${mission_category}"></li>
-	                    <li><input type="text" value="${mission_title}"></li>
-	                    <li class="text-date"><input class="form-control" type="text" value="${mission_start_date} 시작"></li>
+	                    <li><input type="hidden" value="${mission_category}">${mission_category}</li>
+	                    <li><input type="hidden" value="${mission_title}">${mission_title}</li>
+	                    <li class="text-date"><input class="form-control" type="hidden" value="${mission_start_date} 시작">${mission_start_date} 시작</li>
 	                    <li>
 	                        <i class="fas fa-angle-left"></i>
-	                        <img name="auth_image" id="auth_image" src="${project}images/auth_defalut.png" alt="auth_image" onclick="document.getElementById('upload').click(); document.getElementById('abc').value=document.getElementById('upload').value">
+	                        <img name="auth_image" id="auth_image" src="${project}images/auth_defalut.png" alt="auth_image" onclick="document.getElementById('upload').click(); document.getElementById('abc').value=document.getElementById('upload').value;">
 	                        <i class="fas fa-angle-right"></i>
 	                    </li>
 	                    <li>
-	                        <input id="abc" type="text" name="abc" style="display:none;">
+	                        <input id="abc" type="text" name="abc">
 	                    </li>
 	                    <li>
 	                        <input id="upload" class="file_upload" name="files" type="file" accept="image/*, video/*" capture="camera" multiple style="display: none">
