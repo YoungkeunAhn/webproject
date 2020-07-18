@@ -82,15 +82,15 @@
                     <span>홈</span>
                 </li>
                 <li onclick="GoEvalPage()">
-                    <img src="${project}images/task.png" alt="eval-icon">
+                    <img src="${project}images/dotbogi.PNG" alt="eval-icon">
                     <span>평가</span>
                 </li>
                 <li onclick="GoPidPage()">
-                    <img src="${project}images/pid.png" alt="pid-icon">
+                    <img src="${project}images/feed.PNG" alt="pid-icon">
                     <span>피드</span>
                 </li>
                 <li onclick="GoMyPage()">
-                    <img src="${project}images/my.png" alt="my-icon">
+                    <img src="${project}images/mygumi.PNG" alt="my-icon">
                     <span>마이</span>
                 </li>
             </ul>
