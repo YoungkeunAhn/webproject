@@ -43,9 +43,11 @@ public class search_successBoard implements CommandHandler {
 			} else if (option.equals("content")) {
 				Map<String, Object> map = new Hashtable<String, Object>();
 				map.put( "searchCategory", search_input );
+				List<MissionCategoryDto> categoryDtos = userSuccessBoardDao.findCategorys( map );
 				List<MissionCategoryDto> largeCategoryDtos = userSuccessBoardDao.findLargeCategorys( map );
 				List<MissionCategoryDto> smallCategoryDtos = userSuccessBoardDao.findSmallCategorys( map );
 				
+				request.setAttribute("categoryDtos", categoryDtos);
 				request.setAttribute( "largeCategoryDtos", largeCategoryDtos );
 				request.setAttribute( "smallCategoryDtos", smallCategoryDtos );
 				

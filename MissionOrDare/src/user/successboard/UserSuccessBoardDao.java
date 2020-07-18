@@ -14,5 +14,6 @@ public interface UserSuccessBoardDao {
 	public List<MissionCategoryDto> findSmallCategorys(Map<String, Object> map);
 	public List<MissionStateSuccessBoardDto> getUserMissions(String searchUser);
 	public List<MissionStateSuccessBoardDto> getCategoryMissions(String searchCategory);
+	public List<MissionCategoryDto> findCategorys(Map<String, Object> map);
 
 }

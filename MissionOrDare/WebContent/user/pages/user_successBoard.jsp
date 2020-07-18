@@ -129,6 +129,9 @@
 							for(var i=0; i<data.largeCategoryDtos.length; i++){
 								$('#search_result').append('<span class="searchCategory">'+data.largeCategoryDtos[i].large_category+'</span>');
 							}
+							for(var i=0; i<data.categoryDtos.length; i++){
+								$('#search_result').append('<span class="searchCategory">'+data.categoryDtos[i].large_category+ '/' + data.categoryDtos[i].small_category+ '</span>');
+							}
 							for(var i=0; i<data.smallCategoryDtos.length; i++){
 								$('#search_result').append('<span class="searchCategory">'+ data.smallCategoryDtos[i].large_category + '/' + data.smallCategoryDtos[i].small_category+'</span>');
 							}

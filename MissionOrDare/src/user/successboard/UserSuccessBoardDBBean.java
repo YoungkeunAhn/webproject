@@ -29,4 +29,7 @@ public class UserSuccessBoardDBBean implements UserSuccessBoardDao {
 	public List<MissionStateSuccessBoardDto> getCategoryMissions(String searchCategory){
 		return session.selectList("success.getCategoryMissions", searchCategory);
 	}
+	public List<MissionCategoryDto> findCategorys(Map<String, Object> map){
+		return session.selectList("success.findCategorys", map);
+	}
 }

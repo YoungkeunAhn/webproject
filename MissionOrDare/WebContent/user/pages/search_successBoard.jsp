@@ -23,6 +23,14 @@
 		</c:forEach>	
 	],
 	
+	categoryDtos : [
+		<c:forEach var="categoryDto" items="${categoryDtos}">
+		{
+			large_category : '${categoryDto.large_category}',
+			small_category : '${categoryDto.small_category}',
+		},
+		</c:forEach>	
+	],
 	smallCategoryDtos : [
 		<c:forEach var="smallCategoryDto" items="${smallCategoryDtos}">
 		{
