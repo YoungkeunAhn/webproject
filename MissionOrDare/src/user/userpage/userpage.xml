@@ -32,4 +32,17 @@
 		update mod_users set user_nickname=#{user_nickname},user_passwd=#{user_passwd, jdbcType=VARCHAR}, job=#{job, jdbcType=VARCHAR}, location=#{location, jdbcType=VARCHAR}, date_of_birth= #{date_of_birth}
 		where kakao_id=#{kakao_id}
 	</update>
+	
+	<select id="getMyMission" parameterType="String" resultType="Dtos.UserMissionsDto">
+		select s.*, c.*,
+		i.mission_title, i.mission_level, i.mission_contents, i.mission_location
+		from mod_missionstate s left outer join mod_missioninfo i
+		on s.mission_info_id=i.mission_info_id  
+		left outer join mod_missioncategory c
+		on i.mission_category_id=c.mission_category_id
+		where s.mission_state_id=#{mission_state_id}
+	</select>
+	<select id="getSuccessMission" parameterType="String" resultType="Dtos.SuccessBoardDto">
+		select * from mod_successBoard where mission_state_id=#{mission_state_id}
+	</select>
 </mapper>

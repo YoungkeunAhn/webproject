@@ -14,37 +14,53 @@
     <title>마이미션뷰 페이지</title>
 </head>
 <body>
-<c:if test="${result eq 1}">
-	<script type="text/javascript">
-	//<!--
-		alert("진행중인 미션이 있습니다.");
-		location.href="user_main.do";
-	//-->
-	</script>
-</c:if>
-<c:if test="${random_number eq 0}">
-	<script type="text/javascript">
-	//<!--
-		alert("미션이 없습니다.");
-		location.href="user_main.do";
-	//-->
-	</script>
-</c:if>
-<div class="container">
-    <article>
-        <section class="mission-info-view">
-            <input id="mission_info_id" type="hidden" value="${randomMission.mission_info_id}">
-            <label>${randomMission.large_category}/${randomMission.small_category}</label>
-            <label>${randomMission.mission_title}</label>
-            <img src="/category/${randomMission.category_image}" onerror="this.src='${project}images/mission_image.png'">
-            <ul>
-                <li>${randomMission.mission_contents}</li>
-            </ul>
-            <div class="btn-line" style="justify-content: center">
-                <button type="button" class="btn btn-primary" onclick="history.go(-1)">돌아가기</button>
-            </div>
-        </section>
-    </article>
-</div>
+	<div class="container">
+	    <article>
+	        <section class="mission-info-view">
+	            <input id="mission_info_id" type="hidden" value="${userMissionDto.mission_info_id}">
+	            <c:if test="${userMissionDto.mission_state eq 1}"><label>미션중</label></c:if>
+	            <c:if test="${userMissionDto.mission_state eq 2}"><label>미션성공</label></c:if>
+	            <c:if test="${userMissionDto.mission_state eq 3}"><label>미션실패</label></c:if>
+	            <c:if test="${userMissionDto.mission_state eq 4}"><label>미션인증중</label></c:if>
+	            <c:if test="${userMissionDto.mission_state eq 5}"><label>미션포기</label></c:if>
+	            <label>${userMissionDto.large_category}/${userMissionDto.small_category}</label>
+	            <label>${userMissionDto.mission_title}</label>
+	            <label>미션 시작 : ${userMissionDto.mission_start_date}</label>
+	           
+	            <img src="/category/${userMissionDto.category_image}" onerror="this.src='${project}images/mission_image.png'">
+	            <ul>
+	                <li>${userMissionDto.mission_contents}</li>
+	            </ul>
+	            <c:if test="${userMissionDto.mission_state eq 2 or userMissionDto.mission_state eq 3 or userMissionDto.mission_state eq 4}">
+					<div class="container">
+					    <article>
+					        <section class="mission-info-view">
+					    	   <label>${successBoardDto.board_register_date}</label>
+					          	  <c:forEach var="content" items="${contents}">
+					          	  <c:if test="${fn:contains(content, '.mp4') or fn:contains(content, '.avi')}">
+				               			<video muted autoplay="autoplay" class="img-rounded" width="180">
+											<source src="/upload/${content}">
+										</video>
+				              		</c:if>
+				               		<c:if test="${!fn:contains(content, '.mp4') and !fn:contains(content, '.avi')}">
+				               			<img src="/upload/${content}" class="img-rounded" alt="thumbnail"/>
+				               		</c:if>
+				               		</c:forEach>
+					            <ul>
+					                <li>${userMissionDto.mission_upload_contents}</li>
+					                <li>${userMissionDto.successed_count}/10</li>
+					                <li>좋아요 수 : ${successBoardDto.likecount}</li>
+					            </ul>
+					        </section>
+					    </article>
+					</div>
+				</c:if>
+	            <div class="btn-line" style="justify-content: center">
+	                <button type="button" class="btn btn-primary" onclick="history.go(-1)">돌아가기</button>
+	            </div>
+	        </section>
+	    </article>
+	</div>
+
 </body>
 </html>

@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import Dtos.NotesDto;
+import Dtos.SuccessBoardDto;
 import Dtos.UserMissionsDto;
 import Dtos.UsersDto;
 
@@ -31,5 +32,11 @@ public class UserUserPageDBBean implements UserUserPageDao{
 	}
 	public int userModify(UsersDto usersDto) {
 		return session.update("UserPage.userModify",usersDto);
+	}
+	public UserMissionsDto getMyMission(String mission_state_id) {
+		return session.selectOne("UserPage.getMyMission", mission_state_id);
+	}
+	public SuccessBoardDto getSuccessMission(String mission_state_id) {
+		return session.selectOne("UserPage.getSuccessMission", mission_state_id);
 	}
 }
