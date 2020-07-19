@@ -50,7 +50,7 @@
 					<div class="swiper-wrapper">
 						<c:forEach var="userMissionsDto" items="${userMissionsDtos}">
 							<c:if test="${userMissionsDto.mission_state eq 1}">
-								<div class="swiper-slide" style="height:109%;">
+								<div class="swiper-slide" style="height:109%; color: #4c525ce6;">
 									<ol class="data-exist">
 										<form name="myMissionAuthForm" action="user_myMissionAuth.do">
 											<input type="hidden" name="mission_start_date"
@@ -78,7 +78,7 @@
 							</c:if>
 							<c:if
 								test="${userMissionsDto.mission_state eq 4 and userMissionsDto.upload_public_availability eq 1}">
-								<div class="swiper-slide">
+								<div class="swiper-slide" style="color: #4c525ce6";>
 									<ol class="data-exist">
 										<input type="hidden" name="mission_start_date"
 												value="${userMissionsDto.mission_start_date}"> 
@@ -116,7 +116,7 @@
 				<input id="mission_level" type="hidden" value="normal"> <input
 					id="mission_categoryArea" type="hidden" value="my">
 				<div class="col">
-					<button class="btn-normal" type="button" onclick="NormalBtnClick()">일반
+					<button style="background-color: #4b493d" class="btn-normal" type="button" onclick="NormalBtnClick()">일반
 						미션</button>
 					<button class="btn-challenge" type="button"
 						onclick="ChallengeBtnClick()">챌린지 미션</button>

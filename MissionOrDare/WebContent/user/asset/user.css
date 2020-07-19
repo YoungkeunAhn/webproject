@@ -371,7 +371,7 @@ ol{
     font-size: 1.5rem;
 }
 .data-exist .text-status{
-    color: chartreuse;
+    color: #4b26aa;
     margin: 20px 0 0 0;
 }
 
@@ -397,8 +397,8 @@ ol{
 
 .data-exist li .btn-missionAuth{
     border: none;
-    background-color: coral;
-    border-radius: 4px;
+    background-color: #fd7f42;
+    border-radius: 10px;
     padding: 5% 32%;
     color: white;
 }
@@ -448,6 +448,7 @@ ol{
     font-size: 1.7rem;
     border: none;
     border-radius: 10px;
+    color: white;
 }
 
 .btn-nomal{
@@ -455,7 +456,7 @@ ol{
 }
 
 .btn-challenge{
-    background-color: cyan;
+    background-color: #4b493d;
 
 }
 
@@ -809,16 +810,18 @@ list ::-webkit-scrollbar {
 
 .successbtn{
 	border:0px;
-	background-color: #e1ef25;
+	background-color: #fd7f42;
 	width:50%;
-	border-radius: 10%;
+	border-radius: 10px;
 	height: 44.3px;
+	color:white;
 }
 .deletebtn{
 	border:0px;
-	background-color: #678e67;
+	background-color: #4b493d;
 	width:50%;
-	border-radius: 10%;
+	border-radius: 10px;
+	color:white;
 }
 
 .item{
@@ -835,7 +838,6 @@ list ::-webkit-scrollbar {
    height: 170px;
    position: relative;
    bottom: 4rem;
-   border-radius: 100%;
    margin: auto 20px;
 }
 

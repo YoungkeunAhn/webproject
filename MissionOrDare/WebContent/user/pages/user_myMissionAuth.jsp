@@ -81,7 +81,7 @@
 	        </section>
 	        <section class="btn-line">
 	            <button class="btn btn-auth" type="button" onclick="AuthPopupOn()">인증하기</button>
-	            <button class="btn btn-danger" type="button" onclick="location.href='user_main.do'">취소하기</button>
+	            <button style="background-color: #4b493d" class="btn btn-danger" type="button" onclick="location.href='user_main.do'">취소하기</button>
 	        </section>
 	        <section id="authPopup" class="popup-bg">
 	            <div class="popup">
