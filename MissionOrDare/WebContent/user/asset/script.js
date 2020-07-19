@@ -141,12 +141,13 @@ function OnSearch(){
 */	 
 
 function AuthPopupOn() {
-	if( ! myMissionAuth.abc.value ) {
-		 alert( insertFileError );
-		 return false;
-	}else{
-    document.getElementById('authPopup').style.display='flex';
+	var chk = document.getElementById('upload').value;
+	if(chk == null || !chk){
+		alert(insertFileError);
+		return false;
 	}
+	document.getElementById('authPopup').style.display='flex';
+	
 }
 
 

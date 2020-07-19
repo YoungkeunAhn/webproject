@@ -59,11 +59,8 @@
 	                    <li class="text-date"><input class="form-control" type="hidden" value="${mission_start_date} 시작">${mission_start_date} 시작</li>
 	                    <li>
 	                        <i class="fas fa-angle-left"></i>
-	                        <img name="auth_image" id="auth_image" src="${project}images/auth_defalut.png" alt="auth_image" onclick="document.getElementById('upload').click(); document.getElementById('abc').value=document.getElementById('upload').value;">
+	                        <img name="auth_image" id="auth_image" src="${project}images/auth_defalut.png" alt="auth_image" onclick="document.getElementById('upload').click()">
 	                        <i class="fas fa-angle-right"></i>
-	                    </li>
-	                    <li>
-	                        <input id="abc" type="text" name="abc">
 	                    </li>
 	                    <li>
 	                        <input id="upload" class="file_upload" name="files" type="file" accept="image/*, video/*" capture="camera" multiple style="display: none">
