@@ -21,17 +21,22 @@
                 <input id="search_input" type="search" name="pidSearch" placeholder="검색" onkeydown="OnSearch()">
                 <input id="opt" type="hidden" value="user">
             </div>
-         
+         	
+         	<!-- 게시글 검색 -->
             <div id="search_result" class="search-result" style="display: none">
                 
             </div>
         </header>
         <article class="boardArticle">
+        	
+        	<!-- 리스트 정렬 -->
             <section class="line-up">
             	<input id="cc" type="hidden" value="${option}">
             	<span class="unsel" onclick="location.href='user_successBoard.do'">최신순</span>
                 <span class="sel" onclick="location.href='user_successBoard.do?option=popularity'">인기순</span>
 			</section>
+			
+			<!-- 게시글리스트 -->
             <section class="board">
                 <div class="list">
                 	<c:forEach var="content" items="${contents}">
@@ -76,6 +81,8 @@
                 </div>
             </section>
         </article>
+        
+        
         <nav>
             <ul>
                 <li onclick="GoMainPage()">
@@ -119,7 +126,7 @@
 					async : false,
 					success : function(data) {
 						$('#search_result').empty();
-						$('#search_result').append('<span class="user">계정</span><span class="content">카테고리</span><br>');
+						$('#search_result').append('<div class="user">계정</div><div class="content">카테고리</div><br>');
 						data = eval('(' + data +')');
 						// 검색결과 출력
 						if($('#opt').val() == 'user') {
@@ -143,22 +150,59 @@
 						$(document).on('click', '.searchCategory', function(event){
 							location.href='user_successBoard.do?searchCategory=' + $(this).text();
 						});
+						
+						
+						
 						// 게시글 검색
 						$(document).on('click', '.content', function(event) {
-							$('#search_input').val('');
 							$('#opt').val('content');
 							$('#search_result').empty();
-							$('#search_result').append('<span class="user">계정</span><span class="content">카테고리</span><br>');
+							$('#search_result').append('<div class="user">계정</div><div class="content">카테고리</div><br>');
 							$('#search_input').focus();
+							$('.content').css({
+								'background': 'black',
+								'color' : 'white'
+							});
+							$('.user').css({
+								'background': 'white',
+								'color' : 'black'
+							});	
 						});
 						// 유저 검색
 						$(document).on('click', '.user', function(event) {
-							$('#search_input').val('');
 							$('#opt').val('user');
 							$('#search_result').empty();
-							$('#search_result').append('<span class="user">계정</span><span class="content">카테고리</span><br>');
+							$('#search_result').append('<div class="user">계정</div><div class="content">카테고리</div><br>');
 							$('#search_input').focus();
+							$('.user').css({
+								'background': 'black',
+								'color' : 'white'
+							});
+							$('.content').css({
+								'background': 'white',
+								'color' : 'black'
+							});
 						});
+						
+						if($('#opt').val() == 'content'){
+							$('.content').css({
+								'background': 'black',
+								'color' : 'white'
+							});
+							$('.user').css({
+								'background': 'white',
+								'color' : 'black'
+							});	
+						}else{
+							$('.content').css({
+								'background': 'white',
+								'color' : 'black'
+							});
+							$('.user').css({
+								'background': 'black',
+								'color' : 'white'
+							});	
+						}
 					},
 					error : function(e){
 						
@@ -170,6 +214,7 @@
 	
 	//-->
 </script>
+
 <script>
 
 	$(document).ready(function(){
