@@ -1525,6 +1525,13 @@ textarea:focus{
 }
 .starR.on{background-position:0 0;}
 
+.divdiv{
+	position: relative;
+	top:5rem;
+	color:#56514a;
+}
+
+
 
 
 
