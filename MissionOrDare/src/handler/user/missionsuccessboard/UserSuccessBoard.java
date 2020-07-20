@@ -14,10 +14,14 @@ import org.springframework.web.servlet.ModelAndView;
 import Dtos.MissionStateSuccessBoardDto;
 import Dtos.SuccessBoardContentDto;
 import handler.CommandHandler;
+import user.missionget.MissionGetDao;
 import user.successboard.UserSuccessBoardDao;
 
 @Controller
 public class UserSuccessBoard implements CommandHandler {
+	@Resource
+	private MissionGetDao missionGetDao;
+	
 	@Resource
 	private UserSuccessBoardDao userSuccessBoardDao;
 	
@@ -25,16 +29,16 @@ public class UserSuccessBoard implements CommandHandler {
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
+
+		missionGetDao.refresh();
+		missionGetDao.delrefresh();
 		
-		//ArrayList<String> contents = new ArrayList<String>();
 		ArrayList<SuccessBoardContentDto> contents = new ArrayList<SuccessBoardContentDto>();
 		
 		List<MissionStateSuccessBoardDto> missionStateDtos;
 		String option = request.getParameter("option");
 		String searchUser = request.getParameter("searchUser");
 		String searchCategory = request.getParameter("searchCategory");
-		System.out.println(searchCategory);
-		
 		
 		if(searchUser == null && searchCategory == null) {
 			if( option == null) {

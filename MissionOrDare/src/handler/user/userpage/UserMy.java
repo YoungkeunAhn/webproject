@@ -14,17 +14,22 @@ import org.springframework.web.servlet.ModelAndView;
 import Dtos.UserMissionsDto;
 import Dtos.UsersDto;
 import handler.CommandHandler;
+import user.missionget.MissionGetDao;
 import user.userpage.UserUserPageDao;
 
 @Controller
 public class UserMy implements CommandHandler{
-	
+	@Resource
+	private MissionGetDao missionGetDao;
 	@Resource
 	private UserUserPageDao userUserPageDao;
 	@RequestMapping("user_my")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
+		
+		missionGetDao.refresh();
+		missionGetDao.delrefresh();
 		
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		System.out.println(user_nickname);

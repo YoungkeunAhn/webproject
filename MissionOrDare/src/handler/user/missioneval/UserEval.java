@@ -15,16 +15,22 @@ import org.springframework.web.servlet.ModelAndView;
 import Dtos.UserMissionsDto;
 import handler.CommandHandler;
 import user.missioneval.UserMissionEvalDao;
+import user.missionget.MissionGetDao;
 
 @Controller
 public class UserEval implements CommandHandler {
-
+	@Resource
+	private MissionGetDao missionGetDao;
+	
 	@Resource
 	private UserMissionEvalDao userMissionEvalDao;
 
 	@RequestMapping("/user_eval")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		missionGetDao.refresh();
+		missionGetDao.delrefresh();
+		
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		int result = userMissionEvalDao.missionCount();
 		String profile_picture = userMissionEvalDao.getUserProfile(user_nickname);

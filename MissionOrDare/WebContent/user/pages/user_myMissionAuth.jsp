@@ -33,15 +33,43 @@
             			return;
             		}
             	});
-            	$('#auth_image').attr('src', URL.createObjectURL(e.target.files[0]));
+            	
+            	if(e.target.files[0].type.match("video.mp4")|| e.target.files[0].type.match("video.avi")){
+            		$('#auth_video').css('display', 'inline');
+            		$('#auth_video').attr('src', URL.createObjectURL(e.target.files[0]));
+            		$('#auth_image').css('display', 'none');
+            	} else {
+            		$('#auth_image').css('display', 'inline');
+            		$('#auth_image').attr('src', URL.createObjectURL(e.target.files[0]));
+            		$('#auth_video').css('display', 'none');
+            	}
+            	
             	$('.fa-angle-left').on('click', function(){
             		if(cnt > 0) {
-            			$('#auth_image').attr('src', URL.createObjectURL(e.target.files[--cnt]));
+            			cnt -= 1;
+            			if(e.target.files[cnt].type.match("video.mp4")|| e.target.files[cnt].type.match("video.avi")){
+                    		$('#auth_video').css('display', 'inline');
+                    		$('#auth_video').attr('src', URL.createObjectURL(e.target.files[cnt]));
+                    		$('#auth_image').css('display', 'none');
+                    	} else {
+                    		$('#auth_image').css('display', 'inline	');
+                    		$('#auth_image').attr('src', URL.createObjectURL(e.target.files[cnt]));
+                    		$('#auth_video').css('display', 'none');
+                    	}
             		}
             	});
             	$('.fa-angle-right').on('click', function(){
             		if(cnt < files.length-1) {
-            			$('#auth_image').attr('src', URL.createObjectURL(e.target.files[++cnt]));
+            			cnt += 1;
+            			if(e.target.files[cnt].type.match("video.mp4")|| e.target.files[cnt].type.match("video.avi")){
+                    		$('#auth_video').css('display', 'inline');
+                    		$('#auth_video').attr('src', URL.createObjectURL(e.target.files[cnt]));
+                    		$('#auth_image').css('display', 'none');
+                    	} else {
+                    		$('#auth_image').css('display', 'inline');
+                    		$('#auth_image').attr('src', URL.createObjectURL(e.target.files[cnt]));
+                    		$('#auth_video').css('display', 'none');
+                    	}
             		}
             	});
             })
@@ -60,6 +88,7 @@
 	                    <li>
 	                        <i class="fas fa-angle-left"></i>
 	                        <img name="auth_image" id="auth_image" src="${project}images/auth_defalut.png" alt="auth_image" onclick="document.getElementById('upload').click()">
+	                        <video width="83%" style="display:none" class="auth_image" id="auth_video" src="${project}images/auth_defalut.png" alt="auth_image" onclick="document.getElementById('upload').click()"></video>
 	                        <i class="fas fa-angle-right"></i>
 	                    </li>
 	                    <li>
@@ -86,10 +115,10 @@
 	                    <label>미션에 대한 평점을 주세용</label>
 	                    <div class="starRev">
 							  <span class="starR on">별1</span>
-							  <span class="starR">별2</span>
-							  <span class="starR">별3</span>
-							  <span class="starR">별4</span>
-							  <span class="starR">별5</span>
+							  <span class="starR on">별2</span>
+							  <span class="starR on">별3</span>
+							  <span class="starR on">별4</span>
+							  <span class="starR on">별5</span>
 						</div>
 	                    <button class="btn btn-auth" type="submit">인증</button>
 	                    <button class="btn btn-default" type="button" onclick="AuthPopupClose()">취소</button>

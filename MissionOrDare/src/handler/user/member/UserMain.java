@@ -18,7 +18,7 @@ import user.missionget.MissionGetDao;
 @Controller
 public class UserMain implements CommandHandler{
 	@Resource
-	MissionGetDao missionGetDao;
+	private MissionGetDao missionGetDao;
 	@Resource
 	private UserMemberDao userMemberDao;
 	@RequestMapping("/user_main")
