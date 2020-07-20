@@ -113,6 +113,7 @@
 	            <div class="popup">
 	                <div>
 	                    <label>미션에 대한 평점을 주세용</label>
+	                    <input name="mission_avg_score"class="star-score" type="hidden" value="5">
 	                    <div class="starRev">
 							  <span class="starR on">별1</span>
 							  <span class="starR on">별2</span>
@@ -132,8 +133,10 @@
 		$('.starRev span').click(function(){
 		  $(this).parent().children('span').removeClass('on');
 		  $(this).addClass('on').prevAll('span').addClass('on');
+		  $('.star-score').val($(this).text().replace('별', ''));
 		  return false;
 		});
+		
 </script>
 
 

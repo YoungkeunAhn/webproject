@@ -38,8 +38,6 @@ public class UserLoginPro implements CommandHandler{
 			request.setAttribute("kakao_access_token", kakao_access_token);
 			String user_nickname = userMemberDao.findNickname(kakao_id);
 			
-			System.out.println("loginpro 카카오 아이디 "+kakao_id);
-			System.out.println("loginpro kakao_id"+kakao_id + "nickname:"+user_nickname);
 			request.getSession().setAttribute("user_nickname", user_nickname);
 			request.getSession().setAttribute("kakao_id", kakao_id);
 			return new ModelAndView("user/pages/user_loginPro");
@@ -47,7 +45,6 @@ public class UserLoginPro implements CommandHandler{
 			request.setAttribute("user_email", user_email);
 			request.setAttribute("profile_picture", profile_picture);
 			request.setAttribute("kakao_id", kakao_id);
-			System.out.println("loginPro : "+kakao_id);
 			request.setAttribute("age_group", age_group);
 			request.setAttribute("kakao_birthday", kakao_birthday);
 			request.setAttribute("gender", gender);

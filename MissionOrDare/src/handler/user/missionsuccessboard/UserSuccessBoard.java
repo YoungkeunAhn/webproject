@@ -48,7 +48,7 @@ public class UserSuccessBoard implements CommandHandler {
 			}
 		} else if(searchCategory == null){
 			missionStateDtos = userSuccessBoardDao.getUserMissions(searchUser);
-		} else {
+		} else { 	
 			String[] searchCategoryArr = searchCategory.split("/");
 			missionStateDtos = userSuccessBoardDao.getCategoryMissions(searchCategoryArr[searchCategoryArr.length -1]);
 		}

@@ -28,6 +28,8 @@ public class UserMain implements CommandHandler{
 		missionGetDao.refresh();
 		missionGetDao.delrefresh();
 		
+		request.setCharacterEncoding("utf-8");
+		
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		
 		List<UserMissionsDto> userMissionsDtos = missionGetDao.getUserMissions(user_nickname);

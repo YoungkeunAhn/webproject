@@ -3,7 +3,9 @@ package handler.user.missionauth;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -32,13 +34,23 @@ public class UserMyMissionAuthPro implements CommandHandler {
 		String path = "C:/test/";
 		MultipartHttpServletRequest mpr = (MultipartHttpServletRequest) request;
 		mpr.setCharacterEncoding("utf-8");
+		
+		Map<Object, Object> starScore = new HashMap<Object, Object>();
+		
+		String mission_state_id = mpr.getParameter("mission_state_id");
+		String mission_info_id = missionAuthDao.getMissionInfoId(mission_state_id);
+		
+		int mission_avg_score = Integer.parseInt(mpr.getParameter("mission_avg_score"));
+		starScore.put("mission_avg_score", mission_avg_score);
+		starScore.put("mission_info_id", mission_info_id);
+		missionAuthDao.addStarScore(starScore);
+		
 		List<MultipartFile> files = mpr.getFiles("files");
 		
 		String board_content = mpr.getParameter("board_content");
 		board_content = new String(board_content.getBytes("8859_1"), "utf-8");
 		String upload_public_availability = mpr.getParameter("public_availability");
 		upload_public_availability = new String(upload_public_availability.getBytes("8859_1"), "utf-8");
-		String mission_state_id = mpr.getParameter("mission_state_id");
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");

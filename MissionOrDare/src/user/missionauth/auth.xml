@@ -12,4 +12,13 @@
 		upload_public_availability=#{upload_public_availability}, mission_upload_contents=#{mission_upload_contents, jdbcType=VARCHAR} 
 		where mission_state_id=#{mission_state_id}
 	</update>
+	<select id="getMissionInfoId">
+		select mission_info_id from mod_missionstate
+		where mission_state_id=#{mission_state_id}
+	</select>
+	<update id="addStarScore" parameterType="java.util.Map">
+		update mod_missioninfo 
+		set mission_avg_score = mission_avg_score + #{mission_avg_score}
+		where mission_info_id=#{mission_info_id}
+	</update>
 </mapper>
