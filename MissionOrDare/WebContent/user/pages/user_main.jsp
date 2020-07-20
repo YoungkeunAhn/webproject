@@ -137,11 +137,11 @@
 				<li onclick="GoMainPage(${sessionScope.user_nickname})"><img
 					class="nav-home" src="${project}images/mod_logo.png" alt="logo">
 					<span>홈</span></li>
-				<li onclick="GoEvalPage()"><img src="${project}images/dotbogi.PNG"
+				<li onclick="GoEvalPage()"><img src="${project}images/blackdotbogi.PNG"
 					alt="eval-icon"> <span>평가</span></li>
-				<li onclick="GoPidPage()"><img src="${project}images/feed.PNG"
+				<li onclick="GoPidPage()"><img src="${project}images/blackfeed.PNG"
 					alt="pid-icon"> <span>피드</span></li>
-				<li onclick="GoMyPage()"><img src="${project}images/mygumi.PNG"
+				<li onclick="GoMyPage()"><img src="${project}images/blackMyPage.PNG"
 					alt="my-icon"> <span>마이</span></li>
 			</ul>
 		</nav>

@@ -78,15 +78,15 @@
     	<nav>
             <ul>
                 <li onclick="GoMainPage()">
-                    <img class="nav-home" src="${project}images/mod_logo.png" alt="logo">
+                    <img class="nav-home" src="${project}images/blackMy.PNG" alt="logo">
                     <span>홈</span>
                 </li>
                 <li onclick="GoEvalPage()">
-                    <img src="${project}images/dotbogi.PNG" alt="eval-icon">
+                    <img src="${project}images/blackdotbogi.PNG" alt="eval-icon">
                     <span>평가</span>
                 </li>
                 <li onclick="GoPidPage()">
-                    <img src="${project}images/feed.PNG" alt="pid-icon">
+                    <img src="${project}images/blackfeed.PNG" alt="pid-icon">
                     <span>피드</span>
                 </li>
                 <li onclick="GoMyPage()">

@@ -59,7 +59,7 @@
 							</video>
                 		</c:if>
                 		<c:if test="${!fn:contains(content, '.mp4') and !fn:contains(content, '.avi')}">
-                			<img style="width:250px; height: 250px" src="/upload/${content}" class="img-rounded" alt="thumbnail"/>
+                			<img style="width:180px; height: 150px" src="/upload/${content}" class="img-rounded" alt="thumbnail"/>
                 		</c:if>
 	               	</div>
 					</c:forEach>
@@ -78,7 +78,7 @@
    	 <nav>
             <ul>
                 <li onclick="GoMainPage()">
-                    <img class="nav-home" src="${project}images/mod_logo.png" alt="logo">
+                    <img class="nav-home" src="${project}images/blackMy.PNG" alt="logo">
                     <span>홈</span>
                 </li>
                 <li onclick="GoEvalPage()">
@@ -86,11 +86,11 @@
                     <span>평가</span>
                 </li>
                 <li onclick="GoPidPage()">
-                    <img src="${project}images/feed.PNG" alt="pid-icon">
+                    <img src="${project}images/blackfeed.PNG" alt="pid-icon">
                     <span>피드</span>
                 </li>
                 <li onclick="GoMyPage()">
-                    <img src="${project}images/mygumi.PNG" alt="my-icon">
+                    <img src="${project}images/blackMyPage.PNG" alt="my-icon">
                     <span>마이</span>
                 </li>
             </ul>
