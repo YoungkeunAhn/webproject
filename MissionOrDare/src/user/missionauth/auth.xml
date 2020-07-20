@@ -12,7 +12,7 @@
 		upload_public_availability=#{upload_public_availability}, mission_upload_contents=#{mission_upload_contents, jdbcType=VARCHAR} 
 		where mission_state_id=#{mission_state_id}
 	</update>
-	<select id="getMissionInfoId">
+	<select id="getMissionInfoId" parameterType="String" resultType="String">
 		select mission_info_id from mod_missionstate
 		where mission_state_id=#{mission_state_id}
 	</select>
