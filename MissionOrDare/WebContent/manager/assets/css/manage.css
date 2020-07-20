@@ -5,13 +5,9 @@
 ****************************************/
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 body{
-    font-family: 'Nanum Gothic', sans-serif;
-    font-size: 15px;
-    background: #c5e8ea;
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
+    
 }
 
 header{
@@ -24,21 +20,6 @@ header{
     font-size: 30px;
     font-weight: bold;
 
-}
-
-a:link {
-    color: black;
-    text-decoration: none;
-}
-
-a:visited {
-    color: black;
-    text-decoration: none;
-}
-
-a:hover {
-    color: blakc;
-    text-decoration: none;
 }
 
 
@@ -62,27 +43,6 @@ article{
     padding: 20px;
     width: 100%;
     height: 100%;
-}
-
-footer{
-    width: 100%;
-    height: 50px;
-    padding-top: 10px;
-    color: black;
-    display: block;
-    text-align: center;
-    border: 2px black solid;
-    border-left: none;
-    border-right: none;
-    font-size: 12px;
-    background-color: #FFDCDC;
-    z-index: 1;
-    position: fixed;
-    bottom: 0;
-    left:0;
-}
-footer span {
-    margin: auto 10px;
 }
 
 
@@ -167,7 +127,7 @@ footer span {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #c5e8ea;
+	
 }
 .loginFormPage form{
 	width: 60%;
@@ -213,6 +173,17 @@ footer span {
 	margin: 0px 10px 0px 10px;
 }
 
+
+.search-part{
+    width: 100%;
+    display: inline-block;
+    padding: 20px;
+}
+
+.list-part{
+	width:100%;
+	padding: 20px;
+}
 /***********************************************
 
     Category_insert Modal
@@ -350,10 +321,7 @@ footer span {
 ****************************************/
 
 
-.mission-search{
-    width: 100%;
-    display: inline-block;
-}
+
 
 .mission-table table{
     text-align: center;
@@ -384,7 +352,7 @@ footer span {
 	
 }
 .white-box{
-    background-color: #c5e8ea;
+    
     padding: 46px 33px 43px 305px;
     width: 100%;
     height: 100%;

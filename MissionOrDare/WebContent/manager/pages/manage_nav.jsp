@@ -12,7 +12,7 @@
     <title>nav</title>
 
 </head>
-<body style="background: #c5e8ea;">
+<body>
 <div class="container">
     <nav>
     	<a href="${pageContext.request.contextPath}/manage_category.do"><div class="col-md-2"><span>${str_category}</span></div></a>

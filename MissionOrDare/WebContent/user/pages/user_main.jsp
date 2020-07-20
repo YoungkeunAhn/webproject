@@ -2,22 +2,21 @@
 <%@ include file="user_settings.jsp"%>
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Link CSS -->
-<link type="text/css" rel="stylesheet" href="${project}asset/user.css">
-<link rel="stylesheet"
-	href="https://unpkg.com/swiper/swiper-bundle.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<!-- Link JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="${project}asset/script.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="https://kit.fontawesome.com/23971e572d.js"
-	crossorigin="anonymous"></script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Link CSS -->
+	<link type="text/css" rel="stylesheet" href="${project}asset/user.css">
+	<link rel="stylesheet"
+		href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	
+	<!-- Link JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="${project}asset/script.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="https://kit.fontawesome.com/23971e572d.js"></script>
 
 <title>유저 메인페이지</title>
 </head>
