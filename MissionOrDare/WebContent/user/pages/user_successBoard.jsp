@@ -28,9 +28,10 @@
         </header>
         <article class="boardArticle">
             <section class="line-up">
-                <span onclick="location.href='user_successBoard.do?option=popularity'">인기순</span>
-                <span onclick="location.href='user_successBoard.do'">최신순</span>
-            </section>
+            	<input id="cc" type="hidden" value="${option}">
+            	<span class="unsel" onclick="location.href='user_successBoard.do'">최신순</span>
+                <span class="sel" onclick="location.href='user_successBoard.do?option=popularity'">인기순</span>
+			</section>
             <section class="board">
                 <div class="list">
                 	<c:forEach var="content" items="${contents}">
@@ -168,6 +169,24 @@
 	});
 	
 	//-->
+</script>
+<script>
+
+	$(document).ready(function(){
+		if( ($('#cc').val() == 'popularity') ){
+			$('.sel').css({
+				'background': '#F60170',
+				'color': 'white',
+			});
+			$('.unsel').css('background','white');
+		}else{
+			$('.sel').css('background','white');
+			$('.unsel').css({
+				'background': '#F60170',
+				'color': 'white',
+			});
+		}
+	});
 </script>
 </body>
 </html>
