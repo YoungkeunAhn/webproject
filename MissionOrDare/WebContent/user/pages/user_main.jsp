@@ -17,7 +17,9 @@
 	<script src="${project}asset/script.js"></script>
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script src="https://kit.fontawesome.com/23971e572d.js"></script>
-
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 <title>유저 메인페이지</title>
 </head>
 <body>
@@ -103,6 +105,7 @@
 						</c:forEach>
 					</div>
 					<div class="swiper-button-next"></div>
+					<div class="swiper-pagination"></div>
 				</div>
 			</c:if>
 
@@ -185,13 +188,26 @@
 	            cnt++
 	        });
 	    });
-	
+	/*
 	    var swiper = new Swiper('.swiper-container', {
 	        navigation: {
 	            nextEl: '.swiper-button-next',
 	            prevEl: '.swiper-button-prev',
 	        },
 	    });
+	  */  
+	   var swiper =  new Swiper('.swiper-container', {
+	    	pagination : { // 페이징 설정
+	    		el : '.swiper-pagination',
+	    		clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
+	    	},
+	    	navigation : { // 네비게이션 설정
+	    		nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+	    		prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+	    	},
+	    });
+
+	    
 	  //-->
 </script>
 </body>

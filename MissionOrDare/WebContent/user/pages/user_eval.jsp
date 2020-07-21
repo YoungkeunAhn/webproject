@@ -18,6 +18,9 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="https://kit.fontawesome.com/23971e572d.js"
 	crossorigin="anonymous"></script>
+	
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 </head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -63,9 +66,9 @@
                 		</c:if>
 	               	</div>
 					</c:forEach>
-	            
-	   	</div>
-	   	<div class="swiper-button-next"></div> 
+	    		  </div>
+	   	<div class="swiper-button-next"></div>
+	   	<div style="position: relative; bottom:21rem;" class="swiper-pagination"></div> 
    		<div style="position: relative; bottom:16rem;" class="btn-line">
 			<input class="successbtn" type="button" value="성공" name="pass" onclick="GoSuccessProPage('${userMissionsDto.mission_state_id}')"/>
 			<input type="button" class="deletebtn" value="실패" name="fail" onclick="GoFailureProPage('${userMissionsDto.mission_state_id}')"/>
@@ -101,12 +104,25 @@
      
 <script>
 //<--
+/*
 var swiper = new Swiper('.swiper-container', {
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
 });
+*/
+var swiper =  new Swiper('.swiper-container', {
+	pagination : { // 페이징 설정
+		el : '.swiper-pagination',
+		clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
+	},
+	navigation : { // 네비게이션 설정
+		nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+		prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+	},
+});
+
 //-->
 </script>
 </body>

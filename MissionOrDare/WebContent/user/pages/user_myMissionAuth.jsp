@@ -1,19 +1,23 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="user_settings.jsp" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ include file="user_settings.jsp"%>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    
-    <link type="text/css" rel="stylesheet" href="${project}asset/user.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <script src="${project}asset/script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Link CSS -->
+<link type="text/css" rel="stylesheet" href="${project}asset/user.css">
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- Link JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="${project}asset/script.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/23971e572d.js"
+	crossorigin="anonymous"></script>
     <title>마이미션뷰 페이지</title>
     <script>
         $(document).ready(function () {
@@ -130,13 +134,21 @@
     </article>
 </div>
 <script>
+//<--
 		$('.starRev span').click(function(){
 		  $(this).parent().children('span').removeClass('on');
 		  $(this).addClass('on').prevAll('span').addClass('on');
 		  $('.star-score').val($(this).text().replace('별', ''));
 		  return false;
 		});
-		
+		/*  */
+		var swiper = new Swiper('.swiper-container', {
+		    navigation: {
+		        nextEl: '.swiper-button-next',
+		        prevEl: '.swiper-button-prev',
+		    },
+		});
+//-->		
 </script>
 
 
