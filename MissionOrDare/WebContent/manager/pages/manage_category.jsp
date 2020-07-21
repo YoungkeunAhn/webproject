@@ -45,7 +45,6 @@
 	<style>
 		.overlay{
 		height: 500px;
-		
 		}
 	</style>
 </head>
@@ -87,11 +86,10 @@
 	    </div>
 	  </nav>
 	  
-	  
-	  <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('${project}images/bg_3.jpg'); style="height:550px;">
+	  <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('${project}images/bg_3.jpg');" style="height:550px;">
       <div class="overlay"></div>
       <div class="container">
-        <div class="row no-gutters slider-text align-items-end" style="height:550px;">
+        <div class="row no-gutters slider-text align-items-end">
           <div class="col-md-9 ftco-animate pb-5">
             <h2 class="mb-3 bread">카테고리관리</h2>
             <p class="breadcrumbs"><span class="mr-2"><a href="${pageContext.request.contextPath}/index.do">Home > </a></span> <span>카테고리관리 > </span></p>
@@ -100,7 +98,6 @@
       </div>
     </section>
 	  
-    
         <section class="search-part">
         <form method="post" action="manage_category.do" name="categoryho" onsubmit="return searchCheck()"> 
             <label><input class="form-control" type="search" name="category"></label>
