@@ -69,5 +69,13 @@
 		where m.mission_state_id = s.mission_state_id
 		and s.success_board_id=#{success_board_id}
 	</select>
-	
+	<!-- 댓글 -->
+	<insert id="replyInsert" parameterType="Dtos.ReplyDto">
+		insert into mod_reply(reply_id,success_board_id,user_nickname,reply_contents,reference)
+		values('reply'||lpad(seq_reply.nextval,5,0), #{success_board_id}, #{user_nickname},
+		#{reply_contents}, (select count(reply_step) from mod_reply where reply_step=0)+1)
+	</insert>
+	<select id="replyList" parameterType="String" resultType="Dtos.ReplyDto">
+		select * from mod_reply where success_board_id = #{success_board_id}
+	</select>	
 </mapper>
