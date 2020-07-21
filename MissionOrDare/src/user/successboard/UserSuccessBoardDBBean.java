@@ -9,6 +9,7 @@ import Dtos.MissionCategoryAndInfoDto;
 import Dtos.MissionCategoryDto;
 import Dtos.MissionStateDto;
 import Dtos.MissionStateSuccessBoardDto;
+import Dtos.ReplyDto;
 import Dtos.UsersDto;
 
 public class UserSuccessBoardDBBean implements UserSuccessBoardDao {
@@ -43,5 +44,11 @@ public class UserSuccessBoardDBBean implements UserSuccessBoardDao {
 	}
 	public MissionStateDto getAuthMissionInfo(String success_board_id) {
 		return session.selectOne("success.getAuthMissionInfo", success_board_id);
+	}
+	public int replyInsert(ReplyDto replyDto) {
+		return session.insert("success.replyInsert",replyDto);
+	}
+	public List<ReplyDto> replyList(String success_board_id) {
+		return session.selectList("success.replyList",success_board_id);
 	}
 }

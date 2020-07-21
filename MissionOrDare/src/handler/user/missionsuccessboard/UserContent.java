@@ -23,6 +23,8 @@ public class UserContent implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
+		
+		
 		String success_board_id = request.getParameter("success_board_id");
 		MissionCategoryAndInfoDto mission_info = userSuccessBoardDao.getMissionInfo(success_board_id);
 		UsersDto user_info = userSuccessBoardDao.getUserInfo(success_board_id);
@@ -43,6 +45,23 @@ public class UserContent implements CommandHandler{
 			}
 		}
 		
+		
+		//댓글
+		//String reply_contents = request.getParameter("reply");
+		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
+		//String contents_first = reply_contents.substring(0,1);
+		//if() {
+			
+		//}else {
+			
+		//}
+		
+		
+		
+		
+		
+		
+		request.setAttribute("user_nickname", user_nickname);
 		request.setAttribute("contents", contents);
 		request.setAttribute("mission_info", mission_info);
 		request.setAttribute("user_info", user_info);

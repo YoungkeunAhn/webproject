@@ -7,6 +7,7 @@ import Dtos.MissionCategoryAndInfoDto;
 import Dtos.MissionCategoryDto;
 import Dtos.MissionStateDto;
 import Dtos.MissionStateSuccessBoardDto;
+import Dtos.ReplyDto;
 import Dtos.UsersDto;
 
 public interface UserSuccessBoardDao {
@@ -21,5 +22,6 @@ public interface UserSuccessBoardDao {
 	public MissionCategoryAndInfoDto getMissionInfo(String success_board_id);
 	public UsersDto getUserInfo(String success_board_id);
 	public MissionStateDto getAuthMissionInfo(String success_board_id);
-
+	public int replyInsert(ReplyDto replyDto);
+	public List<ReplyDto> replyList(String success_board_id);
 }
