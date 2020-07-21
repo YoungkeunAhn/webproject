@@ -129,25 +129,25 @@
              <span>like 998</span>
           </div>
           <div class="reply-contents">
-             <div class="reply">
+          
+           	<div class="reply" id="replyDiv">
+           	<!-- 
                 <input type="hidden" value="댓글아이디">
                 <i class="fas fa-ellipsis-v" onclick="replyModal('rp1','유차니귀요미')"></i>
                 <span class="re-replyUser"></span>
                 <label onclick="toReply('유차니귀요미')">유차니귀요미</label>
                 <span class="reply-text">프로필 본인이셈?</span>
+                 -->
              </div>
-             
-             <div class="reply">
-                <!-- 
+             <!--
+             <div class="reply">          
                 <input type="hidden" value="댓글아이디">
                 <i class="fas fa-ellipsis-v" onclick="replyModal('rp2','영근육몬')"></i>
                 <label onclick="toReply('영근육몬')">영근육몬</label>
                 <span class="re-replyUser">@유차니귀요미</span>
                 <span class="reply-text">재대대대대대대대대대대댓글ㅓㄹㅇ마ㅣㅓㄹ얼낭멀나이ㅓㄴ라어라ㅣㅓㅁ</span>
-                 -->
              </div>
-
-             <!-- 
+			 -->
              <div id="replyMenuModal" class="modal-bg" onclick="Close()">
                 <input id="reply_id" type="hidden">
                 <input id="user_nickname" type="hidden">
@@ -158,7 +158,7 @@
                    <li><span class="text-danger" onclick="doReport($('#reply_id').val())">신고하기</span></li>
                 </ul>
              </div>
-               -->
+              
          </div>
           
           
@@ -205,6 +205,7 @@
 				success : function(data){
 					console.log(data);
 					$('#reply').val('');
+					 location.reload();
 				}
 			});
 		});
