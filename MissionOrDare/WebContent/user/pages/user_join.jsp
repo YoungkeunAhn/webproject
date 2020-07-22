@@ -130,12 +130,18 @@
         $(document).ready(function () {
            $('.modal-bodyLeft > input').click(function () {
                if(items.search($(this).val()+'/') === -1){
-                   items += $(this).val() + '/';
-                   interesting_categorys.value = items;
-                   $(this).css({
-                       background: 'yellow',
-                       color: 'white',
-                   });
+            	   if( ( $('#interesting_categorys').val().split('/').length-1) < 4 ){
+            		   items += $(this).val() + '/';
+                       interesting_categorys.value = items;
+                       $(this).css({
+                           background: 'yellow',
+                           color: 'white',
+                       });   
+            	   }// if end
+            	   else{
+            		   alert('카테고리 4개 이하로 선택해주세요.');
+            	   }
+                   
                }//if end
                else {
                    var includeValue = $(this).val() + '/';
@@ -153,13 +159,17 @@
         var interesting_categorys = document.getElementById('interesting_categorys');
         $(document).ready(function () {
            $('.modal-bodyRight > input').click(function () {
-               if(items.search($(this).val()+'/') === -1){
-                   items += $(this).val() + '/';
-                   interesting_categorys.value = items;
-                   $(this).css({
-                       background: 'yellow',
-                       color: 'white',
-                   });
+        	   if( ( $('#interesting_categorys').val().split('/').length-1) < 4 ){
+	               if(items.search($(this).val()+'/') === -1){
+	                   items += $(this).val() + '/';
+	                   interesting_categorys.value = items;
+	                   $(this).css({
+	                       background: 'yellow',
+	                       color: 'white',
+	                   });
+	                   
+	               }//if end
+	               
                }//if end
                else {
                    var includeValue = $(this).val() + '/';
