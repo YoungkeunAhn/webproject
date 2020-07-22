@@ -102,17 +102,17 @@
 						// 검색결과 출력
 						if($('#opt').val() == 'user') {
 							for(var i=0; i<data.usersDtos.length; i++){
-								$('#search_result').append('<span class="searchUser">'+data.usersDtos[i].user_nickname+'</span>');
+								$('#search_result').append('<div class="searchUser">'+data.usersDtos[i].user_nickname+'</div>');
 							}
 						} else if($('#opt').val() == 'content'){
 							for(var i=0; i<data.largeCategoryDtos.length; i++){
-								$('#search_result').append('<span class="searchCategory">'+data.largeCategoryDtos[i].large_category+'</span>');
+								$('#search_result').append('<div class="searchCategory">'+data.largeCategoryDtos[i].large_category+'</div>');
 							}
 							for(var i=0; i<data.categoryDtos.length; i++){
-								$('#search_result').append('<span class="searchCategory">'+data.categoryDtos[i].large_category+ '/' + data.categoryDtos[i].small_category+ '</span>');
+								$('#search_result').append('<div class="searchCategory">'+data.categoryDtos[i].large_category+ '/' + data.categoryDtos[i].small_category+ '</div>');
 							}
 							for(var i=0; i<data.smallCategoryDtos.length; i++){
-								$('#search_result').append('<span class="searchCategory">'+ data.smallCategoryDtos[i].large_category + '/' + data.smallCategoryDtos[i].small_category+'</span>');
+								$('#search_result').append('<div class="searchCategory">'+ data.smallCategoryDtos[i].large_category + '/' + data.smallCategoryDtos[i].small_category+'</div>');
 							}
 						} 
 						$(document).on('click', '.searchUser', function(event){

@@ -756,12 +756,18 @@ ol{
     display: none;
 }
 
-.search-result div{
+.search-result .user, .search-result .content{
     width: 50%;
     text-align: center;
     display: inline-block;
     border-top: 1px solid #4D4D4D;
     border-bottom: 1px solid #4D4D4D;
+}
+.search-result div{
+	width: 100%;
+	display: block;
+	border-bottom: 1px solid #888;
+	padding: 5px;
 }
 
 .line-up{
