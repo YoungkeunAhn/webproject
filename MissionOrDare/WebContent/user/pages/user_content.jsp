@@ -20,17 +20,7 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
     
    <script>
-   function replyModal(reply_id,user_nick){
-      $('.user-nick').text(user_nick);
-      $('#user_nickname').val(user_nick);
-      $('#reply_id').val(reply_id);
-      document.getElementById('replyMenuModal').style.display='flex';
-   }
-   function toReply(user_nick){
-      user_nick = '@'+user_nick+' ';
-      $('.userreplyhotext').val(user_nick);
-      $('.userreplyhotext').focus();
-   }
+   
    function Close(){
       document.getElementById('replyMenuModal').style.display='none';
    }
@@ -114,7 +104,7 @@
                   </c:forEach>
                </div>
                <div class="swiper-button-next"></div>
-               <div style="position: fixed; top:34rem;" class="swiper-pagination"></div>
+               <div style="position: fixed; height:20px; top:364.4px;" class="swiper-pagination"></div>
             </div>
          <ol>
               <li class="text-summary"><span>${auth_mission_info.mission_upload_contents}</span></li>
@@ -192,6 +182,7 @@
          <script type="text/javascript">
       //<!--
       /*댓글 insert*/
+      $(document).ready(function(){
 		$('#insert').click(function(){
 			$.ajax({
 				type : 'POST',
@@ -203,12 +194,36 @@
 				dataType : 'text',
 				async :false,
 				success : function(data){
-					console.log(data);
-					$('#reply').val('');
-					 location.reload();
+					data = eval('(' + data +')');
+					var a ='';
+					if(data.replyDtos.length>0){
+						for(i=0; i<data.replyDtos.length; i++){
+							console.log('user_id: ' +data.replyDtos[0].user_nickname)
+							a += '<div>';
+							a += '<input type="hidden" value="댓글'+data.replyDtos[i].reply_id+'">' ; 
+							a += '<i id="replymodal" class="fas fa-ellipsis-v"></i>';
+						 	a += '<span class="re-replyUser"></span>' ;
+					 		a += '<label onclick="toReply('+data.replyDtos[i].user_nickname+')">'+data.replyDtos[i].user_nickname +'</label>' ;
+					 		a += '<span class="reply-text">'+ ' ' +data.replyDtos[i].reply_contents+'</span>' ;
+							a += '</div>'
+						}
+					}
+					$(document).on('click', '#replymodal', function(){
+						$('.user-nick').text(data.replyDtos[i].user_nickname);
+					      $('#user_nickname').val(data.replyDtos[i].user_nickname);
+					      $('#reply_id').val(data.replyDtos[i].reply_id);
+					      document.getElementById('replyMenuModal').style.display='flex';
+					});
+					function toReply(user_nick){
+					   user_nick = '@'+user_nick+' ';
+					   $('.userreplyhotext').val(user_nick);
+					   $('.userreplyhotext').focus();
+					}
+					$("#replyDiv").html(a);
 				}
 			});
 		});
+      });
 		
 		/*댓글 불러오기*/
 		function replyList(){
@@ -231,7 +246,7 @@
 							a += '<i class="fas fa-ellipsis-v"></i>';
 						 	a += '<span class="re-replyUser"></span>' ;
 					 		a += '<label onclick="toReply('+data.replyDtos[i].user_nickname+')">'+data.replyDtos[i].user_nickname +'</label>' ;
-					 		a += '<span class="reply-text">'+data.replyDtos[i].reply_contents+'</span>' ;
+					 		a += '<span class="reply-text">'+ ' ' + data.replyDtos[i].reply_contents+'</span>' ;
 							a += '</div>'
 						}
 					}
@@ -240,12 +255,9 @@
 				}
 			});
 		}
-		
-		
 		$(document).ready(function(){
 			replyList();
 		});
-      
       /* 좋아요 */
       
          //-->

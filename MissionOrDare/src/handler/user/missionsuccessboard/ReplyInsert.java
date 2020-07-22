@@ -1,5 +1,7 @@
 package handler.user.missionsuccessboard;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,7 +35,9 @@ public class ReplyInsert implements CommandHandler{
 		replyDto.setSuccess_board_id(success_board_id);
 		int result = userSuccessBoardDao.replyInsert(replyDto);
 		
+		List<ReplyDto> replyDtos = userSuccessBoardDao.replyList(success_board_id);
 		
+		request.setAttribute("replyDtos", replyDtos);
 		request.setAttribute("result", result);
 		return new ModelAndView("user/pages/replyInsert");
 	}
