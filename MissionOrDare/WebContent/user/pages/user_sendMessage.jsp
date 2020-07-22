@@ -27,7 +27,7 @@
 			
 			<section class="sendbottom">
 					<button type="submit" class="btn btn-primary">보내기</button>
-		            <button type="reset" class="btn btn-danger">취소</button>
+		            <button type="button" class="btn btn-danger" onclick="history.back()">취소</button>
 			</section>
 			</form>
 		</article>
