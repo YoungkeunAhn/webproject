@@ -98,6 +98,8 @@
       </div>
     </section>
 	  
+	  
+	  
         <section class="search-part">
         <form method="post" action="manage_category.do" name="categoryho" onsubmit="return searchCheck()"> 
             <label><input class="form-control" type="search" name="category"></label>
@@ -172,7 +174,7 @@
 				</c:if>
 			</c:if>
         </section>  
-    
+   
     <footer class="ftco-footer ftco-section" style="padding:50px 0;">
       <div class="container">
         
