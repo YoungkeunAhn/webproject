@@ -28,6 +28,7 @@
            <input type="hidden" name="kakao_birthday" value="${kakao_birthday}">
            <input type="hidden" name="gender" value="${gender}">
            <input type="hidden" name="kakao_access_token" value="${kakao_access_token}">
+           <input id="interesting_categorys" class="form-control" type="hidden" name="interesting_categorys">
            
                <ul class="join-list">
                    <li>
@@ -81,7 +82,7 @@
                </ul>
    
                <button type="button" class="btn-category" data-toggle="modal" data-target="#myModal">
-                   카테고리 선택
+                   	카테고리 선택
                </button>
                <label class="text text-danger">카테고리 1개이상 선택하셔야합니다.</label>
    
@@ -93,8 +94,8 @@
                                <h4 class="modal-title" id="myModalLabel">관심사 카테고리 선택해주세요</h4>
                            </div>
                            <div class="modal-body">
+                           
                               <div class="modal-bodyLeft">
-                                  <input id="interesting_categorys" class="form-control" type="hidden" name="interesting_categorys">
                                   <input class="lagerCategory" type="button" value="운동">
                                   <input class="lagerCategory" type="button" value="여행">
                                   <input class="lagerCategory" type="button" value="교육">
@@ -102,9 +103,8 @@
                                   <input class="lagerCategory" type="button" value="음악">
                                   <input class="lagerCategory" type="button" value="다이어트">
                                   <input class="lagerCategory" type="button" value="기타">                               
-                        </div>
-                        <div class="modal-bodyRight">
-                                  <input id="interesting_categorys" class="form-control" type="hidden" name="interesting_categorys">
+		                        </div>
+		                        <div class="modal-bodyRight">
                                   <input class="lagerCategory" type="button" value="게임">
                                   <input class="lagerCategory" type="button" value="먹방">
                                   <input class="lagerCategory" type="button" value="개그">

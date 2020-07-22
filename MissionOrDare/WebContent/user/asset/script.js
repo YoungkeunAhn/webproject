@@ -5,6 +5,7 @@ var repasswdNullError = "비밀번호 확인도 입력해주세요";
 var dateNullError = "생년월일을 입력해주세요";
 var nicknameSpecialError = "닉네임을 확인해주세요.\n들어갈수 없는 문자가 있습니다.";
 var insertFileError = "미션 수행한 파일을 업로드해주세요";
+var categoryNullError = "카테고리를 1개 이상 선택해주세요"
 
 /*
  * 
@@ -47,6 +48,10 @@ function SignUpCheck() {
 	 if( ! userJoinForm.user_birth.value ) {
 		 alert( dateNullError );
 		 userJoinForm.user_birth.focus();
+		 return false;
+	 }
+	 if( ! userJoinForm.interesting_categorys.value ){
+		 alert(categoryNullError);
 		 return false;
 	 }
 }
