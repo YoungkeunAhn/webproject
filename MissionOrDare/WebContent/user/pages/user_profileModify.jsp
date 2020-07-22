@@ -41,7 +41,7 @@
 	    <nav>
             <ul>
                 <li onclick="GoMainPage()">
-                    <img class="nav-home" src="${project}images/mod_logo.png" alt="logo">
+                    <img class="nav-home" src="${project}images/blackMy.PNG" alt="logo">
                     <span>홈</span>
                 </li>
                 <li onclick="GoEvalPage()">
@@ -53,7 +53,7 @@
                     <span>피드</span>
                 </li>
                 <li onclick="GoMyPage()">
-                    <img src="${project}images/my.png" alt="my-icon">
+                    <img src="${project}images/mygumi.PNG" alt="my-icon">
                     <span>마이</span>
                 </li>
             </ul>
