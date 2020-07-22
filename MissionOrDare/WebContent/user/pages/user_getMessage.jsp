@@ -17,11 +17,11 @@
 	<section>
 	   <div class="getMessageContent">
 	   
-	   	  <c:forEach var="notesDto" items="${notesDtos}"> 
+	   	  <c:forEach var="userNotesDto" items="${userNotesDtos}"> 
 	      <div class="getMessageList">
-	         <span class="Nick"><img class=img-circle src="${project}images/madong.PNG"" alt="user-profile">${notesDto.sent_nickname}</span>
-	       <span class="getMessageDate">${notesDto.send_date}</span><br>
-	         <span>${notesDto.notes_contents}</span>
+	         <span class="Nick"><img class=img-circle src="${userNotesDto.profile_picture}" alt="user-profile">${userNotesDto.sent_nickname}</span>
+	       <span class="getMessageDate">${userNotesDto.send_date}</span><br>
+	         <span>${userNotesDto.notes_contents}</span>
 	      </div>
 	      </c:forEach>
 	   </div>   

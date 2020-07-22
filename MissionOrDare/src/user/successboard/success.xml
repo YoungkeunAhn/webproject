@@ -75,9 +75,19 @@
 		values('reply'||lpad(seq_reply.nextval,5,0), #{success_board_id}, #{user_nickname},
 		#{reply_contents}, (select count(reply_step) from mod_reply where reply_step=0)+1)
 	</insert>
+	<insert id="rereplyInsert" parameterType="Dtos.ReplyDto">
+		insert into mod_reply(reply_id,success_board_id,user_nickname,reply_contents,reference,reply_step)
+		values('reply'||lpad(seq_reply.nextval,5,0), #{success_board_id}, #{user_nickname},
+		#{reply_contents}, #{reference}, #{reply_step})
+	</insert>
 	<select id="replyList" parameterType="String" resultType="Dtos.ReplyDto">
 		select * from mod_reply where success_board_id = #{success_board_id}
+		order by reference, reply_step, reply_date
 	</select>	
+	<!-- ref 가져오기 -->
+	<select id="getRef" parameterType="String" resultType="int">
+		select reference from mod_reply where reply_id=#{reply_id}
+	</select>
 	
 	<!-- 좋아요 -->
 	<insert id="insertLike" parameterType="Dtos.LikeDto">

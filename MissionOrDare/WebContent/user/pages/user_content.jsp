@@ -25,7 +25,7 @@
       document.getElementById('replyMenuModal').style.display='none';
    }
    function doPostMessage(user_nick){
-      location.href='user_sendMessage.do?user_nickname='+user_nick;
+	   location.href='user_sendMessage.do?nickname='+user_nick;
    }
    function goOtherUserPage(user_nick){
       alert(user_nick);
@@ -109,6 +109,7 @@
       </form>
       
       <!-- 댓글내용 -->
+      <input id="re" type="hidden">
       <section class="reply-part">
          <div class="likecount">
                    <img id="like" >
@@ -184,6 +185,7 @@
 				type : 'POST',
 				url : 'replyInsert.do',
 				data : {
+					reply_id : $('#re').val(),
 					reply_contents : $('#reply').val(),
 					success_board_id : $('#success_board_id').val()
 				},
@@ -212,12 +214,14 @@
 					var a ='';
 					if(data.replyDtos.length>0){
 						for(i=0; i<data.replyDtos.length; i++){
-							console.log('user_id: ' +data.replyDtos[0].user_nickname)
 							a += '<div>';
 							a += '<input class="id" type="hidden" value="'+data.replyDtos[i].reply_id+'">' ; 
-							a += '<i id="replymodal" class="fas fa-ellipsis-v"><input class="id" type="hidden" value="'+data.replyDtos[i].reply_id+'"><input class="nickname" type="hidden" value="'+data.replyDtos[i].user_nickname+'"></i>';
+							if(data.replyDtos[i].reply_step == 1){
+								a += '<span>　　</span>';
+							}
+							a += '<i id="replymodal" class="fas fa-ellipsis-v">　<input class="id" type="hidden" value="'+data.replyDtos[i].reply_id+'"><input class="nickname" type="hidden" value="'+data.replyDtos[i].user_nickname+'"></i>';
 						 	a += '<span class="re-replyUser"></span>' ;
-					 		a += '<label class="nickname">'+data.replyDtos[i].user_nickname +'</label>' ;
+					 		a += '<label class="nickname" ><input class="re" type="hidden" value="'+data.replyDtos[i].reply_id+'">'+data.replyDtos[i].user_nickname +'</label>' ;
 					 		a += '<span class="reply-text">'+ ' ' +data.replyDtos[i].reply_contents+'</span>' ;
 							a += '</div>'
 						}
@@ -230,6 +234,7 @@
 					});
 					$(document).on('click', '.nickname', function(){
 						user_nick = '@'+$(this).text()+' ';
+						$('#re').val($(this).find('.re').val());
 					   $('.userreplyhotext').val(user_nick);
 					   $('.userreplyhotext').focus();
 					});
@@ -265,11 +270,9 @@
                    data = eval('(' + data +')');
                    if(data.result !=0){ //좋아요 됨
                       $("#like").prop("src","${project}images/umzi.PNG");
-                      alert('좋아요 카운트 업 - ajax'); 
                      // location.reload();
                    }else{//좋아요 취소
                       $("#like").prop("src","${project}images/xdraw.PNG");
-                      alert('좋아요 카운트 다운 - ajax'); 
                       //location.reload();
                    }
                    $("#totalLike").text("like"+data.likeCount) ; 

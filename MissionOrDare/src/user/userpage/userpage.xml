@@ -14,11 +14,15 @@
 		on c.mission_category_id = i.mission_category_id
 		where s.user_nickname = #{nickname}
 	</select>
-	<select id="receivedMessageInfo" parameterType="String" resultType="Dtos.NotesDto">
-		select * from mod_notes where received_nickname = #{user_nickname}
+	<select id="receivedMessageInfo" parameterType="String" resultType="Dtos.UserNotesDto">
+		select * from mod_notes n left outer join mod_users u
+		on n.sent_nickname=u.user_nickname
+		where received_nickname=#{user_nickname}
+		order by n.send_date desc
 	</select>
 	<select id="sentMessageInfo" parameterType="String" resultType="Dtos.NotesDto">
 		select * from mod_notes where sent_nickname = #{user_nickname}
+		order by send_date desc
 	</select>
 	<select id="getProfile" parameterType="String" resultType="String">
 		select profile_picture from mod_users where user_nickname = #{user_nickname} 

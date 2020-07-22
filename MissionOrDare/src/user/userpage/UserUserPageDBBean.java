@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import Dtos.NotesDto;
 import Dtos.SuccessBoardDto;
 import Dtos.UserMissionsDto;
+import Dtos.UserNotesDto;
 import Dtos.UsersDto;
 
 public class UserUserPageDBBean implements UserUserPageDao{
@@ -18,7 +19,7 @@ public class UserUserPageDBBean implements UserUserPageDao{
 	public List<UserMissionsDto> userMissionInfo(String user_nickname) {
 		return session.selectList("UserPage.userMissionInfo", user_nickname);
 	}
-	public List<NotesDto> receivedMessageInfo(String user_nickname) {
+	public List<UserNotesDto> receivedMessageInfo(String user_nickname) {
 		return session.selectList("UserPage.receivedMessageInfo",user_nickname);
 	}
 	public List<NotesDto> sentMessageInfo(String user_nickname) {

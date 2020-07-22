@@ -25,6 +25,8 @@ public interface UserSuccessBoardDao {
 	public MissionStateDto getAuthMissionInfo(String success_board_id);
 	public int replyInsert(ReplyDto replyDto);
 	public List<ReplyDto> replyList(String success_board_id);
+	public int getRef(String reply_id);
+	public int rereplyInsert(ReplyDto replyDto);
 	public int insertLike(LikeDto likeDto); 
 	public int deleteLike(LikeDto likeDto);
 	public int checkLike(LikeDto likeDto);

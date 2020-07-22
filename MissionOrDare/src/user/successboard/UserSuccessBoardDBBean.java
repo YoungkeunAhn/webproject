@@ -52,6 +52,14 @@ public class UserSuccessBoardDBBean implements UserSuccessBoardDao {
 	public List<ReplyDto> replyList(String success_board_id) {
 		return session.selectList("success.replyList",success_board_id);
 	}
+	public int getRef(String reply_id) {
+		return session.selectOne("success.getRef", reply_id );
+	}
+	public int rereplyInsert(ReplyDto replyDto) {
+		return session.insert("success.rereplyInsert", replyDto );
+	}
+	
+	
 	//좋아요
 	public int insertLike(LikeDto likeDto) {
 		return session.insert("success.insertLike",likeDto);

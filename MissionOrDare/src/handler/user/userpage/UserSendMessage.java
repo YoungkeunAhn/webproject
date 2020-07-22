@@ -15,9 +15,9 @@ public class UserSendMessage implements CommandHandler{
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
 		
-		String user_nickname = request.getParameter("user_nickname");
-		if(user_nickname != null) {
-			request.setAttribute("user_nickname", user_nickname);
+		String nickname = request.getParameter("nickname");
+		if(nickname != null) {
+			request.setAttribute("nickname", nickname);
 		}
 		
 		return new ModelAndView("user/pages/user_sendMessage");

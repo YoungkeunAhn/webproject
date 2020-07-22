@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import Dtos.NotesDto;
+import Dtos.UserNotesDto;
 import handler.CommandHandler;
 import user.userpage.UserUserPageDao;
 
@@ -24,9 +24,9 @@ public class UserGetMessage implements CommandHandler{
 		request.setCharacterEncoding("utf-8");
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		
-		List<NotesDto> notesDtos = userUserPageDao.receivedMessageInfo(user_nickname);
+		List<UserNotesDto> userNotesDtos = userUserPageDao.receivedMessageInfo(user_nickname);
 		
-		request.setAttribute("notesDtos", notesDtos);
+		request.setAttribute("userNotesDtos", userNotesDtos);
 		return new ModelAndView("user/pages/user_getMessage");
 	}
 }
