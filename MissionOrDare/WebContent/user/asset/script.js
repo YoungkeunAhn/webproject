@@ -24,7 +24,10 @@ function SignUpCheck() {
 		 alert( nicknameNullError );
 		 userJoinForm.user_nickname.focus();
 		 return false;
-	 } else if( checkKor.test(userJoinForm.user_nickname.value) ||
+	}else if( userJoinForm.gungbokCheck.value==1 ) {
+		alert("중복되는 닉네임은 사용할 수 없습니다.");
+		return false;
+	}else if( checkKor.test(userJoinForm.user_nickname.value) ||
 			 	checkSpc.test(userJoinForm.user_nickname.value) ||
 			 	regExp.test(userJoinForm.user_nickname.value)) {
 		 alert(nicknameSpecialError);

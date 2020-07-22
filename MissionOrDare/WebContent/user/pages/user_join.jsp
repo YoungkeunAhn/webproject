@@ -29,7 +29,7 @@
            <input type="hidden" name="gender" value="${gender}">
            <input type="hidden" name="kakao_access_token" value="${kakao_access_token}">
            <input id="interesting_categorys" class="form-control" type="hidden" name="interesting_categorys">
-           
+            <input id="gungbokCheck" name="gungbokCheck" type="hidden" value="0">
                <ul class="join-list">
                    <li>
                        <label class="th">* 닉네임</label>
@@ -191,16 +191,15 @@
                             if($("#user_nickname").val()==null ||$("#user_nickname").val()==""){
                                 $("#nicknameCheck").text("닉네임을 입력해주세요.");
                                 $("#nicknameCheck").css("color","red");
-                                $("reg_submit").attr("disabled",true);
                             }else if(data.result==1){
                                 //1: 아이디가 중복되는 문구
                                 $("#nicknameCheck").text("사용중인 닉네임입니다.");
                                 $("#nicknameCheck").css("color","red");
-                                $("reg_submit").attr("disabled",true);
+                                $("#gungbokCheck").val(1);
                             }else if(data.result==0){
                                 $("#nicknameCheck").text("사용 가능한 닉네임입니다.");
                                 $("#nicknameCheck").css("color","red");
-                                $("reg_submit").attr("disabled",true);
+                                $("#gungbokCheck").val(0);
                             }
                         },
                         error : function(e){
