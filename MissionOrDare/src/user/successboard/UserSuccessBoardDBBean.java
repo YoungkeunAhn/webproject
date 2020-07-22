@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
+import Dtos.LikeDto;
 import Dtos.MissionCategoryAndInfoDto;
 import Dtos.MissionCategoryDto;
 import Dtos.MissionStateDto;
@@ -50,5 +51,21 @@ public class UserSuccessBoardDBBean implements UserSuccessBoardDao {
 	}
 	public List<ReplyDto> replyList(String success_board_id) {
 		return session.selectList("success.replyList",success_board_id);
+	}
+	//좋아요
+	public int insertLike(LikeDto likeDto) {
+		return session.insert("success.insertLike",likeDto);
+	}
+	public int deleteLike(LikeDto likeDto) {
+		return session.delete("success.deleteLike",likeDto);
+	}
+	public int checkLike(LikeDto likeDto) {
+		return session.selectOne("success.checkLike",likeDto);
+	}
+	public int updateLike(String success_board_id) {
+		return session.update("success.updateLike",success_board_id);
+	}
+	public int selectLikeCount(String success_board_id) {
+		return session.selectOne("success.selectLikeCount",success_board_id);
 	}
 }

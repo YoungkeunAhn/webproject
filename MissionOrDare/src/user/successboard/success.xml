@@ -78,4 +78,22 @@
 	<select id="replyList" parameterType="String" resultType="Dtos.ReplyDto">
 		select * from mod_reply where success_board_id = #{success_board_id}
 	</select>	
+	
+	<!-- 좋아요 -->
+	<insert id="insertLike" parameterType="Dtos.LikeDto">
+		insert into mod_like values('like'||lpad(seq_like.nextval,5,0),#{success_board_id},#{user_nickname})	
+	</insert>
+	<delete id="deleteLike" parameterType="Dtos.LikeDto">
+		delete from mod_like where success_board_id=#{success_board_id} and user_nickname=#{user_nickname}
+	</delete>
+	<select id="checkLike" parameterType="Dtos.LikeDto" resultType="int">
+		select count(*) from mod_like where success_board_id=#{success_board_id} and user_nickname=#{user_nickname}	
+	</select>
+	<update id="updateLike" parameterType="String">
+		update mod_successboard set likecount = (select count(*) from mod_like where success_board_id = #{success_board_id})
+		where success_board_id = #{success_board_id}
+	</update>
+	<select id="selectLikeCount" parameterType="String" resultType="int">
+		select likecount from mod_successboard where success_board_id = #{success_board_id}
+	</select>
 </mapper>

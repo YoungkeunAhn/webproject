@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import Dtos.LikeDto;
 import Dtos.MissionCategoryAndInfoDto;
 import Dtos.MissionStateDto;
 import Dtos.UsersDto;
@@ -46,21 +47,17 @@ public class UserContent implements CommandHandler{
 		}
 		
 		
-		//댓글
-		//String reply_contents = request.getParameter("reply");
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
-		//String contents_first = reply_contents.substring(0,1);
-		//if() {
-			
-		//}else {
-			
-		//}
+		LikeDto likeDto = new LikeDto();
+		likeDto.setSuccess_board_id(success_board_id);
+		likeDto.setUser_nickname(user_nickname);
+		int likeval = userSuccessBoardDao.checkLike(likeDto);
+		int totalLikeCount = userSuccessBoardDao.selectLikeCount(success_board_id);
 		
 		
 		
-		
-		
-		
+		request.setAttribute("totalLikeCount", totalLikeCount);
+		request.setAttribute("likeval", likeval);
 		request.setAttribute("user_nickname", user_nickname);
 		request.setAttribute("contents", contents);
 		request.setAttribute("mission_info", mission_info);

@@ -56,13 +56,9 @@
       <!-- 게시글 내용 -->
       <form>
       <input type="hidden" id="success_board_id" value="${success_board_id}"> 
+      <input type="hidden" id="totalLikeCount" value="${totalLikeCount}">
          <section class="usercontent">
          <ol>
-            <input type="hidden" name="boardId" value="게시글ID" >
-            <input type="hidden" name="categories" value="운동/헬스" >
-            <input type="hidden" name="missionTitle" value="너의역량을 보여줘" >    
-              <input type="hidden" name="boardContent" value="이정도는 기본 아님?" >
-              <input type="hidden" name="boardOwner" value="KIMONG">
               
               <li class="mission-category">
                  <span>${mission_info.large_category}/${mission_info.small_category}</span>
@@ -115,8 +111,8 @@
       <!-- 댓글내용 -->
       <section class="reply-part">
          <div class="likecount">
-                   <img id="like" onclick="alert('좋아요 카운트 업 - ajax')" src="${project}images/umzi.PNG">
-             <span>like 998</span>
+                   <img id="like" >
+             <span id="totalLike"></span>
           </div>
           <div class="reply-contents">
           
@@ -245,7 +241,42 @@
 		$(document).ready(function(){
 			replyList();
 		});
-      /* 좋아요 */
+		
+		/* 좋아요 */
+        $(document).ready(function(){
+           var likeval = ${likeval};
+           $("#totalLike").text("like"+$("#totalLikeCount").val()) ; 
+           if(likeval != 0){ //좋아요가 되어있을 때 
+              $("#like").prop("src","${project}images/umzi.PNG");
+           }else{ //좋아요가 안 되어 있을 때 
+              $("#like").prop("src","${project}images/xdraw.PNG");
+           }
+           
+           $("#like").on("click", function () {
+              $.ajax({
+            	 type : 'POST',
+                 url : 'likeCheck.do',
+                 data : {
+                	success_board_id : $('#success_board_id').val()
+                      },
+                dataType : 'text',
+                async :false,
+                success : function(data){
+                   data = eval('(' + data +')');
+                   if(data.result !=0){ //좋아요 됨
+                      $("#like").prop("src","${project}images/umzi.PNG");
+                      alert('좋아요 카운트 업 - ajax'); 
+                     // location.reload();
+                   }else{//좋아요 취소
+                      $("#like").prop("src","${project}images/xdraw.PNG");
+                      alert('좋아요 카운트 다운 - ajax'); 
+                      //location.reload();
+                   }
+                   $("#totalLike").text("like"+data.likeCount) ; 
+                }
+              });
+           });
+        });
       
          //-->
      var swiper =  new Swiper('.swiper-container', {

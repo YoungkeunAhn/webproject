@@ -33,7 +33,7 @@ public class UserLoginPro implements CommandHandler{
 		
 		
 		
-		if(result == 1) { //메인페이지로 이동
+		if(result != 0) { //메인페이지로 이동
 			request.setAttribute("kakao_id", kakao_id);
 			request.setAttribute("kakao_access_token", kakao_access_token);
 			String user_nickname = userMemberDao.findNickname(kakao_id);
