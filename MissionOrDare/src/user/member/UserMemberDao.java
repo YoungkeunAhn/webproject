@@ -7,4 +7,6 @@ public interface UserMemberDao {
 	public int loginCheck(int kakao_id);
 	public int insertUser(UsersDto usersDto);
 	public String findNickname(int kakao_id);
+	public int withdrawlCheck(int kakao_id);
+	public int updateUser(UsersDto usersDto);
 }

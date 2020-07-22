@@ -34,24 +34,20 @@ public class UserJoinPro implements CommandHandler{
 		
 		//kakao
 		String user_email = request.getParameter("user_email");
-		System.out.println(user_email);
 		String profile_picture = request.getParameter("profile_picture");
 		int kakao_id = Integer.parseInt(request.getParameter("kakao_id"));
-		System.out.println("kakao_idjoinpro:"+kakao_id);
 		String age_group = request.getParameter("age_group");
 		String kakao_birthday = request.getParameter("kakao_birthday");
 		String gender = request.getParameter("gender");
 		String kakao_access_token = request.getParameter("kakao_access_token");
+		
+		int withdrawl = userMemberDao.withdrawlCheck(kakao_id);
 		
 		
 		//회원가입 
 		String user_nickname = request.getParameter("user_nickname");
 		String user_passwd = request.getParameter("user_passwd");
 		String date_of_birth = request.getParameter("user_birth") ; 
-		System.out.println("date_of_birth:"+date_of_birth);
-		//SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		//Date date_of_birth = df.parse(birth);
-		//System.out.println("date_of_birth : " + date_of_birth);
 		String job = request.getParameter("user_job");
 		String categorys = request.getParameter("interesting_categorys");
 		String[] category = categorys.split("/");
@@ -103,8 +99,15 @@ public class UserJoinPro implements CommandHandler{
 		
 		
 		request.setAttribute("kakao_id", kakao_id);
-		int result = userMemberDao.insertUser(usersDto);
-		request.setAttribute("result", result);
+		if(withdrawl == 0) {
+			int result = userMemberDao.insertUser(usersDto);
+			request.setAttribute("result", result);
+		} else {
+			int result = userMemberDao.updateUser(usersDto);
+			request.setAttribute("result", result);		
+		}
+		
+		
 		return new ModelAndView("user/pages/user_joinPro");
 	}
 }

@@ -22,4 +22,20 @@
 		#{interesting3_large_category,jdbcType=VARCHAR}, #{interesting4_large_category,jdbcType=VARCHAR}, 
 		#{job,jdbcType=VARCHAR}, #{kakao_id}, #{kakao_access_token,jdbcType=VARCHAR}, #{profile_picture,jdbcType=VARCHAR})
 	</insert>
+	<!-- 탈퇴 여부 -->
+	<select id="withdrawlCheck" parameterType="int" resultType="int">
+		select count(*) from mod_users where kakao_id=#{kakao_id} and withdrawal_date is not null
+	</select>
+	<update id="updateUser" parameterType="Dtos.UsersDto" >
+		update mod_users set user_nickname=#{user_nickname}, user_email=#{user_email,jdbcType=VARCHAR},
+		user_passwd=#{user_passwd}, gender=#{gender,jdbcType=VARCHAR}, age_group=#{age_group,jdbcType=VARCHAR},
+		date_of_birth=#{date_of_birth}, kakao_birthday=#{kakao_birthday,jdbcType=VARCHAR}, 
+		location=#{location}, interesting1_large_category=#{interesting1_large_category},
+		interesting2_large_category=#{interesting2_large_category,jdbcType=VARCHAR}, 
+		interesting3_large_category=#{interesting3_large_category,jdbcType=VARCHAR}, 
+		interesting4_large_category=#{interesting4_large_category,jdbcType=VARCHAR}, 
+		job=#{job,jdbcType=VARCHAR}, kakao_access_token=#{kakao_access_token,jdbcType=VARCHAR},
+		profile_picture=#{profile_picture,jdbcType=VARCHAR}, withdrawal_date=null
+		where kakao_id=#{kakao_id}
+	</update>
 </mapper>

@@ -20,6 +20,10 @@ public class UserMemberDBBean implements UserMemberDao{
 	public String findNickname(int kakao_id) {
 		return session.selectOne("Member.findNickname",kakao_id);
 	}
-	
-	
+	public int withdrawlCheck(int kakao_id) {
+		return session.selectOne("Member.withdrawlCheck", kakao_id);
+	}
+	public int updateUser(UsersDto usersDto) {
+		return session.update("Member.updateUser", usersDto);
+	}
 }
