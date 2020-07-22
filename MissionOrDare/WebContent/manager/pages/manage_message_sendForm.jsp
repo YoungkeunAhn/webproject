@@ -91,7 +91,7 @@
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-end">
-          <div class="col-md-9 ftco-animate pb-5" style="position: relative; bottom:11rem;">
+          <div class="col-md-9 ftco-animate pb-5" style="position: relative; bottom:15.9rem;">
             <h2 class="mb-3 bread">쪽지관리</h2>
             <p class="breadcrumbs"><span class="mr-2"><a href="${pageContext.request.contextPath}/index.do">Home > </a></span> <span>쪽지관리 > </span></p>
           </div>
