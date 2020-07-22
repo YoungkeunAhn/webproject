@@ -479,13 +479,12 @@ ol{
 }
 .modal-body{
     background-color: white;
-    width: 70%;
+    width: 50%;
     height: 50%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    left: 16%;
 }
 .modal-body .modal-bodyLeft{
    flex-direction: column;
@@ -525,6 +524,21 @@ ol{
     flex-direction: column;
     justify-content: center;
 }
+.mission-info-view .goMain{
+	display: block;
+	margin: 10px 10px 0 0;
+	width: 30px;
+	height: 30px;
+	position: fixed;
+	right: 30px;
+	top: 10px;
+}
+.mission-info-view .goMain:hover{
+	cursor: pointer;
+	width: 33px;
+	height: 33px;
+}
+
 .mission-info-view label{
     width: 100%;
     text-align: center;
@@ -591,6 +605,10 @@ ol{
 .auth_main ol li input{
 	border: 0px;
 	text-align: center;
+}
+.auth_main ol li i{
+	font-size: 5rem;
+	margin: 0 5px;
 }
 
 .auth_main .text-date{

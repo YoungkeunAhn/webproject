@@ -253,6 +253,10 @@ article{
 	width: 70%;
 	margin: 20px 0 0 0;
 }
+.mission-info img{
+	border-radius: 4px;
+	width:300px;
+}
 .mission-info table button{
 	text-align: center;
 	width: 100px;

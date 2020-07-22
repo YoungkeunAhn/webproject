@@ -32,7 +32,9 @@
 </c:if>
 <div class="container">
     <article>
+    	
         <section class="mission-info-view">
+        	<img class="goMain" src="${project}images/exit.png" onclick="GoMainPage()">
             <input id="mission_info_id" type="hidden" value="${randomMission.mission_info_id}">
             <label>${randomMission.large_category}/${randomMission.small_category}</label>
             <label>${randomMission.mission_title}</label>
