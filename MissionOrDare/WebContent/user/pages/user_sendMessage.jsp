@@ -13,23 +13,25 @@
     <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="container">
-	<article>
-		 <form method="post" action="user_sendMessagePro.do" name="sendMessage">
-			<section class="sendTop">
-			<span>받는사람 :</span> 
-			<span><input type="text" name="receivedNickname" value="${nickname}"> </span>
-			</section>
-			<section class="sendContent">
-				<textarea class="messagetextarea" placeholder="메시지 내용을 입력해주세요." name="textContent"></textarea>
-			</section>
+	<div class="container">
+		<article>
+			 <form method="post" action="user_sendMessagePro.do" name="sendMessage" onsubmit="return MessageSendCheck()">
+				<section class="sendTop">
+				<span>받는사람 :</span> 
+				<span><input class="recieveMan" type="text" name="receivedNickname"> </span>
+				</section>
+				
+				<section class="sendContent">
+					<textarea class="messagetextarea" placeholder="메시지 내용을 입력해주세요." name="textContent"></textarea>
+				</section>
+				
+			
 			<section class="sendbottom">
-				<button type="submit" class="btn btn-primary">보내기</button>
-	            <button type="reset" class="btn btn-danger">취소</button>
+					<button type="submit" class="btn btn-primary">보내기</button>
+		            <button type="reset" class="btn btn-danger">취소</button>
 			</section>
-		</form>
-	</article>
-</div>
-	
+			</form>
+		</article>
+	</div>
 </body>
 </html>

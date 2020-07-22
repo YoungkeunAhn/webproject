@@ -1178,6 +1178,10 @@ div .write-control{
         user_sendMessage 데헷~^^
 
 ***********************************************/
+.recieveMan{
+	position: relative;
+	right:100%;
+}
 .sendTop{
 	width:100%;
 	height:10%;

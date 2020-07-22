@@ -7,6 +7,7 @@ var dateBigError = "오늘날짜보다 이전날짜를 선택해주세요.";
 var nicknameSpecialError = "닉네임을 확인해주세요.\n들어갈수 없는 문자가 있습니다.";
 var insertFileError = "미션 수행한 파일을 업로드해주세요";
 var categoryNullError = "카테고리를 1개 이상 선택해주세요"
+var sendMessageNullError = "보내고 싶은 내용을 입력해 주세요.";
 
 /*
  * 
@@ -14,6 +15,20 @@ var categoryNullError = "카테고리를 1개 이상 선택해주세요"
  * 
  */
 
+	
+
+/*
+ * user_sendMessage.jsp
+*/
+function MessageSendCheck() {
+	if(! sendMessage.textContent.value){
+		alert( sendMessageNullError );
+		sendMessage.textContent.focus();
+		return false;
+	}
+}
+	
+	
 /*
  * user_join.jsp
 */
