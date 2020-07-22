@@ -52,7 +52,7 @@
 	           	</div>
 	          </div>	
 	          <div class="swiper-button-prev"></div>
-	               <div class="swiper-wrapper">
+	               <div class="swiper-wrapper" style="z-index: -50;">
 	                 <c:forEach var="content" items="${contents}">
 	                 <div style="height: 60%;" class="swiper-slide">
 	                  
