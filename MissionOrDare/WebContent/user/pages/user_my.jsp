@@ -16,10 +16,12 @@
 	<div class="container">
         <header>
             <img id="menu" class="menu-img" src="${project}images/menu.png" alt="logo">
-	            <div id="menu_list" class="menu_list">
+	            <div style="height: 21%;" id="menu_list" class="menu_list">
 		            	<span onclick="GoLogoutPage()">Logout</span>
 		            	<br><br>
 		            	<span onclick="GoWithdrawalPage()">Withdrawal</span>
+		            	<br><br>
+		            	<span onclick="MyInfoModify()">ProfileModify</span>
 		        </div>
             <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
         </header>
@@ -36,9 +38,7 @@
 	    		</div>	   		
 		   		<div class="write-control"><span>관심분야: ${userDto.interesting1_large_category} ${userDto.interesting2_large_category} ${userDto.interesting3_large_category} ${userDto.interesting4_large_category}</span></div>
 		   		<div class="write-control">가입일: ${userDto.sign_up_date}</div>
-		   		<div class="aho">
-		   		<button class="gaein" type="submit" onclick="MyInfoModify()"><span>개인정보수정</span></button>
-	    		</div>
+		   		
 	    		</section>
 	    	</div>
     		<section class="imymemine">
