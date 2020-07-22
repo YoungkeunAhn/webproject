@@ -165,7 +165,7 @@
                    var includeValue = $(this).val() + '/';
                    items = items.replace(includeValue,'');
                    $(this).css({
-                       background: 'white',
+                       background: 'rgb(239, 239, 239)',
                        color: 'black',
                    });
                    interesting_categorys.value = items;
