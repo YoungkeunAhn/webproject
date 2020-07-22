@@ -3,6 +3,7 @@ var passwdNullError = "비밀번호를 입력해주세요";
 var passwdDifError = "비밀번호가 다릅니다";
 var repasswdNullError = "비밀번호 확인도 입력해주세요";
 var dateNullError = "생년월일을 입력해주세요";
+var dateBigError = "오늘날짜보다 이전날짜를 선택해주세요.";
 var nicknameSpecialError = "닉네임을 확인해주세요.\n들어갈수 없는 문자가 있습니다.";
 var insertFileError = "미션 수행한 파일을 업로드해주세요";
 var categoryNullError = "카테고리를 1개 이상 선택해주세요"
@@ -20,6 +21,7 @@ function SignUpCheck() {
 	var checkKor = /^[ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;	//숫자는 입력가능하다
 	var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
 	var regExp = /\s/g;	//띄어쓰기
+	var today = new Date();
 	if( ! userJoinForm.user_nickname.value ) {
 		 alert( nicknameNullError );
 		 userJoinForm.user_nickname.focus();
@@ -50,6 +52,11 @@ function SignUpCheck() {
 	 }
 	 if( ! userJoinForm.user_birth.value ) {
 		 alert( dateNullError );
+		 userJoinForm.user_birth.focus();
+		 return false;
+	 }
+	 if(new Date(userJoinForm.user_birth.value) >= today){
+		 alert(dateBigError);
 		 userJoinForm.user_birth.focus();
 		 return false;
 	 }
