@@ -23,7 +23,7 @@
 		            	<br><br>
 		            	<span onclick="MyInfoModify()">ProfileModify</span>
 		        </div>
-            <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
+            <img style="z-index: 8;" onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
         </header>
     	<article class="usermyArticle">
 	    	<div class="white-box">	
