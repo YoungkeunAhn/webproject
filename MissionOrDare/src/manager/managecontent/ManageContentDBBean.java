@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 
 import Dtos.JoinMissionInfoSuccessBoardDto;
+import Dtos.MissionStateSuccessBoardDto;
 import Dtos.ReplyDto;
 
 public class ManageContentDBBean implements ManageContentDao{
@@ -55,6 +56,9 @@ public class ManageContentDBBean implements ManageContentDao{
 	
 	public int deleteReplies(Map<String, Object> map) {
 		return session.delete("Mission.deleteReplies",map);
+	}
+	public MissionStateSuccessBoardDto selectUpload(String success_board_id) {
+		return session.selectOne("Mission.selectUpload",success_board_id);
 	}
 	
 }

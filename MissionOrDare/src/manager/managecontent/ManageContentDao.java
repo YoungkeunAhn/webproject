@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import Dtos.JoinMissionInfoSuccessBoardDto;
+import Dtos.MissionStateSuccessBoardDto;
 import Dtos.ReplyDto;
 
 public interface ManageContentDao {
@@ -20,4 +21,5 @@ public interface ManageContentDao {
 	public List<ReplyDto> getReply(String success_board_id);
 	public int deleteReply(String reply_id);
 	public int deleteReplies(Map<String,Object>map);
+	public MissionStateSuccessBoardDto selectUpload(String success_board_id);
 }

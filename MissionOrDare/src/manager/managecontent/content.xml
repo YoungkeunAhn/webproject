@@ -88,7 +88,7 @@
 	</select>
 	
 	<select id="getReply" parameterType="String" resultType="Dtos.ReplyDto">
-		select * from mod_reply where success_board_id = #{success_board_id} order by reference ,reply_step, reply_date desc 
+		select * from mod_reply where success_board_id = #{success_board_id} order by reference , reply_date 
 	</select>
 	
 	<delete id="deleteReply" parameterType="String">
@@ -97,4 +97,9 @@
 	<delete id="deleteReplies" parameterType="java.util.Map">
 		delete from mod_reply where reference=#{reference} and success_board_id=#{success_board_id}
 	</delete>
+	<select id="selectUpload" parameterType="String" resultType="Dtos.MissionStateSuccessBoardDto">
+		select * from mod_successboard s left outer join mod_missionstate m
+		on s.mission_state_id = m.mission_state_id
+		where s.success_board_id = #{success_board_id}
+	</select>
 </mapper>
