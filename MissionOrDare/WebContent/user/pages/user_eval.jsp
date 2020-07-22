@@ -54,8 +54,7 @@
 	          <div class="swiper-button-prev"></div>
 	               <div class="swiper-wrapper" style="z-index: -50;">
 	                 <c:forEach var="content" items="${contents}">
-	                 <div style="height: 60%;" class="swiper-slide">
-	                  
+	                 <div class="swiper-slide">
                 		<c:if test="${fn:contains(content, '.mp4') or fn:contains(content, '.avi')}">
                 			<video muted autoplay="autoplay" class="img-rounded" width="180">
 								<source src="/upload/${content}">
