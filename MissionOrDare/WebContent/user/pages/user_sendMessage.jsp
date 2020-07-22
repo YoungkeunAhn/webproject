@@ -17,8 +17,7 @@
 		<article>
 			 <form method="post" action="user_sendMessagePro.do" name="sendMessage" onsubmit="return MessageSendCheck()">
 				<section class="sendTop">
-				<span>받는사람 :</span> 
-				<span><input class="recieveMan" type="text" name="receivedNickname"> </span>
+				<span>받는사람 :  <input class="recieveMan" type="text" name="receivedNickname"> </span> 
 				</section>
 				
 				<section class="sendContent">

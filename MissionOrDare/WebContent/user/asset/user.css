@@ -479,12 +479,13 @@ ol{
 }
 .modal-body{
     background-color: white;
-    width: 50%;
+    width: 70%;
     height: 50%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    left: 16%;
 }
 .modal-body .modal-bodyLeft{
    flex-direction: column;
@@ -1204,7 +1205,8 @@ div .write-control{
 ***********************************************/
 .recieveMan{
 	position: relative;
-	right:100%;
+    top:0px;
+    
 }
 .sendTop{
 	width:100%;
@@ -1254,8 +1256,12 @@ div .write-control{
     padding-top: 10px;
     position: relative;
     bottom: 76px;
+    left: 34%;
 }
-
+.sendbottom .btn-danger{
+	width: 67px;
+	margin-left: 17px;
+}
 /**********************************************
 
         user_content
