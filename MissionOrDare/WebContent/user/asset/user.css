@@ -235,8 +235,12 @@ nav ul img {
 }
 
 .btn-default{
-    height: 8%;
-    border: 1px black solid;
+	color: #333;
+    background-color: #ddd;
+    border-color: #999;
+    height: 34px;
+    width: 125px;
+    border-radius: 10px;
 }
 
 .modal-body {
@@ -999,6 +1003,9 @@ div .write-control{
     height: 4rem;
     border: 0px;
     width: 49%;
+}
+.modal-footer button{
+	border-radius: 10px;
 }
 /**********************************************
 

@@ -115,7 +115,7 @@
                               </div>
                            </div>
                            <div class="modal-footer">
-                               <button type="button" class="btn btn-default" data-dismiss="modal">수정완료</button>
+                               <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
                            </div>
                        </div>
                    </div>
@@ -141,7 +141,7 @@
                    var includeValue = $(this).val() + '/';
                    items = items.replace(includeValue,'');
                    $(this).css({
-                       background: 'white',
+                	   background: 'rgb(239, 239, 239)',
                        color: 'black',
                    });
                    interesting_categorys.value = items;

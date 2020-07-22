@@ -108,8 +108,8 @@
                               </div>
                            </div>
                            <div class="modal-footer">
-                               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                <button type="button" class="btn btn-primary">Save changes</button>
+                               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                            </div>
                        </div>
                    </div>
@@ -138,7 +138,7 @@
                var includeValue = $(this).val() + '/';
                items = items.replace(includeValue,'');
                $(this).css({
-                   background: 'white',
+            	   background: 'rgb(239, 239, 239)',
                    color: 'black',
                });
                interesting_categorys.value = items;
@@ -162,7 +162,7 @@
                var includeValue = $(this).val() + '/';
                items = items.replace(includeValue,'');
                $(this).css({
-                   background: 'white',
+            	   background: 'rgb(239, 239, 239)',
                    color: 'black',
                });
                interesting_categorys.value = items;
