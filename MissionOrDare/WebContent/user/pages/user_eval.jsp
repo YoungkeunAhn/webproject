@@ -61,7 +61,7 @@
 							</video>
                 		</c:if>
                 		<c:if test="${!fn:contains(content, '.mp4') and !fn:contains(content, '.avi')}">
-                			<img style="width:180px; height: 150px" src="/upload/${content}" class="img-rounded" alt="thumbnail"/>
+                			<img style="width:180px; height: 150px; position: relative; bottom:10rem;" src="/upload/${content}" class="img-rounded" alt="thumbnail"/>
                 		</c:if>
 	               	</div>
 					</c:forEach>
