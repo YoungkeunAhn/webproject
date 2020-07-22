@@ -25,7 +25,7 @@
       document.getElementById('replyMenuModal').style.display='none';
    }
    function doPostMessage(user_nick){
-      alert(user_nick);
+      location.href='user_sendMessage.do?user_nickname='+user_nick;
    }
    function goOtherUserPage(user_nick){
       alert(user_nick);
@@ -195,31 +195,7 @@
 				async :false,
 				success : function(data){
 					data = eval('(' + data +')');
-					var a ='';
-					if(data.replyDtos.length>0){
-						for(i=0; i<data.replyDtos.length; i++){
-							console.log('user_id: ' +data.replyDtos[0].user_nickname)
-							a += '<div>';
-							a += '<input type="hidden" value="댓글'+data.replyDtos[i].reply_id+'">' ; 
-							a += '<i id="replymodal" class="fas fa-ellipsis-v"></i>';
-						 	a += '<span class="re-replyUser"></span>' ;
-					 		a += '<label onclick="toReply('+data.replyDtos[i].user_nickname+')">'+data.replyDtos[i].user_nickname +'</label>' ;
-					 		a += '<span class="reply-text">'+ ' ' +data.replyDtos[i].reply_contents+'</span>' ;
-							a += '</div>'
-						}
-					}
-					$(document).on('click', '#replymodal', function(){
-						$('.user-nick').text(data.replyDtos[i].user_nickname);
-					      $('#user_nickname').val(data.replyDtos[i].user_nickname);
-					      $('#reply_id').val(data.replyDtos[i].reply_id);
-					      document.getElementById('replyMenuModal').style.display='flex';
-					});
-					function toReply(user_nick){
-					   user_nick = '@'+user_nick+' ';
-					   $('.userreplyhotext').val(user_nick);
-					   $('.userreplyhotext').focus();
-					}
-					$("#replyDiv").html(a);
+					replyList();
 				}
 			});
 		});
@@ -242,16 +218,27 @@
 						for(i=0; i<data.replyDtos.length; i++){
 							console.log('user_id: ' +data.replyDtos[0].user_nickname)
 							a += '<div>';
-							a += '<input type="hidden" value="댓글'+data.replyDtos[i].reply_id+'">' ; 
-							a += '<i class="fas fa-ellipsis-v"></i>';
+							a += '<input class="id" type="hidden" value="'+data.replyDtos[i].reply_id+'">' ; 
+							a += '<i id="replymodal" class="fas fa-ellipsis-v"><input class="id" type="hidden" value="'+data.replyDtos[i].reply_id+'"><input class="nickname" type="hidden" value="'+data.replyDtos[i].user_nickname+'"></i>';
 						 	a += '<span class="re-replyUser"></span>' ;
-					 		a += '<label onclick="toReply('+data.replyDtos[i].user_nickname+')">'+data.replyDtos[i].user_nickname +'</label>' ;
-					 		a += '<span class="reply-text">'+ ' ' + data.replyDtos[i].reply_contents+'</span>' ;
+					 		a += '<label class="nickname">'+data.replyDtos[i].user_nickname +'</label>' ;
+					 		a += '<span class="reply-text">'+ ' ' +data.replyDtos[i].reply_contents+'</span>' ;
 							a += '</div>'
 						}
 					}
+					$(document).on('click', '#replymodal', function(){
+						$('.user-nick').text($(this).find('.nickname').val());
+					      $('#user_nickname').val($(this).find('.nickname').val());
+					      $('#reply_id').val($(this).find('.id').val());
+					      document.getElementById('replyMenuModal').style.display='flex';
+					});
+					$(document).on('click', '.nickname', function(){
+						user_nick = '@'+$(this).text()+' ';
+					   $('.userreplyhotext').val(user_nick);
+					   $('.userreplyhotext').focus();
+					});
 					$("#replyDiv").html(a);
-					
+					$('#reply').val('');
 				}
 			});
 		}

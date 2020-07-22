@@ -18,7 +18,7 @@
 		 <form method="post" action="user_sendMessagePro.do" name="sendMessage">
 			<section class="sendTop">
 			<span>받는사람 :</span> 
-			<span><input type="text" name="receivedNickname"> </span>
+			<span><input type="text" name="receivedNickname" value="${user_nickname}"> </span>
 			</section>
 			<section class="sendContent">
 				<textarea class="messagetextarea" placeholder="메시지 내용을 입력해주세요." name="textContent"></textarea>
