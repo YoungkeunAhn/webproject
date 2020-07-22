@@ -33,7 +33,7 @@ public class UserEval implements CommandHandler {
 		
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		int result = userMissionEvalDao.missionCount();
-		String profile_picture = userMissionEvalDao.getUserProfile(user_nickname);
+		//String profile_picture = userMissionEvalDao.getUserProfile(user_nickname);
 		ArrayList<String> contents = new ArrayList<String>();
 
 		if (result == 0) { // 미션상태테이블의 컬럼 수가 0
@@ -46,6 +46,7 @@ public class UserEval implements CommandHandler {
 				UserMissionsDto userMissionsDto = userMissionsDtos.get(i);
 				String eval_nicknames = userMissionsDto.getMission_evaluation_nickname(); // mission_evaluation_nickname																							
 				String mission_state_id = userMissionsDto.getMission_state_id();
+				String nickname = userMissionsDto.getUser_nickname();
 				
 				if (eval_nicknames != null) { // 미션을 평가한 유저가 존재
 					List<String> eval_nickname = Arrays.asList(eval_nicknames.split("/"));
@@ -63,6 +64,9 @@ public class UserEval implements CommandHandler {
 									String[] upload_video = userMissionsDto.getUpload_video().split("/");
 									request.setAttribute("upload_video", upload_video);
 								}
+								
+								
+								String profile_picture = userMissionEvalDao.getUserProfile(nickname);
 								request.setAttribute("userMissionsDto", userMissionsDto);
 								request.setAttribute("profile_picture", profile_picture);
 								request.setAttribute("result", result);
@@ -88,6 +92,7 @@ public class UserEval implements CommandHandler {
 							contents.add(video);
 						}
 					}
+					String profile_picture = userMissionEvalDao.getUserProfile(nickname);
 					request.setAttribute("contents", contents);
 					request.setAttribute("userMissionsDto", userMissionsDto);
 					request.setAttribute("profile_picture", profile_picture);
