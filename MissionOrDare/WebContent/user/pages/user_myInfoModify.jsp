@@ -15,13 +15,14 @@
 </head>
 <body style="overflow: hidden;">
 <div class="containerBack">
-           <div class="title-back"><span class="join-title">MyInfoModify</span></div>
+           <div class="title-back"><span class="join-title">Information Modification</span></div>
    <div class="container">
            <form class="join-form" name="userModifyForm" action="user_myInfoModifyPro.do" onsubmit="return myInfoModifyCheck()">
+           <input id="interesting_categorys" class="form-control" type="hidden" name="interesting_categorys" >
                <ul class="join-list">
                    <li>
-                       <label class="th">*닉네임 </label>
-                       <label><input class="form-control" type="text" maxlength="8" name="user_nickname" id="user_nickname" placeholder="insert into your nickname" value="${user_nickname}"></label>
+                       <label class="th">닉네임 </label>
+                       <label><input class="form-control" type="text" maxlength="8" name="user_nickname" id="user_nickname" placeholder="insert into your nickname" value="${user_nickname}" readonly></label>
                          <div class="checkResult" id="nicknameCheck"></div>
                        <label class="text text-mute">(특수문자 제외)8자 이내로 입력해주세요</label>
                    </li>
@@ -36,8 +37,8 @@
                        <label class="text text-danger">비밀번호가 다릅니다.</label><label class="text text-primary">비밀번호가 일치합니다.</label>
                    </li>
                    <li>
-                       <label class="th">* 생년월일</label>
-                       <label><input class="form-control" type="text" name="user_birth" value="${usersDto.date_of_birth}" ></label>
+                       <label class="th"> 생년월일</label>
+                       <label><input class="form-control" type="text" name="user_birth" value="${usersDto.date_of_birth}" readonly></label>
                        <label class="text text-danger">생년월일을 입력해주세요</label>
                    </li>
                    <li>
@@ -87,7 +88,7 @@
                            </div>
                            <div class="modal-body">
                                <div class="modal-bodyLeft">
-                                  <input id="interesting_categorys" class="form-control" type="hidden" name="interesting_categorys">
+                                  
                                   <input class="lagerCategory" type="button" value="운동">
                                   <input class="lagerCategory" type="button" value="여행">
                                   <input class="lagerCategory" type="button" value="교육">
@@ -97,7 +98,6 @@
                                   <input class="lagerCategory" type="button" value="기타">                               
                         </div>
                         <div class="modal-bodyRight">
-                                  <input id="interesting_categorys" class="form-control" type="hidden" name="interesting_categorys">
                                   <input class="lagerCategory" type="button" value="게임">
                                   <input class="lagerCategory" type="button" value="먹방">
                                   <input class="lagerCategory" type="button" value="개그">
@@ -108,8 +108,7 @@
                               </div>
                            </div>
                            <div class="modal-footer">
-                               <button type="button" class="btn btn-primary">Save changes</button>
-                               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                               <button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
                            </div>
                        </div>
                    </div>
@@ -126,13 +125,19 @@
     var interesting_categorys = document.getElementById('interesting_categorys');
     $(document).ready(function () {
        $('.modal-bodyLeft > input').click(function () {
-           if(items.search($(this).val()+'/') === -1){
-               items += $(this).val() + '/';
-               interesting_categorys.value = items;
-               $(this).css({
-                   background: 'yellow',
-                   color: 'white',
-               });
+    	   if(items.search($(this).val()+'/') === -1){
+        	   if( ( $('#interesting_categorys').val().split('/').length-1) < 4 ){
+        		   items += $(this).val() + '/';
+                   interesting_categorys.value = items;
+                   $(this).css({
+                       background: 'yellow',
+                       color: 'white',
+                   });   
+        	   }// if end
+        	   else{
+        		   alert('카테고리 4개 이하로 선택해주세요.');
+        	   }
+               
            }//if end
            else {
                var includeValue = $(this).val() + '/';
@@ -150,13 +155,19 @@
     var interesting_categorys = document.getElementById('interesting_categorys');
     $(document).ready(function () {
        $('.modal-bodyRight > input').click(function () {
-           if(items.search($(this).val()+'/') === -1){
-               items += $(this).val() + '/';
-               interesting_categorys.value = items;
-               $(this).css({
-                   background: 'yellow',
-                   color: 'white',
-               });
+    	   if(items.search($(this).val()+'/') === -1){
+        	   if( ( $('#interesting_categorys').val().split('/').length-1) < 4 ){
+        		   items += $(this).val() + '/';
+                   interesting_categorys.value = items;
+                   $(this).css({
+                       background: 'yellow',
+                       color: 'white',
+                   });   
+        	   }// if end
+        	   else{
+        		   alert('카테고리 4개 이하로 선택해주세요.');
+        	   }
+               
            }//if end
            else {
                var includeValue = $(this).val() + '/';

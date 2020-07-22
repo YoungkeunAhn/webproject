@@ -22,10 +22,6 @@
 </head>
 <body>
 	<div class="container">
-		<header>
-	            <img class="menu-img" src="${project}images/menu.png" alt="logo">
-	            <img class="header-img" src="${project}images/mod_logo.png" alt="logo">
-	    </header>
 	    <article>
 		    <form method="post" action="user_profileModifyPro.do" name="userProfile">
 		    	<section class="profile-modify">

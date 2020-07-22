@@ -868,7 +868,7 @@ list ::-webkit-scrollbar {
    top: 0rem;
 }
 .imymemine{
-    height: 67%;
+    height: 77%;
     width: 100%;
     margin: 30px auto;
     text-align: center;
@@ -942,10 +942,11 @@ div hr{
 }
 .container .white-box{
     width: 83%;
-    height: 38%;
-    margin: 10px auto;
+    height: 19.8%;
+    margin: 0px auto;
     background-color: rgba(255,255,255,0.5);
-    padding: 46px 0;
+    margin-top: 80px;
+    padding: 2px;
 }
 .container .imymemine .white-box1{
     width: 83%;
@@ -1154,6 +1155,8 @@ div .write-control{
 .content-backcolor{
 	background-color: rgba(255,255,255,0.5);
 	border-radius: 10%;
+	position: relative;
+	top:5rem;
 }
 .content-defaultimage{
 	width: 80%;
@@ -1167,7 +1170,8 @@ div .write-control{
 }
 .profile-modifybtn .profilemodifybtn{
 	border: 6px solid #b48181;
-	background-color: #b48181;
+    border-radius: 10px;
+    background-color: #b48181;
 }
 /**********************************************
 
