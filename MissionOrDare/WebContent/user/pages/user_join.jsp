@@ -169,6 +169,9 @@
 	                   });
 	                   
 	               }//if end
+	               else{
+            		   alert('카테고리 4개 이하로 선택해주세요.');
+            	   }
 	               
                }//if end
                else {
