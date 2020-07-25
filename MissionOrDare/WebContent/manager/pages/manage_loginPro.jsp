@@ -9,27 +9,27 @@
 </head>
 <body>
 
-	<c:if test="${result eq 0}">
+<c:if test="${result eq 0}">
+	<script type="text/javascript">
+		<!--
+		alert( "아이디가 없습니다." );
+		history.back()
+		//-->
+	</script>
+</c:if>
+<c:if test="${result ne 0}">
+	<c:if test="${result eq 1}">	
+		${sessionScope.memId = manager_id}
+		<c:redirect url="index.do"/>	
+	</c:if>
+	<c:if test="${result eq -1}">		
 		<script type="text/javascript">
 			<!--
-			alert( "아이디가 없습니다." );
-			history.back()
+			alert( "비밀번호가 다릅니다." );
+			history.back();
 			//-->
-		</script>
-	</c:if>
-	<c:if test="${result ne 0}">
-		<c:if test="${result eq 1}">	
-			${sessionScope.memId = manager_id}
-			<c:redirect url="index.do"/>	
-		</c:if>
-		<c:if test="${result eq -1}">		
-			<script type="text/javascript">
-				<!--
-				alert( "비밀번호가 다릅니다." );
-				history.back();
-				//-->
-			</script>			
-		</c:if>	
+		</script>			
+	</c:if>	
 </c:if>
 
 </body>

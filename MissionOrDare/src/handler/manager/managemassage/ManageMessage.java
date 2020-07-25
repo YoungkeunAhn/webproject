@@ -92,7 +92,7 @@ public class ManageMessage implements CommandHandler{
 		}else {
 			if( cnt > 0 ) {
 				Map<String, Object> map = new Hashtable<String, Object>();
-				map.put( "start", start );
+				map.put( "start", start ); 
 				map.put( "end", end );
 				map.put( "searchUser", searchUser );
 				List<JoinNotesManagerDto> joinNotesManagerDtos = manageMessageDao.findArticless( map );

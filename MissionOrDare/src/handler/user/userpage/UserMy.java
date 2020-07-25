@@ -28,11 +28,7 @@ public class UserMy implements CommandHandler{
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
 		
-		missionGetDao.refresh();
-		missionGetDao.delrefresh();
-		
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
-		System.out.println(user_nickname);
 		UsersDto userDto = userUserPageDao.getUserInfo(user_nickname);
 
 		

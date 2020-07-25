@@ -41,12 +41,12 @@
                 <div class="list">
                 	<c:forEach var="content" items="${contents}">
                 		<c:if test="${fn:contains(content.contents, '.mp4') or fn:contains(content.contents, '.avi')}">
-                			<video muted autoplay="autoplay" class="img-rounded" width="33%" onclick="location.href='user_content.do?success_board_id=${content.success_board_id}'">
+                			<video muted autoplay="autoplay" loop="loop" height="132px" class="img-rounded" width="33%" onclick="location.href='user_content.do?success_board_id=${content.success_board_id}'">
 								<source src="/upload/${content.contents}">
 							</video>
                 		</c:if>
                 		<c:if test="${!fn:contains(content.contents, '.mp4') and !fn:contains(content.contents, '.avi')}">
-                			<img src="/upload/${content.contents}" class="img-rounded" alt="thumbnail" onclick="location.href='user_content.do?success_board_id=${content.success_board_id}'"/>
+                			<img src="/upload/${content.contents}" height="132px" class="img-rounded" alt="thumbnail" onclick="location.href='user_content.do?success_board_id=${content.success_board_id}'"/>
                 		</c:if>
                 	</c:forEach>
                 </div>

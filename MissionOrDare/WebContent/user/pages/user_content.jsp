@@ -88,12 +88,12 @@
                         <div class="swiper-slide" style="height:109%;">
                            
                               <c:if test="${fn:contains(content, '.mp4') or fn:contains(content, '.avi')}">
-                                     <video muted autoplay="autoplay" class="img-rounded" width="180">
+                                     <video muted controls="controls" autoplay="autoplay" class="img-rounded" width="300">
                                     <source src="/upload/${content}">
                                  </video>
                                   </c:if>
                                   <c:if test="${!fn:contains(content, '.mp4') and !fn:contains(content, '.avi')}">
-                                     <img style="width:180px; height: 150px;" src="/upload/${content}" width="180" class="img-rounded" alt="thumbnail"/>
+                                     <img style="width:180px; height: 150px;" src="/upload/${content}" width="300" class="img-rounded" alt="thumbnail"/>
                                   </c:if>
                                
                         </div>

@@ -25,9 +25,6 @@ public class UserMain implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		missionGetDao.refresh();
-		missionGetDao.delrefresh();
-		
 		request.setCharacterEncoding("utf-8");
 		
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");

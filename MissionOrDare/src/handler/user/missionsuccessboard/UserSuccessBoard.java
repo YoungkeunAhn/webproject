@@ -29,10 +29,6 @@ public class UserSuccessBoard implements CommandHandler {
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
-
-		missionGetDao.refresh();
-		missionGetDao.delrefresh();
-		
 		ArrayList<SuccessBoardContentDto> contents = new ArrayList<SuccessBoardContentDto>();
 		
 		List<MissionStateSuccessBoardDto> missionStateDtos;
