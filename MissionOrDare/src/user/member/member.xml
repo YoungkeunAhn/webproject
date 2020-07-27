@@ -35,6 +35,7 @@
 		interesting3_large_category=#{interesting3_large_category,jdbcType=VARCHAR}, 
 		interesting4_large_category=#{interesting4_large_category,jdbcType=VARCHAR}, 
 		job=#{job,jdbcType=VARCHAR}, kakao_access_token=#{kakao_access_token,jdbcType=VARCHAR},
+		sign_up_date=to_char(sysdate,'yyyy/mm/dd hh24:mi'),
 		profile_picture=#{profile_picture,jdbcType=VARCHAR}, withdrawal_date=null
 		where kakao_id=#{kakao_id}
 	</update>
