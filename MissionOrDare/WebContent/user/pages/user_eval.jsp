@@ -26,10 +26,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="container" style="text-align: center">      
+	<div class="container">      
       
        <c:if test="${result eq 0}">
-            <ol class="data-none">
+            <ol class="data-none eval-none">
                <li>미션이 평가할게 없습니다!</li>
                <li>본인이 직접 미션을 인증해보시지!</li>
                <li><img src="${project}images/mission_none.png"></li>
@@ -38,7 +38,7 @@
        <c:if test="${result ne 0}">
        <input id="mission_status_id" name="mission_status_id" type="hidden" value="test">
 		
-		<div style="background-color: rgba(255, 255, 255, 0.5); height: 75%;" class="swiper-container">
+		<div class="swiper-container">
 			 <div class="divdiv">	
 			 	<div>
 	                <span>${userMissionsDto.large_category}/${userMissionsDto.small_category}</span><br>
@@ -46,7 +46,7 @@
 	         	 <div>
 	                <span>${userMissionsDto.mission_title}</span><br>
 	           	</div>
-	           	<div style="margin: 10px auto" id="profile" class="content-profile" onclick="location.href='user_anotherUser.jsp'">
+	           	<div id="profile" class="content-profile" onclick="location.href='user_anotherUser.jsp'">
 	                <img class="img-circle" src="${profile_picture}" alt="user-profile">
 	                <span>${userMissionsDto.user_nickname}</span><br>
 	           	</div>
@@ -67,8 +67,8 @@
 					</c:forEach>
 	    		  </div>
 	   	<div class="swiper-button-next"></div>
-	   	<div style="position: relative; bottom:21rem;" class="swiper-pagination"></div> 
-   		<div style="position: relative; bottom:16rem;" class="btn-line">
+	   	<div class="swiper-pagination"></div> 
+   		<div class="btn-line">
 			<input class="successbtn" type="button" value="성공" name="pass" onclick="GoSuccessProPage('${userMissionsDto.mission_state_id}')"/>
 			<input type="button" class="deletebtn" value="실패" name="fail" onclick="GoFailureProPage('${userMissionsDto.mission_state_id}')"/>
 		</div>

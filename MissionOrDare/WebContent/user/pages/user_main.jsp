@@ -51,7 +51,7 @@
 					<div class="swiper-wrapper">
 						<c:forEach var="userMissionsDto" items="${userMissionsDtos}">
 							<c:if test="${userMissionsDto.mission_state eq 1}">
-								<div class="swiper-slide" style="height:109%; color: #4c525ce6;">
+								<div class="swiper-slide">
 									<ol class="data-exist">
 										<form name="myMissionAuthForm" action="user_myMissionAuth.do">
 											<input type="hidden" name="mission_start_date"
@@ -79,7 +79,7 @@
 							</c:if>
 							<c:if
 								test="${userMissionsDto.mission_state eq 4 and userMissionsDto.upload_public_availability eq 1}">
-								<div class="swiper-slide" style="color: #4c525ce6";>
+								<div class="swiper-slide">
 									<ol class="data-exist">
 										<input type="hidden" name="mission_start_date"
 												value="${userMissionsDto.mission_start_date}"> 
@@ -95,7 +95,7 @@
 										<li class="text-category">${userMissionsDto.large_category}/${userMissionsDto.small_category}</li>
 										<li class="text-mission">${userMissionsDto.mission_title}</li>
 										<li><img
-											src="/category/${userMissionsDto.category_image}" alt="kk"
+											src="/category/${userMissionsDto.category_image}"
 											onerror="this.src='${project}images/mod_logo.png'"></li>
 										<li class="text-summary">${userMissionsDto.mission_contents}</li>
 										<li class="text-status">인증중</li>
@@ -105,7 +105,6 @@
 						</c:forEach>
 					</div>
 					<div class="swiper-button-next"></div>
-					<div class="swiper-pagination"></div>
 				</div>
 			</c:if>
 
