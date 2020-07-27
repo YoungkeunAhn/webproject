@@ -17,17 +17,18 @@
 		<article>
 			 <form method="post" action="user_sendMessagePro.do" name="sendMessage" onsubmit="return MessageSendCheck()">
 				<section class="sendTop">
-				<span>받는사람 :  <input class="recieveMan" type="text" name="receivedNickname" value="${nickname}" }> </span> 
+				<span>받는사람 : </span>
+				<input class="form-control recieveMan" type="text" name="receivedNickname" value="${nickname}"}> 
 				</section>
 				
 				<section class="sendContent">
-					<textarea class="messagetextarea" placeholder="메시지 내용을 입력해주세요." name="textContent"></textarea>
+					<textarea class="form-control messagetextarea" placeholder="메시지 내용을 입력해주세요." name="textContent"></textarea>
 				</section>
 				
 			
 			<section class="sendbottom">
-					<button type="submit" class="btn btn-primary">보내기</button>
-		            <button type="button" class="btn btn-danger" onclick="history.back()">취소</button>
+					<button type="submit" class="btn btn-success">보내기</button>
+		            <button type="button" class="btn btn-default" onclick="history.back()">취소</button>
 			</section>
 			</form>
 		</article>
