@@ -24,36 +24,35 @@
 		        </div>
             <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
         </header>
-	   <form method="post" name="user_reportForm" action="user_report.jsp">
-	       <input type="hidden" name="ReplyOrContentReport" value="댯글/게시글 고무신 신고">
-	       <input type="hidden" name="reportUser" value="신고하려는사람">
-	       <input type="hidden" name="reportReason" value="욕설">
+	   <form method="post" name="user_reportForm" action="user_reportPro.do">
+	   	   <input type="hidden" name="reported_reply_id" value="${reported_reply_id}">
+	       <input type="hidden" name="reported_nickname" value="${reported_nickname}">
+	       <input type="hidden" name="success_board_id" value="${success_board_id}">
+	       
 	        
 	        <article class="reportArticle">
 	        	<section class="reportSection">
 		        	<div style="padding:10px;">
-		        		<span>댓글/게시글 고무신 신고</span>
+		        		<span>댓글/게시글 신고</span>
 		        	</div>
 		       		<div class="reportProfile">
 		       			<div class="contentProfile">
 		       				<img class="img-circle" src="${project}images/madong.PNG" alt="user-profile">
-			            	<span>신고하려는 사람</span>
+			            	<span>${reported_nickname}</span>
 			            </div>
 		       		</div>
 		       		<section style="margin-top: 20px;">
 		       			<div>
-		       				<select class="form-control" name="reportReason">
-		       					<option value="">욕설</option>
-		       					<option value="">비방</option>
-		       					<option value="">차별</option>
-		       					<option value="">혐오</option>
-		       					<option value="">스윙스</option>
-		       					<option value="">돈까스</option>
-		       					<option value="">기타</option>
+		       				<select class="form-control" name="reportType">
+		       					<option value="욕설">욕설</option>
+		       					<option value="혐오 발언">혐오 발언</option>
+		       					<option value="차별 ">차별</option>
+		       					<option value="비방">비방</option>
+		       					<option value="기타">기타</option>
 		       				</select>
 		       			</div>
 		       			<div style="margin-top: 15px">
-		       				<textarea class="reportWrite"></textarea>
+		       				<textarea class="reportWrite" name="reportReason"></textarea>
 		       			</div>
 		       			<div style="margin-top: 30px">
 		       				<button type="submit" class="profilemodifybtn">확인</button>

@@ -30,8 +30,9 @@
    function goOtherUserPage(user_nick){
       alert(user_nick);
    }
-   function doReport(reply_id){
-      alert(reply_id);
+   function doReport(reply_id,success_board_id){
+	   alert(reply_id);
+	   location.href="user_report.do?reply_id="+reply_id+"&success_board_id="+success_board_id;
    }
    var cnt = 1;
    function changeImg() {
@@ -142,7 +143,7 @@
                    <li><span class="user-nick"></span></li>
                    <li><span onclick="doPostMessage($('#user_nickname').val())">쪽지 보내기</span></li>
                    <li><span onclick="location.href='user_anotherUser.jsp'">프로필 방문</span></li>
-                   <li><span class="text-danger" onclick="doReport($('#reply_id').val())">신고하기</span></li>
+                   <li><span class="text-danger" onclick="doReport($('#reply_id').val(),$('#success_board_id').val())">신고하기</span></li>
                 </ul>
              </div>
               

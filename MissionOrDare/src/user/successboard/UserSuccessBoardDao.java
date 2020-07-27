@@ -3,12 +3,14 @@ package user.successboard;
 import java.util.List;
 import java.util.Map;
 
+
 import Dtos.LikeDto;
 import Dtos.MissionCategoryAndInfoDto;
 import Dtos.MissionCategoryDto;
 import Dtos.MissionStateDto;
 import Dtos.MissionStateSuccessBoardDto;
 import Dtos.ReplyDto;
+import Dtos.ReportBoardDto;
 import Dtos.UsersDto;
 
 public interface UserSuccessBoardDao {
@@ -32,4 +34,6 @@ public interface UserSuccessBoardDao {
 	public int checkLike(LikeDto likeDto);
 	public int updateLike(String success_board_id);
 	public int selectLikeCount(String success_board_id);
+	public ReplyDto selectInfo(String reply_id);
+	public int insertReportReply(ReportBoardDto reportBoardDto);
 }

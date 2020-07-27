@@ -11,6 +11,7 @@ import Dtos.MissionCategoryDto;
 import Dtos.MissionStateDto;
 import Dtos.MissionStateSuccessBoardDto;
 import Dtos.ReplyDto;
+import Dtos.ReportBoardDto;
 import Dtos.UsersDto;
 
 public class UserSuccessBoardDBBean implements UserSuccessBoardDao {
@@ -75,5 +76,13 @@ public class UserSuccessBoardDBBean implements UserSuccessBoardDao {
 	}
 	public int selectLikeCount(String success_board_id) {
 		return session.selectOne("success.selectLikeCount",success_board_id);
+	}
+	
+	//신고
+	public int insertReportReply(ReportBoardDto reportBoardDto) {
+		return session.insert("success.insertReportReply",reportBoardDto);
+	}
+	public ReplyDto selectInfo(String reply_id) {
+		return session.selectOne("success.selectInfo",reply_id);
 	}
 }

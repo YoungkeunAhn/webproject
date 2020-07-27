@@ -3,7 +3,7 @@ package Dtos;
 public class ReportBoardDto {
 	
 	private String report_board_id;
-	private String user_nickname;
+	private String report_user_nickname;
 	private String reported_nickname;
 	private String report_type;
 	private String report_reason;
@@ -16,11 +16,11 @@ public class ReportBoardDto {
 	public void setReport_board_id(String report_board_id) {
 		this.report_board_id = report_board_id;
 	}
-	public String getUser_nickname() {
-		return user_nickname;
+	public String getReport_user_nickname() {
+		return report_user_nickname;
 	}
-	public void setUser_nickname(String user_nickname) {
-		this.user_nickname = user_nickname;
+	public void setReport_user_nickname(String report_user_nickname) {
+		this.report_user_nickname = report_user_nickname;
 	}
 	public String getReported_nickname() {
 		return reported_nickname;
