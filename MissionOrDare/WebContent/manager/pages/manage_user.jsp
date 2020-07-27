@@ -110,6 +110,7 @@
                 <th>${str_user_nickname}</th>
                 <th>${str_user_interesting}</th>
                 <th>${str_user_joindate}</th>
+                <th>${str_user_withdrawal_date}</th>
                 <th>${str_user_findinfo}</th>
                 </thead>
             	
@@ -120,6 +121,7 @@
                 	<td>${usersDto.user_nickname}</td>
                 	<td>${usersDto.interesting1_large_category} ${usersDto.interesting2_large_category} ${usersDto.interesting3_large_category} ${usersDto.interesting4_large_category}</td>
                 	<td>${usersDto.sign_up_date}</td>
+                	<td>${usersDto.withdrawal_date}</td>
                 	<td> <button type="button" class="btn btn-danger" name="mission-delete" 
                 onclick="location.href='${pageContext.request.contextPath}/manage_user_info.do?user_nickname=${usersDto.user_nickname}'">${str_user_userdetail}</button> </td>
  				</tr>

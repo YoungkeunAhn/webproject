@@ -74,9 +74,9 @@
 	<select id="getSearchMissionsCategory" parameterType="java.util.Map" resultType="Dtos.MissionCategoryAndInfoDto">
 		select aa.* 
 		from (select a.*, rownum r 
-		from (select m.*, c.large_category, c.small_category , c.category_image
-		from MOD_MissionCategory c, MOD_MissionInfo m where c.mission_category_id=m.mission_category_id
-		and c.large_category like '%'||#{mission}||'%' or c.small_category like '%'||#{mission}||'%') a 
+		from (select * from mod_missioninfo i left outer join mod_missioncategory c 
+		on i.mission_category_id = c.mission_category_id 
+		where c.large_category like '%'||#{mission}||'%' or c.small_category like '%'||#{mission}||'%') a 
 		order by large_category, small_category) aa 
 		where r &gt;= #{start} and r &lt;= #{end}
 	</select>

@@ -13,11 +13,11 @@
 	</select>
 	<select id="getArticles" parameterType="java.util.Map" resultType="Dtos.UsersDto">
 		select user_nickname,user_email,interesting1_large_category,interesting2_large_category
-		,interesting3_large_category,interesting4_large_category,sign_up_date,r
+		,interesting3_large_category,interesting4_large_category,sign_up_date, withdrawal_date,r
 		from (select user_nickname,user_email,interesting1_large_category,interesting2_large_category
-		,interesting3_large_category,interesting4_large_category,sign_up_date,rownum r from 
+		,interesting3_large_category,interesting4_large_category,sign_up_date, withdrawal_date,rownum r from 
 		(select user_nickname,user_email,interesting1_large_category
-		,interesting2_large_category,interesting3_large_category,interesting4_large_category,sign_up_date from mod_users order by sign_up_date desc)
+		,interesting2_large_category,interesting3_large_category,interesting4_large_category,sign_up_date, withdrawal_date from mod_users order by sign_up_date desc)
 		order by sign_up_date desc) where r &gt;= #{start} and r &lt;= #{end}
 	</select>
 	<select id="getArticle" parameterType="String" resultType="Dtos.UsersDto">
@@ -29,13 +29,26 @@
 	<delete id="deleteArticle2" parameterType="String">
 		delete from mod_missionstate where user_nickname=#{user_nickname}
 	</delete>
+	<delete id="deleteArticle3" parameterType="String">
+		delete from mod_Notes where sent_nickname=#{user_nickname} or received_nickname=#{user_nickname}
+	</delete>
+	<delete id="deleteArticle4" parameterType="String">
+		delete from mod_reportboard where reported_nickname=#{user_nickname}
+	</delete>
+	<delete id="deleteArticle5" parameterType="String">
+		delete from mod_reply where user_nickname=#{user_nickname}
+	</delete>
+	<delete id="deleteArticle6" parameterType="String">
+		delete from mod_like where user_nickname=#{user_nickname}
+	</delete>
+	
 	<select id="findArticles" parameterType="java.util.Map" resultType="Dtos.UsersDto">
 		select user_nickname,user_email,interesting1_large_category,interesting2_large_category
-		,interesting3_large_category,interesting4_large_category,sign_up_date,r
+		,interesting3_large_category,interesting4_large_category,sign_up_date, withdrawal_date,r
 		from (select user_nickname,user_email,interesting1_large_category,interesting2_large_category
-		,interesting3_large_category,interesting4_large_category,sign_up_date,rownum r from 
+		,interesting3_large_category,interesting4_large_category,sign_up_date, withdrawal_date ,rownum r from 
 		(select user_nickname,user_email,interesting1_large_category
-		,interesting2_large_category,interesting3_large_category,interesting4_large_category,sign_up_date from mod_users where user_nickname like '%'||#{searchUser}||'%' order by sign_up_date desc)
+		,interesting2_large_category,interesting3_large_category,interesting4_large_category,sign_up_date, withdrawal_date from mod_users where user_nickname like '%'||#{searchUser}||'%' order by sign_up_date desc)
 		order by sign_up_date desc) where r &gt;= #{start} and r &lt;= #{end} order by sign_up_date desc
 	</select>
 	
