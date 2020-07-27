@@ -29,8 +29,8 @@
     Kakao.API.request({
       url: '/v2/user/me',
       success: function(res) {
-            alert(JSON.stringify(res)); 
-            alert(JSON.stringify(authObj)); 
+            //alert(JSON.stringify(res)); 
+            //alert(JSON.stringify(authObj)); 
             console.log(res.kakao_account['email']);//o
             console.log(res.properties['nickname']); 
             console.log(res.properties['profile_image']); //o

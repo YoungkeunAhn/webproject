@@ -101,7 +101,10 @@
                   </c:forEach>
                </div>
                <div class="swiper-button-next"></div>
-               <div style="position: fixed; height:20px; top:364.4px;" class="swiper-pagination"></div>
+               <!-- 자꾸거슬림 -->
+               <!-- 
+               	<div style="position: fixed; height:20px; top:320px;" class="swiper-pagination"></div>
+                -->
             </div>
          <ol>
               <li class="text-summary"><span>${auth_mission_info.mission_upload_contents}</span></li>
@@ -119,23 +122,9 @@
           <div class="reply-contents">
           
            	<div class="reply" id="replyDiv">
-           	<!-- 
-                <input type="hidden" value="댓글아이디">
-                <i class="fas fa-ellipsis-v" onclick="replyModal('rp1','유차니귀요미')"></i>
-                <span class="re-replyUser"></span>
-                <label onclick="toReply('유차니귀요미')">유차니귀요미</label>
-                <span class="reply-text">프로필 본인이셈?</span>
-                 -->
+           	
              </div>
-             <!--
-             <div class="reply">          
-                <input type="hidden" value="댓글아이디">
-                <i class="fas fa-ellipsis-v" onclick="replyModal('rp2','영근육몬')"></i>
-                <label onclick="toReply('영근육몬')">영근육몬</label>
-                <span class="re-replyUser">@유차니귀요미</span>
-                <span class="reply-text">재대대대대대대대대대대댓글ㅓㄹㅇ마ㅣㅓㄹ얼낭멀나이ㅓㄴ라어라ㅣㅓㅁ</span>
-             </div>
-			 -->
+            
              <div id="replyMenuModal" class="modal-bg" onclick="Close()">
                 <input id="reply_id" type="hidden">
                 <input id="user_nickname" type="hidden">
@@ -152,7 +141,7 @@
           
             <!-- 댓글입력 -->
          <div class="userreplyho">
-            <input class="userreplyhotext" type="text" name="reply" id="reply" placeholder="댓글을 입력해주세요"/>
+            <input class="form-control userreplyhotext" type="text" name="reply" id="reply" placeholder="댓글을 입력해주세요"/>
 			<button type="button" class="userbtnbtn" id="insert">댓글</button>
          </div>
       </section>
@@ -253,9 +242,9 @@
            var likeval = ${likeval};
            $("#totalLike").text("like"+$("#totalLikeCount").val()) ; 
            if(likeval != 0){ //좋아요가 되어있을 때 
-              $("#like").prop("src","${project}images/umzi.PNG");
+              $("#like").prop("src","${project}images/like.png");
            }else{ //좋아요가 안 되어 있을 때 
-              $("#like").prop("src","${project}images/xdraw.PNG");
+              $("#like").prop("src","${project}images/unlike.png");
            }
            
            $("#like").on("click", function () {
@@ -270,10 +259,10 @@
                 success : function(data){
                    data = eval('(' + data +')');
                    if(data.result !=0){ //좋아요 됨
-                      $("#like").prop("src","${project}images/umzi.PNG");
+                      $("#like").prop("src","${project}images/like.png");
                      // location.reload();
                    }else{//좋아요 취소
-                      $("#like").prop("src","${project}images/xdraw.PNG");
+                      $("#like").prop("src","${project}images/unlike.png");
                       //location.reload();
                    }
                    $("#totalLike").text("like"+data.likeCount) ; 

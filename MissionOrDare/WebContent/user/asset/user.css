@@ -485,7 +485,6 @@ ol{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    left: 16%;
 }
 .modal-body .modal-bodyLeft{
    flex-direction: column;
@@ -608,7 +607,7 @@ ol{
 	text-align: center;
 }
 .auth_main ol li i{
-	font-size: 5rem;
+	font-size: 3rem;
 	margin: 0 5px;
 }
 
