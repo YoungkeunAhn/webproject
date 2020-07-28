@@ -117,4 +117,12 @@
 	<select id="selectInfo" parameterType="String" resultType="Dtos.ReplyDto">
 		select * from mod_reply where reply_id = #{reported_reply_id}
 	</select>
+	<select id="selectBoard" parameterType="String" resultType="String">
+		select user_nickname from mod_successboard where success_board_id=#{success_board_id}	
+	</select>
+	<insert id="insertReportBoard" parameterType="Dtos.ReportBoardDto">
+		insert into mod_reportboard(report_board_id,report_user_nickname,reported_nickname,report_type
+		,report_reason,reported_board_id) values('report'||lpad(seq_report_board.nextval,5,0), #{report_user_nickname},
+		#{reported_nickname}, #{report_type}, #{report_reason}, #{reported_board_id} )
+	</insert>
 </mapper>

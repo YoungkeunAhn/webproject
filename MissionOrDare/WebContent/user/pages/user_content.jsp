@@ -1,25 +1,32 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="user_settings.jsp" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ include file="user_settings.jsp"%>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="${project}asset/user.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    
-   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="${project}asset/script.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
-    
-   <script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="${project}asset/user.css">
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="${project}asset/script.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/23971e572d.js"
+	crossorigin="anonymous"></script>
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+
+<script>
    
    function Close(){
       document.getElementById('replyMenuModal').style.display='none';
@@ -52,121 +59,122 @@
    </script>
 </head>
 <body>
-    <div class="container">
-    
-      <!-- 게시글 내용 -->
-      <form>
-      <input type="hidden" id="success_board_id" value="${success_board_id}"> 
-      <input type="hidden" id="totalLikeCount" value="${totalLikeCount}">
-         <section class="usercontent">
-         <ol>
-              
-              <li class="mission-category">
-                 <span>${mission_info.large_category}/${mission_info.small_category}</span>
-                 <div onclick="GoReportPage(${success_board_id})">
-                    <img src="${project}images/siren.png">
-               <button class="btn btn-link" type="submit">신고</button>
-            </div>
-            <c:if test="${sessionScope.user_nickname eq user_info.user_nickname}">
-               <div style="position: absolute; top:30px;" onclick="changeImg()">
-                             <img id="img1" src="${project}images/pngegg.png">
-                             <img style="display: none" id="img2" src="${project}images/pngwing.png">
-                  공개여부
-               </div>      
-            </c:if>
-              </li>
-              <li class="text-mission"><span>${mission_info.mission_title}</span></li>
-                    <div id="profile" class="content-profile" onclick="location.href='user_anotherUser.jsp'">
-                      <img class="img-circle" src="${user_info.profile_picture}" alt="user-profile">
-                      <span>${user_info.user_nickname}</span><br>
-                   </div>
-              </ol>
-              
-            <div class="swiper-container">
-               <div class="swiper-button-prev"></div>
-               <div class="swiper-wrapper">
-                  <c:forEach var="content" items="${contents}">
-                        <div class="swiper-slide" style="height:109%;">
-                           
-                              <c:if test="${fn:contains(content, '.mp4') or fn:contains(content, '.avi')}">
-                                     <video muted controls="controls" autoplay="autoplay" class="img-rounded" width="300">
-                                    <source src="/upload/${content}">
-                                 </video>
-                                  </c:if>
-                                  <c:if test="${!fn:contains(content, '.mp4') and !fn:contains(content, '.avi')}">
-                                     <img style="width:180px; height: 150px;" src="/upload/${content}" width="300" class="img-rounded" alt="thumbnail"/>
-                                  </c:if>
-                               
-                        </div>
-                  </c:forEach>
-               </div>
-               <div class="swiper-button-next"></div>
-               <!-- 자꾸거슬림 -->
-               <!-- 
+	<div class="container">
+
+		<!-- 게시글 내용 -->
+		<form method="post" action="user_report.do">
+			<input type="hidden" id="success_board_id" name="success_board_id" value="${success_board_id}"> 
+			<input type="hidden" id="totalLikeCount" value="${totalLikeCount}">
+			<section class="usercontent">
+				<ol>
+
+					<li class="mission-category"><span>${mission_info.large_category}/${mission_info.small_category}</span>
+						<div>
+							<img src="${project}images/siren.png">
+							<button class="btn btn-link" type="submit">신고</button>
+						</div> 
+						<c:if test="${sessionScope.user_nickname eq user_info.user_nickname}">
+							<div style="position: absolute; top: 30px;" onclick="changeImg()">
+								<img id="img1" src="${project}images/pngegg.png"> <img
+									style="display: none" id="img2"
+									src="${project}images/pngwing.png"> 공개여부
+							</div>
+						</c:if>
+					</li>
+					<li class="text-mission"><span>${mission_info.mission_title}</span></li>
+					<div id="profile" class="content-profile"
+						onclick="location.href='user_anotherUser.jsp'">
+						<img class="img-circle" src="${user_info.profile_picture}"
+							alt="user-profile"> <span>${user_info.user_nickname}</span><br>
+					</div>
+				</ol>
+
+				<div class="swiper-container">
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-wrapper">
+						<c:forEach var="content" items="${contents}">
+							<div class="swiper-slide" style="height: 109%;">
+
+								<c:if
+									test="${fn:contains(content, '.mp4') or fn:contains(content, '.avi')}">
+									<video muted controls="controls" autoplay="autoplay"
+										class="img-rounded" width="300">
+										<source src="/upload/${content}">
+									</video>
+								</c:if>
+								<c:if
+									test="${!fn:contains(content, '.mp4') and !fn:contains(content, '.avi')}">
+									<img style="width: 180px; height: 150px;"
+										src="/upload/${content}" width="300" class="img-rounded"
+										alt="thumbnail" />
+								</c:if>
+
+							</div>
+						</c:forEach>
+					</div>
+					<div class="swiper-button-next"></div>
+					<!-- 자꾸거슬림 -->
+					<!-- 
                	<div style="position: fixed; height:20px; top:320px;" class="swiper-pagination"></div>
                 -->
-            </div>
-         <ol>
-              <li class="text-summary"><span>${auth_mission_info.mission_upload_contents}</span></li>
-          </ol>
-      </section>
-      </form>
-      
-      <!-- 댓글내용 -->
-      <input id="re" type="hidden">
-      <section class="reply-part">
-         <div class="likecount">
-                   <img id="like" >
-             <span id="totalLike"></span>
-          </div>
-          <div class="reply-contents">
-          
-           	<div class="reply" id="replyDiv">
-           	
-             </div>
-            
-             <div id="replyMenuModal" class="modal-bg" onclick="Close()">
-                <input id="reply_id" type="hidden">
-                <input id="user_nickname" type="hidden">
-                <ul onclick="event.cancelBubble=true">
-                   <li><span class="user-nick"></span></li>
-                   <li><span onclick="doPostMessage($('#user_nickname').val())">쪽지 보내기</span></li>
-                   <li><span onclick="location.href='user_anotherUser.jsp'">프로필 방문</span></li>
-                   <li><span class="text-danger" onclick="doReport($('#reply_id').val(),$('#success_board_id').val())">신고하기</span></li>
-                </ul>
-             </div>
-              
-         </div>
-          
-          
-            <!-- 댓글입력 -->
-         <div class="userreplyho">
-            <input class="form-control userreplyhotext" type="text" name="reply" id="reply" placeholder="댓글을 입력해주세요"/>
-			<button type="button" class="userbtnbtn" id="insert">댓글</button>
-         </div>
-      </section>
-         <nav>
-            <ul>
-                <li onclick="GoMainPage()">
-                    <img class="nav-home" src="${project}images/blackMy.PNG" alt="logo">
-                    <span>홈</span>
-                </li>
-                <li onclick="GoEvalPage()">
-                    <img src="${project}images/blackdotbogi.PNG" alt="eval-icon">
-                    <span>평가</span>
-                </li>
-                <li onclick="GoPidPage()">
-                    <img src="${project}images/feed.PNG" alt="pid-icon">
-                    <span>피드</span>
-                </li>
-                <li onclick="GoMyPage()">
-                    <img src="${project}images/blackMyPage.PNG" alt="my-icon">
-                    <span>마이</span>
-                </li>
-            </ul>
-        </nav>
-    </div>
-         <script type="text/javascript">
+				</div>
+				<ol>
+					<li class="text-summary"><span>${auth_mission_info.mission_upload_contents}</span></li>
+				</ol>
+			</section>
+		</form>
+
+		<!-- 댓글내용 -->
+		<input id="re" type="hidden">
+		<section class="reply-part">
+			<div class="likecount">
+				<img id="like"> <span id="totalLike"></span>
+			</div>
+			<div class="reply-contents">
+
+				<div class="reply" id="replyDiv"></div>
+
+				<div id="replyMenuModal" class="modal-bg" onclick="Close()">
+					<input id="reply_id" type="hidden"> <input
+						id="user_nickname" type="hidden">
+					<ul onclick="event.cancelBubble=true">
+						<li><span class="user-nick"></span></li>
+						<li><span onclick="doPostMessage($('#user_nickname').val())">쪽지
+								보내기</span></li>
+						<li><span onclick="location.href='user_anotherUser.jsp'">프로필
+								방문</span></li>
+						<li><span class="text-danger"
+							onclick="doReport($('#reply_id').val(),$('#success_board_id').val())">신고하기</span></li>
+					</ul>
+				</div>
+
+			</div>
+
+
+			<!-- 댓글입력 -->
+			<div class="userreplyho">
+				<input class="form-control userreplyhotext" type="text" name="reply"
+					id="reply" placeholder="댓글을 입력해주세요" />
+				<button type="button" class="userbtnbtn" id="insert">댓글</button>
+			</div>
+		</section>
+		<nav>
+			<ul>
+				<li onclick="GoMainPage()"><img class="nav-home"
+					src="${project}images/blackMy.PNG" alt="logo"> <span>홈</span>
+				</li>
+				<li onclick="GoEvalPage()"><img
+					src="${project}images/blackdotbogi.PNG" alt="eval-icon"> <span>평가</span>
+				</li>
+				<li onclick="GoPidPage()"><img src="${project}images/feed.PNG"
+					alt="pid-icon"> <span>피드</span></li>
+				<li onclick="GoMyPage()"><img
+					src="${project}images/blackMyPage.PNG" alt="my-icon"> <span>마이</span>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<script type="text/javascript">
       //<!--
       /*댓글 insert*/
       $(document).ready(function(){
@@ -286,4 +294,3 @@
    </script>
 </body>
 </html>
-    

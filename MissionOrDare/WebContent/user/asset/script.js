@@ -221,7 +221,7 @@ function MyInfoModify() {
 	location.href='user_myInfoModify.do';
 }
 function GoReportPage(success_board_id) {
-	location.href='user_report.jsp';
+	location.href='user_report.do?success_board_id='+success_board_id;
 }
 function GoLogoutPage() {
 	location.href='user_logout.jsp';

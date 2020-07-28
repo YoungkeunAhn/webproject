@@ -36,4 +36,6 @@ public interface UserSuccessBoardDao {
 	public int selectLikeCount(String success_board_id);
 	public ReplyDto selectInfo(String reply_id);
 	public int insertReportReply(ReportBoardDto reportBoardDto);
+	public String selectBoard(String success_board_id);
+	public int insertReportBoard(ReportBoardDto reportBoardDto);
 }

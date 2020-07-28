@@ -85,4 +85,10 @@ public class UserSuccessBoardDBBean implements UserSuccessBoardDao {
 	public ReplyDto selectInfo(String reply_id) {
 		return session.selectOne("success.selectInfo",reply_id);
 	}
+	public String selectBoard(String success_board_id) {
+		return session.selectOne("success.selectBoard",success_board_id);
+	}
+	public int insertReportBoard(ReportBoardDto reportBoardDto) {
+		return session.insert("success.insertReportBoard", reportBoardDto);
+	}
 }

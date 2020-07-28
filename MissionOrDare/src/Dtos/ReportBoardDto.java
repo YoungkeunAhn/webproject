@@ -25,14 +25,14 @@ public class ReportBoardDto {
 	public String getReported_nickname() {
 		return reported_nickname;
 	}
+	public void setReported_nickname(String reported_nickname) {
+		this.reported_nickname = reported_nickname;
+	}
 	public String getReport_type() {
 		return report_type;
 	}
 	public void setReport_type(String report_type) {
 		this.report_type = report_type;
-	}
-	public void setReported_nickname(String reported_nickname) {
-		this.reported_nickname = reported_nickname;
 	}
 	public String getReport_reason() {
 		return report_reason;
@@ -58,6 +58,8 @@ public class ReportBoardDto {
 	public void setReport_date(String report_date) {
 		this.report_date = report_date;
 	}
+	
+	
 	
 	
 };
