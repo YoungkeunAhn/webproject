@@ -92,7 +92,7 @@
 	                    <li>
 	                        <i class="fas fa-angle-left"></i>
 	                        <img name="auth_image" id="auth_image" src="${project}images/auth_defalut.png" alt="auth_image" onclick="document.getElementById('upload').click()">
-	                        <video width="83%" style="display:none" class="auth_image" id="auth_video" src="${project}images/auth_defalut.png" alt="auth_image" onclick="document.getElementById('upload').click()"></video>
+	                        <video width="50%" style="display:none" class="auth_image" id="auth_video" src="${project}images/auth_defalut.png" alt="auth_image" onclick="document.getElementById('upload').click()"></video>
 	                        <i class="fas fa-angle-right"></i>
 	                    </li>
 	                    <li>
