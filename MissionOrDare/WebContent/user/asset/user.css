@@ -485,6 +485,11 @@ ol{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    left: 0;
+    top: -7px;
+    right: 0;
+    margin: auto;
+    border-radius: 50px;
 }
 .modal-body .modal-bodyLeft{
    flex-direction: column;
