@@ -59,7 +59,7 @@
 		       				<button onclick="history.go(-1)" type="button" class="profilemodifybtn">취소</button>
 		       			</div>
 		       			<div style="margin-top: 24px">
-		       				<a style="font-size: 1px;">※허위신고일 경우, 부모님은 우한인 할부지는 일본인 그리고 내일이없음</a>
+		       				<a style="font-size: 1px;">※허위신고일 경우, 신고자는 서비스 이용이 제한됩니다.</a>
 		       			</div>
 		       		</section>
 	        	</section>
