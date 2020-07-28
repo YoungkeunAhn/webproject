@@ -37,7 +37,7 @@
 		        	</div>
 		       		<div class="reportProfile">
 		       			<div class="contentProfile">
-		       				<img class="img-circle" src="${project}images/madong.PNG" alt="user-profile">
+		       				<img class="img-circle" src="${profile_picture}" alt="user-profile">
 			            	<span>${reported_nickname}</span>
 			            </div>
 		       		</div>

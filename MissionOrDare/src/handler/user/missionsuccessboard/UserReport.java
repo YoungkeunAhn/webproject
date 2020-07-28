@@ -25,15 +25,21 @@ public class UserReport implements CommandHandler{
 		
 		
 		
-		if(reported_reply_id == null) {
+		if(reported_reply_id == null) { //게시글 신고
 	
 			String reported_nickname = userSuccessBoardDao.selectBoard(success_board_id);
+			String profile_picture = userSuccessBoardDao.selectProfile(reported_nickname);
+			
+			request.setAttribute("profile_picture", profile_picture);
 			request.setAttribute("success_board_id", success_board_id);
 			request.setAttribute("reported_nickname", reported_nickname);
-		}else {
+		}else { //댓글 신고 
 			ReplyDto replyDto = userSuccessBoardDao.selectInfo(reported_reply_id);
 			String reported_nickname = replyDto.getUser_nickname();
 			
+			String profile_picture = userSuccessBoardDao.selectProfile(reported_nickname);
+			
+			request.setAttribute("profile_picture", profile_picture);
 			request.setAttribute("reported_nickname", reported_nickname);
 			request.setAttribute("reported_reply_id", reported_reply_id);
 			request.setAttribute("success_board_id", success_board_id);

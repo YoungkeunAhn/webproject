@@ -125,4 +125,7 @@
 		,report_reason,reported_board_id) values('report'||lpad(seq_report_board.nextval,5,0), #{report_user_nickname},
 		#{reported_nickname}, #{report_type}, #{report_reason}, #{reported_board_id} )
 	</insert>
+	<select id="selectProfile" parameterType="String" resultType="String">
+		select profile_picture from mod_users where user_nickname = #{reported_nickname}
+	</select>
 </mapper>

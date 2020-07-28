@@ -38,4 +38,5 @@ public interface UserSuccessBoardDao {
 	public int insertReportReply(ReportBoardDto reportBoardDto);
 	public String selectBoard(String success_board_id);
 	public int insertReportBoard(ReportBoardDto reportBoardDto);
+	public String selectProfile(String reported_nickname);
 }
