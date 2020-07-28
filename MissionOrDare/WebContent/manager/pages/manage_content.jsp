@@ -143,20 +143,20 @@
        
 			<c:if test="${cnt gt 0}">
 				<c:if test="${startPage gt pageBlock}">
-					<a href="manage_content.do">[◀◀]</a>
-					<a href="manage_content.do?pageNum=${startPage-pageBlock}">[◀]</a>
+					<a href="manage_content.do?searchContent=${searchContent}&option=${option}">[◀◀]</a>
+					<a href="manage_content.do?pageNum=${startPage-pageBlock}&searchContent=${searchContent}&option=${option}">[◀]</a>
 				</c:if>
 				<c:forEach var="i" begin="${startPage}" end="${endPage}">
 					<c:if test="${i eq currentPage}"> 
 						<b>[${i}]</b>				
 					</c:if>
 					<c:if test="${i ne currentPage}">
-						<a href="manage_content.do?pageNum=${i}">[${i}]</a>				
+						<a href="manage_content.do?pageNum=${i}&searchContent=${searchContent}&option=${option}">[${i}]</a>				
 					</c:if>
 				</c:forEach>	
 				<c:if test="${pageCount gt endPage}">
-					<a href="manage_content.do?pageNum=${startPage+pageBlock}">[▶]</a>
-					<a href="manage_content.do?pageNum=${pageCount}">[▶▶]</a>		
+					<a href="manage_content.do?pageNum=${startPage+pageBlock}&searchContent=${searchContent}&option=${option}">[▶]</a>
+					<a href="manage_content.do?pageNum=${pageCount}&searchContent=${searchContent}&option=${option}">[▶▶]</a>		
 				</c:if>
 			</c:if>        
 		
