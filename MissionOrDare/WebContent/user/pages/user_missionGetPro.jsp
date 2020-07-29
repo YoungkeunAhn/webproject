@@ -12,11 +12,14 @@
 <style>
 	body{
 		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: black;
 	}
 	img{
-		height: 100%;
-		margin: 0 auto;
-		
+		width: 100%;
+		height: 50%;
 	}
 </style>
 <body>
