@@ -27,19 +27,19 @@ body{
 #profile{
 	border: 0px;
 	border-radius: 30px;
-	background-color: #0000001c;
-	width: 125px;
-	height: 42px;
+	background-color: #ffff00c4;;
+	width: 200px;
+	height: 38px;
 	position: relative;
-	top: 1.5rem;
-    left: 63px;
+	top: 30px;
+    left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-#profile span{
-	position: absolute;
-    left: 43px;
-    top: 9px;
-}
+
 #profile .img-circle{
 	position: absolute;
 	left: 0px;
@@ -1597,9 +1597,8 @@ textarea:focus{
 .starR.on{background-position:0 0;}
 
 .divdiv{
-	position: relative;
-	top:5rem;
-	color:#56514a;
+	text-align: center;
+	margin: 40px auto 0 auto;
 }
 
 

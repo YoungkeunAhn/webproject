@@ -16,8 +16,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="${project}asset/script.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script src="https://kit.fontawesome.com/23971e572d.js"
-	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/23971e572d.js"></script>
 	
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
@@ -25,57 +24,77 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<style>
+
+	.swiper-container{
+		text-align: center;
+		position: relative;
+		top: -40px;
+		height: 60%;
+	}
+	.img-rounded{
+		width: 200px;
+		height: 180px;
+	}
+	video{
+		width: 200px;
+		height: 180px;
+	}
+</style>
 <body>
-	<div class="container">      
-      
-       <c:if test="${result eq 0}">
+	<div class="container">
+		<c:if test="${result eq 0}">
             <ol class="data-none eval-none">
                <li>미션이 평가할게 없습니다!</li>
                <li>본인이 직접 미션을 인증해보시지!</li>
                <li><img src="${project}images/mission_none.png"></li>
             </ol>
        </c:if>
-       <c:if test="${result ne 0}">
-       <input id="mission_status_id" name="mission_status_id" type="hidden" value="test">
+
 		
+       <c:if test="${result ne 0}">
+		<article>
+       <input id="mission_status_id" name="mission_status_id" type="hidden" value="test">
+		<div class="divdiv">	
+		 	<div>
+                <span>${userMissionsDto.large_category}/${userMissionsDto.small_category}</span><br>
+          	</div>
+         	 <div>
+                <span>${userMissionsDto.mission_title}</span><br>
+           	</div>
+           	<div id="profile" class="content-profile" onclick="location.href='user_anotherUser.jsp'">
+                <img class="img-circle" src="${profile_picture}" onerror="this.src='${project}images/erroruser.png'">
+                <span>${userMissionsDto.user_nickname}</span><br>
+           	</div>
+        </div>
 		<div class="swiper-container">
-			 <div class="divdiv">	
-			 	<div>
-	                <span>${userMissionsDto.large_category}/${userMissionsDto.small_category}</span><br>
-	          	</div>
-	         	 <div>
-	                <span>${userMissionsDto.mission_title}</span><br>
-	           	</div>
-	           	<div id="profile" class="content-profile" onclick="location.href='user_anotherUser.jsp'">
-	                <img class="img-circle" src="${profile_picture}" alt="user-profile">
-	                <span>${userMissionsDto.user_nickname}</span><br>
-	           	</div>
-	          </div>	
 	          <div class="swiper-button-prev"></div>
-	               <div class="swiper-wrapper" style="z-index: -50;">
+	               <div class="swiper-wrapper">
 	                 <c:forEach var="content" items="${contents}">
 	                 <div class="swiper-slide">
                 		<c:if test="${fn:contains(content, '.mp4') or fn:contains(content, '.avi')}">
-                			<video muted autoplay="autoplay" class="img-rounded" width="180">
+                			<video muted autoplay="autoplay" class="img-rounded">
 								<source src="/upload/${content}">
 							</video>
                 		</c:if>
                 		<c:if test="${!fn:contains(content, '.mp4') and !fn:contains(content, '.avi')}">
-                			<img style="width:180px; height: 150px; position: relative; bottom:10rem;" src="/upload/${content}" class="img-rounded" alt="thumbnail"/>
+                			<img src="/upload/${content}" class="img-rounded"/>
+                			
                 		</c:if>
 	               	</div>
 					</c:forEach>
 	    		  </div>
 	   	<div class="swiper-button-next"></div>
-	   	<div class="swiper-pagination"></div> 
-   		<div class="btn-line">
+		</div>
+		<div class="btn-line">
 			<input class="successbtn" type="button" value="성공" name="pass" onclick="GoSuccessProPage('${userMissionsDto.mission_state_id}')"/>
 			<input type="button" class="deletebtn" value="실패" name="fail" onclick="GoFailureProPage('${userMissionsDto.mission_state_id}')"/>
 		</div>
-		</div>
+		</article>
 		</c:if>
+		
+
 	</div>
-			
 		
    	 <nav>
             <ul>
