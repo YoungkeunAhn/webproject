@@ -13,25 +13,19 @@
     <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div class="container">
-		<article>
-			 <form method="post" action="user_sendMessagePro.do" name="sendMessage" onsubmit="return MessageSendCheck()">
-				<section class="sendTop">
-				<span>받는사람 : </span>
-				<input class="form-control recieveMan" type="text" name="receivedNickname" value="${nickname}"}> 
-				</section>
-				
-				<section class="sendContent">
-					<textarea class="form-control messagetextarea" placeholder="메시지 내용을 입력해주세요." name="textContent"></textarea>
-				</section>
-				
-			
-			<section class="sendbottom">
-					<button type="submit" class="btn btn-success">보내기</button>
-		            <button type="button" class="btn btn-default" onclick="history.back()">취소</button>
-			</section>
-			</form>
-		</article>
-	</div>
+	<form class="sendMsgForm" method="post" action="user_sendMessagePro.do" name="sendMessage" onsubmit="return MessageSendCheck()">
+		
+		<section class="sendTop">
+			<span>받는사람 : </span>
+			<input class="form-control" type="text" name="receivedNickname" value="${nickname}"}>
+			<span>메세지내용 : </span>
+			<textarea class="form-control messagetextarea" placeholder="메시지 내용을 입력해주세요." name="textContent"></textarea> 
+		</section>
+		
+		<section class="sendbottom">
+				<button type="submit" class="btn btn-success">보내기</button>
+	            <button type="button" class="btn btn-default" onclick="history.back()">취소</button>
+		</section>
+	</form>
 </body>
 </html>

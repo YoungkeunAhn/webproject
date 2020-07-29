@@ -82,10 +82,10 @@
 						</c:if>
 					</li>
 					<li class="text-mission"><span>${mission_info.mission_title}</span></li>
-					<div id="profile" class="content-profile"
-						onclick="location.href='user_anotherUser.jsp'">
-						<img class="img-circle" src="${user_info.profile_picture}"
-							alt="user-profile"> <span>${user_info.user_nickname}</span><br>
+					<div id="profile" class="content-profile" onclick="location.href='user_anotherUser.jsp'">
+						<img class="img-circle" src="${user_info.profile_picture}" onerror="this.src='${project}images/erroruser.png'">
+						<span>${user_info.user_nickname}</span>
+						<br>
 					</div>
 				</ol>
 

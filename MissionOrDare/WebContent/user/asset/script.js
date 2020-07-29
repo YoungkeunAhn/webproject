@@ -8,6 +8,7 @@ var nicknameSpecialError = "닉네임을 확인해주세요.\n들어갈수 없�
 var insertFileError = "미션 수행한 파일을 업로드해주세요";
 var categoryNullError = "카테고리를 1개 이상 선택해주세요"
 var sendMessageNullError = "보내고 싶은 내용을 입력해 주세요.";
+var userReportNullError = "신고내용을 적어주세요.";
 
 /*
  * 
@@ -24,6 +25,11 @@ function MessageSendCheck() {
 	if(! sendMessage.textContent.value){
 		alert( sendMessageNullError );
 		sendMessage.textContent.focus();
+		return false;
+	}
+	if(! sendMessage.receivedNickname.value){
+		alert( sendMessageNullError );
+		sendMessage.receivedNickname.focus();
 		return false;
 	}
 }
@@ -110,6 +116,13 @@ function myInfoModifyCheck() {
  * 
  * 
  */
+function userReport(){
+	if(! userReportForm.reportReason.value){
+		alert(userReportNullError);
+		userReportForm.reportReason.focus();
+		return false;
+	}
+}
 
 /*
 *user_main.jsp

@@ -18,9 +18,12 @@
 	   <div class="getMessageContent">
 	   	  <c:forEach var="sent" items="${notesDtoss}">
 	      <div class="getMessageList">
-	         <span class="Nick"><img class=img-circle src="${profile}" alt="user-profile">${sent.received_nickname}</span>
+			<span class="Nick">
+				<img class=img-circle src="${profile}" onerror="this.src='${project}images/erroruser.png'">
+				${sent.received_nickname}
+			</span>
 	       <span class="getMessageDate">${sent.send_date}</span><br>
-	         <span>${sent.notes_contents}</span>
+				<span>${sent.notes_contents}</span>
 	      </div>
 	      </c:forEach>
 	      

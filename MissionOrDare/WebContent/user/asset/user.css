@@ -1080,21 +1080,23 @@ div .write-control{
 
 ***********************************************/
 .messageNav{
-	margin: 5% auto;
+	margin: 80px auto 10px auto;
 	display: flex;
 	justify-content: space-between;
 	font-size: 1.7rem;
+	padding: 0 10px;
 }
 
 .messageNav span{
 	padding: 0 5px;
 }
 .messageNav img{
-	width: 35px;
-	height: 20px;
+	width: 40px;
+	height: 30px;
 }
 .messageInfo{
 	padding: 10px 0;
+	height:70%;
 }
 
 
@@ -1106,7 +1108,7 @@ div .write-control{
 ***********************************************/
 .getMessageContent{
     width: 100%;
-    height: 90%;
+    height: 100%;
     overflow: auto;
 
 }
@@ -1244,16 +1246,18 @@ div .write-control{
         user_sendMessage 데헷~^^
 
 ***********************************************/
-.recieveMan{
-	position: relative;
-    top:0px;
-    
+.sendMsgForm{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
 }
+
 .sendTop{
 	width:100%;
-	height:10%;
+	height:90%;
 	flex-wrap: wrap;
-	display: flex;	/*한쌍*/
+	display: flex;
 	justify-content: space-between;
 	text-align: center;
 	margin: 0px;
@@ -1263,45 +1267,25 @@ div .write-control{
 	margin: auto 5px;
 	font-size: 1.3rem;
 }
-.sendContent{
+
+.sendTop .messagetextarea{
 	width:100%;
-	height:90%;
-	flex-wrap: wrap;
-	display: flex;
-}
-.sendContent .messagetextarea{
-	width:100%;
-	height:79%;
+	height:70%;
 	background-color: rgba(255,255,255,0.5);
 	flex-wrap: wrap;
 	display: flex;
 }
-.sendTop .userNickname{
-	font-size: 95%;
-	font-style: oblique;
-	padding: 0px;
-	margin: 0px;
-	flex-wrap: wrap;
-	display: flex;
-}
-.sendTop .userNickname1{
-	font-size: 100%;
-	font-style: italic;
-	background-color: rgba(255,255,255,0.5);
-	flex-wrap: wrap;
-	display: flex;
-}
+
 .sendbottom{
 	width: 100%;
     height: 10%;
     padding-top: 10px;
-    position: relative;
-    bottom: 76px;
-    left: 34%;
+    display: flex;
+    justify-content: space-around;
 }
-.sendbottom .btn-danger{
-	width: 67px;
-	margin-left: 17px;
+.sendbottom button{
+	width: 100px;
+	height: 36px;
 }
 /**********************************************
 

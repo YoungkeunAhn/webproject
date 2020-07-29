@@ -19,7 +19,10 @@
 	   
 	   	  <c:forEach var="userNotesDto" items="${userNotesDtos}"> 
 	      <div class="getMessageList">
-	         <span class="Nick"><img class=img-circle src="${userNotesDto.profile_picture}" alt="user-profile">${userNotesDto.sent_nickname}</span>
+	         <span class="Nick">
+	         	<img class=img-circle src="${userNotesDto.profile_picture}" onerror="this.src='${project}images/erroruser.png'">${userNotesDto.sent_nickname}
+	         </span>
+	       
 	       <span class="getMessageDate">${userNotesDto.send_date}</span><br>
 	         <span>${userNotesDto.notes_contents}</span>
 	      </div>

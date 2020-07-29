@@ -24,11 +24,11 @@
 	      </div>
 	        <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
 	    </header>
-        <article style="height:75%;">
+        <article>
 	       	<section class="messageNav">
 	            <span class="getdMessage">받은 메시지</span>
 	            <span class="sendmessage">보낸 메시지</span>
-	            <img class="sendIcon" src="${project}images/paperAp.png">
+	            <img class="sendIcon" src="${project}images/sendmsg1.png">
 			</section>
 			
 			<section id="usermessage" class="messageInfo">
@@ -50,7 +50,7 @@
                     <span>피드</span>
                 </li>
                 <li onclick="GoMyPage()">
-                    <img src="${project}images/mygumi.PNG" alt="my-icon">
+                    <img src="${project}images/mypage.png" alt="my-icon">
                     <span>마이</span>
                 </li>
             </ul>

@@ -24,7 +24,7 @@
 		        </div>
             <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
         </header>
-	   <form method="post" name="user_reportForm" action="user_reportPro.do">
+	   <form method="post" name="userReportForm" action="user_reportPro.do" onsubmit="return userReport()">
 	   	   <input type="hidden" name="reported_reply_id" value="${reported_reply_id}">
 	       <input type="hidden" name="reported_nickname" value="${reported_nickname}">
 	       <input type="hidden" name="success_board_id" value="${success_board_id}">
@@ -37,7 +37,7 @@
 		        	</div>
 		       		<div class="reportProfile">
 		       			<div class="contentProfile">
-		       				<img class="img-circle" src="${profile_picture}" alt="user-profile">
+		       				<img class="img-circle" src="${profile_picture}" onerror="this.src='${project}images/erroruser.png'">
 			            	<span>${reported_nickname}</span>
 			            </div>
 		       		</div>
@@ -54,13 +54,14 @@
 		       			<div style="margin-top: 15px">
 		       				<textarea class="reportWrite" name="reportReason"></textarea>
 		       			</div>
+		       			<div style="margin-top: 24px">
+		       				<a style="font-size: 1px;">※허위신고일 경우, 신고자는 서비스 이용이 제한됩니다.</a>
+		       			</div>
 		       			<div style="margin-top: 30px">
 		       				<button type="submit" class="profilemodifybtn">확인</button>
 		       				<button onclick="history.go(-1)" type="button" class="profilemodifybtn">취소</button>
 		       			</div>
-		       			<div style="margin-top: 24px">
-		       				<a style="font-size: 1px;">※허위신고일 경우, 신고자는 서비스 이용이 제한됩니다.</a>
-		       			</div>
+		       			
 		       		</section>
 	        	</section>
 	        </article>
