@@ -95,6 +95,15 @@ public class ManageMission implements CommandHandler{
 				map.put("start", start);
 				map.put("end", end);
 				List<MissionCategoryAndInfoDto> missionCategoryAndInfoDtos = manageMissionDao.getMissions(map);
+				for(MissionCategoryAndInfoDto missionCategoryAndInfoDto : missionCategoryAndInfoDtos) {
+					String mission_info_id = missionCategoryAndInfoDto.getMission_info_id();
+					int authCount = manageMissionDao.getAuthCount(mission_info_id);
+					if(authCount > 0) {
+						double mission_avg_score = missionCategoryAndInfoDto.getMission_avg_score()/authCount;
+						missionCategoryAndInfoDto.setMission_avg_score(mission_avg_score);
+					}
+					
+				}
 				request.setAttribute( "missionCategoryAndInfoDtos", missionCategoryAndInfoDtos );
 			}
 		} else {
@@ -104,10 +113,20 @@ public class ManageMission implements CommandHandler{
 				map.put("end", end);
 				map.put("mission", mission);
 				List<MissionCategoryAndInfoDto> missionCategoryAndInfoDtos;
+				
 				switch(option) {
 				case "1" : missionCategoryAndInfoDtos = manageMissionDao.getSearchMissionsCategory(map); break;
 				case "2" : missionCategoryAndInfoDtos = manageMissionDao.getSearchMissionsTitle(map); break;
 				default : missionCategoryAndInfoDtos = manageMissionDao.getSearchMissionsContent(map);
+				}
+				for(MissionCategoryAndInfoDto missionCategoryAndInfoDto : missionCategoryAndInfoDtos) {
+					String mission_info_id = missionCategoryAndInfoDto.getMission_info_id();
+					int authCount = manageMissionDao.getAuthCount(mission_info_id);
+					if(authCount > 0) {
+						double mission_avg_score = missionCategoryAndInfoDto.getMission_avg_score()/authCount;
+						missionCategoryAndInfoDto.setMission_avg_score(mission_avg_score);
+					}
+					
 				}
 				request.setAttribute( "missionCategoryAndInfoDtos", missionCategoryAndInfoDtos );
 				request.setAttribute("mission", mission);

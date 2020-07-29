@@ -71,6 +71,9 @@
 	</select>
 	
 	<!-- 미션 리스트 검색 -->
+	<select id="getAuthCount" parameterType="String" resultType="int">
+		select count(*) from mod_missionstate where mission_info_id=#{mission_info_id} and mission_state in(2,3,4)
+	</select>
 	<select id="getSearchMissionsCategory" parameterType="java.util.Map" resultType="Dtos.MissionCategoryAndInfoDto">
 		select aa.* 
 		from (select a.*, rownum r 

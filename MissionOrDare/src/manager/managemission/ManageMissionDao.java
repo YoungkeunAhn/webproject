@@ -33,5 +33,6 @@ public interface ManageMissionDao {
 	public int deleteMission(String mission_info_id);
 	public MissionCategoryAndInfoDto getMission(String mission_info_id);
 	public int updateMission(MissionInfoDto missionInfoDto);
+	public int getAuthCount(String mission_info_id);
 	
 }

@@ -92,4 +92,7 @@ public class ManageMissionDBBean implements ManageMissionDao {
 	public int updateMission(MissionInfoDto missionInfoDto) {
 		return session.update("Mission.updateMission", missionInfoDto);
 	}
+	public int getAuthCount(String mission_info_id) {
+		return session.selectOne("Mission.getAuthCount", mission_info_id);
+	}
 }

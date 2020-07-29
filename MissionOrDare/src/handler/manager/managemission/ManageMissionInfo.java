@@ -30,6 +30,11 @@ public class ManageMissionInfo implements CommandHandler{
 			return new ModelAndView("manager/pages/manage_mission_info");
 		}
 		MissionCategoryAndInfoDto missionCategoryAndInfoDto = manageMissionDao.getMission(mission_info_id);
+		int authCount = manageMissionDao.getAuthCount(mission_info_id);
+		if(authCount > 0) {
+			double mission_avg_score = missionCategoryAndInfoDto.getMission_avg_score()/authCount;
+			missionCategoryAndInfoDto.setMission_avg_score(mission_avg_score);
+		}
 		missionCategoryAndInfoDto.getCategory_image();
 		request.setAttribute("missionCategoryAndInfoDto", missionCategoryAndInfoDto);
 		

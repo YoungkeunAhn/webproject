@@ -9,7 +9,7 @@ public class MissionCategoryAndInfoDto {
 	private int mission_accept_count;
 	private int mission_reject_count;
 	private String mission_location;
-	private int mission_avg_score;
+	private double mission_avg_score;
 	private String mission_contents;
 	private String large_category;
 	private String small_category;
@@ -63,10 +63,10 @@ public class MissionCategoryAndInfoDto {
 	public void setMission_location(String mission_location) {
 		this.mission_location = mission_location;
 	}
-	public int getMission_avg_score() {
+	public double getMission_avg_score() {
 		return mission_avg_score;
 	}
-	public void setMission_avg_score(int mission_avg_score) {
+	public void setMission_avg_score(double mission_avg_score) {
 		this.mission_avg_score = mission_avg_score;
 	}
 	public String getMission_contents() {
