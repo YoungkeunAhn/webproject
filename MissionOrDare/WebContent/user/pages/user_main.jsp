@@ -22,6 +22,12 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 <title>유저 메인페이지</title>
 </head>
+<style>
+	.swiper-wrapper{
+		position: relative;
+		top: -40px;
+	}
+</style>
 <body>
 	<div class="container">
 		<header>

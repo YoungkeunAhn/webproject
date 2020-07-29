@@ -44,9 +44,7 @@ body{
 	position: absolute;
 	left: 0px;
 }
-.usercontent #profile{
-	margin-left: 35px;
-}
+
 /**********************************************
 
         header, article, nav
@@ -564,6 +562,8 @@ ol{
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 10px;
+    position: relative;
+    top: -20px;
 }
 
 .btn-line button{
