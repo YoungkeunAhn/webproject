@@ -37,7 +37,42 @@
 		   		<label>관심분야: ${userDto.interesting1_large_category} ${userDto.interesting2_large_category} ${userDto.interesting3_large_category} ${userDto.interesting4_large_category}</label>
 		   		<label>가입일: ${userDto.sign_up_date}</label>
     		</section>
-    		
+    		<section class="imymemine">
+    			<label>미션내역</label>
+    			<div class="myMissionList">
+    			
+    				<c:forEach var="userMissionDto" items="${userMissionDtos}">
+	    			<div class="myMissionList-items">
+	    				<img class="missionimage" src="/category/${userMissionDto.category_image}">
+	    				<ul class="myMissionList-summary">
+	    					<li>${userMissionDto.mission_title}</li>
+	    					<c:if test="${userMissionDto.mission_state eq 1}">
+									<li class="text-default">미 션 중</li>
+									</c:if>
+									
+									<c:if test="${userMissionDto.mission_state eq 2}">
+									<li class="text-success">미 션 성 공</li>
+									
+									</c:if>
+									<c:if test="${userMissionDto.mission_state eq 3}">
+									<li class="text-danger">미 션 실 패</li>
+									
+									</c:if>
+									<c:if test="${userMissionDto.mission_state eq 4}">
+									<li class="text-primary">미 션 인 증 중</li>
+									</c:if>
+									
+									<c:if test="${userMissionDto.mission_state eq 5}">
+									<li class="text-danger">중 도 포 기</li>
+									</c:if>
+	    					<li>${userMissionDto.mission_start_date}</li>
+	    				</ul>
+	    			</div>
+	    			</c:forEach>
+    			</div>
+    		</section>
+    		<!-- 잠시만 안녕 -->
+    		<!--  
     		<section class="imymemine">
 	    		<div class="white-box1">
 	    			<span>미션내역</span>
@@ -46,31 +81,32 @@
 				    		<div class="gay"><span>${userMissionDto.mission_start_date}</span></div>
 				    		<div class="good" onclick="location.href='user_myMissionCheck.do?mission_state_id=${userMissionDto.mission_state_id}'"><img class="missionimage" src="/category/${userMissionDto.category_image}" alt="mission-image1">
 						    	<div class="sisisi">	
-						    		<span>${userMissionDto.mission_title}</span>
-						    		<span><a>
+						    		<label>${userMissionDto.mission_title}</label>
 						    		<c:if test="${userMissionDto.mission_state eq 1}">
-									미션 중
+									<span class="text-default">미 션 중</span>
 									</c:if>
 									<c:if test="${userMissionDto.mission_state eq 2}">
-									미션 성공
+									<span class="text-success">미 션 성 공</span>
+									
 									</c:if>
 									<c:if test="${userMissionDto.mission_state eq 3}">
-									미션 실패
+									<span class="text-danger">미 션 실 패</span>
+									
 									</c:if>
 									<c:if test="${userMissionDto.mission_state eq 4}">
-									미션 인증 중
+									<span class="text-primary">미 션 인 증 중</span>
 									</c:if>
 									<c:if test="${userMissionDto.mission_state eq 5}">
-									중도 포기
+									<span class="text-danger">중 도 포 기</span>
 									</c:if>
-						    		</a>
-						    		</span>
+						    		
 						    	</div>    	
 				    		</div>
 				    	</c:forEach>
 	    			</div>
 	    		</div>
     		</section>
+    		-->
     	</article>
     	<nav>
             <ul>

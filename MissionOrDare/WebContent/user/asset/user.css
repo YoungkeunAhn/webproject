@@ -3,6 +3,11 @@
 /*
 font-family: 'Anton', sans-serif;			광훈
 */
+/*배민 주아체*/
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+/*
+font-family: 'Jua', sans-serif;
+*/
 /*넥슨 Lv.1 고딕 Bold*/
 @font-face {
     font-family: 'NEXON Lv1 Gothic OTF Bold';
@@ -15,6 +20,7 @@ body{
     background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
     background-size: cover;
     padding: 10px;
+    font-family: 'Jua', sans-serif;
     /*overflow-y: hidden;
     overflow-x: hidden;*/
 }
@@ -475,16 +481,11 @@ ol{
 }
 .modal-body{
     background-color: white;
-    width: 70%;
+    width: 96%;
     height: 50%;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    left: 0;
-    top: -7px;
-    right: 0;
-    margin: auto;
     border-radius: 50px;
 }
 .modal-body .modal-bodyLeft{
@@ -504,10 +505,14 @@ ol{
 
 .modal-body .myCategory{
     background-color: yellow;
+    width: 150px;
+    height: 80px;
 }
 
 .modal-body .allCategory{
     background-color: coral;
+    width: 150px;
+    height: 80px;
 }
 
 
@@ -795,7 +800,7 @@ ol{
 
 .list{
     width: 100%;
-    height: 108%;
+    height: 88%;
     display: flex;
     flex-wrap: wrap;
     padding: 1% 1% 60px 1%;
@@ -940,12 +945,7 @@ list ::-webkit-scrollbar {
 }
 
 
-.imymemine{
-    height: 77%;
-    width: 100%;
-    margin: 5px auto;
-    text-align: center;
-}
+
 .writeMessage{
 	position: relative;
     width: 35px;
@@ -966,7 +966,7 @@ list ::-webkit-scrollbar {
 
 .imymemine .good{
     text-align: left;
-    height: 140px;
+    height: 105px;
     display: flex;
     flex-flow: row;
 }
@@ -985,7 +985,7 @@ div hr{
     display: block;
 }
 .gay{
-	border-top: 1px solid black;
+	border-top: 1px solid #0000001f;
 }
 .gay span{
     font-size: 60%;
@@ -1036,8 +1036,71 @@ div .write-control{
 .sisisi{
 	display: flex;
 	flex-wrap: wrap;
-	width:90px;
+	width:55%;
 	align-items: center;
+}
+.sisisi label{
+	display:block;
+}
+.sisisi span{
+	font-size: 2rem;
+}
+
+
+.imymemine{
+    height: 64%;
+    width: 100%;
+    margin: 5px auto;
+    text-align: center;
+    background: rgba(255,255,255,0.4);
+    padding: 10px 0 0 0;
+}
+
+.myMissionList{
+	height: 90%;
+	overflow: auto;
+	font-size: 1.5rem;
+}
+.myMissionList-items{
+	border-top: 1px solid #0000001f;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 10px;
+}
+.myMissionList-items img{
+	width: 80px;
+	height: 80px;
+	border-radius: 4px;
+	margin-right: 10px;
+}
+
+.myMissionList-items ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 61%;
+	max-width: 61%;
+}
+.myMissionList-items ul .mission_title{
+	magin: 10px auto;
+}
+.myMissionList-items ul .text-default{
+	color: black;
+}
+.myMissionList-items ul .text-success{
+	color: #4b26aa;
+}
+.myMissionList-items ul .text-danger{
+	color: #fd7978;
+}
+.myMissionList-items ul .text-primary{
+	color: #63b5e5;
+	display: block;
 }
 /**********************************************
 
@@ -1521,12 +1584,7 @@ textarea:focus{
 .missionAuthingImage div{
 	height: 100%;
 }
-.missionImage{
-	width:100%;
-	height: 100%;
-	background-image: linear-gradient(129deg, black, transparent);
-    border-radius: 100%;
-}
+
 .arae{
 	height: 36.6%;
     background-image: linear-gradient(0deg, #9a8585, transparent);

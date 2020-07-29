@@ -93,18 +93,18 @@
 					<div class="swiper-button-prev"></div>
 					<div class="swiper-wrapper">
 						<c:forEach var="content" items="${contents}">
-							<div class="swiper-slide" style="height: 109%;">
+							<div class="swiper-slide">
 
 								<c:if
 									test="${fn:contains(content, '.mp4') or fn:contains(content, '.avi')}">
 									<video muted controls="controls" autoplay="autoplay"
-										class="img-rounded" width="300">
+										class="img-rounded" style="width: 200px; height: 170px;">
 										<source src="/upload/${content}">
 									</video>
 								</c:if>
 								<c:if
 									test="${!fn:contains(content, '.mp4') and !fn:contains(content, '.avi')}">
-									<img style="width: 180px; height: 150px;"
+									<img style="width: 200px; height: 170px;"
 										src="/upload/${content}" width="300" class="img-rounded"
 										alt="thumbnail" />
 								</c:if>

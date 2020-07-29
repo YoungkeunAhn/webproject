@@ -130,9 +130,9 @@
 				</div>
 				<div id="modal-bg" class="modal-bg" onclick="CloseModal()">
 					<div class="modal-body">
-						<button class="myCategory" type="button"
+						<button class="btn myCategory" type="button"
 							onclick="InterestBtnClick()">관심분야</button>
-						<button class="allCategory" type="button"
+						<button class="btn allCategory" type="button"
 							onclick="AllCategoryBtnClick()">전체분야</button>
 					</div>
 				</div>
