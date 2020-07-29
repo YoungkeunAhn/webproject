@@ -15,32 +15,29 @@
 <body style="overflow:hidden;">
 	<div class="container">
         <header>
-            <img id="menu" class="menu-img" src="${project}images/menu.png" alt="logo">
-	            <div style="height: 21%;" id="menu_list" class="menu_list">
+            <img id="menu" class="menu-img" src="${project}images/menu.png">
+	            <div id="menu_list" class="menu_list">
 		            	<span onclick="GoLogoutPage()">Logout</span>
 		            	<br><br>
 		            	<span onclick="GoWithdrawalPage()">Withdrawal</span>
 		            	<br><br>
 		            	<span onclick="MyInfoModify()">ProfileModify</span>
 		        </div>
-            <img style="z-index: 8;" onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
+            <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
         </header>
     	<article class="usermyArticle">
-	    	<div class="white-box">	
-	    		<section class="imymemine">
-	    		<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
-	    			<img class="writeMessage" onclick="GoMessageForm()" src="${project}images/message12.png" alt="user-message">
-	    			<div id="profile" class="content-profile">
-		    		   <img onclick="MyProfileModify()" class="img-circle" src="${userDto.profile_picture}" alt="user-profile">
-		               <span>${userDto.user_nickname}</span>
-					   
-		   			</div>
-	    		</div>	   		
-		   		<div class="write-control"><span>관심분야: ${userDto.interesting1_large_category} ${userDto.interesting2_large_category} ${userDto.interesting3_large_category} ${userDto.interesting4_large_category}</span></div>
-		   		<div class="write-control">가입일: ${userDto.sign_up_date}</div>
-		   		
-	    		</section>
-	    	</div>
+    		
+    		<section class="userinfo-part">
+    			<img class="message-img" onclick="GoMessageForm()" src="${project}images/message.png">
+    			<div>
+	    		   <img onclick="MyProfileModify()" class="img-circle" src="${userDto.profile_picture}" onerror="this.src='${project}images/erroruser.png'">
+	               <span>${userDto.user_nickname}</span>
+	   			</div>
+
+		   		<label>관심분야: ${userDto.interesting1_large_category} ${userDto.interesting2_large_category} ${userDto.interesting3_large_category} ${userDto.interesting4_large_category}</label>
+		   		<label>가입일: ${userDto.sign_up_date}</label>
+    		</section>
+    		
     		<section class="imymemine">
 	    		<div class="white-box1">
 	    			<span>미션내역</span>
@@ -90,7 +87,7 @@
                     <span>피드</span>
                 </li>
                 <li onclick="GoMyPage()">
-                    <img src="${project}images/mygumi.PNG" alt="my-icon">
+                    <img src="${project}images/mypage.png" alt="my-icon">
                     <span>마이</span>
                 </li>
             </ul>
