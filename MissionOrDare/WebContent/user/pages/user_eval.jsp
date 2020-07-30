@@ -86,9 +86,9 @@
 	    		  </div>
 	   	<div class="swiper-button-next"></div>
 		</div>
-		<div class="btn-line">
+		<div class="eval-btn-line">
 			<input class="successbtn" type="button" value="성공" name="pass" onclick="GoSuccessProPage('${userMissionsDto.mission_state_id}')"/>
-			<input type="button" class="deletebtn" value="실패" name="fail" onclick="GoFailureProPage('${userMissionsDto.mission_state_id}')"/>
+			<input class="deletebtn" type="button"  value="실패" name="fail" onclick="GoFailureProPage('${userMissionsDto.mission_state_id}')"/>
 		</div>
 		</article>
 		</c:if>

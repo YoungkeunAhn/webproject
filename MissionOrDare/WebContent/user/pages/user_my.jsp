@@ -42,10 +42,10 @@
     			<div class="myMissionList">
     			
     				<c:forEach var="userMissionDto" items="${userMissionDtos}">
-	    			<div class="myMissionList-items">
-	    				<img class="missionimage" src="/category/${userMissionDto.category_image}">
+	    			<div class="myMissionList-items" onclick="location.href='user_myMissionCheck.do?mission_state_id=${userMissionDto.mission_state_id}'">
+	    				<img src="/category/${userMissionDto.category_image}">
 	    				<ul class="myMissionList-summary">
-	    					<li>${userMissionDto.mission_title}</li>
+	    					<li class="mission_title">${userMissionDto.mission_title}</li>
 	    					<c:if test="${userMissionDto.mission_state eq 1}">
 									<li class="text-default">미 션 중</li>
 									</c:if>
@@ -65,7 +65,7 @@
 									<c:if test="${userMissionDto.mission_state eq 5}">
 									<li class="text-danger">중 도 포 기</li>
 									</c:if>
-	    					<li>${userMissionDto.mission_start_date}</li>
+	    					<li class="mission_startDate">${userMissionDto.mission_start_date}</li>
 	    				</ul>
 	    			</div>
 	    			</c:forEach>

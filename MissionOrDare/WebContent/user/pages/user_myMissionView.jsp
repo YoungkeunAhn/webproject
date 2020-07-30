@@ -10,7 +10,7 @@
     <script src="${project}asset/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/23971e572d.js"></script>
     <title>마이미션뷰 페이지</title>
 </head>
 <body>
@@ -34,7 +34,7 @@
     <article>
     	
         <section class="mission-info-view">
-        	<img class="goMain" src="${project}images/exit.png" onclick="GoMainPage()">
+        	<span class="goMain" onclick="GoMainPage()">메인으로</span>
             <input id="mission_info_id" type="hidden" value="${randomMission.mission_info_id}">
             <label>${randomMission.large_category}/${randomMission.small_category}</label>
             <label>${randomMission.mission_title}</label>

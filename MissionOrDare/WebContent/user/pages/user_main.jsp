@@ -116,28 +116,31 @@
 
 
 			<!-- 미션받기 버튼 -->
-			<div id="flip" class="slider">
-				<img src="${project}images/plus.png" alt="slide">
+			<input id="mission_level" type="hidden" value="normal">
+			<input id="mission_categoryArea" type="hidden" value="my">
+			<div class="slider-btn-align">
+				<img id="flip" class="slider" src="${project}images/dice.png">
+				<i class="fas fa-angle-double-up"></i>
+				<div>미션받기</div>
 			</div>
-			<section id="panel" class="mission-select">
-				<input id="mission_level" type="hidden" value="normal"> <input
-					id="mission_categoryArea" type="hidden" value="my">
-				<div class="col">
-					<button style="background-color: #4b493d" class="btn-normal" type="button" onclick="NormalBtnClick()">일반
-						미션</button>
-					<button class="btn-challenge" type="button"
-						onclick="ChallengeBtnClick()">챌린지 미션</button>
+			<div class="list-up-back hidden"></div>
+			<div class="list-up-bg">
+				<div class="list-up-item">
+					<button class="btn btn-normal" type="button" onclick="NormalBtnClick()">일반미션</button>
+					<button class="btn btn-challenge" type="button"	onclick="ChallengeBtnClick()">챌린지 미션</button>
 				</div>
-				<div id="modal-bg" class="modal-bg" onclick="CloseModal()">
-					<div class="modal-body">
-						<button class="btn myCategory" type="button"
-							onclick="InterestBtnClick()">관심분야</button>
-						<button class="btn allCategory" type="button"
-							onclick="AllCategoryBtnClick()">전체분야</button>
-					</div>
+			</div>
+			<div id="modal-bg" class="modal-bg" onclick="CloseModal()">
+				<div class="modal-body">
+					<button class="btn myCategory" type="button"
+						onclick="InterestBtnClick()">관심분야</button>
+					<button class="btn allCategory" type="button"
+						onclick="AllCategoryBtnClick()">전체분야</button>
 				</div>
-			</section>
+			</div>
+			
 		</article>
+		
 
 		<!--메뉴바-->
 		<nav>
@@ -161,51 +164,8 @@
 			    $("#menu_list").slideToggle("slow");
 			  });
 			});
-	   		
-	    var cnt = 1;
-	    $(document).ready(function () {
-	        $('#flip').click(function () {
-	            if(cnt%2 === 1){
-	                $('#flip').css({
-	                    position: 'relative',
-	                    top: '-80px',
-	                    duration: '5s',
-	                });
-	                $('#flip > img').attr('src','${project}images/minus.png');
-	                $('#panel').css({
-	                    position: 'relative',
-	                    top: '-80px',
-	                });
-	                $('#panel').fadeIn('5000');
-	            }else {
-	                $('#flip').css({
-	                    position: 'relative',
-	                    top: '0',
-	                    duration: '5s',
-	                });
-	                $('#flip > img').attr('src','${project}images/plus.png');
-	                $('#panel').css({
-	                    position: 'relative',
-	                    top: '80px',
-	                });
-	                $('#panel').fadeOut('1000');
-	            }
-	            cnt++
-	        });
-	    });
-	/*
-	    var swiper = new Swiper('.swiper-container', {
-	        navigation: {
-	            nextEl: '.swiper-button-next',
-	            prevEl: '.swiper-button-prev',
-	        },
-	    });
-	  */  
+ 
 	   var swiper =  new Swiper('.swiper-container', {
-	    	pagination : { // 페이징 설정
-	    		el : '.swiper-pagination',
-	    		clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
-	    	},
 	    	navigation : { // 네비게이션 설정
 	    		nextEl : '.swiper-button-next', // 다음 버튼 클래스명
 	    		prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
@@ -215,5 +175,61 @@
 	    
 	  //-->
 </script>
+
+<script>
+//!<--
+	const slideUpButton = document.getElementById('flip');
+	const sliderItem = document.querySelector('.list-up-item');
+	const sliderBack = document.querySelector('.list-up-back');
+	
+	let cnt = 0;
+	
+	function slideToggle(){
+		if(cnt == 0){
+			sliderItem.classList.add('slideUp');
+			slideUpButton.classList.add('rolling');
+			sliderItem.classList.remove('slideDown');
+			sliderBack.classList.remove('hidden');
+			cnt  = 1;
+		}else{
+			
+			sliderItem.classList.add('slideDown');
+			sliderBack.classList.add('hidden');
+			slideUpButton.classList.remove('rolling');
+			sliderItem.classList.remove('slideUp');
+			cnt  = 0;
+		}
+		
+	}
+	
+	function slideDown(){
+		sliderItem.classList.remove('slideUp');
+		sliderItem.classList.add('slideDown');
+		sliderBack.classList.add('hidden');
+		slideUpButton.classList.remove('rolling');
+		cnt  = 0;
+	}
+	slideUpButton.addEventListener('click',slideToggle);
+	sliderBack.addEventListener('click',slideDown)
+//-->
+</script>
+
 </body>
+<style>
+	.slideUp{
+		transition: 2.5s;
+		transform: translateY(-1.5in);	
+	}
+	.slideDown{
+		transition: 2.5s;
+		transform: translateY(1.5in);	
+	}
+	.hidden{
+		display: none;
+	}
+	.rolling{
+		transition: 5s;
+		transform: translateY(-0.7in) rotate(20turn) scale(1.4, 1.4);
+	}
+</style>
 </html>

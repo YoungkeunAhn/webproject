@@ -44,6 +44,7 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-bottom: 5px;
 }
 
 #profile .img-circle{
@@ -114,7 +115,7 @@ nav{
     padding: 0 20px;
     border-radius: 10px;
     margin: 5% 0 0 0;
-    z-index: 1;
+    z-index: 10;
     position: fixed;
     bottom: 0px;
     left: 0;
@@ -408,22 +409,74 @@ ol{
     padding: 5% 32%;
     color: white;
 }
+.slider-btn-align{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: -60px;
+	font-size: 1.5rem;
+	color: #888;
+}
+.slider-btn-align i{
+	padding-top: 80px;
+}
 .slider{
-    width: 100%;
+    width: 30px;
     text-align: center;
     padding: 0;
-    z-index: 1;
-    background: none;
+    z-index: 10;
+    margin: 1px auto;
+    position: absolute;
+    
 }
 
-.slider img{
-    width: 30px;
-    height: 30px;
-    background-color: white;
-    border-radius: 40px;
-}
+
 .slider img:hover{
     cursor: pointer;
+}
+
+.list-up-bg{
+	width: 100%;
+	height: 150px;
+	position: absolute;
+    bottom: 54px;
+    left: 0;
+    z-index: 8;
+    overflow: hidden;
+}
+.list-up-item{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: #fafafa;
+    height: 150px;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    top: 146;
+}
+.list-up-back{
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	width: 100%;
+	height: 100%;
+	z-index:3;
+}
+.list-up-item button{
+	width: 100px;
+}
+.list-up-item .btn-normal{
+    background-color: #4b493d;
+    color: #fafafa;
+}
+
+.list-up-item .btn-challenge{
+    background-color: #4b493d;
+	color: #fafafa;
 }
 
 @media screen and (max-width: 635px) {
@@ -457,18 +510,11 @@ ol{
     color: white;
 }
 
-.btn-nomal{
-    background-color: yellow;
-}
 
-.btn-challenge{
-    background-color: #4b493d;
-
-}
 
 .modal-bg{
     position: fixed;
-    z-index: 1;
+    z-index: 30;
     left: 0;
     top: 0;
     background-color: rgba(0,0,0,0.4);
@@ -517,7 +563,6 @@ ol{
 
 
 
-
 /**********************************************
 
         user_missionInfoView
@@ -532,17 +577,17 @@ ol{
 }
 .mission-info-view .goMain{
 	display: block;
-	margin: 10px 10px 0 0;
-	width: 30px;
+	margin: 15px 0 0 0;
+	width: 50px;
 	height: 30px;
 	position: fixed;
 	right: 30px;
 	top: 10px;
+	color: #e21913d9;
+	font-size: 1rem;
 }
 .mission-info-view .goMain:hover{
 	cursor: pointer;
-	width: 33px;
-	height: 33px;
 }
 
 .mission-info-view label{
@@ -562,13 +607,23 @@ ol{
     margin: 10px auto;
 }
 
+.mission-info-view .btn-line{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+
+
+
+
 .btn-line{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 10px;
-    position: relative;
-    top: -20px;
+    
 }
 
 .btn-line button{
@@ -854,15 +909,16 @@ list ::-webkit-scrollbar {
 .successbtn{
 	border:0px;
 	background-color: #fd7f42;
-	width:50%;
+	width:44%;
 	border-radius: 10px;
-	height: 44.3px;
+	height: 40px;
 	color:white;
 }
 .deletebtn{
 	border:0px;
 	background-color: #4b493d;
-	width:50%;
+	width:44%;
+	height: 40px;
 	border-radius: 10px;
 	color:white;
 }
@@ -893,6 +949,23 @@ list ::-webkit-scrollbar {
 .item2 {
    position: relative;
       top: -2.5rem;
+}
+
+.eval-btn-line{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+	position: relative;
+    top: -80px;
+}
+.eval-btn-line button{
+    padding-top: 3%;
+    width: 42.58%;
+    height: 100%;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: none;
 }
 /**********************************************
 
@@ -1048,9 +1121,9 @@ div .write-control{
 
 
 .imymemine{
-    height: 64%;
+    height: 60%;
     width: 100%;
-    margin: 5px auto;
+    margin: 30px auto;
     text-align: center;
     background: rgba(255,255,255,0.4);
     padding: 10px 0 0 0;
@@ -1087,7 +1160,7 @@ div .write-control{
 	max-width: 61%;
 }
 .myMissionList-items ul .mission_title{
-	magin: 10px auto;
+	margin: 10px auto;
 }
 .myMissionList-items ul .text-default{
 	color: black;
@@ -1101,6 +1174,9 @@ div .write-control{
 .myMissionList-items ul .text-primary{
 	color: #63b5e5;
 	display: block;
+}
+.myMissionList-items ul .mission_startDate{
+	font-size: 1rem;
 }
 /**********************************************
 
