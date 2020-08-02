@@ -26,6 +26,11 @@
 	<select id="withdrawlCheck" parameterType="int" resultType="int">
 		select count(*) from mod_users where kakao_id=#{kakao_id} and withdrawal_date is not null
 	</select>
+	
+	<update id="withdrawalUp" parameterType="int">
+		update mod_users set withdrawal_date=sysdate where kakao_id=#{kakao_id}
+	</update>
+	
 	<update id="updateUser" parameterType="Dtos.UsersDto" >
 		update mod_users set user_nickname=#{user_nickname}, user_email=#{user_email,jdbcType=VARCHAR},
 		user_passwd=#{user_passwd}, gender=#{gender,jdbcType=VARCHAR}, age_group=#{age_group,jdbcType=VARCHAR},

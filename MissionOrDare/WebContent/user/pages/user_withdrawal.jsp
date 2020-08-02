@@ -62,10 +62,10 @@
 			 		<span>회원탈퇴</span>
 			 	</div>		 	
 			 	<div class="withdrawalpasswd">
-			 	<input style="border:0px; border-radius: 10px;" type="password" name="passwd" value="">
-			 	<button style="border:0px; border-radius: 10px; background-color: white;" id="myBtn" class="myCategory" type="button">확인</button>
+			 	<input style="border:0px; border-radius: 10px;" type="password"  value="">
+			 	<button style="border:0px; border-radius: 10px; background-color: white;" name="passwd" id="myBtn" class="myCategory" type="button">확인</button>
 			 	</div>
-			 			 	
+			 	
 				<!-- Trigger/Open The Modal -->
 				<!-- The Modal -->
 				<div id="myModal" class="modal">
@@ -74,7 +74,7 @@
 				  <div class="modal-content">
 				    <span class="close">&times;</span>
 				    <p>회원탈퇴를 진짜 할고야..?</p>
-				    <button style="border:0px; text-align: left; " type="button" onclick="location.href='user_main.do';">Yes 옥희 푸키요!</button>
+				    <button style="border:0px; text-align: left; " type="button" onclick="location.href='user_withdrawalPro.do'">Yes 옥희 푸키요!</button>
 				  </div>
 				</div>
 			</div>
