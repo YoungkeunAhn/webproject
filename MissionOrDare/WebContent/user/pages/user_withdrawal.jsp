@@ -63,9 +63,9 @@
 			 	</div>		 	
 			 	<div class="withdrawalpasswd">
 			 	<input style="border:0px; border-radius: 10px;" type="password" name="passwd" value="">
-			 	<button style="border:0px; border-radius: 10px; background-color: white;" id="myBtn" class="myCategory" type="button">확인</button>
+			 	<button style="border:0px; border-radius: 10px; background-color: white;" id="myBtn" class="myCategory" type="button" onclick="'location='">확인</button>
 			 	</div>
-			 			 	
+			 	
 				<!-- Trigger/Open The Modal -->
 				<!-- The Modal -->
 				<div id="myModal" class="modal">

@@ -240,5 +240,5 @@ function GoLogoutPage() {
 	location.href='user_logout.jsp';
 }
 function GoWithdrawalPage() {
-	location.href='user_withdrawal.jsp';
+	location.href='user_withdrawal.do';
 }
