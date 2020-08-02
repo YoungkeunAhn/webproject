@@ -119,7 +119,7 @@
 			<input id="mission_level" type="hidden" value="normal">
 			<input id="mission_categoryArea" type="hidden" value="my">
 			<div class="slider-btn-align">
-				<img id="flip" class="slider" src="${project}images/dice.png">
+				<img id="flip" class="slider" src="${project}images/doratda.png">
 				<i class="fas fa-angle-double-up"></i>
 				<div>미션받기</div>
 			</div>
