@@ -26,4 +26,7 @@ public class UserMemberDBBean implements UserMemberDao{
 	public int updateUser(UsersDto usersDto) {
 		return session.update("Member.updateUser", usersDto);
 	}
+	public int withdrawalUp(int kakao_id) {
+		return session.update( "Member.withdrawalUp", kakao_id );
+	}
 }

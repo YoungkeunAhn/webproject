@@ -9,4 +9,5 @@ public interface UserMemberDao {
 	public String findNickname(int kakao_id);
 	public int withdrawlCheck(int kakao_id);
 	public int updateUser(UsersDto usersDto);
+	public int withdrawalUp(int kakao_id);
 }
