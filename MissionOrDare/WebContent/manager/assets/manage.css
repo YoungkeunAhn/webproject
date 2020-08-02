@@ -1,73 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans:400');
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,900&display=swap');
+:root{
+	--main-bg-color: black;
+	--main-font-color: #fafafa;
+	--main-logo-color: #fe1;
+	--main-menu-btn-color: #888;
+	--modal-bg-bgcolor: rgba(0,0,0,0.6);
+	--modal-content-bgcolor: #fafafa;
+}
+
 /***************************************
 
         layout
 
 ****************************************/
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
 body{
-    display: flex;
-    flex-direction: column;
-    
+	font-family: 'Noto Sans KR', sans-serif;
 }
 
-header{
-    margin: 10px auto;
-    padding-top: 10px;
-    width: 100%;
-    height: 100px;
-    text-align: center;
-    display: inline-block;
-    font-size: 30px;
-    font-weight: bold;
-
+.container{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	background: var(--main-bg-color);
+	min-width: 100%;
+	min-height: 100%;
 }
-
-
-header img{
-    width: 40px;
-    height: 40px;
+nav{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
 }
-
-header button{
-    width: 100px;
-    height: 40px;
-    border: none;
-    font-size: 15px;
+nav label{
+	color: var(--main-font-color);
+	font-family: 'Black Han Sans', sans-serif;
+	font-size: 1.7rem;
+	margin: 5px 50px;
 }
-header #myBtn{
-    margin-left: 70%;
-    background-color: #d9edf7;
+nav ul{
+	list-style: none;
+	margin: 0 100px 0 0;
+	padding: 0;
+	display: flex;
 }
-
+nav .btn-menu{
+	display: none;
+}
+@media screen and (max-width: 960px){
+	nav ul {
+		display: none;
+	}
+	nav .btn-menu{
+		display: inline;
+		color: var(--main-menu-btn-color);
+		margin: 0 30px 0 0;
+	}
+	nav .btn-menu:hover{
+		color: var(--main-font-color);
+	}
+}
+nav ul li{
+	margin: 5px 10px;
+}
+nav a, a:hover, a:link{
+	color: var(--main-font-color);
+	text-decoration: none;
+}
 article{
-    padding: 20px;
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	min-height: 600px;
+	text-align: center;
+	background: var(--main-bg-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-
+article .under_text{
+	color: var(--main-bg-color);
+	font-size: 40rem;
+	-webkit-text-stroke-width: 5px;
+	-webkit-text-stroke-color: #fe1;
+	font-family: 'Barlow', sans-serif;
+}
+footer{
+	width: 100%;
+	color: var(--main-font-color);
+	text-align: center;
+	padding: 20px 0;
+}
 
 /***************************************
 
     modal
 
 ****************************************/
-.modal{
-    display: none;
+.modal-bg{
     position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.4);
+    background-color: var(--modal-bg-bgcolor);
 }
 
-.modal .modal-content {	
-    background-color: white;
-    margin: 5% auto;
+.modal-bg .modal-content {
+    background-color: var(--modal-content-bgcolor);
     padding: 10px;
     border: 1px solid #888;
     width: 50%;
+	margin: 20% auto;
 }
 /* The Close Button */
 .close {

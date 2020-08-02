@@ -1,17 +1,17 @@
-var iderror = "아이디를 입력해주세요.";
-var passwderror = "비밀번호를 입력해주세요";
-var searcherror = "검색어를 입력해주세요";
-var messageerror = "메시지좀 입력해봐바";
-var categorybigerror = "대분류를 입력해봐용^{}^";
-var categorysmallerror = "소분류를 입력해봐용^*^";
-var missiontitleerror = "제목을 입력해주라좀~~";
-var missionContentError = "내용을 입력하세요";
-var missionlargecategoryerror = "대분류를 선택해주세요";
-var missionsmallcategoryerror = "소분류를 선택해주세요";
-var missionscoreerror = "점수를 입력해주세요";
-var inputTypeError = '올바른 값을 입력하시오!!!!!!!!!!!!!!!!!!!!!!!!!!';
-var manageriderror = "관리자님 관리자아이디를 입력해주세요";
-var managerpasswderror = "관리자님 관리자 비밀번호를 입력해주세요";
+const iderror = "아이디를 입력해주세요.";
+const passwderror = "비밀번호를 입력해주세요";
+const searcherror = "검색어를 입력해주세요";
+const messageerror = "메시지좀 입력해봐바";
+const categorybigerror = "대분류를 입력해봐용^{}^";
+const categorysmallerror = "소분류를 입력해봐용^*^";
+const missiontitleerror = "제목을 입력해주라좀~~";
+const missionContentError = "내용을 입력하세요";
+const missionlargecategoryerror = "대분류를 선택해주세요";
+const missionsmallcategoryerror = "소분류를 선택해주세요";
+const missionscoreerror = "점수를 입력해주세요";
+const inputTypeError = '올바른 값을 입력하시오!!!!!!!!!!!!!!!!!!!!!!!!!!';
+const manageriderror = "관리자님 관리자아이디를 입력해주세요";
+const managerpasswderror = "관리자님 관리자 비밀번호를 입력해주세요";
 
 //로그인
 function logincheck() {
