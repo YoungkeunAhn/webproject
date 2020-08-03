@@ -7,11 +7,13 @@
 	<select id="getSuccessMissions" resultType="Dtos.MissionStateSuccessBoardDto">
 		select m.*, s.success_board_id, s.success_board_contents, s.likecount, s.views, s.board_register_date
 		from mod_missionstate m, mod_successboard s where m.mission_state_id=s.mission_state_id
+		and m.upload_public_availability = 1
 		order by s.board_register_date desc
 	</select>
 	<select id="getSuccessPopularityMissions" resultType="Dtos.MissionStateSuccessBoardDto">
 		select m.*, s.success_board_id, s.success_board_contents, s.likecount, s.views, s.board_register_date
 		from mod_missionstate m, mod_successboard s where m.mission_state_id=s.mission_state_id
+		and m.upload_public_availability=1
 		order by s.likecount desc
 	</select>
 	
@@ -37,6 +39,7 @@
 		select m.*, s.success_board_id, s.success_board_contents, s.likecount, s.views, s.board_register_date
 		from mod_missionstate m, mod_successboard s where m.mission_state_id=s.mission_state_id
 		and m.user_nickname=#{searchUser}
+		and m.upload_public_availability=1
 		order by s.board_register_date desc
 	</select>
 	
@@ -48,6 +51,7 @@
         left outer join mod_missioncategory c
         on c.mission_category_id= i.mission_category_id 
         where c.large_category like '%'||#{searchCategory}||'%' or c.small_category like '%'||#{searchCategory}||'%'
+        and m.upload_public_availability=1
 	</select>
 	
 	<!-- 미션 상세정보 -->
@@ -128,4 +132,10 @@
 	<select id="selectProfile" parameterType="String" resultType="String">
 		select profile_picture from mod_users where user_nickname = #{reported_nickname}
 	</select>
+	
+	<!-- 공개여부 -->
+	<update id="availability" parameterType="String">
+		update MOD_MissionState set upload_public_availability=0 where mission_state_id=(select mission_state_id
+		from mod_successboard where success_board_id=#{success_board_id})
+	</update>
 </mapper>
