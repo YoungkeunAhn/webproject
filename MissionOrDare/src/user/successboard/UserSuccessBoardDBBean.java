@@ -94,4 +94,9 @@ public class UserSuccessBoardDBBean implements UserSuccessBoardDao {
 	public String selectProfile(String reported_nickname) {
 		return session.selectOne("success.selectProfile",reported_nickname);
 	}
+	
+	//공개여부
+	public int availability(String mission_state_id) {
+		return session.insert("success.availability",mission_state_id);
+	}
 }

@@ -54,6 +54,7 @@ public class UserContent implements CommandHandler{
 		int likeval = userSuccessBoardDao.checkLike(likeDto);
 		int totalLikeCount = userSuccessBoardDao.selectLikeCount(success_board_id);
 		
+		//공개여부
 		
 		
 		request.setAttribute("totalLikeCount", totalLikeCount);

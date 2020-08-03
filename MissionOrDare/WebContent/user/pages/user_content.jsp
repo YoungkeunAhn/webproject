@@ -41,9 +41,11 @@
 	   alert(reply_id);
 	   location.href="user_report.do?reply_id="+reply_id+"&success_board_id="+success_board_id;
    }
-   var cnt = 1;
-   function changeImg() {
-      var img1 = document.getElementById("img1");
+   //var cnt = 1;
+   function changeImg(success_board_id) {
+	  location.href="publicAvailability.do?mission_state_id="+success_board_id; 
+      /*
+	  var img1 = document.getElementById("img1");
       var img2 = document.getElementById("img2");
       
       if(cnt%2==1){
@@ -54,6 +56,7 @@
          img2.src="${project}images/pngwing.png";
       }
       cnt++;
+      */
    }
    
    </script>
@@ -74,10 +77,9 @@
 							<button class="btn btn-link" type="submit">신고</button>
 						</div> 
 						<c:if test="${sessionScope.user_nickname eq user_info.user_nickname}">
-							<div style="position: absolute; top: 30px;" onclick="changeImg()">
-								<img id="img1" src="${project}images/pngegg.png"> <img
-									style="display: none" id="img2"
-									src="${project}images/pngwing.png"> 공개여부
+							<div style="position: absolute; top: 30px;" >
+								<img id="img1" src="${project}images/pngegg.png"> 
+								<button class="btn btn-link" type="button" onclick="location.href='publicAvailability.do?success_board_id=${success_board_id}'">비공개</button>	
 							</div>
 						</c:if>
 					</li>
@@ -278,7 +280,11 @@
               });
            });
         });
-      
+      	/*공개여부*/
+      	$(document).ready(function(){
+      		$("#")
+      	});
+      	
          //-->
      var swiper =  new Swiper('.swiper-container', {
           pagination : { // 페이징 설정
