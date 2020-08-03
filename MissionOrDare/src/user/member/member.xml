@@ -31,6 +31,10 @@
 		update mod_users set withdrawal_date=sysdate where kakao_id=#{kakao_id}
 	</update>
 	
+	<delete id="withdrawalDel" parameterType="int">
+		delete from mod_missionstate where user_nickname=(select user_nickname from mod_users where kakao_id=#{kakao_id})
+	</delete>
+	
 	<update id="updateUser" parameterType="Dtos.UsersDto" >
 		update mod_users set user_nickname=#{user_nickname}, user_email=#{user_email,jdbcType=VARCHAR},
 		user_passwd=#{user_passwd}, gender=#{gender,jdbcType=VARCHAR}, age_group=#{age_group,jdbcType=VARCHAR},

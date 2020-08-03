@@ -29,7 +29,10 @@ public class UserWithdrawalPro implements CommandHandler {
 		
 		if( resultCheck == 1 ) {
 			int result = userMemberDao.withdrawalUp( kakao_id );
+			int result2 = userMemberDao.withdrawalDel(kakao_id);
+		
 			request.setAttribute( "result", result );
+			request.setAttribute( "result2", result2 );
 		}						
 		return new ModelAndView( "user/pages/user_withdrawalPro" );
 	}

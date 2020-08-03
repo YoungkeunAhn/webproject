@@ -10,4 +10,5 @@ public interface UserMemberDao {
 	public int withdrawlCheck(int kakao_id);
 	public int updateUser(UsersDto usersDto);
 	public int withdrawalUp(int kakao_id);
+	public int withdrawalDel(int kakao_id);
 }

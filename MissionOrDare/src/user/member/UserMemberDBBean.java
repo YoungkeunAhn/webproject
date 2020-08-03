@@ -29,4 +29,7 @@ public class UserMemberDBBean implements UserMemberDao{
 	public int withdrawalUp(int kakao_id) {
 		return session.update( "Member.withdrawalUp", kakao_id );
 	}
+	public int withdrawalDel( int kakao_id ) {
+		return session.delete( "Member.withdrawalDel", kakao_id );
+	}
 }
