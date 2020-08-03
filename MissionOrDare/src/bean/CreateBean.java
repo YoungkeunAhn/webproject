@@ -8,6 +8,8 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
+import log.LogDBBean;
+import log.LogDao;
 import manager.managecontent.ManageContentDBBean;
 import manager.managecontent.ManageContentDao;
 import manager.managemessage.ManageMessageDBBean;
@@ -37,6 +39,12 @@ import user.userpage.UserUserPageDao;
 
 @Configuration
 public class CreateBean {
+	@Bean
+	public LogDao logDao() {
+		LogDao logDao = new LogDBBean();
+		return logDao;
+	}
+	
 	@Bean
 	public UserSuccessBoardDao userSuccessBoardDao() {
 		UserSuccessBoardDBBean userSuccessBoardDao = new UserSuccessBoardDBBean();
