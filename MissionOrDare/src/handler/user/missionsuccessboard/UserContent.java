@@ -1,5 +1,9 @@
 package handler.user.missionsuccessboard;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.annotation.Resource;
@@ -15,9 +19,13 @@ import Dtos.MissionCategoryAndInfoDto;
 import Dtos.MissionStateDto;
 import Dtos.UsersDto;
 import handler.CommandHandler;
+import log.LogDao;
 import user.successboard.UserSuccessBoardDao;
 @Controller
 public class UserContent implements CommandHandler{
+	@Resource
+	LogDao logDao;
+	
 	@Resource
 	UserSuccessBoardDao userSuccessBoardDao;
 	@RequestMapping("/user_content")
@@ -53,6 +61,29 @@ public class UserContent implements CommandHandler{
 		likeDto.setUser_nickname(user_nickname);
 		int likeval = userSuccessBoardDao.checkLike(likeDto);
 		int totalLikeCount = userSuccessBoardDao.selectLikeCount(success_board_id);
+		
+		try{
+            //파일 객체 생성
+			File file = new File("C:/log/successboard.txt");
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, true));
+            String datestr = logDao.getDate();
+            UsersDto userDto = logDao.usersData(user_nickname);
+            
+        	if(file.isFile() && file.canWrite()){
+	            bufferedWriter.write(datestr + "<!>");
+	            bufferedWriter.write(user_nickname + "<!>");
+	            bufferedWriter.write(userDto.getDate_of_birth() + "<!>");
+	            bufferedWriter.write(userDto.getGender() + "<!>");
+	            bufferedWriter.write(userDto.getJob() + "<!>");
+	            bufferedWriter.write(mission_info.getLarge_category() + "<!>");
+	            bufferedWriter.write(mission_info.getSmall_category() + "<!>");
+	            bufferedWriter.write(mission_info.getMission_title()+ "<!>");
+	            bufferedWriter.newLine();
+	            bufferedWriter.close();
+        	}
+        }catch (IOException e) {
+            System.out.println(e);
+        }
 		
 		//공개여부
 		
