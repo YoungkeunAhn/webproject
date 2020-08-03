@@ -10,6 +10,15 @@
 	--main-menu-btn-color: #888;
 	--modal-bg-bgcolor: rgba(0,0,0,0.6);
 	--modal-content-bgcolor: #fafafa;
+
+	--sub-bgcolor: #fafafa;
+
+	--sub-btn-primary-bgcolor: #222222f5;
+	--sub-btn-danger-bgcolor: #d12b2b;
+	--sub-btn-success-bgcolor: #627cdc;
+
+	--sub-table-pageing-color: #0c0c0c;
+
 }
 
 /***************************************
@@ -30,6 +39,7 @@ body{
 	background: var(--main-bg-color);
 	min-width: 100%;
 	min-height: 100%;
+	padding: 0;
 }
 nav{
 	width: 100%;
@@ -37,12 +47,17 @@ nav{
 	justify-content: space-between;
 	align-items: center;
 	padding: 20px;
+	background: none;
+	position: fixed;
 }
 nav label{
 	color: var(--main-font-color);
 	font-family: 'Black Han Sans', sans-serif;
 	font-size: 1.7rem;
 	margin: 5px 50px;
+}
+nav label:hover{
+	cursor: pointer;
 }
 nav ul{
 	list-style: none;
@@ -69,13 +84,20 @@ nav .btn-menu{
 nav ul li{
 	margin: 5px 10px;
 }
-nav a, a:hover, a:link{
+nav a, a:hover, a:link, a:visited{
 	color: var(--main-font-color);
 	text-decoration: none;
 }
+.change-nav label{
+	color: black;
+}
+.change-nav a, .change-nav a:link, .change-nav a:hover, .change-nav a:visited{
+	color: black;
+}
+
 article{
 	width: 100%;
-	min-height: 600px;
+	min-height: 662px;
 	text-align: center;
 	background: var(--main-bg-color);
 	display: flex;
@@ -86,9 +108,16 @@ article .under_text{
 	color: var(--main-bg-color);
 	font-size: 40rem;
 	-webkit-text-stroke-width: 5px;
-	-webkit-text-stroke-color: #fe1;
+	-webkit-text-stroke-color: #fafafa;
 	font-family: 'Barlow', sans-serif;
 }
+
+.sub-page{
+	background: var(--sub-bgcolor);
+	display: flex;
+	flex-direction: column;
+}
+
 footer{
 	width: 100%;
 	color: var(--main-font-color);
@@ -131,38 +160,64 @@ footer{
     text-decoration: none;
     cursor: pointer;
 }
+
+
+
 /***********************************************
 
-    LoginPage Modal
-    
+    sub page public
+
 ************************************************/
-.loginModal{
+.sub-page .btn-primary{
+	background: var(--sub-btn-primary-bgcolor);
+}
+.sub-page .btn-success{
+	background: var(--sub-btn-success-bgcolor);
+}
+.sub-page .btn-danger{
+	background: var(--sub-btn-danger-bgcolor);
+}
+.sub-page a, .sub-page a:hover, .sub-page a:link, .sub-page a:visited{
+	color: black;
+}
+
+.search-part{
 	width: 100%;
-	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px;
 }
-.loginModal ul{
-	list-style: none;
-	text-align: center;
-	margin: 0;
-	padding: 0;
+.search-part .btn-success{
+	margin-right: 100px;
 }
-.loginModal ul li i{
+@media screen and (max-width: 960px){
+	.search-part .btn-success{
+		margin-right: 50px;
+	}
+}
+.list-part{
+	width:100%;
+	padding: 20px;
+}
+
+.title-part{
+	background-image: url('../images/bg_3.jpg');
+	background-color: var(--main-bg-color);
+	background-size: cover;
+	color: var(--main-font-color);
+	width: 100%;
+	height: 700px;
+}
+.title-part div{
+	margin: 600px 0 0 100px;
+}
+.title-part h1{
+	margin: 30px 0;
 	font-size: 7rem;
-	margin: 20px auto 20px auto;
 }
-.loginModal ul li .title{
-	font-size: 3rem;
-	margin: 0 auto 30px auto;
-}
-.loginModal ul li input{
-	margin: 10px auto;
-}
-.loginModal ul li button{
-	margin: 25px auto 0 auto;
-	width: 	20%;
-	font-size: 1.7rem;
-	text-align: center;
-}
+
+
 
 /***********************************************
 
@@ -223,16 +278,7 @@ footer{
 }
 
 
-.search-part{
-    width: 100%;
-    display: inline-block;
-    padding: 20px;
-}
 
-.list-part{
-	width:100%;
-	padding: 20px;
-}
 /***********************************************
 
     Category_insert Modal

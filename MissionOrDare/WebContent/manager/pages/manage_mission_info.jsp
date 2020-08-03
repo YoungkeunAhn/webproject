@@ -10,34 +10,11 @@
     <!-- css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" content="text/css" href="${project}assets/css/manage.css">
+    <link rel="stylesheet" content="text/css" href="${project}assets/manage.css">
     
-  	<!-- 디자인 css -->
-  	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="${project}assets/css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="${project}assets/css/animate.css">
-    
-    <link rel="stylesheet" href="${project}assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="${project}assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="${project}assets/css/magnific-popup.css">
-
-    <link rel="stylesheet" href="${project}assets/css/aos.css">
-
-    <link rel="stylesheet" href="${project}assets/css/ionicons.min.css">
-
-    <link rel="stylesheet" href="${project}assets/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="${project}assets/css/jquery.timepicker.css">
-
-    
-    <link rel="stylesheet" href="${project}assets/css/flaticon.css">
-    <link rel="stylesheet" href="${project}assets/css/icomoon.css">
-    <link rel="stylesheet" href="${project}assets/css/style.css">
   	
     <!-- js -->
-    <script src="${project}assets/js/script.js"></script>
+    <script src="${project}assets/script.js"></script>
     <title>미션정보페이지</title>
     
     <style>
