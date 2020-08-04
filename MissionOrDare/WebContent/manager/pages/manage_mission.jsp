@@ -9,45 +9,13 @@
     <!-- css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="${project}assets/css/manage.css">
-    
-    <!-- 디자인 css -->
-  	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="${project}assets/manage.css">
 
-    <link rel="stylesheet" href="${project}assets/css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="${project}assets/css/animate.css">
-    
-    <link rel="stylesheet" href="${project}assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="${project}assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="${project}assets/css/magnific-popup.css">
-
-    <link rel="stylesheet" href="${project}assets/css/aos.css">
-
-    <link rel="stylesheet" href="${project}assets/css/ionicons.min.css">
-
-    <link rel="stylesheet" href="${project}assets/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="${project}assets/css/jquery.timepicker.css">
-
-    
-    <link rel="stylesheet" href="${project}assets/css/flaticon.css">
-    <link rel="stylesheet" href="${project}assets/css/icomoon.css">
-    <link rel="stylesheet" href="${project}assets/css/style.css">
-    
-    
     <!-- js -->
-    <script src="${project}assets/js/script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-            crossorigin="anonymous"></script>
+    <script src="${project}assets/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <title>미션관리페이지</title>
 	
-	<style>
-		.overlay{
-		height: 500px;
-		}
-	</style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -86,18 +54,7 @@
 	      </div>
 	    </div>
 	  </nav>
-	  
-	  <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('${project}images/bg_3.jpg'); style="height:550px;">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text align-items-end" style="height:550px;">
-          <div class="col-md-9 ftco-animate pb-5">
-            <h2 class="mb-3 bread">미션관리</h2>
-            <p class="breadcrumbs"><span class="mr-2"><a href="${pageContext.request.contextPath}/index.do">Home > </a></span> <span>미션관리 > </span></p>
-          </div>
-        </div>
-      </div>
-    </section>
+
     
         <section class="mission-search">
         <form method="post" action="manage_mission.do" name="missionho" onsubmit="return searchCheck2()">
@@ -194,39 +151,33 @@
     </footer>
     
 </div>
-<div id="missionInfoModal" class="modal">
-</div>
-<div id="missionInsertModal" class="modal">
+
+<div id="missionInsertModal" class="modal-bg hidden">
+	<div class="modal-content">
+
+	</div>
 </div>
 
-<div id="missionInsertModal" class="modal">
-</div>
 <script>
     $(document).ready(function () {
-            $('#missionInsertModal').load('manage_mission_insert.do');
+            $('#missionInsertModal > .modal-content').load('manage_mission_insert.do');
         }
     );
 </script>
+<script>
+	const missionInsertModal = document.getElementById('missionInsertModal');
+	function OnMissionInsertModal(){
+		missionInsertModal.classList.remove('hidden');
+	}
+	missionInsertModal.addEventListener('click',function (){
+		missionInsertModal.classList.add('hidden');
+	},false)
 
-<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
-  <script src="${project}assets/js/jquery.min.js"></script>
-  <script src="${project}assets/js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="${project}assets/js/popper.min.js"></script>
-  <script src="${project}assets/js/bootstrap.min.js"></script>
-  <script src="${project}assets/js/jquery.easing.1.3.js"></script>
-  <script src="${project}assets/js/jquery.waypoints.min.js"></script>
-  <script src="${project}assets/js/jquery.stellar.min.js"></script>
-  <script src="${project}assets/js/owl.carousel.min.js"></script>
-  <script src="${project}assets/js/jquery.magnific-popup.min.js"></script>
-  <script src="${project}assets/js/aos.js"></script>
-  <script src="${project}assets/js/jquery.animateNumber.min.js"></script>
-  <script src="${project}assets/js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="${project}assets/js/google-map.js"></script>
-  <script src="${project}assets/js/main.js"></script>
-  
-
+</script>
 </body>
+<style>
+	.hidden{
+		display: none;
+	}
+</style>
 </html>

@@ -63,7 +63,7 @@
 
 
 <div id="mobal-bg" class="modal-bg hidden">
-	<div class="modal-content" onclick="event.cancelBubble=true">
+	<div class="index-modal-content" onclick="event.cancelBubble=true">
 		<span class="close">&times;</span>
 		<form class="loginModal" name="loginform" action="${pageContext.request.contextPath}/manage_loginPro.do" onsubmit="return logincheck()">
 			<ul>

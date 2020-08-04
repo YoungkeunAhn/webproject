@@ -163,18 +163,34 @@
 </div>
 
 <div id="categoryInfoModal" class="modal-bg hidden">
+	<div class="modal-content" onclick="event.cancelBubble=true">
 
+	</div>
 </div>
+<script>
+	$(document).ready(function (){
+		$('#categoryInfoModal > .modal-content').load('manage_category_insert.do');
+	});
+</script>
+
 
 <div id="missionInsertModal" class="modal-bg hidden">
+	<div class="modal-content" onclick="event.cancelBubble=true">
 
+	</div>
 </div>
+<script>
+	$(document).ready(function (){
+		$('#missionInsertModal > .modal-content').load('manage_mission_insert.do');
+	});
+</script>
+
 
 <script>
 	//<!--
 	const menu = document.getElementById('menu');
 	const navItems = document.querySelector('.nav-items');
-	const modalBg = document.getElementById('mobal-bg');
+	const modalBg = document.getElementById('modal-bg');
 	const closeBtn = document.querySelector('.close');
 
 	function toggleNav(){
@@ -258,6 +274,5 @@
 		border-bottom: 1px solid #888888;
 		z-index: 1;
 	}
-
 </style>
 </html>
