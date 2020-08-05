@@ -65,7 +65,7 @@
 		</div>
 	</section>
 	<article class="sub-page">
-		<section class="mission-search">
+		<section class="search-part">
 			<form method="post" action="manage_user.do" name="userho" onsubmit="return userCheck()">
 				<label>
 					<input class="form-control" type="search" name="searchUser" placeholder="유저 닉네임을 입력하세요">
@@ -73,7 +73,7 @@
 				<button class="btn btn-primary" type="submit" name="user-findinuser">${str_search}</button>
 			</form>
 		</section>
-		<section>
+		<section class="list-part">
 			<table class="table">
 				<thead>
 				<th>${str_user_kakaoId}</th>
