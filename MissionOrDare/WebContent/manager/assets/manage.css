@@ -206,6 +206,7 @@ footer{
 .list-part{
 	width:100%;
 	padding: 20px;
+	list-style: none;
 }
 .list-part div{
     position: absolute;
@@ -616,7 +617,7 @@ footer{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-    width: 100%;
+    width: 80%;
     height: 100%;
     padding: 20px 0;
 }
@@ -631,8 +632,12 @@ footer{
 	border: 1px solid #888;
 	border-radius: 4px;
 }
+.list-part li{
+	list-style: none;
+	margin-bottom: 10px;	
+}
 .message_sendPage .search_user{
-	
+
 }
 .message_sendPage .search_user form{
 	margin: 0;
