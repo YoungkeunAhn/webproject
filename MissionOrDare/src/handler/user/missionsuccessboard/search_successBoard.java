@@ -29,6 +29,9 @@ public class search_successBoard implements CommandHandler {
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
+		if(request.getSession().getAttribute("user_nickname") == null ) {
+			return new ModelAndView("user/user_index");
+		}
 		
 		String option = request.getParameter("option");
 		String search_input = request.getParameter("search_input");

@@ -23,9 +23,11 @@ public class ReplyList implements CommandHandler{
 	@RequestMapping("/replyList")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("user_nickname") == null ) {
+			return new ModelAndView("user/user_index");
+		}
 		
 		String success_board_id = request.getParameter("success_board_id");
-		System.out.println("success_board_id(핸들러)" +success_board_id);
 		
 		List<ReplyDto> replyDtos = userSuccessBoardDao.replyList(success_board_id);
 		

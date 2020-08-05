@@ -31,7 +31,9 @@ public class UserContent implements CommandHandler{
 	@RequestMapping("/user_content")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		
+		if(request.getSession().getAttribute("user_nickname") == null ) {
+			return new ModelAndView("user/user_index");
+		}
 		
 		
 		String success_board_id = request.getParameter("success_board_id");

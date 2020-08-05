@@ -28,6 +28,9 @@ public class UserEval implements CommandHandler {
 	@RequestMapping("/user_eval")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("user_nickname") == null ) {
+			return new ModelAndView("user/user_index");
+		}
 		
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		int result = userMissionEvalDao.missionCount();

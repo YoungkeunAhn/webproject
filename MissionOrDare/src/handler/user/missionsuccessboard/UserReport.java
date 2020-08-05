@@ -20,6 +20,10 @@ public class UserReport implements CommandHandler{
 	@RequestMapping("/user_report")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		if(request.getSession().getAttribute("user_nickname") == null ) {
+			return new ModelAndView("user/user_index");
+		}
 		String success_board_id = request.getParameter("success_board_id");
 		String reported_reply_id = request.getParameter("reply_id");
 		

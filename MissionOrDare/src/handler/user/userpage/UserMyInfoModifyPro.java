@@ -20,6 +20,10 @@ public class UserMyInfoModifyPro implements CommandHandler{
 	@RequestMapping("/user_myInfoModifyPro")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("user_nickname") == null ) {
+			return new ModelAndView("user/user_index");
+		}
+		
 		int kakao_id = (int) request.getSession().getAttribute("kakao_id");
 		String user_nickname = request.getParameter("user_nickname");
 		String user_passwd = request.getParameter("user_passwd");

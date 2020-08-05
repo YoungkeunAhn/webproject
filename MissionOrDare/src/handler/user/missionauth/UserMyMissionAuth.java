@@ -15,6 +15,9 @@ public class UserMyMissionAuth implements CommandHandler{
 	@RequestMapping("/user_myMissionAuth")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("user_nickname") == null ) {
+			return new ModelAndView("user/user_index");
+		}
 		
 		String mission_start_date = request.getParameter("mission_start_date");
 		String mission_category = request.getParameter("mission_category");

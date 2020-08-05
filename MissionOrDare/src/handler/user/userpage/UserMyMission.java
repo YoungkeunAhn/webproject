@@ -23,6 +23,9 @@ public class UserMyMission implements CommandHandler{
 	@RequestMapping("/user_myMissionCheck")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("user_nickname") == null ) {
+			return new ModelAndView("user/user_index");
+		}
 		
 		String mission_state_id = request.getParameter("mission_state_id");
 		
