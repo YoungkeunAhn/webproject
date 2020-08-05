@@ -73,7 +73,7 @@
 	            </tr>
 	            <tr>
 	                <td>미션번호</td>
-	                <td><input readonly name="mission_info_id" value="${missionCategoryAndInfoDto.mission_info_id}"></td>
+	                <td><input readonly name="mission_info_id2" value="${missionCategoryAndInfoDto.mission_info_id}"></td>
 	            </tr>
 	            <tr>
 	                <td><span>대분류</span></td>
