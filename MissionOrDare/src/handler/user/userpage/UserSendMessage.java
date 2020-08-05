@@ -14,7 +14,9 @@ public class UserSendMessage implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
-		
+		if(request.getSession().getAttribute("user_nickname") == null ) {
+			return new ModelAndView("user/user_index");
+		}
 		String nickname = request.getParameter("nickname");
 		if(nickname != null) {
 			request.setAttribute("nickname", nickname);

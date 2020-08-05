@@ -30,6 +30,9 @@ public class UserMain implements CommandHandler{
 	@RequestMapping("/user_main")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("user_nickname") == null ) {
+			return new ModelAndView("user/user_index");
+		}
 		
 		try{
             //파일 객체 생성

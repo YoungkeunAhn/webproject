@@ -19,6 +19,10 @@ public class UserMyInfoModify implements CommandHandler{
 	@RequestMapping("/user_myInfoModify")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("user_nickname") == null ) {
+			return new ModelAndView("user/user_index");
+		}
+		
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		
 		UsersDto usersDto = userUserPageDao.getUserInfo(user_nickname);

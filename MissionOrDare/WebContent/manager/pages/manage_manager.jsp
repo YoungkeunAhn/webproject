@@ -74,29 +74,30 @@
 				</label>
 				<button class="btn btn-primary btn-search" type="submit" name="search_findManager">검색</button>
 			</form>
+
+			<div class="manager-insert">
+				<form method="post" name="managerLoginCheck" action="${pageContext.request.contextPath}/manage_manager_insertPro.do"
+					  onsubmit="return logincheck1()">
+					<table class="table">
+						<tr>
+							<th>아이디</th>
+							<th>
+								<label><input class="form-control" type="text" name="manager_id"></label>
+							</th>
+							<th>비밀번호</th>
+							<th>
+								<label><input class="form-control" type="password" name="manager_passwd"></label>
+							</th>
+							<th colspan="2">
+								<button class="btn btn-primary" type="submit">등록</button>
+								<button class="btn btn-danger" type="reset">취소</button>
+							</th>
+						</tr>
+					</table>
+				</form>
+			</div>
 		</section>
-		<section class="manager-insert">
-			<form method="post" name="managerLoginCheck" action="${pageContext.request.contextPath}/manage_manager_insertPro.do"
-				  onsubmit="return logincheck1()">
-				<table class="table">
-					<tr>
-						<th>아이디</th>
-						<th>
-							<label><input class="form-control" type="text" name="manager_id"></label>
-						</th>
-						<th>비밀번호</th>
-						<th>
-							<label><input class="form-control" type="password" name="manager_passwd"></label>
-						</th>
-						<th colspan="2">
-							<button class="btn btn-primary" type="submit">등록</button>
-							<button class="btn btn-danger" type="reset">취소</button>
-						</th>
-					</tr>
-				</table>
-			</form>
-		</section>
-		<hr>
+
 		<section class="list-part">
 			<table class="table">
 				<thead>

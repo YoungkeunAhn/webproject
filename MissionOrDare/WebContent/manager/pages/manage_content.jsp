@@ -56,11 +56,11 @@
 		<div class="title-up">
 			<h1>게시글관리</h1>
 			<span>
-						Home
-						<i class="fas fa-chevron-right"></i>
-						User
-						<i class="fas fa-chevron-right"></i>
-					</span>
+				Home
+				<i class="fas fa-chevron-right"></i>
+				Content
+				<i class="fas fa-chevron-right"></i>
+			</span>
 		</div>
 	</section>
 	<article class="sub-page">

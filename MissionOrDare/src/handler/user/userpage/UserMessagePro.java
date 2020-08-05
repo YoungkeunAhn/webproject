@@ -14,6 +14,9 @@ public class UserMessagePro implements CommandHandler{
 	@RequestMapping("/user_messagePro")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if(request.getSession().getAttribute("user_nickname") == null ) {
+			return new ModelAndView("user/user_index");
+		}
 		return new ModelAndView("user/pages/user_messagePro");
 	}
 }
