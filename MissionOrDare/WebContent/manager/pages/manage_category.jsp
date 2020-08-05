@@ -146,22 +146,7 @@
 	<footer>@copyright All rights reserved | MissionOrDare | Simplefun | webProject</footer>
 </div>
 
-
-<div id="mobal-bg" class="modal-bg hidden">
-	<div class="modal-content" onclick="event.cancelBubble=true">
-		<span class="close">&times;</span>
-		<form class="loginModal" name="loginform" action="${pageContext.request.contextPath}/manage_loginPro.do" onsubmit="return logincheck()">
-			<ul>
-				<li><i class="fas fa-user-circle"></i></li>
-				<li><span class="title">${str_managerlogin}</span></li>
-				<li><input type="text" name="manager_id" placeholder="아이디" autofocus></li>
-				<li><input type="password" name="manager_passwd" placeholder="비밀번호"></li>
-				<li><button class="btn btn-primary" type="submit">${str_header_login}</button></li>
-			</ul>
-		</form>
-	</div>
-</div>
-
+<!-- 모달 -->
 <div id="categoryInfoModal" class="modal-bg hidden">
 	<div class="modal-content" onclick="event.cancelBubble=true">
 
@@ -185,7 +170,7 @@
 	});
 </script>
 
-
+<!-- nav -->
 <script>
 	//<!--
 	const menu = document.getElementById('menu');
