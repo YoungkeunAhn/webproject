@@ -39,6 +39,7 @@ function MessageSendCheck() {
  * user_join.jsp
 */
 function SignUpCheck() {
+	var chkKor = (/([^가-힣\x20])/i); //
 	var checkKor = /^[ㄱ-ㅎㅏ-ㅣ\x20]*$/gi;	//숫자는 입력가능하다
 	var checkSpc = /[~!@#$%^&*()_+|<>?:{}]/;
 	var regExp = /\s/g;	//띄어쓰기
@@ -50,9 +51,10 @@ function SignUpCheck() {
 	}else if( userJoinForm.gungbokCheck.value==1 ) {
 		alert("중복되는 닉네임은 사용할 수 없습니다.");
 		return false;
-	}else if( checkKor.test(userJoinForm.user_nickname.value) ||
+	}else if( 	checkKor.test(userJoinForm.user_nickname.value) ||
 			 	checkSpc.test(userJoinForm.user_nickname.value) ||
-			 	regExp.test(userJoinForm.user_nickname.value)) {
+			 	regExp.test(userJoinForm.user_nickname.value) || 
+			 	chkKor.test(userJoinForm.user_nickname.value) ) {
 		 alert(nicknameSpecialError);
 		 userJoinForm.user_nickname.focus();
 		 return false;
