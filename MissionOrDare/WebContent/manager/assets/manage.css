@@ -207,6 +207,11 @@ footer{
 	width:100%;
 	padding: 20px;
 }
+.list-part div{
+    position: absolute;
+    right: 31px;
+    bottom: -282px;
+}
 
 .title-part{
 	background-image: url('../images/bg_3.jpg');
