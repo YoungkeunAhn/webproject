@@ -16,14 +16,6 @@
 
   	<script src="${project}assets/script.js"></script>
   	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script>
-		$(document).ready(function(){
-			$('.modal').click(function(){
-            	$('.modal').css('display','none');
-            });
-		});
-	
-	</script>
   <title>관리자 메인 페이지</title>
 </head>
 
@@ -31,7 +23,7 @@
 <div class="container">
 	<nav>
 
-		<label id="logoBtn">MOD</label>
+		<label onclick="location.href='${pageContext.request.contextPath}/index.do'">MOD</label>
 		<div id="menu" class="btn-menu">
 			<i class="fas fa-bars"></i>
 			<span>MENU</span>
@@ -66,12 +58,12 @@
 		<input type="hidden" id='id' value="${sessionScope.memId}">
 		<section class="under_text">MOD</section>
 	</article>
-	<footer>@copyright MissionOrDare | Simplefun | webProject</footer>
+	<footer>@copyright All rights reserved | MissionOrDare | Simplefun | webProject</footer>
 </div>
 
 
 <div id="mobal-bg" class="modal-bg hidden">
-	<div class="modal-content" onclick="event.cancelBubble=true">
+	<div class="index-modal-content" onclick="event.cancelBubble=true">
 		<span class="close">&times;</span>
 		<form class="loginModal" name="loginform" action="${pageContext.request.contextPath}/manage_loginPro.do" onsubmit="return logincheck()">
 			<ul>
@@ -92,7 +84,6 @@
 	const loginBtn = document.querySelector('.btn-login');
 	const modalBg = document.getElementById('mobal-bg');
 	const closeBtn = document.querySelector('.close');
-	const logoBtn = document.getElementById('logoBtn');
 
 	function toggleNav(){
 		navItems.classList.toggle('slideDown');
@@ -106,9 +97,6 @@
 		modalBg.classList.add('hidden');
 	}
 
-	function goMain(){
-		location.href='';
-	}
 	menu.addEventListener('click',toggleNav,false);
 	loginBtn.addEventListener('click',openModal,false);
 	modalBg.addEventListener('click',closeModal,false);

@@ -21,6 +21,9 @@ public class UserMyMissionPro implements CommandHandler{
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		request.setCharacterEncoding("utf-8");
+		if(request.getSession().getAttribute("user_nickname") == null ) {
+			return new ModelAndView("user/user_index");
+		}
 		
 		MissionStateDto missionStateDto = new MissionStateDto();
 		missionStateDto.setMission_info_id(request.getParameter("mission_info_id"));

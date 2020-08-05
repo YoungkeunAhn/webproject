@@ -19,10 +19,12 @@ public class PublicAvailability implements CommandHandler{
 	@RequestMapping("/publicAvailability")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		System.out.println("여기로 들어와????");
+		if(request.getSession().getAttribute("user_nickname") == null ) {
+			return new ModelAndView("user/user_index");
+		}
+		
 		String success_board_id = request.getParameter("success_board_id");
 		
-		System.out.println("mission_state_id : "+success_board_id);
 		userSuccessBoardDao.availability(success_board_id);
 		
 	
