@@ -41,4 +41,5 @@ public interface UserSuccessBoardDao {
 	public String selectProfile(String reported_nickname);
 	
 	public int availability(String mission_state_id);
+
 }

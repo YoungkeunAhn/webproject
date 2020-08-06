@@ -58,6 +58,10 @@
       cnt++;
       */
    }
+   /*다른 유저 페이지로 이동*/
+	function moveAnotherUser(user_nickname){
+		location.href='user_anotherUser.do?user_nickname='+user_nickname;
+	}
    
    </script>
 </head>
@@ -137,13 +141,13 @@
 				<div class="reply" id="replyDiv"></div>
 
 				<div id="replyMenuModal" class="modal-bg" onclick="Close()">
-					<input id="reply_id" type="hidden"> <input
-						id="user_nickname" type="hidden">
+					<input id="reply_id" type="hidden" value="${reply_id}" name="reply_id"> 
+					<input id="user_nickname" type="hidden">
 					<ul onclick="event.cancelBubble=true">
 						<li><span class="user-nick"></span></li>
 						<li><span onclick="doPostMessage($('#user_nickname').val())">쪽지
 								보내기</span></li>
-						<li><span onclick="location.href='user_anotherUser.jsp'">프로필
+						<li><span onclick="moveAnotherUser($('#user_nickname').val())">프로필
 								방문</span></li>
 						<li><span class="text-danger"
 							onclick="doReport($('#reply_id').val(),$('#success_board_id').val())">신고하기</span></li>
@@ -178,6 +182,7 @@
 	</div>
 	<script type="text/javascript">
       //<!--
+      
       /*댓글 insert*/
       $(document).ready(function(){
 		$('#insert').click(function(){
@@ -246,6 +251,8 @@
 		$(document).ready(function(){
 			replyList();
 		});
+		
+		
 		
 		/* 좋아요 */
         $(document).ready(function(){
