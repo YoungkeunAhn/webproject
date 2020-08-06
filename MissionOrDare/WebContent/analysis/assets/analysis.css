@@ -33,6 +33,7 @@ nav{
     left: 0;
     background: var(--main-header-bgcolor);
     padding-top: 10px;
+    z-index: 2;
 }
 nav ul{
     list-style: none;
@@ -138,3 +139,23 @@ footer{
     height: 50px;
 }
 
+/**************************************
+
+    analysis_subPage_layout
+
+***************************************/
+.sub-page{
+    margin-top: 70px;
+}
+.sub-page section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    width: 90%;
+    height: 450px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    background: var(--white);
+}
