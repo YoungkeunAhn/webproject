@@ -19,10 +19,14 @@
    <div class="container">
            <form class="join-form" name="userModifyForm" action="user_myInfoModifyPro.do" onsubmit="return myInfoModifyCheck()">
            <input id="interesting_categorys" class="form-control" type="hidden" name="interesting_categorys" >
+           <input id="category1" type="hidden" value="${usersDto.interesting1_large_category}">
+           <input id="category2" type="hidden" value="${usersDto.interesting2_large_category}">
+           <input id="category3" type="hidden" value="${usersDto.interesting3_large_category}">
+           <input id="category4" type="hidden" value="${usersDto.interesting4_large_category}">
                <ul class="join-list">
                    <li>
                        <label class="th">닉네임 </label>
-                       <label><input class="form-control" type="text" maxlength="8" name="user_nickname" id="user_nickname" placeholder="insert into your nickname" value="${user_nickname}" readonly></label>
+                       <label><input class="form-control" type="text" maxlength="8" name="user_nickname" id="user_nickname" placeholder="insert into your nickname" value="${user_nickname}"></label>
                          <div class="checkResult" id="nicknameCheck"></div>
                        <label class="text text-mute">(특수문자 제외)8자 이내로 입력해주세요</label>
                    </li>
@@ -38,7 +42,7 @@
                    </li>
                    <li>
                        <label class="th"> 생년월일</label>
-                       <label><input class="form-control" type="text" name="user_birth" value="${usersDto.date_of_birth}" readonly></label>
+                       <label><input class="form-control" type="text" name="user_birth" value="${usersDto.date_of_birth}"></label>
                        <label class="text text-danger">생년월일을 입력해주세요</label>
                    </li>
                    <li>
@@ -121,9 +125,17 @@
    </div>
 </div>
    <script>
-   var items = '';
+   $(document).ready(function () {
+	   var value = '';
+	   if($('#category1').val()) {value += $('#category1').val() + "/";}
+	   if($('#category2').val()) {value += $('#category2').val() + "/";}
+	   if($('#category3').val()) {value += $('#category3').val() + "/";}
+	   if($('#category4').val()) {value += $('#category4').val() + "/";}
+	   $('#interesting_categorys').val(value);
+   });
     var interesting_categorys = document.getElementById('interesting_categorys');
     $(document).ready(function () {
+    	 var items = $('#interesting_categorys').val();
        $('.modal-bodyLeft > input').click(function () {
     	   if(items.search($(this).val()+'/') === -1){
         	   if( ( $('#interesting_categorys').val().split('/').length-1) < 4 ){
@@ -151,9 +163,9 @@
        });//click() end
     });//ready() end
    
-    var items = '';
     var interesting_categorys = document.getElementById('interesting_categorys');
     $(document).ready(function () {
+    	var items = $('#interesting_categorys').val();
        $('.modal-bodyRight > input').click(function () {
     	   if(items.search($(this).val()+'/') === -1){
         	   if( ( $('#interesting_categorys').val().split('/').length-1) < 4 ){

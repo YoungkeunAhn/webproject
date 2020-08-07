@@ -34,7 +34,12 @@
 	</insert>
 	
 	<update id="userModify" parameterType="Dtos.UsersDto">
-		update mod_users set user_nickname=#{user_nickname},user_passwd=#{user_passwd, jdbcType=VARCHAR}, job=#{job, jdbcType=VARCHAR}, location=#{location, jdbcType=VARCHAR}, date_of_birth= #{date_of_birth}
+		update mod_users set user_nickname=#{user_nickname},user_passwd=#{user_passwd, jdbcType=VARCHAR}, 
+		job=#{job, jdbcType=VARCHAR}, location=#{location, jdbcType=VARCHAR}, date_of_birth= #{date_of_birth},
+		interesting1_large_category=#{interesting1_large_category},
+		interesting2_large_category=#{interesting2_large_category, jdbcType=VARCHAR},
+		interesting3_large_category=#{interesting3_large_category, jdbcType=VARCHAR},
+		interesting4_large_category=#{interesting4_large_category, jdbcType=VARCHAR}
 		where kakao_id=#{kakao_id}
 	</update>
 	

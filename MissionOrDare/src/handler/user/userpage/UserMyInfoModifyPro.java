@@ -30,6 +30,8 @@ public class UserMyInfoModifyPro implements CommandHandler{
 		String date_of_birth = request.getParameter("user_birth");
 		String job = request.getParameter("user_job");
 		String location = request.getParameter("user_location");
+		String categorys = request.getParameter("interesting_categorys");
+		String[] category = categorys.split("/");
 		
 		UsersDto usersDto = new UsersDto();
 		usersDto.setUser_passwd(user_passwd);
@@ -38,6 +40,33 @@ public class UserMyInfoModifyPro implements CommandHandler{
 		usersDto.setLocation(location);
 		usersDto.setUser_nickname(user_nickname);
 		usersDto.setKakao_id(kakao_id);
+		
+		if(category.length==4) {
+			String interesting1_large_category = category[0];
+			String interesting2_large_category = category[1];
+			String interesting3_large_category = category[2];
+			String interesting4_large_category = category[3];
+			usersDto.setInteresting1_large_category(interesting1_large_category);
+			usersDto.setInteresting2_large_category(interesting2_large_category);
+			usersDto.setInteresting3_large_category(interesting3_large_category);
+			usersDto.setInteresting4_large_category(interesting4_large_category);
+		}else if(category.length==3) {
+			String interesting1_large_category = category[0];
+			String interesting2_large_category = category[1];
+			String interesting3_large_category = category[2];
+			usersDto.setInteresting1_large_category(interesting1_large_category);
+			usersDto.setInteresting2_large_category(interesting2_large_category);
+			usersDto.setInteresting3_large_category(interesting3_large_category);
+		}else if(category.length==2) {
+			String interesting1_large_category = category[0];
+			String interesting2_large_category = category[1];
+			usersDto.setInteresting1_large_category(interesting1_large_category);
+			usersDto.setInteresting2_large_category(interesting2_large_category);
+		}else if(category.length==1) {
+			String interesting1_large_category = category[0];
+			usersDto.setInteresting1_large_category(interesting1_large_category);
+		}
+		
 		
 		int result = userUserPageDao.userModify(usersDto);
 		if(result ==1) {
