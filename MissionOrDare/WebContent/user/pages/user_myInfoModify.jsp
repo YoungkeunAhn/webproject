@@ -133,9 +133,11 @@
 	   if($('#category4').val()) {value += $('#category4').val() + "/";}
 	   $('#interesting_categorys').val(value);
    });
-    var interesting_categorys = document.getElementById('interesting_categorys');
+    
     $(document).ready(function () {
+    	var interesting_categorys = document.getElementById('interesting_categorys');
     	 var items = $('#interesting_categorys').val();
+    	 alert(items);
        $('.modal-bodyLeft > input').click(function () {
     	   if(items.search($(this).val()+'/') === -1){
         	   if( ( $('#interesting_categorys').val().split('/').length-1) < 4 ){
@@ -161,11 +163,6 @@
                interesting_categorys.value = items;
            }//else end
        });//click() end
-    });//ready() end
-   
-    var interesting_categorys = document.getElementById('interesting_categorys');
-    $(document).ready(function () {
-    	var items = $('#interesting_categorys').val();
        $('.modal-bodyRight > input').click(function () {
     	   if(items.search($(this).val()+'/') === -1){
         	   if( ( $('#interesting_categorys').val().split('/').length-1) < 4 ){
