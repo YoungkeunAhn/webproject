@@ -18,6 +18,7 @@
              $('#profile_image').attr('src', URL.createObjectURL(e.target.files[0]));
          })
      });
+	 
     </script>
 </head>
 <body>
@@ -29,7 +30,7 @@
 				   		<div class="content-backcolor">	
 		                   <img class="content-defaultimage" id="profile_image" src="${project}images/auth_defalut.png" alt="auth_image" onclick="document.getElementById('upload').click(); document.getElementById('abc').value=document.getElementById('upload').value">
 		                   <input id="abc" type="text" name="abc" style="display:none;">
-		                   <input id="upload" class="file_upload" name="" type="file" accept="image/*, video/*" capture="camera" multiple style="display: none">
+		                   <input id="upload" class="file_upload" name="profile" type="file" accept="image/*, video/*" capture="camera" style="display: none">
 		            	</div>
 		            </div>
 		            <div class="profile-modifybtn">
