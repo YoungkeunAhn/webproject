@@ -9,7 +9,7 @@ var insertFileError = "미션 수행한 파일을 업로드해주세요";
 var categoryNullError = "카테고리를 1개 이상 선택해주세요"
 var sendMessageNullError = "보내고 싶은 내용을 입력해 주세요.";
 var userReportNullError = "신고내용을 적어주세요.";
-
+var giveupNullError = "중도포기 이유를 적어주세요";
 /*
  * 
  * 유효성 처리
@@ -129,6 +129,16 @@ function userReport(){
 /*
 *user_main.jsp
 */
+
+//메인페이지 중도포기 유효성
+function giveupCheck(){
+	if(! giveupForm.giveup_reason.value){
+		alert(userReportNullError);
+		giveupForm.giveup_reason.focus();
+		return false;
+	}
+}
+
 //모달 끄기
 function CloseModal() {
     document.getElementById('modal-bg').style.display='none';
@@ -179,6 +189,8 @@ function OnSearch(){
         search_result.style.display="none";
     }
 }
+
+
 /*
 *
 * myMissionAuth

@@ -21,8 +21,6 @@ body{
     background-size: cover;
     padding: 10px;
     font-family: 'Jua', sans-serif;
-    /*overflow-y: hidden;
-    overflow-x: hidden;*/
 }
 
 /**********************************************
@@ -117,7 +115,7 @@ nav{
     margin: 5% 0 0 0;
     z-index: 10;
     position: fixed;
-    bottom: 0px;
+    bottom: 0;
     left: 0;
     width: 100%;
 }
@@ -363,8 +361,14 @@ ol{
     font-size: 1.5rem;
     margin-top: 110px;
 }
+.data-exist .giveup{
+    font-size: 1.5rem;
+    text-align: right;
+    font-weight: bold;
+    color: red;
+}
 .data-exist .text-date{
-	margin-top: 15;
+	margin-top: 15px;
 }
 .data-exist .text-category{
     margin: 5px 0 0 0;
@@ -561,6 +565,51 @@ ol{
     height: 80px;
 }
 
+.giveup-content{
+    width: 70%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    font-family: 'Jua', sans-serif;
+}
+@media screen and (max-width: 900px){
+    .giveup-content{
+        width: 80%;
+        height: 50%;
+    }
+    .giveup-content  img{
+        width: 80%;
+    }
+    .giveup-content label{
+        width: 220px;
+        height: 60px;
+    }
+}
+.giveup-content img{
+    width: 50%;
+}
+.giveup-content label{
+    width: 200px;
+    height: 60px;
+    margin: 10px auto
+}
+.giveup-content label input{
+    width: 100%;
+    height: 100%;
+}
+.giveup-content ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
 
 
 /**********************************************
@@ -613,9 +662,6 @@ ol{
     justify-content: space-between;
     padding: 10px;
 }
-
-
-
 
 
 .btn-line{
@@ -974,7 +1020,7 @@ list ::-webkit-scrollbar {
 ***********************************************/
 .usermyArticle{
 	margin-top: 80px;
-	overflow: none;
+	overflow: hidden;
 }
 .userinfo-part{
 	width: 100%;
@@ -1807,22 +1853,6 @@ textarea:focus{
 	list-style : none;
 }
 
-/*
-.mission-info-view .goMain{
-	display: block;
-	margin: 10px 10px 0 0;
-	width: 30px;
-	height: 30px;
-	position: fixed;
-	right: 30px;
-	top: 10px;
-}
-.mission-info-view .goMain:hover{
-	cursor: pointer;
-	width: 33px;
-	height: 33px;
-}
-*/
 .btn-line{
     display: flex;
     flex-wrap: wrap;

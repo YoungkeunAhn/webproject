@@ -51,6 +51,7 @@
 				</ol>
 			</c:if>
 
+			<!-- 받은 미션이 있을 때 -->
 			<c:if test="${result ne 0}">
 				<div class="swiper-container">
 					<div class="swiper-button-prev"></div>
@@ -69,6 +70,7 @@
 												value="${userMissionsDto.mission_contents}"> 
 											<input type="hidden" name="mission_state"value="${userMissionsDto.mission_state}">
 											<input type="hidden" name="mission_state_id"value="${userMissionsDto.mission_state_id}">
+											<li class="giveup"><i class="far fa-window-close"></i></li>
 											<li class="text-date">${userMissionsDto.mission_start_date}
 												시작</li>
 											<li class="text-category">${userMissionsDto.large_category}/${userMissionsDto.small_category}</li>
@@ -181,7 +183,7 @@
 	const slideUpButton = document.getElementById('flip');
 	const sliderItem = document.querySelector('.list-up-item');
 	const sliderBack = document.querySelector('.list-up-back');
-	
+
 	let cnt = 0;
 	
 	function slideToggle(){
@@ -209,9 +211,43 @@
 		slideUpButton.classList.remove('rolling');
 		cnt  = 0;
 	}
+
 	slideUpButton.addEventListener('click',slideToggle);
-	sliderBack.addEventListener('click',slideDown)
+	sliderBack.addEventListener('click',slideDown);
 //-->
+</script>
+
+<div id="giveup-modal" class="modal-bg" onclick="event.stopPropagation()">
+	<div class="giveup-content" onclick="event.stopPropagation()">
+		<img src="${project}images/giveup.gif">
+		<form name="giveupForm" action="user_giveupPro.do" onsubmit="return giveupCheck()">
+			<ul>
+				<li>중도포기 사유</li>
+				<li>
+					<label>
+						<input type="text" class="form-control" maxlength="50" name="giveup_reason" placeholder="신고내용을 입력해주세요.">
+					</label>
+				</li>
+				<li>
+					<button class="btn btn-danger" type="submit">포기</button>
+					<button class="btn btn-primary" type="button">취소</button>
+				</li>
+			</ul>
+		</form>
+	</div>
+</div>
+<script>
+	const giveupButton = document.querySelector('.fa-window-close');
+	const giveupModal = document.getElementById('giveup-modal');
+
+
+	giveupButton.addEventListener('click',function (){
+		giveupModal.style.display="flex";
+	},false);
+
+	giveupModal.addEventListener('click',function (){
+		giveupModal.style.display="none";
+	},false);
 </script>
 
 </body>
@@ -224,9 +260,7 @@
 		transition: 2.5s;
 		transform: translateY(1.5in);	
 	}
-	.hidden{
-		display: none;
-	}
+
 	.rolling{
 		transition: 5s;
 		transform: translateY(-0.7in) rotate(20turn) scale(1.4, 1.4);
