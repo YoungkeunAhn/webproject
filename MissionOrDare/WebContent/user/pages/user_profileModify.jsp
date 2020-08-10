@@ -24,7 +24,7 @@
 <body>
 	<div class="container">
 	    <article>
-		    <form method="post" action="user_profileModifyPro.do" name="userProfile">
+		    <form method="post" action="user_profileModifyPro.do" name="userProfile" enctype="multipart/form-data">
 		    	<section class="profile-modify">
 			   		<div class="content-image"> 
 				   		<div class="content-backcolor">	
@@ -34,7 +34,7 @@
 		            	</div>
 		            </div>
 		            <div class="profile-modifybtn">
-		            	<button type="submit" class="profilemodifybtn">수정완료</button>
+		            	<button type="submit" class="profilemodifybtn" value="수정완료">수정완료</button>
 		            </div>
 		    	</section>
 		    </form>

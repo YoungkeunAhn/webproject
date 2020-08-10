@@ -39,7 +39,7 @@
 		interesting1_large_category=#{interesting1_large_category},
 		interesting2_large_category=#{interesting2_large_category, jdbcType=VARCHAR},
 		interesting3_large_category=#{interesting3_large_category, jdbcType=VARCHAR},
-		interesting4_large_category=#{interesting4_large_category, jdbcType=VARCHAR}
+		interesting4_large_category=#{interesting4_large_category, jdbcType=VARCHAR},
 		where kakao_id=#{kakao_id}
 	</update>
 	
