@@ -4,14 +4,10 @@
 @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean');
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,900&display=swap');
 :root{
-	--main-bg-color: black;
-	--main-font-color: #fafafa;
-	--main-logo-color: #fe1;
+	--black: black;
+	--white: #fafafa;
 	--main-menu-btn-color: #888;
 	--modal-bg-bgcolor: rgba(0,0,0,0.6);
-	--modal-content-bgcolor: #fafafa;
-
-	--sub-bgcolor: #fafafa;
 
 	--sub-btn-primary-bgcolor: #222222f5;
 	--sub-btn-danger-bgcolor: #d12b2b;
@@ -36,9 +32,8 @@ body{
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	background: var(--main-bg-color);
+	background: var(--black);
 	min-width: 100%;
-	min-height: 100%;
 	padding: 0;
 }
 nav{
@@ -51,7 +46,7 @@ nav{
 	position: fixed;
 }
 nav label{
-	color: var(--main-font-color);
+	color: var(--white);
 	font-family: 'Black Han Sans', sans-serif;
 	font-size: 1.7rem;
 	margin: 5px 50px;
@@ -78,14 +73,14 @@ nav .btn-menu{
 		margin: 0 30px 0 0;
 	}
 	nav .btn-menu:hover{
-		color: var(--main-font-color);
+		color: var(--white);
 	}
 }
 nav ul li{
 	margin: 5px 10px;
 }
 nav a, a:hover, a:link, a:visited{
-	color: var(--main-font-color);
+	color: var(--white);
 	text-decoration: none;
 }
 .change-nav label{
@@ -99,31 +94,33 @@ article{
 	width: 100%;
 	min-height: 662px;
 	text-align: center;
-	background: var(--main-bg-color);
+	background: var(--black);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 article .under_text{
-	color: var(--main-bg-color);
+	color: var(--black);
 	font-size: 40rem;
 	-webkit-text-stroke-width: 5px;
-	-webkit-text-stroke-color: #fafafa;
+	-webkit-text-stroke-color: var(--white);
 	font-family: 'Barlow', sans-serif;
 }
 
 .sub-page{
-	background: var(--sub-bgcolor);
+	background: var(--white);
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+	height: 100%;
 }
 
 footer{
 	width: 100%;
-	color: var(--main-font-color);
+	color: var(--white);
 	text-align: center;
 	padding: 20px 0;
-	background: var(--main-bg-color);
+	background: var(--black);
 }
 
 /***************************************
@@ -206,7 +203,6 @@ footer{
 .list-part{
 	width:100%;
 	padding: 20px;
-	list-style: none;
 }
 .list-part div{
     position: absolute;
@@ -216,9 +212,9 @@ footer{
 
 .title-part{
 	background-image: url('../images/bg_3.jpg');
-	background-color: var(--main-bg-color);
+	background-color: var(--black);
 	background-size: cover;
-	color: var(--main-font-color);
+	color: var(--white);
 	width: 100%;
 	height: 721px;
 }
@@ -338,42 +334,9 @@ footer{
 } 
 
 
-/***********************************************
 
-    MissionInfoPage
-    
-************************************************/
-.mission-info{
-    width: 100%;
-    height: 100%;
-}
-.mission-info form{
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-items: center;
-	align-items: center;
-	
-}
-.mission-info table{
-	text-align: center;
-	width: 70%;
-	margin: 20px 0 0 0;
-}
-.mission-info img{
-	border-radius: 4px;
-	width:300px;
-}
-.mission-info table button{
-	text-align: center;
-	width: 100px;
-	height: 50px;
-	margin: 5px 20px;
-}
-.mission-info input{
-	border: none;
-}
+
+
 /***************************************
 
     mission_insert Modal
@@ -445,10 +408,6 @@ footer{
     manamge_mission
 
 ****************************************/
-
-
-
-
 .mission-table table{
     text-align: center;
     width: 100%;
@@ -462,6 +421,39 @@ footer{
 }
 
 
+/***********************************************
+
+    MissionInfoPage
+
+************************************************/
+.info-page{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--white);
+}
+.info-page form{
+	width: 80%;
+	height: 80%;
+	margin: 0;
+	padding: 0;
+}
+.info-page form img{
+	width: 200px;
+	height: 200px;
+}
+.info-page form .btn-line{
+	text-align: center;
+	justify-content: space-around;
+	align-items: center;
+}
+.info-page form .btn-line button{
+	width: 200px;
+	height: 50px;
+	margin: 10px 50px;
+}
 /***************************************
 
     manamge_content_info
@@ -617,7 +609,7 @@ footer{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-    width: 80%;
+    width: 100%;
     height: 100%;
     padding: 20px 0;
 }
@@ -632,13 +624,7 @@ footer{
 	border: 1px solid #888;
 	border-radius: 4px;
 }
-.list-part li{
-	list-style: none;
-	margin-bottom: 10px;	
-}
-.message_sendPage .search_user{
 
-}
 .message_sendPage .search_user form{
 	margin: 0;
 	padding: 0;

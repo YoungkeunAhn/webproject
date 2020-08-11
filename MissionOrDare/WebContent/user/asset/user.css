@@ -459,7 +459,7 @@ ol{
     height: 150px;
     border-radius: 10px 10px 0 0;
     position: relative;
-    top: 146;
+    top: 146px;
 }
 .list-up-back{
 	position: fixed;
@@ -1129,7 +1129,7 @@ div hr{
     overflow: scroll;
     width: 100%;
     height: 88%;
-    padding: 10px auto;
+    padding: 10px;
     text-align: left;
 }
 

@@ -7,24 +7,33 @@ font-family: 'Black Han Sans', sans-serif;
 font-family: 'Noto Sans KR', sans-serif;
 */
 :root{
-    --main-bgcolor: #212121;
-    --main-header-bgcolor: rgb(255, 31, 69);
+    --black: #212121;
+    --red: rgb(255, 31, 69);
     --white: #fafafa;
     --orange: #fd7e14;
-    --black: #212121;
+
+    --default-btn-bgcolor: rgb(33, 33, 33);
 }
 /**************************************
 
     layout
 
 ***************************************/
+html{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 body{
     font-family: 'Noto Sans KR', sans-serif;
     display: flex;
     flex-direction: column;
-    background: var(--main-bgcolor);
+    background: var(--black);
     padding: 0;
     margin: 0;
+    width: 100%;
+    height: 100%;
 }
 
 nav{
@@ -32,7 +41,7 @@ nav{
     position: fixed;
     top: 0;
     left: 0;
-    background: var(--main-header-bgcolor);
+    background: var(--red);
     padding-top: 10px;
     z-index: 2;
 }
@@ -61,7 +70,7 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: var(--main-header-bgcolor);
+    background: var(--red);
     color: var(--white);
 }
 
@@ -257,7 +266,7 @@ footer{
 }
 .most-contents table{
 	width:100%;
-	padding: 10;
+	padding: 10px;
 	margin: 0;
 	list-style: none;
 	color: var(--black);
