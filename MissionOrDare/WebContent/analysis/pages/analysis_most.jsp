@@ -44,16 +44,19 @@
 						<label>라이언</label>
 						<img class="img-circle" src="${project}images/sample.jpg">
 						<span>id_123</span>
+						<span>최고점수 : 588956</span>
 					</div>	
 						<div>
 						<label>어피치</label>
 						<img class="img-circle" src="${project}images/sample.jpg">
 						<span>id_456</span>
+						<span>최고점수 : 666651</span>
 					</div>
 					<div>
 						<label>무지</label>
 						<img class="img-circle" src="${project}images/sample.jpg">
 						<span>id_789</span>
+						<span>최고점수 : 502121</span>
 					</div>
 					</li>
 					<li class="rank-bottom">
