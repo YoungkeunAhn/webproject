@@ -1,6 +1,9 @@
 package handler.user.missionauth;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -20,12 +23,15 @@ import org.springframework.web.servlet.ModelAndView;
 
 import Dtos.MissionStateDto;
 import handler.CommandHandler;
+import log.LogDao;
 import user.missionauth.MissionAuthDao;
 
 @Controller
 public class UserMyMissionAuthPro implements CommandHandler {
 	@Resource
-	MissionAuthDao missionAuthDao;
+	private MissionAuthDao missionAuthDao;
+	@Resource
+	private LogDao logDao;
 	
 	@RequestMapping("/user_myMissionAuthPro")
 	@Override
@@ -35,6 +41,7 @@ public class UserMyMissionAuthPro implements CommandHandler {
 		if(request.getSession().getAttribute("user_nickname") == null ) {
 			return new ModelAndView("user/user_index");
 		}
+		
 		
 		String path = "C:/test/";
 		MultipartHttpServletRequest mpr = (MultipartHttpServletRequest) request;
@@ -79,7 +86,22 @@ public class UserMyMissionAuthPro implements CommandHandler {
 			cnt++;
 		} 
 		
-		MissionStateDto missionStateDto = new MissionStateDto();
+		MissionStateDto missionStateDto = logDao.getMissionTime(mission_state_id);
+		try{
+            //파일 객체 생성
+			File file = new File("C:/log/auth.txt");
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, true));
+        	String datestr = logDao.getDate();
+        	if(file.isFile() && file.canWrite()){
+	            bufferedWriter.write(datestr + "<!>");
+	            bufferedWriter.write(missionStateDto.getMission_start_date() + "<!>");
+	            bufferedWriter.write((String) request.getSession().getAttribute("user_nickname") + "<!>");
+	            bufferedWriter.newLine();
+	            bufferedWriter.close();
+        	}
+        }catch (IOException e) {
+            System.out.println(e);
+        }
 		missionStateDto.setMission_state_id(mission_state_id);
 		missionStateDto.setMission_state(4);
 		missionStateDto.setUpload_image(upload_image);

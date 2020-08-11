@@ -7,4 +7,7 @@
 	<select id="usersData" parameterType="String" resultType="Dtos.UsersDto">
 		select * from mod_users where user_nickname=#{user_nickname}
 	</select>
+	<select id="getMissionTime" parameterType="String" resultType="Dtos.MissionStateDto">
+		select * from mod_missionstate where mission_state_id=#{mission_state_id}
+	</select>
 </mapper>

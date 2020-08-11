@@ -44,7 +44,7 @@
             </ul>
             <div class="btn-line">
                 <button type="button" class="btn btn-primary" onclick="MyMissionGet()">미션수락</button>
-                <button type="button" class="btn btn-danger" onclick="location.href='user_missionGetPro.do?mission_level=${mission_level}&mission_categoryArea=${mission_categoryArea}'">다시받기</button>
+                <button type="button" class="btn btn-danger" onclick="location.href='user_missionGetPro.do?mission_level=${mission_level}&mission_categoryArea=${mission_categoryArea}&re=1'">다시받기</button>
             </div>
         </section>
     </article>
