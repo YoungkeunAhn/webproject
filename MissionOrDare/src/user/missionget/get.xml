@@ -66,15 +66,9 @@
 		select count(*) from mod_missionstate where user_nickname=#{user_nickname} and mission_state=1
 	</select>
 	
-	
-	 
-	
-	
-	<!-- refresh -->
-	<insert id="refresh">
-		insert into mod_test values('refresh')
-	</insert>
-	<delete id="delrefresh">
-		delete from mod_test where test='refresh'
-	</delete>
+	<!-- 미션 중도포기 -->
+	<update id="giveUpMission" parameterType="Dtos.MissionStateDto">
+		update mod_missionstate set mission_state=#{mission_state}, mission_giveup_reason=#{mission_giveup_reason}
+		where mission_state_id=#{mission_state_id}
+	</update>
 </mapper>

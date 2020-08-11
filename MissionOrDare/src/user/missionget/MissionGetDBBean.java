@@ -46,4 +46,8 @@ public class MissionGetDBBean implements MissionGetDao {
 	public int delrefresh() {
 		return session.delete("get.delrefresh");
 	}
+	// 미션 중도 포기
+	public int giveUpMission(MissionStateDto missionStateDto) {
+		return session.update("get.giveUpMission", missionStateDto);
+	}
 }

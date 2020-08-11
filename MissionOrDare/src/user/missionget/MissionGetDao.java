@@ -18,5 +18,6 @@ public interface MissionGetDao {
 	public int getUserMission(String user_nickname);
 	public int refresh();
 	public int delrefresh();
+	public int giveUpMission(MissionStateDto missionStateDto);
 
 }
