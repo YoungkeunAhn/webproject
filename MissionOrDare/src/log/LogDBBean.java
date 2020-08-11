@@ -5,6 +5,7 @@ import java.util.Calendar;
 
 import org.apache.ibatis.session.SqlSession;
 
+import Dtos.MissionStateDto;
 import Dtos.UsersDto;
 
 public class LogDBBean implements LogDao {
@@ -18,5 +19,8 @@ public class LogDBBean implements LogDao {
 	}
 	public UsersDto usersData(String user_nickname) {
 		return session.selectOne("log.usersData", user_nickname);
+	}
+	public MissionStateDto getMissionTime(String mission_state_id) {
+		return session.selectOne("log.getMissionTime", mission_state_id);
 	}
 }

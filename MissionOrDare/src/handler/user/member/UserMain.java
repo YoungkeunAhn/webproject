@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import Dtos.UserMissionsDto;
 import handler.CommandHandler;
+import log.LogDao;
 import user.member.UserMemberDao;
 import user.missionget.MissionGetDao;
 
@@ -27,6 +28,9 @@ public class UserMain implements CommandHandler{
 	private MissionGetDao missionGetDao;
 	@Resource
 	private UserMemberDao userMemberDao;
+	@Resource
+	private LogDao logDao;
+	
 	@RequestMapping("/user_main")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -38,9 +42,7 @@ public class UserMain implements CommandHandler{
             //파일 객체 생성
 			File file = new File("C:/log/login.txt");
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, true));
-            Calendar cal = Calendar.getInstance();
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd/HH:mm:ss");
-        	String datestr = sdf.format(cal.getTime());
+        	String datestr = logDao.getDate();
         	if(file.isFile() && file.canWrite()){
 	            bufferedWriter.write(datestr + "<!>");
 	            bufferedWriter.write("로그인"+ "<!>");
