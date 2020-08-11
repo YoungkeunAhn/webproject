@@ -1,5 +1,8 @@
 package handler.user.missioneval;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import Dtos.MissionStateDto;
 import Dtos.UserMissionsDto;
 import handler.CommandHandler;
 import user.missioneval.UserMissionEvalDao;
@@ -27,6 +31,17 @@ public class UserMissionSuccessCountPro implements CommandHandler{
 		
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		String mission_state_id = request.getParameter("mission_state_id");
+		
+		// 유저 미션 점수 추가
+		MissionStateDto missionStateDto = userMissionEvalDao.getMissionInfo(mission_state_id);
+		String mission_info_id = missionStateDto.getMission_info_id();
+		String mission_user_nickname = missionStateDto.getUser_nickname();
+		int mission_success_score = userMissionEvalDao.getMissionSuccessScore(mission_info_id);
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("user_nickname", mission_user_nickname);
+		map.put("score", mission_success_score);
+		userMissionEvalDao.updateScore(map);
+		
 		
 		//mission_evaluation_count + 1 & 성공버튼 카운트 업데이트
 		int result = userMissionEvalDao.passContent(mission_state_id); 

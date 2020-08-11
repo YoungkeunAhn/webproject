@@ -2,9 +2,11 @@ package user.missioneval;
 
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
+import Dtos.MissionStateDto;
 import Dtos.UserMissionsDto;
 
 
@@ -34,5 +36,14 @@ public class UserMissionEvalDBBean implements UserMissionEvalDao{
 	}
 	public int evalNickname(UserMissionsDto userMissionsDtos) {
 		return session.update("Eval.evalNickname",userMissionsDtos);
+	}
+	public MissionStateDto getMissionInfo(String mission_state_id) {
+		return session.selectOne("Eval.getMissionInfo", mission_state_id);
+	}
+	public int getMissionSuccessScore(String mission_info_id) {
+		return session.selectOne("Eval.getMissionSuccessScore", mission_info_id);
+	}
+	public int updateScore(Map<String, Object> map) {
+		return session.update("Eval.updateScore", map);
 	}
 }

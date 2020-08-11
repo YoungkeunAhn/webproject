@@ -38,4 +38,16 @@
 		update mod_missionstate set mission_evaluation_nickname = mission_evaluation_nickname||#{user_nickname}||'/' 
 		where mission_state_id=#{mission_state_id}
 	</update>
+	<!-- 미션 정보 가져오기 -->
+	<select id="getMissionInfo" parameterType="String" resultType="Dtos.MissionStateDto">
+		select * from mod_missionstate where mission_state_id=#{mission_state_id}
+	</select>
+	<!-- 미션 점수 가져오기 -->
+	<select id="getMissionSuccessScore" parameterType="String" resultType="int">
+		select mission_success_score from mod_missioninfo where mission_info_id=#{mission_info_id}
+	</select>
+	<!-- 유저 점수 추가 -->
+	<update id="updateScore" parameterType="java.util.Map">
+		update mod_users set score=score+#{score} where user_nickname=#{user_nickname}
+	</update>
 </mapper>
