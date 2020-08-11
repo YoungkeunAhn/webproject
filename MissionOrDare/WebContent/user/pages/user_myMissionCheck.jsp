@@ -50,7 +50,7 @@
 	                       <li class="mission_category">${userMissionDto.large_category}/${userMissionDto.small_category}</li>
 			               <li class="mission_title"><img src="/category/${userMissionDto.category_image}" onerror="this.src='${project}images/mission_image.png'">${userMissionDto.mission_title}</li>
 	                        <c:if test="${userMissionDto.mission_state eq 2}">
-	                       		<li class="mission_date"> 등록일 : ${successBoardDto.board_register_date}</li>
+	                       		<li class="mission_date"> 미션 성공  : ${successBoardDto.board_register_date}</li>
 	                       	</c:if>
 	                       <div class="swiper-container">
 		                        <div class="swiper-button-prev"></div>
@@ -68,20 +68,22 @@
 		                            </div>
 		                           </c:forEach>
 		                            </div>
-	                            <div class="swiper-button-next"></div>
+	                           
 						 		<div class="swiper-pagination"></div>
+						 		 <div class="swiper-button-next"></div>
 					 	   </div>
+					 	   
 					 	   <c:if test="${userMissionDto.mission_state eq 2}"><label>미션성공</label></c:if>
 			               <c:if test="${userMissionDto.mission_state eq 3}"><label>미션실패</label></c:if>
 			               <c:if test="${userMissionDto.mission_state eq 4}"><label>미션인증중</label></c:if>
                            <c:if test="${userMissionDto.mission_state eq 2}">
-	                           <li class="user_myMissionCheck">${userMissionDto.mission_upload_contents}</li>
-	                           <li class="user_myMissionCheck">${userMissionDto.successed_count}/10</li>
+                           	   <li class="user_myMissionCheck">${userMissionDto.successed_count}/10</li>
 	                           <li class="user_myMissionCheck">좋아요 수 : ${successBoardDto.likecount}</li>
+	                           <li class="mission_content">${userMissionDto.mission_upload_contents}</li>   
                            </c:if>
                            <c:if test="${userMissionDto.mission_state eq 4}">
                            	 <li class="mission_date">미션 시작 : ${userMissionDto.mission_start_date}</li>
-			               	 <li class="mission_content">${userMissionDto.mission_contents}</li>
+			               	 <li class="mission_content">${userMissionDto.mission_upload_contents}</li>
                           </c:if>
                          </ul>
                      </section>  

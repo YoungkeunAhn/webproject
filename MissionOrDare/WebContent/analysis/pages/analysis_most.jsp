@@ -13,7 +13,6 @@
     <script src="${project}assets/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
     <title>분석페이지-MOST</title>
 </head>
 <body>
@@ -35,20 +34,131 @@
         </form>
     </header>
     <article class="sub-page">
-        <section>
-            <label></label>
-            <div>
-                <div>
-
-                </div>
-                <div>
-
-                </div>
-                <div>
-
-                </div>
-            </div>
-        </section>
+    	
+    	<section>
+           <label class="title">점수 순위</label>
+           <div class="most-contents">
+				<ul class="top3">
+					<li class="rank-top">
+					<div>
+						<label>라이언</label>
+						<img class="img-circle" src="${project}images/sample.jpg">
+						<span>id_123</span>
+					</div>	
+						<div>
+						<label>어피치</label>
+						<img class="img-circle" src="${project}images/sample.jpg">
+						<span>id_456</span>
+					</div>
+					<div>
+						<label>무지</label>
+						<img class="img-circle" src="${project}images/sample.jpg">
+						<span>id_789</span>
+					</div>
+					</li>
+					<li class="rank-bottom">
+						<square class="top2">2</square>
+						<square class="top1">1</square>
+						<square class="top3">3</square>
+					</li>
+				</ul>  
+				<div class="mid"></div>         
+				<div class="rank-list">
+					<table class="table table-striped">
+						<thead>
+							<tr class="list-title">
+								<td>랭킹</td>
+								<td>아이디</td>
+								<td>최고점수</td>
+								<td>칭호</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="rank-contents">
+								<td>4</td>
+								<td>유저아이디</td>
+								<td>424242</td>
+								<td>유저대표칭호</td>
+							</tr>
+							<tr class="rank-contents">
+								<td>4</td>
+								<td>유저아이디</td>
+								<td>424242</td>
+								<td>유저대표칭호</td>
+							</tr>
+							<tr class="rank-contents">
+								<td>4</td>
+								<td>유저아이디</td>
+								<td>424242</td>
+								<td>유저대표칭호</td>
+							</tr>
+							<tr class="rank-contents">
+								<td>4</td>
+								<td>유저아이디</td>
+								<td>424242</td>
+								<td>유저대표칭호</td>
+							</tr>
+							<tr class="rank-contents">
+								<td>4</td>
+								<td>유저아이디</td>
+								<td>424242</td>
+								<td>유저대표칭호</td>
+							</tr>
+							<tr class="rank-contents">
+								<td>4</td>
+								<td>유저아이디</td>
+								<td>424242</td>
+								<td>유저대표칭호</td>
+							</tr>
+							<tr class="rank-contents">
+								<td>4</td>
+								<td>유저아이디</td>
+								<td>424242</td>
+								<td>유저대표칭호</td>
+							</tr>
+							<tr class="rank-contents">
+								<td>4</td>
+								<td>유저아이디</td>
+								<td>424242</td>
+								<td>유저대표칭호</td>
+							</tr>
+							<tr class="rank-contents">
+								<td>4</td>
+								<td>유저아이디</td>
+								<td>424242</td>
+								<td>유저대표칭호</td>
+							</tr>
+							<tr class="rank-contents">
+								<td>4</td>
+								<td>유저아이디</td>
+								<td>424242</td>
+								<td>유저대표칭호</td>
+							</tr>
+							<tr class="rank-contents">
+								<td>4</td>
+								<td>유저아이디</td>
+								<td>424242</td>
+								<td>유저대표칭호</td>
+							</tr>
+							<tr class="rank-contents">
+								<td>4</td>
+								<td>유저아이디</td>
+								<td>424242</td>
+								<td>유저대표칭호</td>
+							</tr>
+							<tr class="rank-contents">
+								<td>4</td>
+								<td>유저아이디</td>
+								<td>424242</td>
+								<td>유저대표칭호</td>
+							</tr>
+							
+						</tbody>
+						
+					</table>
+				</div>
+           </div>
+ 		</section>
         <section>
 
         </section>

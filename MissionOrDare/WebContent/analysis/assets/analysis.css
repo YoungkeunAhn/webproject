@@ -11,6 +11,7 @@ font-family: 'Noto Sans KR', sans-serif;
     --main-header-bgcolor: rgb(255, 31, 69);
     --white: #fafafa;
     --orange: #fd7e14;
+    --black: #212121;
 }
 /**************************************
 
@@ -159,3 +160,119 @@ footer{
     border-radius: 10px;
     background: var(--white);
 }
+/**************************************
+
+    analysis_subPage_user-rank
+
+***************************************/
+.title{
+	color : black;
+	font-size : 2.7em;
+	text-align: center;
+	margin-top : 10px;
+}
+.most-contents{
+	width: 100%;
+	height: 90%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding : 15px;
+}
+.most-contents ul{
+	width: 55%;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	color: var(--black);
+	display : flex;
+	flex-direction : column;
+}
+.rank-top{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	height : 50%;
+}
+.rank-top div{
+	margin : 0;
+	paddin: 0;
+	border: none;
+	min-height : 100px;
+}
+.rank-top label{
+	font-size : 1.7rem;
+	text-align : center;
+}
+.rank-top img{
+	width : 80px;
+	height : 80px;
+	margin :  0 10px;
+}
+@media screen and (max-width: 1010px){
+	.rank-top img{
+		width : 50px;
+		height : 50px;
+		margin : 1px auto;
+	}
+}
+.rank-top span{
+	font-size : 1.2rem;
+	text-align : center;
+}
+.rank-bottom{
+	display : flex;
+	flex-wrap : wrap;
+	justify-content : center;
+	align-items : flex-end;
+	height : 50%;
+}
+.rank-bottom square{
+	background-color : #efefef;
+	width : 30%;
+	height : 200px;	
+	font-size : 50px;
+	color : #ffc4c4;
+	text-align : center;
+	border-radius : 5%;
+}
+.rank-bottom .top2{
+	height : 150px;
+}
+.rank-bottom .top3{
+	height : 100px;
+}
+.mid {
+	width : 5%;
+	height:90%;
+}
+.rank-list {
+	width:40%; 
+	height:90%; 
+	overflow:auto;
+	background-color : #fffff0;
+	border-radius : 5%;
+}
+.most-contents table{
+	width:100%;
+	padding: 10;
+	margin: 0;
+	list-style: none;
+	color: var(--black);
+	text-align: center;
+	height: 95%;
+}
+.list-title td{
+	font-size : 15px;
+}
+.rank-contents td{
+	font-size : 10px;
+}
+
+
+
+
+
+
