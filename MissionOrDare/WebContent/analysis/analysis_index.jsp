@@ -19,8 +19,8 @@
 <body>
     <nav>
         <ul>
-            <li>MOST</li>
-            <li>OLIKE</li>
+            <li onclick="location.href='${pageContext.request.contextPath}/analysis/pages/analysis_most.jsp'">MOST</li>
+            <li onclick="location.href='${pageContext.request.contextPath}/analysis/pages/analysis_Olike.jsp'">OLIKE</li>
             <li>DEMAND</li>
         </ul>
     </nav>
@@ -44,7 +44,7 @@
 						가장많은 미션을 클리어한<br>
                         TOP3
                     </span>
-                    <button class="btn btn-link">바로기기 >> </button>
+                    <button class="btn btn-link" onclick="location.href='${pageContext.request.contextPath}/analysis/pages/analysis_most.jsp'" >바로기기 >> </button>
                 </div>
             </li>
             <li>
@@ -56,7 +56,7 @@
                         'ㅋ'가 많이들어가 있는<br>
                         TOP3
                     </span>
-                    <button class="btn btn-link">바로기기 >> </button>
+                    <button class="btn btn-link" onclick="location.href='${pageContext.request.contextPath}/analysis/pages/analysis_most.jsp'">바로기기 >> </button>
                 </div>
             </li>
             <li>
@@ -68,11 +68,11 @@
                         좋아요가<br>
                         많이 눌린
                     </span>
-                    <button class="btn btn-link">바로기기 >> </button>
+                    <button class="btn btn-link" onclick="location.href='${pageContext.request.contextPath}/analysis/pages/analysis_most.jsp'">바로기기 >> </button>
                 </div>
             </li>
         </ul>
     </article>
-    <footer>@copyright All rights reserved | MissionOrDare | Simplefun | webProject</footer>
+    <footer>@copyright All rights reserved | MissionOrDare | Simplefun | webProject | King God General 광훈2</footer>
 </body>
 </html>
