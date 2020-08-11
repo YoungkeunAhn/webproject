@@ -41,7 +41,7 @@ public class UserMyMissionAuthPro implements CommandHandler {
 		mpr.setCharacterEncoding("utf-8");
 		
 		Map<Object, Object> starScore = new HashMap<Object, Object>();
-		
+		 
 		String mission_state_id = mpr.getParameter("mission_state_id");
 		String mission_info_id = missionAuthDao.getMissionInfoId(mission_state_id);
 		
@@ -51,7 +51,7 @@ public class UserMyMissionAuthPro implements CommandHandler {
 		missionAuthDao.addStarScore(starScore);
 		
 		List<MultipartFile> files = mpr.getFiles("files");
-		
+		 
 		String board_content = mpr.getParameter("board_content");
 		board_content = new String(board_content.getBytes("8859_1"), "utf-8");
 		String upload_public_availability = mpr.getParameter("public_availability");
@@ -77,7 +77,7 @@ public class UserMyMissionAuthPro implements CommandHandler {
 				upload_image = upload_image + dateString + mission_state_id + user_nickname + cnt + extension + "/";
 			}
 			cnt++;
-		}
+		} 
 		
 		MissionStateDto missionStateDto = new MissionStateDto();
 		missionStateDto.setMission_state_id(mission_state_id);

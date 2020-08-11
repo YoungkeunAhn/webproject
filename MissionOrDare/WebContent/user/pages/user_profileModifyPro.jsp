@@ -17,7 +17,7 @@
 	</c:if>
 	
 	<c:if test="${result eq 1}">
-		<c:redirect url="seMenu.do"/>	
+		<c:redirect url="user_main.do"/>	
 	</c:if>
 <button onclick="location.href='user_main.do'">메인페이지로 이동</button>
 <button onclick="location.href='user_join.do'">회원가입 페이지로 이동</button>

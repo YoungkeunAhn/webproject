@@ -1,5 +1,7 @@
 package user.member;
 
+import java.util.Map;
+
 import Dtos.UsersDto;
 
 public interface UserMemberDao {
@@ -11,4 +13,5 @@ public interface UserMemberDao {
 	public int updateUser(UsersDto usersDto);
 	public int withdrawalUp(int kakao_id);
 	public int withdrawalDel(int kakao_id);
+	public int updateProfile( Map< String, String > modata );
 }

@@ -1,6 +1,8 @@
 package user.member;
 
 
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 
 import Dtos.UsersDto;
@@ -31,5 +33,8 @@ public class UserMemberDBBean implements UserMemberDao{
 	}
 	public int withdrawalDel( int kakao_id ) {
 		return session.delete( "Member.withdrawalDel", kakao_id );
+	}
+	public int updateProfile( Map< String, String > modata ) {
+		return session.update( "Member.updateProfile", modata );
 	}
 }

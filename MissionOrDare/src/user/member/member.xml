@@ -48,4 +48,7 @@
 		profile_picture=#{profile_picture,jdbcType=VARCHAR}, withdrawal_date=null
 		where kakao_id=#{kakao_id}
 	</update>
+	<update id="updateProfile" parameterType="java.util.Map">
+		update mod_users set profile_picture=#{profile_picture} where user_nickname=#{user_nickname}
+	</update>
 </mapper>
