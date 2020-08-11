@@ -24,13 +24,13 @@
 		            	<span onclick="MyInfoModify()">ProfileModify</span>
 		        </div>
             <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
-        </header>
+        </header>	
     	<article class="usermyArticle">
     		
     		<section class="userinfo-part">
     			<img class="message-img" onclick="GoMessageForm()" src="${project}images/message.png">
     			<div>
-	    		   <img onclick="MyProfileModify()" class="img-circle" src="${userDto.profile_picture}" onerror="this.src='${project}images/erroruser.png'">
+	    		   <img onclick="MyProfileModify()" class="img-circle" src="/upload/${userDto.profile_picture}" onerror="this.src='${project}images/erroruser.png'">
 	               <span>${userDto.user_nickname}</span>
 	   			</div>
 

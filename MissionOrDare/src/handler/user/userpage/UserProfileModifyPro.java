@@ -1,5 +1,6 @@
 package handler.user.userpage;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -33,21 +34,27 @@ public class UserProfileModifyPro implements CommandHandler{
 			return new ModelAndView("user/user_index");
 		}
 		  
-		String path = "C:/test/";
 		MultipartHttpServletRequest mpr = (MultipartHttpServletRequest) request;
 		mpr.setCharacterEncoding("utf-8");
 		
 		MultipartFile file = mpr.getFile("profile");
 		
+		String path = "C:/test/";
+		
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
 		Date nowdate = new Date();
 		String dateString = formatter.format(nowdate);
-		
+		 
 		String profile_picture= "";
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		String originName = file.getOriginalFilename();
 		String extension = "."+FilenameUtils.getExtension(originName);
-		profile_picture = dateString + originName + user_nickname + extension;
+		String newFile = path + dateString + user_nickname + extension;
+		
+		file.transferTo(new File(newFile)); 
+		profile_picture = dateString + user_nickname + extension;
+		
+		
 		
 		Map< String, String > modata = new HashMap< String, String >();
 		modata.put( "user_nickname", user_nickname );
