@@ -8,6 +8,8 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
+import analysis.AnalysisDBBean;
+import analysis.AnalysisDao;
 import log.LogDBBean;
 import log.LogDao;
 import manager.managecontent.ManageContentDBBean;
@@ -128,6 +130,12 @@ public class CreateBean {
 	public MultipartResolver multipartResolver() throws Exception {
 		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
 		return multipartResolver;
+	}
+	
+	@Bean
+	public AnalysisDao analysisDao() {
+		AnalysisDBBean analysisDao = new AnalysisDBBean();
+		return analysisDao;
 	}
 }
 

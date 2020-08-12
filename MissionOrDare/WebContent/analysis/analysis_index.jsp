@@ -26,12 +26,16 @@
     </nav>
     <header>
         <span>M O D</span>
-        <form>
-            <i class="fas fa-search"></i>
+        <form method="post" action="analysis_index.do" name="search" onsubmit="return searchCheck()">
+             <button style="background-color: #ff1f45; border-color: #ff1f45;" class="btn btn-primary btn-search" type="submit"><i class="fas fa-search"></i></button>
             <label>
-                <input class="form-control" type="text" name="user_nickname" placeholder="유저 닉네임 검색">
+                <input class="form-control" type="text" name="user_nickname" placeholder="유저 닉네임 검색"> 
+                ${ result }
             </label>
-        </form>
+          
+            
+        </form>       
+        
     </header>
     <article>
         <ul>

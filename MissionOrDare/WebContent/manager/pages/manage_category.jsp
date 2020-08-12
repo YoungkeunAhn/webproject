@@ -62,7 +62,7 @@
 					<i class="fas fa-chevron-right"></i>
 					Category
 					<i class="fas fa-chevron-right"></i>
-				</span>
+			</span>
 		</div>
 	</section>
 	<article class="sub-page">
@@ -91,10 +91,10 @@
 						<th>${missionCategoryDto.large_category}</th>
 						<th>${missionCategoryDto.small_category}</th>
 						<th onclick="event.cancelBubble=true"><button class="btn btn-primary" name="category-insert"
-																	  onclick="OnMissionInsertModal()">${str_category_missionadd}</button></th>
+							onclick="OnMissionInsertModal()">${str_category_missionadd}</button></th>
 						<th> </th>
 						<th onclick="event.cancelBubble=true"><button class="btn btn-danger" name="category-delete"
-																	  onclick="location.href='${pageContext.request.contextPath}/manage_category_deletePro.do?id=${missionCategoryDto.mission_category_id}'">${str_delete}</button></th>
+							onclick="location.href='${pageContext.request.contextPath}/manage_category_deletePro.do?id=${missionCategoryDto.mission_category_id}'">${str_delete}</button></th>
 					</tr>
 				</c:forEach>
 

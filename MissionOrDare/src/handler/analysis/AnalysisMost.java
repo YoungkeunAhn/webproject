@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import handler.CommandHandler;
 
 @Controller
-public class Analysis_most implements CommandHandler {
+public class AnalysisMost implements CommandHandler {
 	
 	@RequestMapping( "/analysis_most" )
 	@Override
