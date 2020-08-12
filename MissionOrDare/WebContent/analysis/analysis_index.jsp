@@ -19,7 +19,7 @@
 <body>
     <nav>
         <ul>
-            <li onclick="location.href='${pageContext.request.contextPath}/analysis/pages/analysis_most.jsp'">MOST</li>
+            <li onclick="location.href='analysis_most.do'">MOST</li>
             <li onclick="location.href='${pageContext.request.contextPath}/analysis/pages/analysis_Olike.jsp'">OLIKE</li>
             <li>DEMAND</li>
         </ul>
