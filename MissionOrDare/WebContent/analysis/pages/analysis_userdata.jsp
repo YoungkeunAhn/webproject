@@ -58,7 +58,11 @@
         <div class="item item2">
             <i class="fas fa-dice-two"></i>
             <label class="data-title">성공률</label>
-            <div class="chart-part">차트영역</div>
+            <div class="chart-part">
+				<canvas id="myChart_success" style="width: 100%; height: 100%;">
+
+                </canvas>
+			</div>
         </div>
         <div class="item item3">
             <i class="fas fa-dice-three"></i>
@@ -142,7 +146,42 @@
                 }]
             }
         }
-    });
+    });    
+</script>
+<script>
+	var line_ctx = document.getElementById('myChart_success').getContext('2d');
+	var myLineChart  = new Chart(line_ctx, {
+	    type: 'line',
+	    data: {
+	        labels: ['운동', '미술', '교육', '댄스', '먹방', '음악'],
+	        datasets: [{
+	            label: '많이 수행한 미션 카테고리 TOP3',
+	            data: [12, 19, 3, 5, 2, 3],
+	            borderColor: [
+	                'rgba(255, 99, 132, 1)',
+	            ],
+	            borderWidth: 1
+	        },{
+	        	label: '많이 수행한 미션 카테고리 TOP3',
+	            data: [4, 5, 10, 21, 7, 11],
+	            borderColor: [
+	                'rgba(75, 192, 192, 1)',
+	            ],
+	            borderWidth: 1
+	        }]
+	    },
+	    
+	    
+	    options: {
+	        scales: {
+	            yAxes: [{
+	                ticks: {
+	                    beginAtZero: true
+	                }
+	            }]
+	        }
+	    }
+	});   
 </script>
 
 </body>
