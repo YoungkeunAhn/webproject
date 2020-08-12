@@ -44,7 +44,7 @@
 						가장많은 미션을 클리어한<br>
                         TOP3
                     </span>
-                    <button class="btn btn-link" onclick="location.href='${pageContext.request.contextPath}/analysis/pages/analysis_most.jsp'" >바로기기 >> </button>
+                    <button class="btn btn-link" onclick="location.href='analysis_most.do'" >바로기기 >> </button>
                 </div>
             </li>
             <li>
@@ -56,7 +56,7 @@
                         'ㅋ'가 많이들어가 있는<br>
                         TOP3
                     </span>
-                    <button class="btn btn-link" onclick="location.href='${pageContext.request.contextPath}/analysis/pages/analysis_most.jsp'">바로기기 >> </button>
+                    <button class="btn btn-link" onclick="location.href='analysis_most.do'">바로기기 >> </button>
                 </div>
             </li>
             <li>
@@ -68,7 +68,7 @@
                         좋아요가<br>
                         많이 눌린
                     </span>
-                    <button class="btn btn-link" onclick="location.href='${pageContext.request.contextPath}/analysis/pages/analysis_most.jsp'">바로기기 >> </button>
+                    <button class="btn btn-link" onclick="location.href='analysis_most.do'">바로기기 >> </button>
                 </div>
             </li>
         </ul>
