@@ -45,11 +45,10 @@
         <input class="btn btn-default" type="button" value="유저서브칭호3">
     </section>
 
-    <section class="user_data">
+    <section class="user-data">
         <div class="item item1">
             <i class="fas fa-dice-one"></i>
-            <label class="data-title">미션수행 갯수</label>
-            <span>TOP6</span>
+            <label class="data-title">미션수행 Top3</label>
             <div class="chart-part">
                 <canvas id="myChart" style="width: 100%; height: 100%;">
 
