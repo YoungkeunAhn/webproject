@@ -45,11 +45,10 @@
         <input class="btn btn-default" type="button" value="유저서브칭호3">
     </section>
 
-    <section class="user_data">
+    <section class="user-data">
         <div class="item item1">
             <i class="fas fa-dice-one"></i>
-            <label class="data-title">미션수행 갯수</label>
-            <span>TOP6</span>
+            <label class="data-title">미션수행 Top3</label>
             <div class="chart-part">
                 <canvas id="myChart" style="width: 100%; height: 100%;">
 
@@ -59,12 +58,20 @@
         <div class="item item2">
             <i class="fas fa-dice-two"></i>
             <label class="data-title">성공률</label>
-            <div class="chart-part">차트영역</div>
+            <div class="chart-part">
+				<canvas id="myChart_success" style="width: 100%; height: 100%;">
+
+                </canvas>
+			</div>
         </div>
         <div class="item item3">
             <i class="fas fa-dice-three"></i>
             <label class="data-title">미션 성공확률 예측</label>
-            <div class="chart-part">차트영역</div>
+            <div class="chart-part">
+				<canvas id="myChart_success_predict" style="width : 50%;">
+
+                </canvas>
+			</div>
         </div>
     </section>
 </article>
@@ -84,19 +91,22 @@
 <script>
     const user_search = document.querySelector('.fa-search');
     const header = document.querySelector('.header-hidden');
-    const subTitle_btn = document.querySelector('.btn-default');
+    const subTitle_btn = document.querySelectorAll('.btn-default');
     const modal = document.querySelector('.modal-bg');
     let subTitle = document.querySelector('.subTitle');
 
 
     user_search.addEventListener('click',function(){
         header.classList.toggle('header-appear');
-    },false)
-
-    subTitle_btn.addEventListener('click',function (){
-        modal.classList.remove('hidden');
-         subTitle.innerHTML = this.value;
     },false);
+
+    for(let i=0; i<subTitle_btn.length; i++){
+        subTitle_btn[i].addEventListener('click',function (){
+            modal.classList.remove('hidden');
+            subTitle.innerHTML = this.value;
+        },false);
+    }
+
 
     modal.addEventListener('click',function (){
         modal.classList.add('hidden');
@@ -143,9 +153,63 @@
                 }]
             }
         }
-    });
+    });    
 </script>
+<script>
+	var line_ctx = document.getElementById('myChart_success').getContext('2d');
+	var myLineChart  = new Chart(line_ctx, {
+	    type: 'line',
+	    data: {
+	        labels: ['운동', '미술', '교육', '댄스', '먹방', '음악'],
+	        datasets: [{
+	            label: '전체 미션 성공률',
+	            data: [12, 19, 3, 5, 2, 3],
+	            borderColor: [
+	                'rgba(255, 99, 132, 1)',
+	            ],
+	            borderWidth: 1
+	        },{
+	        	label: '나의 미션 성공률',
+	            data: [4, 5, 10, 21, 7, 11],
+	            borderColor: [
+	                'rgba(75, 192, 192, 1)',
+	            ],
+	            borderWidth: 1
+	        }]
+	    },
+	    
+	    
+	    options: {
+	        scales: {
+	            yAxes: [{
+	                ticks: {
+	                    beginAtZero: true
+	                }
+	            }]
+	        }
+	    }
+	});   
+</script>
+<script>
+var radar_ctx = document.getElementById('myChart_success_predict').getContext('2d');
+var myRadarChart  = new Chart(radar_ctx, {
+    type: 'radar',
+    data: {
+        labels: ['운동', '미술', '교육', '댄스', '먹방', '음악'],
+        datasets: [{
+            label: '미션 성공확률 예측',
+            data: [80, 75, 65, 50, 92, 30],
+            backgroundColor: [
+            	'rgba(255, 159, 64, 0.2)',
+            ],borderColor: [
+                'rgba(255, 159, 64, 1)',
+            ],
+            borderWidth: 1
+        }]
+    }
+});   
 
+</script>
 </body>
 <style>
     .header-hidden{
