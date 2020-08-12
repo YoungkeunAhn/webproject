@@ -87,19 +87,22 @@
 <script>
     const user_search = document.querySelector('.fa-search');
     const header = document.querySelector('.header-hidden');
-    const subTitle_btn = document.querySelector('.btn-default');
+    const subTitle_btn = document.querySelectorAll('.btn-default');
     const modal = document.querySelector('.modal-bg');
     let subTitle = document.querySelector('.subTitle');
 
 
     user_search.addEventListener('click',function(){
         header.classList.toggle('header-appear');
-    },false)
-
-    subTitle_btn.addEventListener('click',function (){
-        modal.classList.remove('hidden');
-         subTitle.innerHTML = this.value;
     },false);
+
+    for(let i=0; i<subTitle_btn.length; i++){
+        subTitle_btn[i].addEventListener('click',function (){
+            modal.classList.remove('hidden');
+            subTitle.innerHTML = this.value;
+        },false);
+    }
+
 
     modal.addEventListener('click',function (){
         modal.classList.add('hidden');
