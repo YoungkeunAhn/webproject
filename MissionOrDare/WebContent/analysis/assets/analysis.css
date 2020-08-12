@@ -358,6 +358,9 @@ footer{
 .user-data .item1, .user-data .item2{
     margin-bottom: 30px;
 }
+.user-data .item3 .chart-part{
+	margin-bottom: 20px;
+}
 
 .modal-bg{
     position: fixed;

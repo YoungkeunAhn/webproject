@@ -67,7 +67,11 @@
         <div class="item item3">
             <i class="fas fa-dice-three"></i>
             <label class="data-title">미션 성공확률 예측</label>
-            <div class="chart-part">차트영역</div>
+            <div class="chart-part">
+				<canvas id="myChart_success_predict" style="width : 50%;">
+
+                </canvas>
+			</div>
         </div>
     </section>
 </article>
@@ -158,14 +162,14 @@
 	    data: {
 	        labels: ['운동', '미술', '교육', '댄스', '먹방', '음악'],
 	        datasets: [{
-	            label: '많이 수행한 미션 카테고리 TOP3',
+	            label: '전체 미션 성공률',
 	            data: [12, 19, 3, 5, 2, 3],
 	            borderColor: [
 	                'rgba(255, 99, 132, 1)',
 	            ],
 	            borderWidth: 1
 	        },{
-	        	label: '많이 수행한 미션 카테고리 TOP3',
+	        	label: '나의 미션 성공률',
 	            data: [4, 5, 10, 21, 7, 11],
 	            borderColor: [
 	                'rgba(75, 192, 192, 1)',
@@ -186,7 +190,26 @@
 	    }
 	});   
 </script>
+<script>
+var radar_ctx = document.getElementById('myChart_success_predict').getContext('2d');
+var myRadarChart  = new Chart(radar_ctx, {
+    type: 'radar',
+    data: {
+        labels: ['운동', '미술', '교육', '댄스', '먹방', '음악'],
+        datasets: [{
+            label: '미션 성공확률 예측',
+            data: [80, 75, 65, 50, 92, 30],
+            backgroundColor: [
+            	'rgba(255, 159, 64, 0.2)',
+            ],borderColor: [
+                'rgba(255, 159, 64, 1)',
+            ],
+            borderWidth: 1
+        }]
+    }
+});   
 
+</script>
 </body>
 <style>
     .header-hidden{
