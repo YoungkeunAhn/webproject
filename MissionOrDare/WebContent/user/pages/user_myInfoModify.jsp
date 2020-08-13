@@ -10,7 +10,7 @@
     <script src="${project}asset/script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/23971e572d.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/23971e572d.js"></script>
 
 </head>
 <body style="overflow: hidden;">
@@ -77,7 +77,7 @@
                </ul>
    
                <!-- Button trigger modal -->
-               <button type="button" class="btn-category" data-toggle="modal" data-target="#myModal">
+               <button type="button" class="btn-category" data-toggle="modal" data-target="#myModal" onclick="paintLargeCategory()">
                    카테고리 선택
                </button>
                <label class="text text-danger">카테고리 1개이상 선택하셔야합니다.</label>
@@ -93,22 +93,22 @@
                            <div class="modal-body">
                                <div class="modal-bodyLeft">
                                   
-                                  <input class="lagerCategory" type="button" value="운동">
-                                  <input class="lagerCategory" type="button" value="여행">
-                                  <input class="lagerCategory" type="button" value="교육">
-                                  <input class="lagerCategory" type="button" value="댄스">
-                                  <input class="lagerCategory" type="button" value="음악">
-                                  <input class="lagerCategory" type="button" value="다이어트">
-                                  <input class="lagerCategory" type="button" value="기타">                               
+                                  <input class="largeCategory" type="button" value="운동">
+                                  <input class="largeCategory" type="button" value="여행">
+                                  <input class="largeCategory" type="button" value="교육">
+                                  <input class="largeCategory" type="button" value="댄스">
+                                  <input class="largeCategory" type="button" value="음악">
+                                  <input class="largeCategory" type="button" value="다이어트">
+                                  <input class="largeCategory" type="button" value="기타">
                         </div>
                         <div class="modal-bodyRight">
-                                  <input class="lagerCategory" type="button" value="게임">
-                                  <input class="lagerCategory" type="button" value="먹방">
-                                  <input class="lagerCategory" type="button" value="개그">
-                                  <input class="lagerCategory" type="button" value="영화">
-                                  <input class="lagerCategory" type="button" value="뷰티">
-                                  <input class="lagerCategory" type="button" value="브이로그">
-                                  <input class="lagerCategory" type="button" value="asmr">
+                                  <input class="largeCategory" type="button" value="게임">
+                                  <input class="largeCategory" type="button" value="먹방">
+                                  <input class="largeCategory" type="button" value="개그">
+                                  <input class="largeCategory" type="button" value="영화">
+                                  <input class="largeCategory" type="button" value="뷰티">
+                                  <input class="largeCategory" type="button" value="브이로그">
+                                  <input class="largeCategory" type="button" value="asmr">
                               </div>
                            </div>
                            <div class="modal-footer">
@@ -137,7 +137,6 @@
     $(document).ready(function () {
     	var interesting_categorys = document.getElementById('interesting_categorys');
     	 var items = $('#interesting_categorys').val();
-    	 alert(items);
        $('.modal-bodyLeft > input').click(function () {
     	   if(items.search($(this).val()+'/') === -1){
         	   if( ( $('#interesting_categorys').val().split('/').length-1) < 4 ){
@@ -229,6 +228,24 @@
     
 
    </script>
+<!-- 선택된 카테고리 색칠하기 -->
+<script>
+
+    let category1 = document.getElementById('category1');
+    let category2 = document.getElementById('category2');
+    let category3 = document.getElementById('category3');
+    let category4 = document.getElementById('category4');
+    let largeCategories = document.querySelectorAll('.largeCategory');
+
+    function paintLargeCategory(){
+        for(let i=0; i<largeCategories.length; i++){
+            if(category1.value === largeCategories[i].value || category2.value === largeCategories[i].value || category3.value === largeCategories[i].value || category4.value === largeCategories[i].value){
+                largeCategories[i].style.background = 'yellow';
+                largeCategories[i].style.color = 'white';
+            }
+        }
+    }
+</script>
 </body>
 </html>
 
