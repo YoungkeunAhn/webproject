@@ -45,14 +45,14 @@
 <body>
     <nav>
         <ul>
-            <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';">MOST</li>
-            <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';">OLIKE</li>
+            <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" onclick="location.href='analysis_most.do'">MOST</li>
+            <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" onclick="location.href='${pageContext.request.contextPath}/analysis/pages/analysis_Olike.jsp'">OLIKE</li>
             <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';">DEMAND</li>
-            <li style="padding: 10px;"><i class="fas fa-search"></i></li>
+            <li style="padding: 10px;" ><i class="fas fa-search"></i></li>
         </ul>
     </nav>
     <header class="header-hidden">
-        <span>M O D</span>
+        <span style="cursor:pointer; padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" onclick="location.href='analysis_index.do'">M O D</span>
         <form>
             <i class="fas fa-search"></i>
             <label>
@@ -593,11 +593,7 @@ new Swiper('.swiper-container', {
         transition: 1s;
         transform: translateY(400px);
         position: fixed;
-        z-index: 99;
-        
-    }
-    
-
-    
+        z-index: 99;   
+    }   
 </style>
 </html>

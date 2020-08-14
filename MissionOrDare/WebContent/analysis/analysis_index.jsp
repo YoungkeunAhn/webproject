@@ -19,13 +19,13 @@
 <body>
     <nav>
         <ul>
-            <li onclick="location.href='analysis_most.do'">MOST</li>
-            <li onclick="location.href='${pageContext.request.contextPath}/analysis/pages/analysis_Olike.jsp'">OLIKE</li>
-            <li>DEMAND</li>
+            <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" onclick="location.href='analysis_most.do'">MOST</li>
+            <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" onclick="location.href='${pageContext.request.contextPath}/analysis/pages/analysis_Olike.jsp'">OLIKE</li>
+            <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';">DEMAND</li>
         </ul>
     </nav>
     <header>
-        <span>M O D</span>
+         <span style="cursor:pointer; padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" onclick="location.href='analysis_index.do'">M O D</span>
         <form method="post" action="analysis_index.do" name="search" onsubmit="return searchCheck()">
             <button style="background-color: #ff1f45; border-color: #ff1f45;" class="btn btn-primary btn-search" type="submit"><i class="fas fa-search"></i></button>
             <label>
