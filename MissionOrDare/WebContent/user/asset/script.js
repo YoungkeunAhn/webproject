@@ -10,6 +10,7 @@ var categoryNullError = "카테고리를 1개 이상 선택해주세요"
 var sendMessageNullError = "보내고 싶은 내용을 입력해 주세요.";
 var userReportNullError = "신고내용을 적어주세요.";
 var giveupNullError = "중도포기 이유를 적어주세요";
+var boardContentNullError = "미션에 대한 내용을 간단히 적어주세요.";
 /*
  * 
  * 유효성 처리
@@ -203,14 +204,21 @@ function AuthPopupOn() {
 		alert(insertFileError);
 		return false;
 	}
+	else if( ! myMissionAuth.board_content.value ) {
+		 alert( boardContentNullError );
+		 myMissionAuth.board_content.focus();
+		 return false;
+	}
 	document.getElementById('authPopup').style.display='flex';
-	
 }
 
 
 function AuthPopupClose() {
     document.getElementById('authPopup').style.display='none';
 }
+/* user_myMissionAuth.jsp board_content 빈칸 처리*/
+
+
 
 /*
 *
