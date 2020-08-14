@@ -25,6 +25,9 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+	
+	<!-- 좋아요 구독 이모티콘가져와~ -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <script>
    
@@ -65,6 +68,34 @@
    
    </script>
 </head>
+<!-- 좋아요 화산폭발 css -->
+<style type="text/css">
+
+.like-container{filter: url('#filter'); position: absolute; background-color:#f9dd9a; top: 50%; left: 11.2%;}
+.like-cnt{  
+  position: absolute; 
+  cursor: pointer;
+  left: 50%; 
+  top: 50%; 
+  transform: translate(-50%, -50%);     background: rgba(255,255,255,0.3);     width: 60px; 
+  height: 60px;  
+  border-radius: 50%;
+  text-align: center;
+  line-height: 75px;
+  z-index: 10;
+}
+.like-btn{
+  color: #393333;
+}
+
+.gp-header{font-family: georgia; font-size: 40px; color: #ddca7e; font-style: italic; text-align: center; margin-top: 31px;}
+.gp-footer{position: fixed; color: #fff; bottom: 10px; left: 50%; font-family: georgia; font-style: italic; transform: translateX(-50%);}
+.gp-footer .soc_icons{display: inline-block; color: #ddca7e; margin: 0px 0px;}
+
+
+::-moz-selection { background: transparent;}
+::selection {background: transparent;}
+</style>
 <body>
 	<div class="container">
 
@@ -134,7 +165,12 @@
 		<input id="re" type="hidden">
 		<section class="reply-part">
 			<div class="likecount">
-				<img id="like"> <span id="totalLike"></span>
+				<div id="like" class="like-container">
+  					<div class="like-cnt unchecked" id="like-cnt">
+ 	 					<i style="transform:matrix(1,0,0,1,0,15);" class="like-btn material-icons">thumb_up</i>
+					</div>
+				</div>
+			 <span style="position: relative; top:10px; left:6px;" id="totalLike"></span>
 			</div>
 			<div class="reply-contents">
 
@@ -182,12 +218,8 @@
 	</div>
 	<script type="text/javascript">
       //<!--
-      function angimori() {
-    	 alert("라라라");
-     }
-      /* enter-key 눌렀을때 세상종말 댓글달려! 
-	 $("#reply").keyup(function(e){if(e.keyCode == 13)});
-      */
+    
+      /* enter-key 눌렀을때 세상종말 댓글달려! */
 	 $(document).ready(function(e){
 		 $("#reply").keyup(function(e){
 			 if( e.keyCode == 13 ) {
@@ -334,4 +366,55 @@
 	//-->
    </script>
 </body>
+<!-- 좋아요 클릭하기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+var check_status = false;
+var like_cnt = $("#like-cnt");
+var like_parent = $(".like-container");
+
+var burst = new mojs.Burst({
+  parent: like_parent,
+  radius:   { 20: 60 },
+  count: 15,
+  angle:{0:30},
+  children: {
+    delay: 250,
+    duration: 700,
+    radius:{10: 0},
+    fill:   [ '#ddca7e' ],
+    easing:         mojs.easing.bezier(.08,.69,.39,.97)
+  }
+});
+
+$("#like-cnt").click(function(){
+  var t1 = new TimelineLite();
+  var t2 = new TimelineLite();
+  if(!check_status){
+    t1.set(like_cnt, {scale:0});
+    t1.set('.like-btn', {scale: 0});
+    t1.to(like_cnt, 0.6, {scale:1, background: '#ddca7e',ease: Expo.easeOut});
+    t2.to('.like-btn', 0.65, {scale: 1, ease: Elastic.easeOut.config(1, 0.3)}, '+=0.2');
+//    t1.timeScale(5);
+    check_status=true;
+    //circleShape.replay();
+    burst.replay();
+  }
+  else{
+    t1.to(like_cnt, 1, {scale:1})
+      .to(like_cnt, 1, {scale:1, background: 'rgba(255,255,255,0.3)', ease: Power4.easeOut});
+    t1.timeScale(7);
+    check_status=false;
+  }
+  
+})
+</script>
+
 </html>
