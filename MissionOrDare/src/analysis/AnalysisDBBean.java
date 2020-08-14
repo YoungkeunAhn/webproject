@@ -9,5 +9,5 @@ public class AnalysisDBBean implements AnalysisDao {
 	
 	public String nickCheck( String nickname ) {
 		return session.selectOne( "Analysis.nickCheck", nickname );
-	}
+	}							  
 }

@@ -27,15 +27,17 @@
     <header>
         <span>M O D</span>
         <form method="post" action="analysis_index.do" name="search" onsubmit="return searchCheck()">
-             <button style="background-color: #ff1f45; border-color: #ff1f45;" class="btn btn-primary btn-search" type="submit"><i class="fas fa-search"></i></button>
+            <button style="background-color: #ff1f45; border-color: #ff1f45;" class="btn btn-primary btn-search" type="submit"><i class="fas fa-search"></i></button>
             <label>
-                <input class="form-control" type="text" name="user_nickname" placeholder="유저 닉네임 검색"> 
-                ${ result }
-            </label>
-          
-            
-        </form>       
-        
+                <input class="form-control" type="text" name="user_nickname" placeholder="유저 닉네임 검색">       
+                <c:if test="${ result eq null }">
+                	${ nullvalue }
+                </c:if>
+                <c:if test="${ result ne null }">
+                	${ result }
+                </c:if>                                       
+            </label>                   
+        </form>           
     </header>
     <article>
         <ul>

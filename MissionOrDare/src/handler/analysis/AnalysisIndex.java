@@ -14,7 +14,7 @@ import handler.CommandHandler;
 @Controller
 public class AnalysisIndex implements CommandHandler {
 	
-	@Resource
+	@Resource			
 	private AnalysisDao analysisDao;
 	
 	@RequestMapping( "/analysis_index" )
@@ -23,9 +23,20 @@ public class AnalysisIndex implements CommandHandler {
 		
 		request.setCharacterEncoding("utf-8");
 		
-		String nickname =  request.getParameter( "user_nickname" );
-		String result = analysisDao.nickCheck( nickname );
-		request.setAttribute( "result", result ); 	
+		String nullvalue = "없는 닉네임입니다.";
+		String result="";
+		String nickname = request.getParameter( "user_nickname" );
+		
+		if( nickname != null ) {
+			result = analysisDao.nickCheck( nickname );
+		}
+		
+		 
+		if( result == null ) {
+			request.setAttribute( "nullvalue" , nullvalue);
+		} else {
+			request.setAttribute( "result", result ); 		
+		}				
 		
 		return new ModelAndView( "analysis/analysis_index" );
 		
