@@ -182,6 +182,33 @@
 	</div>
 	<script type="text/javascript">
       //<!--
+      function angimori() {
+    	 alert("라라라");
+     }
+      /* enter-key 눌렀을때 세상종말 댓글달려! 
+	 $("#reply").keyup(function(e){if(e.keyCode == 13)});
+      */
+	 $(document).ready(function(e){
+		 $("#reply").keyup(function(e){
+			 if( e.keyCode == 13 ) {
+				 $.ajax({
+						type : 'POST',
+						url : 'replyInsert.do',
+						data : {
+							reply_id : $('#re').val(),
+							reply_contents : $('#reply').val(),
+							success_board_id : $('#success_board_id').val()
+						},
+						dataType : 'text',
+						async :false,
+						success : function(data){
+							data = eval('(' + data +')');
+							replyList();
+						}
+				});
+			 }
+		 });
+	 }); 
       
       /*댓글 insert*/
       $(document).ready(function(){
@@ -292,7 +319,7 @@
       		$("#")
       	});
       	
-         //-->
+         
      var swiper =  new Swiper('.swiper-container', {
           pagination : { // 페이징 설정
              el : '.swiper-pagination',
@@ -303,7 +330,8 @@
              prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
           },
        });
-
+     
+	//-->
    </script>
 </body>
 </html>

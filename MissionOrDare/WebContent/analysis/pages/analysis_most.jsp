@@ -45,10 +45,10 @@
 <body>
     <nav>
         <ul>
-            <li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';">MOST</li>
-            <li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';">OLIKE</li>
-            <li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';">DEMAND</li>
-            <li><i class="fas fa-search"></i></li>
+            <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';">MOST</li>
+            <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';">OLIKE</li>
+            <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';">DEMAND</li>
+            <li style="padding: 10px;"><i class="fas fa-search"></i></li>
         </ul>
     </nav>
     <header class="header-hidden">
@@ -592,6 +592,8 @@ new Swiper('.swiper-container', {
     .header-appear{
         transition: 1s;
         transform: translateY(400px);
+        position: fixed;
+        z-index: 99;
         
     }
     

@@ -25,7 +25,7 @@ public class LikeCheck implements CommandHandler{
 			return new ModelAndView("user/user_index");
 		}
 		
-		System.out.println("핸들러 오나??");
+		System.out.println("핸들러 오나?? 오너라~오너라~ 아주오나~");
 		String user_nickname = (String) request.getSession().getAttribute("user_nickname");
 		String success_board_id = request.getParameter("success_board_id");
 		LikeDto likeDto = new LikeDto() ; 
