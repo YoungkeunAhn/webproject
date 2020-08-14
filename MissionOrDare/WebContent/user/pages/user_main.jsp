@@ -162,10 +162,10 @@
 	<script type="text/javascript">
 			//<!--
 	      	$(document).ready(function(){
-			  $("#menu").click(function(){
-			    $("#menu_list").slideToggle("slow");
-			  });
-			});
+		  $("#menu").click(function(){
+		    $("#menu_list").animate({width:"toggle"},400);
+		  });
+		});
  
 	   var swiper =  new Swiper('.swiper-container', {
 	    	navigation : { // 네비게이션 설정

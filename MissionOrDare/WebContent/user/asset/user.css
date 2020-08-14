@@ -169,7 +169,7 @@ nav ul img {
 .index-logo{
     width: 45%;
     height: 15.24%;
-    margin: 0 auto 10px auto;
+    margin: 30px auto 10px auto;
 }
 .index-title{
     font-size: 1.5rem;
@@ -291,12 +291,11 @@ nav ul img {
 #menu_list {
     padding: 1%;
     display: none;
-    position: absolute;
-    top: 14%;
-    left: 5%;
-    width: 127px;
-    height: 19%;
-    font-size: large;
+    position: absolute;   
+    left: 15%;
+    width: 100px;
+    height: 10%;
+    font-size: 13px;
     justify-content: center;
     text-align: left;
     background-color: #33333363;
@@ -307,8 +306,6 @@ nav ul img {
 	position: absolute;
     left: 4%;
 }
-
-
 /**********************************************
 
         user_main
