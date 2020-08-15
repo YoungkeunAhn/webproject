@@ -1824,8 +1824,8 @@ textarea:focus{
 	list-style : none;
 }
 .mission-info-view img{
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     margin: 10px auto;
     border-radius: 15%;
     list-style : none;
@@ -1843,11 +1843,7 @@ textarea:focus{
     margin-right: 15px ;
     border-radius: 25%;
 }
-.swiper-slide img{
-	width: 200px;
-    height: 200px;
-    border-radius: 15%;
-}
+
 .user_myMissionCheck{
 	list-style : none;
 }

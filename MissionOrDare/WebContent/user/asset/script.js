@@ -259,7 +259,7 @@ function GoReportPage(success_board_id) {
 	location.href='user_report.do?success_board_id='+success_board_id;
 }
 function GoLogoutPage() {
-	location.href='user_logout.jsp';
+	location.href='user_logout.do';
 }
 function GoWithdrawalPage() {
 	location.href='user_withdrawal.do';
