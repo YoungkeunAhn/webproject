@@ -728,6 +728,8 @@ ol{
     width: 70%;
     height:50%;
     margin: 3px auto;
+    box-shadow: 1px 1px 49px #dbe0c0;
+    border-radius: 51px;
 }
 
 .auth_main .board_content{
