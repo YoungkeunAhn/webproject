@@ -13,6 +13,7 @@
     <script src="${project}assets/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
     <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
  
 <title>분석페이지 홈</title>
@@ -48,8 +49,7 @@
       }
     </style>
 <body>
-	<button id="button">Replay</button>
-	<svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="position: absolute; right:0%; height: 70px; width:86px; z-index:1000;">
+	<svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="padding:10px; position: fixed; right:0%; height: 70px; width:86px; z-index:1000;">
 		<path class="star"
       d="M288.7 244.3L268 231.5l5.9-23.6c1-4-1.4-8.1-5.5-9.1-1.8-.5-3.7-.2-5.4.7l-21.4 11.6-17.5-16.9c-3-2.9-7.7-2.8-10.6.2-1.3 1.3-2 3.1-2.1 5l-.7 24.3-23.4 6.7c-4 1.1-6.3 5.3-5.1 9.3.5 1.8 1.7 3.3 3.3 4.3l20.7 12.7-5.9 23.6c-1 4 1.4 8.1 5.5 9.1 1.8.5 3.7.2 5.4-.7l21.4-11.6 17.5 16.9c2.1 2.1 5.3 2.7 8 1.5 2.8-1.1 4.6-3.8 4.7-6.7l.7-24.3 23.4-6.7c4-1.1 6.3-5.3 5.1-9.3-.6-1.7-1.7-3.3-3.3-4.2z"
       fill="#f93030" />

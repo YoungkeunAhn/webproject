@@ -95,6 +95,13 @@ header form label{
 header form label .form-control{
     text-align: center;
     padding-right: 50px;
+    border-radius: 20px;
+    text-align: left;
+}
+
+header form label .form-control:hover{
+    cursor: text;
+    box-shadow: 5px 8px 8px #5b3939;
 }
 article{
     width: 100%;
