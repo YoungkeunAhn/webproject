@@ -70,22 +70,30 @@
  		 	//받은 메세지
 			$('.getdMessage').click(
  	            function(event) {
- 	               $('#usermessage').load('user_getMessage.do');      
- 	            }      
+ 	               $('#usermessage').load('user_getMessage.do');  
+ 	               $('.getdMessage').addClass('click-background');
+                   $('.sendMessage').removeClass('click-background');
+				   $('.sendIcon').removeClass('click-background');
+ 	            }  
 			);
 			//보낸 메세지
 			$('.sendmessage').click(
 				function(event) {
 					$('#usermessage').load('user_postedMessage.do');
+					$('.sendmessage').addClass('click-background');
+					$('.getdMessage').removeClass('click-background');
+					$('.sendIcon').removeClass('click-background');
 				}      
 			);
 			//메세지 보내기
 			$('.sendIcon').click(
 				function(event) {
 					$('#usermessage').load('user_sendMessage.do');      
+					$('.sendIcon').addClass('click-background');
+					$('.getdMessage').removeClass('click-background');
+					$('.sendmessage').removeClass('click-background');
 				}      
 			);
-			
  		});
       //-->
    </script>

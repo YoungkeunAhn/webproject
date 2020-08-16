@@ -136,7 +136,16 @@
 		    $("#menu_list").animate({width:"toggle"},400);
 		  });
 		});
-   		//-->
+   	//-->
+   	</script>
+   	<!-- 메시지 클릭시 이벤트 -->
+   	
+   	<script>
+   	//<!--
+	$('.message-img').click(function(){
+		$('.message-img').addClass('click-background')
+	});
+	//-->
 	</script>
 </body>
 </html>
