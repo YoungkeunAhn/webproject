@@ -44,7 +44,7 @@
 
 			<!-- 로그인 안되어있으면 로그인 버튼 생성 -->
 			<c:if test="${sessionScope.memId eq null or sessionScope.memId eq ''}">
-				<li class="btn-login">
+				<li class="btn-login" style="cursor: pointer;">
 					<a>${str_header_login}</a></li>
 			</c:if>
 
