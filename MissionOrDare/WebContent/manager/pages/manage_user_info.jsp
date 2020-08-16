@@ -65,7 +65,7 @@
 		</div>
 	</section>
     <article class="sub-page">
-        <section class="list-part">
+        <section class="list-part-user-info">
             <table class="table">
                 <tr>
                     <th>${str_user_nickname}</th>
@@ -84,10 +84,6 @@
                     <td>${usersDto.gender}</td>
                 </tr>
                 <tr>
-                    <th>${str_user_withdrawal_date}</th>
-                    <td>${usersDto.withdrawal_date}</td>
-                </tr>
-                <tr>
                     <th>${str_user_location}</th>
                     <td>${usersDto.location}</td>
                 </tr>
@@ -98,10 +94,6 @@
                 <tr>
                     <th>${str_user_score}</th>
                     <td>${usersDto.score}</td>
-                </tr>
-                <tr>
-                    <th>${str_user_withdrawal_date}</th>
-                    <td>${usersDto.withdrawal_date}</td>
                 </tr>
                 <tr>
                     <th>${str_user_interesting1}</th>
@@ -122,6 +114,10 @@
                 <tr>
                     <th>${str_user_joindate}</th>
                     <td>${usersDto.sign_up_date}</td>
+                </tr>
+                <tr>
+                    <th>${str_user_withdrawal_date}</th>
+                    <td>${usersDto.withdrawal_date}</td>
                 </tr>
                 <tr>
                     <th class="btn-line" colspan="4">
