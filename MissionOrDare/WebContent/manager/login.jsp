@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <link rel="stylesheet" content="text/css" href="${project}assets/css/manage.css">
-  <script src="${project}assets/js/script.js"></script>
+  <link rel="stylesheet" content="text/css" href="${project}assets/manage.css">
+  <script src="${project}assets/script.js"></script>
 <title>관리자 로그인 페이지</title>
 </head>
 <body>
@@ -22,7 +22,7 @@
 				<span>비밀번호</span>
 				<input class="form-control" type="password" name="manager_passwd">
 			</section>
-			<section class='btn-line'>
+			<section class="btn-line">
 				<button class="btn btn-primary" type="submit">로그인</button>
 				<button class="btn btn-danger" type="button" onclick="location.href='index.do'">취소</button>
 			</section>
