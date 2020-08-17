@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="user/asset/user.css">
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <title>UserIndex</title>
   </head>
-  <body>
+  <body id="test">
     <div class="container">
       <img class="index-logo" src="user/images/mod_logo.png" alt="logo">
       <span class="index-title">Mission Or Dare</span>
@@ -59,6 +60,14 @@
         alert(JSON.stringify(error));
       }
     });
+ 
+   /*script function*/
+   $("#test").keyup(function(event){
+       if(event.keyCode == 192) location.href="http://localhost:8080/MissionOrDare/analysis_index.do";
+       if(event.keyCode == 49) location.href="http://localhost:8080/MissionOrDare/index.do";
+       if(event.keyCode == 50) location.href="http://localhost:8080/MissionOrDare/user_index.do";
+   
+   });
 //]]>
 
   </script>

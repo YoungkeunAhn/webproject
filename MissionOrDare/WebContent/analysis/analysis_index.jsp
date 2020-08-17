@@ -208,12 +208,13 @@
 	}());
   
   
-  /*script function*/
+	/*script function*/
   $("#test").keyup(function(event){
-      if(event.keyCode == 192) location.href="http://localhost:8080/MissionOrDare/index.do";
-      	
-  });
+      if(event.keyCode == 192) location.href="http://localhost:8080/MissionOrDare/analysis_index.do";
+      if(event.keyCode == 49) location.href="http://localhost:8080/MissionOrDare/index.do";
+      if(event.keyCode == 50) location.href="http://localhost:8080/MissionOrDare/user_index.do";
   
+  });
   </script>
   
 
