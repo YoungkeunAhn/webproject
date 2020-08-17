@@ -176,24 +176,12 @@
 	//<!--
 	const menu = document.getElementById('menu');
 	const navItems = document.querySelector('.nav-items');
-	const modalBg = document.getElementById('modal-bg');
-	const closeBtn = document.querySelector('.close');
 
 	function toggleNav(){
 		navItems.classList.toggle('slideDown');
 	}
 
-	function openModal(){
-		modalBg.classList.remove('hidden');
-	}
-
-	function closeModal(){
-		modalBg.classList.add('hidden');
-	}
-
 	menu.addEventListener('click',toggleNav,false);
-	modalBg.addEventListener('click',closeModal,false);
-	closeBtn.addEventListener('click',closeModal,false);
 	//-->
 </script>
 <script>
@@ -207,22 +195,6 @@
 			nav.classList.remove('change-nav');
 		}
 	});
-
-	const categoryModal = document.getElementById('categoryInfoModal');
-	const missionInsertModal = document.getElementById('missionInsertModal');
-
-	function OncategoryModal(){
-		categoryModal.classList.remove('hidden');
-	}
-	function OnMissionInsertModal(){
-		missionInsertModal.classList.remove('hidden');
-	}
-	categoryModal.addEventListener('click',function (){
-		categoryModal.classList.add('hidden');
-	},false);
-	missionInsertModal.addEventListener('click',function (){
-		missionInsertModal.classList.add('hidden');
-	},false);
 </script>
 </body>
 <style>
