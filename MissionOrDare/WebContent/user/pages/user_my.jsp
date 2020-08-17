@@ -16,12 +16,13 @@
 	<div class="container">
         <header>
             <img id="menu" class="menu-img" src="${project}images/menu.png">
-	            <div id="menu_list" class="menu_list">
-	            	<span onclick="GoLogoutPage()">Logout</span>
+	            <div style="height: 16%;" id="menu_list" class="menu_list">
+	            	<span onclick="GoLogoutPage()">Logout</span><br>
 	            	<br>
-	            	<span onclick="GoWithdrawalPage()">Withdrawal</span>
+	            	<span onclick="GoWithdrawalPage()">Withdrawal</span><br>
 	            	<br>
-	            	<span onclick="MyInfoModify()">ProfileModify</span>
+	            	<span onclick="MyInfoModify()">ProfileModify</span><br>
+	            	<br><span onclick="GoAnalysisPage()">분석페이지</span>
 		        </div>
             <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
         </header>	

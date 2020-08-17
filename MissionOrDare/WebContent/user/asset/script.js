@@ -264,3 +264,6 @@ function GoLogoutPage() {
 function GoWithdrawalPage() {
 	location.href='user_withdrawal.do';
 }
+function GoAnalysisPage() {
+	location.href='analysis_index.do';
+}

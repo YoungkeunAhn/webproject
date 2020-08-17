@@ -20,7 +20,8 @@
 	         <div id="menu_list" class="menu_list">
 	          	<span onclick="GoLogoutPage()">Logout</span>
 	          	<br><br>
-	          	<span onclick="GoWithdrawalPage()">Withdrawal</span>
+	          	<span onclick="GoWithdrawalPage()">Withdrawal</span><br>
+	          	<br><span onclick="GoAnalysisPage()">분석페이지</span>
 	      </div>
 	        <img onclick="GoMainPage()" class="header-img" src="${project}images/mod_logo.png" alt="logo">
 	    </header>

@@ -74,7 +74,7 @@
 }
 </style>
 <body>
-	<svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="padding:10px; position: fixed; right:0%; height: 70px; width:86px; z-index:1000;">
+	<svg class="starStick" id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="padding:10px; position: fixed; right:0%; height: 70px; width:86px; z-index:1000;">
 			<path class="star"
 	      d="M288.7 244.3L268 231.5l5.9-23.6c1-4-1.4-8.1-5.5-9.1-1.8-.5-3.7-.2-5.4.7l-21.4 11.6-17.5-16.9c-3-2.9-7.7-2.8-10.6.2-1.3 1.3-2 3.1-2.1 5l-.7 24.3-23.4 6.7c-4 1.1-6.3 5.3-5.1 9.3.5 1.8 1.7 3.3 3.3 4.3l20.7 12.7-5.9 23.6c-1 4 1.4 8.1 5.5 9.1 1.8.5 3.7.2 5.4-.7l21.4-11.6 17.5 16.9c2.1 2.1 5.3 2.7 8 1.5 2.8-1.1 4.6-3.8 4.7-6.7l.7-24.3 23.4-6.7c4-1.1 6.3-5.3 5.1-9.3-.6-1.7-1.7-3.3-3.3-4.2z"
 	      fill="#f93030" />
@@ -118,7 +118,7 @@
     <header class="header-hidden">
         <span style="cursor:pointer; padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" onclick="location.href='analysis_index.do'">M O D</span>
         <form>
-            <i class="fas fa-search"></i>
+            <i style="cursor: pointer; padding: 10px;" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" class="fas fa-search"></i>
             <label>
                 <input class="form-control" type="text" name="user_nickname" placeholder="유저 닉네임 검색">
             </label>
@@ -514,9 +514,31 @@
            </div>
  		</section>
         
-        <section>
-         
-        </section>
+         	<!-- 클래스명은 변경하면 안 됨 -->
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					 <div class="swiper-slide">
+			        	<video width="320" height="240" controls>
+  							<source src="movie.mp4" type="video/mp4">
+ 							 <source src="movie.ogg" type="video/ogg">
+							  Your browser does not support the video tag.
+							</video>
+					</div>
+					<div class="swiper-slide"><img src="http://ktsmemo.cdn3.cafe24.com/p/0172.jpg"></div>
+					 <div class="swiper-slide">
+			        	<iframe width="1280" height="720" src="https://www.youtube.com/embed/Fm5iP0S1z9w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			        </div>
+					 <div class="swiper-slide">
+			        	<iframe width="560" height="315" src="https://www.youtube.com/embed/HOJewCP3glw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			        </div>
+					<div class="swiper-slide" style="font-size:50pt;">- 끝 -</div>
+				</div>
+			
+				<!-- 네비게이션 지정 -->
+				<div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+				<div class="swiper-button-prev"></div><!-- 이전 버튼 -->
+			</div>
+			        
     </article>
      <footer>@copyright All rights reserved | MissionOrDare | Simplefun | webProject | King God General 광훈2 </footer>
 
@@ -663,7 +685,7 @@ new Swiper('.swiper-container', {
 
 <!-- 별표그리장 -->
 <!-- 별표그리장 -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+ <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
  <script type="text/javascript">
   (function () {
 	  var svg = document.querySelector("#svg");
