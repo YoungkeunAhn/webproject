@@ -19,7 +19,7 @@
   <title>관리자 메인 페이지</title>
 </head>
 
-<body>
+<body id="test">
 <div class="container">
 	<nav>
 
@@ -101,7 +101,15 @@
 	loginBtn.addEventListener('click',openModal,false);
 	modalBg.addEventListener('click',closeModal,false);
 	closeBtn.addEventListener('click',closeModal,false);
-	//-->
+	
+
+	/*script function*/
+  $("#test").keyup(function(event){
+      if(event.keyCode == 192) location.href="http://localhost:8080/MissionOrDare/analysis_index.do";
+      	
+  
+  });
+//-->
 </script>
 </body>
 <style>
