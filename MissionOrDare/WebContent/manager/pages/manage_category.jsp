@@ -143,7 +143,7 @@
 			</c:if>
 		</section>
 	</article>
-	<footer>@copyright All rights reserved | MissionOrDare | Simplefun | webProject</footer>
+	<footer>@copyright All rights reserved | MissionOrDare | Simplefun | webProject | king God general 광훈2</footer>
 </div>
 
 <!-- 모달 -->

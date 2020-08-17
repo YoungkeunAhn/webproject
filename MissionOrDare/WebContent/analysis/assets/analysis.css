@@ -169,6 +169,7 @@ footer{
 ***************************************/
 .sub-page{
     margin-top: 70px;
+    background: black;
 }
 .sub-page section{
     display: flex;
@@ -559,3 +560,5 @@ footer{
 .modal-content ul .percent{
     font-size: 3rem;
 }
+
+

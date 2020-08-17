@@ -11,7 +11,6 @@
     <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean" rel="stylesheet">
 
     <script src="${project}assets/script.js"></script>
-    <script src="/MissionOrDare/user/asset/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     
@@ -19,8 +18,8 @@
  
 <title>분석페이지 홈</title>
 </head>
-	<!-- 별표 그리장 -->
- 	<style>
+   <!-- 별표 그리장 -->
+    <style>
       .st {
         fill: none;
         stroke-width: 14;
@@ -50,8 +49,8 @@
       }
     </style>
 <body id="test">
-	<svg onclick="GoMyPage()" class="starStick" id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="padding:10px; position: fixed; right:0%; height: 70px; width:86px; z-index:1000;">
-		<path class="star"
+   <svg class="starStick" id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="padding:10px; position: fixed; right:0%; height: 70px; width:86px; z-index:1000;">
+      <path class="star"
       d="M288.7 244.3L268 231.5l5.9-23.6c1-4-1.4-8.1-5.5-9.1-1.8-.5-3.7-.2-5.4.7l-21.4 11.6-17.5-16.9c-3-2.9-7.7-2.8-10.6.2-1.3 1.3-2 3.1-2.1 5l-.7 24.3-23.4 6.7c-4 1.1-6.3 5.3-5.1 9.3.5 1.8 1.7 3.3 3.3 4.3l20.7 12.7-5.9 23.6c-1 4 1.4 8.1 5.5 9.1 1.8.5 3.7.2 5.4-.7l21.4-11.6 17.5 16.9c2.1 2.1 5.3 2.7 8 1.5 2.8-1.1 4.6-3.8 4.7-6.7l.7-24.3 23.4-6.7c4-1.1 6.3-5.3 5.1-9.3-.6-1.7-1.7-3.3-3.3-4.2z"
       fill="#f93030" />
     <path class="cir circle1"
@@ -82,14 +81,12 @@
     <path class="st st-g1" stroke="#eaeaea" d="M187.5 190.9l-42.1-49.8" />
     <path class="st st-g2" stroke="#bada77" d="M165.5 217.8l-72.8-24.9" />
     <path class="st st-g1" stroke="#179140" d="M161.9 248.6l-51 5.6" />
-	</svg>
+   </svg>
     <nav>
         <ul>
             <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" onclick="location.href='analysis_most.do'">MOST</li>
-            <!-- 아직 안만든 페이지
-            <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" onclick="location.href='${pageContext.request.contextPath}/analysis/pages/analysis_Olike.jsp'">OLIKE</li>
+            <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" onclick="location.href='analysis_Olike.do'">OLIKE</li>
             <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';">DEMAND</li>
-            -->
         </ul>
     </nav>
     <header>
@@ -99,10 +96,10 @@
             <label>
                 <input class="form-control" type="text" name="user_nickname" placeholder="유저 닉네임 검색">       
                 <c:if test="${ result eq null }">
-                	${ nullvalue }
+                   ${ nullvalue }
                 </c:if>
                 <c:if test="${ result ne null }">
-                	${ result }
+                   ${ result }
                 </c:if>                                       
             </label>                   
         </form>           
@@ -114,8 +111,8 @@
                     <hr>
                     <label>Most :</label>
                     <span>
-						지난주<br>
-						가장많은 미션을 클리어한<br>
+                  지난주<br>
+                  가장많은 미션을 클리어한<br>
                         TOP3
                     </span>
                     <button class="btn btn-link" onclick="location.href='analysis_most.do'" >바로기기 >> </button>
@@ -151,66 +148,64 @@
 </body>
  <script type="text/javascript">
   (function () {
-	  var svg = document.querySelector("#svg");
-	  var star = svg.querySelector(".star");
-	  var lineLong = svg.querySelector(".line-long");
-	  var lines = svg.querySelectorAll(".st");
-	  var circles = svg.querySelectorAll(".cir");
-	  var linesG1 = svg.querySelectorAll(".st-g1");
-	  var linesG2 = svg.querySelectorAll(".st-g2");
+     var svg = document.querySelector("#svg");
+     var star = svg.querySelector(".star");
+     var lineLong = svg.querySelector(".line-long");
+     var lines = svg.querySelectorAll(".st");
+     var circles = svg.querySelectorAll(".cir");
+     var linesG1 = svg.querySelectorAll(".st-g1");
+     var linesG2 = svg.querySelectorAll(".st-g2");
 
-	  function pathPrepare(el) {
-	    var lineLength = el.getTotalLength();
-	    el.style.strokeDasharray = lineLength + 10;
-	    el.style.strokeDashoffset = lineLength + 10;
-	  }
+     function pathPrepare(el) {
+       var lineLength = el.getTotalLength();
+       el.style.strokeDasharray = lineLength + 10;
+       el.style.strokeDashoffset = lineLength + 10;
+     }
 
-	  pathPrepare(lineLong);
-	  lines.forEach(function (e) {
-	    pathPrepare(e);
-	  });
-
-
-	  var shootingAni = new TimelineMax()
-	    .addLabel("start")
-	    .to(lineLong, 0.4, {
-	      strokeDashoffset: 0
-	    })
-	    .from(star, 0.35, {
-	      autoAlpha: 0,
-	      scale: "0",
-	      rotation: -360,
-	      transformOrigin: '50% 50%'
-	    }, "start+=0.3")
-	    .to(linesG1, 0.66, {
-	      autoAlpha: 1,
-	      strokeDashoffset: 0,
-	    }, "start+=0.45")
-	    .to(linesG2, 0.45, {
-	      autoAlpha: 1,
-	      strokeDashoffset: 0,
-	    }, "start+=0.65")
-	    .fromTo(circles, 0.5, {
-	      scale: 0,
-	      autoAlpha: 0,
-	      transformOrigin: '50% 50%'
-	    }, {
-	      scale: 0.8,
-	      y: 0,
-	      autoAlpha: 1,
-	      transformOrigin: '50% 50%'
-	    }, "start+=0.66")
+     pathPrepare(lineLong);
+     lines.forEach(function (e) {
+       pathPrepare(e);
+     });
 
 
-	    
-	    document.querySelector("#svg").addEventListener("click", function(){
-	        shootingAni.restart();
-	    });
+     var shootingAni = new TimelineMax()
+       .addLabel("start")
+       .to(lineLong, 0.4, {
+         strokeDashoffset: 0
+       })
+       .from(star, 0.35, {
+         autoAlpha: 0,
+         scale: "0",
+         rotation: -360,
+         transformOrigin: '50% 50%'
+       }, "start+=0.3")
+       .to(linesG1, 0.66, {
+         autoAlpha: 1,
+         strokeDashoffset: 0,
+       }, "start+=0.45")
+       .to(linesG2, 0.45, {
+         autoAlpha: 1,
+         strokeDashoffset: 0,
+       }, "start+=0.65")
+       .fromTo(circles, 0.5, {
+         scale: 0,
+         autoAlpha: 0,
+         transformOrigin: '50% 50%'
+       }, {
+         scale: 0.8,
+         y: 0,
+         autoAlpha: 1,
+         transformOrigin: '50% 50%'
+       }, "start+=0.66")
 
-	}());
-  
-  
-	/*script function*/
+
+       
+       document.querySelector("#svg").addEventListener("click", function(){
+           shootingAni.restart();
+       });
+
+   }());
+  /*script function*/
   $("#test").keyup(function(event){
       if(event.keyCode == 192) location.href="http://localhost:8080/MissionOrDare/analysis_index.do";
       if(event.keyCode == 49) location.href="http://localhost:8080/MissionOrDare/index.do";
@@ -218,6 +213,5 @@
   
   });
   </script>
-  
 
 </html>
