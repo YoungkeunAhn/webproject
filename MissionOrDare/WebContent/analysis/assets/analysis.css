@@ -560,5 +560,86 @@ footer{
 .modal-content ul .percent{
     font-size: 3rem;
 }
+/**************************************
 
+    analysis_Olike (by Kwanghoon)
 
+***************************************/
+.sub-page .OlikeRankingSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+    width: 90%;
+    height: 450px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    background: var(--white);
+}
+.OlikeRankingOneTwoThreeBox{
+	background: rgb(217 216 209 / 0.54);
+	width:30%;
+	height: 66%;
+	margin:10px;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.OlikeRankingOneTwoThreeBox .OlikeRankingUserProfileDiv{
+	margin-top: -92px;
+}
+.OlikeRankingOneTwoThreeBox .OlikeRankingUserProfileDiv .OlikeRankingUserProfileImg{
+	border-radius: 100%;
+    box-shadow: 1px 1px 100px beige;
+}
+.OlikeRankingOneTwoThreeBox .OlikeUserRankingNickname{
+	color:#222;
+	margin-top:12px;
+	font-size: 25px;
+	font-weight: 700;
+}
+.OlikeRankingOneTwoThreeBox .Olike-Info{
+	margin-top: 28px;
+    padding-top: 18px;
+    width: 80%;
+    border-top: 1px solid #000000;
+    text-align: center;
+}
+.OlikeRankingOneTwoThreeBox .Olike-Info dl{
+	display: inline-block;
+    width: 45%;
+}
+.OlikeRankingOneTwoThreeBox .Olike-Info dl dt{
+	font-size: 12px;
+    font-family: 'NotoKrM';
+    color: #888;
+}
+.OlikeRankingOneTwoThreeBox .Olike-Info dl dd{
+    margin-top: 6px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0;
+    color: #444;
+    font-weight: 700;
+}
+.sub-page .OlikeSeeMoreRanking{
+	position: relative;
+    top: 94px;
+    margin: 50px auto;
+    width: 90%;
+}
+.sub-page .OlikeSeeMoreRanking:hover{
+	color: #ff1f45;
+	cursor: pointer;
+}
+/**************************************
+
+    analysis_Olikerankingdetail (by Kwanghoon)
+
+***************************************/
+.sub-page .rankingUpdateInfo{
+    width: 100%;
+    text-align: end;
+}

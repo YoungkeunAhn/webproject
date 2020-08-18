@@ -132,7 +132,7 @@
            <div class="most-contents">
 				<ul class="top3">
 					<li class="rank-top">
-					<div>
+					<div style="position: relative; top:52px;">
 						<label>라이언</label>
 						<img class="img-circle" src="${project}images/sample.jpg">
 						<span>id_123</span>
@@ -144,7 +144,7 @@
 						<span>id_456</span>
 						<span>최고점수 : 666651</span>
 					</div>
-					<div>
+					<div style="position: relative; top:105px;">
 						<label>무지</label>
 						<img class="img-circle" src="${project}images/sample.jpg">
 						<span>id_789</span>
