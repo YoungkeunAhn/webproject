@@ -126,8 +126,106 @@
         </form>
     </header>
 	<article class="sub-page">
-  		<section>
-  		
+  		<section class="likeSubContentSection">
+  			<div class="likeSubContentDiv">
+  				<div class="ranking-searchArea">
+  					<div class="BoardArea">
+  						<p class="ranking-search-tit">
+  						<span>MissionOrDare 좋아요 랭킹!</span>
+  						검색하세요
+  						</p>
+  						<div class="ranking-search">
+  							<form>
+  								<input type="text" title="검색" value placeholder="Mission Or Dare 아이디를 입력해주세요.">
+  								<button type="submit">검색</button>
+  							</form>
+  						</div>
+  					</div>
+  				</div>
+  				<div class="BoardArea">
+  					<div class="update-date">※MoD차트 랭킹은 매월 2,4째 주에 갱신됩니다.</div>
+  					<div class="update-date">최근업데이트:2020.08.18 16:18:37</div>
+  					<table class="simple-table">
+  						<thead>
+  							<tr>
+  								<th scope="col">전체랭킹</th>
+  								<th scope="col">MOD 정보</th>
+  								<th scope="col">좋아요수</th>
+  								<th scope="col">게시물수</th>
+  								<th scope="col">성공률</th>
+  								<th scope="col">순위증감</th>
+  								<th scope="col">최고랭킹</th>
+  							</tr>
+  						</thead>
+  						<tbody>
+  							<tr>
+  								<td>1</td>
+  								<td>2</td>
+  								<td>3</td>
+  								<td>4</td>
+  								<td>5</td>
+  								<td>6</td>
+  								<td>7</td>
+  							</tr>
+  							<tr>
+  								<td>1</td>
+  								<td>2</td>
+  								<td>3</td>
+  								<td>4</td>
+  								<td>5</td>
+  								<td>6</td>
+  								<td>7</td>
+  							</tr>
+  							<tr>
+  								<td>1</td>
+  								<td>2</td>
+  								<td>3</td>
+  								<td>4</td>
+  								<td>5</td>
+  								<td>6</td>
+  								<td>7</td>
+  							</tr>
+  							<tr>
+  								<td>1</td>
+  								<td>2</td>
+  								<td>3</td>
+  								<td>4</td>
+  								<td>5</td>
+  								<td>6</td>
+  								<td>7</td>
+  							</tr>
+  							<tr>
+  								<td>1</td>
+  								<td>2</td>
+  								<td>3</td>
+  								<td>4</td>
+  								<td>5</td>
+  								<td>6</td>
+  								<td>7</td>
+  							</tr>
+  							<tr>
+  								<td>1</td>
+  								<td>2</td>
+  								<td>3</td>
+  								<td>4</td>
+  								<td>5</td>
+  								<td>6</td>
+  								<td>7</td>
+  							</tr>
+  							<tr>
+  								<td>1</td>
+  								<td>2</td>
+  								<td>3</td>
+  								<td>4</td>
+  								<td>5</td>
+  								<td>6</td>
+  								<td>7</td>
+  							</tr>
+  							
+  						</tbody>
+  					</table>
+  				</div>
+  			</div>
   		</section>
     </article>
      <footer>@copyright All rights reserved | MissionOrDare | Simplefun | webProject | King God General 광훈2 | 110-392-152764신한 이광훈 </footer>

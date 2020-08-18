@@ -639,7 +639,106 @@ footer{
     analysis_Olikerankingdetail (by Kwanghoon)
 
 ***************************************/
-.sub-page .rankingUpdateInfo{
-    width: 100%;
-    text-align: end;
+.sub-page .likeSubContentSection{
+	min-height: 720px;
 }
+.sub-page .likeSubContentSection .likeSubContentDiv{
+	width:100%;
+	height: 100%;
+	color: black;
+}
+.sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea{
+	margin-bottom: 80px;
+    height: 240px;
+    background: #ded3d342;
+    text-align: center;
+}
+.sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea .BoardArea{
+	position: relative;
+    width: 1160px;
+    margin: 0 auto;
+    text-align: left;
+    display: inline-block;
+    text-align: center;
+}
+.sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea .BoardArea .ranking-search-tit{
+    margin-top: 55px;
+    font-family: 'NotoKrL';
+    color: #222;
+    font-size: 30px;
+    letter-spacing: -0.04em;
+}
+.sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea .BoardArea .ranking-search-tit span{
+    font-family: 'NotoKrB';
+    font-weight: bold;
+}
+.sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea .BoardArea .ranking-search{
+	margin-top: 20px;
+    position: relative;
+    display: inline-block;
+    width: 550px;
+    height: 60px;
+    border: 2px solid #333;
+    text-align: left;
+    background: #fff;
+}
+.sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea .BoardArea .ranking-search input{
+	width: 100%;
+    padding: 0 60px 0 20px;
+    height: 56px;
+    line-height: 56px;
+    font-size: 16px;
+}
+.sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea .BoardArea .ranking-search button{
+	position: absolute;
+    top: 50%;
+    right: 20px;
+    margin-top: -12px;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    background: url(../img/sub/ico-search.png) no-repeat;
+}
+.BoardArea .update-date{
+	text-align: right;
+    color: #b9b9b9;
+    padding-bottom: 10px;
+    display: block;
+}
+
+table{
+ 	width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+.simple-table{
+	clear: both;
+    text-align: center;
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+th {
+	display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+}
+.simple-table thead th {
+    font-size: 15px;
+    border-top: 2px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 15px 0;
+    text-align: center;
+}
+
