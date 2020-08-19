@@ -13,9 +13,12 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="${project}assets/manage.css">
 	<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean" rel="stylesheet">
+	<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
 	<script src="${project}assets/script.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<title>게시글정보페이지</title>
 </head>
 <body>
@@ -79,41 +82,42 @@
 							alt="user-profile"> <span>${joinMissionInfoSuccessBoardDto.user_nickname}</span><br>
 					</div>
 				
-					<div>	
-						<div>
+					<div class="swiper-container">
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-wrapper">
 							<c:forEach var="content" items="${contents}">
-								<c:if
-									test="${fn:contains(content, '.mp4') or fn:contains(content, '.avi')}">
-									<span><i class="fas fa-chevron-left"></i></span>
-									<video muted autoplay="autoplay" class="img-rounded"
-										width="180">
-										<source src="/upload/${content}">
-									</video>
-									<span><i class="fas fa-chevron-right"></i></span>
-								</c:if>
-								<c:if
-									test="${!fn:contains(content, '.mp4') and !fn:contains(content, '.avi')}">
-									<span><i class="fas fa-chevron-left"></i></span>
-									<img style="width:180px; height: 150px;" src="/upload/${content}" width="180" 
-									class="img-rounded" alt="thumbnail"/>
-									<span><i class="fas fa-chevron-right"></i></span>
-								</c:if>
+								<div class="swiper-slide">
+	
+									<c:if
+										test="${fn:contains(content, '.mp4') or fn:contains(content, '.avi')}">
+										<video muted controls="controls" autoplay="autoplay"
+											class="img-rounded" style="width: 200px; height: 170px;">
+											<source src="/upload/${content}">
+										</video>
+									</c:if>
+									<c:if
+										test="${!fn:contains(content, '.mp4') and !fn:contains(content, '.avi')}">
+										<img style="width: 200px; height: 170px;"
+											src="/upload/${content}" width="300" class="img-rounded"
+											alt="thumbnail" />
+									</c:if>
+								</div>
 							</c:forEach>
 						</div>
-							<span>유저들이 적은 게시판
-								내용:${joinMissionInfoSuccessBoardDto.success_board_contents}</span>
+						<div class="swiper-button-next"></div>		
 					</div>
 					<div class="like-box">
-						<span><i class="far fa-thumbs-up"></i></span> <span>${joinMissionInfoSuccessBoardDto.likecount}</span>
+						<span><i class="far fa-thumbs-up"></i> ${joinMissionInfoSuccessBoardDto.likecount}</span>
+						<span>게시판 내용 : ${joinMissionInfoSuccessBoardDto.success_board_contents}</span>
 					</div>
 				</section>
-				<section class="reply-part">
-			
+			</div>
+				<section class="reply-part">	
 					<div class="reply-box">
-						<i class="fas fa-ellipsis-v"></i>
 						<div class="reply-level1">
 							<c:forEach var="replyDto" items="${replyDtos}">
 								<div class="user-profile">
+								<!--<i class="fas fa-ellipsis-v"></i> -->
 									<c:if test="${replyDto.reply_step == 1}">
 										<span>&nbsp;&nbsp;ㄴ${replyDto.user_nickname} :
 											${replyDto.reply_contents}</span>
@@ -135,10 +139,10 @@
 						</div>
 					</div>
 			</section>
-			</div>
+			
 		</article>
 	<footer>@copyright All rights reserved | MissionOrDare | Simplefun | webProject</footer>
-</div> 	
+</div>	
 <!-- nav -->
 <script>
 	//<!--
@@ -228,5 +232,20 @@
 		border-bottom: 1px solid #888888;
 		z-index: 1;
 	}
+	
 </style>
+<script type="text/javascript">
+      //<!--
+    var swiper =  new Swiper('.swiper-container', {
+          pagination : { // 페이징 설정
+             el : '.swiper-pagination',
+             clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
+          },
+          navigation : { // 네비게이션 설정
+             nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+             prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+          },
+       });
+       //-->
+</script>
 </html>

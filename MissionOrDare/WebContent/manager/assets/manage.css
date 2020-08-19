@@ -468,11 +468,34 @@ footer{
     manamge_content_info
 
 ****************************************/
+.swiper-container {
+    width: 100%;
+    height: 80%;
+}
+
+.swiper-slide {
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    background: #fff0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
 .content-infodiv{
 	display:flex;
 	flex-wrap:wrap;
 	width:60%;
-	height:100%;
+	height:50%;
 	margin:0 auto;	
 	justify-content: center;
 	background-color: #f8f0ff;
@@ -484,18 +507,19 @@ footer{
     padding: 0px;
     font-size: 20px;
     float: left;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .content-part .content-category {
 	font-size: 15px;
 }	
 .content-part .content-title{
-    margin: 10px;
+    margin: 5px;
     font-size: 35px;
 }
 .content-part .content-title span{
     font-weight: bold;
     display: inline-block;
+    margin-bottom: 10px;
 }
 .content-part .img-circle{
     width: 32px;
@@ -507,14 +531,14 @@ footer{
     border: 1px black solid;
     width: 20%;
     position: relative;
-	top: 15px;
+	top: 5px;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 .content-part .content-box{
     text-align: center;
@@ -523,21 +547,24 @@ footer{
     margin: 10px auto;
 }
 .content-part .content-box .content-image{
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
 }
 .content-part .like-box{
     font-weight: bold;
     margin-bottom: 10px;
 }
+.content-part .like-box span{
+	margin-right: 20px;
+}
 .reply-part{
-    width: 75%;
-    height: 35%;
+    width: 60%;
+    height: 50%;
     margin: 0;
     padding: 10px;
     float: right;
     font-size: 20px;
-    overflow: scroll;
+    overflow: scroll
 }
 .reply-part .reply-box{
      padding: 20px;
@@ -547,6 +574,8 @@ footer{
     border-radius: 20px;
     width: 100%;
     padding-left: 30px;
+        display: flex;
+    justify-content: left;
 }
 .reply-part .reply-box .content-reply{
     border-left: 1px black solid;
