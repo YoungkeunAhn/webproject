@@ -31,6 +31,7 @@
 <body>
 	<div class="container">
 		<header>
+		<div>
 			<img id="menu" class="menu-img" src="${project}images/menu.png"
 				alt="logo">
 			<div id="menu_list" class="menu_list">
@@ -38,6 +39,7 @@
 				<br><span onclick="GoWithdrawalPage()">Withdrawal</span><br>
 				<br><span onclick="GoAnalysisPage()">분석페이지</span>
 			</div>
+		</div>
 			<img onclick="GoMainPage()" class="header-img"
 				src="${project}images/mod_logo.png" alt="logo">
 		</header>

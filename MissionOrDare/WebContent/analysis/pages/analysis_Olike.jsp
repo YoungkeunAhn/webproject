@@ -292,6 +292,13 @@ new Swiper('.swiper-container', {
       if(event.keyCode == 50) location.href="http://localhost:8080/MissionOrDare/user_index.do";
   
   });
+ 
+  
+  $(".hover").mouseleave(
+    function () {
+      $(this).removeClass("hover");
+    }
+  );
   </script>
 
 </html>

@@ -38,7 +38,7 @@
 
     <section class="user_profile">
         <label>유저 조합 닉네임</label>
-        <img class="img-circle" src="../images/user_error.png">
+        <img class="img-circle" src="https://dki5b2ktck73s.cloudfront.net/profile/7140177628.jpg">
         <span>유저닉네임</span>
         <input class="btn btn-default" type="button" value="유저서브칭호1">
         <input class="btn btn-default" type="button" value="유저서브칭호2">

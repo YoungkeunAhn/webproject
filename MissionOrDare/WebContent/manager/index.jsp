@@ -18,11 +18,31 @@
   	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <title>관리자 메인 페이지</title>
 </head>
+	<style>
+		.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+	</style>
 
 <body id="test">
+	
 <div class="container">
 	<nav>
-
 		<label onclick="location.href='${pageContext.request.contextPath}/index.do'">MOD</label>
 		<div id="menu" class="btn-menu">
 			<i class="fas fa-bars"></i>
@@ -56,9 +76,9 @@
 	</nav>
 	<article>
 		<input type="hidden" id='id' value="${sessionScope.memId}">
-		<section class="under_text">MOD</section>
+		<section class="under_text glow">MOD</section>
 	</article>
-	<footer>@copyright All rights reserved | MissionOrDare | Simplefun | webProject</footer>
+	<footer>@copyright All rights reserved | MissionOrDare | Simplefun | webProject | KingGodGeneral 광훈2</footer>
 </div>
 
 

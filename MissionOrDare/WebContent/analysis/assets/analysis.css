@@ -616,6 +616,15 @@ footer{
 	border-radius: 100%;
     box-shadow: 1px 1px 100px beige;
 }
+.OlikeRankingOneTwoThreeBox .OlikeRankingUserProfileDiv .OlikeRankingUserProfileImg:hover{
+	border-radius: 100%;
+    box-shadow: 1px 1px 100px black;
+    cursor:pointer;
+    
+    opacity: 0.75;
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+}
 .OlikeRankingOneTwoThreeBox .OlikeUserRankingNickname{
 	color:#222;
 	margin-top:12px;
