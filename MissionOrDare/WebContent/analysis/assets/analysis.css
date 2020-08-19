@@ -567,7 +567,7 @@ footer{
 ***************************************/
 .sub-page .OlikeRankingSection{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 100px auto;
@@ -576,6 +576,28 @@ footer{
     border: 1px solid #888;
     border-radius: 10px;
     background: var(--white);
+}
+.sub-page .OlikeRankingSection .OlikeRanking_medal{
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+	height: 10%;
+}
+.sub-page .OlikeRankingSection .OlikeRanking_medal img{
+	width : 30px;
+	height : 25px;
+	margin : 0 181%;
+}
+.sub-page .OlikeRankingBox{
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    width: 90%;
+    height: 90%;
+  
 }
 .OlikeRankingOneTwoThreeBox{
 	background: rgb(217 216 209 / 0.54);

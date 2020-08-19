@@ -128,6 +128,12 @@
 	<article class="sub-page">
     	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">좋아요 랭킹 더보기</div>
     	<section class="OlikeRankingSection">
+    	<div class="OlikeRanking_medal">
+    		<img src="analysis/images/gold.PNG">
+    		<img src="analysis/images/silver.PNG">
+    		<img src="analysis/images/copper.PNG">
+	    </div>
+    	<div class="OlikeRankingBox">
     		<div class="OlikeRankingOneTwoThreeBox">
     			<div class="OlikeRankingUserProfileDiv">
     			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/7140177628.jpg" alt="jennierubyjane 프로필 이미지">
@@ -179,8 +185,9 @@
     				</dl>
     			</div>
     		</div>
-    	</section>
-    </article>
+   		</div>
+   	</section>
+   </article>
      <footer>@copyright All rights reserved | MissionOrDare | Simplefun | webProject | King God General 광훈2 | 110-392-152764신한 이광훈 </footer>
 
 <script>
