@@ -127,6 +127,38 @@
     </header>
    
     	<article class="sub-page">
+    	 	<!-- 클래스명은 변경하면 안 됨 -->
+    	 	<section>
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					 <div class="swiper-slide">
+			        	<ul class="chart-skills">
+						  <li></li>
+						  <li></li>
+						  <li></li>
+						  <li></li>
+						</ul>
+					</div>
+					<div class="swiper-slide"><img src="http://ktsmemo.cdn3.cafe24.com/p/0172.jpg"></div>
+					 <div class="swiper-slide">
+			             <label>Most :</label>
+			                <span>
+								지난주<br>
+								가장많은 미션을 클리어한<br>
+			                    TOP3
+			                </span>
+			             <button class="btn btn-link" onclick="location.href='${pageContext.request.contextPath}/analysis/pages/analysis_most.jsp'" >바로기기 >> </button>
+			        </div>
+			       
+					<div class="swiper-slide" style="font-size:50pt;">- 끝 -</div>
+				</div>
+				
+				<!-- 네비게이션 지정 -->
+				<div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+				<div class="swiper-button-prev"></div><!-- 이전 버튼 -->
+			</div>
+			</section>
+    	
     	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">점수 랭킹 더보기</div>
     	<section class="OlikeRankingSection">
     	<div class="OlikeRanking_medal">
@@ -188,167 +220,376 @@
     		</div>
    		</div>
    	</section>
+   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">점수 랭킹 더보기</div>
+   	<section class="OlikeRankingSection">
+    	<div class="OlikeRanking_medal">
+    		<img src="analysis/images/gold.PNG">
+    		<img src="analysis/images/silver.PNG">
+    		<img src="analysis/images/copper.PNG">
+	    </div>
+    	<div class="OlikeRankingBox">
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img onclick="location.href='analysis_userdata.jsp'" class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/7140177628.jpg" alt="jennierubyjane 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">J</div>
+    			<div class="OlikeUserTitle"><a>@킹갓제네럴 인간적으로 너무이쁘다</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#1</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>2921</dd>
+    				</dl>
+    			</div>
+    		</div>
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/2274763833.jpg" alt="bts.bighitofficial 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">BTS</div>
+    			<div class="OlieUserTitle"><a>@세계를 빛낸 사람</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#2</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>1023</dd>
+    				</dl>
+    			</div>
+    		</div>
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">ROSE</div>
+    			<div class="OlieUserTitle"><a>@로즈마리 김마리</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#3</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>999</dd>
+    				</dl>
+    			</div>
+    		</div>
+   		</div>
+   	</section>
+   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">점수 랭킹 더보기</div>
+   	<section class="OlikeRankingSection">
+    	<div class="OlikeRanking_medal">
+    		<img src="analysis/images/gold.PNG">
+    		<img src="analysis/images/silver.PNG">
+    		<img src="analysis/images/copper.PNG">
+	    </div>
+    	<div class="OlikeRankingBox">
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img onclick="location.href='analysis_userdata.jsp'" class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/7140177628.jpg" alt="jennierubyjane 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">J</div>
+    			<div class="OlikeUserTitle"><a>@킹갓제네럴 인간적으로 너무이쁘다</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#1</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>2921</dd>
+    				</dl>
+    			</div>
+    		</div>
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/2274763833.jpg" alt="bts.bighitofficial 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">BTS</div>
+    			<div class="OlieUserTitle"><a>@세계를 빛낸 사람</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#2</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>1023</dd>
+    				</dl>
+    			</div>
+    		</div>
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">ROSE</div>
+    			<div class="OlieUserTitle"><a>@로즈마리 김마리</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#3</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>999</dd>
+    				</dl>
+    			</div>
+    		</div>
+   		</div>
+   	</section>
+   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">점수 랭킹 더보기</div>
+   	<section class="OlikeRankingSection">
+    	<div class="OlikeRanking_medal">
+    		<img src="analysis/images/gold.PNG">
+    		<img src="analysis/images/silver.PNG">
+    		<img src="analysis/images/copper.PNG">
+	    </div>
+    	<div class="OlikeRankingBox">
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img onclick="location.href='analysis_userdata.jsp'" class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/7140177628.jpg" alt="jennierubyjane 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">J</div>
+    			<div class="OlikeUserTitle"><a>@킹갓제네럴 인간적으로 너무이쁘다</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#1</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>2921</dd>
+    				</dl>
+    			</div>
+    		</div>
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/2274763833.jpg" alt="bts.bighitofficial 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">BTS</div>
+    			<div class="OlieUserTitle"><a>@세계를 빛낸 사람</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#2</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>1023</dd>
+    				</dl>
+    			</div>
+    		</div>
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">ROSE</div>
+    			<div class="OlieUserTitle"><a>@로즈마리 김마리</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#3</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>999</dd>
+    				</dl>
+    			</div>
+    		</div>
+   		</div>
+   	</section>
+   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">점수 랭킹 더보기</div>
+   	<section class="OlikeRankingSection">
+    	<div class="OlikeRanking_medal">
+    		<img src="analysis/images/gold.PNG">
+    		<img src="analysis/images/silver.PNG">
+    		<img src="analysis/images/copper.PNG">
+	    </div>
+    	<div class="OlikeRankingBox">
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img onclick="location.href='analysis_userdata.jsp'" class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/7140177628.jpg" alt="jennierubyjane 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">J</div>
+    			<div class="OlikeUserTitle"><a>@킹갓제네럴 인간적으로 너무이쁘다</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#1</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>2921</dd>
+    				</dl>
+    			</div>
+    		</div>
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/2274763833.jpg" alt="bts.bighitofficial 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">BTS</div>
+    			<div class="OlieUserTitle"><a>@세계를 빛낸 사람</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#2</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>1023</dd>
+    				</dl>
+    			</div>
+    		</div>
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">ROSE</div>
+    			<div class="OlieUserTitle"><a>@로즈마리 김마리</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#3</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>999</dd>
+    				</dl>
+    			</div>
+    		</div>
+   		</div>
+   	</section>
+   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">점수 랭킹 더보기</div>
+   	<section class="OlikeRankingSection">
+    	<div class="OlikeRanking_medal">
+    		<img src="analysis/images/gold.PNG">
+    		<img src="analysis/images/silver.PNG">
+    		<img src="analysis/images/copper.PNG">
+	    </div>
+    	<div class="OlikeRankingBox">
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img onclick="location.href='analysis_userdata.jsp'" class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/7140177628.jpg" alt="jennierubyjane 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">J</div>
+    			<div class="OlikeUserTitle"><a>@킹갓제네럴 인간적으로 너무이쁘다</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#1</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>2921</dd>
+    				</dl>
+    			</div>
+    		</div>
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/2274763833.jpg" alt="bts.bighitofficial 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">BTS</div>
+    			<div class="OlieUserTitle"><a>@세계를 빛낸 사람</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#2</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>1023</dd>
+    				</dl>
+    			</div>
+    		</div>
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">ROSE</div>
+    			<div class="OlieUserTitle"><a>@로즈마리 김마리</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#3</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>999</dd>
+    				</dl>
+    			</div>
+    		</div>
+   		</div>
+   	</section>
     	
     	
-    	
-    	<section>
-           <label class="title">점수 순위</label>
-           <div class="most-contents">
-				<ul class="top3">
-					<li class="rank-top">
-					<div style="position: relative; top:52px;">
-						<label>라이언</label>
-						<img class="img-circle" src="${project}images/sample.jpg">
-						<span>id_123</span>
-						<span>최고점수 : 588956</span>
-					</div>	
-						<div>
-						<label>어피치</label>
-						<img class="img-circle" src="${project}images/sample.jpg">
-						<span>id_456</span>
-						<span>최고점수 : 666651</span>
-					</div>
-					<div style="position: relative; top:105px;">
-						<label>무지</label>
-						<img class="img-circle" src="${project}images/sample.jpg">
-						<span>id_789</span>
-						<span>최고점수 : 502121</span>
-					</div>
-					</li>
-					<li class="rank-bottom">
-						<square class="top2">2</square>
-						<square class="top1">1</square>
-						<square class="top3">3</square>
-					</li>
-				</ul>  
-				<div class="mid"></div>         
-				<div class="rank-list">
-					<table class="table table-striped">
-						<thead>
-							<tr class="list-title">
-								<td>랭킹</td>
-								<td>아이디</td>
-								<td>최고점수</td>
-								<td>칭호</td>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="rank-contents">
-								<td>4</td>
-								<td>유저아이디</td>
-								<td>424242</td>
-								<td>유저대표칭호</td>
-							</tr>
-							<tr class="rank-contents">
-								<td>4</td>
-								<td>유저아이디</td>
-								<td>424242</td>
-								<td>유저대표칭호</td>
-							</tr>
-							<tr class="rank-contents">
-								<td>4</td>
-								<td>유저아이디</td>
-								<td>424242</td>
-								<td>유저대표칭호</td>
-							</tr>
-							<tr class="rank-contents">
-								<td>4</td>
-								<td>유저아이디</td>
-								<td>424242</td>
-								<td>유저대표칭호</td>
-							</tr>
-							<tr class="rank-contents">
-								<td>4</td>
-								<td>유저아이디</td>
-								<td>424242</td>
-								<td>유저대표칭호</td>
-							</tr>
-							<tr class="rank-contents">
-								<td>4</td>
-								<td>유저아이디</td>
-								<td>424242</td>
-								<td>유저대표칭호</td>
-							</tr>
-							<tr class="rank-contents">
-								<td>4</td>
-								<td>유저아이디</td>
-								<td>424242</td>
-								<td>유저대표칭호</td>
-							</tr>
-							<tr class="rank-contents">
-								<td>4</td>
-								<td>유저아이디</td>
-								<td>424242</td>
-								<td>유저대표칭호</td>
-							</tr>
-							<tr class="rank-contents">
-								<td>4</td>
-								<td>유저아이디</td>
-								<td>424242</td>
-								<td>유저대표칭호</td>
-							</tr>
-							<tr class="rank-contents">
-								<td>4</td>
-								<td>유저아이디</td>
-								<td>424242</td>
-								<td>유저대표칭호</td>
-							</tr>
-							<tr class="rank-contents">
-								<td>4</td>
-								<td>유저아이디</td>
-								<td>424242</td>
-								<td>유저대표칭호</td>
-							</tr>
-							<tr class="rank-contents">
-								<td>4</td>
-								<td>유저아이디</td>
-								<td>424242</td>
-								<td>유저대표칭호</td>
-							</tr>
-							<tr class="rank-contents">
-								<td>4</td>
-								<td>유저아이디</td>
-								<td>424242</td>
-								<td>유저대표칭호</td>
-							</tr>
-							
-						</tbody>
-						
-					</table>
-				</div>
-           </div>
- 		</section>
+    	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">점수 랭킹 더보기</div>
+    	<section class="OlikeRankingSection">
+    	<div class="OlikeRanking_medal">
+    		<img src="analysis/images/gold.PNG">
+    		<img src="analysis/images/silver.PNG">
+    		<img src="analysis/images/copper.PNG">
+	    </div>
+    	<div class="OlikeRankingBox">
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img onclick="location.href='analysis_userdata.jsp'" class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/7140177628.jpg" alt="jennierubyjane 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">J</div>
+    			<div class="OlikeUserTitle"><a>@킹갓제네럴 인간적으로 너무이쁘다</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#1</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>2921</dd>
+    				</dl>
+    			</div>
+    		</div>
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/2274763833.jpg" alt="bts.bighitofficial 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">BTS</div>
+    			<div class="OlieUserTitle"><a>@세계를 빛낸 사람</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#2</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>1023</dd>
+    				</dl>
+    			</div>
+    		</div>
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">ROSE</div>
+    			<div class="OlieUserTitle"><a>@로즈마리 김마리</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#3</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>999</dd>
+    				</dl>
+    			</div>
+    		</div>
+   		</div>
+   	</section>
       
-        	<!-- 클래스명은 변경하면 안 됨 -->
-			<div class="swiper-container">
-				<div class="swiper-wrapper">
-					 <div class="swiper-slide">
-			        	<ul class="chart-skills">
-						  <li></li>
-						  <li></li>
-						  <li></li>
-						  <li></li>
-						</ul>
-					</div>
-					<div class="swiper-slide"><img src="http://ktsmemo.cdn3.cafe24.com/p/0172.jpg"></div>
-					 <div class="swiper-slide">
-			             <label>Most :</label>
-			                <span>
-								지난주<br>
-								가장많은 미션을 클리어한<br>
-			                    TOP3
-			                </span>
-			             <button class="btn btn-link" onclick="location.href='${pageContext.request.contextPath}/analysis/pages/analysis_most.jsp'" >바로기기 >> </button>
-			        </div>
-			       
-					<div class="swiper-slide" style="font-size:50pt;">- 끝 -</div>
-				</div>
-			
-				<!-- 네비게이션 지정 -->
-				<div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-				<div class="swiper-button-prev"></div><!-- 이전 버튼 -->
-			</div>
-			        
+       	        
         
        <section style="color:black;">
             <div class="chartAndBoard">
