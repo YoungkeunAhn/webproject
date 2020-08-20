@@ -18,7 +18,30 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<title>카테고리 관리페이지</title>
 </head>
+<style>
+.banditfire {
+    width: 10px;
+    height: 10px;
+    background-color: #a1a771b8;
+    position: relative;
+    animation-name: fire;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    border-radius: 100%;
+    box-shadow: 1px 1px 10px #a1a771b8;
+    z-index: 1000;
+    display: flex;
+    position: fixed;
+}
 
+@keyframes fire {
+  0%   {background-color:#af9c55;}
+  25%  {background-color:red;}
+  50%  {background-color:#9b9b2b;}
+  75%  {background-color:yellow;}
+  100% {background-color:white;}
+}
+</style>
 <body>
 <div class="container">
 	<nav>
@@ -54,6 +77,13 @@
 		</ul>
 	</nav>
 	<section class="title-part">
+		<div class="banditfire" style="margin-top: 0px;
+ 	 	 	 				margin-left: 0px;
+						    bottom: 0px;
+   						 position: relative;
+ 					     top: 8%;
+    					left: 53.8%;
+    					margin-right:0px;"></div>
 		<div class="title-up">
 			<h1>카테고리 관리</h1>
 			<span>
