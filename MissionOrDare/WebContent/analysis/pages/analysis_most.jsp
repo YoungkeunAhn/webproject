@@ -125,7 +125,71 @@
             </label>
         </form>
     </header>
-    <article class="sub-page">
+   
+    	<article class="sub-page">
+    	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">점수 랭킹 더보기</div>
+    	<section class="OlikeRankingSection">
+    	<div class="OlikeRanking_medal">
+    		<img src="analysis/images/gold.PNG">
+    		<img src="analysis/images/silver.PNG">
+    		<img src="analysis/images/copper.PNG">
+	    </div>
+    	<div class="OlikeRankingBox">
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img onclick="location.href='analysis_userdata.jsp'" class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/7140177628.jpg" alt="jennierubyjane 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">J</div>
+    			<div class="OlikeUserTitle"><a>@킹갓제네럴 인간적으로 너무이쁘다</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#1</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>2921</dd>
+    				</dl>
+    			</div>
+    		</div>
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/2274763833.jpg" alt="bts.bighitofficial 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">BTS</div>
+    			<div class="OlieUserTitle"><a>@세계를 빛낸 사람</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#2</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>1023</dd>
+    				</dl>
+    			</div>
+    		</div>
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">ROSE</div>
+    			<div class="OlieUserTitle"><a>@로즈마리 김마리</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#3</dd>
+    				</dl>
+    				<dl>
+    					<dt>점수</dt>
+    					<dd>999</dd>
+    				</dl>
+    			</div>
+    		</div>
+   		</div>
+   	</section>
+    	
+    	
     	
     	<section>
            <label class="title">점수 순위</label>

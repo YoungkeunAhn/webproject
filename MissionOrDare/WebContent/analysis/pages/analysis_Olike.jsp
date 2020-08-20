@@ -136,7 +136,7 @@
     	<div class="OlikeRankingBox">
     		<div class="OlikeRankingOneTwoThreeBox">
     			<div class="OlikeRankingUserProfileDiv">
-    			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/7140177628.jpg" alt="jennierubyjane 프로필 이미지">
+    			<img onclick="location.href='analysis_userdata.jsp'" class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/7140177628.jpg" alt="jennierubyjane 프로필 이미지">
     			</div>
     			<div class="OlikeUserRankingNickname">J</div>
     			<div class="OlikeUserTitle"><a>@킹갓제네럴 인간적으로 너무이쁘다</a></div>

@@ -19,7 +19,8 @@
   <title>관리자 메인 페이지</title>
 </head>
 	<style>
-		.glow {
+
+.glow {
   font-size: 80px;
   color: #fff;
   text-align: center;
@@ -37,6 +38,27 @@
     text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
 }
+
+.glow1 {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+  animation-name: location;
+  animation-duration: 0.01s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: none;
+}
+@keyframes location{
+	  0%{ position:relative; left:0px; top:0px; text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;}
+ 	 25%{ position:relative; left:10px; top:100px; text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;}
+	 50%{ position:relative; left:0px; top:20px; text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;}
+ 	 75%{ position:relative; left:0px; top:0px; text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;}
+ 	 100{ position:relative; left:0px; top:50px; text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;}
+}
+
+
 	</style>
 
 <body id="test">
@@ -130,6 +152,15 @@
       if(event.keyCode == 50) location.href="http://localhost:8080/MissionOrDare/user_index.do";
   
   });
+  
+	$('.glow').mouseover(function() {
+  		 $('.glow').addClass('glow1');
+	});
+   $('.glow').mouseleave(function() {
+  		 $('.glow').removeClass('glow1');
+	});
+
+	
 //-->
 </script>
 </body>

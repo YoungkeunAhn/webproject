@@ -19,7 +19,6 @@
 	<title>카테고리 관리페이지</title>
 </head>
 
-
 <body>
 <div class="container">
 	<nav>
