@@ -77,13 +77,7 @@
 		</ul>
 	</nav>
 	<section class="title-part">
-		<div class="banditfire" style="margin-top: 0px;
- 	 	 	 				margin-left: 0px;
-						    bottom: 0px;
-   						 position: relative;
- 					     top: 8%;
-    					left: 53.8%;
-    					margin-right:0px;"></div>
+		<div class="banditfire" style="margin-top: 0px; margin-left: 0px; bottom: 0px; position: relative; top: 8%; left: 53.8%; margin-right:0px; box-shadow: 1px 1px 16px white;"></div>
 		<div class="title-up">
 			<h1>카테고리 관리</h1>
 			<span>
