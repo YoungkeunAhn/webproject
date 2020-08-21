@@ -135,37 +135,27 @@
     </header>
    
     	<article class="sub-page">
-    	 	<!-- 클래스명은 변경하면 안 됨 -->
-    	 	<section>
-			<div class="swiper-container">
-				<div class="swiper-wrapper">
-					 <div class="swiper-slide">
-			        	<ul class="chart-skills">
-						  <li></li>
-						  <li></li>
-						  <li></li>
-						  <li></li>
-						</ul>
-					</div>
-					<div class="swiper-slide"><img src="http://ktsmemo.cdn3.cafe24.com/p/0172.jpg"></div>
-					 <div class="swiper-slide">
-			             <label>Most :</label>
-			                <span>
-								지난주<br>
-								가장많은 미션을 클리어한<br>
-			                    TOP3
-			                </span>
-			             <button class="btn btn-link" onclick="location.href='${pageContext.request.contextPath}/analysis/pages/analysis_most.jsp'" >바로기기 >> </button>
-			        </div>
-			       
-					<div class="swiper-slide" style="font-size:50pt;">- 끝 -</div>
-				</div>
-				
-				<!-- 네비게이션 지정 -->
-				<div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
-				<div class="swiper-button-prev"></div><!-- 이전 버튼 -->
-			</div>
-			</section>
+   
+    	 	  <!-- 클래스명은 변경하면 안 됨 -->
+           <section>
+         <div class="top-swiper-container" >
+            <div class="swiper-wrapper">
+               <div class="swiper-slide" >
+                  <iframe src="https://www.youtube.com/embed/Fm5iP0S1z9w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/Fm5iP0S1z9w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/Fm5iP0S1z9w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+           
+               </div>
+                <div class="swiper-slide">
+            
+               </div>
+            </div>
+            
+            <!-- 네비게이션 지정 -->
+            <div class="swiper-button-next"></div><!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+            <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
+         </div>
+         </section>
     	
     	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">점수 랭킹 더보기</div>
     	<section class="OlikeRankingSection">
@@ -228,7 +218,7 @@
     		</div>
    		</div>
    	</section>
-   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">점수 랭킹 더보기</div>
+   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">좋아요 랭킹 더보기</div>
    	<section class="OlikeRankingSection">
     	<div class="OlikeRanking_medal">
     		<img src="analysis/images/gold.PNG">
@@ -248,7 +238,7 @@
     					<dd>#1</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>좋아요</dt>
     					<dd>2921</dd>
     				</dl>
     			</div>
@@ -265,7 +255,7 @@
     					<dd>#2</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>좋아요</dt>
     					<dd>1023</dd>
     				</dl>
     			</div>
@@ -282,14 +272,14 @@
     					<dd>#3</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>좋아요</dt>
     					<dd>999</dd>
     				</dl>
     			</div>
     		</div>
    		</div>
    	</section>
-   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">점수 랭킹 더보기</div>
+   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">조회수 랭킹 더보기</div>
    	<section class="OlikeRankingSection">
     	<div class="OlikeRanking_medal">
     		<img src="analysis/images/gold.PNG">
@@ -309,7 +299,7 @@
     					<dd>#1</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>조회수</dt>
     					<dd>2921</dd>
     				</dl>
     			</div>
@@ -326,7 +316,7 @@
     					<dd>#2</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>조회수</dt>
     					<dd>1023</dd>
     				</dl>
     			</div>
@@ -343,14 +333,14 @@
     					<dd>#3</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>조회수</dt>
     					<dd>999</dd>
     				</dl>
     			</div>
     		</div>
    		</div>
    	</section>
-   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">점수 랭킹 더보기</div>
+   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">레벨 랭킹 더보기</div>
    	<section class="OlikeRankingSection">
     	<div class="OlikeRanking_medal">
     		<img src="analysis/images/gold.PNG">
@@ -370,7 +360,7 @@
     					<dd>#1</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>레벨</dt>
     					<dd>2921</dd>
     				</dl>
     			</div>
@@ -387,7 +377,7 @@
     					<dd>#2</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>레벨</dt>
     					<dd>1023</dd>
     				</dl>
     			</div>
@@ -404,14 +394,14 @@
     					<dd>#3</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>레벨</dt>
     					<dd>999</dd>
     				</dl>
     			</div>
     		</div>
    		</div>
    	</section>
-   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">점수 랭킹 더보기</div>
+   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">성공률 랭킹 더보기</div>
    	<section class="OlikeRankingSection">
     	<div class="OlikeRanking_medal">
     		<img src="analysis/images/gold.PNG">
@@ -431,7 +421,7 @@
     					<dd>#1</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>성공률</dt>
     					<dd>2921</dd>
     				</dl>
     			</div>
@@ -448,7 +438,7 @@
     					<dd>#2</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>성공률</dt>
     					<dd>1023</dd>
     				</dl>
     			</div>
@@ -465,14 +455,14 @@
     					<dd>#3</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>성공률</dt>
     					<dd>999</dd>
     				</dl>
     			</div>
     		</div>
    		</div>
    	</section>
-   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">점수 랭킹 더보기</div>
+   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">가장인기있는 유저 랭킹 더보기</div>
    	<section class="OlikeRankingSection">
     	<div class="OlikeRanking_medal">
     		<img src="analysis/images/gold.PNG">
@@ -492,7 +482,7 @@
     					<dd>#1</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>인기점수</dt>
     					<dd>2921</dd>
     				</dl>
     			</div>
@@ -509,7 +499,7 @@
     					<dd>#2</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>인기점수</dt>
     					<dd>1023</dd>
     				</dl>
     			</div>
@@ -526,7 +516,7 @@
     					<dd>#3</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>인기점수</dt>
     					<dd>999</dd>
     				</dl>
     			</div>
@@ -535,7 +525,7 @@
    	</section>
     	
     	
-    	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">점수 랭킹 더보기</div>
+    	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">성장중인 유저 더보기</div>
     	<section class="OlikeRankingSection">
     	<div class="OlikeRanking_medal">
     		<img src="analysis/images/gold.PNG">
@@ -555,7 +545,7 @@
     					<dd>#1</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>성장률</dt>
     					<dd>2921</dd>
     				</dl>
     			</div>
@@ -572,7 +562,7 @@
     					<dd>#2</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>성장률</dt>
     					<dd>1023</dd>
     				</dl>
     			</div>
@@ -589,14 +579,76 @@
     					<dd>#3</dd>
     				</dl>
     				<dl>
-    					<dt>점수</dt>
+    					<dt>성장률</dt>
     					<dd>999</dd>
     				</dl>
     			</div>
     		</div>
    		</div>
    	</section>
-      
+     
+     
+    	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">미션을 가장 많이 성공한 유저 더보기</div>
+    	<section class="OlikeRankingSection">
+    	<div class="OlikeRanking_medal">
+    		<img src="analysis/images/gold.PNG">
+    		<img src="analysis/images/silver.PNG">
+    		<img src="analysis/images/copper.PNG">
+	    </div>
+    	<div class="OlikeRankingBox">
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img onclick="location.href='analysis_userdata.jsp'" class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/7140177628.jpg" alt="jennierubyjane 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">J</div>
+    			<div class="OlikeUserTitle"><a>@킹갓제네럴 인간적으로 너무이쁘다</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#1</dd>
+    				</dl>
+    				<dl>
+    					<dt>성공 미션 수</dt>
+    					<dd>2921</dd>
+    				</dl>
+    			</div>
+    		</div>
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/2274763833.jpg" alt="bts.bighitofficial 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">BTS</div>
+    			<div class="OlieUserTitle"><a>@세계를 빛낸 사람</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#2</dd>
+    				</dl>
+    				<dl>
+    					<dt>성공 미션 수</dt>
+    					<dd>1023</dd>
+    				</dl>
+    			</div>
+    		</div>
+    		<div class="OlikeRankingOneTwoThreeBox">
+    			<div class="OlikeRankingUserProfileDiv">
+    			<img class="OlikeRankingUserProfileImg" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+    			</div>
+    			<div class="OlikeUserRankingNickname">ROSE</div>
+    			<div class="OlieUserTitle"><a>@로즈마리 김마리</a></div>
+    			<div class="Olike-Info">
+    				<dl>
+    					<dt>랭킹</dt>
+    					<dd>#3</dd>
+    				</dl>
+    				<dl>
+    					<dt>성공 미션 수</dt>
+    					<dd>999</dd>
+    				</dl>
+    			</div>
+    		</div>
+   		</div>
+   	</section>
        	        
         
        <section style="color:black;">

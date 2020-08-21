@@ -160,7 +160,7 @@ footer{
 
 ***************************************/
 .starStick{
-	cursor: pointer;
+   cursor: pointer;
 }
 /**************************************
 
@@ -189,109 +189,109 @@ footer{
 
 ***************************************/
 .title{
-	color : black;
-	font-size : 2.7em;
-	text-align: center;
-	margin-top : 10px;
+   color : black;
+   font-size : 2.7em;
+   text-align: center;
+   margin-top : 10px;
 }
 .most-contents{
-	width: 100%;
-	height: 90%;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	padding : 15px;
+   width: 100%;
+   height: 90%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   padding : 15px;
 }
 .most-contents ul{
-	width: 55%;
-	padding: 0;
-	margin: 0;
-	list-style: none;
-	color: var(--black);
-	display : flex;
-	flex-direction : column;
+   width: 55%;
+   padding: 0;
+   margin: 0;
+   list-style: none;
+   color: var(--black);
+   display : flex;
+   flex-direction : column;
 }
 .rank-top{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-	height : 50%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+   align-items: center;
+   height : 50%;
 }
 .rank-top div{
-	margin : 0;
-	paddin: 0;
-	border: none;
-	min-height : 100px;
+   margin : 0;
+   paddin: 0;
+   border: none;
+   min-height : 100px;
 }
 .rank-top label{
-	font-size : 1.7rem;
-	text-align : center;
+   font-size : 1.7rem;
+   text-align : center;
 }
 .rank-top img{
-	width : 80px;
-	height : 80px;
-	margin :  0 10px;
+   width : 80px;
+   height : 80px;
+   margin :  0 10px;
 }
 @media screen and (max-width: 1010px){
-	.rank-top img{
-		width : 50px;
-		height : 50px;
-		margin : 1px auto;
-	}
+   .rank-top img{
+      width : 50px;
+      height : 50px;
+      margin : 1px auto;
+   }
 }
 .rank-top span{
-	font-size : 1.2rem;
-	text-align : center;
+   font-size : 1.2rem;
+   text-align : center;
 }
 .rank-bottom{
-	display : flex;
-	flex-wrap : wrap;
-	justify-content : center;
-	align-items : flex-end;
-	height : 50%;
+   display : flex;
+   flex-wrap : wrap;
+   justify-content : center;
+   align-items : flex-end;
+   height : 50%;
 }
 .rank-bottom square{
-	background-color : #efefef;
-	width : 30%;
-	height : 200px;	
-	font-size : 50px;
-	color : #ffc4c4;
-	text-align : center;
-	border-radius : 5%;
+   background-color : #efefef;
+   width : 30%;
+   height : 200px;   
+   font-size : 50px;
+   color : #ffc4c4;
+   text-align : center;
+   border-radius : 5%;
 }
 .rank-bottom .top2{
-	height : 150px;
+   height : 150px;
 }
 .rank-bottom .top3{
-	height : 100px;
+   height : 100px;
 }
 .mid {
-	width : 5%;
-	height:90%;
+   width : 5%;
+   height:90%;
 }
 .rank-list {
-	width:38%; 
-	height:90%; 
-	overflow:auto;
-	background-color : #fffff0;
-	border-radius : 5%;
+   width:38%; 
+   height:90%; 
+   overflow:auto;
+   background-color : #fffff0;
+   border-radius : 5%;
 }
 .most-contents table{
-	width:100%;
-	padding: 10px;
-	margin: 0;
-	list-style: none;
-	color: var(--black);
-	text-align: center;
-	height: 95%;
+   width:100%;
+   padding: 10px;
+   margin: 0;
+   list-style: none;
+   color: var(--black);
+   text-align: center;
+   height: 95%;
 }
 .list-title td{
-	font-size : 15px;
+   font-size : 15px;
 }
 .rank-contents td{
-	font-size : 10px;
+   font-size : 10px;
 }
 
 
@@ -326,15 +326,15 @@ footer{
 }
 
 .chartAndBoard div{
-	overflow: hidden;
-	max-height: 445px;
-  	margin: auto;
+   overflow: hidden;
+   max-height: 445px;
+     margin: auto;
 }
 
 #Line_Controls_Chart{
-	overflow: auto;
-	width: 48%;
-	height: 90%;
+   overflow: auto;
+   width: 48%;
+   height: 90%;
 }
 /**************************************
 
@@ -453,6 +453,26 @@ footer{
     height:100%;
 }
 
+/**************************************
+
+    analysis_most.jsp
+
+***************************************/
+.top-swiper-container{
+   width : 100%
+}
+.top-swiper-container .swiper-wrapper{
+   display : flex;
+   flex-direction: row;   
+}
+.top-swiper-container .swiper-wrapper .swiper-slide{
+   width : 100%;
+}
+.top-swiper-container .swiper-wrapper .swiper-slide iframe{
+   margin : 10px;
+   width : 350px;
+   height : 250px;
+}
 
 /**************************************
 
@@ -480,6 +500,10 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.user_profile .onetwothree_ranking img{
+   width : 30px;
+   height : 25px;
 }
 .user_profile label{
     color: var(--black);
@@ -521,7 +545,7 @@ footer{
     margin-bottom: 30px;
 }
 .user-data .item3 .chart-part{
-	margin-bottom: 20px;
+   margin-bottom: 20px;
 }
 
 .modal-bg{
@@ -578,19 +602,19 @@ footer{
     background: var(--white);
 }
 .sub-page .OlikeRankingSection .OlikeRanking_medal{
-	display: flex;
+   display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-	height: 10%;
+   height: 10%;
 }
 .sub-page .OlikeRankingSection .OlikeRanking_medal img{
-	width : 30px;
-	height : 25px;
-	margin : 0 181%;
+   width : 30px;
+   height : 25px;
+   margin : 0 181%;
 }
 .sub-page .OlikeRankingBox{
-	display: flex;
+   display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -600,24 +624,24 @@ footer{
   
 }
 .OlikeRankingOneTwoThreeBox{
-	background: rgb(217 216 209 / 0.54);
-	width:30%;
-	height: 66%;
-	margin:10px;
-	display: flex;
+   background: rgb(217 216 209 / 0.54);
+   width:30%;
+   height: 66%;
+   margin:10px;
+   display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .OlikeRankingOneTwoThreeBox .OlikeRankingUserProfileDiv{
-	margin-top: -92px;
+   margin-top: -92px;
 }
 .OlikeRankingOneTwoThreeBox .OlikeRankingUserProfileDiv .OlikeRankingUserProfileImg{
-	border-radius: 100%;
+   border-radius: 100%;
     box-shadow: 1px 1px 100px beige;
 }
 .OlikeRankingOneTwoThreeBox .OlikeRankingUserProfileDiv .OlikeRankingUserProfileImg:hover{
-	border-radius: 100%;
+   border-radius: 100%;
     box-shadow: 1px 1px 100px black;
     cursor:pointer;
     
@@ -626,24 +650,24 @@ footer{
     transform: scale(1.15);
 }
 .OlikeRankingOneTwoThreeBox .OlikeUserRankingNickname{
-	color:#222;
-	margin-top:12px;
-	font-size: 25px;
-	font-weight: 700;
+   color:#222;
+   margin-top:12px;
+   font-size: 25px;
+   font-weight: 700;
 }
 .OlikeRankingOneTwoThreeBox .Olike-Info{
-	margin-top: 28px;
+   margin-top: 28px;
     padding-top: 18px;
     width: 80%;
     border-top: 1px solid #000000;
     text-align: center;
 }
 .OlikeRankingOneTwoThreeBox .Olike-Info dl{
-	display: inline-block;
+   display: inline-block;
     width: 45%;
 }
 .OlikeRankingOneTwoThreeBox .Olike-Info dl dt{
-	font-size: 12px;
+   font-size: 12px;
     font-family: 'NotoKrM';
     color: #888;
 }
@@ -656,14 +680,14 @@ footer{
     font-weight: 700;
 }
 .sub-page .OlikeSeeMoreRanking{
-	position: relative;
+   position: relative;
     top: 94px;
     margin: 50px auto;
     width: 90%;
 }
 .sub-page .OlikeSeeMoreRanking:hover{
-	color: #ff1f45;
-	cursor: pointer;
+   color: #ff1f45;
+   cursor: pointer;
 }
 /**************************************
 
@@ -671,21 +695,21 @@ footer{
 
 ***************************************/
 .sub-page .likeSubContentSection{
-	min-height: 720px;
+   min-height: 720px;
 }
 .sub-page .likeSubContentSection .likeSubContentDiv{
-	width:100%;
-	height: 100%;
-	color: black;
+   width:100%;
+   height: 100%;
+   color: black;
 }
 .sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea{
-	margin-bottom: 80px;
+   margin-bottom: 80px;
     height: 240px;
     background: #ded3d342;
     text-align: center;
 }
 .sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea .BoardArea{
-	position: relative;
+   position: relative;
     width: 1160px;
     margin: 0 auto;
     text-align: left;
@@ -704,7 +728,7 @@ footer{
     font-weight: bold;
 }
 .sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea .BoardArea .ranking-search{
-	margin-top: 20px;
+   margin-top: 20px;
     position: relative;
     display: inline-block;
     width: 550px;
@@ -714,14 +738,14 @@ footer{
     background: #fff;
 }
 .sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea .BoardArea .ranking-search input{
-	width: 100%;
+   width: 100%;
     padding: 0 60px 0 20px;
     height: 56px;
     line-height: 56px;
     font-size: 16px;
 }
 .sub-page .likeSubContentSection .likeSubContentDiv .ranking-searchArea .BoardArea .ranking-search button{
-	position: absolute;
+   position: absolute;
     top: 50%;
     right: 20px;
     margin-top: -12px;
@@ -733,19 +757,19 @@ footer{
     background: url(../img/sub/ico-search.png) no-repeat;
 }
 .BoardArea .update-date{
-	text-align: right;
+   text-align: right;
     color: #b9b9b9;
     padding-bottom: 10px;
     display: block;
 }
 
 table{
- 	width: 100%;
+    width: 100%;
     border-collapse: collapse;
     border-spacing: 0px;
 }
 .simple-table{
-	clear: both;
+   clear: both;
     text-align: center;
 }
 
@@ -760,7 +784,7 @@ tr {
     border-color: inherit;
 }
 th {
-	display: table-cell;
+   display: table-cell;
     vertical-align: inherit;
     font-weight: bold;
     text-align: -internal-center;
@@ -772,4 +796,3 @@ th {
     padding: 15px 0;
     text-align: center;
 }
-
