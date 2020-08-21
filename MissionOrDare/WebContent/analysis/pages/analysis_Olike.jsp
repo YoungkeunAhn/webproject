@@ -111,7 +111,7 @@
     <nav>
         <ul>
             <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" onclick="location.href='analysis_most.do'">MOST</li>
-            <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" onclick="location.href='analysis_Olike.do'">OLIKE</li>
+            <li style="padding: 10px; color:orange;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='orange';" onclick="location.href='analysis_Olike.do'">OLIKE</li>
             <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';">DEMAND</li>
             <li style="padding: 10px;" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" ><i class="fas fa-search"></i></li>
         </ul>

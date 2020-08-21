@@ -80,6 +80,9 @@
 .swiper-slide img {
 	box-shadow:0 0 5px #555;
 }
+ul li{
+	padding: 10px;
+}
 </style>
 <body id="test">
 	<div id="GoTop1">일루왕</div>
@@ -118,11 +121,30 @@
 	</svg>
     <nav>
         <ul>
-            <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" onclick="location.href='analysis_most.do'">MOST</li>
+            <li style="padding: 10px; color:orange;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='orange';" onclick="location.href='analysis_most.do'">MOST</li>
             <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" onclick="location.href='analysis_Olike.do'">OLIKE</li>
             <li style="padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';">DEMAND</li>
             <li style="padding: 10px;" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" ><i class="fas fa-search"></i></li>
         </ul>
+    </nav>
+    <nav style=" 
+    position: fixed;
+    top: 87px;
+    display: flex;
+    ">
+    	<ul>
+    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">점수</li>
+    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">좋아요</li>
+    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">조회수</li>
+    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">레벨</li>
+    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">성공률</li>
+    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">인기쟁이</li>
+    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">성장중</li>
+    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">미션수행수</li>
+    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">기타1</li>
+    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">기타2</li>
+    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">기타3</li>
+    	</ul>
     </nav>
     <header class="header-hidden">
         <span style="cursor:pointer; padding: 10px;" class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" onclick="location.href='analysis_index.do'">M O D</span>
@@ -218,6 +240,7 @@
     		</div>
    		</div>
    	</section>
+   	<div id="GoTop2"></div>
    	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">좋아요 랭킹 더보기</div>
    	<section class="OlikeRankingSection">
     	<div class="OlikeRanking_medal">
@@ -1043,7 +1066,7 @@ new Swiper('.swiper-container', {
     }
     .header-appear{
         transition: 1s;
-        transform: translateY(400px);
+        transform: translateY(465px);
         position: fixed;
         z-index: 99;   
     }   
