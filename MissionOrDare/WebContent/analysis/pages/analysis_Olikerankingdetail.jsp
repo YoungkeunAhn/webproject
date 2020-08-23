@@ -151,8 +151,7 @@
   								<th scope="col">전체랭킹</th>
   								<th scope="col">MOD 정보</th>
   								<th scope="col">좋아요수</th>
-  								<th scope="col">게시물수</th>
-  								<th scope="col">성공률</th>
+  								<th scope="col">카테고리</th>
   								<th scope="col">순위증감</th>
   								<th scope="col">최고랭킹</th>
   							</tr>
@@ -160,68 +159,82 @@
   						<tbody>
   							<tr>
   								<td>1</td>
-  								<td>2</td>
+  								<td style="width:16%;">
+  									<div class="ProfileArea">
+  										<img class="analysis_RankingBoardImage" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+  											<div class="userNickname">Jerri</div>
+  											<div class="userTitle">@양꼬치엔칭따오</div>
+  									</div>	
+  								</td>
   								<td>3</td>
   								<td>4</td>
   								<td>5</td>
   								<td>6</td>
-  								<td>7</td>
   							</tr>
   							<tr>
   								<td>1</td>
-  								<td>2</td>
+  								<td style="width:16%;">
+  									<div class="ProfileArea">
+  										<img class="analysis_RankingBoardImage" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+  										<div style="display:flex; flex-wrap:wrap;">
+  											<div class="userNickname">Jerri</div>
+  											<div class="userTitle">@양꼬치엔칭따오</div>
+  										</div>
+  									</div>	
+  								</td>
   								<td>3</td>
   								<td>4</td>
   								<td>5</td>
   								<td>6</td>
-  								<td>7</td>
   							</tr>
   							<tr>
   								<td>1</td>
-  								<td>2</td>
+  								<td style="width:16%;">
+  									<div class="ProfileArea">
+  										<img class="analysis_RankingBoardImage" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+  										<div style="display:flex; flex-wrap:wrap;">
+  											<div class="userNickname">Jerri</div>
+  											<div class="userTitle">@양꼬치엔칭따오</div>
+  										</div>
+  									</div>	
+  								</td>
   								<td>3</td>
   								<td>4</td>
   								<td>5</td>
   								<td>6</td>
-  								<td>7</td>
   							</tr>
   							<tr>
   								<td>1</td>
-  								<td>2</td>
+  								<td style="width:16%;">
+  									<div class="ProfileArea">
+  										<img class="analysis_RankingBoardImage" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+  										<div style="display:flex; flex-wrap:wrap;">
+  											<div class="userNickname">Jerri</div>
+  											<div class="userTitle">@양꼬치엔칭따오</div>
+  										</div>
+  									</div>	
+  								</td>
   								<td>3</td>
   								<td>4</td>
   								<td>5</td>
   								<td>6</td>
-  								<td>7</td>
   							</tr>
   							<tr>
   								<td>1</td>
-  								<td>2</td>
+  								<td style="width:16%;">
+  									<div class="ProfileArea">
+  										<img class="analysis_RankingBoardImage" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+  										<div style="display:flex; flex-wrap:wrap;">
+  											<div class="userNickname">Jerri</div>
+  											<div class="userTitle">@양꼬치엔칭따오</div>
+  										</div>
+  									</div>	
+  								</td>
   								<td>3</td>
   								<td>4</td>
   								<td>5</td>
   								<td>6</td>
-  								<td>7</td>
   							</tr>
-  							<tr>
-  								<td>1</td>
-  								<td>2</td>
-  								<td>3</td>
-  								<td>4</td>
-  								<td>5</td>
-  								<td>6</td>
-  								<td>7</td>
-  							</tr>
-  							<tr>
-  								<td>1</td>
-  								<td>2</td>
-  								<td>3</td>
-  								<td>4</td>
-  								<td>5</td>
-  								<td>6</td>
-  								<td>7</td>
-  							</tr>
-  							
   						</tbody>
   					</table>
   				</div>
