@@ -126,7 +126,7 @@
         </form>
     </header>
 	<article class="sub-page">
-  		<section class="likeSubContentSection" style="display:table-footer-group;">
+  		<section class="likeSubContentSection" style="display:table;">
   			<div class="likeSubContentDiv">
   				<div class="ranking-searchArea">
   					<div class="BoardArea">
