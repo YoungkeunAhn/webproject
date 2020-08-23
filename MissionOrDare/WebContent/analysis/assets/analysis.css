@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean');
+	@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans&display=swap&subset=korean');
 /*
 font-family: 'Black Han Sans', sans-serif;
 */
@@ -788,6 +788,7 @@ table{
 }
 .ProfileArea .userTitle{
 	font-size: 10px;
+	text-align: left;
 }
 thead {
     display: table-header-group;
