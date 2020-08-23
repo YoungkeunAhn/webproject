@@ -126,7 +126,7 @@
         </form>
     </header>
 	<article class="sub-page">
-  		<section class="likeSubContentSection">
+  		<section class="likeSubContentSection" style="display:table-footer-group;">
   			<div class="likeSubContentDiv">
   				<div class="ranking-searchArea">
   					<div class="BoardArea">
@@ -164,6 +164,166 @@
   										<img class="analysis_RankingBoardImage" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
   											<div class="userNickname">Jerri</div>
   											<div class="userTitle">@양꼬치엔칭따오</div>
+  									</div>	
+  								</td>
+  								<td>3</td>
+  								<td>4</td>
+  								<td>5</td>
+  								<td>6</td>
+  							</tr>
+  							<tr>
+  								<td>1</td>
+  								<td style="width:16%;">
+  									<div class="ProfileArea">
+  										<img class="analysis_RankingBoardImage" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+  										<div style="display:flex; flex-wrap:wrap;">
+  											<div class="userNickname">Jerri</div>
+  											<div class="userTitle">@양꼬치엔칭따오</div>
+  										</div>
+  									</div>	
+  								</td>
+  								<td>3</td>
+  								<td>4</td>
+  								<td>5</td>
+  								<td>6</td>
+  							</tr>
+  							<tr>
+  								<td>1</td>
+  								<td style="width:16%;">
+  									<div class="ProfileArea">
+  										<img class="analysis_RankingBoardImage" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+  										<div style="display:flex; flex-wrap:wrap;">
+  											<div class="userNickname">Jerri</div>
+  											<div class="userTitle">@양꼬치엔칭따오</div>
+  										</div>
+  									</div>	
+  								</td>
+  								<td>3</td>
+  								<td>4</td>
+  								<td>5</td>
+  								<td>6</td>
+  							</tr>
+  							<tr>
+  								<td>1</td>
+  								<td style="width:16%;">
+  									<div class="ProfileArea">
+  										<img class="analysis_RankingBoardImage" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+  										<div style="display:flex; flex-wrap:wrap;">
+  											<div class="userNickname">Jerri</div>
+  											<div class="userTitle">@양꼬치엔칭따오</div>
+  										</div>
+  									</div>	
+  								</td>
+  								<td>3</td>
+  								<td>4</td>
+  								<td>5</td>
+  								<td>6</td>
+  							</tr>
+  							<tr>
+  								<td>1</td>
+  								<td style="width:16%;">
+  									<div class="ProfileArea">
+  										<img class="analysis_RankingBoardImage" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+  										<div style="display:flex; flex-wrap:wrap;">
+  											<div class="userNickname">Jerri</div>
+  											<div class="userTitle">@양꼬치엔칭따오</div>
+  										</div>
+  									</div>	
+  								</td>
+  								<td>3</td>
+  								<td>4</td>
+  								<td>5</td>
+  								<td>6</td>
+  							</tr>
+  							<tr>
+  								<td>1</td>
+  								<td style="width:16%;">
+  									<div class="ProfileArea">
+  										<img class="analysis_RankingBoardImage" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+  										<div style="display:flex; flex-wrap:wrap;">
+  											<div class="userNickname">Jerri</div>
+  											<div class="userTitle">@양꼬치엔칭따오</div>
+  										</div>
+  									</div>	
+  								</td>
+  								<td>3</td>
+  								<td>4</td>
+  								<td>5</td>
+  								<td>6</td>
+  							</tr>
+  							<tr>
+  								<td>1</td>
+  								<td style="width:16%;">
+  									<div class="ProfileArea">
+  										<img class="analysis_RankingBoardImage" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+  										<div style="display:flex; flex-wrap:wrap;">
+  											<div class="userNickname">Jerri</div>
+  											<div class="userTitle">@양꼬치엔칭따오</div>
+  										</div>
+  									</div>	
+  								</td>
+  								<td>3</td>
+  								<td>4</td>
+  								<td>5</td>
+  								<td>6</td>
+  							</tr>
+  							<tr>
+  								<td>1</td>
+  								<td style="width:16%;">
+  									<div class="ProfileArea">
+  										<img class="analysis_RankingBoardImage" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+  										<div style="display:flex; flex-wrap:wrap;">
+  											<div class="userNickname">Jerri</div>
+  											<div class="userTitle">@양꼬치엔칭따오</div>
+  										</div>
+  									</div>	
+  								</td>
+  								<td>3</td>
+  								<td>4</td>
+  								<td>5</td>
+  								<td>6</td>
+  							</tr>
+  							<tr>
+  								<td>1</td>
+  								<td style="width:16%;">
+  									<div class="ProfileArea">
+  										<img class="analysis_RankingBoardImage" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+  										<div style="display:flex; flex-wrap:wrap;">
+  											<div class="userNickname">Jerri</div>
+  											<div class="userTitle">@양꼬치엔칭따오</div>
+  										</div>
+  									</div>	
+  								</td>
+  								<td>3</td>
+  								<td>4</td>
+  								<td>5</td>
+  								<td>6</td>
+  							</tr>
+  							<tr>
+  								<td>1</td>
+  								<td style="width:16%;">
+  									<div class="ProfileArea">
+  										<img class="analysis_RankingBoardImage" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+  										<div style="display:flex; flex-wrap:wrap;">
+  											<div class="userNickname">Jerri</div>
+  											<div class="userTitle">@양꼬치엔칭따오</div>
+  										</div>
+  									</div>	
+  								</td>
+  								<td>3</td>
+  								<td>4</td>
+  								<td>5</td>
+  								<td>6</td>
+  							</tr>
+  							<tr>
+  								<td>1</td>
+  								<td style="width:16%;">
+  									<div class="ProfileArea">
+  										<img class="analysis_RankingBoardImage" src="https://dki5b2ktck73s.cloudfront.net/profile/8004108750.jpg" alt="roses_are_rosie 프로필 이미지">
+  										<div style="display:flex; flex-wrap:wrap;">
+  											<div class="userNickname">Jerri</div>
+  											<div class="userTitle">@양꼬치엔칭따오</div>
+  										</div>
   									</div>	
   								</td>
   								<td>3</td>
