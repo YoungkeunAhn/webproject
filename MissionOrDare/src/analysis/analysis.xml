@@ -8,4 +8,8 @@
 		select user_nickname from mod_users where user_nickname like #{nickname}
 	</select>
 	
+	<select id="allUserInfo" resultType="Dtos.UsersDto">
+		select * from mod_users
+	</select>
+	
 </mapper>

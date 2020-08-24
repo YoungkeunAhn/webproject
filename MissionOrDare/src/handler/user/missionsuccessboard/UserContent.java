@@ -28,6 +28,7 @@ public class UserContent implements CommandHandler{
 	
 	@Resource
 	UserSuccessBoardDao userSuccessBoardDao;
+	
 	@RequestMapping("/user_content")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -65,7 +66,7 @@ public class UserContent implements CommandHandler{
 		int totalLikeCount = userSuccessBoardDao.selectLikeCount(success_board_id);
 		
 		try{
-            //파일 객체 생성
+            //�뙆�씪 媛앹껜 �깮�꽦
 			File file = new File("C:/log/successboard.txt");
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, true));
             String datestr = logDao.getDate();
@@ -87,7 +88,7 @@ public class UserContent implements CommandHandler{
             System.out.println(e);
         }
 		
-		//공개여부
+		//怨듦컻�뿬遺�
 		
 		
 		request.setAttribute("totalLikeCount", totalLikeCount);

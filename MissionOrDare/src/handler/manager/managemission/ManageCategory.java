@@ -24,21 +24,23 @@ public class ManageCategory implements CommandHandler{
 	@RequestMapping("/manage_category")
 	@Override
 	public ModelAndView process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
 		if(request.getSession().getAttribute("memId") == null) {
 			return new ModelAndView("manager/login");
 		}
+		
 		request.setCharacterEncoding("utf-8");
 		String category = request.getParameter("category");
 		
-		int pageSize = 5;					// 한 페이지당 글 개수
-		int pageBlock = 3;					// 한 번에 출력할 페이지 개수
+		int pageSize = 5;					// �븳 �럹�씠吏��떦 湲� 媛쒖닔
+		int pageBlock = 3;					// �븳 踰덉뿉 異쒕젰�븷 �럹�씠吏� 媛쒖닔
 		
 		int cnt = 0;
-		String pageNum = null;				// 현재 페이지
-		int currentPage = 0;					// 계산용 현재페이지
-		int start = 0;						// 현재페이지 시작 rownum
-		int end = 0;							// 현재페이지 끝 rownum
-		int number = 0;						// 출력용 글번호
+		String pageNum = null;				// �쁽�옱 �럹�씠吏�
+		int currentPage = 0;					// 怨꾩궛�슜 �쁽�옱�럹�씠吏�
+		int start = 0;						// �쁽�옱�럹�씠吏� �떆�옉 rownum
+		int end = 0;							// �쁽�옱�럹�씠吏� �걹 rownum
+		int number = 0;						// 異쒕젰�슜 湲�踰덊샇
 		
 		int startPage = 0;
 		int endPage = 0;
