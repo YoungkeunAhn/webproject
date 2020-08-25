@@ -134,16 +134,10 @@ ul li{
     ">
     	<ul>
     		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">점수</li>
-    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">좋아요</li>
-    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">조회수</li>
-    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">레벨</li>
-    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">성공률</li>
-    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">인기쟁이</li>
-    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">성장중</li>
-    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">미션수행수</li>
-    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">기타1</li>
-    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">기타2</li>
-    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('2')">기타3</li>
+    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('3')">좋아요</li>
+    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('4')">조회수</li>
+    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('5')">레벨</li>
+    		<li class="btn3" onMouseover="this.style.color='black';" onMouseout="this.style.color='white';" id="GoTop" onclick="fnMove('6')">성공률</li>
     	</ul>
     </nav>
     <header class="header-hidden">
@@ -178,8 +172,8 @@ ul li{
             <div class="swiper-button-prev"></div><!-- 이전 버튼 -->
          </div>
          </section>
-    	
-    	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">점수 랭킹 더보기</div>
+    	<div id="GoTop2"></div>
+    	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_OlikeRankingDetail_point.do'">점수 랭킹 더보기</div>
     	<section class="OlikeRankingSection">
     	<div class="OlikeRanking_medal">
     		<img src="analysis/images/gold.PNG">
@@ -240,7 +234,7 @@ ul li{
     		</div>
    		</div>
    	</section>
-   	<div id="GoTop2"></div>
+   	<div id="GoTop3"></div>
    	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">좋아요 랭킹 더보기</div>
    	<section class="OlikeRankingSection">
     	<div class="OlikeRanking_medal">
@@ -302,7 +296,8 @@ ul li{
     		</div>
    		</div>
    	</section>
-   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">조회수 랭킹 더보기</div>
+   	<div id="GoTop4"></div>
+   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_OlikeRankingDetail_readcount.do'">조회수 랭킹 더보기</div>
    	<section class="OlikeRankingSection">
     	<div class="OlikeRanking_medal">
     		<img src="analysis/images/gold.PNG">
@@ -363,7 +358,8 @@ ul li{
     		</div>
    		</div>
    	</section>
-   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">레벨 랭킹 더보기</div>
+   	<div id="GoTop5"></div>
+   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_OlikeRankingDetail_level.do'">레벨 랭킹 더보기</div>
    	<section class="OlikeRankingSection">
     	<div class="OlikeRanking_medal">
     		<img src="analysis/images/gold.PNG">
@@ -424,7 +420,8 @@ ul li{
     		</div>
    		</div>
    	</section>
-   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_Olikerankingdetail.do'">성공률 랭킹 더보기</div>
+   	<div id="GoTop6"></div>
+   	<div class="OlikeSeeMoreRanking" onclick="location.href='analysis_OlikeRankingDetail_success.do'">성공률 랭킹 더보기</div>
    	<section class="OlikeRankingSection">
     	<div class="OlikeRanking_medal">
     		<img src="analysis/images/gold.PNG">
